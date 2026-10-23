@@ -30,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorIntegration Integration { get; set; }
 #endif
+        /// <summary>The project property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorProject? Project { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorProject Project { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorType? Type { get; set; }
         /// <summary>The user property</summary>
@@ -75,6 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "app", n => { App = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorApp>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorApp.CreateFromDiscriminatorValue); } },
                 { "integration", n => { Integration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorIntegration>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorIntegration.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorProject>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorProject.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorUser>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorUser.CreateFromDiscriminatorValue); } },
                 { "via", n => { Via = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorVia>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorVia.CreateFromDiscriminatorValue); } },
@@ -89,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorApp>("app", App);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorIntegration>("integration", Integration);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorProject>("project", Project);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorUser>("user", User);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreatorVia>("via", Via);

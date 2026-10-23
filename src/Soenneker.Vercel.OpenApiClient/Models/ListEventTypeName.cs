@@ -1331,6 +1331,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         MessageboardPrivateCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-project-granted")]
+        #pragma warning disable CS1591
+        MessageboardPrivateProjectGranted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-project-revoked")]
+        #pragma warning disable CS1591
+        MessageboardPrivateProjectRevoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-project-channel-created")]
+        #pragma warning disable CS1591
+        MessageboardProjectChannelCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-project-granted")]
+        #pragma warning disable CS1591
+        MessageboardProjectGranted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-project-private-channel-created")]
+        #pragma warning disable CS1591
+        MessageboardProjectPrivateChannelCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-project-revoked")]
+        #pragma warning disable CS1591
+        MessageboardProjectRevoked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-schema-registered")]
         #pragma warning disable CS1591
         MessageboardSchemaRegistered,

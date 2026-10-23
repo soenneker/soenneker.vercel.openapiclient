@@ -18,7 +18,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? ExpiresAt { get; set; }
         /// <summary>Unix ms timestamp when the project was locked.</summary>
         public double? LockedAt { get; set; }
-        /// <summary>userId of the actor that triggered the lock (system or admin).</summary>
+        /// <summary>ID of the user, app, or integration that locked the project, or `system`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LockedBy { get; set; }

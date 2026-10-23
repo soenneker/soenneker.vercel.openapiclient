@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.ApiKeys.Item;
 using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,18 @@ namespace Soenneker.Vercel.OpenApiClient.ApiKeys
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiKeysRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.apiKeys.item collection</summary>
+        /// <param name="position">The ID of the API key whose quota should be updated.</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.ApiKeys.Item.WithApiKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.ApiKeys.Item.WithApiKeyItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("apiKeyId", position);
+                return new global::Soenneker.Vercel.OpenApiClient.ApiKeys.Item.WithApiKeyItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.ApiKeys.ApiKeysRequestBuilder"/> and sets the default values.
         /// </summary>

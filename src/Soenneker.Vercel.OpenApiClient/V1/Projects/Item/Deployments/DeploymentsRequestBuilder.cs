@@ -16,7 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Deployments
     public partial class DeploymentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.projects.item.deployments.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID or hostname of the deployment.</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Deployments.Item.WithDeploymentItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Deployments.Item.WithDeploymentItemRequestBuilder this[string position]
         {

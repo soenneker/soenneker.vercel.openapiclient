@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Instance count overrides by region, for example { \&quot;iad1\&quot;: 1 }. Regions not in the map keep their configured count. An empty map removes the overrides.
+    /// Instance count overrides for the given regions, for example { \&quot;iad1\&quot;: 1 }. Overrides of regions not in the map are kept. A `null` count removes the region&apos;s override. An empty map removes all overrides.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutProjectDaemonInstancesRequestRequestBody : IAdditionalDataHolder, IParsable

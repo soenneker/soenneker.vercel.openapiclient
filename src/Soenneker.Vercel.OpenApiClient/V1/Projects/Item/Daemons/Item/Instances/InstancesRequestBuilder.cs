@@ -47,10 +47,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
         {
         }
         /// <summary>
-        /// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+        /// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutProjectDaemonInstances200Response"/></returns>
-        /// <param name="body">Instance count overrides by region, for example { \&quot;iad1\&quot;: 1 }. Regions not in the map keep their configured count. An empty map removes the overrides.</param>
+        /// <param name="body">Instance count overrides for the given regions, for example { \&quot;iad1\&quot;: 1 }. Overrides of regions not in the map are kept. A `null` count removes the region&apos;s override. An empty map removes all overrides.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.PutProjectDaemonInstances200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.PutProjectDaemonInstances200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+        /// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Instance count overrides by region, for example { \&quot;iad1\&quot;: 1 }. Regions not in the map keep their configured count. An empty map removes the overrides.</param>
+        /// <param name="body">Instance count overrides for the given regions, for example { \&quot;iad1\&quot;: 1 }. Overrides of regions not in the map are kept. A `null` count removes the region&apos;s override. An empty map removes all overrides.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances.InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
+        /// Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InstancesRequestBuilderPutQueryParameters 

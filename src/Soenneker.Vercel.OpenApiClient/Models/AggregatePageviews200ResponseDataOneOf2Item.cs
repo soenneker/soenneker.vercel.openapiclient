@@ -54,6 +54,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Flags { get; set; }
 #endif
+        /// <summary>The groupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupId { get; set; }
+#nullable restore
+#else
+        public string GroupId { get; set; }
+#endif
         /// <summary>The osName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +117,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Route { get; set; }
+#endif
+        /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
 #endif
         /// <summary>The utmCampaign property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -188,6 +204,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deviceType", n => { DeviceType = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "flags", n => { Flags = n.GetStringValue(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
                 { "osName", n => { OsName = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
@@ -195,6 +212,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "requestHostname", n => { RequestHostname = n.GetStringValue(); } },
                 { "requestPath", n => { RequestPath = n.GetStringValue(); } },
                 { "route", n => { Route = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
                 { "utmContent", n => { UtmContent = n.GetStringValue(); } },
                 { "utmMedium", n => { UtmMedium = n.GetStringValue(); } },
@@ -215,6 +233,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("deviceType", DeviceType);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("flags", Flags);
+            writer.WriteStringValue("groupId", GroupId);
             writer.WriteStringValue("osName", OsName);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
@@ -222,6 +241,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("requestHostname", RequestHostname);
             writer.WriteStringValue("requestPath", RequestPath);
             writer.WriteStringValue("route", Route);
+            writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("utmCampaign", UtmCampaign);
             writer.WriteStringValue("utmContent", UtmContent);
             writer.WriteStringValue("utmMedium", UtmMedium);

@@ -15,13 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatar property</summary>
+        /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Avatar { get; set; }
+        public string? AppId { get; set; }
 #nullable restore
 #else
-        public string Avatar { get; set; }
+        public string AppId { get; set; }
+#endif
+        /// <summary>The appName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppName { get; set; }
+#nullable restore
+#else
+        public string AppName { get; set; }
+#endif
+        /// <summary>The organizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73"/> and sets the default values.
@@ -48,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatar", n => { Avatar = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("avatar", Avatar);
+            writer.WriteStringValue("appId", AppId);
+            writer.WriteStringValue("appName", AppName);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

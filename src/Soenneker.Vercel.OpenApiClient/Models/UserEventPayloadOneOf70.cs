@@ -39,6 +39,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
+        /// <summary>The permissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70PermissionsItem?>? Permissions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70PermissionsItem?> Permissions { get; set; }
+#endif
+        /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70Resources? Resources { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70Resources Resources { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70"/> and sets the default values.
         /// </summary>
@@ -67,6 +83,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70PermissionsItem>()?.AsList(); } },
+                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70Resources>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70Resources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,6 +97,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appName", AppName);
             writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70PermissionsItem>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70Resources>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

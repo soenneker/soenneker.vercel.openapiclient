@@ -13,55 +13,43 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf365 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The actorName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorName { get; set; }
+#nullable restore
+#else
+        public string ActorName { get; set; }
+#endif
+        /// <summary>The actorType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The driveName property</summary>
+        /// <summary>The connectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DriveName { get; set; }
+        public string? ConnectionId { get; set; }
 #nullable restore
 #else
-        public string DriveName { get; set; }
+        public string ConnectionId { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>The keyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? KeyId { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string KeyId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The signingEnabled property</summary>
+        public bool? SigningEnabled { get; set; }
+        /// <summary>The signingKeyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? SigningKeyId { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The region property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region { get; set; }
-#nullable restore
-#else
-        public string Region { get; set; }
-#endif
-        /// <summary>The snapshotId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SnapshotId { get; set; }
-#nullable restore
-#else
-        public string SnapshotId { get; set; }
-#endif
-        /// <summary>The snapshotName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SnapshotName { get; set; }
-#nullable restore
-#else
-        public string SnapshotName { get; set; }
+        public string SigningKeyId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365"/> and sets the default values.
@@ -88,12 +76,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "driveName", n => { DriveName = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
-                { "snapshotId", n => { SnapshotId = n.GetStringValue(); } },
-                { "snapshotName", n => { SnapshotName = n.GetStringValue(); } },
+                { "actorName", n => { ActorName = n.GetStringValue(); } },
+                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
+                { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
+                { "keyId", n => { KeyId = n.GetStringValue(); } },
+                { "signingEnabled", n => { SigningEnabled = n.GetBoolValue(); } },
+                { "signingKeyId", n => { SigningKeyId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +91,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("driveName", DriveName);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("snapshotId", SnapshotId);
-            writer.WriteStringValue("snapshotName", SnapshotName);
+            writer.WriteStringValue("actorName", ActorName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
+            writer.WriteStringValue("connectionId", ConnectionId);
+            writer.WriteStringValue("keyId", KeyId);
+            writer.WriteBoolValue("signingEnabled", SigningEnabled);
+            writer.WriteStringValue("signingKeyId", SigningKeyId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

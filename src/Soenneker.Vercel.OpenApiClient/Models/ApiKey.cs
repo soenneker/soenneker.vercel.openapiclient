@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Information about the newly created API key.
+    /// Represents an API key.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiKey : IAdditionalDataHolder, IParsable

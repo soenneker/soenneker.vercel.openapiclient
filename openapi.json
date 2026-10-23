@@ -17725,7 +17725,7 @@
     },
     "/v1/projects/{idOrName}/daemons/{daemonName}/instances": {
       "put": {
-        "description": "Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.",
+        "description": "Override the instance counts of a daemon in the given regions, without changing its configuration or the overrides of other regions.",
         "operationId": "putProjectDaemonInstances",
         "security": [
           {
@@ -17836,13 +17836,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "description": "Instance count overrides by region, for example { \\\"iad1\\\": 1 }. Regions not in the map keep their configured count. An empty map removes the overrides.",
-                "type": "object",
                 "additionalProperties": {
                   "type": "integer",
                   "minimum": 0,
-                  "maximum": 100
-                }
+                  "maximum": 100,
+                  "nullable": true
+                },
+                "description": "Instance count overrides for the given regions, for example { \\\"iad1\\\": 1 }. Overrides of regions not in the map are kept. A `null` count removes the region's override. An empty map removes all overrides.",
+                "type": "object"
               }
             }
           }
@@ -20244,6 +20245,7 @@
                               "enum": [
                                 "app",
                                 "integration",
+                                "project",
                                 "system",
                                 "user"
                               ],
@@ -27031,6 +27033,7 @@
                               "enum": [
                                 "app",
                                 "integration",
+                                "project",
                                 "system",
                                 "user"
                               ],
@@ -28470,6 +28473,9 @@
           "400": {
             "description": "One of the provided values in the request query is invalid."
           },
+          "401": {
+            "description": ""
+          },
           "403": {
             "description": "You do not have permission to access this resource."
           },
@@ -29183,6 +29189,7 @@
                               "enum": [
                                 "app",
                                 "integration",
+                                "project",
                                 "system",
                                 "user"
                               ],
@@ -37107,6 +37114,7 @@
                           "enum": [
                             "app",
                             "integration",
+                            "project",
                             "system",
                             "user"
                           ],
@@ -52912,12 +52920,12 @@
           },
           {
             "name": "includeDeliveryStats",
-            "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours.",
+            "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours. Ignored for teams without drain delivery metrics.",
             "in": "query",
             "schema": {
               "type": "boolean",
               "default": false,
-              "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours."
+              "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours. Ignored for teams without drain delivery metrics."
             }
           },
           {
@@ -55981,12 +55989,12 @@
           },
           {
             "name": "includeDeliveryStats",
-            "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours.",
+            "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours. Ignored for teams without drain delivery metrics.",
             "in": "query",
             "schema": {
               "type": "boolean",
               "default": false,
-              "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours."
+              "description": "Include `deliveryStats` with the delivery health of each drain over the last 24 hours. Ignored for teams without drain delivery metrics."
             }
           },
           {
@@ -73964,9 +73972,6 @@
           },
           "410": {
             "description": ""
-          },
-          "422": {
-            "description": ""
           }
         },
         "parameters": [
@@ -74313,9 +74318,6 @@
             "description": ""
           },
           "410": {
-            "description": ""
-          },
-          "422": {
             "description": ""
           }
         },
@@ -75788,9 +75790,6 @@
           },
           "410": {
             "description": ""
-          },
-          "422": {
-            "description": ""
           }
         },
         "parameters": [
@@ -75914,9 +75913,6 @@
             "description": ""
           },
           "410": {
-            "description": ""
-          },
-          "422": {
             "description": ""
           }
         },
@@ -81728,6 +81724,244 @@
         }
       }
     },
+    "/api-keys/{apiKeyID}/quota": {
+      "patch": {
+        "description": "Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the key does not have one.",
+        "operationId": "updateApiKeyQuota",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Update an AI Gateway API key budget",
+        "tags": [
+          "ai-gateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully updated the API key quota.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "apiKey": {
+                      "$ref": "#/components/schemas/APIKey"
+                    },
+                    "quota": {
+                      "$ref": "#/components/schemas/APIKeyQuota"
+                    }
+                  },
+                  "required": [
+                    "apiKey",
+                    "quota"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "You do not have permission to access this resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "429": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "limit": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "name",
+                        "message",
+                        "limit"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "message"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "apiKeyID",
+            "description": "The ID of the API key whose quota should be updated.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the API key whose quota should be updated."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "limitAmount": {
+                    "type": "number",
+                    "minimum": 1,
+                    "description": "The quota limit amount. Required if the quota does not yet exist."
+                  },
+                  "includeByokInQuota": {
+                    "type": "boolean",
+                    "description": "Whether BYOK (Bring Your Own Key) usage counts against the quota."
+                  },
+                  "refreshPeriod": {
+                    "type": "string",
+                    "enum": [
+                      "daily",
+                      "weekly",
+                      "monthly",
+                      "none"
+                    ],
+                    "description": "How often the quota refreshes."
+                  },
+                  "active": {
+                    "type": "boolean",
+                    "description": "Whether the quota is currently active."
+                  },
+                  "archived": {
+                    "type": "boolean",
+                    "description": "Set to true to archive (soft-delete) the quota. The api key itself is unaffected."
+                  },
+                  "alertThresholds": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "enum": [
+                        50,
+                        75,
+                        100
+                      ]
+                    },
+                    "description": "Spend percentages (a subset of [50, 75, 100]) at which to send a spend alert. Pass an empty array to disable alerts."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/kms/issuers/{issuerId}/sign/message": {
       "post": {
         "description": "Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.",
@@ -84698,18 +84932,22 @@
         "parameters": [
           {
             "name": "projectId",
+            "description": "The ID or name of the project containing the deployment.",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "The ID or name of the project containing the deployment."
             }
           },
           {
             "name": "deploymentId",
+            "description": "The ID or hostname of the deployment.",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "The ID or hostname of the deployment."
             }
           },
           {
@@ -86081,6 +86319,32 @@
                               },
                               {
                                 "properties": {
+                                  "project": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "id"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "project"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "project",
+                                  "type"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
                                   "app": {
                                     "properties": {
                                       "clientId": {
@@ -87445,7 +87709,7 @@
                                   },
                                   "lockedBy": {
                                     "type": "string",
-                                    "description": "userId of the actor that triggered the lock (system or admin)."
+                                    "description": "ID of the user, app, or integration that locked the project, or `system`."
                                   }
                                 },
                                 "required": [
@@ -90153,6 +90417,27 @@
                                 "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                               },
                               "messageboardChannel": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array",
+                                "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                              },
+                              "messageboardMessage": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array",
+                                "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                              },
+                              "messageboardModeration": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array",
+                                "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                              },
+                              "messageboardReaction": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -94403,6 +94688,9 @@
             }
           },
           "400": {
+            "description": ""
+          },
+          "401": {
             "description": ""
           },
           "403": {
@@ -101384,6 +101672,32 @@
                               },
                               {
                                 "properties": {
+                                  "project": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "id"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "project"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "project",
+                                  "type"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
                                   "app": {
                                     "properties": {
                                       "clientId": {
@@ -105786,6 +106100,32 @@
                                       "type",
                                       "user",
                                       "via"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "project": {
+                                        "properties": {
+                                          "id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "id"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "project"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "project",
+                                      "type"
                                     ],
                                     "type": "object"
                                   },
@@ -110314,6 +110654,32 @@
                                   },
                                   {
                                     "properties": {
+                                      "project": {
+                                        "properties": {
+                                          "id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "id"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "project"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "project",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
                                       "app": {
                                         "properties": {
                                           "clientId": {
@@ -111678,7 +112044,7 @@
                                       },
                                       "lockedBy": {
                                         "type": "string",
-                                        "description": "userId of the actor that triggered the lock (system or admin)."
+                                        "description": "ID of the user, app, or integration that locked the project, or `system`."
                                       }
                                     },
                                     "required": [
@@ -114386,6 +114752,27 @@
                                     "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                                   },
                                   "messageboardChannel": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array",
+                                    "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                                  },
+                                  "messageboardMessage": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array",
+                                    "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                                  },
+                                  "messageboardModeration": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array",
+                                    "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                                  },
+                                  "messageboardReaction": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
                                     },
@@ -118520,6 +118907,32 @@
                         },
                         {
                           "properties": {
+                            "project": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "project"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "project",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
                             "app": {
                               "properties": {
                                 "clientId": {
@@ -119884,7 +120297,7 @@
                             },
                             "lockedBy": {
                               "type": "string",
-                              "description": "userId of the actor that triggered the lock (system or admin)."
+                              "description": "ID of the user, app, or integration that locked the project, or `system`."
                             }
                           },
                           "required": [
@@ -122592,6 +123005,27 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "messageboardChannel": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardMessage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardModeration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardReaction": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -126981,6 +127415,32 @@
                         },
                         {
                           "properties": {
+                            "project": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "project"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "project",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
                             "app": {
                               "properties": {
                                 "clientId": {
@@ -128343,7 +128803,7 @@
                             },
                             "lockedBy": {
                               "type": "string",
-                              "description": "userId of the actor that triggered the lock (system or admin)."
+                              "description": "ID of the user, app, or integration that locked the project, or `system`."
                             }
                           },
                           "required": [
@@ -131084,6 +131544,27 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "messageboardChannel": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardMessage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardModeration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardReaction": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -134781,6 +135262,32 @@
                         },
                         {
                           "properties": {
+                            "project": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "project"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "project",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
                             "app": {
                               "properties": {
                                 "clientId": {
@@ -136136,7 +136643,7 @@
                             },
                             "lockedBy": {
                               "type": "string",
-                              "description": "userId of the actor that triggered the lock (system or admin)."
+                              "description": "ID of the user, app, or integration that locked the project, or `system`."
                             }
                           },
                           "required": [
@@ -138844,6 +139351,27 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "messageboardChannel": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardMessage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardModeration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardReaction": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -143855,6 +144383,32 @@
                         },
                         {
                           "properties": {
+                            "project": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "project"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "project",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
                             "app": {
                               "properties": {
                                 "clientId": {
@@ -145219,7 +145773,7 @@
                             },
                             "lockedBy": {
                               "type": "string",
-                              "description": "userId of the actor that triggered the lock (system or admin)."
+                              "description": "ID of the user, app, or integration that locked the project, or `system`."
                             }
                           },
                           "required": [
@@ -147927,6 +148481,27 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "messageboardChannel": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardMessage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardModeration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardReaction": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -151628,6 +152203,32 @@
                         },
                         {
                           "properties": {
+                            "project": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "project"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "project",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
                             "app": {
                               "properties": {
                                 "clientId": {
@@ -152992,7 +153593,7 @@
                             },
                             "lockedBy": {
                               "type": "string",
-                              "description": "userId of the actor that triggered the lock (system or admin)."
+                              "description": "ID of the user, app, or integration that locked the project, or `system`."
                             }
                           },
                           "required": [
@@ -155700,6 +156301,27 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "messageboardChannel": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardMessage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardModeration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardReaction": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -172542,6 +173164,32 @@
                         },
                         {
                           "properties": {
+                            "project": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "project"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "project",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
                             "app": {
                               "properties": {
                                 "clientId": {
@@ -173906,7 +174554,7 @@
                             },
                             "lockedBy": {
                               "type": "string",
-                              "description": "userId of the actor that triggered the lock (system or admin)."
+                              "description": "ID of the user, app, or integration that locked the project, or `system`."
                             }
                           },
                           "required": [
@@ -176614,6 +177262,27 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "messageboardChannel": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardMessage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardModeration": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "messageboardReaction": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -183573,9 +184242,6 @@
           },
           "429": {
             "description": ""
-          },
-          "500": {
-            "description": ""
           }
         },
         "parameters": [
@@ -183739,9 +184405,6 @@
           },
           "429": {
             "description": ""
-          },
-          "500": {
-            "description": ""
           }
         },
         "parameters": [
@@ -183854,9 +184517,6 @@
             "description": ""
           },
           "429": {
-            "description": ""
-          },
-          "500": {
             "description": ""
           }
         },
@@ -183981,9 +184641,6 @@
             "description": ""
           },
           "429": {
-            "description": ""
-          },
-          "500": {
             "description": ""
           },
           "502": {
@@ -184158,9 +184815,6 @@
             "description": ""
           },
           "429": {
-            "description": ""
-          },
-          "500": {
             "description": ""
           }
         },
@@ -184974,9 +185628,6 @@
           },
           "429": {
             "description": ""
-          },
-          "500": {
-            "description": ""
           }
         },
         "parameters": [
@@ -185080,9 +185731,6 @@
             "description": ""
           },
           "429": {
-            "description": ""
-          },
-          "500": {
             "description": ""
           }
         },
@@ -185192,9 +185840,6 @@
             "description": ""
           },
           "429": {
-            "description": ""
-          },
-          "500": {
             "description": ""
           }
         },
@@ -204087,6 +204732,12 @@
                               },
                               "projectId": {
                                 "type": "string"
+                              },
+                              "secretsOutdated": {
+                                "type": "boolean",
+                                "enum": [
+                                  true
+                                ]
                               }
                             },
                             "required": [
@@ -204407,6 +205058,12 @@
                               },
                               "projectId": {
                                 "type": "string"
+                              },
+                              "secretsOutdated": {
+                                "type": "boolean",
+                                "enum": [
+                                  true
+                                ]
                               }
                             },
                             "required": [
@@ -204890,6 +205547,12 @@
                               },
                               "projectId": {
                                 "type": "string"
+                              },
+                              "secretsOutdated": {
+                                "type": "boolean",
+                                "enum": [
+                                  true
+                                ]
                               }
                             },
                             "required": [
@@ -208850,6 +209513,9 @@
                           },
                           "type": "array"
                         },
+                        "secretsAppliedAt": {
+                          "type": "number"
+                        },
                         "targets": {
                           "items": {
                             "type": "string",
@@ -210151,6 +210817,9 @@
           "400": {
             "description": "One of the provided values in the request query is invalid.\nUser is already a confirmed member of the team and did not request access. Only visible when the authenticated user does have access to the team."
           },
+          "401": {
+            "description": ""
+          },
           "403": {
             "description": "You do not have permission to access this resource."
           },
@@ -210239,6 +210908,9 @@
           },
           "400": {
             "description": "One of the provided values in the request body is invalid."
+          },
+          "401": {
+            "description": ""
           },
           "402": {
             "description": ""
@@ -211477,6 +212149,9 @@
           "400": {
             "description": "One of the provided values in the request query is invalid."
           },
+          "401": {
+            "description": ""
+          },
           "403": {
             "description": "You do not have permission to access this resource."
           },
@@ -211569,6 +212244,9 @@
           },
           "400": {
             "description": "One of the provided values in the request body is invalid.\nThe slug is already in use"
+          },
+          "401": {
+            "description": ""
           },
           "403": {
             "description": "You do not have permission to access this resource."
@@ -212575,6 +213253,9 @@
           "400": {
             "description": "One of the provided values in the request query is invalid."
           },
+          "401": {
+            "description": ""
+          },
           "403": {
             "description": "You do not have permission to access this resource."
           },
@@ -212637,6 +213318,9 @@
           },
           "400": {
             "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": ""
           },
           "403": {
             "description": "You do not have permission to access this resource."
@@ -212816,6 +213500,9 @@
           },
           "400": {
             "description": "One of the provided values in the request body is invalid."
+          },
+          "401": {
+            "description": ""
           },
           "402": {
             "description": ""
@@ -223764,6 +224451,9 @@
                               "flags": {
                                 "type": "string"
                               },
+                              "groupId": {
+                                "type": "string"
+                              },
                               "osName": {
                                 "type": "string"
                               },
@@ -223783,6 +224473,9 @@
                                 "type": "string"
                               },
                               "route": {
+                                "type": "string"
+                              },
+                              "userId": {
                                 "type": "string"
                               },
                               "utmCampaign": {
@@ -223833,6 +224526,9 @@
                               "flags": {
                                 "type": "string"
                               },
+                              "groupId": {
+                                "type": "string"
+                              },
                               "osName": {
                                 "type": "string"
                               },
@@ -223852,6 +224548,9 @@
                                 "type": "string"
                               },
                               "route": {
+                                "type": "string"
+                              },
+                              "userId": {
                                 "type": "string"
                               },
                               "utmCampaign": {
@@ -223879,6 +224578,7 @@
                               "deviceType",
                               "environment",
                               "flags",
+                              "groupId",
                               "osName",
                               "projectId",
                               "projectName",
@@ -223886,6 +224586,7 @@
                               "requestHostname",
                               "requestPath",
                               "route",
+                              "userId",
                               "utmCampaign",
                               "utmContent",
                               "utmMedium",
@@ -224180,6 +224881,9 @@
                               "flags": {
                                 "type": "string"
                               },
+                              "groupId": {
+                                "type": "string"
+                              },
                               "osName": {
                                 "type": "string"
                               },
@@ -224199,6 +224903,9 @@
                                 "type": "string"
                               },
                               "route": {
+                                "type": "string"
+                              },
+                              "userId": {
                                 "type": "string"
                               },
                               "utmCampaign": {
@@ -224255,6 +224962,9 @@
                               "flags": {
                                 "type": "string"
                               },
+                              "groupId": {
+                                "type": "string"
+                              },
                               "osName": {
                                 "type": "string"
                               },
@@ -224274,6 +224984,9 @@
                                 "type": "string"
                               },
                               "route": {
+                                "type": "string"
+                              },
+                              "userId": {
                                 "type": "string"
                               },
                               "utmCampaign": {
@@ -224303,6 +225016,7 @@
                               "eventData",
                               "eventName",
                               "flags",
+                              "groupId",
                               "osName",
                               "projectId",
                               "projectName",
@@ -224310,6 +225024,7 @@
                               "requestHostname",
                               "requestPath",
                               "route",
+                              "userId",
                               "utmCampaign",
                               "utmContent",
                               "utmMedium",
@@ -224601,6 +225316,9 @@
                             "flags": {
                               "type": "string"
                             },
+                            "groupId": {
+                              "type": "string"
+                            },
                             "osName": {
                               "type": "string"
                             },
@@ -224620,6 +225338,9 @@
                               "type": "string"
                             },
                             "route": {
+                              "type": "string"
+                            },
+                            "userId": {
                               "type": "string"
                             },
                             "utmCampaign": {
@@ -224647,6 +225368,7 @@
                             "deviceType",
                             "environment",
                             "flags",
+                            "groupId",
                             "osName",
                             "projectId",
                             "projectName",
@@ -224654,6 +225376,7 @@
                             "requestHostname",
                             "requestPath",
                             "route",
+                            "userId",
                             "utmCampaign",
                             "utmContent",
                             "utmMedium",
@@ -224864,6 +225587,9 @@
                             "flags": {
                               "type": "string"
                             },
+                            "groupId": {
+                              "type": "string"
+                            },
                             "osName": {
                               "type": "string"
                             },
@@ -224883,6 +225609,9 @@
                               "type": "string"
                             },
                             "route": {
+                              "type": "string"
+                            },
+                            "userId": {
                               "type": "string"
                             },
                             "utmCampaign": {
@@ -224912,6 +225641,7 @@
                             "eventData",
                             "eventName",
                             "flags",
+                            "groupId",
                             "osName",
                             "projectId",
                             "projectName",
@@ -224919,6 +225649,7 @@
                             "requestHostname",
                             "requestPath",
                             "route",
+                            "userId",
                             "utmCampaign",
                             "utmContent",
                             "utmMedium",
@@ -229267,6 +229998,7 @@
                                 "enum": [
                                   "app",
                                   "integration",
+                                  "project",
                                   "system",
                                   "user"
                                 ],
@@ -236818,6 +237550,41 @@
                   "channelId": {
                     "type": "string"
                   },
+                  "environment": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "operationId": {
+                    "type": "string"
+                  },
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "boardId",
+                  "channelId",
+                  "environment",
+                  "name",
+                  "operationId",
+                  "projectId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "channelId": {
+                    "type": "string"
+                  },
                   "fields": {
                     "items": {
                       "type": "string"
@@ -236857,6 +237624,53 @@
                   "boardId",
                   "operationId",
                   "visibility"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "environments": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "operationId": {
+                    "type": "string"
+                  },
+                  "projectId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "boardId",
+                  "environments",
+                  "operationId",
+                  "projectId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "operationId": {
+                    "type": "string"
+                  },
+                  "projectId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "boardId",
+                  "operationId",
+                  "projectId"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -244268,6 +245082,9 @@
                   },
                   "drainUrl": {
                     "nullable": true,
+                    "type": "string"
+                  },
+                  "id": {
                     "type": "string"
                   },
                   "integrationName": {
@@ -259646,6 +260463,12 @@
               "messageboard-private-channel-created",
               "messageboard-private-channel-updated",
               "messageboard-private-created",
+              "messageboard-private-project-granted",
+              "messageboard-private-project-revoked",
+              "messageboard-project-channel-created",
+              "messageboard-project-granted",
+              "messageboard-project-private-channel-created",
+              "messageboard-project-revoked",
               "messageboard-schema-registered",
               "messageboard-visibility-updated",
               "microfrontend-group-added",
@@ -260597,6 +261420,12 @@
               "messageboard-private-channel-created",
               "messageboard-private-channel-updated",
               "messageboard-private-created",
+              "messageboard-private-project-granted",
+              "messageboard-private-project-revoked",
+              "messageboard-project-channel-created",
+              "messageboard-project-granted",
+              "messageboard-project-private-channel-created",
+              "messageboard-project-revoked",
               "messageboard-schema-registered",
               "messageboard-visibility-updated",
               "microfrontend-group-added",
@@ -261336,6 +262165,12 @@
                 "messageboard-private-channel-created",
                 "messageboard-private-channel-updated",
                 "messageboard-private-created",
+                "messageboard-private-project-granted",
+                "messageboard-private-project-revoked",
+                "messageboard-project-channel-created",
+                "messageboard-project-granted",
+                "messageboard-project-private-channel-created",
+                "messageboard-project-revoked",
                 "messageboard-schema-registered",
                 "messageboard-visibility-updated",
                 "microfrontend-group-added",
@@ -263118,7 +263953,7 @@
         "description": "Representation of a Flags SDK key returned by CREATE. Includes cleartext secrets (`keyValue`, `tokenValue`, `connectionString`) which are only ever disclosed once, on creation."
       },
       "APIKey": {
-        "description": "Information about the newly created API key.",
+        "description": "Represents an API key.",
         "type": "object",
         "properties": {
           "id": {

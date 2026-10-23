@@ -134,6 +134,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem> Secrets { get; set; }
 #endif
+        /// <summary>The secretsAppliedAt property</summary>
+        public double? SecretsAppliedAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus? Status { get; set; }
         /// <summary>The deployment targets that this resource is available for.</summary>
@@ -191,6 +193,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "secretRotationRequestedBy", n => { SecretRotationRequestedBy = n.GetStringValue(); } },
                 { "secretRotationRequestedReason", n => { SecretRotationRequestedReason = n.GetStringValue(); } },
                 { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "secretsAppliedAt", n => { SecretsAppliedAt = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus>(); } },
                 { "targets", n => { Targets = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreTargetsItem>()?.AsList(); } },
                 { "totalConnectedProjects", n => { TotalConnectedProjects = n.GetDoubleValue(); } },
@@ -222,6 +225,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("secretRotationRequestedBy", SecretRotationRequestedBy);
             writer.WriteStringValue("secretRotationRequestedReason", SecretRotationRequestedReason);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem>("secrets", Secrets);
+            writer.WriteDoubleValue("secretsAppliedAt", SecretsAppliedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus>("status", Status);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreTargetsItem>("targets", Targets);
             writer.WriteDoubleValue("totalConnectedProjects", TotalConnectedProjects);

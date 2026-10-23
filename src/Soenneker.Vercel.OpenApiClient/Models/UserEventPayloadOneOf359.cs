@@ -13,25 +13,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf359 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actorName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorName { get; set; }
-#nullable restore
-#else
-        public string ActorName { get; set; }
-#endif
-        /// <summary>The actorType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The connectionId property</summary>
+        /// <summary>The prevProjectWebAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359PrevProjectWebAnalytics? PrevProjectWebAnalytics { get; set; }
 #nullable restore
 #else
-        public string ConnectionId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359PrevProjectWebAnalytics PrevProjectWebAnalytics { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The projectWebAnalytics property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359ProjectWebAnalytics? ProjectWebAnalytics { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359ProjectWebAnalytics ProjectWebAnalytics { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359"/> and sets the default values.
@@ -58,9 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorName", n => { ActorName = n.GetStringValue(); } },
-                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
-                { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
+                { "prevProjectWebAnalytics", n => { PrevProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359PrevProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359PrevProjectWebAnalytics.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "projectWebAnalytics", n => { ProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359ProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359ProjectWebAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorName", ActorName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
-            writer.WriteStringValue("connectionId", ConnectionId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359PrevProjectWebAnalytics>("prevProjectWebAnalytics", PrevProjectWebAnalytics);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359ProjectWebAnalytics>("projectWebAnalytics", ProjectWebAnalytics);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

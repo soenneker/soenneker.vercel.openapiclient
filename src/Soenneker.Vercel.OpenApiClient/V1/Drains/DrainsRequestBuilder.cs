@@ -146,7 +146,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DrainsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Include `deliveryStats` with the delivery health of each drain over the last 24 hours.</summary>
+            /// <summary>Include `deliveryStats` with the delivery health of each drain over the last 24 hours. Ignored for teams without drain delivery metrics.</summary>
             [QueryParameter("includeDeliveryStats")]
             public bool? IncludeDeliveryStats { get; set; }
             #pragma warning disable CS1591

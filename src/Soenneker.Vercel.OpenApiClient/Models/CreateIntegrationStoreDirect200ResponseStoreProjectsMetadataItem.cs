@@ -82,6 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
+        /// <summary>The secretsOutdated property</summary>
+        public bool? SecretsOutdated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItem"/> and sets the default values.
         /// </summary>
@@ -117,6 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "makeEnvVarsSensitive", n => { MakeEnvVarsSensitive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "secretsOutdated", n => { SecretsOutdated = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -136,6 +139,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("makeEnvVarsSensitive", MakeEnvVarsSensitive);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteBoolValue("secretsOutdated", SecretsOutdated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

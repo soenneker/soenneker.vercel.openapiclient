@@ -31,13 +31,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ChannelId { get; set; }
 #endif
-        /// <summary>The fields property</summary>
+        /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Fields { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public List<string> Fields { get; set; }
+        public string Environment { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
 #endif
         /// <summary>The operationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +54,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string OperationId { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10"/> and sets the default values.
@@ -74,8 +98,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "boardId", n => { BoardId = n.GetStringValue(); } },
                 { "channelId", n => { ChannelId = n.GetStringValue(); } },
-                { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "operationId", n => { OperationId = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,8 +114,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("boardId", BoardId);
             writer.WriteStringValue("channelId", ChannelId);
-            writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("operationId", OperationId);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

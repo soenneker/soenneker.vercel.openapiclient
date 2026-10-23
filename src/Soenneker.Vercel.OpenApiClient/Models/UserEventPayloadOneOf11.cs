@@ -23,6 +23,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string BoardId { get; set; }
 #endif
+        /// <summary>The channelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChannelId { get; set; }
+#nullable restore
+#else
+        public string ChannelId { get; set; }
+#endif
+        /// <summary>The fields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Fields { get; set; }
+#nullable restore
+#else
+        public List<string> Fields { get; set; }
+#endif
         /// <summary>The operationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,8 +47,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OperationId { get; set; }
 #endif
-        /// <summary>The visibility property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11Visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11"/> and sets the default values.
         /// </summary>
@@ -59,8 +73,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "boardId", n => { BoardId = n.GetStringValue(); } },
+                { "channelId", n => { ChannelId = n.GetStringValue(); } },
+                { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "operationId", n => { OperationId = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11Visibility>(); } },
             };
         }
         /// <summary>
@@ -71,8 +86,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("boardId", BoardId);
+            writer.WriteStringValue("channelId", ChannelId);
+            writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteStringValue("operationId", OperationId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11Visibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

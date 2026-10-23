@@ -30,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorIntegration Integration { get; set; }
 #endif
+        /// <summary>The project property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorProject? Project { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorProject Project { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorType? Type { get; set; }
         /// <summary>The user property</summary>
@@ -75,6 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "app", n => { App = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorApp>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorApp.CreateFromDiscriminatorValue); } },
                 { "integration", n => { Integration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorIntegration>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorIntegration.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorProject>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorProject.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorUser>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorUser.CreateFromDiscriminatorValue); } },
                 { "via", n => { Via = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorVia>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorVia.CreateFromDiscriminatorValue); } },
@@ -89,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorApp>("app", App);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorIntegration>("integration", Integration);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorProject>("project", Project);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorUser>("user", User);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreatorVia>("via", Via);
