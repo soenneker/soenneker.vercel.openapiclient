@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v10\projects\{idOrName-id}\promote\{deploymentId}
+    /// Builds and executes requests for operations under \v10\projects\{idOrName}\promote\{deploymentId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDeploymentItemRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeploymentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName%2Did}/promote/{deploymentId}{?slug*,teamId*}", pathParameters)
+        public WithDeploymentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName}/promote/{deploymentId}{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeploymentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName%2Did}/promote/{deploymentId}{?slug*,teamId*}", rawUrl)
+        public WithDeploymentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName}/promote/{deploymentId}{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

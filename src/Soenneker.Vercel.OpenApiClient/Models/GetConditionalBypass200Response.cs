@@ -7,92 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetConditionalBypass200Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetConditionalBypass200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The condition property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Condition { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1? GetConditionalBypass200ResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Condition { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1 GetConditionalBypass200ResponseOneOf1 { get; set; }
 #endif
-        /// <summary>The conditionGroup property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem>? ConditionGroup { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf2? GetConditionalBypass200ResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem> ConditionGroup { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf2 GetConditionalBypass200ResponseOneOf2 { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedAt { get; set; }
-#nullable restore
-#else
-        public string CreatedAt { get; set; }
-#endif
-        /// <summary>The domain property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Domain { get; set; }
-#nullable restore
-#else
-        public string Domain { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The note property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Note { get; set; }
-#nullable restore
-#else
-        public string Note { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The rules property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem>? Rules { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem> Rules { get; set; }
-#endif
-        /// <summary>The updatedAt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public string UpdatedAt { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200Response"/> and sets the default values.
-        /// </summary>
-        public GetConditionalBypass200Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -101,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200Response();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200Response();
+            if("GetConditionalBypass200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetConditionalBypass200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1();
+            }
+            else if("GetConditionalBypass200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetConditionalBypass200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,18 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetConditionalBypass200ResponseOneOf1 != null)
             {
-                { "condition", n => { Condition = n.GetStringValue(); } },
-                { "conditionGroup", n => { ConditionGroup = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "note", n => { Note = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
-            };
+                return GetConditionalBypass200ResponseOneOf1.GetFieldDeserializers();
+            }
+            else if(GetConditionalBypass200ResponseOneOf2 != null)
+            {
+                return GetConditionalBypass200ResponseOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -129,16 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("condition", Condition);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem>("conditionGroup", ConditionGroup);
-            writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("note", Note);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem>("rules", Rules);
-            writer.WriteStringValue("updatedAt", UpdatedAt);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetConditionalBypass200ResponseOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1>(null, GetConditionalBypass200ResponseOneOf1);
+            }
+            else if(GetConditionalBypass200ResponseOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf2>(null, GetConditionalBypass200ResponseOneOf2);
+            }
         }
     }
 }

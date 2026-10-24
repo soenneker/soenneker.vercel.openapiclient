@@ -20,14 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AccessGroups
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.accessGroups.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.AccessGroupIdOrNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.AccessGroupIdOrNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.WithIdOrNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.WithIdOrNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("accessGroupIdOrName%2Did", position);
-                return new global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.AccessGroupIdOrNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("idOrName", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.WithIdOrNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -49,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AccessGroups
         /// <summary>
         /// List access groups
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200ResponseOneOf2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.AccessGroupsRequestBuilder.AccessGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200ResponseOneOf2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.AccessGroupsRequestBuilder.AccessGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.AccessGroupsRequestBuilder.AccessGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200ResponseOneOf2> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.AccessGroupsRequestBuilder.AccessGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200ResponseOneOf2>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListAccessGroups200ResponseOneOf2.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows to create an access group

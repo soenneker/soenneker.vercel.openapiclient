@@ -7,38 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdateFlagSegmentRequestDataRulesItemOutcome : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateFlagSegmentRequestDataRulesItemOutcome : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The base property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeBase? Base { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1? UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeBase Base { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1 UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1 { get; set; }
 #endif
-        /// <summary>The passPromille property</summary>
-        public double? PassPromille { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2? UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeType Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2 UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcome"/> and sets the default values.
-        /// </summary>
-        public UpdateFlagSegmentRequestDataRulesItemOutcome()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +37,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcome();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcome();
+            result.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1();
+            result.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,12 +48,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1 != null || UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2 != null)
             {
-                { "base", n => { Base = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeBase>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeBase.CreateFromDiscriminatorValue); } },
-                { "passPromille", n => { PassPromille = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeType>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeType.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1, UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -69,10 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeBase>("base", Base);
-            writer.WriteDoubleValue("passPromille", PassPromille);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1>(null, UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf1, UpdateFlagSegmentRequestDataRulesItemOutcomeAnyOf2);
         }
     }
 }

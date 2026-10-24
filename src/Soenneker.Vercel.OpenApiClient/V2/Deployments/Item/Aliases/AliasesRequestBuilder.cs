@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v2\deployments\{deployment-id}\aliases
+    /// Builds and executes requests for operations under \v2\deployments\{deploymentId}\aliases
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AliasesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AliasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/deployments/{deployment%2Did}/aliases{?slug*,teamId*}", pathParameters)
+        public AliasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/deployments/{deploymentId}/aliases{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AliasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/deployments/{deployment%2Did}/aliases{?slug*,teamId*}", rawUrl)
+        public AliasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/deployments/{deploymentId}/aliases{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

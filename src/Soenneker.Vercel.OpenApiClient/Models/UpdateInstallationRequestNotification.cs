@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationOneOf1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationOneOf1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateInstallationRequestNotification : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationBranch2? UpdateInstallationRequestNotificationBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationBranch2 UpdateInstallationRequestNotificationBranch2 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,13 +39,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotification();
-            if("UpdateInstallationRequestNotificationBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateInstallationRequestNotificationBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationBranch2();
-            }
-            else if("UpdateInstallationRequestNotificationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("UpdateInstallationRequestNotificationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UpdateInstallationRequestNotificationOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationOneOf1();
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,11 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpdateInstallationRequestNotificationBranch2 != null)
-            {
-                return UpdateInstallationRequestNotificationBranch2.GetFieldDeserializers();
-            }
-            else if(UpdateInstallationRequestNotificationOneOf1 != null)
+            if(UpdateInstallationRequestNotificationOneOf1 != null)
             {
                 return UpdateInstallationRequestNotificationOneOf1.GetFieldDeserializers();
             }
@@ -72,13 +68,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdateInstallationRequestNotificationBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationBranch2>(null, UpdateInstallationRequestNotificationBranch2);
-            }
-            else if(UpdateInstallationRequestNotificationOneOf1 != null)
+            if(UpdateInstallationRequestNotificationOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateInstallationRequestNotificationOneOf1>(null, UpdateInstallationRequestNotificationOneOf1);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

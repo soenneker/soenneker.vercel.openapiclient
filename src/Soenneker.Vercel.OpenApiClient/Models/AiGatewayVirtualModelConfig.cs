@@ -102,10 +102,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model&apos;s answers match `when`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem>? Models { get; set; }
+        public List<string>? Models { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem> Models { get; set; }
+        public List<string> Models { get; set; }
 #endif
         /// <summary>Canonical model slug this VMC maps to (e.g. &quot;creator/model&quot;). Not used by kind=router.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -256,7 +256,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "instanceId", n => { InstanceId = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
                 { "modelSlug", n => { ModelSlug = n.GetStringValue(); } },
-                { "models", n => { Models = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "models", n => { Models = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "observabilityTags", n => { ObservabilityTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "providerOnly", n => { ProviderOnly = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -298,7 +298,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegion>("inferenceRegion", InferenceRegion);
             writer.WriteStringValue("instanceId", InstanceId);
             writer.WriteStringValue("kind", Kind);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem>("models", Models);
+            writer.WriteCollectionOfPrimitiveValues<string>("models", Models);
             writer.WriteStringValue("modelSlug", ModelSlug);
             writer.WriteCollectionOfPrimitiveValues<string>("observabilityTags", ObservabilityTags);
             writer.WriteStringValue("ownerId", OwnerId);

@@ -7,46 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PatchUrlProtectionBypassRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PatchUrlProtectionBypassRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The override property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOverride? Override { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1? PatchUrlProtectionBypassRequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOverride Override { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1 PatchUrlProtectionBypassRequestOneOf1 { get; set; }
 #endif
-        /// <summary>Optional instructions for revoking and regenerating a shareable link</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestRevoke? Revoke { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf2? PatchUrlProtectionBypassRequestOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestRevoke Revoke { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf2 PatchUrlProtectionBypassRequestOneOf2 { get; set; }
 #endif
-        /// <summary>Instructions for creating a user scoped protection bypass</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestScope? Scope { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf3? PatchUrlProtectionBypassRequestOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestScope Scope { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf3 PatchUrlProtectionBypassRequestOneOf3 { get; set; }
 #endif
-        /// <summary>Optional time the shareable link is valid for in seconds. If not provided, the shareable link will never expire.</summary>
-        public double? Ttl { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest"/> and sets the default values.
-        /// </summary>
-        public PatchUrlProtectionBypassRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +45,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest();
+            if("PatchUrlProtectionBypassRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchUrlProtectionBypassRequestOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1();
+            }
+            else if("PatchUrlProtectionBypassRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchUrlProtectionBypassRequestOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf2();
+            }
+            else if("PatchUrlProtectionBypassRequestOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchUrlProtectionBypassRequestOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PatchUrlProtectionBypassRequestOneOf1 != null)
             {
-                { "override", n => { Override = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOverride>(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOverride.CreateFromDiscriminatorValue); } },
-                { "revoke", n => { Revoke = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestRevoke>(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestRevoke.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestScope>(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestScope.CreateFromDiscriminatorValue); } },
-                { "ttl", n => { Ttl = n.GetDoubleValue(); } },
-            };
+                return PatchUrlProtectionBypassRequestOneOf1.GetFieldDeserializers();
+            }
+            else if(PatchUrlProtectionBypassRequestOneOf2 != null)
+            {
+                return PatchUrlProtectionBypassRequestOneOf2.GetFieldDeserializers();
+            }
+            else if(PatchUrlProtectionBypassRequestOneOf3 != null)
+            {
+                return PatchUrlProtectionBypassRequestOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +88,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOverride>("override", Override);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestRevoke>("revoke", Revoke);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestScope>("scope", Scope);
-            writer.WriteDoubleValue("ttl", Ttl);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PatchUrlProtectionBypassRequestOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1>(null, PatchUrlProtectionBypassRequestOneOf1);
+            }
+            else if(PatchUrlProtectionBypassRequestOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf2>(null, PatchUrlProtectionBypassRequestOneOf2);
+            }
+            else if(PatchUrlProtectionBypassRequestOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf3>(null, PatchUrlProtectionBypassRequestOneOf3);
+            }
         }
     }
 }

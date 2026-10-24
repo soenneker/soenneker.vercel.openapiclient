@@ -8,70 +8,35 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// The source from which to initialize the sandbox filesystem. Can be a Git repository, a tarball URL, or an existing snapshot.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateSandboxesV2RequestSource : IAdditionalDataHolder, IParsable
+    public partial class CreateSandboxesV2RequestSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Create a shallow clone with history truncated to the specified number of commits. Useful for faster cloning of large repositories.</summary>
-        public int? Depth { get; set; }
-        /// <summary>Password or personal access token for Git authentication. Required together with username for private repositories.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf1? CreateSandboxesV2RequestSourceOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Password { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf1 CreateSandboxesV2RequestSourceOneOf1 { get; set; }
 #endif
-        /// <summary>The specific commit SHA, branch name, or tag to checkout after cloning.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Revision { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf2? CreateSandboxesV2RequestSourceOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Revision { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf2 CreateSandboxesV2RequestSourceOneOf2 { get; set; }
 #endif
-        /// <summary>The unique identifier of the snapshot to restore.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnapshotId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf3? CreateSandboxesV2RequestSourceOneOf3 { get; set; }
 #nullable restore
 #else
-        public string SnapshotId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf3 CreateSandboxesV2RequestSourceOneOf3 { get; set; }
 #endif
-        /// <summary>Indicates the source is a Git repository.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceType Type { get; set; }
-#endif
-        /// <summary>The URL of the Git repository to clone.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
-#endif
-        /// <summary>Username for Git authentication. Required together with password for private repositories.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource"/> and sets the default values.
-        /// </summary>
-        public CreateSandboxesV2RequestSource()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,7 +45,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource();
+            if("CreateSandboxesV2RequestSourceOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateSandboxesV2RequestSourceOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf1();
+            }
+            else if("CreateSandboxesV2RequestSourceOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateSandboxesV2RequestSourceOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf2();
+            }
+            else if("CreateSandboxesV2RequestSourceOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateSandboxesV2RequestSourceOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,16 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateSandboxesV2RequestSourceOneOf1 != null)
             {
-                { "depth", n => { Depth = n.GetIntValue(); } },
-                { "password", n => { Password = n.GetStringValue(); } },
-                { "revision", n => { Revision = n.GetStringValue(); } },
-                { "snapshotId", n => { SnapshotId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceType>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceType.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-            };
+                return CreateSandboxesV2RequestSourceOneOf1.GetFieldDeserializers();
+            }
+            else if(CreateSandboxesV2RequestSourceOneOf2 != null)
+            {
+                return CreateSandboxesV2RequestSourceOneOf2.GetFieldDeserializers();
+            }
+            else if(CreateSandboxesV2RequestSourceOneOf3 != null)
+            {
+                return CreateSandboxesV2RequestSourceOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -106,14 +88,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("depth", Depth);
-            writer.WriteStringValue("password", Password);
-            writer.WriteStringValue("revision", Revision);
-            writer.WriteStringValue("snapshotId", SnapshotId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceType>("type", Type);
-            writer.WriteStringValue("url", Url);
-            writer.WriteStringValue("username", Username);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateSandboxesV2RequestSourceOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf1>(null, CreateSandboxesV2RequestSourceOneOf1);
+            }
+            else if(CreateSandboxesV2RequestSourceOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf2>(null, CreateSandboxesV2RequestSourceOneOf2);
+            }
+            else if(CreateSandboxesV2RequestSourceOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSourceOneOf3>(null, CreateSandboxesV2RequestSourceOneOf3);
+            }
         }
     }
 }

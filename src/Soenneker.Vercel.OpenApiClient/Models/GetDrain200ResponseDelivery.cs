@@ -7,82 +7,52 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf5"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetDrain200ResponseDelivery : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetDrain200ResponseDelivery : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The compression property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryCompression? Compression { get; set; }
-        /// <summary>The encoding property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryEncoding? Encoding { get; set; }
-        /// <summary>The endpoint property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Endpoint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1? GetDrain200ResponseDeliveryOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Endpoint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1 GetDrain200ResponseDeliveryOneOf1 { get; set; }
 #endif
-        /// <summary>The fileStructure property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure? FileStructure { get; set; }
-        /// <summary>The headers property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryHeaders? Headers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf2? GetDrain200ResponseDeliveryOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryHeaders Headers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf2 GetDrain200ResponseDeliveryOneOf2 { get; set; }
 #endif
-        /// <summary>The objectAcl property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryObjectAcl? ObjectAcl { get; set; }
-        /// <summary>The region property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf3? GetDrain200ResponseDeliveryOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf3 GetDrain200ResponseDeliveryOneOf3 { get; set; }
 #endif
-        /// <summary>The roleArn property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleArn { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf4? GetDrain200ResponseDeliveryOneOf4 { get; set; }
 #nullable restore
 #else
-        public string RoleArn { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf4 GetDrain200ResponseDeliveryOneOf4 { get; set; }
 #endif
-        /// <summary>The secret property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecret? Secret { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf5? GetDrain200ResponseDeliveryOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecret Secret { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf5 GetDrain200ResponseDeliveryOneOf5 { get; set; }
 #endif
-        /// <summary>The serverSideEncryption property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryServerSideEncryption? ServerSideEncryption { get; set; }
-        /// <summary>The table property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Table { get; set; }
-#nullable restore
-#else
-        public string Table { get; set; }
-#endif
-        /// <summary>The target property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VercelOtelTracesDbTarget? Target { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery"/> and sets the default values.
-        /// </summary>
-        public GetDrain200ResponseDelivery()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -91,7 +61,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery();
+            if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrain200ResponseDeliveryOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1();
+            }
+            else if("otlphttp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrain200ResponseDeliveryOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf2();
+            }
+            else if("clickhouse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrain200ResponseDeliveryOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf3();
+            }
+            else if("s3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrain200ResponseDeliveryOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf4();
+            }
+            else if("internal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrain200ResponseDeliveryOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf5();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,22 +91,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetDrain200ResponseDeliveryOneOf1 != null)
             {
-                { "compression", n => { Compression = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryCompression>(); } },
-                { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryEncoding>(); } },
-                { "endpoint", n => { Endpoint = n.GetStringValue(); } },
-                { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryHeaders.CreateFromDiscriminatorValue); } },
-                { "objectAcl", n => { ObjectAcl = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryObjectAcl>(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
-                { "roleArn", n => { RoleArn = n.GetStringValue(); } },
-                { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecret>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecret.CreateFromDiscriminatorValue); } },
-                { "serverSideEncryption", n => { ServerSideEncryption = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryServerSideEncryption>(); } },
-                { "table", n => { Table = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelOtelTracesDbTarget>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryType>(); } },
-            };
+                return GetDrain200ResponseDeliveryOneOf1.GetFieldDeserializers();
+            }
+            else if(GetDrain200ResponseDeliveryOneOf2 != null)
+            {
+                return GetDrain200ResponseDeliveryOneOf2.GetFieldDeserializers();
+            }
+            else if(GetDrain200ResponseDeliveryOneOf3 != null)
+            {
+                return GetDrain200ResponseDeliveryOneOf3.GetFieldDeserializers();
+            }
+            else if(GetDrain200ResponseDeliveryOneOf4 != null)
+            {
+                return GetDrain200ResponseDeliveryOneOf4.GetFieldDeserializers();
+            }
+            else if(GetDrain200ResponseDeliveryOneOf5 != null)
+            {
+                return GetDrain200ResponseDeliveryOneOf5.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -123,20 +120,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryCompression>("compression", Compression);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryEncoding>("encoding", Encoding);
-            writer.WriteStringValue("endpoint", Endpoint);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>("fileStructure", FileStructure);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryHeaders>("headers", Headers);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryObjectAcl>("objectAcl", ObjectAcl);
-            writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("roleArn", RoleArn);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecret>("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryServerSideEncryption>("serverSideEncryption", ServerSideEncryption);
-            writer.WriteStringValue("table", Table);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelOtelTracesDbTarget>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetDrain200ResponseDeliveryOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1>(null, GetDrain200ResponseDeliveryOneOf1);
+            }
+            else if(GetDrain200ResponseDeliveryOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf2>(null, GetDrain200ResponseDeliveryOneOf2);
+            }
+            else if(GetDrain200ResponseDeliveryOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf3>(null, GetDrain200ResponseDeliveryOneOf3);
+            }
+            else if(GetDrain200ResponseDeliveryOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf4>(null, GetDrain200ResponseDeliveryOneOf4);
+            }
+            else if(GetDrain200ResponseDeliveryOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf5>(null, GetDrain200ResponseDeliveryOneOf5);
+            }
         }
     }
 }

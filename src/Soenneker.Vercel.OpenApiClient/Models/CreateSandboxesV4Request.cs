@@ -107,13 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestResources Resources { get; set; }
 #endif
         /// <summary>Default snapshot expiration time in milliseconds. Defaults to 7 days. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSnapshotExpiration? SnapshotExpiration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSnapshotExpiration SnapshotExpiration { get; set; }
-#endif
+        public int? SnapshotExpiration { get; set; }
         /// <summary>The source from which to initialize the sandbox filesystem. Can be a Git repository, a tarball URL, or an existing snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,7 +165,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestRegion>(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestResources>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestResources.CreateFromDiscriminatorValue); } },
-                { "snapshotExpiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSnapshotExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSnapshotExpiration.CreateFromDiscriminatorValue); } },
+                { "snapshotExpiration", n => { SnapshotExpiration = n.GetIntValue(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSource>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSource.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestTags>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestTags.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
@@ -198,7 +192,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestRegion>("region", Region);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestResources>("resources", Resources);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSnapshotExpiration>("snapshotExpiration", SnapshotExpiration);
+            writer.WriteIntValue("snapshotExpiration", SnapshotExpiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestSource>("source", Source);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestTags>("tags", Tags);
             writer.WriteIntValue("timeout", Timeout);

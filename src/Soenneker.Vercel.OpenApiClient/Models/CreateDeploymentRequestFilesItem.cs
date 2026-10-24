@@ -7,48 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemInlinedFile"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemUploadedFile"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateDeploymentRequestFilesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateDeploymentRequestFilesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The file content, it could be either a `base64` (useful for images, etc.) of the files or the plain content for source code</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemInlinedFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Data { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemInlinedFile? CreateDeploymentRequestFilesItemInlinedFile { get; set; }
 #nullable restore
 #else
-        public string Data { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemInlinedFile CreateDeploymentRequestFilesItemInlinedFile { get; set; }
 #endif
-        /// <summary>The file content encoding, it could be either a base64 (useful for images, etc.) of the files or the plain text for source code.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemEncoding? Encoding { get; set; }
-        /// <summary>The file name including the whole path</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemUploadedFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? File { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemUploadedFile? CreateDeploymentRequestFilesItemUploadedFile { get; set; }
 #nullable restore
 #else
-        public string File { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemUploadedFile CreateDeploymentRequestFilesItemUploadedFile { get; set; }
 #endif
-        /// <summary>The file contents hashed with SHA1, used to check the integrity</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Sha { get; set; }
-#nullable restore
-#else
-        public string Sha { get; set; }
-#endif
-        /// <summary>The file size in bytes</summary>
-        public int? Size { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem"/> and sets the default values.
-        /// </summary>
-        public CreateDeploymentRequestFilesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem();
+            if("CreateDeploymentRequestFilesItemInlinedFile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateDeploymentRequestFilesItemInlinedFile = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemInlinedFile();
+            }
+            else if("CreateDeploymentRequestFilesItemUploadedFile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateDeploymentRequestFilesItemUploadedFile = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemUploadedFile();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,14 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateDeploymentRequestFilesItemInlinedFile != null)
             {
-                { "data", n => { Data = n.GetStringValue(); } },
-                { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemEncoding>(); } },
-                { "file", n => { File = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetIntValue(); } },
-            };
+                return CreateDeploymentRequestFilesItemInlinedFile.GetFieldDeserializers();
+            }
+            else if(CreateDeploymentRequestFilesItemUploadedFile != null)
+            {
+                return CreateDeploymentRequestFilesItemUploadedFile.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -81,12 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("data", Data);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemEncoding>("encoding", Encoding);
-            writer.WriteStringValue("file", File);
-            writer.WriteStringValue("sha", Sha);
-            writer.WriteIntValue("size", Size);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateDeploymentRequestFilesItemInlinedFile != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemInlinedFile>(null, CreateDeploymentRequestFilesItemInlinedFile);
+            }
+            else if(CreateDeploymentRequestFilesItemUploadedFile != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItemUploadedFile>(null, CreateDeploymentRequestFilesItemUploadedFile);
+            }
         }
     }
 }

@@ -9,13 +9,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateInvoiceRequest : IAdditionalDataHolder, IParsable
+    public partial class UpdateInvoiceRequest : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.RefundAction? Action { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Refund reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,13 +30,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Total { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateInvoiceRequest"/> and sets the default values.
-        /// </summary>
-        public UpdateInvoiceRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,7 +63,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RefundAction>("action", Action);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("total", Total);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

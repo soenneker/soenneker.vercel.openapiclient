@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyBranch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchTeamRequestDeploymentPolicy : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1 PatchTeamRequestDeploymentPolicyAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyBranch2? PatchTeamRequestDeploymentPolicyBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyBranch2 PatchTeamRequestDeploymentPolicyBranch2 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicy();
-            result.PatchTeamRequestDeploymentPolicyAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1();
-            result.PatchTeamRequestDeploymentPolicyBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyBranch2();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.PatchTeamRequestDeploymentPolicyAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +53,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PatchTeamRequestDeploymentPolicyAnyOf1 != null || PatchTeamRequestDeploymentPolicyBranch2 != null)
+            if(PatchTeamRequestDeploymentPolicyAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PatchTeamRequestDeploymentPolicyAnyOf1, PatchTeamRequestDeploymentPolicyBranch2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PatchTeamRequestDeploymentPolicyAnyOf1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +66,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1>(null, PatchTeamRequestDeploymentPolicyAnyOf1, PatchTeamRequestDeploymentPolicyBranch2);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1>(null, PatchTeamRequestDeploymentPolicyAnyOf1);
+            }
         }
     }
 }

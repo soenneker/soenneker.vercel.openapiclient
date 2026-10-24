@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectConnectorUpdatedByOneOf2Environment : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2"/></summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2? ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentBranch1? ConnectConnectorUpdatedByOneOf2EnvironmentBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentBranch1 ConnectConnectorUpdatedByOneOf2EnvironmentBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentWrapper? ConnectConnectorUpdatedByOneOf2EnvironmentWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentWrapper ConnectConnectorUpdatedByOneOf2EnvironmentWrapper { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +33,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2Environment();
-            if("ConnectConnectorUpdatedByOneOf2EnvironmentBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2>() is global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2 connectConnectorUpdatedByOneOf2EnvironmentOneOf2Value)
             {
-                result.ConnectConnectorUpdatedByOneOf2EnvironmentBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentBranch1();
+                result.ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2 = connectConnectorUpdatedByOneOf2EnvironmentOneOf2Value;
             }
-            else if("ConnectConnectorUpdatedByOneOf2EnvironmentWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetStringValue() is string stringValue)
             {
-                result.ConnectConnectorUpdatedByOneOf2EnvironmentWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentWrapper();
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,14 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ConnectConnectorUpdatedByOneOf2EnvironmentBranch1 != null)
-            {
-                return ConnectConnectorUpdatedByOneOf2EnvironmentBranch1.GetFieldDeserializers();
-            }
-            else if(ConnectConnectorUpdatedByOneOf2EnvironmentWrapper != null)
-            {
-                return ConnectConnectorUpdatedByOneOf2EnvironmentWrapper.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +58,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ConnectConnectorUpdatedByOneOf2EnvironmentBranch1 != null)
+            if(ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentBranch1>(null, ConnectConnectorUpdatedByOneOf2EnvironmentBranch1);
+                writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2>(null, ConnectConnectorUpdatedByOneOf2EnvironmentOneOf2);
             }
-            else if(ConnectConnectorUpdatedByOneOf2EnvironmentWrapper != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2EnvironmentWrapper>(null, ConnectConnectorUpdatedByOneOf2EnvironmentWrapper);
+                writer.WriteStringValue(null, String);
             }
         }
     }

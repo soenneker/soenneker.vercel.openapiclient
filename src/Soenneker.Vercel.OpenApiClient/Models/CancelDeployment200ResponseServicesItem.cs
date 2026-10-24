@@ -7,248 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CancelDeployment200ResponseServicesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CancelDeployment200ResponseServicesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Caller-side bindings to other services.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItem>? Bindings { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1? CancelDeployment200ResponseServicesItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItem> Bindings { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1 CancelDeployment200ResponseServicesItemOneOf1 { get; set; }
 #endif
-        /// <summary>The buildCommand property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2? CancelDeployment200ResponseServicesItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public string BuildCommand { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2 CancelDeployment200ResponseServicesItemOneOf2 { get; set; }
 #endif
-        /// <summary>The builder property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilder? Builder { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilder Builder { get; set; }
-#endif
-        /// <summary>The cleanUrls property</summary>
-        public bool? CleanUrls { get; set; }
-        /// <summary>Command override for `runtime: &quot;container&quot;` services.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Command { get; set; }
-#nullable restore
-#else
-        public List<string> Command { get; set; }
-#endif
-        /// <summary>The devCommand property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DevCommand { get; set; }
-#nullable restore
-#else
-        public string DevCommand { get; set; }
-#endif
-        /// <summary>The entrypoint property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Entrypoint { get; set; }
-#nullable restore
-#else
-        public string Entrypoint { get; set; }
-#endif
-        /// <summary>The env property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemEnv? Env { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemEnv Env { get; set; }
-#endif
-        /// <summary>The framework property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Framework { get; set; }
-#nullable restore
-#else
-        public string Framework { get; set; }
-#endif
-        /// <summary>Function configuration scoped to this service.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemFunctions? Functions { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemFunctions Functions { get; set; }
-#endif
-        /// <summary>The group property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Group { get; set; }
-#nullable restore
-#else
-        public string Group { get; set; }
-#endif
-        /// <summary>The handlerFunction property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? HandlerFunction { get; set; }
-#nullable restore
-#else
-        public string HandlerFunction { get; set; }
-#endif
-        /// <summary>The headers property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemHeadersItem>? Headers { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemHeadersItem> Headers { get; set; }
-#endif
-        /// <summary>The ignoreCommand property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IgnoreCommand { get; set; }
-#nullable restore
-#else
-        public string IgnoreCommand { get; set; }
-#endif
-        /// <summary>The installCommand property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InstallCommand { get; set; }
-#nullable restore
-#else
-        public string InstallCommand { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The outputDirectory property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OutputDirectory { get; set; }
-#nullable restore
-#else
-        public string OutputDirectory { get; set; }
-#endif
-        /// <summary>The preDeployCommand property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreDeployCommand { get; set; }
-#nullable restore
-#else
-        public string PreDeployCommand { get; set; }
-#endif
-        /// <summary>The redirects property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRedirectsItem>? Redirects { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRedirectsItem> Redirects { get; set; }
-#endif
-        /// <summary>The rewrites property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItem>? Rewrites { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItem> Rewrites { get; set; }
-#endif
-        /// <summary>Path to the service root, relative to the project root.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Root { get; set; }
-#nullable restore
-#else
-        public string Root { get; set; }
-#endif
-        /// <summary>The routePrefix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RoutePrefix { get; set; }
-#nullable restore
-#else
-        public string RoutePrefix { get; set; }
-#endif
-        /// <summary>The routePrefixSource property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutePrefixSource? RoutePrefixSource { get; set; }
-        /// <summary>The routes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutesItem>? Routes { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutesItem> Routes { get; set; }
-#endif
-        /// <summary>The runtime property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Runtime { get; set; }
-#nullable restore
-#else
-        public string Runtime { get; set; }
-#endif
-        /// <summary>The schedule property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchedule? Schedule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchedule Schedule { get; set; }
-#endif
-        /// <summary>The schema property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchema? Schema { get; set; }
-        /// <summary>The subdomain property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Subdomain { get; set; }
-#nullable restore
-#else
-        public string Subdomain { get; set; }
-#endif
-        /// <summary>The topics property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTopics? Topics { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTopics Topics { get; set; }
-#endif
-        /// <summary>The trailingSlash property</summary>
-        public bool? TrailingSlash { get; set; }
-        /// <summary>The trigger property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTrigger? Trigger { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemType? Type { get; set; }
-        /// <summary>The workspace property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Workspace { get; set; }
-#nullable restore
-#else
-        public string Workspace { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem"/> and sets the default values.
-        /// </summary>
-        public CancelDeployment200ResponseServicesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -257,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem();
+            var mappingValue = parseNode.GetChildNode("schema")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem();
+            if("experimentalServices".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseServicesItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1();
+            }
+            else if("experimentalServicesV2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseServicesItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -265,42 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CancelDeployment200ResponseServicesItemOneOf1 != null)
             {
-                { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
-                { "builder", n => { Builder = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilder>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilder.CreateFromDiscriminatorValue); } },
-                { "cleanUrls", n => { CleanUrls = n.GetBoolValue(); } },
-                { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "devCommand", n => { DevCommand = n.GetStringValue(); } },
-                { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
-                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemEnv>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemEnv.CreateFromDiscriminatorValue); } },
-                { "framework", n => { Framework = n.GetStringValue(); } },
-                { "functions", n => { Functions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemFunctions>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemFunctions.CreateFromDiscriminatorValue); } },
-                { "group", n => { Group = n.GetStringValue(); } },
-                { "handlerFunction", n => { HandlerFunction = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemHeadersItem>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "ignoreCommand", n => { IgnoreCommand = n.GetStringValue(); } },
-                { "installCommand", n => { InstallCommand = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
-                { "preDeployCommand", n => { PreDeployCommand = n.GetStringValue(); } },
-                { "redirects", n => { Redirects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRedirectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRedirectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rewrites", n => { Rewrites = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "root", n => { Root = n.GetStringValue(); } },
-                { "routePrefix", n => { RoutePrefix = n.GetStringValue(); } },
-                { "routePrefixSource", n => { RoutePrefixSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutePrefixSource>(); } },
-                { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "runtime", n => { Runtime = n.GetStringValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchedule>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchedule.CreateFromDiscriminatorValue); } },
-                { "schema", n => { Schema = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchema>(); } },
-                { "subdomain", n => { Subdomain = n.GetStringValue(); } },
-                { "topics", n => { Topics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTopics>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTopics.CreateFromDiscriminatorValue); } },
-                { "trailingSlash", n => { TrailingSlash = n.GetBoolValue(); } },
-                { "trigger", n => { Trigger = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTrigger>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemType>(); } },
-                { "workspace", n => { Workspace = n.GetStringValue(); } },
-            };
+                return CancelDeployment200ResponseServicesItemOneOf1.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseServicesItemOneOf2 != null)
+            {
+                return CancelDeployment200ResponseServicesItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -309,40 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItem>("bindings", Bindings);
-            writer.WriteStringValue("buildCommand", BuildCommand);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilder>("builder", Builder);
-            writer.WriteBoolValue("cleanUrls", CleanUrls);
-            writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
-            writer.WriteStringValue("devCommand", DevCommand);
-            writer.WriteStringValue("entrypoint", Entrypoint);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemEnv>("env", Env);
-            writer.WriteStringValue("framework", Framework);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemFunctions>("functions", Functions);
-            writer.WriteStringValue("group", Group);
-            writer.WriteStringValue("handlerFunction", HandlerFunction);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemHeadersItem>("headers", Headers);
-            writer.WriteStringValue("ignoreCommand", IgnoreCommand);
-            writer.WriteStringValue("installCommand", InstallCommand);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("outputDirectory", OutputDirectory);
-            writer.WriteStringValue("preDeployCommand", PreDeployCommand);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRedirectsItem>("redirects", Redirects);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItem>("rewrites", Rewrites);
-            writer.WriteStringValue("root", Root);
-            writer.WriteStringValue("routePrefix", RoutePrefix);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutePrefixSource>("routePrefixSource", RoutePrefixSource);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRoutesItem>("routes", Routes);
-            writer.WriteStringValue("runtime", Runtime);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchedule>("schedule", Schedule);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemSchema>("schema", Schema);
-            writer.WriteStringValue("subdomain", Subdomain);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTopics>("topics", Topics);
-            writer.WriteBoolValue("trailingSlash", TrailingSlash);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemTrigger>("trigger", Trigger);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemType>("type", Type);
-            writer.WriteStringValue("workspace", Workspace);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CancelDeployment200ResponseServicesItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1>(null, CancelDeployment200ResponseServicesItemOneOf1);
+            }
+            else if(CancelDeployment200ResponseServicesItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2>(null, CancelDeployment200ResponseServicesItemOneOf2);
+            }
         }
     }
 }

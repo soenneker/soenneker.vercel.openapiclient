@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Start
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\projects\{idOrName-id}\rolling-release\start
+    /// Builds and executes requests for operations under \v1\projects\{idOrName}\rolling-release\start
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Start
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/rolling-release/start{?slug*,teamId*}", pathParameters)
+        public StartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/rolling-release/start{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Start
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/rolling-release/start{?slug*,teamId*}", rawUrl)
+        public StartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/rolling-release/start{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

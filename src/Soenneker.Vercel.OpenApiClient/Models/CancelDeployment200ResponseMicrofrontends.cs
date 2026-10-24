@@ -7,48 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CancelDeployment200ResponseMicrofrontends : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CancelDeployment200ResponseMicrofrontends : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The project name of the default app of this deployment&apos;s microfrontends group.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultAppProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf1? CancelDeployment200ResponseMicrofrontendsOneOf1 { get; set; }
 #nullable restore
 #else
-        public string DefaultAppProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf1 CancelDeployment200ResponseMicrofrontendsOneOf1 { get; set; }
 #endif
-        /// <summary>A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRoute { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf2? CancelDeployment200ResponseMicrofrontendsOneOf2 { get; set; }
 #nullable restore
 #else
-        public string DefaultRoute { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf2 CancelDeployment200ResponseMicrofrontendsOneOf2 { get; set; }
 #endif
-        /// <summary>The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? GroupIds { get; set; }
-#nullable restore
-#else
-        public List<string> GroupIds { get; set; }
-#endif
-        /// <summary>The isDefaultApp property</summary>
-        public bool? IsDefaultApp { get; set; }
-        /// <summary>The result of the microfrontends config upload during deployment creation / build. Only set for default app deployments. The config upload is attempted during deployment create, and then again during the build. If the config is not in the root directory, or the deployment is prebuilt, the config cannot be uploaded during deployment create. The upload during deployment build finds the config even if it&apos;s not in the root directory, as it has access to all files. Uploading the config during create is ideal, as then all child deployments are guaranteed to have access to the default app deployment config even if the default app has not yet started building. If the config is not uploaded, the child app will show as building until the config has been uploaded during the default app build. - `success` - The config was uploaded successfully, either when the deployment was created or during the build. - `waiting_on_build` - The config could not be uploaded during deployment create, will be attempted again during the build. - `no_config` - No config was found. Only set once the build has not found the config in any of the deployment&apos;s files. - `undefined` - Legacy deployments, or there was an error uploading the config during deployment create.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsMfeConfigUploadState? MfeConfigUploadState { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontends"/> and sets the default values.
-        /// </summary>
-        public CancelDeployment200ResponseMicrofrontends()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontends CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontends();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontends();
+            if("CancelDeployment200ResponseMicrofrontendsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseMicrofrontendsOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf1();
+            }
+            else if("CancelDeployment200ResponseMicrofrontendsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseMicrofrontendsOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,14 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CancelDeployment200ResponseMicrofrontendsOneOf1 != null)
             {
-                { "defaultAppProjectName", n => { DefaultAppProjectName = n.GetStringValue(); } },
-                { "defaultRoute", n => { DefaultRoute = n.GetStringValue(); } },
-                { "groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "isDefaultApp", n => { IsDefaultApp = n.GetBoolValue(); } },
-                { "mfeConfigUploadState", n => { MfeConfigUploadState = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsMfeConfigUploadState>(); } },
-            };
+                return CancelDeployment200ResponseMicrofrontendsOneOf1.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseMicrofrontendsOneOf2 != null)
+            {
+                return CancelDeployment200ResponseMicrofrontendsOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -81,12 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("defaultAppProjectName", DefaultAppProjectName);
-            writer.WriteStringValue("defaultRoute", DefaultRoute);
-            writer.WriteCollectionOfPrimitiveValues<string>("groupIds", GroupIds);
-            writer.WriteBoolValue("isDefaultApp", IsDefaultApp);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsMfeConfigUploadState>("mfeConfigUploadState", MfeConfigUploadState);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CancelDeployment200ResponseMicrofrontendsOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf1>(null, CancelDeployment200ResponseMicrofrontendsOneOf1);
+            }
+            else if(CancelDeployment200ResponseMicrofrontendsOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseMicrofrontendsOneOf2>(null, CancelDeployment200ResponseMicrofrontendsOneOf2);
+            }
         }
     }
 }

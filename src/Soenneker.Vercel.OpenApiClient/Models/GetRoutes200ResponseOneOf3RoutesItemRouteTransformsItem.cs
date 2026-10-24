@@ -7,48 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The args property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemArgs? Args { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1? GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemArgs Args { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1 GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1 { get; set; }
 #endif
-        /// <summary>The env property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Env { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2? GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<string> Env { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2 GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2 { get; set; }
 #endif
-        /// <summary>The op property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOp? Op { get; set; }
-        /// <summary>The target property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemTarget? Target { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemTarget Target { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItem"/> and sets the default values.
-        /// </summary>
-        public GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItem();
+            if("GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1();
+            }
+            else if("GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,14 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1 != null)
             {
-                { "args", n => { Args = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemArgs>(global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemArgs.CreateFromDiscriminatorValue); } },
-                { "env", n => { Env = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOp>(); } },
-                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemTarget>(global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemTarget.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemType>(); } },
-            };
+                return GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2 != null)
+            {
+                return GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -81,12 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemArgs>("args", Args);
-            writer.WriteCollectionOfPrimitiveValues<string>("env", Env);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOp>("op", Op);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemTarget>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1>(null, GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf1);
+            }
+            else if(GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2>(null, GetRoutes200ResponseOneOf3RoutesItemRouteTransformsItemOneOf2);
+            }
         }
     }
 }

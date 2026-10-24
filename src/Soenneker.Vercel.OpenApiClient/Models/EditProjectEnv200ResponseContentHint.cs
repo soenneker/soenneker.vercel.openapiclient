@@ -7,62 +7,148 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class EditProjectEnv200ResponseContentHint : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class EditProjectEnv200ResponseContentHint : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The integrationConfigurationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf1? EditProjectEnv200ResponseContentHintOneOf1 { get; set; }
 #nullable restore
 #else
-        public string IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf1 EditProjectEnv200ResponseContentHintOneOf1 { get; set; }
 #endif
-        /// <summary>The integrationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf10? EditProjectEnv200ResponseContentHintOneOf10 { get; set; }
 #nullable restore
 #else
-        public string IntegrationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf10 EditProjectEnv200ResponseContentHintOneOf10 { get; set; }
 #endif
-        /// <summary>The integrationProductId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationProductId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf11? EditProjectEnv200ResponseContentHintOneOf11 { get; set; }
 #nullable restore
 #else
-        public string IntegrationProductId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf11 EditProjectEnv200ResponseContentHintOneOf11 { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf12? EditProjectEnv200ResponseContentHintOneOf12 { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf12 EditProjectEnv200ResponseContentHintOneOf12 { get; set; }
 #endif
-        /// <summary>The storeId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf13? EditProjectEnv200ResponseContentHintOneOf13 { get; set; }
 #nullable restore
 #else
-        public string StoreId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf13 EditProjectEnv200ResponseContentHintOneOf13 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHint"/> and sets the default values.
-        /// </summary>
-        public EditProjectEnv200ResponseContentHint()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf14"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf14? EditProjectEnv200ResponseContentHintOneOf14 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf14 EditProjectEnv200ResponseContentHintOneOf14 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf15"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf15? EditProjectEnv200ResponseContentHintOneOf15 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf15 EditProjectEnv200ResponseContentHintOneOf15 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf16"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf16? EditProjectEnv200ResponseContentHintOneOf16 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf16 EditProjectEnv200ResponseContentHintOneOf16 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf17? EditProjectEnv200ResponseContentHintOneOf17 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf17 EditProjectEnv200ResponseContentHintOneOf17 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf2? EditProjectEnv200ResponseContentHintOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf2 EditProjectEnv200ResponseContentHintOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf3? EditProjectEnv200ResponseContentHintOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf3 EditProjectEnv200ResponseContentHintOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf4? EditProjectEnv200ResponseContentHintOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf4 EditProjectEnv200ResponseContentHintOneOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf5? EditProjectEnv200ResponseContentHintOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf5 EditProjectEnv200ResponseContentHintOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf6? EditProjectEnv200ResponseContentHintOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf6 EditProjectEnv200ResponseContentHintOneOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf7? EditProjectEnv200ResponseContentHintOneOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf7 EditProjectEnv200ResponseContentHintOneOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf8? EditProjectEnv200ResponseContentHintOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf8 EditProjectEnv200ResponseContentHintOneOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf9? EditProjectEnv200ResponseContentHintOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf9 EditProjectEnv200ResponseContentHintOneOf9 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +157,77 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHint();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHint();
+            if("redis-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf1();
+            }
+            else if("postgres-prisma-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf10();
+            }
+            else if("postgres-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf11 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf11();
+            }
+            else if("postgres-host".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf12 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf12();
+            }
+            else if("postgres-password".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf13 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf13();
+            }
+            else if("postgres-database".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf14 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf14();
+            }
+            else if("postgres-url-no-ssl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf15 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf15();
+            }
+            else if("integration-store-secret".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf16 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf16();
+            }
+            else if("flags-connection-string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf17 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf17();
+            }
+            else if("redis-rest-api-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf2();
+            }
+            else if("redis-rest-api-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf3();
+            }
+            else if("redis-rest-api-read-only-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf4();
+            }
+            else if("blob-read-write-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf5();
+            }
+            else if("blob-store-id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf6();
+            }
+            else if("blob-webhook-public-key".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf7();
+            }
+            else if("postgres-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf8();
+            }
+            else if("postgres-url-non-pooling".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EditProjectEnv200ResponseContentHintOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf9();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,15 +235,75 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(EditProjectEnv200ResponseContentHintOneOf1 != null)
             {
-                { "integrationConfigurationId", n => { IntegrationConfigurationId = n.GetStringValue(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationProductId", n => { IntegrationProductId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "storeId", n => { StoreId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintType>(); } },
-            };
+                return EditProjectEnv200ResponseContentHintOneOf1.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf10 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf10.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf11 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf11.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf12 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf12.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf13 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf13.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf14 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf14.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf15 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf15.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf16 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf16.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf17 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf17.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf2 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf2.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf3 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf3.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf4 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf4.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf5 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf5.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf6 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf6.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf7 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf7.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf8 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf8.GetFieldDeserializers();
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf9 != null)
+            {
+                return EditProjectEnv200ResponseContentHintOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -96,13 +312,74 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("integrationConfigurationId", IntegrationConfigurationId);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationProductId", IntegrationProductId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("storeId", StoreId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(EditProjectEnv200ResponseContentHintOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf1>(null, EditProjectEnv200ResponseContentHintOneOf1);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf10 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf10>(null, EditProjectEnv200ResponseContentHintOneOf10);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf11 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf11>(null, EditProjectEnv200ResponseContentHintOneOf11);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf12 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf12>(null, EditProjectEnv200ResponseContentHintOneOf12);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf13 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf13>(null, EditProjectEnv200ResponseContentHintOneOf13);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf14 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf14>(null, EditProjectEnv200ResponseContentHintOneOf14);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf15 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf15>(null, EditProjectEnv200ResponseContentHintOneOf15);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf16 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf16>(null, EditProjectEnv200ResponseContentHintOneOf16);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf17 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf17>(null, EditProjectEnv200ResponseContentHintOneOf17);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf2>(null, EditProjectEnv200ResponseContentHintOneOf2);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf3>(null, EditProjectEnv200ResponseContentHintOneOf3);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf4>(null, EditProjectEnv200ResponseContentHintOneOf4);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf5>(null, EditProjectEnv200ResponseContentHintOneOf5);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf6>(null, EditProjectEnv200ResponseContentHintOneOf6);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf7>(null, EditProjectEnv200ResponseContentHintOneOf7);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf8>(null, EditProjectEnv200ResponseContentHintOneOf8);
+            }
+            else if(EditProjectEnv200ResponseContentHintOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EditProjectEnv200ResponseContentHintOneOf9>(null, EditProjectEnv200ResponseContentHintOneOf9);
+            }
         }
     }
 }

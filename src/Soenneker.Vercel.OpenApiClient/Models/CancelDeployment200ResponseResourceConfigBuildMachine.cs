@@ -7,32 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CancelDeployment200ResponseResourceConfigBuildMachine : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CancelDeployment200ResponseResourceConfigBuildMachine : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.</summary>
-        public double? Cores { get; set; }
-        /// <summary>The build machine tier included with the customer&apos;s plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType? DefaultPurchaseType { get; set; }
-        /// <summary>The build ran on an elastic machine. Drives billing.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineMachineSelectionType? MachineSelectionType { get; set; }
-        /// <summary>Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.</summary>
-        public double? Memory { get; set; }
-        /// <summary>Machine type purchased for this build. `basic` is the 2vCPU tier, recorded so the build pipeline can detect a basic build without consulting the project.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachinePurchaseType? PurchaseType { get; set; }
-        /// <summary>The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineSelectionSource? SelectionSource { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachine"/> and sets the default values.
-        /// </summary>
-        public CancelDeployment200ResponseResourceConfigBuildMachine()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1? CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2? CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachine CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachine();
+            var mappingValue = parseNode.GetChildNode("machineSelectionType")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachine();
+            if("elastic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1();
+            }
+            else if("fixed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,15 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 != null)
             {
-                { "cores", n => { Cores = n.GetDoubleValue(); } },
-                { "defaultPurchaseType", n => { DefaultPurchaseType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType>(); } },
-                { "machineSelectionType", n => { MachineSelectionType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineMachineSelectionType>(); } },
-                { "memory", n => { Memory = n.GetDoubleValue(); } },
-                { "purchaseType", n => { PurchaseType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachinePurchaseType>(); } },
-                { "selectionSource", n => { SelectionSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineSelectionSource>(); } },
-            };
+                return CancelDeployment200ResponseResourceConfigBuildMachineOneOf1.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 != null)
+            {
+                return CancelDeployment200ResponseResourceConfigBuildMachineOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -66,13 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("cores", Cores);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType>("defaultPurchaseType", DefaultPurchaseType);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineMachineSelectionType>("machineSelectionType", MachineSelectionType);
-            writer.WriteDoubleValue("memory", Memory);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachinePurchaseType>("purchaseType", PurchaseType);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineSelectionSource>("selectionSource", SelectionSource);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1>(null, CancelDeployment200ResponseResourceConfigBuildMachineOneOf1);
+            }
+            else if(CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2>(null, CancelDeployment200ResponseResourceConfigBuildMachineOneOf2);
+            }
         }
     }
 }

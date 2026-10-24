@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\projects\{idOrName-id}\daemons\{daemonName}\instances\{instanceId}
+    /// Builds and executes requests for operations under \v1\projects\{idOrName}\daemons\{daemonName}\instances\{instanceId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithInstanceItemRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithInstanceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/daemons/{daemonName}/instances/{instanceId}", pathParameters)
+        public WithInstanceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithInstanceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/daemons/{daemonName}/instances/{instanceId}", rawUrl)
+        public WithInstanceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}", rawUrl)
         {
         }
     }

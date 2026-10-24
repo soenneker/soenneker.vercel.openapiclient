@@ -55,10 +55,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The headers to send with the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemHeaders? Headers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItemHeaders? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemHeaders Headers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItemHeaders Headers { get; set; }
 #endif
         /// <summary>The unique identifier of the log drain. Always prefixed with `ld_`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdFrom", n => { CreatedFrom = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemCreatedFrom>(); } },
                 { "deliveryFormat", n => { DeliveryFormat = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemDeliveryFormat>(); } },
                 { "environments", n => { Environments = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemEnvironmentsItem>()?.AsList(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItemHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItemHeaders.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
@@ -184,7 +184,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemCreatedFrom>("createdFrom", CreatedFrom);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemDeliveryFormat>("deliveryFormat", DeliveryFormat);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemEnvironmentsItem>("environments", Environments);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItemHeaders>("headers", Headers);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);

@@ -50,10 +50,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Environments for the project connection. Requires projectId. Use one or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestEnvironmentsItem>? Environments { get; set; }
+        public List<string>? Environments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestEnvironmentsItem> Environments { get; set; }
+        public List<string> Environments { get; set; }
 #endif
         /// <summary>Default trigger events for this connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
                 { "connectionMethod", n => { ConnectionMethod = n.GetStringValue(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateData>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateData.CreateFromDiscriminatorValue); } },
-                { "environments", n => { Environments = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestEnvironmentsItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestEnvironmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -218,7 +218,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("backgroundColor", BackgroundColor);
             writer.WriteStringValue("connectionMethod", ConnectionMethod);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateData>("data", Data);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestEnvironmentsItem>("environments", Environments);
+            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("name", Name);

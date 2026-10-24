@@ -37,13 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176LastEditedByPrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176LastEditedByPrincipal();
-            if("UserEventPayloadOneOf176LastEditedByPrincipalOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf176LastEditedByPrincipalOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176LastEditedByPrincipalOneOf1();
             }
-            else if("UserEventPayloadOneOf176LastEditedByPrincipalOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf176LastEditedByPrincipalOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176LastEditedByPrincipalOneOf2();
             }

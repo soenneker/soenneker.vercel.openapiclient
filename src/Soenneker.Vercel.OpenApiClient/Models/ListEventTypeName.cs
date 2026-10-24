@@ -1871,6 +1871,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectGitCreateDeploymentsToggled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-attestation-created")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialAttestationCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-attestation-deleted")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialAttestationDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-git-credential-bound-created")]
         #pragma warning disable CS1591
         ProjectGitCredentialBoundCreated,
@@ -1882,6 +1890,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-git-credential-bound-updated")]
         #pragma warning disable CS1591
         ProjectGitCredentialBoundUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-grant-attestation-revoked")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialGrantAttestationRevoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-grant-attested")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialGrantAttested,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-git-credential-grant-created")]
         #pragma warning disable CS1591

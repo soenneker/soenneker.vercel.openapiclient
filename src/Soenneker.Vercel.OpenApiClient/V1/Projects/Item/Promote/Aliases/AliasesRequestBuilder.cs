@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote.Aliases
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\projects\{idOrName-id}\promote\aliases
+    /// Builds and executes requests for operations under \v1\projects\{idOrName}\promote\aliases
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AliasesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote.Aliases
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AliasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/promote/aliases{?failedOnly*,limit*,since*,slug*,teamId*,until*}", pathParameters)
+        public AliasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/promote/aliases{?failedOnly*,limit*,since*,slug*,teamId*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote.Aliases
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AliasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/promote/aliases{?failedOnly*,limit*,since*,slug*,teamId*,until*}", rawUrl)
+        public AliasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/promote/aliases{?failedOnly*,limit*,since*,slug*,teamId*,until*}", rawUrl)
         {
         }
         /// <summary>
         /// Get a list of aliases related to the last promote request with their mapping status
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote.Aliases.AliasesRequestBuilder.AliasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote.Aliases.AliasesRequestBuilder.AliasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote.Aliases.AliasesRequestBuilder.AliasesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote.Aliases.AliasesRequestBuilder.AliasesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of aliases related to the last promote request with their mapping status

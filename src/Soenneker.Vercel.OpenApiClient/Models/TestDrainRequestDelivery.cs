@@ -7,78 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class TestDrainRequestDelivery : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class TestDrainRequestDelivery : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The compression property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryCompression? Compression { get; set; }
-        /// <summary>The encoding property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryEncoding? Encoding { get; set; }
-        /// <summary>The endpoint property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Endpoint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1? TestDrainRequestDeliveryOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Endpoint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1 TestDrainRequestDeliveryOneOf1 { get; set; }
 #endif
-        /// <summary>The fileStructure property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure? FileStructure { get; set; }
-        /// <summary>The headers property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders? Headers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2? TestDrainRequestDeliveryOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders Headers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2 TestDrainRequestDeliveryOneOf2 { get; set; }
 #endif
-        /// <summary>The objectAcl property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryObjectAcl? ObjectAcl { get; set; }
-        /// <summary>The region property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3? TestDrainRequestDeliveryOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3 TestDrainRequestDeliveryOneOf3 { get; set; }
 #endif
-        /// <summary>The roleArn property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RoleArn { get; set; }
-#nullable restore
-#else
-        public string RoleArn { get; set; }
-#endif
-        /// <summary>The secret property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Secret { get; set; }
-#nullable restore
-#else
-        public string Secret { get; set; }
-#endif
-        /// <summary>The serverSideEncryption property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryServerSideEncryption? ServerSideEncryption { get; set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDelivery"/> and sets the default values.
-        /// </summary>
-        public TestDrainRequestDelivery()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,7 +45,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDelivery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDelivery();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDelivery();
+            if("TestDrainRequestDeliveryOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TestDrainRequestDeliveryOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1();
+            }
+            else if("TestDrainRequestDeliveryOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TestDrainRequestDeliveryOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2();
+            }
+            else if("TestDrainRequestDeliveryOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TestDrainRequestDeliveryOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,20 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TestDrainRequestDeliveryOneOf1 != null)
             {
-                { "compression", n => { Compression = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryCompression>(); } },
-                { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryEncoding>(); } },
-                { "endpoint", n => { Endpoint = n.GetStringValue(); } },
-                { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders.CreateFromDiscriminatorValue); } },
-                { "objectAcl", n => { ObjectAcl = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryObjectAcl>(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
-                { "roleArn", n => { RoleArn = n.GetStringValue(); } },
-                { "secret", n => { Secret = n.GetStringValue(); } },
-                { "serverSideEncryption", n => { ServerSideEncryption = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryServerSideEncryption>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return TestDrainRequestDeliveryOneOf1.GetFieldDeserializers();
+            }
+            else if(TestDrainRequestDeliveryOneOf2 != null)
+            {
+                return TestDrainRequestDeliveryOneOf2.GetFieldDeserializers();
+            }
+            else if(TestDrainRequestDeliveryOneOf3 != null)
+            {
+                return TestDrainRequestDeliveryOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -117,18 +88,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryCompression>("compression", Compression);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryEncoding>("encoding", Encoding);
-            writer.WriteStringValue("endpoint", Endpoint);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>("fileStructure", FileStructure);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders>("headers", Headers);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryObjectAcl>("objectAcl", ObjectAcl);
-            writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("roleArn", RoleArn);
-            writer.WriteStringValue("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryServerSideEncryption>("serverSideEncryption", ServerSideEncryption);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TestDrainRequestDeliveryOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1>(null, TestDrainRequestDeliveryOneOf1);
+            }
+            else if(TestDrainRequestDeliveryOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2>(null, TestDrainRequestDeliveryOneOf2);
+            }
+            else if(TestDrainRequestDeliveryOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3>(null, TestDrainRequestDeliveryOneOf3);
+            }
         }
     }
 }

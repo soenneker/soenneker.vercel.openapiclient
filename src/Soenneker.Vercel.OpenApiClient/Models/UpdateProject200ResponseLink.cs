@@ -7,170 +7,76 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf8"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdateProject200ResponseLink : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateProject200ResponseLink : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
-        public double? CreatedAt { get; set; }
-        /// <summary>The deployHooks property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkDeployHooksItem>? DeployHooks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf1? UpdateProject200ResponseLinkOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkDeployHooksItem> DeployHooks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf1 UpdateProject200ResponseLinkOneOf1 { get; set; }
 #endif
-        /// <summary>The gitCredentialId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitCredentialId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf2? UpdateProject200ResponseLinkOneOf2 { get; set; }
 #nullable restore
 #else
-        public string GitCredentialId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf2 UpdateProject200ResponseLinkOneOf2 { get; set; }
 #endif
-        /// <summary>The host property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf3? UpdateProject200ResponseLinkOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Host { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf3 UpdateProject200ResponseLinkOneOf3 { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf4? UpdateProject200ResponseLinkOneOf4 { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf4 UpdateProject200ResponseLinkOneOf4 { get; set; }
 #endif
-        /// <summary>The org property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf5? UpdateProject200ResponseLinkOneOf5 { get; set; }
 #nullable restore
 #else
-        public string Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf5 UpdateProject200ResponseLinkOneOf5 { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf6? UpdateProject200ResponseLinkOneOf6 { get; set; }
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf6 UpdateProject200ResponseLinkOneOf6 { get; set; }
 #endif
-        /// <summary>Origin namespace id (`ns_…`) of the owner.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf7? UpdateProject200ResponseLinkOneOf7 { get; set; }
 #nullable restore
 #else
-        public string OwnerId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf7 UpdateProject200ResponseLinkOneOf7 { get; set; }
 #endif
-        /// <summary>The productionBranch property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductionBranch { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf8? UpdateProject200ResponseLinkOneOf8 { get; set; }
 #nullable restore
 #else
-        public string ProductionBranch { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf8 UpdateProject200ResponseLinkOneOf8 { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The projectNamespace property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectNamespace { get; set; }
-#nullable restore
-#else
-        public string ProjectNamespace { get; set; }
-#endif
-        /// <summary>The projectNameWithNamespace property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectNameWithNamespace { get; set; }
-#nullable restore
-#else
-        public string ProjectNameWithNamespace { get; set; }
-#endif
-        /// <summary>A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).</summary>
-        public double? ProjectOwnerId { get; set; }
-        /// <summary>The projectUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectUrl { get; set; }
-#nullable restore
-#else
-        public string ProjectUrl { get; set; }
-#endif
-        /// <summary>The repo property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Repo { get; set; }
-#nullable restore
-#else
-        public string Repo { get; set; }
-#endif
-        /// <summary>The repoId property</summary>
-        public double? RepoId { get; set; }
-        /// <summary>A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.</summary>
-        public double? RepoOwnerId { get; set; }
-        /// <summary>The slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Slug { get; set; }
-#nullable restore
-#else
-        public string Slug { get; set; }
-#endif
-        /// <summary>The sourceless property</summary>
-        public bool? Sourceless { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkType? Type { get; set; }
-        /// <summary>The updatedAt property</summary>
-        public double? UpdatedAt { get; set; }
-        /// <summary>The uuid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Uuid { get; set; }
-#nullable restore
-#else
-        public string Uuid { get; set; }
-#endif
-        /// <summary>The workspaceUuid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WorkspaceUuid { get; set; }
-#nullable restore
-#else
-        public string WorkspaceUuid { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLink"/> and sets the default values.
-        /// </summary>
-        public UpdateProject200ResponseLink()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -179,7 +85,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLink CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLink();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLink();
+            if("github".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf1();
+            }
+            else if("github-limited".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf2();
+            }
+            else if("github-custom-host".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf3();
+            }
+            else if("gitlab".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf4();
+            }
+            else if("bitbucket".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf5();
+            }
+            else if("vercel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf6();
+            }
+            else if("v0".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf7();
+            }
+            else if("cursor-origin".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateProject200ResponseLinkOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf8();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -187,33 +127,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateProject200ResponseLinkOneOf1 != null)
             {
-                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "deployHooks", n => { DeployHooks = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkDeployHooksItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkDeployHooksItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "gitCredentialId", n => { GitCredentialId = n.GetStringValue(); } },
-                { "host", n => { Host = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "org", n => { Org = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "productionBranch", n => { ProductionBranch = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "projectNameWithNamespace", n => { ProjectNameWithNamespace = n.GetStringValue(); } },
-                { "projectNamespace", n => { ProjectNamespace = n.GetStringValue(); } },
-                { "projectOwnerId", n => { ProjectOwnerId = n.GetDoubleValue(); } },
-                { "projectUrl", n => { ProjectUrl = n.GetStringValue(); } },
-                { "repo", n => { Repo = n.GetStringValue(); } },
-                { "repoId", n => { RepoId = n.GetDoubleValue(); } },
-                { "repoOwnerId", n => { RepoOwnerId = n.GetDoubleValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "sourceless", n => { Sourceless = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkType>(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-                { "uuid", n => { Uuid = n.GetStringValue(); } },
-                { "workspaceUuid", n => { WorkspaceUuid = n.GetStringValue(); } },
-            };
+                return UpdateProject200ResponseLinkOneOf1.GetFieldDeserializers();
+            }
+            else if(UpdateProject200ResponseLinkOneOf2 != null)
+            {
+                return UpdateProject200ResponseLinkOneOf2.GetFieldDeserializers();
+            }
+            else if(UpdateProject200ResponseLinkOneOf3 != null)
+            {
+                return UpdateProject200ResponseLinkOneOf3.GetFieldDeserializers();
+            }
+            else if(UpdateProject200ResponseLinkOneOf4 != null)
+            {
+                return UpdateProject200ResponseLinkOneOf4.GetFieldDeserializers();
+            }
+            else if(UpdateProject200ResponseLinkOneOf5 != null)
+            {
+                return UpdateProject200ResponseLinkOneOf5.GetFieldDeserializers();
+            }
+            else if(UpdateProject200ResponseLinkOneOf6 != null)
+            {
+                return UpdateProject200ResponseLinkOneOf6.GetFieldDeserializers();
+            }
+            else if(UpdateProject200ResponseLinkOneOf7 != null)
+            {
+                return UpdateProject200ResponseLinkOneOf7.GetFieldDeserializers();
+            }
+            else if(UpdateProject200ResponseLinkOneOf8 != null)
+            {
+                return UpdateProject200ResponseLinkOneOf8.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -222,31 +168,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkDeployHooksItem>("deployHooks", DeployHooks);
-            writer.WriteStringValue("gitCredentialId", GitCredentialId);
-            writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("org", Org);
-            writer.WriteStringValue("owner", Owner);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteStringValue("productionBranch", ProductionBranch);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("projectNamespace", ProjectNamespace);
-            writer.WriteStringValue("projectNameWithNamespace", ProjectNameWithNamespace);
-            writer.WriteDoubleValue("projectOwnerId", ProjectOwnerId);
-            writer.WriteStringValue("projectUrl", ProjectUrl);
-            writer.WriteStringValue("repo", Repo);
-            writer.WriteDoubleValue("repoId", RepoId);
-            writer.WriteDoubleValue("repoOwnerId", RepoOwnerId);
-            writer.WriteStringValue("slug", Slug);
-            writer.WriteBoolValue("sourceless", Sourceless);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkType>("type", Type);
-            writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteStringValue("uuid", Uuid);
-            writer.WriteStringValue("workspaceUuid", WorkspaceUuid);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UpdateProject200ResponseLinkOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf1>(null, UpdateProject200ResponseLinkOneOf1);
+            }
+            else if(UpdateProject200ResponseLinkOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf2>(null, UpdateProject200ResponseLinkOneOf2);
+            }
+            else if(UpdateProject200ResponseLinkOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf3>(null, UpdateProject200ResponseLinkOneOf3);
+            }
+            else if(UpdateProject200ResponseLinkOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf4>(null, UpdateProject200ResponseLinkOneOf4);
+            }
+            else if(UpdateProject200ResponseLinkOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf5>(null, UpdateProject200ResponseLinkOneOf5);
+            }
+            else if(UpdateProject200ResponseLinkOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf6>(null, UpdateProject200ResponseLinkOneOf6);
+            }
+            else if(UpdateProject200ResponseLinkOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf7>(null, UpdateProject200ResponseLinkOneOf7);
+            }
+            else if(UpdateProject200ResponseLinkOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf8>(null, UpdateProject200ResponseLinkOneOf8);
+            }
         }
     }
 }

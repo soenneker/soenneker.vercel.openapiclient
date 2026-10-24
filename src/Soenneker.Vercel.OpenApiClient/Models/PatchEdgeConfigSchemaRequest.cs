@@ -15,10 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchemaRequestDefinition? Definition { get; set; }
+        public UntypedNode? Definition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchemaRequestDefinition Definition { get; set; }
+        public UntypedNode Definition { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "definition", n => { Definition = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchemaRequestDefinition>(global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchemaRequestDefinition.CreateFromDiscriminatorValue); } },
+                { "definition", n => { Definition = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchemaRequestDefinition>("definition", Definition);
+            writer.WriteObjectValue<UntypedNode>("definition", Definition);
         }
     }
 }

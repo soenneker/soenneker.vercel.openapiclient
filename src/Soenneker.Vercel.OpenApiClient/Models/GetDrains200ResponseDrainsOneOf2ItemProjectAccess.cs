@@ -7,32 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetDrains200ResponseDrainsOneOf2ItemProjectAccess : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetDrains200ResponseDrainsOneOf2ItemProjectAccess : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The access property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessAccess? Access { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The managedBy property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessManagedBy? ManagedBy { get; set; }
-        /// <summary>The projectIds property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProjectIds { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1? GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<string> ProjectIds { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1 GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccess"/> and sets the default values.
-        /// </summary>
-        public GetDrains200ResponseDrainsOneOf2ItemProjectAccess()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2? GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2 GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccess();
+            var mappingValue = parseNode.GetChildNode("access")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccess();
+            if("all".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1();
+            }
+            else if("some".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,12 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1 != null)
             {
-                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessAccess>(); } },
-                { "managedBy", n => { ManagedBy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessManagedBy>(); } },
-                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-            };
+                return GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1.GetFieldDeserializers();
+            }
+            else if(GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2 != null)
+            {
+                return GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,10 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessAccess>("access", Access);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessManagedBy>("managedBy", ManagedBy);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1>(null, GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf1);
+            }
+            else if(GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2>(null, GetDrains200ResponseDrainsOneOf2ItemProjectAccessOneOf2);
+            }
         }
     }
 }

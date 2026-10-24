@@ -7,36 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusion : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusion : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reason property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1? ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1 ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1 { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Result { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2? ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Result { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2 ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusion"/> and sets the default values.
-        /// </summary>
-        public ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusion()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3? ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3 ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +45,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusion();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusion();
+            result.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1();
+            result.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2();
+            result.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,11 +57,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1 != null || ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2 != null || ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3 != null)
             {
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1, ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2, ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -66,9 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("result", Result);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1>(null, ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf1, ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf2, ListVercelCiJobRuns200ResponseJobRunsItemCompletedConclusionAnyOf3);
         }
     }
 }

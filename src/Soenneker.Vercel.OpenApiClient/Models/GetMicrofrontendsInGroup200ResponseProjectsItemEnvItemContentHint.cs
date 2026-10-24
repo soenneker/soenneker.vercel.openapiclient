@@ -7,62 +7,148 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The integrationConfigurationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1 { get; set; }
 #nullable restore
 #else
-        public string IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1 { get; set; }
 #endif
-        /// <summary>The integrationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10 { get; set; }
 #nullable restore
 #else
-        public string IntegrationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10 { get; set; }
 #endif
-        /// <summary>The integrationProductId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationProductId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11 { get; set; }
 #nullable restore
 #else
-        public string IntegrationProductId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11 { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12 { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12 { get; set; }
 #endif
-        /// <summary>The storeId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13 { get; set; }
 #nullable restore
 #else
-        public string StoreId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint"/> and sets the default values.
-        /// </summary>
-        public GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9? GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9 GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +157,77 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint();
+            if("redis-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1();
+            }
+            else if("postgres-prisma-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10();
+            }
+            else if("postgres-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11();
+            }
+            else if("postgres-host".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12();
+            }
+            else if("postgres-password".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13();
+            }
+            else if("postgres-database".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14();
+            }
+            else if("postgres-url-no-ssl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15();
+            }
+            else if("integration-store-secret".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16();
+            }
+            else if("flags-connection-string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17();
+            }
+            else if("redis-rest-api-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2();
+            }
+            else if("redis-rest-api-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3();
+            }
+            else if("redis-rest-api-read-only-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4();
+            }
+            else if("blob-read-write-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5();
+            }
+            else if("blob-store-id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6();
+            }
+            else if("blob-webhook-public-key".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7();
+            }
+            else if("postgres-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8();
+            }
+            else if("postgres-url-non-pooling".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,15 +235,75 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1 != null)
             {
-                { "integrationConfigurationId", n => { IntegrationConfigurationId = n.GetStringValue(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationProductId", n => { IntegrationProductId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "storeId", n => { StoreId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintType>(); } },
-            };
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8.GetFieldDeserializers();
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9 != null)
+            {
+                return GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -96,13 +312,74 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("integrationConfigurationId", IntegrationConfigurationId);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationProductId", IntegrationProductId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("storeId", StoreId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf1);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf10);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf11);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf12);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf13);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf14);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf15);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf16);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf2);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf3);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf4);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf5);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf6);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf7);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf8);
+            }
+            else if(GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9>(null, GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf9);
+            }
         }
     }
 }

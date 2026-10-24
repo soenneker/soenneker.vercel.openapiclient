@@ -7,32 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The environmentId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1? CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string EnvironmentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1 CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1 { get; set; }
 #endif
-        /// <summary>The target property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemTarget? Target { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItem"/> and sets the default values.
-        /// </summary>
-        public CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2? CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2 CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItem();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItem();
+            if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1();
+            }
+            else if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,12 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1 != null)
             {
-                { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemTarget>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemType>(); } },
-            };
+                return CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2 != null)
+            {
+                return CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,10 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("environmentId", EnvironmentId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemTarget>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1>(null, CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1);
+            }
+            else if(CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2>(null, CreateProject200ResponseDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf2);
+            }
         }
     }
 }

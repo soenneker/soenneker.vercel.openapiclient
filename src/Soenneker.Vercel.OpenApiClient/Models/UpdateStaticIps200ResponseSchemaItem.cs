@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The aws property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseItemAws? Aws { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseSchemaItemAws? Aws { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseItemAws Aws { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseSchemaItemAws Aws { get; set; }
 #endif
         /// <summary>The buildsEnabled property</summary>
         public bool? BuildsEnabled { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aws", n => { Aws = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseItemAws>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseItemAws.CreateFromDiscriminatorValue); } },
+                { "aws", n => { Aws = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseSchemaItemAws>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseSchemaItemAws.CreateFromDiscriminatorValue); } },
                 { "buildsEnabled", n => { BuildsEnabled = n.GetBoolValue(); } },
                 { "connectConfigurationId", n => { ConnectConfigurationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseItemAws>("aws", Aws);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps200ResponseSchemaItemAws>("aws", Aws);
             writer.WriteBoolValue("buildsEnabled", BuildsEnabled);
             writer.WriteStringValue("connectConfigurationId", ConnectConfigurationId);
             writer.WriteDoubleValue("createdAt", CreatedAt);

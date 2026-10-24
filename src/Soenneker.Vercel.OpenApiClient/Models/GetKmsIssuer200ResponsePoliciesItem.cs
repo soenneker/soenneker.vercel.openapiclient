@@ -7,78 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetKmsIssuer200ResponsePoliciesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetKmsIssuer200ResponsePoliciesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The clientId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf1? GetKmsIssuer200ResponsePoliciesItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf1 GetKmsIssuer200ResponsePoliciesItemOneOf1 { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf2? GetKmsIssuer200ResponsePoliciesItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf2 GetKmsIssuer200ResponsePoliciesItemOneOf2 { get; set; }
 #endif
-        /// <summary>Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token&apos;s `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Environments { get; set; }
-#nullable restore
-#else
-        public List<string> Environments { get; set; }
-#endif
-        /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemKind? Kind { get; set; }
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The teamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The tokenClaims property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemTokenClaims? TokenClaims { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemTokenClaims TokenClaims { get; set; }
-#endif
-        /// <summary>The updatedAt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public string UpdatedAt { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItem"/> and sets the default values.
-        /// </summary>
-        public GetKmsIssuer200ResponsePoliciesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItem();
+            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItem();
+            if("project-grant".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetKmsIssuer200ResponsePoliciesItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf1();
+            }
+            else if("connex-grant".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetKmsIssuer200ResponsePoliciesItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,17 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetKmsIssuer200ResponsePoliciesItemOneOf1 != null)
             {
-                { "clientId", n => { ClientId = n.GetStringValue(); } },
-                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemKind>(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "tokenClaims", n => { TokenClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemTokenClaims>(global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemTokenClaims.CreateFromDiscriminatorValue); } },
-                { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
-            };
+                return GetKmsIssuer200ResponsePoliciesItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetKmsIssuer200ResponsePoliciesItemOneOf2 != null)
+            {
+                return GetKmsIssuer200ResponsePoliciesItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -114,15 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("clientId", ClientId);
-            writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemKind>("kind", Kind);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemTokenClaims>("tokenClaims", TokenClaims);
-            writer.WriteStringValue("updatedAt", UpdatedAt);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetKmsIssuer200ResponsePoliciesItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf1>(null, GetKmsIssuer200ResponsePoliciesItemOneOf1);
+            }
+            else if(GetKmsIssuer200ResponsePoliciesItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKmsIssuer200ResponsePoliciesItemOneOf2>(null, GetKmsIssuer200ResponsePoliciesItemOneOf2);
+            }
         }
     }
 }

@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -70,38 +69,38 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item
         /// <summary>
         /// PATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. The request body is streamed directly to S3 as a multipart upload part while hashing incrementally. The client may call this multiple times for chunked uploads.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema"/></returns>
+        /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema?> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode?> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPatchRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=&lt;digest&gt; Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema"/></returns>
+        /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema?> PutAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item.WithUuItemRequestBuilder.WithUuItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode?> PutAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item.WithUuItemRequestBuilder.WithUuItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema> PutAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item.WithUuItemRequestBuilder.WithUuItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode> PutAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item.WithUuItemRequestBuilder.WithUuItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. Aborts the underlying S3 multipart upload (if one was started) and discards the session.

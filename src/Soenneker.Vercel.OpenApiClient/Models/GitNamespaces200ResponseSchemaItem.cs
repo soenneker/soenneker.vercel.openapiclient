@@ -63,10 +63,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The viewer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseItemViewer? Viewer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItemViewer? Viewer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseItemViewer Viewer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItemViewer Viewer { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItem"/> and sets the default values.
@@ -101,7 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "requireReauth", n => { RequireReauth = n.GetBoolValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "viewer", n => { Viewer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseItemViewer>(global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseItemViewer.CreateFromDiscriminatorValue); } },
+                { "viewer", n => { Viewer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItemViewer>(global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItemViewer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -119,7 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("provider", Provider);
             writer.WriteBoolValue("requireReauth", RequireReauth);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseItemViewer>("viewer", Viewer);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItemViewer>("viewer", Viewer);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

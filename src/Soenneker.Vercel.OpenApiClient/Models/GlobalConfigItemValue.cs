@@ -7,52 +7,48 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueWrapper"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalConfigItemValue : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class GlobalConfigItemValue : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch1? GlobalConfigItemValueBranch1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueOneOf3? GlobalConfigItemValueOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch1 GlobalConfigItemValueBranch1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueOneOf3 GlobalConfigItemValueOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch2"/></summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch2? GlobalConfigItemValueBranch2 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue>? GlobalConfigItemValueProp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch2 GlobalConfigItemValueBranch2 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue> GlobalConfigItemValueProp { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch4"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch4? GlobalConfigItemValueBranch4 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch4 GlobalConfigItemValueBranch4 { get; set; }
+        public string String { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueMember1? GlobalConfigItemValueMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueMember1 GlobalConfigItemValueMember1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueWrapper? GlobalConfigItemValueWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueWrapper GlobalConfigItemValueWrapper { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue"/> and sets the default values.
+        /// </summary>
+        public GlobalConfigItemValue()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +59,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue();
+            if("GlobalConfigItemValueOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GlobalConfigItemValueOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueOneOf3();
+            }
+            else if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue>(global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue> globalConfigItemValuePropValue)
+            {
+                result.GlobalConfigItemValueProp = globalConfigItemValuePropValue;
+            }
             return result;
         }
         /// <summary>
@@ -71,25 +87,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GlobalConfigItemValueBranch1 != null)
+            if(GlobalConfigItemValueOneOf3 != null)
             {
-                return GlobalConfigItemValueBranch1.GetFieldDeserializers();
-            }
-            else if(GlobalConfigItemValueBranch2 != null)
-            {
-                return GlobalConfigItemValueBranch2.GetFieldDeserializers();
-            }
-            else if(GlobalConfigItemValueBranch4 != null)
-            {
-                return GlobalConfigItemValueBranch4.GetFieldDeserializers();
-            }
-            else if(GlobalConfigItemValueMember1 != null)
-            {
-                return GlobalConfigItemValueMember1.GetFieldDeserializers();
-            }
-            else if(GlobalConfigItemValueWrapper != null)
-            {
-                return GlobalConfigItemValueWrapper.GetFieldDeserializers();
+                return GlobalConfigItemValueOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -100,26 +100,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GlobalConfigItemValueBranch1 != null)
+            if(GlobalConfigItemValueOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch1>(null, GlobalConfigItemValueBranch1);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueOneOf3>(null, GlobalConfigItemValueOneOf3);
             }
-            else if(GlobalConfigItemValueBranch2 != null)
+            else if(Boolean != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch2>(null, GlobalConfigItemValueBranch2);
+                writer.WriteBoolValue(null, Boolean);
             }
-            else if(GlobalConfigItemValueBranch4 != null)
+            else if(Double != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch4>(null, GlobalConfigItemValueBranch4);
+                writer.WriteDoubleValue(null, Double);
             }
-            else if(GlobalConfigItemValueMember1 != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueMember1>(null, GlobalConfigItemValueMember1);
+                writer.WriteStringValue(null, String);
             }
-            else if(GlobalConfigItemValueWrapper != null)
+            else if(GlobalConfigItemValueProp != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueWrapper>(null, GlobalConfigItemValueWrapper);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue>(null, GlobalConfigItemValueProp);
             }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -8,50 +8,22 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateFlagRequestVariantsItemValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch1? UpdateFlagRequestVariantsItemValueBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch1 UpdateFlagRequestVariantsItemValueBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch2? UpdateFlagRequestVariantsItemValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch2 UpdateFlagRequestVariantsItemValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch3? UpdateFlagRequestVariantsItemValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch3 UpdateFlagRequestVariantsItemValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch5? UpdateFlagRequestVariantsItemValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch5 UpdateFlagRequestVariantsItemValueBranch5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch6"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch6? UpdateFlagRequestVariantsItemValueBranch6 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch6 UpdateFlagRequestVariantsItemValueBranch6 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,6 +32,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember1 UpdateFlagRequestVariantsItemValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember2? UpdateFlagRequestVariantsItemValueMember2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember2 UpdateFlagRequestVariantsItemValueMember2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,12 +50,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValue();
-            result.UpdateFlagRequestVariantsItemValueBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch1();
-            result.UpdateFlagRequestVariantsItemValueBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch2();
-            result.UpdateFlagRequestVariantsItemValueBranch3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch3();
-            result.UpdateFlagRequestVariantsItemValueBranch5 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch5();
-            result.UpdateFlagRequestVariantsItemValueBranch6 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch6();
-            result.UpdateFlagRequestVariantsItemValueMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.UpdateFlagRequestVariantsItemValueMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember1();
+                result.UpdateFlagRequestVariantsItemValueMember2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember2();
+            }
             return result;
         }
         /// <summary>
@@ -84,9 +74,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpdateFlagRequestVariantsItemValueBranch1 != null || UpdateFlagRequestVariantsItemValueBranch2 != null || UpdateFlagRequestVariantsItemValueBranch3 != null || UpdateFlagRequestVariantsItemValueBranch5 != null || UpdateFlagRequestVariantsItemValueBranch6 != null || UpdateFlagRequestVariantsItemValueMember1 != null)
+            if(UpdateFlagRequestVariantsItemValueMember1 != null || UpdateFlagRequestVariantsItemValueMember2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UpdateFlagRequestVariantsItemValueBranch1, UpdateFlagRequestVariantsItemValueBranch2, UpdateFlagRequestVariantsItemValueBranch3, UpdateFlagRequestVariantsItemValueBranch5, UpdateFlagRequestVariantsItemValueBranch6, UpdateFlagRequestVariantsItemValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UpdateFlagRequestVariantsItemValueMember1, UpdateFlagRequestVariantsItemValueMember2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -97,7 +87,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueBranch1>(null, UpdateFlagRequestVariantsItemValueBranch1, UpdateFlagRequestVariantsItemValueBranch2, UpdateFlagRequestVariantsItemValueBranch3, UpdateFlagRequestVariantsItemValueBranch5, UpdateFlagRequestVariantsItemValueBranch6, UpdateFlagRequestVariantsItemValueMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagRequestVariantsItemValueMember1>(null, UpdateFlagRequestVariantsItemValueMember1, UpdateFlagRequestVariantsItemValueMember2);
+            }
         }
     }
 }

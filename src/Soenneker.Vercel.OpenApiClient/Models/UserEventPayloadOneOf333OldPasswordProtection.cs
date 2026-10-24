@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf333OldPasswordProtection : IComposedTypeWrapper, IParsable
@@ -21,14 +21,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf1 UserEventPayloadOneOf333OldPasswordProtectionOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionWrapper? UserEventPayloadOneOf333OldPasswordProtectionWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionWrapper UserEventPayloadOneOf333OldPasswordProtectionWrapper { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf2"/></summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf2? UserEventPayloadOneOf333OldPasswordProtectionOneOf2 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,9 +37,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.UserEventPayloadOneOf333OldPasswordProtectionOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf1();
             }
-            else if("UserEventPayloadOneOf333OldPasswordProtectionWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf2>() is global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf2 userEventPayloadOneOf333OldPasswordProtectionOneOf2Value)
             {
-                result.UserEventPayloadOneOf333OldPasswordProtectionWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionWrapper();
+                result.UserEventPayloadOneOf333OldPasswordProtectionOneOf2 = userEventPayloadOneOf333OldPasswordProtectionOneOf2Value;
             }
             return result;
         }
@@ -58,10 +52,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(UserEventPayloadOneOf333OldPasswordProtectionOneOf1 != null)
             {
                 return UserEventPayloadOneOf333OldPasswordProtectionOneOf1.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf333OldPasswordProtectionWrapper != null)
-            {
-                return UserEventPayloadOneOf333OldPasswordProtectionWrapper.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -76,9 +66,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf1>(null, UserEventPayloadOneOf333OldPasswordProtectionOneOf1);
             }
-            else if(UserEventPayloadOneOf333OldPasswordProtectionWrapper != null)
+            else if(UserEventPayloadOneOf333OldPasswordProtectionOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionWrapper>(null, UserEventPayloadOneOf333OldPasswordProtectionWrapper);
+                writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333OldPasswordProtectionOneOf2>(null, UserEventPayloadOneOf333OldPasswordProtectionOneOf2);
             }
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Env.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\projects\{idOrName-id}\env\{id}
+    /// Builds and executes requests for operations under \v1\projects\{idOrName}\env\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Env.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/env/{id}{?slug*,teamId*}", pathParameters)
+        public EnvItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/env/{id}{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Env.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/env/{id}{?slug*,teamId*}", rawUrl)
+        public EnvItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/env/{id}{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

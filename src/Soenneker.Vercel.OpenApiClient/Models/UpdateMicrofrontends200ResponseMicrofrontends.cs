@@ -7,48 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdateMicrofrontends200ResponseMicrofrontends : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateMicrofrontends200ResponseMicrofrontends : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRoute { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf1? UpdateMicrofrontends200ResponseMicrofrontendsOneOf1 { get; set; }
 #nullable restore
 #else
-        public string DefaultRoute { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf1 UpdateMicrofrontends200ResponseMicrofrontendsOneOf1 { get; set; }
 #endif
-        /// <summary>Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.</summary>
-        public bool? DoNotRouteWithMicrofrontendsRouting { get; set; }
-        /// <summary>Whether microfrontends are enabled for this project.</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.</summary>
-        public bool? FreeProjectForLegacyLimits { get; set; }
-        /// <summary>The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf2? UpdateMicrofrontends200ResponseMicrofrontendsOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<string> GroupIds { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf2 UpdateMicrofrontends200ResponseMicrofrontendsOneOf2 { get; set; }
 #endif
-        /// <summary>The isDefaultApp property</summary>
-        public bool? IsDefaultApp { get; set; }
-        /// <summary>Whether observability data should be routed to this microfrontend project or a root project.</summary>
-        public bool? RouteObservabilityToThisProject { get; set; }
-        /// <summary>Timestamp when the microfrontends settings were last updated.</summary>
-        public double? UpdatedAt { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontends"/> and sets the default values.
-        /// </summary>
-        public UpdateMicrofrontends200ResponseMicrofrontends()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf3? UpdateMicrofrontends200ResponseMicrofrontendsOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf3 UpdateMicrofrontends200ResponseMicrofrontendsOneOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +45,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontends CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontends();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontends();
+            if("UpdateMicrofrontends200ResponseMicrofrontendsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateMicrofrontends200ResponseMicrofrontendsOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf1();
+            }
+            else if("UpdateMicrofrontends200ResponseMicrofrontendsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateMicrofrontends200ResponseMicrofrontendsOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf2();
+            }
+            else if("UpdateMicrofrontends200ResponseMicrofrontendsOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateMicrofrontends200ResponseMicrofrontendsOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,17 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateMicrofrontends200ResponseMicrofrontendsOneOf1 != null)
             {
-                { "defaultRoute", n => { DefaultRoute = n.GetStringValue(); } },
-                { "doNotRouteWithMicrofrontendsRouting", n => { DoNotRouteWithMicrofrontendsRouting = n.GetBoolValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "freeProjectForLegacyLimits", n => { FreeProjectForLegacyLimits = n.GetBoolValue(); } },
-                { "groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "isDefaultApp", n => { IsDefaultApp = n.GetBoolValue(); } },
-                { "routeObservabilityToThisProject", n => { RouteObservabilityToThisProject = n.GetBoolValue(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-            };
+                return UpdateMicrofrontends200ResponseMicrofrontendsOneOf1.GetFieldDeserializers();
+            }
+            else if(UpdateMicrofrontends200ResponseMicrofrontendsOneOf2 != null)
+            {
+                return UpdateMicrofrontends200ResponseMicrofrontendsOneOf2.GetFieldDeserializers();
+            }
+            else if(UpdateMicrofrontends200ResponseMicrofrontendsOneOf3 != null)
+            {
+                return UpdateMicrofrontends200ResponseMicrofrontendsOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -84,15 +88,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("defaultRoute", DefaultRoute);
-            writer.WriteBoolValue("doNotRouteWithMicrofrontendsRouting", DoNotRouteWithMicrofrontendsRouting);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteBoolValue("freeProjectForLegacyLimits", FreeProjectForLegacyLimits);
-            writer.WriteCollectionOfPrimitiveValues<string>("groupIds", GroupIds);
-            writer.WriteBoolValue("isDefaultApp", IsDefaultApp);
-            writer.WriteBoolValue("routeObservabilityToThisProject", RouteObservabilityToThisProject);
-            writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UpdateMicrofrontends200ResponseMicrofrontendsOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf1>(null, UpdateMicrofrontends200ResponseMicrofrontendsOneOf1);
+            }
+            else if(UpdateMicrofrontends200ResponseMicrofrontendsOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf2>(null, UpdateMicrofrontends200ResponseMicrofrontendsOneOf2);
+            }
+            else if(UpdateMicrofrontends200ResponseMicrofrontendsOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseMicrofrontendsOneOf3>(null, UpdateMicrofrontends200ResponseMicrofrontendsOneOf3);
+            }
         }
     }
 }

@@ -101,45 +101,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Job CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Job();
-            if("UserEventPayloadOneOf125JobOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("bitbucket-push".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf1();
             }
-            else if("UserEventPayloadOneOf125JobOneOf10".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("cursor-origin-now-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf10();
             }
-            else if("UserEventPayloadOneOf125JobOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("bitbucket-now-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf2();
             }
-            else if("UserEventPayloadOneOf125JobOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("pr".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf3();
             }
-            else if("UserEventPayloadOneOf125JobOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("push".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf4();
             }
-            else if("UserEventPayloadOneOf125JobOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("now-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf5();
             }
-            else if("UserEventPayloadOneOf125JobOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("gitlab-push".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf6();
             }
-            else if("UserEventPayloadOneOf125JobOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("gitlab-now-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf7();
             }
-            else if("UserEventPayloadOneOf125JobOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("vercel-push".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf8();
             }
-            else if("UserEventPayloadOneOf125JobOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("cursor-origin-push".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf125JobOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125JobOneOf9();
             }

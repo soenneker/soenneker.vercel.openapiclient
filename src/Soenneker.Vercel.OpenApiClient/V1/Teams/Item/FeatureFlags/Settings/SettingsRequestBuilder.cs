@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Settings
         /// <summary>
         /// Retrieve feature flag settings for projects in a team.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve feature flag settings for projects in a team.

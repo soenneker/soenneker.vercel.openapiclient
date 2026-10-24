@@ -21,10 +21,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The groupIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224PrevProjectMicrofrontendsOneOf3GroupIdsItem>? GroupIds { get; set; }
+        public UntypedNode? GroupIds { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224PrevProjectMicrofrontendsOneOf3GroupIdsItem> GroupIds { get; set; }
+        public UntypedNode GroupIds { get; set; }
 #endif
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "freeProjectForLegacyLimits", n => { FreeProjectForLegacyLimits = n.GetBoolValue(); } },
-                { "groupIds", n => { GroupIds = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224PrevProjectMicrofrontendsOneOf3GroupIdsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224PrevProjectMicrofrontendsOneOf3GroupIdsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "groupIds", n => { GroupIds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("freeProjectForLegacyLimits", FreeProjectForLegacyLimits);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224PrevProjectMicrofrontendsOneOf3GroupIdsItem>("groupIds", GroupIds);
+            writer.WriteObjectValue<UntypedNode>("groupIds", GroupIds);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

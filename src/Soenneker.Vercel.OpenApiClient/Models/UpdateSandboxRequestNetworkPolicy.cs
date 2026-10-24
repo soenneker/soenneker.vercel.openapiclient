@@ -7,70 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdateSandboxRequestNetworkPolicy : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateSandboxRequestNetworkPolicy : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allow property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyAllow? Allow { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf1? UpdateSandboxRequestNetworkPolicyOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyAllow Allow { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf1 UpdateSandboxRequestNetworkPolicyOneOf1 { get; set; }
 #endif
-        /// <summary>List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedCIDRs { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2? UpdateSandboxRequestNetworkPolicyOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<string> AllowedCIDRs { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2 UpdateSandboxRequestNetworkPolicyOneOf2 { get; set; }
 #endif
-        /// <summary>List of domain names the sandbox is allowed to connect to. Only applies when mode is \&quot;custom\&quot;. Supports wildcard patterns (e.g., \&quot;*.example.com\&quot; matches all subdomains).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedDomains { get; set; }
-#nullable restore
-#else
-        public List<string> AllowedDomains { get; set; }
-#endif
-        /// <summary>List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? DeniedCIDRs { get; set; }
-#nullable restore
-#else
-        public List<string> DeniedCIDRs { get; set; }
-#endif
-        /// <summary>HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyInjectionRulesItem>? InjectionRules { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyInjectionRulesItem> InjectionRules { get; set; }
-#endif
-        /// <summary>The network access policy mode. Use \&quot;allow-all\&quot; to permit all outbound traffic. Use \&quot;deny-all\&quot; to block all outbound traffic. Use \&quot;custom\&quot; to specify explicit allow/deny rules.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyMode? Mode { get; set; }
-        /// <summary>The subnets property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicySubnets? Subnets { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicySubnets Subnets { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicy"/> and sets the default values.
-        /// </summary>
-        public UpdateSandboxRequestNetworkPolicy()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicy();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicy();
+            if("UpdateSandboxRequestNetworkPolicyOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateSandboxRequestNetworkPolicyOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf1();
+            }
+            else if("UpdateSandboxRequestNetworkPolicyOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateSandboxRequestNetworkPolicyOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,16 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateSandboxRequestNetworkPolicyOneOf1 != null)
             {
-                { "allow", n => { Allow = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyAllow>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyAllow.CreateFromDiscriminatorValue); } },
-                { "allowedCIDRs", n => { AllowedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "deniedCIDRs", n => { DeniedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "injectionRules", n => { InjectionRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyInjectionRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyInjectionRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyMode>(); } },
-                { "subnets", n => { Subnets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicySubnets>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicySubnets.CreateFromDiscriminatorValue); } },
-            };
+                return UpdateSandboxRequestNetworkPolicyOneOf1.GetFieldDeserializers();
+            }
+            else if(UpdateSandboxRequestNetworkPolicyOneOf2 != null)
+            {
+                return UpdateSandboxRequestNetworkPolicyOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -105,14 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyAllow>("allow", Allow);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedCIDRs", AllowedCIDRs);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
-            writer.WriteCollectionOfPrimitiveValues<string>("deniedCIDRs", DeniedCIDRs);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyInjectionRulesItem>("injectionRules", InjectionRules);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyMode>("mode", Mode);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicySubnets>("subnets", Subnets);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UpdateSandboxRequestNetworkPolicyOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf1>(null, UpdateSandboxRequestNetworkPolicyOneOf1);
+            }
+            else if(UpdateSandboxRequestNetworkPolicyOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2>(null, UpdateSandboxRequestNetworkPolicyOneOf2);
+            }
         }
     }
 }

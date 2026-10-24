@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3OneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDeploymentEvents200ResponseItem : IComposedTypeWrapper, IParsable
@@ -29,13 +29,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2 GetDeploymentEvents200ResponseItemOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3OneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3? GetDeploymentEvents200ResponseItemOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3OneOf3? GetDeploymentEvents200ResponseItemOneOf3OneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3 GetDeploymentEvents200ResponseItemOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3OneOf3 GetDeploymentEvents200ResponseItemOneOf3OneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.GetDeploymentEvents200ResponseItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2();
             }
-            else if("GetDeploymentEvents200ResponseItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetDeploymentEvents200ResponseItemOneOf3OneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetDeploymentEvents200ResponseItemOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3();
+                result.GetDeploymentEvents200ResponseItemOneOf3OneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3OneOf3();
             }
             return result;
         }
@@ -75,9 +75,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 return GetDeploymentEvents200ResponseItemOneOf2.GetFieldDeserializers();
             }
-            else if(GetDeploymentEvents200ResponseItemOneOf3 != null)
+            else if(GetDeploymentEvents200ResponseItemOneOf3OneOf3 != null)
             {
-                return GetDeploymentEvents200ResponseItemOneOf3.GetFieldDeserializers();
+                return GetDeploymentEvents200ResponseItemOneOf3OneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -96,9 +96,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2>(null, GetDeploymentEvents200ResponseItemOneOf2);
             }
-            else if(GetDeploymentEvents200ResponseItemOneOf3 != null)
+            else if(GetDeploymentEvents200ResponseItemOneOf3OneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3>(null, GetDeploymentEvents200ResponseItemOneOf3);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3OneOf3>(null, GetDeploymentEvents200ResponseItemOneOf3OneOf3);
             }
         }
     }

@@ -7,36 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ListAuthTokens200Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ListAuthTokens200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The pagination property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponsePagination? Pagination { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf1? ListAuthTokens200ResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponsePagination Pagination { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf1 ListAuthTokens200ResponseOneOf1 { get; set; }
 #endif
-        /// <summary>The tokens property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken>? Tokens { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf2? ListAuthTokens200ResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken> Tokens { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf2 ListAuthTokens200ResponseOneOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200Response"/> and sets the default values.
-        /// </summary>
-        public ListAuthTokens200Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200Response();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200Response();
+            if("ListAuthTokens200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListAuthTokens200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf1();
+            }
+            else if("ListAuthTokens200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListAuthTokens200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,11 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListAuthTokens200ResponseOneOf1 != null)
             {
-                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponsePagination>(global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponsePagination.CreateFromDiscriminatorValue); } },
-                { "tokens", n => { Tokens = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken>(global::Soenneker.Vercel.OpenApiClient.Models.AuthToken.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return ListAuthTokens200ResponseOneOf1.GetFieldDeserializers();
+            }
+            else if(ListAuthTokens200ResponseOneOf2 != null)
+            {
+                return ListAuthTokens200ResponseOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -66,9 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponsePagination>("pagination", Pagination);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken>("tokens", Tokens);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ListAuthTokens200ResponseOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf1>(null, ListAuthTokens200ResponseOneOf1);
+            }
+            else if(ListAuthTokens200ResponseOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListAuthTokens200ResponseOneOf2>(null, ListAuthTokens200ResponseOneOf2);
+            }
         }
     }
 }

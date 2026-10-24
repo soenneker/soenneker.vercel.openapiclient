@@ -8,34 +8,22 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhs : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1? UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1 UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2? UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2 UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5? UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5 UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,25 +51,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhs();
-            if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1();
-            }
-            else if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2();
-            }
-            else if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5();
-            }
-            else if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3();
             }
             else if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4();
+            }
+            else if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -91,19 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1 != null)
-            {
-                return UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1.GetFieldDeserializers();
-            }
-            else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2 != null)
-            {
-                return UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2.GetFieldDeserializers();
-            }
-            else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5 != null)
-            {
-                return UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5.GetFieldDeserializers();
-            }
-            else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 != null)
+            if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 != null)
             {
                 return UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3.GetFieldDeserializers();
             }
@@ -120,25 +96,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1>(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch1);
-            }
-            else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2>(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch2);
-            }
-            else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5>(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsBranch5);
-            }
-            else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 != null)
+            if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3>(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3);
             }
             else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4>(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4);
+            }
+            else if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

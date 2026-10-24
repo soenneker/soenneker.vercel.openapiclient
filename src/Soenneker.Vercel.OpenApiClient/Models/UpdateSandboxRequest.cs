@@ -91,13 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The runtime environment for the sandbox. Determines the pre-installed language runtimes and tools available.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRuntime? Runtime { get; set; }
         /// <summary>Default snapshot expiration time in milliseconds. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration? SnapshotExpiration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration SnapshotExpiration { get; set; }
-#endif
+        public int? SnapshotExpiration { get; set; }
         /// <summary>Key-value tags to associate with the sandbox. Replaces existing tags. Set to empty object to clear. Maximum 5 tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +132,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRegion>(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestResources>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestResources.CreateFromDiscriminatorValue); } },
                 { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRuntime>(); } },
-                { "snapshotExpiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration.CreateFromDiscriminatorValue); } },
+                { "snapshotExpiration", n => { SnapshotExpiration = n.GetIntValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestTags>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestTags.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
             };
@@ -162,7 +156,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRegion>("region", Region);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestResources>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRuntime>("runtime", Runtime);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration>("snapshotExpiration", SnapshotExpiration);
+            writer.WriteIntValue("snapshotExpiration", SnapshotExpiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestTags>("tags", Tags);
             writer.WriteIntValue("timeout", Timeout);
         }

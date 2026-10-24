@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v10\projects\{idOrName-id}\env
+    /// Builds and executes requests for operations under \v10\projects\{idOrName}\env
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName%2Did}/env{?customEnvironmentId*,customEnvironmentSlug*,decrypt*,gitBranch*,slug*,source*,teamId*,upsert*}", pathParameters)
+        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName}/env{?customEnvironmentId*,customEnvironmentSlug*,decrypt*,gitBranch*,slug*,source*,teamId*,upsert*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName%2Did}/env{?customEnvironmentId*,customEnvironmentSlug*,decrypt*,gitBranch*,slug*,source*,teamId*,upsert*}", rawUrl)
+        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects/{idOrName}/env{?customEnvironmentId*,customEnvironmentSlug*,decrypt*,gitBranch*,slug*,source*,teamId*,upsert*}", rawUrl)
         {
         }
         /// <summary>

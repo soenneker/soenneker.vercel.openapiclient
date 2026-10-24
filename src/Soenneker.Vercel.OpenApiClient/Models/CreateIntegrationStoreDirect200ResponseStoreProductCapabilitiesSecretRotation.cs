@@ -8,19 +8,13 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotation : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2? CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2 CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +33,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotation();
-            if("CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2();
-            }
-            else if("CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1();
+            }
+            else if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
             }
             return result;
         }
@@ -55,11 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2 != null)
-            {
-                return CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2.GetFieldDeserializers();
-            }
-            else if(CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1 != null)
+            if(CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1 != null)
             {
                 return CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1.GetFieldDeserializers();
             }
@@ -72,13 +62,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2>(null, CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2);
-            }
-            else if(CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1 != null)
+            if(CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1>(null, CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationOneOf1);
+            }
+            else if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
             }
         }
     }

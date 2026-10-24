@@ -7,62 +7,148 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DeleteProjectAvatar200ResponseEnvItemContentHint : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DeleteProjectAvatar200ResponseEnvItemContentHint : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The integrationConfigurationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1 { get; set; }
 #nullable restore
 #else
-        public string IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1 { get; set; }
 #endif
-        /// <summary>The integrationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10 { get; set; }
 #nullable restore
 #else
-        public string IntegrationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10 { get; set; }
 #endif
-        /// <summary>The integrationProductId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationProductId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11 { get; set; }
 #nullable restore
 #else
-        public string IntegrationProductId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11 { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12 { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12 { get; set; }
 #endif
-        /// <summary>The storeId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13 { get; set; }
 #nullable restore
 #else
-        public string StoreId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHint"/> and sets the default values.
-        /// </summary>
-        public DeleteProjectAvatar200ResponseEnvItemContentHint()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9? DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9 DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +157,77 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHint();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHint();
+            if("redis-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1();
+            }
+            else if("postgres-prisma-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10();
+            }
+            else if("postgres-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11();
+            }
+            else if("postgres-host".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12();
+            }
+            else if("postgres-password".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13();
+            }
+            else if("postgres-database".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14();
+            }
+            else if("postgres-url-no-ssl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15();
+            }
+            else if("integration-store-secret".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16();
+            }
+            else if("flags-connection-string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17();
+            }
+            else if("redis-rest-api-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2();
+            }
+            else if("redis-rest-api-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3();
+            }
+            else if("redis-rest-api-read-only-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4();
+            }
+            else if("blob-read-write-token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5();
+            }
+            else if("blob-store-id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6();
+            }
+            else if("blob-webhook-public-key".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7();
+            }
+            else if("postgres-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8();
+            }
+            else if("postgres-url-non-pooling".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,15 +235,75 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1 != null)
             {
-                { "integrationConfigurationId", n => { IntegrationConfigurationId = n.GetStringValue(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationProductId", n => { IntegrationProductId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "storeId", n => { StoreId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintType>(); } },
-            };
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9 != null)
+            {
+                return DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -96,13 +312,74 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("integrationConfigurationId", IntegrationConfigurationId);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationProductId", IntegrationProductId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("storeId", StoreId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf1);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf10);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf11);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf12);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf13);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf14);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf15);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf16);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf2);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf3);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf4);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf5);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf6);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf7);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf8);
+            }
+            else if(DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9>(null, DeleteProjectAvatar200ResponseEnvItemContentHintOneOf9);
+            }
         }
     }
 }

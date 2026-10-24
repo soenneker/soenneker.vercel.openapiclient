@@ -7,72 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetSecurityFirewallConfig200ResponseDraftRulesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetSecurityFirewallConfig200ResponseDraftRulesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The action property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemAction? Action { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1? GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemAction Action { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1 GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1 { get; set; }
 #endif
-        /// <summary>The active property</summary>
-        public bool? Active { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conditionGroup property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemConditionGroupItem>? ConditionGroup { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2? GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemConditionGroupItem> ConditionGroup { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2 GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2 { get; set; }
 #endif
-        /// <summary>The description property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The valid property</summary>
-        public bool? Valid { get; set; }
-        /// <summary>The validationErrors property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors? ValidationErrors { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors ValidationErrors { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItem"/> and sets the default values.
-        /// </summary>
-        public GetSecurityFirewallConfig200ResponseDraftRulesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItem();
+            if("GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1();
+            }
+            else if("GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,17 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1 != null)
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemAction>(global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemAction.CreateFromDiscriminatorValue); } },
-                { "active", n => { Active = n.GetBoolValue(); } },
-                { "conditionGroup", n => { ConditionGroup = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemConditionGroupItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemConditionGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "valid", n => { Valid = n.GetBoolValue(); } },
-                { "validationErrors", n => { ValidationErrors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors>(global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors.CreateFromDiscriminatorValue); } },
-            };
+                return GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2 != null)
+            {
+                return GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -108,15 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemAction>("action", Action);
-            writer.WriteBoolValue("active", Active);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemConditionGroupItem>("conditionGroup", ConditionGroup);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteBoolValue("valid", Valid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors>("validationErrors", ValidationErrors);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1>(null, GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1);
+            }
+            else if(GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2>(null, GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2);
+            }
         }
     }
 }

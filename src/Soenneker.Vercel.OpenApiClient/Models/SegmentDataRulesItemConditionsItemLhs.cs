@@ -37,13 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemLhs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemLhs();
-            if("SegmentDataRulesItemConditionsItemLhsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("segment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SegmentDataRulesItemConditionsItemLhsOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemLhsOneOf1();
             }
-            else if("SegmentDataRulesItemConditionsItemLhsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("entity".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SegmentDataRulesItemConditionsItemLhsOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemLhsOneOf2();
             }

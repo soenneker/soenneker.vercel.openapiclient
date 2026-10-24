@@ -7,62 +7,52 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf5"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DeleteProjectAvatar200ResponseCreator : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DeleteProjectAvatar200ResponseCreator : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The app property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorApp? App { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf1? DeleteProjectAvatar200ResponseCreatorOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorApp App { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf1 DeleteProjectAvatar200ResponseCreatorOneOf1 { get; set; }
 #endif
-        /// <summary>The integration property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorIntegration? Integration { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf2? DeleteProjectAvatar200ResponseCreatorOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorIntegration Integration { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf2 DeleteProjectAvatar200ResponseCreatorOneOf2 { get; set; }
 #endif
-        /// <summary>The project property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorProject? Project { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf3? DeleteProjectAvatar200ResponseCreatorOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorProject Project { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf3 DeleteProjectAvatar200ResponseCreatorOneOf3 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorType? Type { get; set; }
-        /// <summary>The user property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorUser? User { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf4? DeleteProjectAvatar200ResponseCreatorOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorUser User { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf4 DeleteProjectAvatar200ResponseCreatorOneOf4 { get; set; }
 #endif
-        /// <summary>The via property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorVia? Via { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf5? DeleteProjectAvatar200ResponseCreatorOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorVia Via { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf5 DeleteProjectAvatar200ResponseCreatorOneOf5 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreator"/> and sets the default values.
-        /// </summary>
-        public DeleteProjectAvatar200ResponseCreator()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +61,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreator();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreator();
+            if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseCreatorOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf1();
+            }
+            else if("project".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseCreatorOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf2();
+            }
+            else if("app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseCreatorOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf3();
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseCreatorOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf4();
+            }
+            else if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DeleteProjectAvatar200ResponseCreatorOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf5();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,15 +91,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DeleteProjectAvatar200ResponseCreatorOneOf1 != null)
             {
-                { "app", n => { App = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorApp>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorApp.CreateFromDiscriminatorValue); } },
-                { "integration", n => { Integration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorIntegration>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorIntegration.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorProject>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorProject.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorType>(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorUser>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorUser.CreateFromDiscriminatorValue); } },
-                { "via", n => { Via = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorVia>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorVia.CreateFromDiscriminatorValue); } },
-            };
+                return DeleteProjectAvatar200ResponseCreatorOneOf1.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf2 != null)
+            {
+                return DeleteProjectAvatar200ResponseCreatorOneOf2.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf3 != null)
+            {
+                return DeleteProjectAvatar200ResponseCreatorOneOf3.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf4 != null)
+            {
+                return DeleteProjectAvatar200ResponseCreatorOneOf4.GetFieldDeserializers();
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf5 != null)
+            {
+                return DeleteProjectAvatar200ResponseCreatorOneOf5.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -96,13 +120,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorApp>("app", App);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorIntegration>("integration", Integration);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorProject>("project", Project);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorUser>("user", User);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorVia>("via", Via);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DeleteProjectAvatar200ResponseCreatorOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf1>(null, DeleteProjectAvatar200ResponseCreatorOneOf1);
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf2>(null, DeleteProjectAvatar200ResponseCreatorOneOf2);
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf3>(null, DeleteProjectAvatar200ResponseCreatorOneOf3);
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf4>(null, DeleteProjectAvatar200ResponseCreatorOneOf4);
+            }
+            else if(DeleteProjectAvatar200ResponseCreatorOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseCreatorOneOf5>(null, DeleteProjectAvatar200ResponseCreatorOneOf5);
+            }
         }
     }
 }

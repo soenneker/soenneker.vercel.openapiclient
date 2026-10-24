@@ -7,44 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateFlagSegmentRequestDataRulesItemConditionsItemLhs : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateFlagSegmentRequestDataRulesItemConditionsItemLhs : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attribute property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Attribute { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1? CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Attribute { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1 CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1 { get; set; }
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2? CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2 CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsType Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhs"/> and sets the default values.
-        /// </summary>
-        public CreateFlagSegmentRequestDataRulesItemConditionsItemLhs()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +37,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhs();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhs();
+            result.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1();
+            result.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,12 +48,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1 != null || CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2 != null)
             {
-                { "attribute", n => { Attribute = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsType>(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsType.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1, CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -75,10 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("attribute", Attribute);
-            writer.WriteStringValue("kind", Kind);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1>(null, CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf1, CreateFlagSegmentRequestDataRulesItemConditionsItemLhsAnyOf2);
         }
     }
 }

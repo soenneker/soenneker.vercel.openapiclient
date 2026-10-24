@@ -7,38 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class SearchDomains200ResponseResultsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class SearchDomains200ResponseResultsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>`false` means the domain is unavailable or its availability could not be confirmed.</summary>
-        public bool? Available { get; set; }
-        /// <summary>A valid domain name</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf1? SearchDomains200ResponseResultsItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf1 SearchDomains200ResponseResultsItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The premium property</summary>
-        public bool? Premium { get; set; }
-        /// <summary>The price property</summary>
-        public double? Price { get; set; }
-        /// <summary>The renewalPrice property</summary>
-        public double? RenewalPrice { get; set; }
-        /// <summary>The years property</summary>
-        public double? Years { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItem"/> and sets the default values.
-        /// </summary>
-        public SearchDomains200ResponseResultsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf2? SearchDomains200ResponseResultsItemAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf2 SearchDomains200ResponseResultsItemAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +37,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItem();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItem();
+            result.SearchDomains200ResponseResultsItemAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf1();
+            result.SearchDomains200ResponseResultsItemAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +48,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(SearchDomains200ResponseResultsItemAnyOf1 != null || SearchDomains200ResponseResultsItemAnyOf2 != null)
             {
-                { "available", n => { Available = n.GetBoolValue(); } },
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "premium", n => { Premium = n.GetBoolValue(); } },
-                { "price", n => { Price = n.GetDoubleValue(); } },
-                { "renewalPrice", n => { RenewalPrice = n.GetDoubleValue(); } },
-                { "years", n => { Years = n.GetDoubleValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(SearchDomains200ResponseResultsItemAnyOf1, SearchDomains200ResponseResultsItemAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,13 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("available", Available);
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteBoolValue("premium", Premium);
-            writer.WriteDoubleValue("price", Price);
-            writer.WriteDoubleValue("renewalPrice", RenewalPrice);
-            writer.WriteDoubleValue("years", Years);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200ResponseResultsItemAnyOf1>(null, SearchDomains200ResponseResultsItemAnyOf1, SearchDomains200ResponseResultsItemAnyOf2);
         }
     }
 }

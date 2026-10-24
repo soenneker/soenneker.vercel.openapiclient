@@ -19,10 +19,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Name? Name { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Name Name { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateMode>(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Name>(global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateMode>("mode", Mode);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Name>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

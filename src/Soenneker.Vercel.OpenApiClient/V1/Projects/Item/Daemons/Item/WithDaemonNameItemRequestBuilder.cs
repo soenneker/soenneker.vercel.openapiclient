@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\projects\{idOrName-id}\daemons\{daemonName}
+    /// Builds and executes requests for operations under \v1\projects\{idOrName}\daemons\{daemonName}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDaemonNameItemRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDaemonNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/daemons/{daemonName}", pathParameters)
+        public WithDaemonNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDaemonNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/daemons/{daemonName}", rawUrl)
+        public WithDaemonNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}", rawUrl)
         {
         }
     }

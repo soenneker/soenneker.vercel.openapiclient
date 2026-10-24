@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.Projects
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\access-groups\{accessGroupIdOrName-id}\projects
+    /// Builds and executes requests for operations under \v1\access-groups\{idOrName}\projects
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.Projects
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/access-groups/{accessGroupIdOrName%2Did}/projects{?limit*,next*,slug*,teamId*}", pathParameters)
+        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/access-groups/{idOrName}/projects{?limit*,next*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item.Projects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/access-groups/{accessGroupIdOrName%2Did}/projects{?limit*,next*,slug*,teamId*}", rawUrl)
+        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/access-groups/{idOrName}/projects{?limit*,next*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

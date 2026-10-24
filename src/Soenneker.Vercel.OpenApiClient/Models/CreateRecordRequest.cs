@@ -101,17 +101,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequest();
-            result.CreateRecordRequestAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1();
-            result.CreateRecordRequestAnyOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10();
-            result.CreateRecordRequestAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2();
-            result.CreateRecordRequestAnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3();
-            result.CreateRecordRequestAnyOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4();
-            result.CreateRecordRequestAnyOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5();
-            result.CreateRecordRequestAnyOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6();
-            result.CreateRecordRequestAnyOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7();
-            result.CreateRecordRequestAnyOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8();
-            result.CreateRecordRequestAnyOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9();
+            if("A".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1();
+            }
+            else if("HTTPS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10();
+            }
+            else if("AAAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2();
+            }
+            else if("ALIAS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3();
+            }
+            else if("CAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4();
+            }
+            else if("CNAME".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5();
+            }
+            else if("MX".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6();
+            }
+            else if("SRV".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7();
+            }
+            else if("TXT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8();
+            }
+            else if("NS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateRecordRequestAnyOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9();
+            }
             return result;
         }
         /// <summary>
@@ -120,9 +151,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateRecordRequestAnyOf1 != null || CreateRecordRequestAnyOf10 != null || CreateRecordRequestAnyOf2 != null || CreateRecordRequestAnyOf3 != null || CreateRecordRequestAnyOf4 != null || CreateRecordRequestAnyOf5 != null || CreateRecordRequestAnyOf6 != null || CreateRecordRequestAnyOf7 != null || CreateRecordRequestAnyOf8 != null || CreateRecordRequestAnyOf9 != null)
+            if(CreateRecordRequestAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateRecordRequestAnyOf1, CreateRecordRequestAnyOf10, CreateRecordRequestAnyOf2, CreateRecordRequestAnyOf3, CreateRecordRequestAnyOf4, CreateRecordRequestAnyOf5, CreateRecordRequestAnyOf6, CreateRecordRequestAnyOf7, CreateRecordRequestAnyOf8, CreateRecordRequestAnyOf9);
+                return CreateRecordRequestAnyOf1.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf10 != null)
+            {
+                return CreateRecordRequestAnyOf10.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf2 != null)
+            {
+                return CreateRecordRequestAnyOf2.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf3 != null)
+            {
+                return CreateRecordRequestAnyOf3.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf4 != null)
+            {
+                return CreateRecordRequestAnyOf4.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf5 != null)
+            {
+                return CreateRecordRequestAnyOf5.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf6 != null)
+            {
+                return CreateRecordRequestAnyOf6.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf7 != null)
+            {
+                return CreateRecordRequestAnyOf7.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf8 != null)
+            {
+                return CreateRecordRequestAnyOf8.GetFieldDeserializers();
+            }
+            else if(CreateRecordRequestAnyOf9 != null)
+            {
+                return CreateRecordRequestAnyOf9.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -133,7 +200,46 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1>(null, CreateRecordRequestAnyOf1, CreateRecordRequestAnyOf10, CreateRecordRequestAnyOf2, CreateRecordRequestAnyOf3, CreateRecordRequestAnyOf4, CreateRecordRequestAnyOf5, CreateRecordRequestAnyOf6, CreateRecordRequestAnyOf7, CreateRecordRequestAnyOf8, CreateRecordRequestAnyOf9);
+            if(CreateRecordRequestAnyOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1>(null, CreateRecordRequestAnyOf1);
+            }
+            else if(CreateRecordRequestAnyOf10 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10>(null, CreateRecordRequestAnyOf10);
+            }
+            else if(CreateRecordRequestAnyOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2>(null, CreateRecordRequestAnyOf2);
+            }
+            else if(CreateRecordRequestAnyOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3>(null, CreateRecordRequestAnyOf3);
+            }
+            else if(CreateRecordRequestAnyOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4>(null, CreateRecordRequestAnyOf4);
+            }
+            else if(CreateRecordRequestAnyOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5>(null, CreateRecordRequestAnyOf5);
+            }
+            else if(CreateRecordRequestAnyOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6>(null, CreateRecordRequestAnyOf6);
+            }
+            else if(CreateRecordRequestAnyOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7>(null, CreateRecordRequestAnyOf7);
+            }
+            else if(CreateRecordRequestAnyOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8>(null, CreateRecordRequestAnyOf8);
+            }
+            else if(CreateRecordRequestAnyOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9>(null, CreateRecordRequestAnyOf9);
+            }
         }
     }
 }

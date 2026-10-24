@@ -7,130 +7,164 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf18"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf19"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CancelDeployment200ResponseGitSource : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CancelDeployment200ResponseGitSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The commitMetadata property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceCommitMetadata? CommitMetadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf1? CancelDeployment200ResponseGitSourceOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceCommitMetadata CommitMetadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf1 CancelDeployment200ResponseGitSourceOneOf1 { get; set; }
 #endif
-        /// <summary>The gitUrl property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitUrl { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf10? CancelDeployment200ResponseGitSourceOneOf10 { get; set; }
 #nullable restore
 #else
-        public string GitUrl { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf10 CancelDeployment200ResponseGitSourceOneOf10 { get; set; }
 #endif
-        /// <summary>The host property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf11? CancelDeployment200ResponseGitSourceOneOf11 { get; set; }
 #nullable restore
 #else
-        public string Host { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf11 CancelDeployment200ResponseGitSourceOneOf11 { get; set; }
 #endif
-        /// <summary>The org property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf12? CancelDeployment200ResponseGitSourceOneOf12 { get; set; }
 #nullable restore
 #else
-        public string Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf12 CancelDeployment200ResponseGitSourceOneOf12 { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf13? CancelDeployment200ResponseGitSourceOneOf13 { get; set; }
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf13 CancelDeployment200ResponseGitSourceOneOf13 { get; set; }
 #endif
-        /// <summary>The prId property</summary>
-        public double? PrId { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf14"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf14? CancelDeployment200ResponseGitSourceOneOf14 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf14 CancelDeployment200ResponseGitSourceOneOf14 { get; set; }
 #endif
-        /// <summary>The ref property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf15"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ref { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf15? CancelDeployment200ResponseGitSourceOneOf15 { get; set; }
 #nullable restore
 #else
-        public string Ref { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf15 CancelDeployment200ResponseGitSourceOneOf15 { get; set; }
 #endif
-        /// <summary>The repo property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf16"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repo { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf16? CancelDeployment200ResponseGitSourceOneOf16 { get; set; }
 #nullable restore
 #else
-        public string Repo { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf16 CancelDeployment200ResponseGitSourceOneOf16 { get; set; }
 #endif
-        /// <summary>The repoId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf17"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId? RepoId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf17? CancelDeployment200ResponseGitSourceOneOf17 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId RepoId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf17 CancelDeployment200ResponseGitSourceOneOf17 { get; set; }
 #endif
-        /// <summary>The repoPushedAt property</summary>
-        public double? RepoPushedAt { get; set; }
-        /// <summary>The repoUuid property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf18"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoUuid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf18? CancelDeployment200ResponseGitSourceOneOf18 { get; set; }
 #nullable restore
 #else
-        public string RepoUuid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf18 CancelDeployment200ResponseGitSourceOneOf18 { get; set; }
 #endif
-        /// <summary>The sha property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf19"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf19? CancelDeployment200ResponseGitSourceOneOf19 { get; set; }
 #nullable restore
 #else
-        public string Sha { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf19 CancelDeployment200ResponseGitSourceOneOf19 { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf2? CancelDeployment200ResponseGitSourceOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf2 CancelDeployment200ResponseGitSourceOneOf2 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceType? Type { get; set; }
-        /// <summary>The workspaceUuid property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceUuid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf3? CancelDeployment200ResponseGitSourceOneOf3 { get; set; }
 #nullable restore
 #else
-        public string WorkspaceUuid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf3 CancelDeployment200ResponseGitSourceOneOf3 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource"/> and sets the default values.
-        /// </summary>
-        public CancelDeployment200ResponseGitSource()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf4? CancelDeployment200ResponseGitSourceOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf4 CancelDeployment200ResponseGitSourceOneOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf5? CancelDeployment200ResponseGitSourceOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf5 CancelDeployment200ResponseGitSourceOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf6? CancelDeployment200ResponseGitSourceOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf6 CancelDeployment200ResponseGitSourceOneOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf7? CancelDeployment200ResponseGitSourceOneOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf7 CancelDeployment200ResponseGitSourceOneOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf8? CancelDeployment200ResponseGitSourceOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf8 CancelDeployment200ResponseGitSourceOneOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf9? CancelDeployment200ResponseGitSourceOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf9 CancelDeployment200ResponseGitSourceOneOf9 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -139,7 +173,85 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource();
+            if("CancelDeployment200ResponseGitSourceOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf1();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf10".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf10();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf11".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf11 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf11();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf12".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf12 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf12();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf13".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf13 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf13();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf14".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf14 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf14();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf15".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf15 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf15();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf16".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf16 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf16();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf17".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf17 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf17();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf18".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf18 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf18();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf19".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf19 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf19();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf2();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf3();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf4();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf5();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf6();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf7();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf8();
+            }
+            else if("CancelDeployment200ResponseGitSourceOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancelDeployment200ResponseGitSourceOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf9();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,25 +259,83 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CancelDeployment200ResponseGitSourceOneOf1 != null)
             {
-                { "commitMetadata", n => { CommitMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceCommitMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceCommitMetadata.CreateFromDiscriminatorValue); } },
-                { "gitUrl", n => { GitUrl = n.GetStringValue(); } },
-                { "host", n => { Host = n.GetStringValue(); } },
-                { "org", n => { Org = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetStringValue(); } },
-                { "prId", n => { PrId = n.GetDoubleValue(); } },
-                { "projectId", n => { ProjectId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId.CreateFromDiscriminatorValue); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "repo", n => { Repo = n.GetStringValue(); } },
-                { "repoId", n => { RepoId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId.CreateFromDiscriminatorValue); } },
-                { "repoPushedAt", n => { RepoPushedAt = n.GetDoubleValue(); } },
-                { "repoUuid", n => { RepoUuid = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceType>(); } },
-                { "workspaceUuid", n => { WorkspaceUuid = n.GetStringValue(); } },
-            };
+                return CancelDeployment200ResponseGitSourceOneOf1.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf10 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf10.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf11 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf11.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf12 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf12.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf13 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf13.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf14 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf14.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf15 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf15.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf16 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf16.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf17 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf17.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf18 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf18.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf19 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf19.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf2 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf2.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf3 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf3.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf4 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf4.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf5 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf5.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf6 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf6.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf7 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf7.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf8 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf8.GetFieldDeserializers();
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf9 != null)
+            {
+                return CancelDeployment200ResponseGitSourceOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -174,144 +344,81 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceCommitMetadata>("commitMetadata", CommitMetadata);
-            writer.WriteStringValue("gitUrl", GitUrl);
-            writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("org", Org);
-            writer.WriteStringValue("owner", Owner);
-            writer.WriteDoubleValue("prId", PrId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId>("projectId", ProjectId);
-            writer.WriteStringValue("ref", Ref);
-            writer.WriteStringValue("repo", Repo);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId>("repoId", RepoId);
-            writer.WriteDoubleValue("repoPushedAt", RepoPushedAt);
-            writer.WriteStringValue("repoUuid", RepoUuid);
-            writer.WriteStringValue("sha", Sha);
-            writer.WriteStringValue("slug", Slug);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceType>("type", Type);
-            writer.WriteStringValue("workspaceUuid", WorkspaceUuid);
-            writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CancelDeployment200ResponseGitSource_projectId : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId CreateFromDiscriminatorValue(IParseNode parseNode)
+            if(CancelDeployment200ResponseGitSourceOneOf1 != null)
             {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_projectId();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf1>(null, CancelDeployment200ResponseGitSourceOneOf1);
             }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            else if(CancelDeployment200ResponseGitSourceOneOf10 != null)
             {
-                return new Dictionary<string, Action<IParseNode>>();
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf10>(null, CancelDeployment200ResponseGitSourceOneOf10);
             }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
+            else if(CancelDeployment200ResponseGitSourceOneOf11 != null)
             {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf11>(null, CancelDeployment200ResponseGitSourceOneOf11);
             }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CancelDeployment200ResponseGitSource_repoId : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId CreateFromDiscriminatorValue(IParseNode parseNode)
+            else if(CancelDeployment200ResponseGitSourceOneOf12 != null)
             {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSource.CancelDeployment200ResponseGitSource_repoId();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf12>(null, CancelDeployment200ResponseGitSourceOneOf12);
             }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            else if(CancelDeployment200ResponseGitSourceOneOf13 != null)
             {
-                return new Dictionary<string, Action<IParseNode>>();
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf13>(null, CancelDeployment200ResponseGitSourceOneOf13);
             }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
+            else if(CancelDeployment200ResponseGitSourceOneOf14 != null)
             {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf14>(null, CancelDeployment200ResponseGitSourceOneOf14);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf15 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf15>(null, CancelDeployment200ResponseGitSourceOneOf15);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf16 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf16>(null, CancelDeployment200ResponseGitSourceOneOf16);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf17 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf17>(null, CancelDeployment200ResponseGitSourceOneOf17);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf18 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf18>(null, CancelDeployment200ResponseGitSourceOneOf18);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf19 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf19>(null, CancelDeployment200ResponseGitSourceOneOf19);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf2>(null, CancelDeployment200ResponseGitSourceOneOf2);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf3>(null, CancelDeployment200ResponseGitSourceOneOf3);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf4>(null, CancelDeployment200ResponseGitSourceOneOf4);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf5>(null, CancelDeployment200ResponseGitSourceOneOf5);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf6>(null, CancelDeployment200ResponseGitSourceOneOf6);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf7>(null, CancelDeployment200ResponseGitSourceOneOf7);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf8>(null, CancelDeployment200ResponseGitSourceOneOf8);
+            }
+            else if(CancelDeployment200ResponseGitSourceOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseGitSourceOneOf9>(null, CancelDeployment200ResponseGitSourceOneOf9);
             }
         }
     }

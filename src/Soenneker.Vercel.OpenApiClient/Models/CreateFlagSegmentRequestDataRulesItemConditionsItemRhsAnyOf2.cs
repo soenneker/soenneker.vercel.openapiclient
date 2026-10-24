@@ -31,10 +31,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemRhsAnyOf2Type? Type { get; set; }
+        public UntypedNode? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemRhsAnyOf2Type Type { get; set; }
+        public UntypedNode Type { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "flags", n => { Flags = n.GetStringValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemRhsAnyOf2Type>(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemRhsAnyOf2Type.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("flags", Flags);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegmentRequestDataRulesItemConditionsItemRhsAnyOf2Type>("type", Type);
+            writer.WriteObjectValue<UntypedNode>("type", Type);
         }
     }
 }

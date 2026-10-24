@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf354OldSsoProtection : IComposedTypeWrapper, IParsable
@@ -21,14 +21,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf1 UserEventPayloadOneOf354OldSsoProtectionOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionWrapper? UserEventPayloadOneOf354OldSsoProtectionWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionWrapper UserEventPayloadOneOf354OldSsoProtectionWrapper { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf2"/></summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf2? UserEventPayloadOneOf354OldSsoProtectionOneOf2 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,9 +37,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.UserEventPayloadOneOf354OldSsoProtectionOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf1();
             }
-            else if("UserEventPayloadOneOf354OldSsoProtectionWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf2>() is global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf2 userEventPayloadOneOf354OldSsoProtectionOneOf2Value)
             {
-                result.UserEventPayloadOneOf354OldSsoProtectionWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionWrapper();
+                result.UserEventPayloadOneOf354OldSsoProtectionOneOf2 = userEventPayloadOneOf354OldSsoProtectionOneOf2Value;
             }
             return result;
         }
@@ -58,10 +52,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(UserEventPayloadOneOf354OldSsoProtectionOneOf1 != null)
             {
                 return UserEventPayloadOneOf354OldSsoProtectionOneOf1.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf354OldSsoProtectionWrapper != null)
-            {
-                return UserEventPayloadOneOf354OldSsoProtectionWrapper.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -76,9 +66,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf1>(null, UserEventPayloadOneOf354OldSsoProtectionOneOf1);
             }
-            else if(UserEventPayloadOneOf354OldSsoProtectionWrapper != null)
+            else if(UserEventPayloadOneOf354OldSsoProtectionOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionWrapper>(null, UserEventPayloadOneOf354OldSsoProtectionWrapper);
+                writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354OldSsoProtectionOneOf2>(null, UserEventPayloadOneOf354OldSsoProtectionOneOf2);
             }
         }
     }

@@ -7,60 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateDrainRequestFilterFilter : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateDrainRequestFilterFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deployment property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterDeployment? Deployment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf1? CreateDrainRequestFilterFilterOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterDeployment Deployment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf1 CreateDrainRequestFilterFilterOneOf1 { get; set; }
 #endif
-        /// <summary>The log property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterLog? Log { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf2? CreateDrainRequestFilterFilterOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterLog Log { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf2 CreateDrainRequestFilterFilterOneOf2 { get; set; }
 #endif
-        /// <summary>The project property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterProject? Project { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterProject Project { get; set; }
-#endif
-        /// <summary>The text property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Text { get; set; }
-#nullable restore
-#else
-        public string Text { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilter"/> and sets the default values.
-        /// </summary>
-        public CreateDrainRequestFilterFilter()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilter();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilter();
+            if("CreateDrainRequestFilterFilterOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateDrainRequestFilterFilterOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf1();
+            }
+            else if("CreateDrainRequestFilterFilterOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateDrainRequestFilterFilterOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,14 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateDrainRequestFilterFilterOneOf1 != null)
             {
-                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterDeployment>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterDeployment.CreateFromDiscriminatorValue); } },
-                { "log", n => { Log = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterLog>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterLog.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterProject>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterProject.CreateFromDiscriminatorValue); } },
-                { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return CreateDrainRequestFilterFilterOneOf1.GetFieldDeserializers();
+            }
+            else if(CreateDrainRequestFilterFilterOneOf2 != null)
+            {
+                return CreateDrainRequestFilterFilterOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -93,12 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterDeployment>("deployment", Deployment);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterLog>("log", Log);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterProject>("project", Project);
-            writer.WriteStringValue("text", Text);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateDrainRequestFilterFilterOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf1>(null, CreateDrainRequestFilterFilterOneOf1);
+            }
+            else if(CreateDrainRequestFilterFilterOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilterFilterOneOf2>(null, CreateDrainRequestFilterFilterOneOf2);
+            }
         }
     }
 }

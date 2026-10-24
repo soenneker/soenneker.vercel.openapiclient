@@ -28,10 +28,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Environments where the connector is enabled for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionEnabledEnvironmentsItem>? EnabledEnvironments { get; set; }
+        public List<string>? EnabledEnvironments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionEnabledEnvironmentsItem> EnabledEnvironments { get; set; }
+        public List<string> EnabledEnvironments { get; set; }
 #endif
         /// <summary>Vercel project connected to the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "enabledEnvironments", n => { EnabledEnvironments = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionEnabledEnvironmentsItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionEnabledEnvironmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "enabledEnvironments", n => { EnabledEnvironments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionProject>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionProject.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
@@ -84,7 +84,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionEnabledEnvironmentsItem>("enabledEnvironments", EnabledEnvironments);
+            writer.WriteCollectionOfPrimitiveValues<string>("enabledEnvironments", EnabledEnvironments);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectProjectConnectionProject>("project", Project);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

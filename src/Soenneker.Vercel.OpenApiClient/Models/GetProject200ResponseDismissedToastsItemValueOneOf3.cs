@@ -17,18 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The currentValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3CurrentValue? CurrentValue { get; set; }
+        public string? CurrentValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3CurrentValue CurrentValue { get; set; }
+        public string CurrentValue { get; set; }
 #endif
         /// <summary>The previousValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3PreviousValue? PreviousValue { get; set; }
+        public string? PreviousValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3PreviousValue PreviousValue { get; set; }
+        public string PreviousValue { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currentValue", n => { CurrentValue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3CurrentValue>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3CurrentValue.CreateFromDiscriminatorValue); } },
-                { "previousValue", n => { PreviousValue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3PreviousValue>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3PreviousValue.CreateFromDiscriminatorValue); } },
+                { "currentValue", n => { CurrentValue = n.GetStringValue(); } },
+                { "previousValue", n => { PreviousValue = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3CurrentValue>("currentValue", CurrentValue);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseDismissedToastsItemValueOneOf3PreviousValue>("previousValue", PreviousValue);
+            writer.WriteStringValue("currentValue", CurrentValue);
+            writer.WriteStringValue("previousValue", PreviousValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

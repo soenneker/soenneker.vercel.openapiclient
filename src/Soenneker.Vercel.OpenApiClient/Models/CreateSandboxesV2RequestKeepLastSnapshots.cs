@@ -18,13 +18,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether to immediately delete evicted snapshots. Defaults to true.</summary>
         public bool? DeleteEvicted { get; set; }
         /// <summary>Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshotsExpiration? Expiration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshotsExpiration Expiration { get; set; }
-#endif
+        public int? Expiration { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "deleteEvicted", n => { DeleteEvicted = n.GetBoolValue(); } },
-                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshotsExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshotsExpiration.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteBoolValue("deleteEvicted", DeleteEvicted);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshotsExpiration>("expiration", Expiration);
+            writer.WriteIntValue("expiration", Expiration);
         }
     }
 }

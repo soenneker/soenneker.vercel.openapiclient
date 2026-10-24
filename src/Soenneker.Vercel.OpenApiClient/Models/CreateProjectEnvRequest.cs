@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf1"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateProjectEnvRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestBranch2? CreateProjectEnvRequestBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestBranch2 CreateProjectEnvRequestBranch2 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf1 CreateProjectEnvRequestOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item>? CreateProjectEnvRequestOneOf2Item { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item> CreateProjectEnvRequestOneOf2Item { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,9 +39,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequest();
-            if("CreateProjectEnvRequestBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item> createProjectEnvRequestOneOf2ItemValue)
             {
-                result.CreateProjectEnvRequestBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestBranch2();
+                result.CreateProjectEnvRequestOneOf2Item = createProjectEnvRequestOneOf2ItemValue;
             }
             return result;
         }
@@ -51,11 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateProjectEnvRequestBranch2 != null)
-            {
-                return CreateProjectEnvRequestBranch2.GetFieldDeserializers();
-            }
-            else if(CreateProjectEnvRequestOneOf1 != null)
+            if(CreateProjectEnvRequestOneOf1 != null)
             {
                 return CreateProjectEnvRequestOneOf1.GetFieldDeserializers();
             }
@@ -68,13 +64,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateProjectEnvRequestBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestBranch2>(null, CreateProjectEnvRequestBranch2);
-            }
-            else if(CreateProjectEnvRequestOneOf1 != null)
+            if(CreateProjectEnvRequestOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf1>(null, CreateProjectEnvRequestOneOf1);
+            }
+            else if(CreateProjectEnvRequestOneOf2Item != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequestOneOf2Item>(null, CreateProjectEnvRequestOneOf2Item);
             }
         }
     }

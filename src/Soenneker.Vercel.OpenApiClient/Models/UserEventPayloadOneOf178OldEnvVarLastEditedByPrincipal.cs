@@ -37,13 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipal();
-            if("UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipalOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipalOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipalOneOf1();
             }
-            else if("UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipalOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipalOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178OldEnvVarLastEditedByPrincipalOneOf2();
             }

@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsOneOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateSandboxRequestKeepLastSnapshots : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsBranch1? UpdateSandboxRequestKeepLastSnapshotsBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsBranch1 UpdateSandboxRequestKeepLastSnapshotsBranch1 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,13 +39,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshots();
-            if("UpdateSandboxRequestKeepLastSnapshotsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateSandboxRequestKeepLastSnapshotsBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsBranch1();
-            }
-            else if("UpdateSandboxRequestKeepLastSnapshotsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("UpdateSandboxRequestKeepLastSnapshotsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UpdateSandboxRequestKeepLastSnapshotsOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsOneOf2();
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,11 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpdateSandboxRequestKeepLastSnapshotsBranch1 != null)
-            {
-                return UpdateSandboxRequestKeepLastSnapshotsBranch1.GetFieldDeserializers();
-            }
-            else if(UpdateSandboxRequestKeepLastSnapshotsOneOf2 != null)
+            if(UpdateSandboxRequestKeepLastSnapshotsOneOf2 != null)
             {
                 return UpdateSandboxRequestKeepLastSnapshotsOneOf2.GetFieldDeserializers();
             }
@@ -72,13 +68,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdateSandboxRequestKeepLastSnapshotsBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsBranch1>(null, UpdateSandboxRequestKeepLastSnapshotsBranch1);
-            }
-            else if(UpdateSandboxRequestKeepLastSnapshotsOneOf2 != null)
+            if(UpdateSandboxRequestKeepLastSnapshotsOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshotsOneOf2>(null, UpdateSandboxRequestKeepLastSnapshotsOneOf2);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Backups;
-using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id;
+using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_Escaped;
 using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Items;
 using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Schema;
 using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token;
@@ -28,10 +28,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Backups.BackupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The item_by_id property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id.Item_by_idRequestBuilder Item_by_id
+        /// <summary>The item property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_Escaped.Item_EscapedRequestBuilder Item
         {
-            get => new global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id.Item_by_idRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_Escaped.Item_EscapedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The items property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Items.ItemsRequestBuilder Items

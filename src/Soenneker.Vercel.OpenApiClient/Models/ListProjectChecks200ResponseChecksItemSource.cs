@@ -7,72 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ListProjectChecks200ResponseChecksItemSource : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ListProjectChecks200ResponseChecksItemSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The externalCheckName property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalCheckName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf1? ListProjectChecks200ResponseChecksItemSourceOneOf1 { get; set; }
 #nullable restore
 #else
-        public string ExternalCheckName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf1 ListProjectChecks200ResponseChecksItemSourceOneOf1 { get; set; }
 #endif
-        /// <summary>The externalResourceId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalResourceId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf2? ListProjectChecks200ResponseChecksItemSourceOneOf2 { get; set; }
 #nullable restore
 #else
-        public string ExternalResourceId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf2 ListProjectChecks200ResponseChecksItemSourceOneOf2 { get; set; }
 #endif
-        /// <summary>The integrationConfigurationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf3? ListProjectChecks200ResponseChecksItemSourceOneOf3 { get; set; }
 #nullable restore
 #else
-        public string IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf3 ListProjectChecks200ResponseChecksItemSourceOneOf3 { get; set; }
 #endif
-        /// <summary>The integrationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationId { get; set; }
-#nullable restore
-#else
-        public string IntegrationId { get; set; }
-#endif
-        /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceKindEnum? Kind { get; set; }
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceProvider? Provider { get; set; }
-        /// <summary>The resourceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceId { get; set; }
-#nullable restore
-#else
-        public string ResourceId { get; set; }
-#endif
-        /// <summary>The webhookId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookId { get; set; }
-#nullable restore
-#else
-        public string WebhookId { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSource"/> and sets the default values.
-        /// </summary>
-        public ListProjectChecks200ResponseChecksItemSource()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,7 +45,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSource();
+            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSource();
+            if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListProjectChecks200ResponseChecksItemSourceOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf1();
+            }
+            else if("webhook".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListProjectChecks200ResponseChecksItemSourceOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf2();
+            }
+            else if("git-provider".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListProjectChecks200ResponseChecksItemSourceOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,17 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListProjectChecks200ResponseChecksItemSourceOneOf1 != null)
             {
-                { "externalCheckName", n => { ExternalCheckName = n.GetStringValue(); } },
-                { "externalResourceId", n => { ExternalResourceId = n.GetStringValue(); } },
-                { "integrationConfigurationId", n => { IntegrationConfigurationId = n.GetStringValue(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceKindEnum>(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceProvider>(); } },
-                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "webhookId", n => { WebhookId = n.GetStringValue(); } },
-            };
+                return ListProjectChecks200ResponseChecksItemSourceOneOf1.GetFieldDeserializers();
+            }
+            else if(ListProjectChecks200ResponseChecksItemSourceOneOf2 != null)
+            {
+                return ListProjectChecks200ResponseChecksItemSourceOneOf2.GetFieldDeserializers();
+            }
+            else if(ListProjectChecks200ResponseChecksItemSourceOneOf3 != null)
+            {
+                return ListProjectChecks200ResponseChecksItemSourceOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -108,15 +88,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("externalCheckName", ExternalCheckName);
-            writer.WriteStringValue("externalResourceId", ExternalResourceId);
-            writer.WriteStringValue("integrationConfigurationId", IntegrationConfigurationId);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceKindEnum>("kind", Kind);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceProvider>("provider", Provider);
-            writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteStringValue("webhookId", WebhookId);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ListProjectChecks200ResponseChecksItemSourceOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf1>(null, ListProjectChecks200ResponseChecksItemSourceOneOf1);
+            }
+            else if(ListProjectChecks200ResponseChecksItemSourceOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf2>(null, ListProjectChecks200ResponseChecksItemSourceOneOf2);
+            }
+            else if(ListProjectChecks200ResponseChecksItemSourceOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItemSourceOneOf3>(null, ListProjectChecks200ResponseChecksItemSourceOneOf3);
+            }
         }
     }
 }

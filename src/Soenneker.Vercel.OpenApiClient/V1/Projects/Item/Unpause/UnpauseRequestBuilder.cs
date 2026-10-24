@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\projects\{idOrName-id}\unpause
+    /// Builds and executes requests for operations under \v1\projects\{idOrName}\unpause
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnpauseRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnpauseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/unpause{?slug*,teamId*}", pathParameters)
+        public UnpauseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/unpause{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnpauseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/unpause{?slug*,teamId*}", rawUrl)
+        public UnpauseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/unpause{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

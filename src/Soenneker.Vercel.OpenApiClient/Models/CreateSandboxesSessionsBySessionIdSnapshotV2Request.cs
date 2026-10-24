@@ -13,13 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The number of milliseconds after which the snapshot will expire and be deleted. Use 0 for no expiration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesSessionsBySessionIdSnapshotV2RequestExpiration? Expiration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesSessionsBySessionIdSnapshotV2RequestExpiration Expiration { get; set; }
-#endif
+        public int? Expiration { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +32,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesSessionsBySessionIdSnapshotV2RequestExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesSessionsBySessionIdSnapshotV2RequestExpiration.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesSessionsBySessionIdSnapshotV2RequestExpiration>("expiration", Expiration);
+            writer.WriteIntValue("expiration", Expiration);
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The args property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemArgs? Args { get; set; }
+        public UntypedNode? Args { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemArgs Args { get; set; }
+        public UntypedNode Args { get; set; }
 #endif
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "args", n => { Args = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemArgs>(global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemArgs.CreateFromDiscriminatorValue); } },
+                { "args", n => { Args = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "env", n => { Env = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemOp>(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemTarget>(global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemTarget.CreateFromDiscriminatorValue); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemArgs>("args", Args);
+            writer.WriteObjectValue<UntypedNode>("args", Args);
             writer.WriteCollectionOfPrimitiveValues<string>("env", Env);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemOp>("op", Op);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StageRoutesRequestRoutesItemRouteTransformsItemTarget>("target", Target);

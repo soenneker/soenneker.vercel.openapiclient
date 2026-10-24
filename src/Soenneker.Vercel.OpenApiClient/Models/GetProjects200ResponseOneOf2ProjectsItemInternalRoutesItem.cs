@@ -7,48 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expiry property</summary>
-        public double? Expiry { get; set; }
-        /// <summary>The has property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemHasItem>? Has { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1? GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemHasItem> Has { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1 GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1 { get; set; }
 #endif
-        /// <summary>The mitigate property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemMitigate? Mitigate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2? GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemMitigate Mitigate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2 GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2 { get; set; }
 #endif
-        /// <summary>The src property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Src { get; set; }
-#nullable restore
-#else
-        public string Src { get; set; }
-#endif
-        /// <summary>The status property</summary>
-        public double? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItem"/> and sets the default values.
-        /// </summary>
-        public GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItem();
+            if("GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1();
+            }
+            else if("GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,14 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1 != null)
             {
-                { "expiry", n => { Expiry = n.GetDoubleValue(); } },
-                { "has", n => { Has = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemHasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemHasItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "mitigate", n => { Mitigate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemMitigate>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemMitigate.CreateFromDiscriminatorValue); } },
-                { "src", n => { Src = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetDoubleValue(); } },
-            };
+                return GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2 != null)
+            {
+                return GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -81,12 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("expiry", Expiry);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemHasItem>("has", Has);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemMitigate>("mitigate", Mitigate);
-            writer.WriteStringValue("src", Src);
-            writer.WriteDoubleValue("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1>(null, GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf1);
+            }
+            else if(GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2>(null, GetProjects200ResponseOneOf2ProjectsItemInternalRoutesItemOneOf2);
+            }
         }
     }
 }

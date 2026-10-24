@@ -7,24 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetProjectBoxes200ResponseDaemonsItemScope : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetProjectBoxes200ResponseDaemonsItemScope : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeType? Type { get; set; }
-        /// <summary>The value property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeValue? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScope"/> and sets the default values.
-        /// </summary>
-        public GetProjectBoxes200ResponseDaemonsItemScope()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf1? GetProjectBoxes200ResponseDaemonsItemScopeOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf1 GetProjectBoxes200ResponseDaemonsItemScopeOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf2? GetProjectBoxes200ResponseDaemonsItemScopeOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf2 GetProjectBoxes200ResponseDaemonsItemScopeOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf3? GetProjectBoxes200ResponseDaemonsItemScopeOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf3 GetProjectBoxes200ResponseDaemonsItemScopeOneOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +45,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScope();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScope();
+            if("target".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetProjectBoxes200ResponseDaemonsItemScopeOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf1();
+            }
+            else if("branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetProjectBoxes200ResponseDaemonsItemScopeOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf2();
+            }
+            else if("customEnvironment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetProjectBoxes200ResponseDaemonsItemScopeOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,11 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetProjectBoxes200ResponseDaemonsItemScopeOneOf1 != null)
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeType>(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeValue>(); } },
-            };
+                return GetProjectBoxes200ResponseDaemonsItemScopeOneOf1.GetFieldDeserializers();
+            }
+            else if(GetProjectBoxes200ResponseDaemonsItemScopeOneOf2 != null)
+            {
+                return GetProjectBoxes200ResponseDaemonsItemScopeOneOf2.GetFieldDeserializers();
+            }
+            else if(GetProjectBoxes200ResponseDaemonsItemScopeOneOf3 != null)
+            {
+                return GetProjectBoxes200ResponseDaemonsItemScopeOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -54,9 +88,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeType>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeValue>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetProjectBoxes200ResponseDaemonsItemScopeOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf1>(null, GetProjectBoxes200ResponseDaemonsItemScopeOneOf1);
+            }
+            else if(GetProjectBoxes200ResponseDaemonsItemScopeOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf2>(null, GetProjectBoxes200ResponseDaemonsItemScopeOneOf2);
+            }
+            else if(GetProjectBoxes200ResponseDaemonsItemScopeOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScopeOneOf3>(null, GetProjectBoxes200ResponseDaemonsItemScopeOneOf3);
+            }
         }
     }
 }

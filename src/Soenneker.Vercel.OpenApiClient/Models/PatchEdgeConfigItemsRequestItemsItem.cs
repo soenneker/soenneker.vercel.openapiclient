@@ -7,46 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PatchEdgeConfigItemsRequestItemsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PatchEdgeConfigItemsRequestItemsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1? PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1 PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1 { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2? PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Key { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2 PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2 { get; set; }
 #endif
-        /// <summary>The operation property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Operation? Operation { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Value? Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3? PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Value Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3 PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem"/> and sets the default values.
-        /// </summary>
-        public PatchEdgeConfigItemsRequestItemsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4? PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4 PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +53,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem();
+            result.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1();
+            result.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2();
+            result.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3();
+            result.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +66,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1 != null || PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2 != null || PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3 != null || PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4 != null)
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "key", n => { Key = n.GetStringValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Operation>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Value>(global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Value.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1, PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2, PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3, PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("key", Key);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Operation>("operation", Operation);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1Value>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1>(null, PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1, PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2, PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3, PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4);
         }
     }
 }

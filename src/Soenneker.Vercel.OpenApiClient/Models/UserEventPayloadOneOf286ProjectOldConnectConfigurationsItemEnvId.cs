@@ -8,27 +8,21 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvId : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1? UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1 UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1 { get; set; }
+        public string String { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper? UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2"/></summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2? UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,13 +33,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvId();
-            if("UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2>() is global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2 userEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2Value)
             {
-                result.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1();
+                result.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2 = userEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2Value;
             }
-            else if("UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetStringValue() is string stringValue)
             {
-                result.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper();
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,14 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1 != null)
-            {
-                return UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper != null)
-            {
-                return UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +58,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1 != null)
+            if(UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1>(null, UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdBranch1);
+                writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2>(null, UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdOneOf2);
             }
-            else if(UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper>(null, UserEventPayloadOneOf286ProjectOldConnectConfigurationsItemEnvIdWrapper);
+                writer.WriteStringValue(null, String);
             }
         }
     }

@@ -53,21 +53,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal();
-            if("UserEventPrincipalOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPrincipalOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipalOneOf1();
             }
-            else if("UserEventPrincipalOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPrincipalOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipalOneOf2();
             }
-            else if("UserEventPrincipalOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("external".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPrincipalOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipalOneOf3();
             }
-            else if("UserEventPrincipalOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPrincipalOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipalOneOf4();
             }

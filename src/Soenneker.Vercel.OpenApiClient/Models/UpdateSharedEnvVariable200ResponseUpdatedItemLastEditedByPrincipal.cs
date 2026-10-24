@@ -7,54 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipal : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipal : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatar property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Avatar { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1? UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Avatar { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1 UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1 { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2? UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2 UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2 { get; set; }
 #endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalType? Type { get; set; }
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipal"/> and sets the default values.
-        /// </summary>
-        public UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipal()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipal();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipal();
+            if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1();
+            }
+            else if("app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,14 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1 != null)
             {
-                { "avatar", n => { Avatar = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalType>(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-            };
+                return UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1.GetFieldDeserializers();
+            }
+            else if(UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2 != null)
+            {
+                return UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -87,12 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("avatar", Avatar);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalType>("type", Type);
-            writer.WriteStringValue("username", Username);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1>(null, UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf1);
+            }
+            else if(UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2>(null, UpdateSharedEnvVariable200ResponseUpdatedItemLastEditedByPrincipalOneOf2);
+            }
         }
     }
 }

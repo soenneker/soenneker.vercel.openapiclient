@@ -7,52 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The command property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Command { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1? ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Command { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1 ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1 { get; set; }
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2? ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2 ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2 { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The target property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Target { get; set; }
-#nullable restore
-#else
-        public string Target { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation"/> and sets the default values.
-        /// </summary>
-        public ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,7 +37,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation();
+            result.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1();
+            result.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,13 +48,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1 != null || ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2 != null)
             {
-                { "command", n => { Command = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1, ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -84,11 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("command", Command);
-            writer.WriteStringValue("kind", Kind);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("target", Target);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1>(null, ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf1, ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperationAnyOf2);
         }
     }
 }

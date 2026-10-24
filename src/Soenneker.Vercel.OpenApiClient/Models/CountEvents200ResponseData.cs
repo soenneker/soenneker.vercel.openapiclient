@@ -7,200 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CountEvents200ResponseData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CountEvents200ResponseData : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The browserName property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrowserName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf1? CountEvents200ResponseDataOneOf1 { get; set; }
 #nullable restore
 #else
-        public string BrowserName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf1 CountEvents200ResponseDataOneOf1 { get; set; }
 #endif
-        /// <summary>The count property</summary>
-        public double? Count { get; set; }
-        /// <summary>The country property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf2? CountEvents200ResponseDataOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf2 CountEvents200ResponseDataOneOf2 { get; set; }
 #endif
-        /// <summary>The deviceType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeviceType { get; set; }
-#nullable restore
-#else
-        public string DeviceType { get; set; }
-#endif
-        /// <summary>The environment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Environment { get; set; }
-#nullable restore
-#else
-        public string Environment { get; set; }
-#endif
-        /// <summary>The eventData property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventData { get; set; }
-#nullable restore
-#else
-        public string EventData { get; set; }
-#endif
-        /// <summary>The eventName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventName { get; set; }
-#nullable restore
-#else
-        public string EventName { get; set; }
-#endif
-        /// <summary>The flags property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Flags { get; set; }
-#nullable restore
-#else
-        public string Flags { get; set; }
-#endif
-        /// <summary>The groupId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GroupId { get; set; }
-#nullable restore
-#else
-        public string GroupId { get; set; }
-#endif
-        /// <summary>The osName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OsName { get; set; }
-#nullable restore
-#else
-        public string OsName { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The referrerHostname property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ReferrerHostname { get; set; }
-#nullable restore
-#else
-        public string ReferrerHostname { get; set; }
-#endif
-        /// <summary>The requestHostname property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RequestHostname { get; set; }
-#nullable restore
-#else
-        public string RequestHostname { get; set; }
-#endif
-        /// <summary>The requestPath property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RequestPath { get; set; }
-#nullable restore
-#else
-        public string RequestPath { get; set; }
-#endif
-        /// <summary>The route property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Route { get; set; }
-#nullable restore
-#else
-        public string Route { get; set; }
-#endif
-        /// <summary>The userId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
-        /// <summary>The utmCampaign property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UtmCampaign { get; set; }
-#nullable restore
-#else
-        public string UtmCampaign { get; set; }
-#endif
-        /// <summary>The utmContent property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UtmContent { get; set; }
-#nullable restore
-#else
-        public string UtmContent { get; set; }
-#endif
-        /// <summary>The utmMedium property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UtmMedium { get; set; }
-#nullable restore
-#else
-        public string UtmMedium { get; set; }
-#endif
-        /// <summary>The utmSource property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UtmSource { get; set; }
-#nullable restore
-#else
-        public string UtmSource { get; set; }
-#endif
-        /// <summary>The utmTerm property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UtmTerm { get; set; }
-#nullable restore
-#else
-        public string UtmTerm { get; set; }
-#endif
-        /// <summary>The visitorId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VisitorId { get; set; }
-#nullable restore
-#else
-        public string VisitorId { get; set; }
-#endif
-        /// <summary>The visitors property</summary>
-        public double? Visitors { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseData"/> and sets the default values.
-        /// </summary>
-        public CountEvents200ResponseData()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -209,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseData();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseData();
+            if("CountEvents200ResponseDataOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CountEvents200ResponseDataOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf1();
+            }
+            else if("CountEvents200ResponseDataOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CountEvents200ResponseDataOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -217,33 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CountEvents200ResponseDataOneOf1 != null)
             {
-                { "browserName", n => { BrowserName = n.GetStringValue(); } },
-                { "count", n => { Count = n.GetDoubleValue(); } },
-                { "country", n => { Country = n.GetStringValue(); } },
-                { "deviceType", n => { DeviceType = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "eventData", n => { EventData = n.GetStringValue(); } },
-                { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "flags", n => { Flags = n.GetStringValue(); } },
-                { "groupId", n => { GroupId = n.GetStringValue(); } },
-                { "osName", n => { OsName = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "referrerHostname", n => { ReferrerHostname = n.GetStringValue(); } },
-                { "requestHostname", n => { RequestHostname = n.GetStringValue(); } },
-                { "requestPath", n => { RequestPath = n.GetStringValue(); } },
-                { "route", n => { Route = n.GetStringValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
-                { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
-                { "utmContent", n => { UtmContent = n.GetStringValue(); } },
-                { "utmMedium", n => { UtmMedium = n.GetStringValue(); } },
-                { "utmSource", n => { UtmSource = n.GetStringValue(); } },
-                { "utmTerm", n => { UtmTerm = n.GetStringValue(); } },
-                { "visitorId", n => { VisitorId = n.GetStringValue(); } },
-                { "visitors", n => { Visitors = n.GetDoubleValue(); } },
-            };
+                return CountEvents200ResponseDataOneOf1.GetFieldDeserializers();
+            }
+            else if(CountEvents200ResponseDataOneOf2 != null)
+            {
+                return CountEvents200ResponseDataOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -252,31 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("browserName", BrowserName);
-            writer.WriteDoubleValue("count", Count);
-            writer.WriteStringValue("country", Country);
-            writer.WriteStringValue("deviceType", DeviceType);
-            writer.WriteStringValue("environment", Environment);
-            writer.WriteStringValue("eventData", EventData);
-            writer.WriteStringValue("eventName", EventName);
-            writer.WriteStringValue("flags", Flags);
-            writer.WriteStringValue("groupId", GroupId);
-            writer.WriteStringValue("osName", OsName);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("referrerHostname", ReferrerHostname);
-            writer.WriteStringValue("requestHostname", RequestHostname);
-            writer.WriteStringValue("requestPath", RequestPath);
-            writer.WriteStringValue("route", Route);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("utmCampaign", UtmCampaign);
-            writer.WriteStringValue("utmContent", UtmContent);
-            writer.WriteStringValue("utmMedium", UtmMedium);
-            writer.WriteStringValue("utmSource", UtmSource);
-            writer.WriteStringValue("utmTerm", UtmTerm);
-            writer.WriteStringValue("visitorId", VisitorId);
-            writer.WriteDoubleValue("visitors", Visitors);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CountEvents200ResponseDataOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf1>(null, CountEvents200ResponseDataOneOf1);
+            }
+            else if(CountEvents200ResponseDataOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CountEvents200ResponseDataOneOf2>(null, CountEvents200ResponseDataOneOf2);
+            }
         }
     }
 }

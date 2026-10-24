@@ -65,10 +65,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSource? Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSourceOneOf2? Source { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSource Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSourceOneOf2 Source { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestStatus? Status { get; set; }
@@ -105,7 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projects", n => { Projects = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestProjects>(); } },
                 { "sampling", n => { Sampling = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSamplingItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSamplingItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "schemas", n => { Schemas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSchemas>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSchemas.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSource>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSourceOneOf2>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSourceOneOf2.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestStatus>(); } },
                 { "transforms", n => { Transforms = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestTransformsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestTransformsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -124,7 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestProjects>("projects", Projects);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSamplingItem>("sampling", Sampling);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSchemas>("schemas", Schemas);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSource>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestSourceOneOf2>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequestTransformsItem>("transforms", Transforms);
         }

@@ -8,42 +8,22 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProjectRequestDismissedToastsItemValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch1? UpdateProjectRequestDismissedToastsItemValueBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch1 UpdateProjectRequestDismissedToastsItemValueBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch2? UpdateProjectRequestDismissedToastsItemValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch2 UpdateProjectRequestDismissedToastsItemValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch3? UpdateProjectRequestDismissedToastsItemValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch3 UpdateProjectRequestDismissedToastsItemValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch4? UpdateProjectRequestDismissedToastsItemValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch4 UpdateProjectRequestDismissedToastsItemValueBranch4 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,25 +43,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValue();
-            if("UpdateProjectRequestDismissedToastsItemValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateProjectRequestDismissedToastsItemValueBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch1();
-            }
-            else if("UpdateProjectRequestDismissedToastsItemValueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateProjectRequestDismissedToastsItemValueBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch2();
-            }
-            else if("UpdateProjectRequestDismissedToastsItemValueBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateProjectRequestDismissedToastsItemValueBranch3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch3();
-            }
-            else if("UpdateProjectRequestDismissedToastsItemValueBranch4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateProjectRequestDismissedToastsItemValueBranch4 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch4();
-            }
-            else if("UpdateProjectRequestDismissedToastsItemValueOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("UpdateProjectRequestDismissedToastsItemValueOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UpdateProjectRequestDismissedToastsItemValueOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5();
+            }
+            else if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -91,23 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpdateProjectRequestDismissedToastsItemValueBranch1 != null)
-            {
-                return UpdateProjectRequestDismissedToastsItemValueBranch1.GetFieldDeserializers();
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueBranch2 != null)
-            {
-                return UpdateProjectRequestDismissedToastsItemValueBranch2.GetFieldDeserializers();
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueBranch3 != null)
-            {
-                return UpdateProjectRequestDismissedToastsItemValueBranch3.GetFieldDeserializers();
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueBranch4 != null)
-            {
-                return UpdateProjectRequestDismissedToastsItemValueBranch4.GetFieldDeserializers();
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueOneOf5 != null)
+            if(UpdateProjectRequestDismissedToastsItemValueOneOf5 != null)
             {
                 return UpdateProjectRequestDismissedToastsItemValueOneOf5.GetFieldDeserializers();
             }
@@ -120,25 +80,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdateProjectRequestDismissedToastsItemValueBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch1>(null, UpdateProjectRequestDismissedToastsItemValueBranch1);
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch2>(null, UpdateProjectRequestDismissedToastsItemValueBranch2);
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueBranch3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch3>(null, UpdateProjectRequestDismissedToastsItemValueBranch3);
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueBranch4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueBranch4>(null, UpdateProjectRequestDismissedToastsItemValueBranch4);
-            }
-            else if(UpdateProjectRequestDismissedToastsItemValueOneOf5 != null)
+            if(UpdateProjectRequestDismissedToastsItemValueOneOf5 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5>(null, UpdateProjectRequestDismissedToastsItemValueOneOf5);
+            }
+            else if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

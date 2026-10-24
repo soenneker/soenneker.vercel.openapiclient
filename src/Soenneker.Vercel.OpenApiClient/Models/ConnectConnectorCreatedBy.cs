@@ -37,13 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreatedBy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreatedBy();
-            if("ConnectConnectorCreatedByOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ConnectConnectorCreatedByOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreatedByOneOf1();
             }
-            else if("ConnectConnectorCreatedByOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("project".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ConnectConnectorCreatedByOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreatedByOneOf2();
             }

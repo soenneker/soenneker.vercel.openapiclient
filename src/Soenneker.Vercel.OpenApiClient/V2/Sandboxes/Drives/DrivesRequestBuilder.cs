@@ -20,14 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v2.sandboxes.drives.item collection</summary>
         /// <param name="position">The drive name or ID.</param>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.NameOrItemRequestBuilder"/></returns>
-        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.NameOrItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("nameOr%2Did", position);
-                return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.NameOrItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("nameOrId", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

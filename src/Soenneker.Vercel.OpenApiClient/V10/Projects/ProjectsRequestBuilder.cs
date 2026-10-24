@@ -20,14 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v10.projects.item collection</summary>
         /// <param name="position">The unique project identifier or the project name</param>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.IdOrNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.IdOrNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.WithIdOrNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.WithIdOrNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("idOrName%2Did", position);
-                return new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.IdOrNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("idOrName", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.WithIdOrNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

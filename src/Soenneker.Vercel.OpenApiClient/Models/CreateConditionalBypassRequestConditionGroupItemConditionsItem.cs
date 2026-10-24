@@ -7,34 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateConditionalBypassRequestConditionGroupItemConditionsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateConditionalBypassRequestConditionGroupItemConditionsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The key property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserAgentKey? Key { get; set; }
-        /// <summary>The op property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOp? Op { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemType? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1? CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1 CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItem"/> and sets the default values.
-        /// </summary>
-        public CreateConditionalBypassRequestConditionGroupItemConditionsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2? CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2 CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3? CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3 CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4? CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4 CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,7 +53,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItem();
+            if("CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1();
+            }
+            else if("CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2();
+            }
+            else if("CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3();
+            }
+            else if("CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,13 +79,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1 != null)
             {
-                { "key", n => { Key = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserAgentKey>(); } },
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOp>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemType>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
-            };
+                return CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2 != null)
+            {
+                return CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2.GetFieldDeserializers();
+            }
+            else if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3 != null)
+            {
+                return CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3.GetFieldDeserializers();
+            }
+            else if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4 != null)
+            {
+                return CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -66,11 +104,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserAgentKey>("key", Key);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOp>("op", Op);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemType>("type", Type);
-            writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1>(null, CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf1);
+            }
+            else if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2>(null, CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf2);
+            }
+            else if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3>(null, CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf3);
+            }
+            else if(CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4>(null, CreateConditionalBypassRequestConditionGroupItemConditionsItemOneOf4);
+            }
         }
     }
 }

@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf2"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item&gt;
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PutFirewallConfigRequestRulesets : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PutFirewallConfigRequestRulesets : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItem>? Value { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item>? PutFirewallConfigRequestRulesetsAnyOf1Item { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItem> Value { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item> PutFirewallConfigRequestRulesetsAnyOf1Item { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets"/> and sets the default values.
-        /// </summary>
-        public PutFirewallConfigRequestRulesets()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf2? PutFirewallConfigRequestRulesetsAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf2 PutFirewallConfigRequestRulesetsAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets();
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item> putFirewallConfigRequestRulesetsAnyOf1ItemValue)
+            {
+                result.PutFirewallConfigRequestRulesetsAnyOf1Item = putFirewallConfigRequestRulesetsAnyOf1ItemValue;
+            }
+            else {
+                result.PutFirewallConfigRequestRulesetsAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +53,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PutFirewallConfigRequestRulesetsAnyOf2 != null)
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItem>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItem.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PutFirewallConfigRequestRulesetsAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +66,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItem>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PutFirewallConfigRequestRulesetsAnyOf1Item != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item>(null, PutFirewallConfigRequestRulesetsAnyOf1Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf2>(null, PutFirewallConfigRequestRulesetsAnyOf2);
+            }
         }
     }
 }

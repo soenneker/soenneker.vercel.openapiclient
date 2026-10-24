@@ -8,102 +8,83 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Defines the Git Repository source to be deployed. This property can not be used in combination with `files`.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf9"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateDeploymentRequestGitSource : IAdditionalDataHolder, IParsable
+    public partial class CreateDeploymentRequestGitSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The org property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf1? CreateDeploymentRequestGitSourceAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf1 CreateDeploymentRequestGitSourceAnyOf1 { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf2? CreateDeploymentRequestGitSourceAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf2 CreateDeploymentRequestGitSourceAnyOf2 { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf3? CreateDeploymentRequestGitSourceAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf3 CreateDeploymentRequestGitSourceAnyOf3 { get; set; }
 #endif
-        /// <summary>The ref property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ref { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf4? CreateDeploymentRequestGitSourceAnyOf4 { get; set; }
 #nullable restore
 #else
-        public string Ref { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf4 CreateDeploymentRequestGitSourceAnyOf4 { get; set; }
 #endif
-        /// <summary>The repo property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repo { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf5? CreateDeploymentRequestGitSourceAnyOf5 { get; set; }
 #nullable restore
 #else
-        public string Repo { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf5 CreateDeploymentRequestGitSourceAnyOf5 { get; set; }
 #endif
-        /// <summary>The stable Vercel Git repository ID.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf6? CreateDeploymentRequestGitSourceAnyOf6 { get; set; }
 #nullable restore
 #else
-        public string RepoId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf6 CreateDeploymentRequestGitSourceAnyOf6 { get; set; }
 #endif
-        /// <summary>The repoUuid property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoUuid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf7? CreateDeploymentRequestGitSourceAnyOf7 { get; set; }
 #nullable restore
 #else
-        public string RepoUuid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf7 CreateDeploymentRequestGitSourceAnyOf7 { get; set; }
 #endif
-        /// <summary>The sha property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf8? CreateDeploymentRequestGitSourceAnyOf8 { get; set; }
 #nullable restore
 #else
-        public string Sha { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf8 CreateDeploymentRequestGitSourceAnyOf8 { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf9? CreateDeploymentRequestGitSourceAnyOf9 { get; set; }
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf9 CreateDeploymentRequestGitSourceAnyOf9 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceType? Type { get; set; }
-        /// <summary>The workspaceUuid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WorkspaceUuid { get; set; }
-#nullable restore
-#else
-        public string WorkspaceUuid { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource"/> and sets the default values.
-        /// </summary>
-        public CreateDeploymentRequestGitSource()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -112,7 +93,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource();
+            result.CreateDeploymentRequestGitSourceAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf1();
+            result.CreateDeploymentRequestGitSourceAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf2();
+            result.CreateDeploymentRequestGitSourceAnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf3();
+            result.CreateDeploymentRequestGitSourceAnyOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf4();
+            result.CreateDeploymentRequestGitSourceAnyOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf5();
+            result.CreateDeploymentRequestGitSourceAnyOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf6();
+            result.CreateDeploymentRequestGitSourceAnyOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf7();
+            result.CreateDeploymentRequestGitSourceAnyOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf8();
+            result.CreateDeploymentRequestGitSourceAnyOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf9();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,20 +111,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateDeploymentRequestGitSourceAnyOf1 != null || CreateDeploymentRequestGitSourceAnyOf2 != null || CreateDeploymentRequestGitSourceAnyOf3 != null || CreateDeploymentRequestGitSourceAnyOf4 != null || CreateDeploymentRequestGitSourceAnyOf5 != null || CreateDeploymentRequestGitSourceAnyOf6 != null || CreateDeploymentRequestGitSourceAnyOf7 != null || CreateDeploymentRequestGitSourceAnyOf8 != null || CreateDeploymentRequestGitSourceAnyOf9 != null)
             {
-                { "org", n => { Org = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId.CreateFromDiscriminatorValue); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "repo", n => { Repo = n.GetStringValue(); } },
-                { "repoId", n => { RepoId = n.GetStringValue(); } },
-                { "repoUuid", n => { RepoUuid = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceType>(); } },
-                { "workspaceUuid", n => { WorkspaceUuid = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateDeploymentRequestGitSourceAnyOf1, CreateDeploymentRequestGitSourceAnyOf2, CreateDeploymentRequestGitSourceAnyOf3, CreateDeploymentRequestGitSourceAnyOf4, CreateDeploymentRequestGitSourceAnyOf5, CreateDeploymentRequestGitSourceAnyOf6, CreateDeploymentRequestGitSourceAnyOf7, CreateDeploymentRequestGitSourceAnyOf8, CreateDeploymentRequestGitSourceAnyOf9);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -142,79 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("org", Org);
-            writer.WriteStringValue("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId>("projectId", ProjectId);
-            writer.WriteStringValue("ref", Ref);
-            writer.WriteStringValue("repo", Repo);
-            writer.WriteStringValue("repoId", RepoId);
-            writer.WriteStringValue("repoUuid", RepoUuid);
-            writer.WriteStringValue("sha", Sha);
-            writer.WriteStringValue("slug", Slug);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceType>("type", Type);
-            writer.WriteStringValue("workspaceUuid", WorkspaceUuid);
-            writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CreateDeploymentRequestGitSource_projectId : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateDeploymentRequestGitSource_projectId();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSourceAnyOf1>(null, CreateDeploymentRequestGitSourceAnyOf1, CreateDeploymentRequestGitSourceAnyOf2, CreateDeploymentRequestGitSourceAnyOf3, CreateDeploymentRequestGitSourceAnyOf4, CreateDeploymentRequestGitSourceAnyOf5, CreateDeploymentRequestGitSourceAnyOf6, CreateDeploymentRequestGitSourceAnyOf7, CreateDeploymentRequestGitSourceAnyOf8, CreateDeploymentRequestGitSourceAnyOf9);
         }
     }
 }

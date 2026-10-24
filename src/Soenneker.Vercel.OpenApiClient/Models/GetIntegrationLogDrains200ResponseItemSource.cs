@@ -7,56 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetIntegrationLogDrains200ResponseItemSource : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetIntegrationLogDrains200ResponseItemSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Informational marker for a system-owned default drain.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor? DefaultFor { get; set; }
-        /// <summary>The externalResourceId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalResourceId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf1? GetIntegrationLogDrains200ResponseItemSourceOneOf1 { get; set; }
 #nullable restore
 #else
-        public string ExternalResourceId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf1 GetIntegrationLogDrains200ResponseItemSourceOneOf1 { get; set; }
 #endif
-        /// <summary>The integrationConfigurationId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf2? GetIntegrationLogDrains200ResponseItemSourceOneOf2 { get; set; }
 #nullable restore
 #else
-        public string IntegrationConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf2 GetIntegrationLogDrains200ResponseItemSourceOneOf2 { get; set; }
 #endif
-        /// <summary>The integrationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationId { get; set; }
-#nullable restore
-#else
-        public string IntegrationId { get; set; }
-#endif
-        /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceKind? Kind { get; set; }
-        /// <summary>The resourceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceId { get; set; }
-#nullable restore
-#else
-        public string ResourceId { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSource"/> and sets the default values.
-        /// </summary>
-        public GetIntegrationLogDrains200ResponseItemSource()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSource();
+            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSource();
+            if("self-served".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetIntegrationLogDrains200ResponseItemSourceOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf1();
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetIntegrationLogDrains200ResponseItemSourceOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,15 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetIntegrationLogDrains200ResponseItemSourceOneOf1 != null)
             {
-                { "defaultFor", n => { DefaultFor = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor>(); } },
-                { "externalResourceId", n => { ExternalResourceId = n.GetStringValue(); } },
-                { "integrationConfigurationId", n => { IntegrationConfigurationId = n.GetStringValue(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceKind>(); } },
-                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-            };
+                return GetIntegrationLogDrains200ResponseItemSourceOneOf1.GetFieldDeserializers();
+            }
+            else if(GetIntegrationLogDrains200ResponseItemSourceOneOf2 != null)
+            {
+                return GetIntegrationLogDrains200ResponseItemSourceOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -90,13 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor>("defaultFor", DefaultFor);
-            writer.WriteStringValue("externalResourceId", ExternalResourceId);
-            writer.WriteStringValue("integrationConfigurationId", IntegrationConfigurationId);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceKind>("kind", Kind);
-            writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetIntegrationLogDrains200ResponseItemSourceOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf1>(null, GetIntegrationLogDrains200ResponseItemSourceOneOf1);
+            }
+            else if(GetIntegrationLogDrains200ResponseItemSourceOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseItemSourceOneOf2>(null, GetIntegrationLogDrains200ResponseItemSourceOneOf2);
+            }
         }
     }
 }

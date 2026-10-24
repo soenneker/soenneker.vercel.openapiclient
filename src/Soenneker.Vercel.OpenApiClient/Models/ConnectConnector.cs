@@ -176,7 +176,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> SupportedSubjectTypes { get; set; }
 #endif
         /// <summary>Whether the connector icon can propagate to the provider.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon? SupportsIcon { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon SupportsIcon { get; set; }
+#endif
         /// <summary>Whether the connector supports an installation flow.</summary>
         public bool? SupportsInstallation { get; set; }
         /// <summary>Whether this managed connector can disconnect from its manager.</summary>
@@ -309,7 +315,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "serviceIcon", n => { ServiceIcon = n.GetStringValue(); } },
                 { "supportedSubjectTypes", n => { SupportedSubjectTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "supportsIcon", n => { SupportsIcon = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon>(); } },
+                { "supportsIcon", n => { SupportsIcon = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon.CreateFromDiscriminatorValue); } },
                 { "supportsInstallation", n => { SupportsInstallation = n.GetBoolValue(); } },
                 { "supportsManagedEjection", n => { SupportsManagedEjection = n.GetBoolValue(); } },
                 { "supportsRevocation", n => { SupportsRevocation = n.GetBoolValue(); } },
@@ -357,7 +363,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("serviceIcon", ServiceIcon);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSubjectTypes", SupportedSubjectTypes);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon>("supportsIcon", SupportsIcon);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon>("supportsIcon", SupportsIcon);
             writer.WriteBoolValue("supportsInstallation", SupportsInstallation);
             writer.WriteBoolValue("supportsManagedEjection", SupportsManagedEjection);
             writer.WriteBoolValue("supportsRevocation", SupportsRevocation);

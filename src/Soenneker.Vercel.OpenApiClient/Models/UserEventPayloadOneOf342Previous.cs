@@ -17,18 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The deploymentSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousDeploymentSourcesItem>? DeploymentSources { get; set; }
+        public UntypedNode? DeploymentSources { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousDeploymentSourcesItem> DeploymentSources { get; set; }
+        public UntypedNode DeploymentSources { get; set; }
 #endif
         /// <summary>The gitSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousGitSourcesItem>? GitSources { get; set; }
+        public UntypedNode? GitSources { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousGitSourcesItem> GitSources { get; set; }
+        public UntypedNode GitSources { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342Previous"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentSources", n => { DeploymentSources = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousDeploymentSourcesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousDeploymentSourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "gitSources", n => { GitSources = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousGitSourcesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousGitSourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deploymentSources", n => { DeploymentSources = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "gitSources", n => { GitSources = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousDeploymentSourcesItem>("deploymentSources", DeploymentSources);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342PreviousGitSourcesItem>("gitSources", GitSources);
+            writer.WriteObjectValue<UntypedNode>("deploymentSources", DeploymentSources);
+            writer.WriteObjectValue<UntypedNode>("gitSources", GitSources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

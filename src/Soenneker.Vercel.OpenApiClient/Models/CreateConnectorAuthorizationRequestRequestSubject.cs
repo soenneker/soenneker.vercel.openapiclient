@@ -7,78 +7,52 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeApp"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeOther"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeToken"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeUser"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateConnectorAuthorizationRequestRequestSubject : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateConnectorAuthorizationRequestRequestSubject : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The additionalClaims property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeApp"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectAdditionalClaims? AdditionalClaims { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeApp? CreateConnectorAuthorizationRequestRequestSubjectTypeApp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectAdditionalClaims AdditionalClaims { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeApp CreateConnectorAuthorizationRequestRequestSubjectTypeApp { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The aud property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Aud { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer? CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer { get; set; }
 #nullable restore
 #else
-        public string Aud { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeOther"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeOther? CreateConnectorAuthorizationRequestRequestSubjectTypeOther { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeOther CreateConnectorAuthorizationRequestRequestSubjectTypeOther { get; set; }
 #endif
-        /// <summary>The iss property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeToken"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iss { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeToken? CreateConnectorAuthorizationRequestRequestSubjectTypeToken { get; set; }
 #nullable restore
 #else
-        public string Iss { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeToken CreateConnectorAuthorizationRequestRequestSubjectTypeToken { get; set; }
 #endif
-        /// <summary>The issuer property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeUser? CreateConnectorAuthorizationRequestRequestSubjectTypeUser { get; set; }
 #nullable restore
 #else
-        public string Issuer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeUser CreateConnectorAuthorizationRequestRequestSubjectTypeUser { get; set; }
 #endif
-        /// <summary>The sub property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Sub { get; set; }
-#nullable restore
-#else
-        public string Sub { get; set; }
-#endif
-        /// <summary>The token property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Token { get; set; }
-#nullable restore
-#else
-        public string Token { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubject"/> and sets the default values.
-        /// </summary>
-        public CreateConnectorAuthorizationRequestRequestSubject()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,7 +61,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubject();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubject();
+            result.CreateConnectorAuthorizationRequestRequestSubjectTypeApp = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeApp();
+            result.CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer();
+            result.CreateConnectorAuthorizationRequestRequestSubjectTypeOther = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeOther();
+            result.CreateConnectorAuthorizationRequestRequestSubjectTypeToken = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeToken();
+            result.CreateConnectorAuthorizationRequestRequestSubjectTypeUser = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeUser();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,17 +75,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateConnectorAuthorizationRequestRequestSubjectTypeApp != null || CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer != null || CreateConnectorAuthorizationRequestRequestSubjectTypeOther != null || CreateConnectorAuthorizationRequestRequestSubjectTypeToken != null || CreateConnectorAuthorizationRequestRequestSubjectTypeUser != null)
             {
-                { "additionalClaims", n => { AdditionalClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectAdditionalClaims>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectAdditionalClaims.CreateFromDiscriminatorValue); } },
-                { "aud", n => { Aud = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "iss", n => { Iss = n.GetStringValue(); } },
-                { "issuer", n => { Issuer = n.GetStringValue(); } },
-                { "sub", n => { Sub = n.GetStringValue(); } },
-                { "token", n => { Token = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectType>(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateConnectorAuthorizationRequestRequestSubjectTypeApp, CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer, CreateConnectorAuthorizationRequestRequestSubjectTypeOther, CreateConnectorAuthorizationRequestRequestSubjectTypeToken, CreateConnectorAuthorizationRequestRequestSubjectTypeUser);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -114,15 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectAdditionalClaims>("additionalClaims", AdditionalClaims);
-            writer.WriteStringValue("aud", Aud);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("iss", Iss);
-            writer.WriteStringValue("issuer", Issuer);
-            writer.WriteStringValue("sub", Sub);
-            writer.WriteStringValue("token", Token);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequestSubjectTypeApp>(null, CreateConnectorAuthorizationRequestRequestSubjectTypeApp, CreateConnectorAuthorizationRequestRequestSubjectTypeJwtBearer, CreateConnectorAuthorizationRequestRequestSubjectTypeOther, CreateConnectorAuthorizationRequestRequestSubjectTypeToken, CreateConnectorAuthorizationRequestRequestSubjectTypeUser);
         }
     }
 }

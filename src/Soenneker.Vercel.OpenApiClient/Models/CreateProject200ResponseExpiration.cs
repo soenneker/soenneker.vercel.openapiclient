@@ -7,32 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateProject200ResponseExpiration : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateProject200ResponseExpiration : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unix ms timestamp when the project is scheduled to expire.</summary>
-        public double? ExpiresAt { get; set; }
-        /// <summary>Unix ms timestamp when the project was locked.</summary>
-        public double? LockedAt { get; set; }
-        /// <summary>ID of the user, app, or integration that locked the project, or `system`.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LockedBy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf1? CreateProject200ResponseExpirationOneOf1 { get; set; }
 #nullable restore
 #else
-        public string LockedBy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf1 CreateProject200ResponseExpirationOneOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpiration"/> and sets the default values.
-        /// </summary>
-        public CreateProject200ResponseExpiration()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf2? CreateProject200ResponseExpirationOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf2 CreateProject200ResponseExpirationOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpiration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpiration();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpiration();
+            if("CreateProject200ResponseExpirationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateProject200ResponseExpirationOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf1();
+            }
+            else if("CreateProject200ResponseExpirationOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateProject200ResponseExpirationOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,12 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateProject200ResponseExpirationOneOf1 != null)
             {
-                { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
-                { "lockedAt", n => { LockedAt = n.GetDoubleValue(); } },
-                { "lockedBy", n => { LockedBy = n.GetStringValue(); } },
-            };
+                return CreateProject200ResponseExpirationOneOf1.GetFieldDeserializers();
+            }
+            else if(CreateProject200ResponseExpirationOneOf2 != null)
+            {
+                return CreateProject200ResponseExpirationOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,10 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("expiresAt", ExpiresAt);
-            writer.WriteDoubleValue("lockedAt", LockedAt);
-            writer.WriteStringValue("lockedBy", LockedBy);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateProject200ResponseExpirationOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf1>(null, CreateProject200ResponseExpirationOneOf1);
+            }
+            else if(CreateProject200ResponseExpirationOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseExpirationOneOf2>(null, CreateProject200ResponseExpirationOneOf2);
+            }
         }
     }
 }

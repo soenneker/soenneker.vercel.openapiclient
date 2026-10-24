@@ -7,36 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusion : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusion : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reason property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1? ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1 ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1 { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Result { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2? ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Result { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2 ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusion"/> and sets the default values.
-        /// </summary>
-        public ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusion()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3? ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3 ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4? ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4 ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +53,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusion();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusion();
+            result.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1();
+            result.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2();
+            result.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3();
+            result.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,11 +66,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1 != null || ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2 != null || ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3 != null || ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4 != null)
             {
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1, ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2, ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3, ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -66,9 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("result", Result);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1>(null, ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf1, ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf2, ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf3, ListVercelCiTaskRuns200ResponseTaskRunsItemCompletedConclusionAnyOf4);
         }
     }
 }

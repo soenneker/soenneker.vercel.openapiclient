@@ -7,54 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The namespace property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Namespace { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1? PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Namespace { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1 PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The org property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2? PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Org { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2 PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2 { get; set; }
 #endif
-        /// <summary>The project property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Project { get; set; }
-#nullable restore
-#else
-        public string Project { get; set; }
-#endif
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemProvider? Provider { get; set; }
-        /// <summary>The repo property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Repo { get; set; }
-#nullable restore
-#else
-        public string Repo { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItem"/> and sets the default values.
-        /// </summary>
-        public PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,7 +37,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItem();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItem();
+            result.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1();
+            result.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,14 +48,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1 != null || PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2 != null)
             {
-                { "namespace", n => { Namespace = n.GetStringValue(); } },
-                { "org", n => { Org = n.GetStringValue(); } },
-                { "project", n => { Project = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemProvider>(); } },
-                { "repo", n => { Repo = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1, PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -87,12 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("namespace", Namespace);
-            writer.WriteStringValue("org", Org);
-            writer.WriteStringValue("project", Project);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemProvider>("provider", Provider);
-            writer.WriteStringValue("repo", Repo);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1>(null, PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf1, PatchTeamRequestDeploymentPolicyAnyOf1GitSourcesAnyOf1ItemSourcesItemAnyOf2);
         }
     }
 }

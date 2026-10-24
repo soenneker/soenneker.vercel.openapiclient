@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\projects\{idOrName-id}\feature-flags\sdk-keys
+    /// Builds and executes requests for operations under \v1\projects\{idOrName}\feature-flags\sdk-keys
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SdkKeysRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SdkKeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/feature-flags/sdk-keys{?slug*,teamId*}", pathParameters)
+        public SdkKeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/feature-flags/sdk-keys{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SdkKeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/feature-flags/sdk-keys{?slug*,teamId*}", rawUrl)
+        public SdkKeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/feature-flags/sdk-keys{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

@@ -7,62 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateKmsIssuerRequestPolicy : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateKmsIssuerRequestPolicy : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Connex client ID for the Connex grant policy.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf1? CreateKmsIssuerRequestPolicyOneOf1 { get; set; }
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf1 CreateKmsIssuerRequestPolicyOneOf1 { get; set; }
 #endif
-        /// <summary>The environments for the project grant policy. Each entry is a system environment (production, preview, development) or a custom environment ID (env_...).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Environments { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf2? CreateKmsIssuerRequestPolicyOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<string> Environments { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf2 CreateKmsIssuerRequestPolicyOneOf2 { get; set; }
 #endif
-        /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyKind? Kind { get; set; }
-        /// <summary>The project ID for the project grant policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The team ID for the project grant policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The claims that KMS should include in signed JWTs for this policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyTokenClaims? TokenClaims { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyTokenClaims TokenClaims { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy"/> and sets the default values.
-        /// </summary>
-        public CreateKmsIssuerRequestPolicy()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy();
+            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy();
+            if("project-grant".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateKmsIssuerRequestPolicyOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf1();
+            }
+            else if("connex-grant".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateKmsIssuerRequestPolicyOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,15 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateKmsIssuerRequestPolicyOneOf1 != null)
             {
-                { "clientId", n => { ClientId = n.GetStringValue(); } },
-                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyKind>(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "tokenClaims", n => { TokenClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyTokenClaims>(global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyTokenClaims.CreateFromDiscriminatorValue); } },
-            };
+                return CreateKmsIssuerRequestPolicyOneOf1.GetFieldDeserializers();
+            }
+            else if(CreateKmsIssuerRequestPolicyOneOf2 != null)
+            {
+                return CreateKmsIssuerRequestPolicyOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -96,13 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("clientId", ClientId);
-            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyKind>("kind", Kind);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyTokenClaims>("tokenClaims", TokenClaims);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateKmsIssuerRequestPolicyOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf1>(null, CreateKmsIssuerRequestPolicyOneOf1);
+            }
+            else if(CreateKmsIssuerRequestPolicyOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf2>(null, CreateKmsIssuerRequestPolicyOneOf2);
+            }
         }
     }
 }

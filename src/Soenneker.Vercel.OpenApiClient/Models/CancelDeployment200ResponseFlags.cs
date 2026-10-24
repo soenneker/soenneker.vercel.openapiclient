@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsOneOf1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsOneOf1"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CancelDeployment200ResponseFlags : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsBranch2"/></summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsBranch2? CancelDeployment200ResponseFlagsBranch2 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1>? CancelDeployment200ResponseFlagsMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsBranch2 CancelDeployment200ResponseFlagsBranch2 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1> CancelDeployment200ResponseFlagsMember1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,13 +39,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlags();
-            if("CancelDeployment200ResponseFlagsBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CancelDeployment200ResponseFlagsBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsBranch2();
-            }
-            else if("CancelDeployment200ResponseFlagsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CancelDeployment200ResponseFlagsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CancelDeployment200ResponseFlagsOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsOneOf1();
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1> cancelDeployment200ResponseFlagsMember1Value)
+            {
+                result.CancelDeployment200ResponseFlagsMember1 = cancelDeployment200ResponseFlagsMember1Value;
             }
             return result;
         }
@@ -55,11 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CancelDeployment200ResponseFlagsBranch2 != null)
-            {
-                return CancelDeployment200ResponseFlagsBranch2.GetFieldDeserializers();
-            }
-            else if(CancelDeployment200ResponseFlagsOneOf1 != null)
+            if(CancelDeployment200ResponseFlagsOneOf1 != null)
             {
                 return CancelDeployment200ResponseFlagsOneOf1.GetFieldDeserializers();
             }
@@ -72,13 +68,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CancelDeployment200ResponseFlagsBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsBranch2>(null, CancelDeployment200ResponseFlagsBranch2);
-            }
-            else if(CancelDeployment200ResponseFlagsOneOf1 != null)
+            if(CancelDeployment200ResponseFlagsOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsOneOf1>(null, CancelDeployment200ResponseFlagsOneOf1);
+            }
+            else if(CancelDeployment200ResponseFlagsMember1 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseFlagsMember1>(null, CancelDeployment200ResponseFlagsMember1);
             }
         }
     }

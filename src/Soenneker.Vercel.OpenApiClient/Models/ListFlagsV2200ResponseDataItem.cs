@@ -37,13 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListFlagsV2200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("typeName")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.ListFlagsV2200ResponseDataItem();
-            if("Flag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("flag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.Flag = new global::Soenneker.Vercel.OpenApiClient.Models.Flag();
             }
-            else if("MarketplaceFlag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("marketplaceFlag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MarketplaceFlag = new global::Soenneker.Vercel.OpenApiClient.Models.MarketplaceFlag();
             }

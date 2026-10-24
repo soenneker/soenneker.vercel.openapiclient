@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.Fork
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v2\sandboxes\drives\{nameOr-id}\fork
+    /// Builds and executes requests for operations under \v2\sandboxes\drives\{nameOrId}\fork
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ForkRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.Fork
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ForkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/drives/{nameOr%2Did}/fork{?projectId*,slug*,teamId*}", pathParameters)
+        public ForkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/drives/{nameOrId}/fork{?projectId*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.Fork
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ForkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/drives/{nameOr%2Did}/fork{?projectId*,slug*,teamId*}", rawUrl)
+        public ForkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/drives/{nameOrId}/fork{?projectId*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

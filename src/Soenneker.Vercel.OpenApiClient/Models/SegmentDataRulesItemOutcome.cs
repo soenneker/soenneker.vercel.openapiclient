@@ -37,13 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcome();
-            if("SegmentDataRulesItemOutcomeOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("all".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SegmentDataRulesItemOutcomeOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf1();
             }
-            else if("SegmentDataRulesItemOutcomeOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("split".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SegmentDataRulesItemOutcomeOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2();
             }

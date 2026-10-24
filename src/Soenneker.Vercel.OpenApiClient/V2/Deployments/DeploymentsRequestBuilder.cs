@@ -17,14 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v2.deployments.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.DeploymentItemRequestBuilder"/></returns>
-        public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.DeploymentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.WithDeploymentItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.WithDeploymentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("deployment%2Did", position);
-                return new global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.DeploymentItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deploymentId", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.WithDeploymentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

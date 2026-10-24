@@ -23,10 +23,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2Details? Details { get; set; }
+        public UntypedNode? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2Details Details { get; set; }
+        public UntypedNode Details { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2Details>(global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2Details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2Details>("details", Details);
+            writer.WriteObjectValue<UntypedNode>("details", Details);
         }
     }
 }

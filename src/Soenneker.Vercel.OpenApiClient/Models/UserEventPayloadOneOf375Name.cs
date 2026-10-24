@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameOneOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf375Name : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameBranch1? UserEventPayloadOneOf375NameBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameBranch1 UserEventPayloadOneOf375NameBranch1 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,13 +39,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375Name();
-            if("UserEventPayloadOneOf375NameBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf375NameBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameBranch1();
-            }
-            else if("UserEventPayloadOneOf375NameOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("UserEventPayloadOneOf375NameOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf375NameOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameOneOf2();
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,11 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UserEventPayloadOneOf375NameBranch1 != null)
-            {
-                return UserEventPayloadOneOf375NameBranch1.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf375NameOneOf2 != null)
+            if(UserEventPayloadOneOf375NameOneOf2 != null)
             {
                 return UserEventPayloadOneOf375NameOneOf2.GetFieldDeserializers();
             }
@@ -72,13 +68,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UserEventPayloadOneOf375NameBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameBranch1>(null, UserEventPayloadOneOf375NameBranch1);
-            }
-            else if(UserEventPayloadOneOf375NameOneOf2 != null)
+            if(UserEventPayloadOneOf375NameOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf375NameOneOf2>(null, UserEventPayloadOneOf375NameOneOf2);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

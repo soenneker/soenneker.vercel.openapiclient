@@ -47,6 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.TriggerDesti
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 410 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.ConnectReplaceTriggerDestinationsRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.TriggerDestinations.TriggerDestinationsRequestBuilder.TriggerDestinationsRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,6 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.TriggerDesti
                 { "409", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

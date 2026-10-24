@@ -7,152 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdateDeploymentCheckRun200Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateDeploymentCheckRun200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blocks property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseBlocks? Blocks { get; set; }
-        /// <summary>The checkId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1? UpdateDeploymentCheckRun200ResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public string CheckId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1 UpdateDeploymentCheckRun200ResponseOneOf1 { get; set; }
 #endif
-        /// <summary>The completedAt property</summary>
-        public double? CompletedAt { get; set; }
-        /// <summary>The conclusion property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseConclusion? Conclusion { get; set; }
-        /// <summary>The conclusionText property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConclusionText { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf2? UpdateDeploymentCheckRun200ResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public string ConclusionText { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf2 UpdateDeploymentCheckRun200ResponseOneOf2 { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
-        public double? CreatedAt { get; set; }
-        /// <summary>The deploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeploymentId { get; set; }
-#nullable restore
-#else
-        public string DeploymentId { get; set; }
-#endif
-        /// <summary>The expectationRef property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef? ExpectationRef { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef ExpectationRef { get; set; }
-#endif
-        /// <summary>Latest aggregate revision applied to this check run.</summary>
-        public double? ExpectationRevision { get; set; }
-        /// <summary>The externalId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalId { get; set; }
-#nullable restore
-#else
-        public string ExternalId { get; set; }
-#endif
-        /// <summary>The externalUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalUrl { get; set; }
-#nullable restore
-#else
-        public string ExternalUrl { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The output property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOutput? Output { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOutput Output { get; set; }
-#endif
-        /// <summary>The ownerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerId { get; set; }
-#nullable restore
-#else
-        public string OwnerId { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The requires property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseRequires? Requires { get; set; }
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseSource? Source { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseSource Source { get; set; }
-#endif
-        /// <summary>The startedAt property</summary>
-        public double? StartedAt { get; set; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseStatus? Status { get; set; }
-        /// <summary>The targets property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Targets { get; set; }
-#nullable restore
-#else
-        public List<string> Targets { get; set; }
-#endif
-        /// <summary>The taskSummary property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseTaskSummary? TaskSummary { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseTaskSummary TaskSummary { get; set; }
-#endif
-        /// <summary>The timeout property</summary>
-        public double? Timeout { get; set; }
-        /// <summary>The updatedAt property</summary>
-        public double? UpdatedAt { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200Response"/> and sets the default values.
-        /// </summary>
-        public UpdateDeploymentCheckRun200Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -161,7 +37,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200Response();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200Response();
+            if("UpdateDeploymentCheckRun200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateDeploymentCheckRun200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1();
+            }
+            else if("UpdateDeploymentCheckRun200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateDeploymentCheckRun200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,33 +55,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateDeploymentCheckRun200ResponseOneOf1 != null)
             {
-                { "blocks", n => { Blocks = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseBlocks>(); } },
-                { "checkId", n => { CheckId = n.GetStringValue(); } },
-                { "completedAt", n => { CompletedAt = n.GetDoubleValue(); } },
-                { "conclusion", n => { Conclusion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseConclusion>(); } },
-                { "conclusionText", n => { ConclusionText = n.GetStringValue(); } },
-                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "expectationRef", n => { ExpectationRef = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef.CreateFromDiscriminatorValue); } },
-                { "expectationRevision", n => { ExpectationRevision = n.GetDoubleValue(); } },
-                { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOutput>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOutput.CreateFromDiscriminatorValue); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "requires", n => { Requires = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseRequires>(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseSource>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseSource.CreateFromDiscriminatorValue); } },
-                { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseStatus>(); } },
-                { "targets", n => { Targets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "taskSummary", n => { TaskSummary = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseTaskSummary>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseTaskSummary.CreateFromDiscriminatorValue); } },
-                { "timeout", n => { Timeout = n.GetDoubleValue(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-            };
+                return UpdateDeploymentCheckRun200ResponseOneOf1.GetFieldDeserializers();
+            }
+            else if(UpdateDeploymentCheckRun200ResponseOneOf2 != null)
+            {
+                return UpdateDeploymentCheckRun200ResponseOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -204,31 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseBlocks>("blocks", Blocks);
-            writer.WriteStringValue("checkId", CheckId);
-            writer.WriteDoubleValue("completedAt", CompletedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseConclusion>("conclusion", Conclusion);
-            writer.WriteStringValue("conclusionText", ConclusionText);
-            writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef>("expectationRef", ExpectationRef);
-            writer.WriteDoubleValue("expectationRevision", ExpectationRevision);
-            writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteStringValue("externalUrl", ExternalUrl);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOutput>("output", Output);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseRequires>("requires", Requires);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseSource>("source", Source);
-            writer.WriteDoubleValue("startedAt", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseStatus>("status", Status);
-            writer.WriteCollectionOfPrimitiveValues<string>("targets", Targets);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseTaskSummary>("taskSummary", TaskSummary);
-            writer.WriteDoubleValue("timeout", Timeout);
-            writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UpdateDeploymentCheckRun200ResponseOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1>(null, UpdateDeploymentCheckRun200ResponseOneOf1);
+            }
+            else if(UpdateDeploymentCheckRun200ResponseOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf2>(null, UpdateDeploymentCheckRun200ResponseOneOf2);
+            }
         }
     }
 }
