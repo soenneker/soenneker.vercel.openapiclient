@@ -33827,7 +33827,7 @@
           "teams"
         ],
         "summary": "Delete a Team",
-        "description": "Delete a team under your account. You need to send a \u0060DELETE\u0060 request with the desired team \u0060id\u0060. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.",
+        "description": "Delete a team under your account. You need to send a \u0060DELETE\u0060 request with the desired team \u0060id\u0060. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization. Enterprise children of an organization cannot be deleted.",
         "operationId": "DeleteTeam",
         "parameters": [
           {
