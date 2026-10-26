@@ -7768,16 +7768,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "An internal error occurred.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConnectError"
-                }
-              }
-            }
           }
         },
         "security": [
@@ -20056,7 +20046,7 @@
           "kms"
         ],
         "summary": "List issuers",
-        "description": "Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.",
+        "description": "Retrieve the paginated KMS issuers that belong to the authenticated team or organization (\u0060orgId\u0060).",
         "operationId": "ListKmsIssuers",
         "parameters": [
           {
@@ -20138,7 +20128,7 @@
           "kms"
         ],
         "summary": "Create an issuer",
-        "description": "Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.",
+        "description": "Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.",
         "operationId": "CreateKmsIssuer",
         "parameters": [
           {
@@ -20472,7 +20462,7 @@
           "kms"
         ],
         "summary": "Get an issuer",
-        "description": "Retrieve a single KMS issuer by its ID. Accepts either a team bearer token (existing path) or an OIDC token authorized by one of the issuer\u0027s policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.",
+        "description": "Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer\u0027s policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.",
         "operationId": "GetKmsIssuer",
         "parameters": [
           {
@@ -28342,6 +28332,9 @@
           },
           "429": {
             "description": "429 response"
+          },
+          "503": {
+            "description": "503 response"
           }
         },
         "security": [
@@ -45569,13 +45562,13 @@
             "description": "The time when the named sandbox was last updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "$ref": "#/components/schemas/NamedSandboxV0"
-          },
           "vcpus": {
             "type": "number",
             "description": "Number of virtual CPUs allocated.",
             "example": 2
+          },
+          "workloadType": {
+            "$ref": "#/components/schemas/NamedSandboxWorkloadType"
           }
         },
         "description": "This object contains information related to a Vercel NamedSandbox."
@@ -45806,13 +45799,13 @@
             "description": "The last time the sandbox was updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "$ref": "#/components/schemas/SessionV0"
-          },
           "vcpus": {
             "type": "number",
             "description": "Number of vCPUs allocated to this sandbox.",
             "example": 2
+          },
+          "workloadType": {
+            "$ref": "#/components/schemas/SessionWorkloadType"
           }
         },
         "description": "This object contains information related to a Vercel Sandbox Session. v2 endpoints return \u0022session\u0022 instead of \u0022sandbox\u0022 as the response wrapper key."
@@ -45882,8 +45875,8 @@
             "description": "The last time the drive was updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "$ref": "#/components/schemas/DriveV0"
+          "workloadType": {
+            "$ref": "#/components/schemas/DriveWorkloadType"
           }
         },
         "description": "This object contains information related to a Vercel Sandbox Drive."
@@ -45965,8 +45958,8 @@
             "description": "The last time the snapshot was updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "$ref": "#/components/schemas/SnapshotV0"
+          "workloadType": {
+            "$ref": "#/components/schemas/SnapshotWorkloadType"
           }
         },
         "description": "This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API)."
@@ -84688,6 +84681,9 @@
           "v0Created": {
             "$ref": "#/components/schemas/CreateProject200ResponseV0Created"
           },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/CreateProject200ResponseVercelFlags"
+          },
           "webAnalytics": {
             "$ref": "#/components/schemas/CreateProject200ResponseWebAnalytics"
           }
@@ -85092,6 +85088,9 @@
           },
           "v0Created": {
             "$ref": "#/components/schemas/GetProject200ResponseV0Created"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/GetProject200ResponseVercelFlags"
           },
           "webAnalytics": {
             "$ref": "#/components/schemas/GetProject200ResponseWebAnalytics"
@@ -85649,6 +85648,9 @@
           "v0Created": {
             "$ref": "#/components/schemas/UpdateProject200ResponseV0Created"
           },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseVercelFlags"
+          },
           "webAnalytics": {
             "$ref": "#/components/schemas/UpdateProject200ResponseWebAnalytics"
           }
@@ -86001,6 +86003,9 @@
           "v0Created": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseV0Created"
           },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseVercelFlags"
+          },
           "webAnalytics": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseWebAnalytics"
           }
@@ -86348,6 +86353,9 @@
           },
           "v0Created": {
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseV0Created"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseVercelFlags"
           },
           "webAnalytics": {
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseWebAnalytics"
@@ -87886,6 +87894,9 @@
           },
           "v0Created": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseV0Created"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseVercelFlags"
           },
           "webAnalytics": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseWebAnalytics"
@@ -161863,6 +161874,9 @@
           "speedInsights": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseProjectSettingsSpeedInsights"
           },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseProjectSettingsVercelFlags"
+          },
           "webAnalytics": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseProjectSettingsWebAnalytics"
           }
@@ -166192,6 +166206,9 @@
           "v0Created": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemV0Created"
           },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemVercelFlags"
+          },
           "webAnalytics": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemWebAnalytics"
           }
@@ -166757,6 +166774,9 @@
           "pathCondition": {
             "$ref": "#/components/schemas/GenerateRouteRequestCurrentRoutePathCondition"
           },
+          "caseSensitive": {
+            "type": "boolean"
+          },
           "conditions": {
             "type": "array",
             "items": {
@@ -166785,6 +166805,9 @@
             "items": {
               "$ref": "#/components/schemas/GenerateRoute200ResponseRouteActionsItem"
             }
+          },
+          "caseSensitive": {
+            "$ref": "#/components/schemas/GenerateRoute200ResponseRouteCaseSensitive"
           },
           "conditions": {
             "type": "array",
@@ -168480,6 +168503,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "edgeConfigToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "emaSetup": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -170242,6 +170272,15 @@
           }
         }
       },
+      "CreateProject200ResponseVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
+          }
+        }
+      },
       "CreateProject200ResponseWebAnalytics": {
         "required": [
           "id"
@@ -171695,6 +171734,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "edgeConfigToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "emaSetup": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -173457,6 +173503,15 @@
           }
         }
       },
+      "GetProject200ResponseVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
+          }
+        }
+      },
       "GetProject200ResponseWebAnalytics": {
         "required": [
           "id"
@@ -175192,6 +175247,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "edgeConfigToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "emaSetup": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -176954,6 +177016,15 @@
           }
         }
       },
+      "UpdateProject200ResponseVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
+          }
+        }
+      },
       "UpdateProject200ResponseWebAnalytics": {
         "required": [
           "id"
@@ -178386,6 +178457,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "edgeConfigToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "emaSetup": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -180148,6 +180226,15 @@
           }
         }
       },
+      "UploadProjectAvatar200ResponseVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
+          }
+        }
+      },
       "UploadProjectAvatar200ResponseWebAnalytics": {
         "required": [
           "id"
@@ -181580,6 +181667,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "edgeConfigToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "emaSetup": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -183339,6 +183433,15 @@
           },
           "throttled": {
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseUsageStatusThrottled"
+          }
+        }
+      },
+      "DeleteProjectAvatar200ResponseVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
           }
         }
       },
@@ -185851,6 +185954,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "emaSetup": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "endpointVerification": {
             "type": "array",
             "items": {
@@ -187604,6 +187714,15 @@
           },
           "throttled": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseUsageStatusThrottled"
+          }
+        }
+      },
+      "UpdateMicrofrontends200ResponseVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
           }
         }
       },
@@ -194792,6 +194911,9 @@
           "speedInsights": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ProjectSettingsSpeedInsights"
           },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags"
+          },
           "webAnalytics": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ProjectSettingsWebAnalytics"
           }
@@ -195672,6 +195794,9 @@
           },
           "speedInsights": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ProjectSettingsSpeedInsights"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ProjectSettingsVercelFlags"
           },
           "webAnalytics": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ProjectSettingsWebAnalytics"
@@ -198054,6 +198179,9 @@
           },
           "v0Created": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemV0Created"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemVercelFlags"
           },
           "webAnalytics": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemWebAnalytics"
@@ -210006,6 +210134,15 @@
           }
         }
       },
+      "CancelDeployment200ResponseProjectSettingsVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number"
+          }
+        },
+        "description": "Vercel Flags activation metadata copied from the project at deployment creation."
+      },
       "CancelDeployment200ResponseProjectSettingsWebAnalytics": {
         "required": [
           "id"
@@ -212850,6 +212987,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "emaSetup": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "endpointVerification": {
             "type": "array",
             "items": {
@@ -214603,6 +214747,15 @@
           },
           "throttled": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemUsageStatusThrottled"
+          }
+        }
+      },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
           }
         }
       },
@@ -225660,6 +225813,9 @@
           "speedInsights": {
             "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemProjectSettingsSpeedInsights"
           },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemProjectSettingsVercelFlags"
+          },
           "webAnalytics": {
             "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemProjectSettingsWebAnalytics"
           }
@@ -226330,6 +226486,15 @@
           }
         }
       },
+      "GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number"
+          }
+        },
+        "description": "Vercel Flags activation metadata copied from the project at deployment creation."
+      },
       "GetDeployment200ResponseOneOf2ProjectSettingsWebAnalytics": {
         "required": [
           "id"
@@ -226671,6 +226836,15 @@
             "type": "number"
           }
         }
+      },
+      "CreateDeployment200ResponseOneOf2ProjectSettingsVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number"
+          }
+        },
+        "description": "Vercel Flags activation metadata copied from the project at deployment creation."
       },
       "CreateDeployment200ResponseOneOf2ProjectSettingsWebAnalytics": {
         "required": [
@@ -230003,6 +230177,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "emaSetup": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "endpointVerification": {
             "type": "array",
             "items": {
@@ -231756,6 +231937,15 @@
           },
           "throttled": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemUsageStatusThrottled"
+          }
+        }
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number",
+            "description": "When Flags were enabled for the project, taken from the Flags settings row\u0027s \u0060createdAt\u0060. Recorded by \u0060@api/api-feature-flags\u0060 on flags sync."
           }
         }
       },
@@ -243200,6 +243390,15 @@
             "type": "number"
           }
         }
+      },
+      "GetDeployments200ResponseDeploymentsItemProjectSettingsVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number"
+          }
+        },
+        "description": "Vercel Flags activation metadata copied from the project at deployment creation."
       },
       "GetDeployments200ResponseDeploymentsItemProjectSettingsWebAnalytics": {
         "required": [
@@ -267099,13 +267298,27 @@
           ]
         }
       },
-      "NamedSandboxV0": {
+      "NamedSandboxWorkloadType": {
         "enum": [
-          false,
-          true
+          "sandbox",
+          "v0"
         ],
-        "type": "boolean",
-        "description": "Whether this sandbox is managed by v0 on the customer\u0027s behalf."
+        "type": "string",
+        "description": "The workload type of this sandbox.",
+        "x-ms-enum": {
+          "name": "NamedSandboxWorkloadType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sandbox",
+              "name": "Sandbox"
+            },
+            {
+              "value": "v0",
+              "name": "V0"
+            }
+          ]
+        }
       },
       "SandboxPublicRouteSystem": {
         "enum": [
@@ -267212,21 +267425,49 @@
           ]
         }
       },
-      "SessionV0": {
+      "SessionWorkloadType": {
         "enum": [
-          false,
-          true
+          "sandbox",
+          "v0"
         ],
-        "type": "boolean",
-        "description": "Whether this sandbox is managed by v0 on the customer\u0027s behalf."
+        "type": "string",
+        "description": "The workload type of this sandbox.",
+        "x-ms-enum": {
+          "name": "SessionWorkloadType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sandbox",
+              "name": "Sandbox"
+            },
+            {
+              "value": "v0",
+              "name": "V0"
+            }
+          ]
+        }
       },
-      "DriveV0": {
+      "DriveWorkloadType": {
         "enum": [
-          false,
-          true
+          "sandbox",
+          "v0"
         ],
-        "type": "boolean",
-        "description": "Whether this drive is managed by v0 on the customer\u0027s behalf."
+        "type": "string",
+        "description": "The workload type of this drive.",
+        "x-ms-enum": {
+          "name": "DriveWorkloadType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sandbox",
+              "name": "Sandbox"
+            },
+            {
+              "value": "v0",
+              "name": "V0"
+            }
+          ]
+        }
       },
       "SnapshotArchitecture": {
         "enum": [
@@ -267301,13 +267542,27 @@
           ]
         }
       },
-      "SnapshotV0": {
+      "SnapshotWorkloadType": {
         "enum": [
-          false,
-          true
+          "sandbox",
+          "v0"
         ],
-        "type": "boolean",
-        "description": "Whether this snapshot is managed by v0 on the customer\u0027s behalf."
+        "type": "string",
+        "description": "The workload type of this snapshot.",
+        "x-ms-enum": {
+          "name": "SnapshotWorkloadType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sandbox",
+              "name": "Sandbox"
+            },
+            {
+              "value": "v0",
+              "name": "V0"
+            }
+          ]
+        }
       },
       "InvitedTeamMemberRole": {
         "enum": [
@@ -327973,6 +328228,13 @@
         ],
         "type": "boolean",
         "description": "Whether this version is staged and not yet promoted to production."
+      },
+      "GenerateRoute200ResponseRouteCaseSensitive": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean"
       },
       "GetRouteVersions200ResponseVersionsItemIsLive": {
         "enum": [

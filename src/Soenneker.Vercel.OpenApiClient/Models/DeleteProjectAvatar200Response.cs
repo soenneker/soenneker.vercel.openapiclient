@@ -590,6 +590,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? V0 { get; set; }
         /// <summary>The v0Created property</summary>
         public bool? V0Created { get; set; }
+        /// <summary>The vercelFlags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseVercelFlags? VercelFlags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseVercelFlags VercelFlags { get; set; }
+#endif
         /// <summary>The webAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -719,6 +727,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "usageStatus", n => { UsageStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseUsageStatus>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseUsageStatus.CreateFromDiscriminatorValue); } },
                 { "v0", n => { V0 = n.GetBoolValue(); } },
                 { "v0Created", n => { V0Created = n.GetBoolValue(); } },
+                { "vercelFlags", n => { VercelFlags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseVercelFlags>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseVercelFlags.CreateFromDiscriminatorValue); } },
                 { "webAnalytics", n => { WebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseWebAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
@@ -825,6 +834,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseUsageStatus>("usageStatus", UsageStatus);
             writer.WriteBoolValue("v0", V0);
             writer.WriteBoolValue("v0Created", V0Created);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseVercelFlags>("vercelFlags", VercelFlags);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseWebAnalytics>("webAnalytics", WebAnalytics);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -16696,16 +16696,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "An internal error occurred.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConnectError"
-                }
-              }
-            }
           }
         },
         "parameters": [
@@ -22607,6 +22597,15 @@
                                 "id"
                               ],
                               "type": "object"
+                            },
+                            "vercelFlags": {
+                              "properties": {
+                                "enabledAt": {
+                                  "type": "number"
+                                }
+                              },
+                              "type": "object",
+                              "description": "Vercel Flags activation metadata copied from the project at deployment creation."
                             },
                             "webAnalytics": {
                               "properties": {
@@ -31552,6 +31551,15 @@
                               ],
                               "type": "object"
                             },
+                            "vercelFlags": {
+                              "properties": {
+                                "enabledAt": {
+                                  "type": "number"
+                                }
+                              },
+                              "type": "object",
+                              "description": "Vercel Flags activation metadata copied from the project at deployment creation."
+                            },
                             "webAnalytics": {
                               "properties": {
                                 "canceledAt": {
@@ -39476,6 +39484,15 @@
                             "id"
                           ],
                           "type": "object"
+                        },
+                        "vercelFlags": {
+                          "properties": {
+                            "enabledAt": {
+                              "type": "number"
+                            }
+                          },
+                          "type": "object",
+                          "description": "Vercel Flags activation metadata copied from the project at deployment creation."
                         },
                         "webAnalytics": {
                           "properties": {
@@ -82266,7 +82283,7 @@
     },
     "/v1/kms/issuers": {
       "get": {
-        "description": "Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.",
+        "description": "Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).",
         "operationId": "listKmsIssuers",
         "security": [
           {
@@ -82611,7 +82628,7 @@
         ]
       },
       "post": {
-        "description": "Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.",
+        "description": "Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.",
         "operationId": "createKmsIssuer",
         "security": [
           {
@@ -83759,7 +83776,7 @@
     },
     "/v1/kms/issuers/{issuerId}": {
       "get": {
-        "description": "Retrieve a single KMS issuer by its ID. Accepts either a team bearer token (existing path) or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.",
+        "description": "Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.",
         "operationId": "getKmsIssuer",
         "security": [
           {
@@ -90214,6 +90231,13 @@
                                 "type": "array",
                                 "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                               },
+                              "emaSetup": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array",
+                                "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                              },
                               "endpointVerification": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -93438,6 +93462,15 @@
                               false,
                               true
                             ]
+                          },
+                          "vercelFlags": {
+                            "properties": {
+                              "enabledAt": {
+                                "type": "number",
+                                "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                              }
+                            },
+                            "type": "object"
                           },
                           "webAnalytics": {
                             "properties": {
@@ -100643,6 +100676,13 @@
                           },
                           "type": "array"
                         },
+                        "caseSensitive": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ]
+                        },
                         "conditions": {
                           "items": {
                             "properties": {
@@ -100814,6 +100854,9 @@
                             "type": "string"
                           }
                         }
+                      },
+                      "caseSensitive": {
+                        "type": "boolean"
                       },
                       "conditions": {
                         "type": "array",
@@ -114549,6 +114592,13 @@
                                     "type": "array",
                                     "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                                   },
+                                  "emaSetup": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array",
+                                    "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                                  },
                                   "endpointVerification": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -117762,6 +117812,15 @@
                                   false,
                                   true
                                 ]
+                              },
+                              "vercelFlags": {
+                                "properties": {
+                                  "enabledAt": {
+                                    "type": "number",
+                                    "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                                  }
+                                },
+                                "type": "object"
                               },
                               "webAnalytics": {
                                 "properties": {
@@ -122802,6 +122861,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "emaSetup": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "endpointVerification": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -126015,6 +126081,15 @@
                         false,
                         true
                       ]
+                    },
+                    "vercelFlags": {
+                      "properties": {
+                        "enabledAt": {
+                          "type": "number",
+                          "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                        }
+                      },
+                      "type": "object"
                     },
                     "webAnalytics": {
                       "properties": {
@@ -131341,6 +131416,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "emaSetup": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "endpointVerification": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -134554,6 +134636,15 @@
                         false,
                         true
                       ]
+                    },
+                    "vercelFlags": {
+                      "properties": {
+                        "enabledAt": {
+                          "type": "number",
+                          "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                        }
+                      },
+                      "type": "object"
                     },
                     "webAnalytics": {
                       "properties": {
@@ -139148,6 +139239,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "emaSetup": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "endpointVerification": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -142361,6 +142459,15 @@
                         false,
                         true
                       ]
+                    },
+                    "vercelFlags": {
+                      "properties": {
+                        "enabledAt": {
+                          "type": "number",
+                          "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                        }
+                      },
+                      "type": "object"
                     },
                     "webAnalytics": {
                       "properties": {
@@ -148281,6 +148388,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "emaSetup": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "endpointVerification": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -151494,6 +151608,15 @@
                         false,
                         true
                       ]
+                    },
+                    "vercelFlags": {
+                      "properties": {
+                        "enabledAt": {
+                          "type": "number",
+                          "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                        }
+                      },
+                      "type": "object"
                     },
                     "webAnalytics": {
                       "properties": {
@@ -156101,6 +156224,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "emaSetup": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "endpointVerification": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -159314,6 +159444,15 @@
                         false,
                         true
                       ]
+                    },
+                    "vercelFlags": {
+                      "properties": {
+                        "enabledAt": {
+                          "type": "number",
+                          "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                        }
+                      },
+                      "type": "object"
                     },
                     "webAnalytics": {
                       "properties": {
@@ -177062,6 +177201,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "emaSetup": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "endpointVerification": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -180276,6 +180422,15 @@
                         true
                       ]
                     },
+                    "vercelFlags": {
+                      "properties": {
+                        "enabledAt": {
+                          "type": "number",
+                          "description": "When Flags were enabled for the project, taken from the Flags settings row's `createdAt`. Recorded by `@api/api-feature-flags` on flags sync."
+                        }
+                      },
+                      "type": "object"
+                    },
                     "webAnalytics": {
                       "properties": {
                         "canceledAt": {
@@ -182200,6 +182355,9 @@
             "description": ""
           },
           "429": {
+            "description": ""
+          },
+          "503": {
             "description": ""
           }
         },
@@ -230565,6 +230723,15 @@
                                 ],
                                 "type": "object"
                               },
+                              "vercelFlags": {
+                                "properties": {
+                                  "enabledAt": {
+                                    "type": "number"
+                                  }
+                                },
+                                "type": "object",
+                                "description": "Vercel Flags activation metadata copied from the project at deployment creation."
+                              },
                               "webAnalytics": {
                                 "properties": {
                                   "canceledAt": {
@@ -264706,18 +264873,18 @@
             "description": "The time when the named sandbox was last updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "type": "boolean",
-            "enum": [
-              false,
-              true
-            ],
-            "description": "Whether this sandbox is managed by v0 on the customer's behalf."
-          },
           "vcpus": {
             "type": "number",
             "description": "Number of virtual CPUs allocated.",
             "example": 2
+          },
+          "workloadType": {
+            "type": "string",
+            "enum": [
+              "sandbox",
+              "v0"
+            ],
+            "description": "The workload type of this sandbox."
           }
         },
         "required": [
@@ -264986,18 +265153,18 @@
             "description": "The last time the sandbox was updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "type": "boolean",
-            "enum": [
-              false,
-              true
-            ],
-            "description": "Whether this sandbox is managed by v0 on the customer's behalf."
-          },
           "vcpus": {
             "type": "number",
             "description": "Number of vCPUs allocated to this sandbox.",
             "example": 2
+          },
+          "workloadType": {
+            "type": "string",
+            "enum": [
+              "sandbox",
+              "v0"
+            ],
+            "description": "The workload type of this sandbox."
           }
         },
         "required": [
@@ -265073,13 +265240,13 @@
             "description": "The last time the drive was updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "type": "boolean",
+          "workloadType": {
+            "type": "string",
             "enum": [
-              false,
-              true
+              "sandbox",
+              "v0"
             ],
-            "description": "Whether this drive is managed by v0 on the customer's behalf."
+            "description": "The workload type of this drive."
           }
         },
         "required": [
@@ -265179,13 +265346,13 @@
             "description": "The last time the snapshot was updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
-          "v0": {
-            "type": "boolean",
+          "workloadType": {
+            "type": "string",
             "enum": [
-              false,
-              true
+              "sandbox",
+              "v0"
             ],
-            "description": "Whether this snapshot is managed by v0 on the customer's behalf."
+            "description": "The workload type of this snapshot."
           }
         },
         "required": [

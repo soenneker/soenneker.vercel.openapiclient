@@ -66,6 +66,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsSpeedInsights SpeedInsights { get; set; }
 #endif
+        /// <summary>Vercel Flags activation metadata copied from the project at deployment creation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsVercelFlags? VercelFlags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsVercelFlags VercelFlags { get; set; }
+#endif
         /// <summary>The webAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "nodeVersion", n => { NodeVersion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsNodeVersion>(); } },
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "speedInsights", n => { SpeedInsights = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsSpeedInsights>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsSpeedInsights.CreateFromDiscriminatorValue); } },
+                { "vercelFlags", n => { VercelFlags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsVercelFlags>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsVercelFlags.CreateFromDiscriminatorValue); } },
                 { "webAnalytics", n => { WebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsWebAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
@@ -125,6 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsNodeVersion>("nodeVersion", NodeVersion);
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsSpeedInsights>("speedInsights", SpeedInsights);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsVercelFlags>("vercelFlags", VercelFlags);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseProjectSettingsWebAnalytics>("webAnalytics", WebAnalytics);
             writer.WriteAdditionalData(AdditionalData);
         }

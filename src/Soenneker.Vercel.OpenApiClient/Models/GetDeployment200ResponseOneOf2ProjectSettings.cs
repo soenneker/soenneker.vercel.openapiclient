@@ -66,6 +66,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsSpeedInsights SpeedInsights { get; set; }
 #endif
+        /// <summary>Vercel Flags activation metadata copied from the project at deployment creation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags? VercelFlags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags VercelFlags { get; set; }
+#endif
         /// <summary>The webAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "nodeVersion", n => { NodeVersion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsNodeVersion>(); } },
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "speedInsights", n => { SpeedInsights = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsSpeedInsights>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsSpeedInsights.CreateFromDiscriminatorValue); } },
+                { "vercelFlags", n => { VercelFlags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags.CreateFromDiscriminatorValue); } },
                 { "webAnalytics", n => { WebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsWebAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
@@ -125,6 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsNodeVersion>("nodeVersion", NodeVersion);
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsSpeedInsights>("speedInsights", SpeedInsights);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags>("vercelFlags", VercelFlags);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsWebAnalytics>("webAnalytics", WebAnalytics);
             writer.WriteAdditionalData(AdditionalData);
         }

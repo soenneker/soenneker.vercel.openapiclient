@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The caseSensitive property</summary>
+        public bool? CaseSensitive { get; set; }
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GenerateRouteRequestCurrentRouteActionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GenerateRouteRequestCurrentRouteActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "caseSensitive", n => { CaseSensitive = n.GetBoolValue(); } },
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GenerateRouteRequestCurrentRouteConditionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GenerateRouteRequestCurrentRouteConditionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -94,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GenerateRouteRequestCurrentRouteActionsItem>("actions", Actions);
+            writer.WriteBoolValue("caseSensitive", CaseSensitive);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GenerateRouteRequestCurrentRouteConditionsItem>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);

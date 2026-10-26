@@ -85,8 +85,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The last time the drive was updated, in milliseconds since the epoch.</summary>
         public double? UpdatedAt { get; set; }
-        /// <summary>Whether this drive is managed by v0 on the customer&apos;s behalf.</summary>
-        public bool? V0 { get; set; }
+        /// <summary>The workload type of this drive.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.DriveWorkloadType? WorkloadType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Drive"/> and sets the default values.
         /// </summary>
@@ -123,7 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "rootDriveId", n => { RootDriveId = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-                { "v0", n => { V0 = n.GetBoolValue(); } },
+                { "workloadType", n => { WorkloadType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DriveWorkloadType>(); } },
             };
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("rootDriveId", RootDriveId);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteBoolValue("v0", V0);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DriveWorkloadType>("workloadType", WorkloadType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

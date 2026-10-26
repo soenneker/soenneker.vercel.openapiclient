@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers
         {
         }
         /// <summary>
-        /// Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.
+        /// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.
+        /// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuer201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuer201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuer201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.
+        /// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers
             return requestInfo;
         }
         /// <summary>
-        /// Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.
+        /// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers
             return new global::Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers.IssuersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.
+        /// Retrieve the paginated KMS issuers that belong to the authenticated team or organization (`orgId`).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuersRequestBuilderGetQueryParameters 
@@ -175,7 +175,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers
 #endif
         }
         /// <summary>
-        /// Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.
+        /// Create a new KMS issuer for the authenticated team, or for the team or organization identified by a Connect policy token. An issuer owns the asymmetric signing keys used to sign tokens and messages.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuersRequestBuilderPostQueryParameters 
