@@ -47,6 +47,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonInstances Instances { get; set; }
 #endif
+        /// <summary>A Kubernetes-style HTTP liveness probe.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonLivenessProbe? LivenessProbe { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonLivenessProbe LivenessProbe { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
                 { "instances", n => { Instances = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonInstances>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonInstances.CreateFromDiscriminatorValue); } },
+                { "livenessProbe", n => { LivenessProbe = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonLivenessProbe>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonLivenessProbe.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "replicas", n => { Replicas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonReplicas>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonReplicas.CreateFromDiscriminatorValue); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonResources>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonResources.CreateFromDiscriminatorValue); } },
@@ -128,6 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
             writer.WriteStringValue("entrypoint", Entrypoint);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonInstances>("instances", Instances);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonLivenessProbe>("livenessProbe", LivenessProbe);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonReplicas>("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigDaemonResources>("resources", Resources);

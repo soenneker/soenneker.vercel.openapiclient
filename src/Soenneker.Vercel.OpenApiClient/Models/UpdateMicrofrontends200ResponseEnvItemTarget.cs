@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.UpdateMicrofrontends200ResponseEnvItemTargetOneOf2 = updateMicrofrontends200ResponseEnvItemTargetOneOf2Value;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseEnvItemTargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseEnvItemTargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseEnvItemTargetOneOf1Item> updateMicrofrontends200ResponseEnvItemTargetOneOf1ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseEnvItemTargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseEnvItemTargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseEnvItemTargetOneOf1Item> updateMicrofrontends200ResponseEnvItemTargetOneOf1ItemValue)
             {
                 result.UpdateMicrofrontends200ResponseEnvItemTargetOneOf1Item = updateMicrofrontends200ResponseEnvItemTargetOneOf1ItemValue;
             }

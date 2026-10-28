@@ -39,11 +39,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrains();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1Item> getDrains200ResponseDrainsOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1Item> getDrains200ResponseDrainsOneOf1ItemValue)
             {
                 result.GetDrains200ResponseDrainsOneOf1Item = getDrains200ResponseDrainsOneOf1ItemValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2Item> getDrains200ResponseDrainsOneOf2ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2Item> getDrains200ResponseDrainsOneOf2ItemValue)
             {
                 result.GetDrains200ResponseDrainsOneOf2Item = getDrains200ResponseDrainsOneOf2ItemValue;
             }

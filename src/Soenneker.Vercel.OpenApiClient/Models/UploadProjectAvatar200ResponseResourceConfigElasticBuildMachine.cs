@@ -8,26 +8,43 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine : IAdditionalDataHolder, IParsable
+    public partial class UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cores property</summary>
-        public double? Cores { get; set; }
-        /// <summary>Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineLabel? Label { get; set; }
-        /// <summary>The memory property</summary>
-        public double? Memory { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine"/> and sets the default values.
-        /// </summary>
-        public UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1? UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1 UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2? UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2 UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3? UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3 UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4? UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4 UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +53,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine();
+            var mappingValue = parseNode.GetChildNode("label")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine();
+            if("standard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1();
+            }
+            else if("enhanced".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2();
+            }
+            else if("14cpu-28gb".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3();
+            }
+            else if("turbo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,12 +79,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1 != null)
             {
-                { "cores", n => { Cores = n.GetDoubleValue(); } },
-                { "label", n => { Label = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineLabel>(); } },
-                { "memory", n => { Memory = n.GetDoubleValue(); } },
-            };
+                return UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1.GetFieldDeserializers();
+            }
+            else if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2 != null)
+            {
+                return UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2.GetFieldDeserializers();
+            }
+            else if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3 != null)
+            {
+                return UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3.GetFieldDeserializers();
+            }
+            else if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4 != null)
+            {
+                return UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,10 +104,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("cores", Cores);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineLabel>("label", Label);
-            writer.WriteDoubleValue("memory", Memory);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1>(null, UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf1);
+            }
+            else if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2>(null, UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf2);
+            }
+            else if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3>(null, UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf3);
+            }
+            else if(UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4>(null, UploadProjectAvatar200ResponseResourceConfigElasticBuildMachineOneOf4);
+            }
         }
     }
 }

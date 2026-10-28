@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf2"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsAnyOf2"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutFirewallConfig200ResponseActiveRulesets : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsAnyOf2? PutFirewallConfig200ResponseActiveRulesetsAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsAnyOf2 PutFirewallConfig200ResponseActiveRulesetsAnyOf2 { get; set; }
+#endif
         /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +28,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item> PutFirewallConfig200ResponseActiveRulesetsOneOf1Item { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf2? PutFirewallConfig200ResponseActiveRulesetsOneOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf2 PutFirewallConfig200ResponseActiveRulesetsOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesets CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesets();
-            if("PutFirewallConfig200ResponseActiveRulesetsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PutFirewallConfig200ResponseActiveRulesetsOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf2();
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item> putFirewallConfig200ResponseActiveRulesetsOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item> putFirewallConfig200ResponseActiveRulesetsOneOf1ItemValue)
             {
                 result.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item = putFirewallConfig200ResponseActiveRulesetsOneOf1ItemValue;
+            }
+            else {
+                result.PutFirewallConfig200ResponseActiveRulesetsAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsAnyOf2();
             }
             return result;
         }
@@ -55,9 +53,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PutFirewallConfig200ResponseActiveRulesetsOneOf2 != null)
+            if(PutFirewallConfig200ResponseActiveRulesetsAnyOf2 != null)
             {
-                return PutFirewallConfig200ResponseActiveRulesetsOneOf2.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PutFirewallConfig200ResponseActiveRulesetsAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +66,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PutFirewallConfig200ResponseActiveRulesetsOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf2>(null, PutFirewallConfig200ResponseActiveRulesetsOneOf2);
-            }
-            else if(PutFirewallConfig200ResponseActiveRulesetsOneOf1Item != null)
+            if(PutFirewallConfig200ResponseActiveRulesetsOneOf1Item != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1Item>(null, PutFirewallConfig200ResponseActiveRulesetsOneOf1Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsAnyOf2>(null, PutFirewallConfig200ResponseActiveRulesetsAnyOf2);
             }
         }
     }

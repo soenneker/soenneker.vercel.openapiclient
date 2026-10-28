@@ -29,7 +29,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DefaultRole { get; set; }
 #endif
-        /// <summary>Roles a deployment may request when minting a token. The selected role becomes the `sub` claim.</summary>
+        /// <summary>Roles a deployment may request when minting a token. The selected role is emitted as the `role` claim.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Roles { get; set; }

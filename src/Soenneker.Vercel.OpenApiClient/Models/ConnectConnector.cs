@@ -107,6 +107,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Events { get; set; }
 #endif
+        /// <summary>Whether Connect has successfully delivered an MCP event for this connector.</summary>
+        public bool? HasMcpEventDeliveries { get; set; }
         /// <summary>Connector branding icon. SHA-1 hash that resolves to the uploaded icon through the Vercel avatar service. Consumers render this with `https://vercel.com/api/www/avatar/{icon}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +135,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorManaged Managed { get; set; }
 #endif
+        /// <summary>MCP Events dashboard visibility. Defaults to auto: show after the first successful delivery.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorMcpEventsUiVisibility? McpEventsUiVisibility { get; set; }
         /// <summary>Connector name within the owning team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -305,10 +309,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "docsite", n => { Docsite = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "hasMcpEventDeliveries", n => { HasMcpEventDeliveries = n.GetBoolValue(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "knownStale", n => { KnownStale = n.GetBoolValue(); } },
                 { "managed", n => { Managed = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorManaged>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorManaged.CreateFromDiscriminatorValue); } },
+                { "mcpEventsUiVisibility", n => { McpEventsUiVisibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorMcpEventsUiVisibility>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "redirectUri", n => { RedirectUri = n.GetStringValue(); } },
                 { "reinstallAt", n => { ReinstallAt = n.GetDoubleValue(); } },
@@ -353,10 +359,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("docsite", Docsite);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
+            writer.WriteBoolValue("hasMcpEventDeliveries", HasMcpEventDeliveries);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("knownStale", KnownStale);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorManaged>("managed", Managed);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorMcpEventsUiVisibility>("mcpEventsUiVisibility", McpEventsUiVisibility);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("redirectUri", RedirectUri);
             writer.WriteDoubleValue("reinstallAt", ReinstallAt);

@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.GetProjectEnv200ResponseOneOf2TargetOneOf2 = getProjectEnv200ResponseOneOf2TargetOneOf2Value;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2TargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2TargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2TargetOneOf1Item> getProjectEnv200ResponseOneOf2TargetOneOf1ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2TargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2TargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2TargetOneOf1Item> getProjectEnv200ResponseOneOf2TargetOneOf1ItemValue)
             {
                 result.GetProjectEnv200ResponseOneOf2TargetOneOf1Item = getProjectEnv200ResponseOneOf2TargetOneOf1ItemValue;
             }

@@ -28,6 +28,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonAiGatewayBudgets,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:ai-gateway-byok-credentials")]
+        #pragma warning disable CS1591
+        ReadWriteColonAiGatewayByokCredentials,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:ai-gateway-guardrails")]
         #pragma warning disable CS1591
         ReadWriteColonAiGatewayGuardrails,
@@ -175,6 +179,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:ai-gateway-budgets")]
         #pragma warning disable CS1591
         ReadColonAiGatewayBudgets,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:ai-gateway-byok-credentials")]
+        #pragma warning disable CS1591
+        ReadColonAiGatewayByokCredentials,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:ai-gateway-guardrails")]
         #pragma warning disable CS1591

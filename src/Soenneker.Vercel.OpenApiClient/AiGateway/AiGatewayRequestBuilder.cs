@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.AiGateway.Budgets;
+using Soenneker.Vercel.OpenApiClient.AiGateway.ByokCredentials;
 using Soenneker.Vercel.OpenApiClient.AiGateway.Rules;
 using Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway
         public global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.BudgetsRequestBuilder Budgets
         {
             get => new global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.BudgetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The byokCredentials property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.AiGateway.ByokCredentials.ByokCredentialsRequestBuilder ByokCredentials
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.AiGateway.ByokCredentials.ByokCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
         public global::Soenneker.Vercel.OpenApiClient.AiGateway.Rules.RulesRequestBuilder Rules

@@ -19,7 +19,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors
     public partial class ConnectorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.connect.connectors.item collection</summary>
-        /// <param name="position">Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.</param>
+        /// <param name="position">Stable connector ID or URL-encoded owner-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.WithConnectorItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.WithConnectorItemRequestBuilder this[string position]
         {

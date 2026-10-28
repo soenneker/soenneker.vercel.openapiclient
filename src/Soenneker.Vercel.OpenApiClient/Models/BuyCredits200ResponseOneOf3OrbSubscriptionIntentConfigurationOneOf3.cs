@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Configuration input options for decreasing plan item quantity.</summary>
+        /// <summary>Configuration input options for increasing plan item quantity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Options? Options { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Output Output { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.DecreasePlanItemQuantityType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.IncreasePlanItemQuantityType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Options>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Options.CreateFromDiscriminatorValue); } },
                 { "output", n => { Output = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Output>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Output.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DecreasePlanItemQuantityType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IncreasePlanItemQuantityType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Options>("options", Options);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Output>("output", Output);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DecreasePlanItemQuantityType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IncreasePlanItemQuantityType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

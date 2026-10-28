@@ -39,11 +39,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200Response();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1Item> getConfigurations200ResponseOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1Item> getConfigurations200ResponseOneOf1ItemValue)
             {
                 result.GetConfigurations200ResponseOneOf1Item = getConfigurations200ResponseOneOf1ItemValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf2Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf2Item> getConfigurations200ResponseOneOf2ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf2Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf2Item> getConfigurations200ResponseOneOf2ItemValue)
             {
                 result.GetConfigurations200ResponseOneOf2Item = getConfigurations200ResponseOneOf2ItemValue;
             }

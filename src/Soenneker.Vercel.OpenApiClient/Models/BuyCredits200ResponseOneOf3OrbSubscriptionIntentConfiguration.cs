@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfiguration : IComposedTypeWrapper, IParsable
@@ -45,6 +45,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4 BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5? BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5 BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,23 +61,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfiguration();
-            if("set_plan_item_quantity".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1();
             }
-            else if("increase_plan_item_quantity".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf2();
             }
-            else if("decrease_plan_item_quantity".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3();
             }
-            else if("adjust_plan_item_quantity".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4();
+            }
+            else if("BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5();
             }
             return result;
         }
@@ -95,6 +107,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 return BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4.GetFieldDeserializers();
             }
+            else if(BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5 != null)
+            {
+                return BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -119,6 +135,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4>(null, BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4);
+            }
+            else if(BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5>(null, BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf5);
             }
         }
     }

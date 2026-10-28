@@ -53,6 +53,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Icon { get; set; }
 #endif
+        /// <summary>MCP Events dashboard visibility. Auto (the default) shows the UI after the first successful delivery. Show and hide persist regardless of future deliveries. This does not enable or disable event delivery.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestMcpEventsUiVisibility? McpEventsUiVisibility { get; set; }
         /// <summary>Display name for the connector. It is trimmed and cannot be empty or contain control characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData.CreateFromDiscriminatorValue); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
+                { "mcpEventsUiVisibility", n => { McpEventsUiVisibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestMcpEventsUiVisibility>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "triggerRegistrationInput", n => { TriggerRegistrationInput = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty.CreateFromDiscriminatorValue); } },
                 { "triggerVerificationInput", n => { TriggerVerificationInput = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty.CreateFromDiscriminatorValue); } },
@@ -129,6 +132,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData>("data", Data);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("icon", Icon);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestMcpEventsUiVisibility>("mcpEventsUiVisibility", McpEventsUiVisibility);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty>("triggerRegistrationInput", TriggerRegistrationInput);
             writer.WriteBoolValue("triggers", Triggers);

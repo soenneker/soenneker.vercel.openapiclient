@@ -37,15 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2Flags CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2Flags();
-            if("CreateDeployment200ResponseOneOf2FlagsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CreateDeployment200ResponseOneOf2FlagsOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsOneOf1();
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsMember1>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsMember1> createDeployment200ResponseOneOf2FlagsMember1Value)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsMember1>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsMember1> createDeployment200ResponseOneOf2FlagsMember1Value)
             {
                 result.CreateDeployment200ResponseOneOf2FlagsMember1 = createDeployment200ResponseOneOf2FlagsMember1Value;
+            }
+            else {
+                result.CreateDeployment200ResponseOneOf2FlagsOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsOneOf1();
             }
             return result;
         }
@@ -57,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(CreateDeployment200ResponseOneOf2FlagsOneOf1 != null)
             {
-                return CreateDeployment200ResponseOneOf2FlagsOneOf1.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateDeployment200ResponseOneOf2FlagsOneOf1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +66,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateDeployment200ResponseOneOf2FlagsOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsOneOf1>(null, CreateDeployment200ResponseOneOf2FlagsOneOf1);
-            }
-            else if(CreateDeployment200ResponseOneOf2FlagsMember1 != null)
+            if(CreateDeployment200ResponseOneOf2FlagsMember1 != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsMember1>(null, CreateDeployment200ResponseOneOf2FlagsMember1);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2FlagsOneOf1>(null, CreateDeployment200ResponseOneOf2FlagsOneOf1);
             }
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2"/>, List&lt;string&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateSandboxRequestNetworkPolicyOneOf2Allow : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> String { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2? UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2? UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2 UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2 UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2Allow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2Allow();
-            if("UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2();
-            }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
                 result.String = stringValue;
+            }
+            else {
+                result.UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2();
             }
             return result;
         }
@@ -55,9 +53,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2 != null)
+            if(UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2 != null)
             {
-                return UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +66,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2>(null, UpdateSandboxRequestNetworkPolicyOneOf2AllowOneOf2);
-            }
-            else if(String != null)
+            if(String != null)
             {
                 writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2>(null, UpdateSandboxRequestNetworkPolicyOneOf2AllowAnyOf2);
             }
         }
     }

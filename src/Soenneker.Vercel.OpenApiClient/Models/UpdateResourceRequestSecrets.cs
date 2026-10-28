@@ -37,15 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecrets CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecrets();
-            if("UpdateResourceRequestSecretsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateResourceRequestSecretsOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf2();
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf1Item> updateResourceRequestSecretsOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf1Item> updateResourceRequestSecretsOneOf1ItemValue)
             {
                 result.UpdateResourceRequestSecretsOneOf1Item = updateResourceRequestSecretsOneOf1ItemValue;
+            }
+            else {
+                result.UpdateResourceRequestSecretsOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf2();
             }
             return result;
         }
@@ -57,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(UpdateResourceRequestSecretsOneOf2 != null)
             {
-                return UpdateResourceRequestSecretsOneOf2.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UpdateResourceRequestSecretsOneOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +66,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdateResourceRequestSecretsOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf2>(null, UpdateResourceRequestSecretsOneOf2);
-            }
-            else if(UpdateResourceRequestSecretsOneOf1Item != null)
+            if(UpdateResourceRequestSecretsOneOf1Item != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf1Item>(null, UpdateResourceRequestSecretsOneOf1Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestSecretsOneOf2>(null, UpdateResourceRequestSecretsOneOf2);
             }
         }
     }

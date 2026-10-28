@@ -25,6 +25,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Timestamp (in milliseconds) of when the event was generated.</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>Labeled event details for progressive disclosure in the activity feed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventDetailsItem>? Details { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventDetailsItem> Details { get; set; }
+#endif
         /// <summary>A list of &quot;entities&quot; within the event `text`. Useful for enhancing the displayed text with additional styling and links.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +88,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string SessionId { get; set; }
+#endif
+        /// <summary>Compact activity-feed text, when the event has additional details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Summary { get; set; }
+#nullable restore
+#else
+        public string Summary { get; set; }
 #endif
         /// <summary>The human-readable text of the Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,6 +174,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventCategoriesItem>()?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventDetailsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventDetailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entities", n => { Entities = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload.CreateFromDiscriminatorValue); } },
@@ -165,6 +182,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "tokenId", n => { TokenId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventType>(); } },
@@ -183,6 +201,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventCategoriesItem>("categories", Categories);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventDetailsItem>("details", Details);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem>("entities", Entities);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload>("payload", Payload);
@@ -190,6 +209,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("principalId", PrincipalId);
             writer.WriteStringValue("requestId", RequestId);
             writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteStringValue("summary", Summary);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("tokenId", TokenId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventType>("type", Type);

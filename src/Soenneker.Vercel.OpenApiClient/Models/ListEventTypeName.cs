@@ -495,6 +495,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ConnectBitbucketApp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect-branding-updated")]
+        #pragma warning disable CS1591
+        ConnectBrandingUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connect-cancel-mcp-event-subscription")]
         #pragma warning disable CS1591
         ConnectCancelMcpEventSubscription,

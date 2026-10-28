@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item> putFirewallConfigRequestRulesetsAnyOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsAnyOf1Item> putFirewallConfigRequestRulesetsAnyOf1ItemValue)
             {
                 result.PutFirewallConfigRequestRulesetsAnyOf1Item = putFirewallConfigRequestRulesetsAnyOf1ItemValue;
             }

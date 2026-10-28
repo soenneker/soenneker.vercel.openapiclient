@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Configuration input options for setting plan item quantity.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1Options : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -25,14 +24,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The quantity to set for the plan item.</summary>
         public double? Quantity { get; set; }
-        /// <summary>The resource IDs for the plan item. Only set if SKU requires resource entitlements.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ResourceIds { get; set; }
-#nullable restore
-#else
-        public List<string> ResourceIds { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1Options"/> and sets the default values.
         /// </summary>
@@ -60,7 +51,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "productAlias", n => { ProductAlias = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
-                { "resourceIds", n => { ResourceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,7 +62,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("productAlias", ProductAlias);
             writer.WriteDoubleValue("quantity", Quantity);
-            writer.WriteCollectionOfPrimitiveValues<string>("resourceIds", ResourceIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

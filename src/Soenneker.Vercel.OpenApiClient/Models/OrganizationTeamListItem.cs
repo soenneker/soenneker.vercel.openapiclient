@@ -33,6 +33,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>Whether the organization&apos;s Directory Sync manages the team&apos;s memberships.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamListItemDsyncMode? DsyncMode { get; set; }
         /// <summary>Present only when the request sets `includeMemberCount=true`. Number of members on the Team, including pending memberships. Excludes email invitations that do not have a membership record.</summary>
         public double? MemberCount { get; set; }
         /// <summary>The Team&apos;s display name, or `null` if none has been set.</summary>
@@ -105,6 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamListItemBillingPlan>(); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
+                { "dsyncMode", n => { DsyncMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamListItemDsyncMode>(); } },
                 { "memberCount", n => { MemberCount = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
@@ -124,6 +127,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamListItemBillingPlan>("billingPlan", BillingPlan);
             writer.WriteStringValue("createdAt", CreatedAt);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamListItemDsyncMode>("dsyncMode", DsyncMode);
             writer.WriteDoubleValue("memberCount", MemberCount);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizationId", OrganizationId);

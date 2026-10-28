@@ -37,15 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreated CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreated();
-            if("CreateProjectEnv201ResponseCreatedOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CreateProjectEnv201ResponseCreatedOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf1();
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf2Item>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf2Item> createProjectEnv201ResponseCreatedOneOf2ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf2Item>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf2Item> createProjectEnv201ResponseCreatedOneOf2ItemValue)
             {
                 result.CreateProjectEnv201ResponseCreatedOneOf2Item = createProjectEnv201ResponseCreatedOneOf2ItemValue;
+            }
+            else {
+                result.CreateProjectEnv201ResponseCreatedOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf1();
             }
             return result;
         }
@@ -57,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(CreateProjectEnv201ResponseCreatedOneOf1 != null)
             {
-                return CreateProjectEnv201ResponseCreatedOneOf1.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateProjectEnv201ResponseCreatedOneOf1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +66,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateProjectEnv201ResponseCreatedOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf1>(null, CreateProjectEnv201ResponseCreatedOneOf1);
-            }
-            else if(CreateProjectEnv201ResponseCreatedOneOf2Item != null)
+            if(CreateProjectEnv201ResponseCreatedOneOf2Item != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf2Item>(null, CreateProjectEnv201ResponseCreatedOneOf2Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201ResponseCreatedOneOf1>(null, CreateProjectEnv201ResponseCreatedOneOf1);
             }
         }
     }

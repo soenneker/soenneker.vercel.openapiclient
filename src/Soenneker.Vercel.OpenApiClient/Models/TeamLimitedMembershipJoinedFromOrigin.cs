@@ -72,6 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         NsnbViewerUpgrade,
         #pragma warning restore CS1591
+        [EnumMember(Value = "org-admin-sync")]
+        #pragma warning disable CS1591
+        OrgAdminSync,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-teams")]
         #pragma warning disable CS1591
         OrganizationTeams,

@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration input options for decreasing plan item quantity.
+    /// Configuration input options for increasing plan item quantity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf3Options : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias of the product to decrease quantity for.</summary>
+        /// <summary>The alias of the product to increase quantity for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductAlias { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProductAlias { get; set; }
 #endif
-        /// <summary>The resource IDs to decrementally remove. The quantity of the plan item will be decreased by the number of resource IDs.</summary>
+        /// <summary>The resource IDs to incrementally add. The quantity of the plan item will be increased by the number of resource IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResourceIds { get; set; }

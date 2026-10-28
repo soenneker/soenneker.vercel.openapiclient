@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthUser : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Context for the Update Account screen. Present only when `isAccountUpdateRequired` is true. `managedTeams` is empty for orphan mode (user matches an EMU domain but is not on the team).</summary>
+        /// <summary>Context for the Update Account screen. Present only when `isAccountUpdateRequired` is true. `managedTeams` is empty for orphan mode (user matches an EMU domain but is not on the team). When the teams the user must complete Update Account for include an organization&apos;s backing team, that team is listed as the organization, followed by the organization&apos;s Enterprise Managed root and child teams the user is a member of, including through Directory Sync group mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext? AccountUpdateContext { get; set; }

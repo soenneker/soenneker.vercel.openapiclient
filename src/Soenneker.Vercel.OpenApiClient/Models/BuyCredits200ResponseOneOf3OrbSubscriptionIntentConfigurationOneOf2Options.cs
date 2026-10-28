@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration input options for increasing plan item quantity.
+    /// Configuration input options for setting plan item quantity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf2Options : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias of the product to increase quantity for.</summary>
+        /// <summary>The alias of the product to set quantity for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductAlias { get; set; }
@@ -23,7 +23,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProductAlias { get; set; }
 #endif
-        /// <summary>The resource IDs to incrementally add. The quantity of the plan item will be increased by the number of resource IDs.</summary>
+        /// <summary>The quantity to set for the plan item.</summary>
+        public double? Quantity { get; set; }
+        /// <summary>The resourceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResourceIds { get; set; }
@@ -57,6 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "productAlias", n => { ProductAlias = n.GetStringValue(); } },
+                { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "resourceIds", n => { ResourceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -68,6 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("productAlias", ProductAlias);
+            writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceIds", ResourceIds);
             writer.WriteAdditionalData(AdditionalData);
         }

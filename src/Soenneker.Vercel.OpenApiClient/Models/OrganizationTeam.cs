@@ -24,6 +24,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>Whether the organization&apos;s Directory Sync manages the team&apos;s memberships.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamDsyncMode? DsyncMode { get; set; }
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamBillingPlan>(); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
+                { "dsyncMode", n => { DsyncMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamDsyncMode>(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "ssoMode", n => { SsoMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamSsoMode>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
@@ -92,6 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamBillingPlan>("billingPlan", BillingPlan);
             writer.WriteStringValue("createdAt", CreatedAt);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamDsyncMode>("dsyncMode", DsyncMode);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamSsoMode>("ssoMode", SsoMode);
             writer.WriteStringValue("teamId", TeamId);

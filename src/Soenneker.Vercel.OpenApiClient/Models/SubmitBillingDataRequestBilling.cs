@@ -37,15 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBilling CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBilling();
-            if("SubmitBillingDataRequestBillingOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SubmitBillingDataRequestBillingOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf2();
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf1Item> submitBillingDataRequestBillingOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf1Item> submitBillingDataRequestBillingOneOf1ItemValue)
             {
                 result.SubmitBillingDataRequestBillingOneOf1Item = submitBillingDataRequestBillingOneOf1ItemValue;
+            }
+            else {
+                result.SubmitBillingDataRequestBillingOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf2();
             }
             return result;
         }
@@ -57,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(SubmitBillingDataRequestBillingOneOf2 != null)
             {
-                return SubmitBillingDataRequestBillingOneOf2.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(SubmitBillingDataRequestBillingOneOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +66,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SubmitBillingDataRequestBillingOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf2>(null, SubmitBillingDataRequestBillingOneOf2);
-            }
-            else if(SubmitBillingDataRequestBillingOneOf1Item != null)
+            if(SubmitBillingDataRequestBillingOneOf1Item != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf1Item>(null, SubmitBillingDataRequestBillingOneOf1Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SubmitBillingDataRequestBillingOneOf2>(null, SubmitBillingDataRequestBillingOneOf2);
             }
         }
     }

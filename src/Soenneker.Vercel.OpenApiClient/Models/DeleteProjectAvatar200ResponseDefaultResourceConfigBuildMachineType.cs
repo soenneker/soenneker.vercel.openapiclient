@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum DeleteProjectAvatar200ResponseDefaultResourceConfigBuildMachineType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "14cpu-28gb")]
+        #pragma warning disable CS1591
+        Value14Cpu28Gb,
+        #pragma warning restore CS1591
         [EnumMember(Value = "basic")]
         #pragma warning disable CS1591
         Basic,

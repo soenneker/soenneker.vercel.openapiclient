@@ -82,6 +82,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayByokCredentials { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayByokCredentials { get; set; }
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayCredits { get; set; }
 #nullable restore
 #else
@@ -2408,6 +2416,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "aiGatewayApiKeySpendAttribution", n => { AiGatewayApiKeySpendAttribution = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayApiKeyZdrExemption", n => { AiGatewayApiKeyZdrExemption = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayBudget", n => { AiGatewayBudget = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "aiGatewayByokCredentials", n => { AiGatewayByokCredentials = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayCredits", n => { AiGatewayCredits = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayGuardrails", n => { AiGatewayGuardrails = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayPrivateModels", n => { AiGatewayPrivateModels = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2712,6 +2721,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayApiKeySpendAttribution", AiGatewayApiKeySpendAttribution);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayApiKeyZdrExemption", AiGatewayApiKeyZdrExemption);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayBudget", AiGatewayBudget);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayByokCredentials", AiGatewayByokCredentials);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayCredits", AiGatewayCredits);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayGuardrails", AiGatewayGuardrails);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayPrivateModels", AiGatewayPrivateModels);

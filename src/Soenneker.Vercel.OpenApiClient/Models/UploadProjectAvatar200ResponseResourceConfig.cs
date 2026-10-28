@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigBuildQueue BuildQueue { get; set; }
 #endif
-        /// <summary>Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.</summary>
+        /// <summary>The elasticBuildMachine property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseResourceConfigElasticBuildMachine? ElasticBuildMachine { get; set; }

@@ -8,22 +8,14 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration input options for adjusting plan item quantity.
+    /// Configuration input options for decreasing plan item quantity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4Options : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The resource IDs to incrementally add. The quantity of the plan item will be increased by the number of resource IDs.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AddedResourceIds { get; set; }
-#nullable restore
-#else
-        public List<string> AddedResourceIds { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias of the product to adjust quantity for.</summary>
+        /// <summary>The alias of the product to decrease quantity for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductAlias { get; set; }
@@ -31,13 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProductAlias { get; set; }
 #endif
-        /// <summary>The resource IDs to incrementally remove. The quantity of the plan item will be decreased by the number of resource IDs.</summary>
+        /// <summary>The resource IDs to decrementally remove. The quantity of the plan item will be decreased by the number of resource IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemovedResourceIds { get; set; }
+        public List<string>? ResourceIds { get; set; }
 #nullable restore
 #else
-        public List<string> RemovedResourceIds { get; set; }
+        public List<string> ResourceIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf4Options"/> and sets the default values.
@@ -64,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addedResourceIds", n => { AddedResourceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "productAlias", n => { ProductAlias = n.GetStringValue(); } },
-                { "removedResourceIds", n => { RemovedResourceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "resourceIds", n => { ResourceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("addedResourceIds", AddedResourceIds);
             writer.WriteStringValue("productAlias", ProductAlias);
-            writer.WriteCollectionOfPrimitiveValues<string>("removedResourceIds", RemovedResourceIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("resourceIds", ResourceIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

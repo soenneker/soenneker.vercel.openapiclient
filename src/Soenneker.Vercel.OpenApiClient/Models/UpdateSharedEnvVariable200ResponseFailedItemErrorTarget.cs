@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf2 = updateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf2Value;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1Item> updateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1Item> updateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1ItemValue)
             {
                 result.UpdateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1Item = updateSharedEnvVariable200ResponseFailedItemErrorTargetOneOf1ItemValue;
             }

@@ -47,6 +47,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonInstances Instances { get; set; }
 #endif
+        /// <summary>A Kubernetes-style HTTP liveness probe.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonLivenessProbe? LivenessProbe { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonLivenessProbe LivenessProbe { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
                 { "instances", n => { Instances = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonInstances>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonInstances.CreateFromDiscriminatorValue); } },
+                { "livenessProbe", n => { LivenessProbe = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonLivenessProbe>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonLivenessProbe.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "replicas", n => { Replicas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonReplicas>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonReplicas.CreateFromDiscriminatorValue); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResources>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResources.CreateFromDiscriminatorValue); } },
@@ -128,6 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
             writer.WriteStringValue("entrypoint", Entrypoint);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonInstances>("instances", Instances);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonLivenessProbe>("livenessProbe", LivenessProbe);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonReplicas>("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResources>("resources", Resources);
