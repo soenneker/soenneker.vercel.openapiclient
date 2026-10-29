@@ -307,6 +307,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiOmniagent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-security-review")]
+        #pragma warning disable CS1591
+        AiSecurityReview,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alert-investigation-project-allowlist-updated")]
         #pragma warning disable CS1591
         AlertInvestigationProjectAllowlistUpdated,
@@ -1014,6 +1018,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "firewall-conditional-bypass-deleted")]
         #pragma warning disable CS1591
         FirewallConditionalBypassDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "firewall-conditional-bypass-updated")]
+        #pragma warning disable CS1591
+        FirewallConditionalBypassUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "firewall-config-modified")]
         #pragma warning disable CS1591
@@ -2491,6 +2499,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         TeamCollaborationSettingsUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "team-data-cache-user-disabled-updated")]
+        #pragma warning disable CS1591
+        TeamDataCacheUserDisabledUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "team-default-build-machine-updated")]
         #pragma warning disable CS1591
         TeamDefaultBuildMachineUpdated,
@@ -2654,6 +2666,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "team-remote-caching-update")]
         #pragma warning disable CS1591
         TeamRemoteCachingUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-runtime-cache-updated")]
+        #pragma warning disable CS1591
+        TeamRuntimeCacheUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "team-saml-enforced")]
         #pragma warning disable CS1591
@@ -2890,6 +2906,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vercel-agent-elevated-permissions-requested")]
         #pragma warning disable CS1591
         VercelAgentElevatedPermissionsRequested,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-agent-security-finding-created")]
+        #pragma warning disable CS1591
+        VercelAgentSecurityFindingCreated,
         #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-session-created")]
         #pragma warning disable CS1591

@@ -44,6 +44,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ImportRecommendedIntegrations,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-overview-recommended-integrations")]
+        #pragma warning disable CS1591
+        ProjectOverviewRecommendedIntegrations,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization")]
         #pragma warning disable CS1591
         Organization,

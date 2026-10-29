@@ -18,18 +18,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The prevProjectAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalyticsProperty? PrevProjectAnalytics { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalytics? PrevProjectAnalytics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalyticsProperty PrevProjectAnalytics { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalytics PrevProjectAnalytics { get; set; }
 #endif
         /// <summary>The projectAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalyticsProperty? ProjectAnalytics { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalytics? ProjectAnalytics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalyticsProperty ProjectAnalytics { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalytics ProjectAnalytics { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,8 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prevProjectAnalytics", n => { PrevProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalyticsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalyticsProperty.CreateFromDiscriminatorValue); } },
-                { "projectAnalytics", n => { ProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalyticsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalyticsProperty.CreateFromDiscriminatorValue); } },
+                { "prevProjectAnalytics", n => { PrevProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalytics.CreateFromDiscriminatorValue); } },
+                { "projectAnalytics", n => { ProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalytics.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -85,8 +85,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalyticsProperty>("prevProjectAnalytics", PrevProjectAnalytics);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalyticsProperty>("projectAnalytics", ProjectAnalytics);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273PrevProjectAnalytics>("prevProjectAnalytics", PrevProjectAnalytics);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273ProjectAnalytics>("projectAnalytics", ProjectAnalytics);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

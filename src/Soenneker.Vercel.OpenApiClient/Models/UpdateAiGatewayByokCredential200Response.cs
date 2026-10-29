@@ -58,6 +58,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProviderSlug { get; set; }
 #endif
+        /// <summary>The rotatedAt property</summary>
+        public double? RotatedAt { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>The zeroDataRetention property</summary>
@@ -94,6 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "providerSlug", n => { ProviderSlug = n.GetStringValue(); } },
+                { "rotatedAt", n => { RotatedAt = n.GetDoubleValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "zeroDataRetention", n => { ZeroDataRetention = n.GetBoolValue(); } },
             };
@@ -112,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("providerSlug", ProviderSlug);
+            writer.WriteDoubleValue("rotatedAt", RotatedAt);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteBoolValue("zeroDataRetention", ZeroDataRetention);
             writer.WriteAdditionalData(AdditionalData);

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.Item.Environments;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.Ite
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithProjectItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The environments property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.Item.Environments.EnvironmentsRequestBuilder Environments
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.Item.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.Item.WithProjectItemRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -15,14 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The after property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69After? After { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69After After { get; set; }
-#endif
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,29 +31,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AppName { get; set; }
 #endif
-        /// <summary>The before property</summary>
+        /// <summary>The nextPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69Before? Before { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextPermissionsItem?>? NextPermissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69Before Before { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextPermissionsItem?> NextPermissions { get; set; }
 #endif
-        /// <summary>The installationId property</summary>
+        /// <summary>The nextScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallationId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextScopesItem?>? NextScopes { get; set; }
 #nullable restore
 #else
-        public string InstallationId { get; set; }
-#endif
-        /// <summary>The organizationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrganizationId { get; set; }
-#nullable restore
-#else
-        public string OrganizationId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextScopesItem?> NextScopes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69"/> and sets the default values.
@@ -88,12 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "after", n => { After = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69After>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69After.CreateFromDiscriminatorValue); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
-                { "before", n => { Before = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69Before>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69Before.CreateFromDiscriminatorValue); } },
-                { "installationId", n => { InstallationId = n.GetStringValue(); } },
-                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "nextPermissions", n => { NextPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextPermissionsItem>()?.AsList(); } },
+                { "nextScopes", n => { NextScopes = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextScopesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -103,12 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69After>("after", After);
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appName", AppName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69Before>("before", Before);
-            writer.WriteStringValue("installationId", InstallationId);
-            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextPermissionsItem>("nextPermissions", NextPermissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69NextScopesItem>("nextScopes", NextScopes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

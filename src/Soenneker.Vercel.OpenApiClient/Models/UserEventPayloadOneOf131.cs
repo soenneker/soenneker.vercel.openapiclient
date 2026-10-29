@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode? Mode { get; set; }
         /// <summary>The previousMode property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode? PreviousMode { get; set; }
+        /// <summary>The scope property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope? Scope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131"/> and sets the default values.
         /// </summary>
@@ -46,6 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode>(); } },
                 { "previousMode", n => { PreviousMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>(); } },
             };
         }
         /// <summary>
@@ -57,6 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode>("mode", Mode);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode>("previousMode", PreviousMode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

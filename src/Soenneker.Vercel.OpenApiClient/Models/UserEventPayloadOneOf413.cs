@@ -13,17 +13,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf413 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The action property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf413Action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deletedCount property</summary>
-        public double? DeletedCount { get; set; }
-        /// <summary>The inviteIds property</summary>
+        /// <summary>The targetId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InviteIds { get; set; }
+        public string? TargetId { get; set; }
 #nullable restore
 #else
-        public List<string> InviteIds { get; set; }
+        public string TargetId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf413"/> and sets the default values.
@@ -50,8 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deletedCount", n => { DeletedCount = n.GetDoubleValue(); } },
-                { "inviteIds", n => { InviteIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf413Action>(); } },
+                { "targetId", n => { TargetId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("deletedCount", DeletedCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("inviteIds", InviteIds);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf413Action>("action", Action);
+            writer.WriteStringValue("targetId", TargetId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

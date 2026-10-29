@@ -33,14 +33,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ConnectionId { get; set; }
 #endif
-        /// <summary>The keyId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? KeyId { get; set; }
-#nullable restore
-#else
-        public string KeyId { get; set; }
-#endif
+        /// <summary>The created property</summary>
+        public bool? Created { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf364"/> and sets the default values.
         /// </summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "actorName", n => { ActorName = n.GetStringValue(); } },
                 { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
                 { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
-                { "keyId", n => { KeyId = n.GetStringValue(); } },
+                { "created", n => { Created = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -82,7 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("actorName", ActorName);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
             writer.WriteStringValue("connectionId", ConnectionId);
-            writer.WriteStringValue("keyId", KeyId);
+            writer.WriteBoolValue("created", Created);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

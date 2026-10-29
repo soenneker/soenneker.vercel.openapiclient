@@ -22,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AwsServiceName { get; set; }
 #endif
+        /// <summary>The configurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConfigurationId { get; set; }
+#nullable restore
+#else
+        public string ConfigurationId { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,14 +53,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> PrivateDnsNames { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
 #endif
         /// <summary>The vercelRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,10 +88,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "awsServiceName", n => { AwsServiceName = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "privateDnsNames", n => { PrivateDnsNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "vercelRegion", n => { VercelRegion = n.GetStringValue(); } },
             };
         }
@@ -103,10 +103,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("awsServiceName", AwsServiceName);
+            writer.WriteStringValue("configurationId", ConfigurationId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("privateDnsNames", PrivateDnsNames);
-            writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("vercelRegion", VercelRegion);
             writer.WriteAdditionalData(AdditionalData);
         }

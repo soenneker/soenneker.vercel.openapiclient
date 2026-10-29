@@ -118,14 +118,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
-        /// <summary>The transferRequest property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1TransferRequest? TransferRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1TransferRequest TransferRequest { get; set; }
-#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType? Type { get; set; }
         /// <summary>A timestamp that tells you when the configuration was updated.</summary>
@@ -185,7 +177,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1Source>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1Status>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "transferRequest", n => { TransferRequest = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1TransferRequest>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1TransferRequest.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -220,7 +211,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1Source>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1Status>("status", Status);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1TransferRequest>("transferRequest", TransferRequest);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("userId", UserId);

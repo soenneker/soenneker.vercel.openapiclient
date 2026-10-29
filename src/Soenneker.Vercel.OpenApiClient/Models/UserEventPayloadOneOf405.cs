@@ -15,58 +15,106 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The by property</summary>
+        /// <summary>The branchRef property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? By { get; set; }
+        public string? BranchRef { get; set; }
 #nullable restore
 #else
-        public string By { get; set; }
+        public string BranchRef { get; set; }
 #endif
-        /// <summary>The byUid property</summary>
+        /// <summary>The deploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ByUid { get; set; }
+        public string? DeploymentId { get; set; }
 #nullable restore
 #else
-        public string ByUid { get; set; }
+        public string DeploymentId { get; set; }
 #endif
-        /// <summary>The reasons property</summary>
+        /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405ReasonsItem>? Reasons { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405ReasonsItem> Reasons { get; set; }
+        public string Environment { get; set; }
 #endif
-        /// <summary>The removedMemberCount property</summary>
-        public double? RemovedMemberCount { get; set; }
-        /// <summary>The removedUsers property</summary>
+        /// <summary>The eventId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405RemovedUsersProperty? RemovedUsers { get; set; }
+        public string? EventId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405RemovedUsersProperty RemovedUsers { get; set; }
+        public string EventId { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>The findingId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? FindingId { get; set; }
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string FindingId { get; set; }
 #endif
-        /// <summary>The teamId property</summary>
+        /// <summary>The findingNumber property</summary>
+        public double? FindingNumber { get; set; }
+        /// <summary>The occurredAt property</summary>
+        public double? OccurredAt { get; set; }
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string TeamId { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
-        public double? Timestamp { get; set; }
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The sessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionId { get; set; }
+#nullable restore
+#else
+        public string SessionId { get; set; }
+#endif
+        /// <summary>Currently emitted session kinds: chat, investigation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionKind { get; set; }
+#nullable restore
+#else
+        public string SessionKind { get; set; }
+#endif
+        /// <summary>The severity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Severity { get; set; }
+#nullable restore
+#else
+        public string Severity { get; set; }
+#endif
+        /// <summary>Currently emitted surfaces: dashboard, internal, slack, automation, github.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Surface { get; set; }
+#nullable restore
+#else
+        public string Surface { get; set; }
+#endif
+        /// <summary>The vulnerabilityClass property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VulnerabilityClass { get; set; }
+#nullable restore
+#else
+        public string VulnerabilityClass { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405"/> and sets the default values.
         /// </summary>
@@ -92,14 +140,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "by", n => { By = n.GetStringValue(); } },
-                { "byUid", n => { ByUid = n.GetStringValue(); } },
-                { "reasons", n => { Reasons = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405ReasonsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405ReasonsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "removedMemberCount", n => { RemovedMemberCount = n.GetDoubleValue(); } },
-                { "removedUsers", n => { RemovedUsers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405RemovedUsersProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405RemovedUsersProperty.CreateFromDiscriminatorValue); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
+                { "branchRef", n => { BranchRef = n.GetStringValue(); } },
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "eventId", n => { EventId = n.GetStringValue(); } },
+                { "findingId", n => { FindingId = n.GetStringValue(); } },
+                { "findingNumber", n => { FindingNumber = n.GetDoubleValue(); } },
+                { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
+                { "severity", n => { Severity = n.GetStringValue(); } },
+                { "surface", n => { Surface = n.GetStringValue(); } },
+                { "vulnerabilityClass", n => { VulnerabilityClass = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -109,14 +163,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("by", By);
-            writer.WriteStringValue("byUid", ByUid);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405ReasonsItem>("reasons", Reasons);
-            writer.WriteDoubleValue("removedMemberCount", RemovedMemberCount);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405RemovedUsersProperty>("removedUsers", RemovedUsers);
-            writer.WriteStringValue("slug", Slug);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteDoubleValue("timestamp", Timestamp);
+            writer.WriteStringValue("branchRef", BranchRef);
+            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteStringValue("eventId", EventId);
+            writer.WriteStringValue("findingId", FindingId);
+            writer.WriteDoubleValue("findingNumber", FindingNumber);
+            writer.WriteDoubleValue("occurredAt", OccurredAt);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteStringValue("sessionKind", SessionKind);
+            writer.WriteStringValue("severity", Severity);
+            writer.WriteStringValue("surface", Surface);
+            writer.WriteStringValue("vulnerabilityClass", VulnerabilityClass);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

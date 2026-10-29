@@ -3,21 +3,18 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Scope of the token: - `&apos;user&apos;`: full-account token (not tied to any team). - `&apos;team&apos;`: scoped to a single team. - `&apos;project&apos;`: scoped to a single project within a team.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum UserEventPayloadOneOf501Scope
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "project")]
+        [EnumMember(Value = "organization")]
         #pragma warning disable CS1591
-        Project,
+        Organization,
         #pragma warning restore CS1591
         [EnumMember(Value = "team")]
         #pragma warning disable CS1591
         Team,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "user")]
-        #pragma warning disable CS1591
-        User,
         #pragma warning restore CS1591
     }
 }

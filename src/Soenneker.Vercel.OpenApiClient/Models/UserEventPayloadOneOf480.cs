@@ -31,8 +31,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The public property</summary>
-        public bool? Public { get; set; }
         /// <summary>The repositoryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +66,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "public", n => { Public = n.GetBoolValue(); } },
                 { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
             };
         }
@@ -81,7 +78,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("public", Public);
             writer.WriteStringValue("repositoryName", RepositoryName);
             writer.WriteAdditionalData(AdditionalData);
         }

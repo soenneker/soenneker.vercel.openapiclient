@@ -15,23 +15,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ciEnabled property</summary>
-        public bool? CiEnabled { get; set; }
-        /// <summary>The organizationId property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationId { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string OrganizationId { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The repository property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repository { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string Repository { get; set; }
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The public property</summary>
+        public bool? Public { get; set; }
+        /// <summary>The repositoryName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RepositoryName { get; set; }
+#nullable restore
+#else
+        public string RepositoryName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf485"/> and sets the default values.
@@ -58,9 +66,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ciEnabled", n => { CiEnabled = n.GetBoolValue(); } },
-                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "repository", n => { Repository = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "public", n => { Public = n.GetBoolValue(); } },
+                { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("ciEnabled", CiEnabled);
-            writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("repository", Repository);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteBoolValue("public", Public);
+            writer.WriteStringValue("repositoryName", RepositoryName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
