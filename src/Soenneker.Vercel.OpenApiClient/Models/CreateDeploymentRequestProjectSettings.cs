@@ -12,72 +12,108 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateDeploymentRequestProjectSettings : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("commandForIgnoringBuildStep") is { } nullNodeCommandForIgnoringBuildStep && nullNodeCommandForIgnoringBuildStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommandForIgnoringBuildStep = null;
+            if (parseNode.GetChildNode("devCommand") is { } nullNodeDevCommand && nullNodeDevCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevCommand = null;
+            if (parseNode.GetChildNode("framework") is { } nullNodeFramework && nullNodeFramework.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Framework = null;
+            if (parseNode.GetChildNode("installCommand") is { } nullNodeInstallCommand && nullNodeInstallCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallCommand = null;
+            if (parseNode.GetChildNode("nodeVersion") is { } nullNodeNodeVersion && nullNodeNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeVersion = null;
+            if (parseNode.GetChildNode("outputDirectory") is { } nullNodeOutputDirectory && nullNodeOutputDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputDirectory = null;
+            if (parseNode.GetChildNode("rootDirectory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
+            if (parseNode.GetChildNode("serverlessFunctionRegion") is { } nullNodeServerlessFunctionRegion && nullNodeServerlessFunctionRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerlessFunctionRegion = null;
+            if (parseNode.GetChildNode("skipGitConnectDuringLink") is { } nullNodeSkipGitConnectDuringLink && nullNodeSkipGitConnectDuringLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipGitConnectDuringLink = null;
+            if (parseNode.GetChildNode("sourceFilesOutsideRootDirectory") is { } nullNodeSourceFilesOutsideRootDirectory && nullNodeSourceFilesOutsideRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFilesOutsideRootDirectory = null;
+        }
+
         /// <summary>The build command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get; set; }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get; set; }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>The commandForIgnoringBuildStep property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommandForIgnoringBuildStep { get; set; }
+        public string? CommandForIgnoringBuildStep { get => _explicitNullValueCommandForIgnoringBuildStep; set { _explicitNullValueCommandForIgnoringBuildStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commandForIgnoringBuildStep"); else _explicitNullProperties?.Remove("commandForIgnoringBuildStep"); } }
+        private string? _explicitNullValueCommandForIgnoringBuildStep = default!;
 #nullable restore
 #else
-        public string CommandForIgnoringBuildStep { get; set; }
+        public string CommandForIgnoringBuildStep { get => _explicitNullValueCommandForIgnoringBuildStep; set { _explicitNullValueCommandForIgnoringBuildStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commandForIgnoringBuildStep"); else _explicitNullProperties?.Remove("commandForIgnoringBuildStep"); } }
+        private string _explicitNullValueCommandForIgnoringBuildStep = default!;
 #endif
         /// <summary>The dev command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DevCommand { get; set; }
+        public string? DevCommand { get => _explicitNullValueDevCommand; set { _explicitNullValueDevCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devCommand"); else _explicitNullProperties?.Remove("devCommand"); } }
+        private string? _explicitNullValueDevCommand = default!;
 #nullable restore
 #else
-        public string DevCommand { get; set; }
+        public string DevCommand { get => _explicitNullValueDevCommand; set { _explicitNullValueDevCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devCommand"); else _explicitNullProperties?.Remove("devCommand"); } }
+        private string _explicitNullValueDevCommand = default!;
 #endif
         /// <summary>The framework that is being used for this project. When `null` is used no framework is selected</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework? Framework { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework? _explicitNullValueFramework = default!;
         /// <summary>The install command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallCommand { get; set; }
+        public string? InstallCommand { get => _explicitNullValueInstallCommand; set { _explicitNullValueInstallCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installCommand"); else _explicitNullProperties?.Remove("installCommand"); } }
+        private string? _explicitNullValueInstallCommand = default!;
 #nullable restore
 #else
-        public string InstallCommand { get; set; }
+        public string InstallCommand { get => _explicitNullValueInstallCommand; set { _explicitNullValueInstallCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installCommand"); else _explicitNullProperties?.Remove("installCommand"); } }
+        private string _explicitNullValueInstallCommand = default!;
 #endif
         /// <summary>Override the Node.js version that should be used for this deployment</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsNodeVersion? NodeVersion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsNodeVersion? NodeVersion { get => _explicitNullValueNodeVersion; set { _explicitNullValueNodeVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodeVersion"); else _explicitNullProperties?.Remove("nodeVersion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsNodeVersion? _explicitNullValueNodeVersion = default!;
         /// <summary>The output directory of the project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputDirectory { get; set; }
+        public string? OutputDirectory { get => _explicitNullValueOutputDirectory; set { _explicitNullValueOutputDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputDirectory"); else _explicitNullProperties?.Remove("outputDirectory"); } }
+        private string? _explicitNullValueOutputDirectory = default!;
 #nullable restore
 #else
-        public string OutputDirectory { get; set; }
+        public string OutputDirectory { get => _explicitNullValueOutputDirectory; set { _explicitNullValueOutputDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputDirectory"); else _explicitNullProperties?.Remove("outputDirectory"); } }
+        private string _explicitNullValueOutputDirectory = default!;
 #endif
         /// <summary>The name of a directory or relative path to the source code of your project. When `null` is used it will default to the project root</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDirectory { get; set; }
+        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string? _explicitNullValueRootDirectory = default!;
 #nullable restore
 #else
-        public string RootDirectory { get; set; }
+        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string _explicitNullValueRootDirectory = default!;
 #endif
         /// <summary>The region to deploy Serverless Functions in this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerlessFunctionRegion { get; set; }
+        public string? ServerlessFunctionRegion { get => _explicitNullValueServerlessFunctionRegion; set { _explicitNullValueServerlessFunctionRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionRegion"); else _explicitNullProperties?.Remove("serverlessFunctionRegion"); } }
+        private string? _explicitNullValueServerlessFunctionRegion = default!;
 #nullable restore
 #else
-        public string ServerlessFunctionRegion { get; set; }
+        public string ServerlessFunctionRegion { get => _explicitNullValueServerlessFunctionRegion; set { _explicitNullValueServerlessFunctionRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionRegion"); else _explicitNullProperties?.Remove("serverlessFunctionRegion"); } }
+        private string _explicitNullValueServerlessFunctionRegion = default!;
 #endif
         /// <summary>Opts-out of the message prompting a CLI user to connect a Git repository in `vercel link`.</summary>
         [Obsolete("")]
-        public bool? SkipGitConnectDuringLink { get; set; }
+        public bool? SkipGitConnectDuringLink { get => _explicitNullValueSkipGitConnectDuringLink; set { _explicitNullValueSkipGitConnectDuringLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipGitConnectDuringLink"); else _explicitNullProperties?.Remove("skipGitConnectDuringLink"); } }
+        private bool? _explicitNullValueSkipGitConnectDuringLink = default!;
         /// <summary>Indicates if there are source files outside of the root directory, typically used for monorepos</summary>
-        public bool? SourceFilesOutsideRootDirectory { get; set; }
+        public bool? SourceFilesOutsideRootDirectory { get => _explicitNullValueSourceFilesOutsideRootDirectory; set { _explicitNullValueSourceFilesOutsideRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceFilesOutsideRootDirectory"); else _explicitNullProperties?.Remove("sourceFilesOutsideRootDirectory"); } }
+        private bool? _explicitNullValueSourceFilesOutsideRootDirectory = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,7 +122,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,7 +162,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("rootDirectory", RootDirectory);
             writer.WriteStringValue("serverlessFunctionRegion", ServerlessFunctionRegion);
             writer.WriteBoolValue("skipGitConnectDuringLink", SkipGitConnectDuringLink);
-            writer.WriteBoolValue("sourceFilesOutsideRootDirectory", SourceFilesOutsideRootDirectory);
+            writer.WriteBoolValue("sourceFilesOutsideRootDirectory", SourceFilesOutsideRootDirectory);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

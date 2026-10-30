@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteMicrofrontendsGroup200ResponseSchema>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteMicrofrontendsGroup200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteMicrofrontendsGroup200ResponseSchema>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteMicrofrontendsGroup200ResponseSchema.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a microfrontends group&apos;s settings.
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a microfrontends group from the team associated with the group ID.

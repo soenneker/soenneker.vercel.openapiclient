@@ -12,2376 +12,3271 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UploadProjectAvatar200ResponsePermissions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accessGroup") is { } nullNodeAccessGroup && nullNodeAccessGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessGroup = null;
+            if (parseNode.GetChildNode("agent") is { } nullNodeAgent && nullNodeAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agent = null;
+            if (parseNode.GetChildNode("aiGatewayApiKey") is { } nullNodeAiGatewayApiKey && nullNodeAiGatewayApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayApiKey = null;
+            if (parseNode.GetChildNode("aiGatewayApiKeyBypassAll") is { } nullNodeAiGatewayApiKeyBypassAll && nullNodeAiGatewayApiKeyBypassAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayApiKeyBypassAll = null;
+            if (parseNode.GetChildNode("aiGatewayApiKeyOwnedBySelf") is { } nullNodeAiGatewayApiKeyOwnedBySelf && nullNodeAiGatewayApiKeyOwnedBySelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayApiKeyOwnedBySelf = null;
+            if (parseNode.GetChildNode("aiGatewayApiKeySpendAttribution") is { } nullNodeAiGatewayApiKeySpendAttribution && nullNodeAiGatewayApiKeySpendAttribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayApiKeySpendAttribution = null;
+            if (parseNode.GetChildNode("aiGatewayApiKeyZdrExemption") is { } nullNodeAiGatewayApiKeyZdrExemption && nullNodeAiGatewayApiKeyZdrExemption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayApiKeyZdrExemption = null;
+            if (parseNode.GetChildNode("aiGatewayBudget") is { } nullNodeAiGatewayBudget && nullNodeAiGatewayBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayBudget = null;
+            if (parseNode.GetChildNode("aiGatewayByokCredentials") is { } nullNodeAiGatewayByokCredentials && nullNodeAiGatewayByokCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayByokCredentials = null;
+            if (parseNode.GetChildNode("aiGatewayCredits") is { } nullNodeAiGatewayCredits && nullNodeAiGatewayCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayCredits = null;
+            if (parseNode.GetChildNode("aiGatewayGuardrails") is { } nullNodeAiGatewayGuardrails && nullNodeAiGatewayGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayGuardrails = null;
+            if (parseNode.GetChildNode("aiGatewayPrivateModels") is { } nullNodeAiGatewayPrivateModels && nullNodeAiGatewayPrivateModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayPrivateModels = null;
+            if (parseNode.GetChildNode("aiGatewayRules") is { } nullNodeAiGatewayRules && nullNodeAiGatewayRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayRules = null;
+            if (parseNode.GetChildNode("aiGatewaySettings") is { } nullNodeAiGatewaySettings && nullNodeAiGatewaySettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewaySettings = null;
+            if (parseNode.GetChildNode("aiGatewayTranscripts") is { } nullNodeAiGatewayTranscripts && nullNodeAiGatewayTranscripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayTranscripts = null;
+            if (parseNode.GetChildNode("aiGatewayTranscriptsSettings") is { } nullNodeAiGatewayTranscriptsSettings && nullNodeAiGatewayTranscriptsSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayTranscriptsSettings = null;
+            if (parseNode.GetChildNode("aiGatewayUsage") is { } nullNodeAiGatewayUsage && nullNodeAiGatewayUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayUsage = null;
+            if (parseNode.GetChildNode("aiGatewayVirtualModelConfigs") is { } nullNodeAiGatewayVirtualModelConfigs && nullNodeAiGatewayVirtualModelConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayVirtualModelConfigs = null;
+            if (parseNode.GetChildNode("alertRules") is { } nullNodeAlertRules && nullNodeAlertRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertRules = null;
+            if (parseNode.GetChildNode("alerts") is { } nullNodeAlerts && nullNodeAlerts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alerts = null;
+            if (parseNode.GetChildNode("aliasGlobal") is { } nullNodeAliasGlobal && nullNodeAliasGlobal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AliasGlobal = null;
+            if (parseNode.GetChildNode("aliasProject") is { } nullNodeAliasProject && nullNodeAliasProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AliasProject = null;
+            if (parseNode.GetChildNode("aliasProtectionBypass") is { } nullNodeAliasProtectionBypass && nullNodeAliasProtectionBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AliasProtectionBypass = null;
+            if (parseNode.GetChildNode("analytics") is { } nullNodeAnalytics && nullNodeAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analytics = null;
+            if (parseNode.GetChildNode("analyticsSampling") is { } nullNodeAnalyticsSampling && nullNodeAnalyticsSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsSampling = null;
+            if (parseNode.GetChildNode("analyticsUsage") is { } nullNodeAnalyticsUsage && nullNodeAnalyticsUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsUsage = null;
+            if (parseNode.GetChildNode("apiKey") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("apiKeyAiGateway") is { } nullNodeApiKeyAiGateway && nullNodeApiKeyAiGateway.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKeyAiGateway = null;
+            if (parseNode.GetChildNode("apiKeyOwnedBySelf") is { } nullNodeApiKeyOwnedBySelf && nullNodeApiKeyOwnedBySelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKeyOwnedBySelf = null;
+            if (parseNode.GetChildNode("auditLog") is { } nullNodeAuditLog && nullNodeAuditLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLog = null;
+            if (parseNode.GetChildNode("automation") is { } nullNodeAutomation && nullNodeAutomation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Automation = null;
+            if (parseNode.GetChildNode("billingAddress") is { } nullNodeBillingAddress && nullNodeBillingAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddress = null;
+            if (parseNode.GetChildNode("billingInformation") is { } nullNodeBillingInformation && nullNodeBillingInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingInformation = null;
+            if (parseNode.GetChildNode("billingInvoice") is { } nullNodeBillingInvoice && nullNodeBillingInvoice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingInvoice = null;
+            if (parseNode.GetChildNode("billingInvoiceEmailRecipient") is { } nullNodeBillingInvoiceEmailRecipient && nullNodeBillingInvoiceEmailRecipient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingInvoiceEmailRecipient = null;
+            if (parseNode.GetChildNode("billingInvoiceLanguage") is { } nullNodeBillingInvoiceLanguage && nullNodeBillingInvoiceLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingInvoiceLanguage = null;
+            if (parseNode.GetChildNode("billingPlan") is { } nullNodeBillingPlan && nullNodeBillingPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPlan = null;
+            if (parseNode.GetChildNode("billingPurchaseOrder") is { } nullNodeBillingPurchaseOrder && nullNodeBillingPurchaseOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPurchaseOrder = null;
+            if (parseNode.GetChildNode("billingRefund") is { } nullNodeBillingRefund && nullNodeBillingRefund.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingRefund = null;
+            if (parseNode.GetChildNode("billingTaxId") is { } nullNodeBillingTaxId && nullNodeBillingTaxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingTaxId = null;
+            if (parseNode.GetChildNode("blob") is { } nullNodeBlob && nullNodeBlob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blob = null;
+            if (parseNode.GetChildNode("blobStoreTokenSet") is { } nullNodeBlobStoreTokenSet && nullNodeBlobStoreTokenSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlobStoreTokenSet = null;
+            if (parseNode.GetChildNode("budget") is { } nullNodeBudget && nullNodeBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budget = null;
+            if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
+            if (parseNode.GetChildNode("buildMachineDefault") is { } nullNodeBuildMachineDefault && nullNodeBuildMachineDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachineDefault = null;
+            if (parseNode.GetChildNode("bulkRedirects") is { } nullNodeBulkRedirects && nullNodeBulkRedirects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BulkRedirects = null;
+            if (parseNode.GetChildNode("cacheArtifact") is { } nullNodeCacheArtifact && nullNodeCacheArtifact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheArtifact = null;
+            if (parseNode.GetChildNode("cacheArtifactUsageEvent") is { } nullNodeCacheArtifactUsageEvent && nullNodeCacheArtifactUsageEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheArtifactUsageEvent = null;
+            if (parseNode.GetChildNode("ciInvocations") is { } nullNodeCiInvocations && nullNodeCiInvocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CiInvocations = null;
+            if (parseNode.GetChildNode("ciLogs") is { } nullNodeCiLogs && nullNodeCiLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CiLogs = null;
+            if (parseNode.GetChildNode("codeChecks") is { } nullNodeCodeChecks && nullNodeCodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeChecks = null;
+            if (parseNode.GetChildNode("codeOwners") is { } nullNodeCodeOwners && nullNodeCodeOwners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeOwners = null;
+            if (parseNode.GetChildNode("concurrentBuilds") is { } nullNodeConcurrentBuilds && nullNodeConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConcurrentBuilds = null;
+            if (parseNode.GetChildNode("connect") is { } nullNodeConnect && nullNodeConnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connect = null;
+            if (parseNode.GetChildNode("connectConfiguration") is { } nullNodeConnectConfiguration && nullNodeConnectConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectConfiguration = null;
+            if (parseNode.GetChildNode("connectConfigurationLink") is { } nullNodeConnectConfigurationLink && nullNodeConnectConfigurationLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectConfigurationLink = null;
+            if (parseNode.GetChildNode("connectLogs") is { } nullNodeConnectLogs && nullNodeConnectLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectLogs = null;
+            if (parseNode.GetChildNode("connexClient") is { } nullNodeConnexClient && nullNodeConnexClient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnexClient = null;
+            if (parseNode.GetChildNode("connexClientAccess") is { } nullNodeConnexClientAccess && nullNodeConnexClientAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnexClientAccess = null;
+            if (parseNode.GetChildNode("connexClientProject") is { } nullNodeConnexClientProject && nullNodeConnexClientProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnexClientProject = null;
+            if (parseNode.GetChildNode("connexContact") is { } nullNodeConnexContact && nullNodeConnexContact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnexContact = null;
+            if (parseNode.GetChildNode("connexInstallation") is { } nullNodeConnexInstallation && nullNodeConnexInstallation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnexInstallation = null;
+            if (parseNode.GetChildNode("connexToken") is { } nullNodeConnexToken && nullNodeConnexToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnexToken = null;
+            if (parseNode.GetChildNode("cursorOriginInstallation") is { } nullNodeCursorOriginInstallation && nullNodeCursorOriginInstallation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CursorOriginInstallation = null;
+            if (parseNode.GetChildNode("dataCacheBillingSettings") is { } nullNodeDataCacheBillingSettings && nullNodeDataCacheBillingSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCacheBillingSettings = null;
+            if (parseNode.GetChildNode("dataCacheNamespace") is { } nullNodeDataCacheNamespace && nullNodeDataCacheNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCacheNamespace = null;
+            if (parseNode.GetChildNode("defaultDeploymentProtection") is { } nullNodeDefaultDeploymentProtection && nullNodeDefaultDeploymentProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDeploymentProtection = null;
+            if (parseNode.GetChildNode("deployment") is { } nullNodeDeployment && nullNodeDeployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deployment = null;
+            if (parseNode.GetChildNode("deploymentBuildLogs") is { } nullNodeDeploymentBuildLogs && nullNodeDeploymentBuildLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentBuildLogs = null;
+            if (parseNode.GetChildNode("deploymentCheck") is { } nullNodeDeploymentCheck && nullNodeDeploymentCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentCheck = null;
+            if (parseNode.GetChildNode("deploymentCheckPreview") is { } nullNodeDeploymentCheckPreview && nullNodeDeploymentCheckPreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentCheckPreview = null;
+            if (parseNode.GetChildNode("deploymentCheckReRunFromProductionBranch") is { } nullNodeDeploymentCheckReRunFromProductionBranch && nullNodeDeploymentCheckReRunFromProductionBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentCheckReRunFromProductionBranch = null;
+            if (parseNode.GetChildNode("deploymentPolicy") is { } nullNodeDeploymentPolicy && nullNodeDeploymentPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentPolicy = null;
+            if (parseNode.GetChildNode("deploymentPreview") is { } nullNodeDeploymentPreview && nullNodeDeploymentPreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentPreview = null;
+            if (parseNode.GetChildNode("deploymentPrivate") is { } nullNodeDeploymentPrivate && nullNodeDeploymentPrivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentPrivate = null;
+            if (parseNode.GetChildNode("deploymentProductionGit") is { } nullNodeDeploymentProductionGit && nullNodeDeploymentProductionGit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentProductionGit = null;
+            if (parseNode.GetChildNode("deploymentPromote") is { } nullNodeDeploymentPromote && nullNodeDeploymentPromote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentPromote = null;
+            if (parseNode.GetChildNode("deploymentProtectionException") is { } nullNodeDeploymentProtectionException && nullNodeDeploymentProtectionException.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentProtectionException = null;
+            if (parseNode.GetChildNode("deploymentRollback") is { } nullNodeDeploymentRollback && nullNodeDeploymentRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentRollback = null;
+            if (parseNode.GetChildNode("deploymentV0") is { } nullNodeDeploymentV0 && nullNodeDeploymentV0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentV0 = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("domainAcceptDelegation") is { } nullNodeDomainAcceptDelegation && nullNodeDomainAcceptDelegation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainAcceptDelegation = null;
+            if (parseNode.GetChildNode("domainAuthCodes") is { } nullNodeDomainAuthCodes && nullNodeDomainAuthCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainAuthCodes = null;
+            if (parseNode.GetChildNode("domainCertificate") is { } nullNodeDomainCertificate && nullNodeDomainCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCertificate = null;
+            if (parseNode.GetChildNode("domainCheckConfig") is { } nullNodeDomainCheckConfig && nullNodeDomainCheckConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCheckConfig = null;
+            if (parseNode.GetChildNode("domainMove") is { } nullNodeDomainMove && nullNodeDomainMove.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainMove = null;
+            if (parseNode.GetChildNode("domainPurchase") is { } nullNodeDomainPurchase && nullNodeDomainPurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainPurchase = null;
+            if (parseNode.GetChildNode("domainRecord") is { } nullNodeDomainRecord && nullNodeDomainRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainRecord = null;
+            if (parseNode.GetChildNode("domainTransferIn") is { } nullNodeDomainTransferIn && nullNodeDomainTransferIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainTransferIn = null;
+            if (parseNode.GetChildNode("drain") is { } nullNodeDrain && nullNodeDrain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Drain = null;
+            if (parseNode.GetChildNode("edgeCacheNamespace") is { } nullNodeEdgeCacheNamespace && nullNodeEdgeCacheNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeCacheNamespace = null;
+            if (parseNode.GetChildNode("edgeConfig") is { } nullNodeEdgeConfig && nullNodeEdgeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfig = null;
+            if (parseNode.GetChildNode("edgeConfigItem") is { } nullNodeEdgeConfigItem && nullNodeEdgeConfigItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigItem = null;
+            if (parseNode.GetChildNode("edgeConfigSchema") is { } nullNodeEdgeConfigSchema && nullNodeEdgeConfigSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSchema = null;
+            if (parseNode.GetChildNode("edgeConfigToken") is { } nullNodeEdgeConfigToken && nullNodeEdgeConfigToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigToken = null;
+            if (parseNode.GetChildNode("emaSetup") is { } nullNodeEmaSetup && nullNodeEmaSetup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmaSetup = null;
+            if (parseNode.GetChildNode("endpointVerification") is { } nullNodeEndpointVerification && nullNodeEndpointVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointVerification = null;
+            if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
+            if (parseNode.GetChildNode("event") is { } nullNodeEvent && nullNodeEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Event = null;
+            if (parseNode.GetChildNode("fileUpload") is { } nullNodeFileUpload && nullNodeFileUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileUpload = null;
+            if (parseNode.GetChildNode("flagsExplorerSubscription") is { } nullNodeFlagsExplorerSubscription && nullNodeFlagsExplorerSubscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagsExplorerSubscription = null;
+            if (parseNode.GetChildNode("gitCredentialGrant") is { } nullNodeGitCredentialGrant && nullNodeGitCredentialGrant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitCredentialGrant = null;
+            if (parseNode.GetChildNode("githubUsage") is { } nullNodeGithubUsage && nullNodeGithubUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GithubUsage = null;
+            if (parseNode.GetChildNode("gitRepository") is { } nullNodeGitRepository && nullNodeGitRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitRepository = null;
+            if (parseNode.GetChildNode("imageOptimizationNewPrice") is { } nullNodeImageOptimizationNewPrice && nullNodeImageOptimizationNewPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageOptimizationNewPrice = null;
+            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("integrationAccount") is { } nullNodeIntegrationAccount && nullNodeIntegrationAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationAccount = null;
+            if (parseNode.GetChildNode("integrationConfiguration") is { } nullNodeIntegrationConfiguration && nullNodeIntegrationConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConfiguration = null;
+            if (parseNode.GetChildNode("integrationConfigurationProjects") is { } nullNodeIntegrationConfigurationProjects && nullNodeIntegrationConfigurationProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConfigurationProjects = null;
+            if (parseNode.GetChildNode("integrationConfigurationRole") is { } nullNodeIntegrationConfigurationRole && nullNodeIntegrationConfigurationRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConfigurationRole = null;
+            if (parseNode.GetChildNode("integrationConfigurationTransfer") is { } nullNodeIntegrationConfigurationTransfer && nullNodeIntegrationConfigurationTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConfigurationTransfer = null;
+            if (parseNode.GetChildNode("integrationDeploymentAction") is { } nullNodeIntegrationDeploymentAction && nullNodeIntegrationDeploymentAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationDeploymentAction = null;
+            if (parseNode.GetChildNode("integrationEvent") is { } nullNodeIntegrationEvent && nullNodeIntegrationEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationEvent = null;
+            if (parseNode.GetChildNode("integrationLog") is { } nullNodeIntegrationLog && nullNodeIntegrationLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationLog = null;
+            if (parseNode.GetChildNode("integrationPullRequest") is { } nullNodeIntegrationPullRequest && nullNodeIntegrationPullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationPullRequest = null;
+            if (parseNode.GetChildNode("integrationResource") is { } nullNodeIntegrationResource && nullNodeIntegrationResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationResource = null;
+            if (parseNode.GetChildNode("integrationResourceData") is { } nullNodeIntegrationResourceData && nullNodeIntegrationResourceData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationResourceData = null;
+            if (parseNode.GetChildNode("integrationResourceReplCommand") is { } nullNodeIntegrationResourceReplCommand && nullNodeIntegrationResourceReplCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationResourceReplCommand = null;
+            if (parseNode.GetChildNode("integrationResourceSecrets") is { } nullNodeIntegrationResourceSecrets && nullNodeIntegrationResourceSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationResourceSecrets = null;
+            if (parseNode.GetChildNode("integrationSSOSession") is { } nullNodeIntegrationSSOSession && nullNodeIntegrationSSOSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationSSOSession = null;
+            if (parseNode.GetChildNode("integrationStoreTokenSet") is { } nullNodeIntegrationStoreTokenSet && nullNodeIntegrationStoreTokenSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationStoreTokenSet = null;
+            if (parseNode.GetChildNode("integrationStrict") is { } nullNodeIntegrationStrict && nullNodeIntegrationStrict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationStrict = null;
+            if (parseNode.GetChildNode("integrationVercelConfigurationOverride") is { } nullNodeIntegrationVercelConfigurationOverride && nullNodeIntegrationVercelConfigurationOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationVercelConfigurationOverride = null;
+            if (parseNode.GetChildNode("ipBlocking") is { } nullNodeIpBlocking && nullNodeIpBlocking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpBlocking = null;
+            if (parseNode.GetChildNode("job") is { } nullNodeJob && nullNodeJob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Job = null;
+            if (parseNode.GetChildNode("jobGlobal") is { } nullNodeJobGlobal && nullNodeJobGlobal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobGlobal = null;
+            if (parseNode.GetChildNode("kmsIssuer") is { } nullNodeKmsIssuer && nullNodeKmsIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KmsIssuer = null;
+            if (parseNode.GetChildNode("kmsProjectGrant") is { } nullNodeKmsProjectGrant && nullNodeKmsProjectGrant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KmsProjectGrant = null;
+            if (parseNode.GetChildNode("logDrain") is { } nullNodeLogDrain && nullNodeLogDrain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogDrain = null;
+            if (parseNode.GetChildNode("logs") is { } nullNodeLogs && nullNodeLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logs = null;
+            if (parseNode.GetChildNode("logsPreset") is { } nullNodeLogsPreset && nullNodeLogsPreset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogsPreset = null;
+            if (parseNode.GetChildNode("marketplaceBillingData") is { } nullNodeMarketplaceBillingData && nullNodeMarketplaceBillingData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketplaceBillingData = null;
+            if (parseNode.GetChildNode("marketplaceExperimentationEdgeConfigData") is { } nullNodeMarketplaceExperimentationEdgeConfigData && nullNodeMarketplaceExperimentationEdgeConfigData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketplaceExperimentationEdgeConfigData = null;
+            if (parseNode.GetChildNode("marketplaceExperimentationItem") is { } nullNodeMarketplaceExperimentationItem && nullNodeMarketplaceExperimentationItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketplaceExperimentationItem = null;
+            if (parseNode.GetChildNode("marketplaceFlexCommit") is { } nullNodeMarketplaceFlexCommit && nullNodeMarketplaceFlexCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketplaceFlexCommit = null;
+            if (parseNode.GetChildNode("marketplaceInstallationMember") is { } nullNodeMarketplaceInstallationMember && nullNodeMarketplaceInstallationMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketplaceInstallationMember = null;
+            if (parseNode.GetChildNode("marketplaceInvoice") is { } nullNodeMarketplaceInvoice && nullNodeMarketplaceInvoice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketplaceInvoice = null;
+            if (parseNode.GetChildNode("marketplaceSettings") is { } nullNodeMarketplaceSettings && nullNodeMarketplaceSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketplaceSettings = null;
+            if (parseNode.GetChildNode("messageboard") is { } nullNodeMessageboard && nullNodeMessageboard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messageboard = null;
+            if (parseNode.GetChildNode("messageboardChannel") is { } nullNodeMessageboardChannel && nullNodeMessageboardChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageboardChannel = null;
+            if (parseNode.GetChildNode("messageboardMessage") is { } nullNodeMessageboardMessage && nullNodeMessageboardMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageboardMessage = null;
+            if (parseNode.GetChildNode("messageboardModeration") is { } nullNodeMessageboardModeration && nullNodeMessageboardModeration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageboardModeration = null;
+            if (parseNode.GetChildNode("messageboardReaction") is { } nullNodeMessageboardReaction && nullNodeMessageboardReaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageboardReaction = null;
+            if (parseNode.GetChildNode("messageboardTask") is { } nullNodeMessageboardTask && nullNodeMessageboardTask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageboardTask = null;
+            if (parseNode.GetChildNode("Monitoring") is { } nullNodeMonitoring && nullNodeMonitoring.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Monitoring = null;
+            if (parseNode.GetChildNode("monitoringAlert") is { } nullNodeMonitoringAlert && nullNodeMonitoringAlert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringAlert = null;
+            if (parseNode.GetChildNode("monitoringChart") is { } nullNodeMonitoringChart && nullNodeMonitoringChart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringChart = null;
+            if (parseNode.GetChildNode("monitoringQuery") is { } nullNodeMonitoringQuery && nullNodeMonitoringQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringQuery = null;
+            if (parseNode.GetChildNode("monitoringSettings") is { } nullNodeMonitoringSettings && nullNodeMonitoringSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringSettings = null;
+            if (parseNode.GetChildNode("notificationCustomerBudget") is { } nullNodeNotificationCustomerBudget && nullNodeNotificationCustomerBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationCustomerBudget = null;
+            if (parseNode.GetChildNode("notificationDeploymentFailed") is { } nullNodeNotificationDeploymentFailed && nullNodeNotificationDeploymentFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDeploymentFailed = null;
+            if (parseNode.GetChildNode("notificationDomainConfiguration") is { } nullNodeNotificationDomainConfiguration && nullNodeNotificationDomainConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDomainConfiguration = null;
+            if (parseNode.GetChildNode("notificationDomainExpire") is { } nullNodeNotificationDomainExpire && nullNodeNotificationDomainExpire.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDomainExpire = null;
+            if (parseNode.GetChildNode("notificationDomainMoved") is { } nullNodeNotificationDomainMoved && nullNodeNotificationDomainMoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDomainMoved = null;
+            if (parseNode.GetChildNode("notificationDomainPurchase") is { } nullNodeNotificationDomainPurchase && nullNodeNotificationDomainPurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDomainPurchase = null;
+            if (parseNode.GetChildNode("notificationDomainRenewal") is { } nullNodeNotificationDomainRenewal && nullNodeNotificationDomainRenewal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDomainRenewal = null;
+            if (parseNode.GetChildNode("notificationDomainTransfer") is { } nullNodeNotificationDomainTransfer && nullNodeNotificationDomainTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDomainTransfer = null;
+            if (parseNode.GetChildNode("notificationDomainUnverified") is { } nullNodeNotificationDomainUnverified && nullNodeNotificationDomainUnverified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationDomainUnverified = null;
+            if (parseNode.GetChildNode("NotificationMonitoringAlert") is { } nullNodeNotificationMonitoringAlert && nullNodeNotificationMonitoringAlert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationMonitoringAlert = null;
+            if (parseNode.GetChildNode("notificationPaymentFailed") is { } nullNodeNotificationPaymentFailed && nullNodeNotificationPaymentFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationPaymentFailed = null;
+            if (parseNode.GetChildNode("notificationPreferences") is { } nullNodeNotificationPreferences && nullNodeNotificationPreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationPreferences = null;
+            if (parseNode.GetChildNode("notificationStatementOfReasons") is { } nullNodeNotificationStatementOfReasons && nullNodeNotificationStatementOfReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationStatementOfReasons = null;
+            if (parseNode.GetChildNode("notificationUsageAlert") is { } nullNodeNotificationUsageAlert && nullNodeNotificationUsageAlert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationUsageAlert = null;
+            if (parseNode.GetChildNode("oauth2Application") is { } nullNodeOauth2Application && nullNodeOauth2Application.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth2Application = null;
+            if (parseNode.GetChildNode("oauth2Connection") is { } nullNodeOauth2Connection && nullNodeOauth2Connection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth2Connection = null;
+            if (parseNode.GetChildNode("observabilityConfiguration") is { } nullNodeObservabilityConfiguration && nullNodeObservabilityConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservabilityConfiguration = null;
+            if (parseNode.GetChildNode("observabilityData") is { } nullNodeObservabilityData && nullNodeObservabilityData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservabilityData = null;
+            if (parseNode.GetChildNode("observabilityFunnel") is { } nullNodeObservabilityFunnel && nullNodeObservabilityFunnel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservabilityFunnel = null;
+            if (parseNode.GetChildNode("observabilityNotebook") is { } nullNodeObservabilityNotebook && nullNodeObservabilityNotebook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservabilityNotebook = null;
+            if (parseNode.GetChildNode("oidcFederationPolicy") is { } nullNodeOidcFederationPolicy && nullNodeOidcFederationPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OidcFederationPolicy = null;
+            if (parseNode.GetChildNode("onDemandBuild") is { } nullNodeOnDemandBuild && nullNodeOnDemandBuild.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnDemandBuild = null;
+            if (parseNode.GetChildNode("onDemandConcurrency") is { } nullNodeOnDemandConcurrency && nullNodeOnDemandConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnDemandConcurrency = null;
+            if (parseNode.GetChildNode("openTelemetryEndpoint") is { } nullNodeOpenTelemetryEndpoint && nullNodeOpenTelemetryEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenTelemetryEndpoint = null;
+            if (parseNode.GetChildNode("optionsAllowlist") is { } nullNodeOptionsAllowlist && nullNodeOptionsAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsAllowlist = null;
+            if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("organizationDomain") is { } nullNodeOrganizationDomain && nullNodeOrganizationDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationDomain = null;
+            if (parseNode.GetChildNode("organizationTeam") is { } nullNodeOrganizationTeam && nullNodeOrganizationTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationTeam = null;
+            if (parseNode.GetChildNode("ownEvent") is { } nullNodeOwnEvent && nullNodeOwnEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnEvent = null;
+            if (parseNode.GetChildNode("pageIntegrity") is { } nullNodePageIntegrity && nullNodePageIntegrity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageIntegrity = null;
+            if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
+            if (parseNode.GetChildNode("passwordProtectionInvoiceItem") is { } nullNodePasswordProtectionInvoiceItem && nullNodePasswordProtectionInvoiceItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtectionInvoiceItem = null;
+            if (parseNode.GetChildNode("paymentMethod") is { } nullNodePaymentMethod && nullNodePaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethod = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("postgres") is { } nullNodePostgres && nullNodePostgres.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Postgres = null;
+            if (parseNode.GetChildNode("postgresStoreTokenSet") is { } nullNodePostgresStoreTokenSet && nullNodePostgresStoreTokenSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostgresStoreTokenSet = null;
+            if (parseNode.GetChildNode("previewDeploymentSuffix") is { } nullNodePreviewDeploymentSuffix && nullNodePreviewDeploymentSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewDeploymentSuffix = null;
+            if (parseNode.GetChildNode("privateCloudAccount") is { } nullNodePrivateCloudAccount && nullNodePrivateCloudAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateCloudAccount = null;
+            if (parseNode.GetChildNode("privateLinkEndpoint") is { } nullNodePrivateLinkEndpoint && nullNodePrivateLinkEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateLinkEndpoint = null;
+            if (parseNode.GetChildNode("productionAliasProtectionBypass") is { } nullNodeProductionAliasProtectionBypass && nullNodeProductionAliasProtectionBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductionAliasProtectionBypass = null;
+            if (parseNode.GetChildNode("productionShareableLink") is { } nullNodeProductionShareableLink && nullNodeProductionShareableLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductionShareableLink = null;
+            if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("projectAccessGroup") is { } nullNodeProjectAccessGroup && nullNodeProjectAccessGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectAccessGroup = null;
+            if (parseNode.GetChildNode("projectAnalyticsSampling") is { } nullNodeProjectAnalyticsSampling && nullNodeProjectAnalyticsSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectAnalyticsSampling = null;
+            if (parseNode.GetChildNode("projectAnalyticsUsage") is { } nullNodeProjectAnalyticsUsage && nullNodeProjectAnalyticsUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectAnalyticsUsage = null;
+            if (parseNode.GetChildNode("projectCheck") is { } nullNodeProjectCheck && nullNodeProjectCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectCheck = null;
+            if (parseNode.GetChildNode("projectCheckRun") is { } nullNodeProjectCheckRun && nullNodeProjectCheckRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectCheckRun = null;
+            if (parseNode.GetChildNode("projectDeploymentExpiration") is { } nullNodeProjectDeploymentExpiration && nullNodeProjectDeploymentExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectDeploymentExpiration = null;
+            if (parseNode.GetChildNode("projectDeploymentHook") is { } nullNodeProjectDeploymentHook && nullNodeProjectDeploymentHook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectDeploymentHook = null;
+            if (parseNode.GetChildNode("projectDeploymentProtectionStrict") is { } nullNodeProjectDeploymentProtectionStrict && nullNodeProjectDeploymentProtectionStrict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectDeploymentProtectionStrict = null;
+            if (parseNode.GetChildNode("projectDomain") is { } nullNodeProjectDomain && nullNodeProjectDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectDomain = null;
+            if (parseNode.GetChildNode("projectDomainCheckConfig") is { } nullNodeProjectDomainCheckConfig && nullNodeProjectDomainCheckConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectDomainCheckConfig = null;
+            if (parseNode.GetChildNode("projectDomainMove") is { } nullNodeProjectDomainMove && nullNodeProjectDomainMove.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectDomainMove = null;
+            if (parseNode.GetChildNode("projectDomainVerify") is { } nullNodeProjectDomainVerify && nullNodeProjectDomainVerify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectDomainVerify = null;
+            if (parseNode.GetChildNode("projectEnvVars") is { } nullNodeProjectEnvVars && nullNodeProjectEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectEnvVars = null;
+            if (parseNode.GetChildNode("projectEnvVarsProduction") is { } nullNodeProjectEnvVarsProduction && nullNodeProjectEnvVarsProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectEnvVarsProduction = null;
+            if (parseNode.GetChildNode("projectEnvVarsUnownedByIntegration") is { } nullNodeProjectEnvVarsUnownedByIntegration && nullNodeProjectEnvVarsUnownedByIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectEnvVarsUnownedByIntegration = null;
+            if (parseNode.GetChildNode("projectEvent") is { } nullNodeProjectEvent && nullNodeProjectEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectEvent = null;
+            if (parseNode.GetChildNode("projectFlags") is { } nullNodeProjectFlags && nullNodeProjectFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFlags = null;
+            if (parseNode.GetChildNode("projectFlagsProduction") is { } nullNodeProjectFlagsProduction && nullNodeProjectFlagsProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFlagsProduction = null;
+            if (parseNode.GetChildNode("projectFlagsSdkKey") is { } nullNodeProjectFlagsSdkKey && nullNodeProjectFlagsSdkKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFlagsSdkKey = null;
+            if (parseNode.GetChildNode("projectFromV0") is { } nullNodeProjectFromV0 && nullNodeProjectFromV0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFromV0 = null;
+            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectIntegrationConfiguration") is { } nullNodeProjectIntegrationConfiguration && nullNodeProjectIntegrationConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIntegrationConfiguration = null;
+            if (parseNode.GetChildNode("projectLink") is { } nullNodeProjectLink && nullNodeProjectLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectLink = null;
+            if (parseNode.GetChildNode("projectMember") is { } nullNodeProjectMember && nullNodeProjectMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectMember = null;
+            if (parseNode.GetChildNode("projectMonitoring") is { } nullNodeProjectMonitoring && nullNodeProjectMonitoring.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectMonitoring = null;
+            if (parseNode.GetChildNode("projectOIDCToken") is { } nullNodeProjectOIDCToken && nullNodeProjectOIDCToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectOIDCToken = null;
+            if (parseNode.GetChildNode("projectPermissions") is { } nullNodeProjectPermissions && nullNodeProjectPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectPermissions = null;
+            if (parseNode.GetChildNode("projectProductionBranch") is { } nullNodeProjectProductionBranch && nullNodeProjectProductionBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectProductionBranch = null;
+            if (parseNode.GetChildNode("projectProtectionBypass") is { } nullNodeProjectProtectionBypass && nullNodeProjectProtectionBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectProtectionBypass = null;
+            if (parseNode.GetChildNode("projectRollingRelease") is { } nullNodeProjectRollingRelease && nullNodeProjectRollingRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectRollingRelease = null;
+            if (parseNode.GetChildNode("projectRoutes") is { } nullNodeProjectRoutes && nullNodeProjectRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectRoutes = null;
+            if (parseNode.GetChildNode("projectSetting") is { } nullNodeProjectSetting && nullNodeProjectSetting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSetting = null;
+            if (parseNode.GetChildNode("projectSupportCase") is { } nullNodeProjectSupportCase && nullNodeProjectSupportCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSupportCase = null;
+            if (parseNode.GetChildNode("projectSupportCaseComment") is { } nullNodeProjectSupportCaseComment && nullNodeProjectSupportCaseComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSupportCaseComment = null;
+            if (parseNode.GetChildNode("projectTier") is { } nullNodeProjectTier && nullNodeProjectTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectTier = null;
+            if (parseNode.GetChildNode("projectTransfer") is { } nullNodeProjectTransfer && nullNodeProjectTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectTransfer = null;
+            if (parseNode.GetChildNode("projectTransferIn") is { } nullNodeProjectTransferIn && nullNodeProjectTransferIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectTransferIn = null;
+            if (parseNode.GetChildNode("projectTransferOut") is { } nullNodeProjectTransferOut && nullNodeProjectTransferOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectTransferOut = null;
+            if (parseNode.GetChildNode("projectTransferRequest") is { } nullNodeProjectTransferRequest && nullNodeProjectTransferRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectTransferRequest = null;
+            if (parseNode.GetChildNode("projectUsage") is { } nullNodeProjectUsage && nullNodeProjectUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectUsage = null;
+            if (parseNode.GetChildNode("proTrialOnboarding") is { } nullNodeProTrialOnboarding && nullNodeProTrialOnboarding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProTrialOnboarding = null;
+            if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
+            if (parseNode.GetChildNode("redis") is { } nullNodeRedis && nullNodeRedis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redis = null;
+            if (parseNode.GetChildNode("redisStoreTokenSet") is { } nullNodeRedisStoreTokenSet && nullNodeRedisStoreTokenSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedisStoreTokenSet = null;
+            if (parseNode.GetChildNode("remoteCaching") is { } nullNodeRemoteCaching && nullNodeRemoteCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCaching = null;
+            if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("samlConfig") is { } nullNodeSamlConfig && nullNodeSamlConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlConfig = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("seawallConfig") is { } nullNodeSeawallConfig && nullNodeSeawallConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeawallConfig = null;
+            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("securityConfig") is { } nullNodeSecurityConfig && nullNodeSecurityConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityConfig = null;
+            if (parseNode.GetChildNode("securityPlusConfiguration") is { } nullNodeSecurityPlusConfiguration && nullNodeSecurityPlusConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityPlusConfiguration = null;
+            if (parseNode.GetChildNode("sensitiveEnvironmentVariablePolicy") is { } nullNodeSensitiveEnvironmentVariablePolicy && nullNodeSensitiveEnvironmentVariablePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensitiveEnvironmentVariablePolicy = null;
+            if (parseNode.GetChildNode("setting") is { } nullNodeSetting && nullNodeSetting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Setting = null;
+            if (parseNode.GetChildNode("shareableLink") is { } nullNodeShareableLink && nullNodeShareableLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareableLink = null;
+            if (parseNode.GetChildNode("shareableLinkStrict") is { } nullNodeShareableLinkStrict && nullNodeShareableLinkStrict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareableLinkStrict = null;
+            if (parseNode.GetChildNode("sharedEnvVarConnection") is { } nullNodeSharedEnvVarConnection && nullNodeSharedEnvVarConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedEnvVarConnection = null;
+            if (parseNode.GetChildNode("sharedEnvVars") is { } nullNodeSharedEnvVars && nullNodeSharedEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedEnvVars = null;
+            if (parseNode.GetChildNode("sharedEnvVarsProduction") is { } nullNodeSharedEnvVarsProduction && nullNodeSharedEnvVarsProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedEnvVarsProduction = null;
+            if (parseNode.GetChildNode("skewProtection") is { } nullNodeSkewProtection && nullNodeSkewProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtection = null;
+            if (parseNode.GetChildNode("space") is { } nullNodeSpace && nullNodeSpace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Space = null;
+            if (parseNode.GetChildNode("spaceRun") is { } nullNodeSpaceRun && nullNodeSpaceRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpaceRun = null;
+            if (parseNode.GetChildNode("storeIsLocked") is { } nullNodeStoreIsLocked && nullNodeStoreIsLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreIsLocked = null;
+            if (parseNode.GetChildNode("storeTokenSetSensitive") is { } nullNodeStoreTokenSetSensitive && nullNodeStoreTokenSetSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreTokenSetSensitive = null;
+            if (parseNode.GetChildNode("storeTransfer") is { } nullNodeStoreTransfer && nullNodeStoreTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreTransfer = null;
+            if (parseNode.GetChildNode("supportCase") is { } nullNodeSupportCase && nullNodeSupportCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportCase = null;
+            if (parseNode.GetChildNode("supportCaseComment") is { } nullNodeSupportCaseComment && nullNodeSupportCaseComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportCaseComment = null;
+            if (parseNode.GetChildNode("team") is { } nullNodeTeam && nullNodeTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Team = null;
+            if (parseNode.GetChildNode("teamAccessRequest") is { } nullNodeTeamAccessRequest && nullNodeTeamAccessRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamAccessRequest = null;
+            if (parseNode.GetChildNode("teamFellowMembership") is { } nullNodeTeamFellowMembership && nullNodeTeamFellowMembership.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamFellowMembership = null;
+            if (parseNode.GetChildNode("teamGitExclusivity") is { } nullNodeTeamGitExclusivity && nullNodeTeamGitExclusivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamGitExclusivity = null;
+            if (parseNode.GetChildNode("teamInvite") is { } nullNodeTeamInvite && nullNodeTeamInvite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamInvite = null;
+            if (parseNode.GetChildNode("teamInviteCode") is { } nullNodeTeamInviteCode && nullNodeTeamInviteCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamInviteCode = null;
+            if (parseNode.GetChildNode("teamInviteLink") is { } nullNodeTeamInviteLink && nullNodeTeamInviteLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamInviteLink = null;
+            if (parseNode.GetChildNode("teamJoin") is { } nullNodeTeamJoin && nullNodeTeamJoin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamJoin = null;
+            if (parseNode.GetChildNode("teamMemberMfaStatus") is { } nullNodeTeamMemberMfaStatus && nullNodeTeamMemberMfaStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamMemberMfaStatus = null;
+            if (parseNode.GetChildNode("teamMicrofrontends") is { } nullNodeTeamMicrofrontends && nullNodeTeamMicrofrontends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamMicrofrontends = null;
+            if (parseNode.GetChildNode("teamOwnMembership") is { } nullNodeTeamOwnMembership && nullNodeTeamOwnMembership.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamOwnMembership = null;
+            if (parseNode.GetChildNode("teamOwnMembershipDisconnectSAML") is { } nullNodeTeamOwnMembershipDisconnectSAML && nullNodeTeamOwnMembershipDisconnectSAML.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamOwnMembershipDisconnectSAML = null;
+            if (parseNode.GetChildNode("teamSudo") is { } nullNodeTeamSudo && nullNodeTeamSudo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamSudo = null;
+            if (parseNode.GetChildNode("teamTokenInvalidation") is { } nullNodeTeamTokenInvalidation && nullNodeTeamTokenInvalidation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamTokenInvalidation = null;
+            if (parseNode.GetChildNode("token") is { } nullNodeToken && nullNodeToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Token = null;
+            if (parseNode.GetChildNode("toolbarComment") is { } nullNodeToolbarComment && nullNodeToolbarComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolbarComment = null;
+            if (parseNode.GetChildNode("trustedIps") is { } nullNodeTrustedIps && nullNodeTrustedIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustedIps = null;
+            if (parseNode.GetChildNode("trustedSources") is { } nullNodeTrustedSources && nullNodeTrustedSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustedSources = null;
+            if (parseNode.GetChildNode("usage") is { } nullNodeUsage && nullNodeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usage = null;
+            if (parseNode.GetChildNode("usageCycle") is { } nullNodeUsageCycle && nullNodeUsageCycle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCycle = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("userConnection") is { } nullNodeUserConnection && nullNodeUserConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserConnection = null;
+            if (parseNode.GetChildNode("userMfaConfiguration") is { } nullNodeUserMfaConfiguration && nullNodeUserMfaConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserMfaConfiguration = null;
+            if (parseNode.GetChildNode("userPreference") is { } nullNodeUserPreference && nullNodeUserPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserPreference = null;
+            if (parseNode.GetChildNode("userSudo") is { } nullNodeUserSudo && nullNodeUserSudo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSudo = null;
+            if (parseNode.GetChildNode("v0Chat") is { } nullNodeV0Chat && nullNodeV0Chat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V0Chat = null;
+            if (parseNode.GetChildNode("vcrRepository") is { } nullNodeVcrRepository && nullNodeVcrRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VcrRepository = null;
+            if (parseNode.GetChildNode("vercelAppInstallation") is { } nullNodeVercelAppInstallation && nullNodeVercelAppInstallation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VercelAppInstallation = null;
+            if (parseNode.GetChildNode("vercelAppInstallationRequest") is { } nullNodeVercelAppInstallationRequest && nullNodeVercelAppInstallationRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VercelAppInstallationRequest = null;
+            if (parseNode.GetChildNode("vercelAuth") is { } nullNodeVercelAuth && nullNodeVercelAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VercelAuth = null;
+            if (parseNode.GetChildNode("vercelRun") is { } nullNodeVercelRun && nullNodeVercelRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VercelRun = null;
+            if (parseNode.GetChildNode("vpcPeeringConnection") is { } nullNodeVpcPeeringConnection && nullNodeVpcPeeringConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VpcPeeringConnection = null;
+            if (parseNode.GetChildNode("webAnalytics") is { } nullNodeWebAnalytics && nullNodeWebAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalytics = null;
+            if (parseNode.GetChildNode("webAnalyticsPlan") is { } nullNodeWebAnalyticsPlan && nullNodeWebAnalyticsPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalyticsPlan = null;
+            if (parseNode.GetChildNode("webAuthn") is { } nullNodeWebAuthn && nullNodeWebAuthn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAuthn = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+            if (parseNode.GetChildNode("webhook-event") is { } nullNodeWebhookEvent && nullNodeWebhookEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookEvent = null;
+            if (parseNode.GetChildNode("workflowRunData") is { } nullNodeWorkflowRunData && nullNodeWorkflowRunData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRunData = null;
+        }
+
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AccessGroup { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAccessGroup = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AccessGroup { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAccessGroup = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Agent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAgent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Agent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAgent = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKey { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKey { get => _explicitNullValueAiGatewayApiKey; set { _explicitNullValueAiGatewayApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKey"); else _explicitNullProperties?.Remove("aiGatewayApiKey"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayApiKey = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKey { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKey { get => _explicitNullValueAiGatewayApiKey; set { _explicitNullValueAiGatewayApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKey"); else _explicitNullProperties?.Remove("aiGatewayApiKey"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayApiKey = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeyBypassAll { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeyBypassAll { get => _explicitNullValueAiGatewayApiKeyBypassAll; set { _explicitNullValueAiGatewayApiKeyBypassAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeyBypassAll"); else _explicitNullProperties?.Remove("aiGatewayApiKeyBypassAll"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayApiKeyBypassAll = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeyBypassAll { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeyBypassAll { get => _explicitNullValueAiGatewayApiKeyBypassAll; set { _explicitNullValueAiGatewayApiKeyBypassAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeyBypassAll"); else _explicitNullProperties?.Remove("aiGatewayApiKeyBypassAll"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayApiKeyBypassAll = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeyOwnedBySelf { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeyOwnedBySelf { get => _explicitNullValueAiGatewayApiKeyOwnedBySelf; set { _explicitNullValueAiGatewayApiKeyOwnedBySelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeyOwnedBySelf"); else _explicitNullProperties?.Remove("aiGatewayApiKeyOwnedBySelf"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayApiKeyOwnedBySelf = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeyOwnedBySelf { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeyOwnedBySelf { get => _explicitNullValueAiGatewayApiKeyOwnedBySelf; set { _explicitNullValueAiGatewayApiKeyOwnedBySelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeyOwnedBySelf"); else _explicitNullProperties?.Remove("aiGatewayApiKeyOwnedBySelf"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayApiKeyOwnedBySelf = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeySpendAttribution { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeySpendAttribution { get => _explicitNullValueAiGatewayApiKeySpendAttribution; set { _explicitNullValueAiGatewayApiKeySpendAttribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeySpendAttribution"); else _explicitNullProperties?.Remove("aiGatewayApiKeySpendAttribution"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayApiKeySpendAttribution = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeySpendAttribution { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeySpendAttribution { get => _explicitNullValueAiGatewayApiKeySpendAttribution; set { _explicitNullValueAiGatewayApiKeySpendAttribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeySpendAttribution"); else _explicitNullProperties?.Remove("aiGatewayApiKeySpendAttribution"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayApiKeySpendAttribution = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeyZdrExemption { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayApiKeyZdrExemption { get => _explicitNullValueAiGatewayApiKeyZdrExemption; set { _explicitNullValueAiGatewayApiKeyZdrExemption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeyZdrExemption"); else _explicitNullProperties?.Remove("aiGatewayApiKeyZdrExemption"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayApiKeyZdrExemption = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeyZdrExemption { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayApiKeyZdrExemption { get => _explicitNullValueAiGatewayApiKeyZdrExemption; set { _explicitNullValueAiGatewayApiKeyZdrExemption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayApiKeyZdrExemption"); else _explicitNullProperties?.Remove("aiGatewayApiKeyZdrExemption"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayApiKeyZdrExemption = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayBudget { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayBudget { get => _explicitNullValueAiGatewayBudget; set { _explicitNullValueAiGatewayBudget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayBudget"); else _explicitNullProperties?.Remove("aiGatewayBudget"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayBudget = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayBudget { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayBudget { get => _explicitNullValueAiGatewayBudget; set { _explicitNullValueAiGatewayBudget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayBudget"); else _explicitNullProperties?.Remove("aiGatewayBudget"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayBudget = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayByokCredentials { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayByokCredentials { get => _explicitNullValueAiGatewayByokCredentials; set { _explicitNullValueAiGatewayByokCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayByokCredentials"); else _explicitNullProperties?.Remove("aiGatewayByokCredentials"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayByokCredentials = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayByokCredentials { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayByokCredentials { get => _explicitNullValueAiGatewayByokCredentials; set { _explicitNullValueAiGatewayByokCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayByokCredentials"); else _explicitNullProperties?.Remove("aiGatewayByokCredentials"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayByokCredentials = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayCredits { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayCredits { get => _explicitNullValueAiGatewayCredits; set { _explicitNullValueAiGatewayCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayCredits"); else _explicitNullProperties?.Remove("aiGatewayCredits"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayCredits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayCredits { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayCredits { get => _explicitNullValueAiGatewayCredits; set { _explicitNullValueAiGatewayCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayCredits"); else _explicitNullProperties?.Remove("aiGatewayCredits"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayCredits = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayGuardrails { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayGuardrails { get => _explicitNullValueAiGatewayGuardrails; set { _explicitNullValueAiGatewayGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayGuardrails"); else _explicitNullProperties?.Remove("aiGatewayGuardrails"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayGuardrails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayGuardrails { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayGuardrails { get => _explicitNullValueAiGatewayGuardrails; set { _explicitNullValueAiGatewayGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayGuardrails"); else _explicitNullProperties?.Remove("aiGatewayGuardrails"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayGuardrails = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayPrivateModels { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayPrivateModels { get => _explicitNullValueAiGatewayPrivateModels; set { _explicitNullValueAiGatewayPrivateModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayPrivateModels"); else _explicitNullProperties?.Remove("aiGatewayPrivateModels"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayPrivateModels = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayPrivateModels { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayPrivateModels { get => _explicitNullValueAiGatewayPrivateModels; set { _explicitNullValueAiGatewayPrivateModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayPrivateModels"); else _explicitNullProperties?.Remove("aiGatewayPrivateModels"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayPrivateModels = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayRules { get => _explicitNullValueAiGatewayRules; set { _explicitNullValueAiGatewayRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayRules"); else _explicitNullProperties?.Remove("aiGatewayRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayRules { get => _explicitNullValueAiGatewayRules; set { _explicitNullValueAiGatewayRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayRules"); else _explicitNullProperties?.Remove("aiGatewayRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayRules = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewaySettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewaySettings { get => _explicitNullValueAiGatewaySettings; set { _explicitNullValueAiGatewaySettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewaySettings"); else _explicitNullProperties?.Remove("aiGatewaySettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewaySettings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewaySettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewaySettings { get => _explicitNullValueAiGatewaySettings; set { _explicitNullValueAiGatewaySettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewaySettings"); else _explicitNullProperties?.Remove("aiGatewaySettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewaySettings = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayTranscripts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayTranscripts { get => _explicitNullValueAiGatewayTranscripts; set { _explicitNullValueAiGatewayTranscripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayTranscripts"); else _explicitNullProperties?.Remove("aiGatewayTranscripts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayTranscripts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayTranscripts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayTranscripts { get => _explicitNullValueAiGatewayTranscripts; set { _explicitNullValueAiGatewayTranscripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayTranscripts"); else _explicitNullProperties?.Remove("aiGatewayTranscripts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayTranscripts = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayTranscriptsSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayTranscriptsSettings { get => _explicitNullValueAiGatewayTranscriptsSettings; set { _explicitNullValueAiGatewayTranscriptsSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayTranscriptsSettings"); else _explicitNullProperties?.Remove("aiGatewayTranscriptsSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayTranscriptsSettings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayTranscriptsSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayTranscriptsSettings { get => _explicitNullValueAiGatewayTranscriptsSettings; set { _explicitNullValueAiGatewayTranscriptsSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayTranscriptsSettings"); else _explicitNullProperties?.Remove("aiGatewayTranscriptsSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayTranscriptsSettings = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayUsage { get => _explicitNullValueAiGatewayUsage; set { _explicitNullValueAiGatewayUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayUsage"); else _explicitNullProperties?.Remove("aiGatewayUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayUsage { get => _explicitNullValueAiGatewayUsage; set { _explicitNullValueAiGatewayUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayUsage"); else _explicitNullProperties?.Remove("aiGatewayUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayUsage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayVirtualModelConfigs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayVirtualModelConfigs { get => _explicitNullValueAiGatewayVirtualModelConfigs; set { _explicitNullValueAiGatewayVirtualModelConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayVirtualModelConfigs"); else _explicitNullProperties?.Remove("aiGatewayVirtualModelConfigs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAiGatewayVirtualModelConfigs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayVirtualModelConfigs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayVirtualModelConfigs { get => _explicitNullValueAiGatewayVirtualModelConfigs; set { _explicitNullValueAiGatewayVirtualModelConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiGatewayVirtualModelConfigs"); else _explicitNullProperties?.Remove("aiGatewayVirtualModelConfigs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAiGatewayVirtualModelConfigs = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AlertRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AlertRules { get => _explicitNullValueAlertRules; set { _explicitNullValueAlertRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertRules"); else _explicitNullProperties?.Remove("alertRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAlertRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AlertRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AlertRules { get => _explicitNullValueAlertRules; set { _explicitNullValueAlertRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertRules"); else _explicitNullProperties?.Remove("alertRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAlertRules = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Alerts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Alerts { get => _explicitNullValueAlerts; set { _explicitNullValueAlerts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerts"); else _explicitNullProperties?.Remove("alerts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAlerts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Alerts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Alerts { get => _explicitNullValueAlerts; set { _explicitNullValueAlerts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerts"); else _explicitNullProperties?.Remove("alerts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAlerts = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AliasGlobal { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AliasGlobal { get => _explicitNullValueAliasGlobal; set { _explicitNullValueAliasGlobal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasGlobal"); else _explicitNullProperties?.Remove("aliasGlobal"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAliasGlobal = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AliasGlobal { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AliasGlobal { get => _explicitNullValueAliasGlobal; set { _explicitNullValueAliasGlobal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasGlobal"); else _explicitNullProperties?.Remove("aliasGlobal"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAliasGlobal = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AliasProject { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AliasProject { get => _explicitNullValueAliasProject; set { _explicitNullValueAliasProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasProject"); else _explicitNullProperties?.Remove("aliasProject"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAliasProject = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AliasProject { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AliasProject { get => _explicitNullValueAliasProject; set { _explicitNullValueAliasProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasProject"); else _explicitNullProperties?.Remove("aliasProject"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAliasProject = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AliasProtectionBypass { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AliasProtectionBypass { get => _explicitNullValueAliasProtectionBypass; set { _explicitNullValueAliasProtectionBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasProtectionBypass"); else _explicitNullProperties?.Remove("aliasProtectionBypass"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAliasProtectionBypass = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AliasProtectionBypass { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AliasProtectionBypass { get => _explicitNullValueAliasProtectionBypass; set { _explicitNullValueAliasProtectionBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasProtectionBypass"); else _explicitNullProperties?.Remove("aliasProtectionBypass"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAliasProtectionBypass = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Analytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAnalytics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Analytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAnalytics = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AnalyticsSampling { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AnalyticsSampling { get => _explicitNullValueAnalyticsSampling; set { _explicitNullValueAnalyticsSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsSampling"); else _explicitNullProperties?.Remove("analyticsSampling"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAnalyticsSampling = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AnalyticsSampling { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AnalyticsSampling { get => _explicitNullValueAnalyticsSampling; set { _explicitNullValueAnalyticsSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsSampling"); else _explicitNullProperties?.Remove("analyticsSampling"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAnalyticsSampling = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AnalyticsUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AnalyticsUsage { get => _explicitNullValueAnalyticsUsage; set { _explicitNullValueAnalyticsUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsUsage"); else _explicitNullProperties?.Remove("analyticsUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAnalyticsUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AnalyticsUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AnalyticsUsage { get => _explicitNullValueAnalyticsUsage; set { _explicitNullValueAnalyticsUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsUsage"); else _explicitNullProperties?.Remove("analyticsUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAnalyticsUsage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ApiKey { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueApiKey = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ApiKey { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueApiKey = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ApiKeyAiGateway { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ApiKeyAiGateway { get => _explicitNullValueApiKeyAiGateway; set { _explicitNullValueApiKeyAiGateway = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKeyAiGateway"); else _explicitNullProperties?.Remove("apiKeyAiGateway"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueApiKeyAiGateway = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ApiKeyAiGateway { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ApiKeyAiGateway { get => _explicitNullValueApiKeyAiGateway; set { _explicitNullValueApiKeyAiGateway = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKeyAiGateway"); else _explicitNullProperties?.Remove("apiKeyAiGateway"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueApiKeyAiGateway = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ApiKeyOwnedBySelf { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ApiKeyOwnedBySelf { get => _explicitNullValueApiKeyOwnedBySelf; set { _explicitNullValueApiKeyOwnedBySelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKeyOwnedBySelf"); else _explicitNullProperties?.Remove("apiKeyOwnedBySelf"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueApiKeyOwnedBySelf = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ApiKeyOwnedBySelf { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ApiKeyOwnedBySelf { get => _explicitNullValueApiKeyOwnedBySelf; set { _explicitNullValueApiKeyOwnedBySelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKeyOwnedBySelf"); else _explicitNullProperties?.Remove("apiKeyOwnedBySelf"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueApiKeyOwnedBySelf = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AuditLog { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AuditLog { get => _explicitNullValueAuditLog; set { _explicitNullValueAuditLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLog"); else _explicitNullProperties?.Remove("auditLog"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAuditLog = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AuditLog { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AuditLog { get => _explicitNullValueAuditLog; set { _explicitNullValueAuditLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLog"); else _explicitNullProperties?.Remove("auditLog"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAuditLog = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Automation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Automation { get => _explicitNullValueAutomation; set { _explicitNullValueAutomation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automation"); else _explicitNullProperties?.Remove("automation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueAutomation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Automation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Automation { get => _explicitNullValueAutomation; set { _explicitNullValueAutomation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automation"); else _explicitNullProperties?.Remove("automation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueAutomation = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingAddress { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingAddress { get => _explicitNullValueBillingAddress; set { _explicitNullValueBillingAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress"); else _explicitNullProperties?.Remove("billingAddress"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingAddress = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingAddress { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingAddress { get => _explicitNullValueBillingAddress; set { _explicitNullValueBillingAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress"); else _explicitNullProperties?.Remove("billingAddress"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingAddress = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInformation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInformation { get => _explicitNullValueBillingInformation; set { _explicitNullValueBillingInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInformation"); else _explicitNullProperties?.Remove("billingInformation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingInformation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInformation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInformation { get => _explicitNullValueBillingInformation; set { _explicitNullValueBillingInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInformation"); else _explicitNullProperties?.Remove("billingInformation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingInformation = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInvoice { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInvoice { get => _explicitNullValueBillingInvoice; set { _explicitNullValueBillingInvoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInvoice"); else _explicitNullProperties?.Remove("billingInvoice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingInvoice = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInvoice { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInvoice { get => _explicitNullValueBillingInvoice; set { _explicitNullValueBillingInvoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInvoice"); else _explicitNullProperties?.Remove("billingInvoice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingInvoice = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInvoiceEmailRecipient { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInvoiceEmailRecipient { get => _explicitNullValueBillingInvoiceEmailRecipient; set { _explicitNullValueBillingInvoiceEmailRecipient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInvoiceEmailRecipient"); else _explicitNullProperties?.Remove("billingInvoiceEmailRecipient"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingInvoiceEmailRecipient = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInvoiceEmailRecipient { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInvoiceEmailRecipient { get => _explicitNullValueBillingInvoiceEmailRecipient; set { _explicitNullValueBillingInvoiceEmailRecipient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInvoiceEmailRecipient"); else _explicitNullProperties?.Remove("billingInvoiceEmailRecipient"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingInvoiceEmailRecipient = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInvoiceLanguage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingInvoiceLanguage { get => _explicitNullValueBillingInvoiceLanguage; set { _explicitNullValueBillingInvoiceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInvoiceLanguage"); else _explicitNullProperties?.Remove("billingInvoiceLanguage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingInvoiceLanguage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInvoiceLanguage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingInvoiceLanguage { get => _explicitNullValueBillingInvoiceLanguage; set { _explicitNullValueBillingInvoiceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingInvoiceLanguage"); else _explicitNullProperties?.Remove("billingInvoiceLanguage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingInvoiceLanguage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingPlan { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingPlan { get => _explicitNullValueBillingPlan; set { _explicitNullValueBillingPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPlan"); else _explicitNullProperties?.Remove("billingPlan"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingPlan = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingPlan { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingPlan { get => _explicitNullValueBillingPlan; set { _explicitNullValueBillingPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPlan"); else _explicitNullProperties?.Remove("billingPlan"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingPlan = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingPurchaseOrder { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingPurchaseOrder { get => _explicitNullValueBillingPurchaseOrder; set { _explicitNullValueBillingPurchaseOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPurchaseOrder"); else _explicitNullProperties?.Remove("billingPurchaseOrder"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingPurchaseOrder = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingPurchaseOrder { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingPurchaseOrder { get => _explicitNullValueBillingPurchaseOrder; set { _explicitNullValueBillingPurchaseOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPurchaseOrder"); else _explicitNullProperties?.Remove("billingPurchaseOrder"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingPurchaseOrder = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingRefund { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingRefund { get => _explicitNullValueBillingRefund; set { _explicitNullValueBillingRefund = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingRefund"); else _explicitNullProperties?.Remove("billingRefund"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingRefund = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingRefund { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingRefund { get => _explicitNullValueBillingRefund; set { _explicitNullValueBillingRefund = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingRefund"); else _explicitNullProperties?.Remove("billingRefund"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingRefund = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingTaxId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BillingTaxId { get => _explicitNullValueBillingTaxId; set { _explicitNullValueBillingTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingTaxId"); else _explicitNullProperties?.Remove("billingTaxId"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBillingTaxId = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingTaxId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BillingTaxId { get => _explicitNullValueBillingTaxId; set { _explicitNullValueBillingTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingTaxId"); else _explicitNullProperties?.Remove("billingTaxId"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBillingTaxId = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Blob { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Blob { get => _explicitNullValueBlob; set { _explicitNullValueBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blob"); else _explicitNullProperties?.Remove("blob"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBlob = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Blob { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Blob { get => _explicitNullValueBlob; set { _explicitNullValueBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blob"); else _explicitNullProperties?.Remove("blob"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBlob = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BlobStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BlobStoreTokenSet { get => _explicitNullValueBlobStoreTokenSet; set { _explicitNullValueBlobStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blobStoreTokenSet"); else _explicitNullProperties?.Remove("blobStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBlobStoreTokenSet = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BlobStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BlobStoreTokenSet { get => _explicitNullValueBlobStoreTokenSet; set { _explicitNullValueBlobStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blobStoreTokenSet"); else _explicitNullProperties?.Remove("blobStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBlobStoreTokenSet = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Budget { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBudget = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Budget { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBudget = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BuildMachine { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBuildMachine = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BuildMachine { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBuildMachine = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BuildMachineDefault { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BuildMachineDefault { get => _explicitNullValueBuildMachineDefault; set { _explicitNullValueBuildMachineDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineDefault"); else _explicitNullProperties?.Remove("buildMachineDefault"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBuildMachineDefault = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BuildMachineDefault { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BuildMachineDefault { get => _explicitNullValueBuildMachineDefault; set { _explicitNullValueBuildMachineDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineDefault"); else _explicitNullProperties?.Remove("buildMachineDefault"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBuildMachineDefault = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BulkRedirects { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? BulkRedirects { get => _explicitNullValueBulkRedirects; set { _explicitNullValueBulkRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulkRedirects"); else _explicitNullProperties?.Remove("bulkRedirects"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueBulkRedirects = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BulkRedirects { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> BulkRedirects { get => _explicitNullValueBulkRedirects; set { _explicitNullValueBulkRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulkRedirects"); else _explicitNullProperties?.Remove("bulkRedirects"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueBulkRedirects = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CacheArtifact { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CacheArtifact { get => _explicitNullValueCacheArtifact; set { _explicitNullValueCacheArtifact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheArtifact"); else _explicitNullProperties?.Remove("cacheArtifact"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueCacheArtifact = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CacheArtifact { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CacheArtifact { get => _explicitNullValueCacheArtifact; set { _explicitNullValueCacheArtifact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheArtifact"); else _explicitNullProperties?.Remove("cacheArtifact"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueCacheArtifact = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CacheArtifactUsageEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CacheArtifactUsageEvent { get => _explicitNullValueCacheArtifactUsageEvent; set { _explicitNullValueCacheArtifactUsageEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheArtifactUsageEvent"); else _explicitNullProperties?.Remove("cacheArtifactUsageEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueCacheArtifactUsageEvent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CacheArtifactUsageEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CacheArtifactUsageEvent { get => _explicitNullValueCacheArtifactUsageEvent; set { _explicitNullValueCacheArtifactUsageEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheArtifactUsageEvent"); else _explicitNullProperties?.Remove("cacheArtifactUsageEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueCacheArtifactUsageEvent = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CiInvocations { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CiInvocations { get => _explicitNullValueCiInvocations; set { _explicitNullValueCiInvocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciInvocations"); else _explicitNullProperties?.Remove("ciInvocations"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueCiInvocations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CiInvocations { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CiInvocations { get => _explicitNullValueCiInvocations; set { _explicitNullValueCiInvocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciInvocations"); else _explicitNullProperties?.Remove("ciInvocations"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueCiInvocations = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CiLogs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CiLogs { get => _explicitNullValueCiLogs; set { _explicitNullValueCiLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciLogs"); else _explicitNullProperties?.Remove("ciLogs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueCiLogs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CiLogs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CiLogs { get => _explicitNullValueCiLogs; set { _explicitNullValueCiLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciLogs"); else _explicitNullProperties?.Remove("ciLogs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueCiLogs = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CodeChecks { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CodeChecks { get => _explicitNullValueCodeChecks; set { _explicitNullValueCodeChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeChecks"); else _explicitNullProperties?.Remove("codeChecks"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueCodeChecks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CodeChecks { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CodeChecks { get => _explicitNullValueCodeChecks; set { _explicitNullValueCodeChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeChecks"); else _explicitNullProperties?.Remove("codeChecks"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueCodeChecks = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CodeOwners { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CodeOwners { get => _explicitNullValueCodeOwners; set { _explicitNullValueCodeOwners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeOwners"); else _explicitNullProperties?.Remove("codeOwners"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueCodeOwners = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CodeOwners { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CodeOwners { get => _explicitNullValueCodeOwners; set { _explicitNullValueCodeOwners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeOwners"); else _explicitNullProperties?.Remove("codeOwners"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueCodeOwners = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConcurrentBuilds { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConcurrentBuilds { get => _explicitNullValueConcurrentBuilds; set { _explicitNullValueConcurrentBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrentBuilds"); else _explicitNullProperties?.Remove("concurrentBuilds"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConcurrentBuilds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConcurrentBuilds { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConcurrentBuilds { get => _explicitNullValueConcurrentBuilds; set { _explicitNullValueConcurrentBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrentBuilds"); else _explicitNullProperties?.Remove("concurrentBuilds"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConcurrentBuilds = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Connect { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Connect { get => _explicitNullValueConnect; set { _explicitNullValueConnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect"); else _explicitNullProperties?.Remove("connect"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnect = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Connect { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Connect { get => _explicitNullValueConnect; set { _explicitNullValueConnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect"); else _explicitNullProperties?.Remove("connect"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnect = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnectConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnectConfiguration { get => _explicitNullValueConnectConfiguration; set { _explicitNullValueConnectConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfiguration"); else _explicitNullProperties?.Remove("connectConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnectConfiguration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnectConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnectConfiguration { get => _explicitNullValueConnectConfiguration; set { _explicitNullValueConnectConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfiguration"); else _explicitNullProperties?.Remove("connectConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnectConfiguration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnectConfigurationLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnectConfigurationLink { get => _explicitNullValueConnectConfigurationLink; set { _explicitNullValueConnectConfigurationLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationLink"); else _explicitNullProperties?.Remove("connectConfigurationLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnectConfigurationLink = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnectConfigurationLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnectConfigurationLink { get => _explicitNullValueConnectConfigurationLink; set { _explicitNullValueConnectConfigurationLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationLink"); else _explicitNullProperties?.Remove("connectConfigurationLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnectConfigurationLink = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnectLogs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnectLogs { get => _explicitNullValueConnectLogs; set { _explicitNullValueConnectLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectLogs"); else _explicitNullProperties?.Remove("connectLogs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnectLogs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnectLogs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnectLogs { get => _explicitNullValueConnectLogs; set { _explicitNullValueConnectLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectLogs"); else _explicitNullProperties?.Remove("connectLogs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnectLogs = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexClient { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexClient { get => _explicitNullValueConnexClient; set { _explicitNullValueConnexClient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexClient"); else _explicitNullProperties?.Remove("connexClient"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnexClient = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexClient { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexClient { get => _explicitNullValueConnexClient; set { _explicitNullValueConnexClient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexClient"); else _explicitNullProperties?.Remove("connexClient"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnexClient = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexClientAccess { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexClientAccess { get => _explicitNullValueConnexClientAccess; set { _explicitNullValueConnexClientAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexClientAccess"); else _explicitNullProperties?.Remove("connexClientAccess"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnexClientAccess = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexClientAccess { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexClientAccess { get => _explicitNullValueConnexClientAccess; set { _explicitNullValueConnexClientAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexClientAccess"); else _explicitNullProperties?.Remove("connexClientAccess"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnexClientAccess = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexClientProject { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexClientProject { get => _explicitNullValueConnexClientProject; set { _explicitNullValueConnexClientProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexClientProject"); else _explicitNullProperties?.Remove("connexClientProject"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnexClientProject = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexClientProject { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexClientProject { get => _explicitNullValueConnexClientProject; set { _explicitNullValueConnexClientProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexClientProject"); else _explicitNullProperties?.Remove("connexClientProject"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnexClientProject = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexContact { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexContact { get => _explicitNullValueConnexContact; set { _explicitNullValueConnexContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexContact"); else _explicitNullProperties?.Remove("connexContact"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnexContact = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexContact { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexContact { get => _explicitNullValueConnexContact; set { _explicitNullValueConnexContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexContact"); else _explicitNullProperties?.Remove("connexContact"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnexContact = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexInstallation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexInstallation { get => _explicitNullValueConnexInstallation; set { _explicitNullValueConnexInstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexInstallation"); else _explicitNullProperties?.Remove("connexInstallation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnexInstallation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexInstallation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexInstallation { get => _explicitNullValueConnexInstallation; set { _explicitNullValueConnexInstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexInstallation"); else _explicitNullProperties?.Remove("connexInstallation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnexInstallation = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexToken { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexToken { get => _explicitNullValueConnexToken; set { _explicitNullValueConnexToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexToken"); else _explicitNullProperties?.Remove("connexToken"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueConnexToken = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexToken { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexToken { get => _explicitNullValueConnexToken; set { _explicitNullValueConnexToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connexToken"); else _explicitNullProperties?.Remove("connexToken"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueConnexToken = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CursorOriginInstallation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? CursorOriginInstallation { get => _explicitNullValueCursorOriginInstallation; set { _explicitNullValueCursorOriginInstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursorOriginInstallation"); else _explicitNullProperties?.Remove("cursorOriginInstallation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueCursorOriginInstallation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CursorOriginInstallation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> CursorOriginInstallation { get => _explicitNullValueCursorOriginInstallation; set { _explicitNullValueCursorOriginInstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursorOriginInstallation"); else _explicitNullProperties?.Remove("cursorOriginInstallation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueCursorOriginInstallation = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DataCacheBillingSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DataCacheBillingSettings { get => _explicitNullValueDataCacheBillingSettings; set { _explicitNullValueDataCacheBillingSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataCacheBillingSettings"); else _explicitNullProperties?.Remove("dataCacheBillingSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDataCacheBillingSettings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DataCacheBillingSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DataCacheBillingSettings { get => _explicitNullValueDataCacheBillingSettings; set { _explicitNullValueDataCacheBillingSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataCacheBillingSettings"); else _explicitNullProperties?.Remove("dataCacheBillingSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDataCacheBillingSettings = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DataCacheNamespace { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DataCacheNamespace { get => _explicitNullValueDataCacheNamespace; set { _explicitNullValueDataCacheNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataCacheNamespace"); else _explicitNullProperties?.Remove("dataCacheNamespace"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDataCacheNamespace = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DataCacheNamespace { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DataCacheNamespace { get => _explicitNullValueDataCacheNamespace; set { _explicitNullValueDataCacheNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataCacheNamespace"); else _explicitNullProperties?.Remove("dataCacheNamespace"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDataCacheNamespace = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DefaultDeploymentProtection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DefaultDeploymentProtection { get => _explicitNullValueDefaultDeploymentProtection; set { _explicitNullValueDefaultDeploymentProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultDeploymentProtection"); else _explicitNullProperties?.Remove("defaultDeploymentProtection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDefaultDeploymentProtection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DefaultDeploymentProtection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DefaultDeploymentProtection { get => _explicitNullValueDefaultDeploymentProtection; set { _explicitNullValueDefaultDeploymentProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultDeploymentProtection"); else _explicitNullProperties?.Remove("defaultDeploymentProtection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDefaultDeploymentProtection = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Deployment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Deployment { get => _explicitNullValueDeployment; set { _explicitNullValueDeployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment"); else _explicitNullProperties?.Remove("deployment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeployment = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Deployment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Deployment { get => _explicitNullValueDeployment; set { _explicitNullValueDeployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment"); else _explicitNullProperties?.Remove("deployment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeployment = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentBuildLogs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentBuildLogs { get => _explicitNullValueDeploymentBuildLogs; set { _explicitNullValueDeploymentBuildLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentBuildLogs"); else _explicitNullProperties?.Remove("deploymentBuildLogs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentBuildLogs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentBuildLogs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentBuildLogs { get => _explicitNullValueDeploymentBuildLogs; set { _explicitNullValueDeploymentBuildLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentBuildLogs"); else _explicitNullProperties?.Remove("deploymentBuildLogs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentBuildLogs = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentCheck { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentCheck { get => _explicitNullValueDeploymentCheck; set { _explicitNullValueDeploymentCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCheck"); else _explicitNullProperties?.Remove("deploymentCheck"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentCheck = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentCheck { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentCheck { get => _explicitNullValueDeploymentCheck; set { _explicitNullValueDeploymentCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCheck"); else _explicitNullProperties?.Remove("deploymentCheck"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentCheck = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentCheckPreview { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentCheckPreview { get => _explicitNullValueDeploymentCheckPreview; set { _explicitNullValueDeploymentCheckPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCheckPreview"); else _explicitNullProperties?.Remove("deploymentCheckPreview"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentCheckPreview = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentCheckPreview { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentCheckPreview { get => _explicitNullValueDeploymentCheckPreview; set { _explicitNullValueDeploymentCheckPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCheckPreview"); else _explicitNullProperties?.Remove("deploymentCheckPreview"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentCheckPreview = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentCheckReRunFromProductionBranch { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentCheckReRunFromProductionBranch { get => _explicitNullValueDeploymentCheckReRunFromProductionBranch; set { _explicitNullValueDeploymentCheckReRunFromProductionBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCheckReRunFromProductionBranch"); else _explicitNullProperties?.Remove("deploymentCheckReRunFromProductionBranch"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentCheckReRunFromProductionBranch = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentCheckReRunFromProductionBranch { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentCheckReRunFromProductionBranch { get => _explicitNullValueDeploymentCheckReRunFromProductionBranch; set { _explicitNullValueDeploymentCheckReRunFromProductionBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCheckReRunFromProductionBranch"); else _explicitNullProperties?.Remove("deploymentCheckReRunFromProductionBranch"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentCheckReRunFromProductionBranch = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPolicy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPolicy { get => _explicitNullValueDeploymentPolicy; set { _explicitNullValueDeploymentPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPolicy"); else _explicitNullProperties?.Remove("deploymentPolicy"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentPolicy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPolicy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPolicy { get => _explicitNullValueDeploymentPolicy; set { _explicitNullValueDeploymentPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPolicy"); else _explicitNullProperties?.Remove("deploymentPolicy"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentPolicy = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPreview { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPreview { get => _explicitNullValueDeploymentPreview; set { _explicitNullValueDeploymentPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPreview"); else _explicitNullProperties?.Remove("deploymentPreview"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentPreview = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPreview { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPreview { get => _explicitNullValueDeploymentPreview; set { _explicitNullValueDeploymentPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPreview"); else _explicitNullProperties?.Remove("deploymentPreview"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentPreview = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPrivate { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPrivate { get => _explicitNullValueDeploymentPrivate; set { _explicitNullValueDeploymentPrivate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPrivate"); else _explicitNullProperties?.Remove("deploymentPrivate"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentPrivate = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPrivate { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPrivate { get => _explicitNullValueDeploymentPrivate; set { _explicitNullValueDeploymentPrivate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPrivate"); else _explicitNullProperties?.Remove("deploymentPrivate"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentPrivate = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentProductionGit { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentProductionGit { get => _explicitNullValueDeploymentProductionGit; set { _explicitNullValueDeploymentProductionGit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentProductionGit"); else _explicitNullProperties?.Remove("deploymentProductionGit"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentProductionGit = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentProductionGit { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentProductionGit { get => _explicitNullValueDeploymentProductionGit; set { _explicitNullValueDeploymentProductionGit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentProductionGit"); else _explicitNullProperties?.Remove("deploymentProductionGit"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentProductionGit = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPromote { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentPromote { get => _explicitNullValueDeploymentPromote; set { _explicitNullValueDeploymentPromote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPromote"); else _explicitNullProperties?.Remove("deploymentPromote"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentPromote = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPromote { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentPromote { get => _explicitNullValueDeploymentPromote; set { _explicitNullValueDeploymentPromote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPromote"); else _explicitNullProperties?.Remove("deploymentPromote"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentPromote = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentProtectionException { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentProtectionException { get => _explicitNullValueDeploymentProtectionException; set { _explicitNullValueDeploymentProtectionException = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentProtectionException"); else _explicitNullProperties?.Remove("deploymentProtectionException"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentProtectionException = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentProtectionException { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentProtectionException { get => _explicitNullValueDeploymentProtectionException; set { _explicitNullValueDeploymentProtectionException = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentProtectionException"); else _explicitNullProperties?.Remove("deploymentProtectionException"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentProtectionException = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentRollback { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentRollback { get => _explicitNullValueDeploymentRollback; set { _explicitNullValueDeploymentRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentRollback"); else _explicitNullProperties?.Remove("deploymentRollback"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentRollback = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentRollback { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentRollback { get => _explicitNullValueDeploymentRollback; set { _explicitNullValueDeploymentRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentRollback"); else _explicitNullProperties?.Remove("deploymentRollback"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentRollback = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentV0 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DeploymentV0 { get => _explicitNullValueDeploymentV0; set { _explicitNullValueDeploymentV0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentV0"); else _explicitNullProperties?.Remove("deploymentV0"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDeploymentV0 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentV0 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentV0 { get => _explicitNullValueDeploymentV0; set { _explicitNullValueDeploymentV0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentV0"); else _explicitNullProperties?.Remove("deploymentV0"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentV0 = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Domain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Domain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomain = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainAcceptDelegation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainAcceptDelegation { get => _explicitNullValueDomainAcceptDelegation; set { _explicitNullValueDomainAcceptDelegation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainAcceptDelegation"); else _explicitNullProperties?.Remove("domainAcceptDelegation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainAcceptDelegation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainAcceptDelegation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainAcceptDelegation { get => _explicitNullValueDomainAcceptDelegation; set { _explicitNullValueDomainAcceptDelegation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainAcceptDelegation"); else _explicitNullProperties?.Remove("domainAcceptDelegation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainAcceptDelegation = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainAuthCodes { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainAuthCodes { get => _explicitNullValueDomainAuthCodes; set { _explicitNullValueDomainAuthCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainAuthCodes"); else _explicitNullProperties?.Remove("domainAuthCodes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainAuthCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainAuthCodes { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainAuthCodes { get => _explicitNullValueDomainAuthCodes; set { _explicitNullValueDomainAuthCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainAuthCodes"); else _explicitNullProperties?.Remove("domainAuthCodes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainAuthCodes = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainCertificate { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainCertificate { get => _explicitNullValueDomainCertificate; set { _explicitNullValueDomainCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCertificate"); else _explicitNullProperties?.Remove("domainCertificate"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainCertificate = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainCertificate { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainCertificate { get => _explicitNullValueDomainCertificate; set { _explicitNullValueDomainCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCertificate"); else _explicitNullProperties?.Remove("domainCertificate"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainCertificate = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainCheckConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainCheckConfig { get => _explicitNullValueDomainCheckConfig; set { _explicitNullValueDomainCheckConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCheckConfig"); else _explicitNullProperties?.Remove("domainCheckConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainCheckConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainCheckConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainCheckConfig { get => _explicitNullValueDomainCheckConfig; set { _explicitNullValueDomainCheckConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainCheckConfig"); else _explicitNullProperties?.Remove("domainCheckConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainCheckConfig = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainMove { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainMove { get => _explicitNullValueDomainMove; set { _explicitNullValueDomainMove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainMove"); else _explicitNullProperties?.Remove("domainMove"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainMove = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainMove { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainMove { get => _explicitNullValueDomainMove; set { _explicitNullValueDomainMove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainMove"); else _explicitNullProperties?.Remove("domainMove"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainMove = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainPurchase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainPurchase { get => _explicitNullValueDomainPurchase; set { _explicitNullValueDomainPurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainPurchase"); else _explicitNullProperties?.Remove("domainPurchase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainPurchase = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainPurchase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainPurchase { get => _explicitNullValueDomainPurchase; set { _explicitNullValueDomainPurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainPurchase"); else _explicitNullProperties?.Remove("domainPurchase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainPurchase = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainRecord { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainRecord { get => _explicitNullValueDomainRecord; set { _explicitNullValueDomainRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainRecord"); else _explicitNullProperties?.Remove("domainRecord"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainRecord = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainRecord { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainRecord { get => _explicitNullValueDomainRecord; set { _explicitNullValueDomainRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainRecord"); else _explicitNullProperties?.Remove("domainRecord"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainRecord = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainTransferIn { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DomainTransferIn { get => _explicitNullValueDomainTransferIn; set { _explicitNullValueDomainTransferIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainTransferIn"); else _explicitNullProperties?.Remove("domainTransferIn"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDomainTransferIn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainTransferIn { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DomainTransferIn { get => _explicitNullValueDomainTransferIn; set { _explicitNullValueDomainTransferIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainTransferIn"); else _explicitNullProperties?.Remove("domainTransferIn"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDomainTransferIn = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Drain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Drain { get => _explicitNullValueDrain; set { _explicitNullValueDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drain"); else _explicitNullProperties?.Remove("drain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDrain = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Drain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Drain { get => _explicitNullValueDrain; set { _explicitNullValueDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drain"); else _explicitNullProperties?.Remove("drain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDrain = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeCacheNamespace { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeCacheNamespace { get => _explicitNullValueEdgeCacheNamespace; set { _explicitNullValueEdgeCacheNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeCacheNamespace"); else _explicitNullProperties?.Remove("edgeCacheNamespace"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEdgeCacheNamespace = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeCacheNamespace { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeCacheNamespace { get => _explicitNullValueEdgeCacheNamespace; set { _explicitNullValueEdgeCacheNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeCacheNamespace"); else _explicitNullProperties?.Remove("edgeCacheNamespace"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEdgeCacheNamespace = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfig { get => _explicitNullValueEdgeConfig; set { _explicitNullValueEdgeConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfig"); else _explicitNullProperties?.Remove("edgeConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEdgeConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfig { get => _explicitNullValueEdgeConfig; set { _explicitNullValueEdgeConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfig"); else _explicitNullProperties?.Remove("edgeConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEdgeConfig = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfigItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfigItem { get => _explicitNullValueEdgeConfigItem; set { _explicitNullValueEdgeConfigItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigItem"); else _explicitNullProperties?.Remove("edgeConfigItem"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEdgeConfigItem = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfigItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfigItem { get => _explicitNullValueEdgeConfigItem; set { _explicitNullValueEdgeConfigItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigItem"); else _explicitNullProperties?.Remove("edgeConfigItem"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEdgeConfigItem = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfigSchema { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfigSchema { get => _explicitNullValueEdgeConfigSchema; set { _explicitNullValueEdgeConfigSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSchema"); else _explicitNullProperties?.Remove("edgeConfigSchema"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEdgeConfigSchema = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfigSchema { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfigSchema { get => _explicitNullValueEdgeConfigSchema; set { _explicitNullValueEdgeConfigSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSchema"); else _explicitNullProperties?.Remove("edgeConfigSchema"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEdgeConfigSchema = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfigToken { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EdgeConfigToken { get => _explicitNullValueEdgeConfigToken; set { _explicitNullValueEdgeConfigToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigToken"); else _explicitNullProperties?.Remove("edgeConfigToken"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEdgeConfigToken = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfigToken { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EdgeConfigToken { get => _explicitNullValueEdgeConfigToken; set { _explicitNullValueEdgeConfigToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigToken"); else _explicitNullProperties?.Remove("edgeConfigToken"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEdgeConfigToken = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EmaSetup { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EmaSetup { get => _explicitNullValueEmaSetup; set { _explicitNullValueEmaSetup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emaSetup"); else _explicitNullProperties?.Remove("emaSetup"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEmaSetup = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EmaSetup { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EmaSetup { get => _explicitNullValueEmaSetup; set { _explicitNullValueEmaSetup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emaSetup"); else _explicitNullProperties?.Remove("emaSetup"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEmaSetup = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EndpointVerification { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? EndpointVerification { get => _explicitNullValueEndpointVerification; set { _explicitNullValueEndpointVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpointVerification"); else _explicitNullProperties?.Remove("endpointVerification"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEndpointVerification = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EndpointVerification { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> EndpointVerification { get => _explicitNullValueEndpointVerification; set { _explicitNullValueEndpointVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpointVerification"); else _explicitNullProperties?.Remove("endpointVerification"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEndpointVerification = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Environments { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEnvironments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Environments { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEnvironments = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Event { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueEvent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Event { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueEvent = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? FileUpload { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? FileUpload { get => _explicitNullValueFileUpload; set { _explicitNullValueFileUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileUpload"); else _explicitNullProperties?.Remove("fileUpload"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueFileUpload = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> FileUpload { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> FileUpload { get => _explicitNullValueFileUpload; set { _explicitNullValueFileUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileUpload"); else _explicitNullProperties?.Remove("fileUpload"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueFileUpload = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? FlagsExplorerSubscription { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? FlagsExplorerSubscription { get => _explicitNullValueFlagsExplorerSubscription; set { _explicitNullValueFlagsExplorerSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsExplorerSubscription"); else _explicitNullProperties?.Remove("flagsExplorerSubscription"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueFlagsExplorerSubscription = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> FlagsExplorerSubscription { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> FlagsExplorerSubscription { get => _explicitNullValueFlagsExplorerSubscription; set { _explicitNullValueFlagsExplorerSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsExplorerSubscription"); else _explicitNullProperties?.Remove("flagsExplorerSubscription"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueFlagsExplorerSubscription = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? GitCredentialGrant { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? GitCredentialGrant { get => _explicitNullValueGitCredentialGrant; set { _explicitNullValueGitCredentialGrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitCredentialGrant"); else _explicitNullProperties?.Remove("gitCredentialGrant"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueGitCredentialGrant = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> GitCredentialGrant { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> GitCredentialGrant { get => _explicitNullValueGitCredentialGrant; set { _explicitNullValueGitCredentialGrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitCredentialGrant"); else _explicitNullProperties?.Remove("gitCredentialGrant"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueGitCredentialGrant = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? GithubUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? GithubUsage { get => _explicitNullValueGithubUsage; set { _explicitNullValueGithubUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubUsage"); else _explicitNullProperties?.Remove("githubUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueGithubUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> GithubUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> GithubUsage { get => _explicitNullValueGithubUsage; set { _explicitNullValueGithubUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubUsage"); else _explicitNullProperties?.Remove("githubUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueGithubUsage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? GitRepository { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? GitRepository { get => _explicitNullValueGitRepository; set { _explicitNullValueGitRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepository"); else _explicitNullProperties?.Remove("gitRepository"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueGitRepository = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> GitRepository { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> GitRepository { get => _explicitNullValueGitRepository; set { _explicitNullValueGitRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepository"); else _explicitNullProperties?.Remove("gitRepository"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueGitRepository = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ImageOptimizationNewPrice { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ImageOptimizationNewPrice { get => _explicitNullValueImageOptimizationNewPrice; set { _explicitNullValueImageOptimizationNewPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageOptimizationNewPrice"); else _explicitNullProperties?.Remove("imageOptimizationNewPrice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueImageOptimizationNewPrice = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ImageOptimizationNewPrice { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ImageOptimizationNewPrice { get => _explicitNullValueImageOptimizationNewPrice; set { _explicitNullValueImageOptimizationNewPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageOptimizationNewPrice"); else _explicitNullProperties?.Remove("imageOptimizationNewPrice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueImageOptimizationNewPrice = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Integration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Integration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationAccount { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationAccount { get => _explicitNullValueIntegrationAccount; set { _explicitNullValueIntegrationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationAccount"); else _explicitNullProperties?.Remove("integrationAccount"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationAccount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationAccount { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationAccount { get => _explicitNullValueIntegrationAccount; set { _explicitNullValueIntegrationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationAccount"); else _explicitNullProperties?.Remove("integrationAccount"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationAccount = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfiguration { get => _explicitNullValueIntegrationConfiguration; set { _explicitNullValueIntegrationConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfiguration"); else _explicitNullProperties?.Remove("integrationConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationConfiguration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfiguration { get => _explicitNullValueIntegrationConfiguration; set { _explicitNullValueIntegrationConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfiguration"); else _explicitNullProperties?.Remove("integrationConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationConfiguration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfigurationProjects { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfigurationProjects { get => _explicitNullValueIntegrationConfigurationProjects; set { _explicitNullValueIntegrationConfigurationProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationProjects"); else _explicitNullProperties?.Remove("integrationConfigurationProjects"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationConfigurationProjects = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfigurationProjects { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfigurationProjects { get => _explicitNullValueIntegrationConfigurationProjects; set { _explicitNullValueIntegrationConfigurationProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationProjects"); else _explicitNullProperties?.Remove("integrationConfigurationProjects"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationConfigurationProjects = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfigurationRole { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfigurationRole { get => _explicitNullValueIntegrationConfigurationRole; set { _explicitNullValueIntegrationConfigurationRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationRole"); else _explicitNullProperties?.Remove("integrationConfigurationRole"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationConfigurationRole = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfigurationRole { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfigurationRole { get => _explicitNullValueIntegrationConfigurationRole; set { _explicitNullValueIntegrationConfigurationRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationRole"); else _explicitNullProperties?.Remove("integrationConfigurationRole"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationConfigurationRole = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfigurationTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationConfigurationTransfer { get => _explicitNullValueIntegrationConfigurationTransfer; set { _explicitNullValueIntegrationConfigurationTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationTransfer"); else _explicitNullProperties?.Remove("integrationConfigurationTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationConfigurationTransfer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfigurationTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationConfigurationTransfer { get => _explicitNullValueIntegrationConfigurationTransfer; set { _explicitNullValueIntegrationConfigurationTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationTransfer"); else _explicitNullProperties?.Remove("integrationConfigurationTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationConfigurationTransfer = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationDeploymentAction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationDeploymentAction { get => _explicitNullValueIntegrationDeploymentAction; set { _explicitNullValueIntegrationDeploymentAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationDeploymentAction"); else _explicitNullProperties?.Remove("integrationDeploymentAction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationDeploymentAction = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationDeploymentAction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationDeploymentAction { get => _explicitNullValueIntegrationDeploymentAction; set { _explicitNullValueIntegrationDeploymentAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationDeploymentAction"); else _explicitNullProperties?.Remove("integrationDeploymentAction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationDeploymentAction = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationEvent { get => _explicitNullValueIntegrationEvent; set { _explicitNullValueIntegrationEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationEvent"); else _explicitNullProperties?.Remove("integrationEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationEvent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationEvent { get => _explicitNullValueIntegrationEvent; set { _explicitNullValueIntegrationEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationEvent"); else _explicitNullProperties?.Remove("integrationEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationEvent = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationLog { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationLog { get => _explicitNullValueIntegrationLog; set { _explicitNullValueIntegrationLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationLog"); else _explicitNullProperties?.Remove("integrationLog"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationLog = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationLog { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationLog { get => _explicitNullValueIntegrationLog; set { _explicitNullValueIntegrationLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationLog"); else _explicitNullProperties?.Remove("integrationLog"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationLog = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationPullRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationPullRequest { get => _explicitNullValueIntegrationPullRequest; set { _explicitNullValueIntegrationPullRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationPullRequest"); else _explicitNullProperties?.Remove("integrationPullRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationPullRequest = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationPullRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationPullRequest { get => _explicitNullValueIntegrationPullRequest; set { _explicitNullValueIntegrationPullRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationPullRequest"); else _explicitNullProperties?.Remove("integrationPullRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationPullRequest = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResource { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResource { get => _explicitNullValueIntegrationResource; set { _explicitNullValueIntegrationResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResource"); else _explicitNullProperties?.Remove("integrationResource"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationResource = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResource { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResource { get => _explicitNullValueIntegrationResource; set { _explicitNullValueIntegrationResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResource"); else _explicitNullProperties?.Remove("integrationResource"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationResource = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResourceData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResourceData { get => _explicitNullValueIntegrationResourceData; set { _explicitNullValueIntegrationResourceData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResourceData"); else _explicitNullProperties?.Remove("integrationResourceData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationResourceData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResourceData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResourceData { get => _explicitNullValueIntegrationResourceData; set { _explicitNullValueIntegrationResourceData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResourceData"); else _explicitNullProperties?.Remove("integrationResourceData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationResourceData = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResourceReplCommand { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResourceReplCommand { get => _explicitNullValueIntegrationResourceReplCommand; set { _explicitNullValueIntegrationResourceReplCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResourceReplCommand"); else _explicitNullProperties?.Remove("integrationResourceReplCommand"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationResourceReplCommand = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResourceReplCommand { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResourceReplCommand { get => _explicitNullValueIntegrationResourceReplCommand; set { _explicitNullValueIntegrationResourceReplCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResourceReplCommand"); else _explicitNullProperties?.Remove("integrationResourceReplCommand"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationResourceReplCommand = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResourceSecrets { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationResourceSecrets { get => _explicitNullValueIntegrationResourceSecrets; set { _explicitNullValueIntegrationResourceSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResourceSecrets"); else _explicitNullProperties?.Remove("integrationResourceSecrets"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationResourceSecrets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResourceSecrets { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationResourceSecrets { get => _explicitNullValueIntegrationResourceSecrets; set { _explicitNullValueIntegrationResourceSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationResourceSecrets"); else _explicitNullProperties?.Remove("integrationResourceSecrets"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationResourceSecrets = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationSSOSession { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationSSOSession { get => _explicitNullValueIntegrationSSOSession; set { _explicitNullValueIntegrationSSOSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationSSOSession"); else _explicitNullProperties?.Remove("integrationSSOSession"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationSSOSession = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationSSOSession { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationSSOSession { get => _explicitNullValueIntegrationSSOSession; set { _explicitNullValueIntegrationSSOSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationSSOSession"); else _explicitNullProperties?.Remove("integrationSSOSession"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationSSOSession = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationStoreTokenSet { get => _explicitNullValueIntegrationStoreTokenSet; set { _explicitNullValueIntegrationStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationStoreTokenSet"); else _explicitNullProperties?.Remove("integrationStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationStoreTokenSet = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationStoreTokenSet { get => _explicitNullValueIntegrationStoreTokenSet; set { _explicitNullValueIntegrationStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationStoreTokenSet"); else _explicitNullProperties?.Remove("integrationStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationStoreTokenSet = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationStrict { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationStrict { get => _explicitNullValueIntegrationStrict; set { _explicitNullValueIntegrationStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationStrict"); else _explicitNullProperties?.Remove("integrationStrict"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationStrict = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationStrict { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationStrict { get => _explicitNullValueIntegrationStrict; set { _explicitNullValueIntegrationStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationStrict"); else _explicitNullProperties?.Remove("integrationStrict"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationStrict = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationVercelConfigurationOverride { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IntegrationVercelConfigurationOverride { get => _explicitNullValueIntegrationVercelConfigurationOverride; set { _explicitNullValueIntegrationVercelConfigurationOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationVercelConfigurationOverride"); else _explicitNullProperties?.Remove("integrationVercelConfigurationOverride"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIntegrationVercelConfigurationOverride = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationVercelConfigurationOverride { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IntegrationVercelConfigurationOverride { get => _explicitNullValueIntegrationVercelConfigurationOverride; set { _explicitNullValueIntegrationVercelConfigurationOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationVercelConfigurationOverride"); else _explicitNullProperties?.Remove("integrationVercelConfigurationOverride"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIntegrationVercelConfigurationOverride = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IpBlocking { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? IpBlocking { get => _explicitNullValueIpBlocking; set { _explicitNullValueIpBlocking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipBlocking"); else _explicitNullProperties?.Remove("ipBlocking"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueIpBlocking = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IpBlocking { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> IpBlocking { get => _explicitNullValueIpBlocking; set { _explicitNullValueIpBlocking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipBlocking"); else _explicitNullProperties?.Remove("ipBlocking"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueIpBlocking = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Job { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Job { get => _explicitNullValueJob; set { _explicitNullValueJob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job"); else _explicitNullProperties?.Remove("job"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueJob = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Job { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Job { get => _explicitNullValueJob; set { _explicitNullValueJob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job"); else _explicitNullProperties?.Remove("job"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueJob = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? JobGlobal { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? JobGlobal { get => _explicitNullValueJobGlobal; set { _explicitNullValueJobGlobal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobGlobal"); else _explicitNullProperties?.Remove("jobGlobal"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueJobGlobal = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> JobGlobal { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> JobGlobal { get => _explicitNullValueJobGlobal; set { _explicitNullValueJobGlobal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobGlobal"); else _explicitNullProperties?.Remove("jobGlobal"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueJobGlobal = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? KmsIssuer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? KmsIssuer { get => _explicitNullValueKmsIssuer; set { _explicitNullValueKmsIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kmsIssuer"); else _explicitNullProperties?.Remove("kmsIssuer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueKmsIssuer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> KmsIssuer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> KmsIssuer { get => _explicitNullValueKmsIssuer; set { _explicitNullValueKmsIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kmsIssuer"); else _explicitNullProperties?.Remove("kmsIssuer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueKmsIssuer = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? KmsProjectGrant { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? KmsProjectGrant { get => _explicitNullValueKmsProjectGrant; set { _explicitNullValueKmsProjectGrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kmsProjectGrant"); else _explicitNullProperties?.Remove("kmsProjectGrant"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueKmsProjectGrant = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> KmsProjectGrant { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> KmsProjectGrant { get => _explicitNullValueKmsProjectGrant; set { _explicitNullValueKmsProjectGrant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kmsProjectGrant"); else _explicitNullProperties?.Remove("kmsProjectGrant"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueKmsProjectGrant = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? LogDrain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? LogDrain { get => _explicitNullValueLogDrain; set { _explicitNullValueLogDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrain"); else _explicitNullProperties?.Remove("logDrain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueLogDrain = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> LogDrain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> LogDrain { get => _explicitNullValueLogDrain; set { _explicitNullValueLogDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrain"); else _explicitNullProperties?.Remove("logDrain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueLogDrain = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Logs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueLogs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Logs { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueLogs = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? LogsPreset { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? LogsPreset { get => _explicitNullValueLogsPreset; set { _explicitNullValueLogsPreset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logsPreset"); else _explicitNullProperties?.Remove("logsPreset"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueLogsPreset = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> LogsPreset { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> LogsPreset { get => _explicitNullValueLogsPreset; set { _explicitNullValueLogsPreset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logsPreset"); else _explicitNullProperties?.Remove("logsPreset"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueLogsPreset = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceBillingData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceBillingData { get => _explicitNullValueMarketplaceBillingData; set { _explicitNullValueMarketplaceBillingData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceBillingData"); else _explicitNullProperties?.Remove("marketplaceBillingData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMarketplaceBillingData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceBillingData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceBillingData { get => _explicitNullValueMarketplaceBillingData; set { _explicitNullValueMarketplaceBillingData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceBillingData"); else _explicitNullProperties?.Remove("marketplaceBillingData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMarketplaceBillingData = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceExperimentationEdgeConfigData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceExperimentationEdgeConfigData { get => _explicitNullValueMarketplaceExperimentationEdgeConfigData; set { _explicitNullValueMarketplaceExperimentationEdgeConfigData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceExperimentationEdgeConfigData"); else _explicitNullProperties?.Remove("marketplaceExperimentationEdgeConfigData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMarketplaceExperimentationEdgeConfigData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceExperimentationEdgeConfigData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceExperimentationEdgeConfigData { get => _explicitNullValueMarketplaceExperimentationEdgeConfigData; set { _explicitNullValueMarketplaceExperimentationEdgeConfigData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceExperimentationEdgeConfigData"); else _explicitNullProperties?.Remove("marketplaceExperimentationEdgeConfigData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMarketplaceExperimentationEdgeConfigData = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceExperimentationItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceExperimentationItem { get => _explicitNullValueMarketplaceExperimentationItem; set { _explicitNullValueMarketplaceExperimentationItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceExperimentationItem"); else _explicitNullProperties?.Remove("marketplaceExperimentationItem"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMarketplaceExperimentationItem = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceExperimentationItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceExperimentationItem { get => _explicitNullValueMarketplaceExperimentationItem; set { _explicitNullValueMarketplaceExperimentationItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceExperimentationItem"); else _explicitNullProperties?.Remove("marketplaceExperimentationItem"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMarketplaceExperimentationItem = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceFlexCommit { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceFlexCommit { get => _explicitNullValueMarketplaceFlexCommit; set { _explicitNullValueMarketplaceFlexCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceFlexCommit"); else _explicitNullProperties?.Remove("marketplaceFlexCommit"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMarketplaceFlexCommit = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceFlexCommit { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceFlexCommit { get => _explicitNullValueMarketplaceFlexCommit; set { _explicitNullValueMarketplaceFlexCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceFlexCommit"); else _explicitNullProperties?.Remove("marketplaceFlexCommit"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMarketplaceFlexCommit = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceInstallationMember { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceInstallationMember { get => _explicitNullValueMarketplaceInstallationMember; set { _explicitNullValueMarketplaceInstallationMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceInstallationMember"); else _explicitNullProperties?.Remove("marketplaceInstallationMember"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMarketplaceInstallationMember = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceInstallationMember { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceInstallationMember { get => _explicitNullValueMarketplaceInstallationMember; set { _explicitNullValueMarketplaceInstallationMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceInstallationMember"); else _explicitNullProperties?.Remove("marketplaceInstallationMember"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMarketplaceInstallationMember = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceInvoice { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceInvoice { get => _explicitNullValueMarketplaceInvoice; set { _explicitNullValueMarketplaceInvoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceInvoice"); else _explicitNullProperties?.Remove("marketplaceInvoice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMarketplaceInvoice = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceInvoice { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceInvoice { get => _explicitNullValueMarketplaceInvoice; set { _explicitNullValueMarketplaceInvoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceInvoice"); else _explicitNullProperties?.Remove("marketplaceInvoice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMarketplaceInvoice = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceSettings { get => _explicitNullValueMarketplaceSettings; set { _explicitNullValueMarketplaceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceSettings"); else _explicitNullProperties?.Remove("marketplaceSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMarketplaceSettings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceSettings { get => _explicitNullValueMarketplaceSettings; set { _explicitNullValueMarketplaceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketplaceSettings"); else _explicitNullProperties?.Remove("marketplaceSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMarketplaceSettings = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Messageboard { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Messageboard { get => _explicitNullValueMessageboard; set { _explicitNullValueMessageboard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboard"); else _explicitNullProperties?.Remove("messageboard"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMessageboard = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Messageboard { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Messageboard { get => _explicitNullValueMessageboard; set { _explicitNullValueMessageboard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboard"); else _explicitNullProperties?.Remove("messageboard"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMessageboard = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardChannel { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardChannel { get => _explicitNullValueMessageboardChannel; set { _explicitNullValueMessageboardChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardChannel"); else _explicitNullProperties?.Remove("messageboardChannel"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMessageboardChannel = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardChannel { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardChannel { get => _explicitNullValueMessageboardChannel; set { _explicitNullValueMessageboardChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardChannel"); else _explicitNullProperties?.Remove("messageboardChannel"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMessageboardChannel = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardMessage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardMessage { get => _explicitNullValueMessageboardMessage; set { _explicitNullValueMessageboardMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardMessage"); else _explicitNullProperties?.Remove("messageboardMessage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMessageboardMessage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardMessage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardMessage { get => _explicitNullValueMessageboardMessage; set { _explicitNullValueMessageboardMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardMessage"); else _explicitNullProperties?.Remove("messageboardMessage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMessageboardMessage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardModeration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardModeration { get => _explicitNullValueMessageboardModeration; set { _explicitNullValueMessageboardModeration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardModeration"); else _explicitNullProperties?.Remove("messageboardModeration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMessageboardModeration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardModeration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardModeration { get => _explicitNullValueMessageboardModeration; set { _explicitNullValueMessageboardModeration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardModeration"); else _explicitNullProperties?.Remove("messageboardModeration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMessageboardModeration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardReaction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardReaction { get => _explicitNullValueMessageboardReaction; set { _explicitNullValueMessageboardReaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardReaction"); else _explicitNullProperties?.Remove("messageboardReaction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMessageboardReaction = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardReaction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardReaction { get => _explicitNullValueMessageboardReaction; set { _explicitNullValueMessageboardReaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardReaction"); else _explicitNullProperties?.Remove("messageboardReaction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMessageboardReaction = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardTask { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardTask { get => _explicitNullValueMessageboardTask; set { _explicitNullValueMessageboardTask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardTask"); else _explicitNullProperties?.Remove("messageboardTask"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMessageboardTask = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardTask { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardTask { get => _explicitNullValueMessageboardTask; set { _explicitNullValueMessageboardTask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardTask"); else _explicitNullProperties?.Remove("messageboardTask"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMessageboardTask = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Monitoring { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Monitoring { get => _explicitNullValueMonitoring; set { _explicitNullValueMonitoring = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Monitoring"); else _explicitNullProperties?.Remove("Monitoring"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMonitoring = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Monitoring { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Monitoring { get => _explicitNullValueMonitoring; set { _explicitNullValueMonitoring = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Monitoring"); else _explicitNullProperties?.Remove("Monitoring"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMonitoring = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringAlert { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringAlert { get => _explicitNullValueMonitoringAlert; set { _explicitNullValueMonitoringAlert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringAlert"); else _explicitNullProperties?.Remove("monitoringAlert"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMonitoringAlert = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringAlert { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringAlert { get => _explicitNullValueMonitoringAlert; set { _explicitNullValueMonitoringAlert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringAlert"); else _explicitNullProperties?.Remove("monitoringAlert"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMonitoringAlert = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringChart { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringChart { get => _explicitNullValueMonitoringChart; set { _explicitNullValueMonitoringChart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringChart"); else _explicitNullProperties?.Remove("monitoringChart"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMonitoringChart = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringChart { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringChart { get => _explicitNullValueMonitoringChart; set { _explicitNullValueMonitoringChart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringChart"); else _explicitNullProperties?.Remove("monitoringChart"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMonitoringChart = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringQuery { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringQuery { get => _explicitNullValueMonitoringQuery; set { _explicitNullValueMonitoringQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringQuery"); else _explicitNullProperties?.Remove("monitoringQuery"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMonitoringQuery = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringQuery { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringQuery { get => _explicitNullValueMonitoringQuery; set { _explicitNullValueMonitoringQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringQuery"); else _explicitNullProperties?.Remove("monitoringQuery"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMonitoringQuery = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MonitoringSettings { get => _explicitNullValueMonitoringSettings; set { _explicitNullValueMonitoringSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringSettings"); else _explicitNullProperties?.Remove("monitoringSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueMonitoringSettings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringSettings { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MonitoringSettings { get => _explicitNullValueMonitoringSettings; set { _explicitNullValueMonitoringSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringSettings"); else _explicitNullProperties?.Remove("monitoringSettings"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueMonitoringSettings = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationCustomerBudget { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationCustomerBudget { get => _explicitNullValueNotificationCustomerBudget; set { _explicitNullValueNotificationCustomerBudget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationCustomerBudget"); else _explicitNullProperties?.Remove("notificationCustomerBudget"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationCustomerBudget = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationCustomerBudget { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationCustomerBudget { get => _explicitNullValueNotificationCustomerBudget; set { _explicitNullValueNotificationCustomerBudget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationCustomerBudget"); else _explicitNullProperties?.Remove("notificationCustomerBudget"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationCustomerBudget = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDeploymentFailed { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDeploymentFailed { get => _explicitNullValueNotificationDeploymentFailed; set { _explicitNullValueNotificationDeploymentFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDeploymentFailed"); else _explicitNullProperties?.Remove("notificationDeploymentFailed"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDeploymentFailed = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDeploymentFailed { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDeploymentFailed { get => _explicitNullValueNotificationDeploymentFailed; set { _explicitNullValueNotificationDeploymentFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDeploymentFailed"); else _explicitNullProperties?.Remove("notificationDeploymentFailed"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDeploymentFailed = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainConfiguration { get => _explicitNullValueNotificationDomainConfiguration; set { _explicitNullValueNotificationDomainConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainConfiguration"); else _explicitNullProperties?.Remove("notificationDomainConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDomainConfiguration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainConfiguration { get => _explicitNullValueNotificationDomainConfiguration; set { _explicitNullValueNotificationDomainConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainConfiguration"); else _explicitNullProperties?.Remove("notificationDomainConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDomainConfiguration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainExpire { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainExpire { get => _explicitNullValueNotificationDomainExpire; set { _explicitNullValueNotificationDomainExpire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainExpire"); else _explicitNullProperties?.Remove("notificationDomainExpire"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDomainExpire = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainExpire { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainExpire { get => _explicitNullValueNotificationDomainExpire; set { _explicitNullValueNotificationDomainExpire = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainExpire"); else _explicitNullProperties?.Remove("notificationDomainExpire"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDomainExpire = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainMoved { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainMoved { get => _explicitNullValueNotificationDomainMoved; set { _explicitNullValueNotificationDomainMoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainMoved"); else _explicitNullProperties?.Remove("notificationDomainMoved"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDomainMoved = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainMoved { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainMoved { get => _explicitNullValueNotificationDomainMoved; set { _explicitNullValueNotificationDomainMoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainMoved"); else _explicitNullProperties?.Remove("notificationDomainMoved"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDomainMoved = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainPurchase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainPurchase { get => _explicitNullValueNotificationDomainPurchase; set { _explicitNullValueNotificationDomainPurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainPurchase"); else _explicitNullProperties?.Remove("notificationDomainPurchase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDomainPurchase = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainPurchase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainPurchase { get => _explicitNullValueNotificationDomainPurchase; set { _explicitNullValueNotificationDomainPurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainPurchase"); else _explicitNullProperties?.Remove("notificationDomainPurchase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDomainPurchase = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainRenewal { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainRenewal { get => _explicitNullValueNotificationDomainRenewal; set { _explicitNullValueNotificationDomainRenewal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainRenewal"); else _explicitNullProperties?.Remove("notificationDomainRenewal"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDomainRenewal = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainRenewal { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainRenewal { get => _explicitNullValueNotificationDomainRenewal; set { _explicitNullValueNotificationDomainRenewal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainRenewal"); else _explicitNullProperties?.Remove("notificationDomainRenewal"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDomainRenewal = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainTransfer { get => _explicitNullValueNotificationDomainTransfer; set { _explicitNullValueNotificationDomainTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainTransfer"); else _explicitNullProperties?.Remove("notificationDomainTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDomainTransfer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainTransfer { get => _explicitNullValueNotificationDomainTransfer; set { _explicitNullValueNotificationDomainTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainTransfer"); else _explicitNullProperties?.Remove("notificationDomainTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDomainTransfer = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainUnverified { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationDomainUnverified { get => _explicitNullValueNotificationDomainUnverified; set { _explicitNullValueNotificationDomainUnverified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainUnverified"); else _explicitNullProperties?.Remove("notificationDomainUnverified"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationDomainUnverified = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainUnverified { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationDomainUnverified { get => _explicitNullValueNotificationDomainUnverified; set { _explicitNullValueNotificationDomainUnverified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationDomainUnverified"); else _explicitNullProperties?.Remove("notificationDomainUnverified"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationDomainUnverified = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationMonitoringAlert { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationMonitoringAlert { get => _explicitNullValueNotificationMonitoringAlert; set { _explicitNullValueNotificationMonitoringAlert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NotificationMonitoringAlert"); else _explicitNullProperties?.Remove("NotificationMonitoringAlert"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationMonitoringAlert = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationMonitoringAlert { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationMonitoringAlert { get => _explicitNullValueNotificationMonitoringAlert; set { _explicitNullValueNotificationMonitoringAlert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("NotificationMonitoringAlert"); else _explicitNullProperties?.Remove("NotificationMonitoringAlert"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationMonitoringAlert = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationPaymentFailed { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationPaymentFailed { get => _explicitNullValueNotificationPaymentFailed; set { _explicitNullValueNotificationPaymentFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPaymentFailed"); else _explicitNullProperties?.Remove("notificationPaymentFailed"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationPaymentFailed = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationPaymentFailed { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationPaymentFailed { get => _explicitNullValueNotificationPaymentFailed; set { _explicitNullValueNotificationPaymentFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPaymentFailed"); else _explicitNullProperties?.Remove("notificationPaymentFailed"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationPaymentFailed = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationPreferences { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationPreferences { get => _explicitNullValueNotificationPreferences; set { _explicitNullValueNotificationPreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPreferences"); else _explicitNullProperties?.Remove("notificationPreferences"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationPreferences = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationPreferences { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationPreferences { get => _explicitNullValueNotificationPreferences; set { _explicitNullValueNotificationPreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPreferences"); else _explicitNullProperties?.Remove("notificationPreferences"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationPreferences = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationStatementOfReasons { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationStatementOfReasons { get => _explicitNullValueNotificationStatementOfReasons; set { _explicitNullValueNotificationStatementOfReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationStatementOfReasons"); else _explicitNullProperties?.Remove("notificationStatementOfReasons"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationStatementOfReasons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationStatementOfReasons { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationStatementOfReasons { get => _explicitNullValueNotificationStatementOfReasons; set { _explicitNullValueNotificationStatementOfReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationStatementOfReasons"); else _explicitNullProperties?.Remove("notificationStatementOfReasons"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationStatementOfReasons = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationUsageAlert { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? NotificationUsageAlert { get => _explicitNullValueNotificationUsageAlert; set { _explicitNullValueNotificationUsageAlert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationUsageAlert"); else _explicitNullProperties?.Remove("notificationUsageAlert"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueNotificationUsageAlert = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationUsageAlert { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> NotificationUsageAlert { get => _explicitNullValueNotificationUsageAlert; set { _explicitNullValueNotificationUsageAlert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationUsageAlert"); else _explicitNullProperties?.Remove("notificationUsageAlert"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueNotificationUsageAlert = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Oauth2Application { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Oauth2Application { get => _explicitNullValueOauth2Application; set { _explicitNullValueOauth2Application = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2Application"); else _explicitNullProperties?.Remove("oauth2Application"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOauth2Application = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Oauth2Application { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Oauth2Application { get => _explicitNullValueOauth2Application; set { _explicitNullValueOauth2Application = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2Application"); else _explicitNullProperties?.Remove("oauth2Application"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOauth2Application = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Oauth2Connection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Oauth2Connection { get => _explicitNullValueOauth2Connection; set { _explicitNullValueOauth2Connection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2Connection"); else _explicitNullProperties?.Remove("oauth2Connection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOauth2Connection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Oauth2Connection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Oauth2Connection { get => _explicitNullValueOauth2Connection; set { _explicitNullValueOauth2Connection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2Connection"); else _explicitNullProperties?.Remove("oauth2Connection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOauth2Connection = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityConfiguration { get => _explicitNullValueObservabilityConfiguration; set { _explicitNullValueObservabilityConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityConfiguration"); else _explicitNullProperties?.Remove("observabilityConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueObservabilityConfiguration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityConfiguration { get => _explicitNullValueObservabilityConfiguration; set { _explicitNullValueObservabilityConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityConfiguration"); else _explicitNullProperties?.Remove("observabilityConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueObservabilityConfiguration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityData { get => _explicitNullValueObservabilityData; set { _explicitNullValueObservabilityData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityData"); else _explicitNullProperties?.Remove("observabilityData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueObservabilityData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityData { get => _explicitNullValueObservabilityData; set { _explicitNullValueObservabilityData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityData"); else _explicitNullProperties?.Remove("observabilityData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueObservabilityData = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityFunnel { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityFunnel { get => _explicitNullValueObservabilityFunnel; set { _explicitNullValueObservabilityFunnel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityFunnel"); else _explicitNullProperties?.Remove("observabilityFunnel"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueObservabilityFunnel = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityFunnel { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityFunnel { get => _explicitNullValueObservabilityFunnel; set { _explicitNullValueObservabilityFunnel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityFunnel"); else _explicitNullProperties?.Remove("observabilityFunnel"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueObservabilityFunnel = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityNotebook { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ObservabilityNotebook { get => _explicitNullValueObservabilityNotebook; set { _explicitNullValueObservabilityNotebook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityNotebook"); else _explicitNullProperties?.Remove("observabilityNotebook"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueObservabilityNotebook = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityNotebook { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ObservabilityNotebook { get => _explicitNullValueObservabilityNotebook; set { _explicitNullValueObservabilityNotebook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observabilityNotebook"); else _explicitNullProperties?.Remove("observabilityNotebook"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueObservabilityNotebook = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OidcFederationPolicy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OidcFederationPolicy { get => _explicitNullValueOidcFederationPolicy; set { _explicitNullValueOidcFederationPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcFederationPolicy"); else _explicitNullProperties?.Remove("oidcFederationPolicy"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOidcFederationPolicy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OidcFederationPolicy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OidcFederationPolicy { get => _explicitNullValueOidcFederationPolicy; set { _explicitNullValueOidcFederationPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcFederationPolicy"); else _explicitNullProperties?.Remove("oidcFederationPolicy"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOidcFederationPolicy = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OnDemandBuild { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OnDemandBuild { get => _explicitNullValueOnDemandBuild; set { _explicitNullValueOnDemandBuild = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onDemandBuild"); else _explicitNullProperties?.Remove("onDemandBuild"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOnDemandBuild = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OnDemandBuild { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OnDemandBuild { get => _explicitNullValueOnDemandBuild; set { _explicitNullValueOnDemandBuild = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onDemandBuild"); else _explicitNullProperties?.Remove("onDemandBuild"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOnDemandBuild = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OnDemandConcurrency { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OnDemandConcurrency { get => _explicitNullValueOnDemandConcurrency; set { _explicitNullValueOnDemandConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onDemandConcurrency"); else _explicitNullProperties?.Remove("onDemandConcurrency"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOnDemandConcurrency = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OnDemandConcurrency { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OnDemandConcurrency { get => _explicitNullValueOnDemandConcurrency; set { _explicitNullValueOnDemandConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onDemandConcurrency"); else _explicitNullProperties?.Remove("onDemandConcurrency"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOnDemandConcurrency = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OpenTelemetryEndpoint { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OpenTelemetryEndpoint { get => _explicitNullValueOpenTelemetryEndpoint; set { _explicitNullValueOpenTelemetryEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openTelemetryEndpoint"); else _explicitNullProperties?.Remove("openTelemetryEndpoint"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOpenTelemetryEndpoint = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OpenTelemetryEndpoint { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OpenTelemetryEndpoint { get => _explicitNullValueOpenTelemetryEndpoint; set { _explicitNullValueOpenTelemetryEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openTelemetryEndpoint"); else _explicitNullProperties?.Remove("openTelemetryEndpoint"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOpenTelemetryEndpoint = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OptionsAllowlist { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOptionsAllowlist = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OptionsAllowlist { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOptionsAllowlist = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Organization { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Organization { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOrganization = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OrganizationDomain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OrganizationDomain { get => _explicitNullValueOrganizationDomain; set { _explicitNullValueOrganizationDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationDomain"); else _explicitNullProperties?.Remove("organizationDomain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOrganizationDomain = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OrganizationDomain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OrganizationDomain { get => _explicitNullValueOrganizationDomain; set { _explicitNullValueOrganizationDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationDomain"); else _explicitNullProperties?.Remove("organizationDomain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOrganizationDomain = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OrganizationTeam { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OrganizationTeam { get => _explicitNullValueOrganizationTeam; set { _explicitNullValueOrganizationTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationTeam"); else _explicitNullProperties?.Remove("organizationTeam"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOrganizationTeam = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OrganizationTeam { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OrganizationTeam { get => _explicitNullValueOrganizationTeam; set { _explicitNullValueOrganizationTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationTeam"); else _explicitNullProperties?.Remove("organizationTeam"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOrganizationTeam = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OwnEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OwnEvent { get => _explicitNullValueOwnEvent; set { _explicitNullValueOwnEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownEvent"); else _explicitNullProperties?.Remove("ownEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOwnEvent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OwnEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OwnEvent { get => _explicitNullValueOwnEvent; set { _explicitNullValueOwnEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownEvent"); else _explicitNullProperties?.Remove("ownEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOwnEvent = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PageIntegrity { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PageIntegrity { get => _explicitNullValuePageIntegrity; set { _explicitNullValuePageIntegrity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageIntegrity"); else _explicitNullProperties?.Remove("pageIntegrity"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePageIntegrity = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PageIntegrity { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PageIntegrity { get => _explicitNullValuePageIntegrity; set { _explicitNullValuePageIntegrity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageIntegrity"); else _explicitNullProperties?.Remove("pageIntegrity"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePageIntegrity = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PasswordProtection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePasswordProtection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PasswordProtection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePasswordProtection = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PasswordProtectionInvoiceItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PasswordProtectionInvoiceItem { get => _explicitNullValuePasswordProtectionInvoiceItem; set { _explicitNullValuePasswordProtectionInvoiceItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtectionInvoiceItem"); else _explicitNullProperties?.Remove("passwordProtectionInvoiceItem"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePasswordProtectionInvoiceItem = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PasswordProtectionInvoiceItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PasswordProtectionInvoiceItem { get => _explicitNullValuePasswordProtectionInvoiceItem; set { _explicitNullValuePasswordProtectionInvoiceItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtectionInvoiceItem"); else _explicitNullProperties?.Remove("passwordProtectionInvoiceItem"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePasswordProtectionInvoiceItem = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PaymentMethod { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePaymentMethod = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PaymentMethod { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethod"); else _explicitNullProperties?.Remove("paymentMethod"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePaymentMethod = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Permissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Permissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePermissions = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Postgres { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Postgres { get => _explicitNullValuePostgres; set { _explicitNullValuePostgres = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres"); else _explicitNullProperties?.Remove("postgres"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePostgres = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Postgres { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Postgres { get => _explicitNullValuePostgres; set { _explicitNullValuePostgres = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres"); else _explicitNullProperties?.Remove("postgres"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePostgres = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PostgresStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PostgresStoreTokenSet { get => _explicitNullValuePostgresStoreTokenSet; set { _explicitNullValuePostgresStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgresStoreTokenSet"); else _explicitNullProperties?.Remove("postgresStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePostgresStoreTokenSet = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PostgresStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PostgresStoreTokenSet { get => _explicitNullValuePostgresStoreTokenSet; set { _explicitNullValuePostgresStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgresStoreTokenSet"); else _explicitNullProperties?.Remove("postgresStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePostgresStoreTokenSet = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PreviewDeploymentSuffix { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePreviewDeploymentSuffix = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PreviewDeploymentSuffix { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePreviewDeploymentSuffix = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PrivateCloudAccount { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PrivateCloudAccount { get => _explicitNullValuePrivateCloudAccount; set { _explicitNullValuePrivateCloudAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateCloudAccount"); else _explicitNullProperties?.Remove("privateCloudAccount"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePrivateCloudAccount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PrivateCloudAccount { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PrivateCloudAccount { get => _explicitNullValuePrivateCloudAccount; set { _explicitNullValuePrivateCloudAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateCloudAccount"); else _explicitNullProperties?.Remove("privateCloudAccount"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePrivateCloudAccount = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PrivateLinkEndpoint { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PrivateLinkEndpoint { get => _explicitNullValuePrivateLinkEndpoint; set { _explicitNullValuePrivateLinkEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateLinkEndpoint"); else _explicitNullProperties?.Remove("privateLinkEndpoint"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePrivateLinkEndpoint = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PrivateLinkEndpoint { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PrivateLinkEndpoint { get => _explicitNullValuePrivateLinkEndpoint; set { _explicitNullValuePrivateLinkEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateLinkEndpoint"); else _explicitNullProperties?.Remove("privateLinkEndpoint"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePrivateLinkEndpoint = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProductionAliasProtectionBypass { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProductionAliasProtectionBypass { get => _explicitNullValueProductionAliasProtectionBypass; set { _explicitNullValueProductionAliasProtectionBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productionAliasProtectionBypass"); else _explicitNullProperties?.Remove("productionAliasProtectionBypass"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProductionAliasProtectionBypass = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProductionAliasProtectionBypass { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProductionAliasProtectionBypass { get => _explicitNullValueProductionAliasProtectionBypass; set { _explicitNullValueProductionAliasProtectionBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productionAliasProtectionBypass"); else _explicitNullProperties?.Remove("productionAliasProtectionBypass"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProductionAliasProtectionBypass = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProductionShareableLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProductionShareableLink { get => _explicitNullValueProductionShareableLink; set { _explicitNullValueProductionShareableLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productionShareableLink"); else _explicitNullProperties?.Remove("productionShareableLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProductionShareableLink = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProductionShareableLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProductionShareableLink { get => _explicitNullValueProductionShareableLink; set { _explicitNullValueProductionShareableLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productionShareableLink"); else _explicitNullProperties?.Remove("productionShareableLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProductionShareableLink = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Project { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Project { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProject = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectAccessGroup { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectAccessGroup { get => _explicitNullValueProjectAccessGroup; set { _explicitNullValueProjectAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAccessGroup"); else _explicitNullProperties?.Remove("projectAccessGroup"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectAccessGroup = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectAccessGroup { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectAccessGroup { get => _explicitNullValueProjectAccessGroup; set { _explicitNullValueProjectAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAccessGroup"); else _explicitNullProperties?.Remove("projectAccessGroup"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectAccessGroup = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectAnalyticsSampling { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectAnalyticsSampling { get => _explicitNullValueProjectAnalyticsSampling; set { _explicitNullValueProjectAnalyticsSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalyticsSampling"); else _explicitNullProperties?.Remove("projectAnalyticsSampling"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectAnalyticsSampling = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectAnalyticsSampling { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectAnalyticsSampling { get => _explicitNullValueProjectAnalyticsSampling; set { _explicitNullValueProjectAnalyticsSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalyticsSampling"); else _explicitNullProperties?.Remove("projectAnalyticsSampling"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectAnalyticsSampling = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectAnalyticsUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectAnalyticsUsage { get => _explicitNullValueProjectAnalyticsUsage; set { _explicitNullValueProjectAnalyticsUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalyticsUsage"); else _explicitNullProperties?.Remove("projectAnalyticsUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectAnalyticsUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectAnalyticsUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectAnalyticsUsage { get => _explicitNullValueProjectAnalyticsUsage; set { _explicitNullValueProjectAnalyticsUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalyticsUsage"); else _explicitNullProperties?.Remove("projectAnalyticsUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectAnalyticsUsage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectCheck { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectCheck { get => _explicitNullValueProjectCheck; set { _explicitNullValueProjectCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectCheck"); else _explicitNullProperties?.Remove("projectCheck"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectCheck = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectCheck { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectCheck { get => _explicitNullValueProjectCheck; set { _explicitNullValueProjectCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectCheck"); else _explicitNullProperties?.Remove("projectCheck"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectCheck = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectCheckRun { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectCheckRun { get => _explicitNullValueProjectCheckRun; set { _explicitNullValueProjectCheckRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectCheckRun"); else _explicitNullProperties?.Remove("projectCheckRun"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectCheckRun = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectCheckRun { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectCheckRun { get => _explicitNullValueProjectCheckRun; set { _explicitNullValueProjectCheckRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectCheckRun"); else _explicitNullProperties?.Remove("projectCheckRun"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectCheckRun = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDeploymentExpiration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDeploymentExpiration { get => _explicitNullValueProjectDeploymentExpiration; set { _explicitNullValueProjectDeploymentExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDeploymentExpiration"); else _explicitNullProperties?.Remove("projectDeploymentExpiration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectDeploymentExpiration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDeploymentExpiration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDeploymentExpiration { get => _explicitNullValueProjectDeploymentExpiration; set { _explicitNullValueProjectDeploymentExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDeploymentExpiration"); else _explicitNullProperties?.Remove("projectDeploymentExpiration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectDeploymentExpiration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDeploymentHook { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDeploymentHook { get => _explicitNullValueProjectDeploymentHook; set { _explicitNullValueProjectDeploymentHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDeploymentHook"); else _explicitNullProperties?.Remove("projectDeploymentHook"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectDeploymentHook = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDeploymentHook { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDeploymentHook { get => _explicitNullValueProjectDeploymentHook; set { _explicitNullValueProjectDeploymentHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDeploymentHook"); else _explicitNullProperties?.Remove("projectDeploymentHook"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectDeploymentHook = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDeploymentProtectionStrict { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDeploymentProtectionStrict { get => _explicitNullValueProjectDeploymentProtectionStrict; set { _explicitNullValueProjectDeploymentProtectionStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDeploymentProtectionStrict"); else _explicitNullProperties?.Remove("projectDeploymentProtectionStrict"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectDeploymentProtectionStrict = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDeploymentProtectionStrict { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDeploymentProtectionStrict { get => _explicitNullValueProjectDeploymentProtectionStrict; set { _explicitNullValueProjectDeploymentProtectionStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDeploymentProtectionStrict"); else _explicitNullProperties?.Remove("projectDeploymentProtectionStrict"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectDeploymentProtectionStrict = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomain { get => _explicitNullValueProjectDomain; set { _explicitNullValueProjectDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomain"); else _explicitNullProperties?.Remove("projectDomain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectDomain = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomain { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomain { get => _explicitNullValueProjectDomain; set { _explicitNullValueProjectDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomain"); else _explicitNullProperties?.Remove("projectDomain"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectDomain = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomainCheckConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomainCheckConfig { get => _explicitNullValueProjectDomainCheckConfig; set { _explicitNullValueProjectDomainCheckConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomainCheckConfig"); else _explicitNullProperties?.Remove("projectDomainCheckConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectDomainCheckConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainCheckConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainCheckConfig { get => _explicitNullValueProjectDomainCheckConfig; set { _explicitNullValueProjectDomainCheckConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomainCheckConfig"); else _explicitNullProperties?.Remove("projectDomainCheckConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectDomainCheckConfig = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomainMove { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomainMove { get => _explicitNullValueProjectDomainMove; set { _explicitNullValueProjectDomainMove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomainMove"); else _explicitNullProperties?.Remove("projectDomainMove"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectDomainMove = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainMove { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainMove { get => _explicitNullValueProjectDomainMove; set { _explicitNullValueProjectDomainMove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomainMove"); else _explicitNullProperties?.Remove("projectDomainMove"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectDomainMove = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomainVerify { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomainVerify { get => _explicitNullValueProjectDomainVerify; set { _explicitNullValueProjectDomainVerify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomainVerify"); else _explicitNullProperties?.Remove("projectDomainVerify"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectDomainVerify = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainVerify { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainVerify { get => _explicitNullValueProjectDomainVerify; set { _explicitNullValueProjectDomainVerify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectDomainVerify"); else _explicitNullProperties?.Remove("projectDomainVerify"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectDomainVerify = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEnvVars { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEnvVars { get => _explicitNullValueProjectEnvVars; set { _explicitNullValueProjectEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEnvVars"); else _explicitNullProperties?.Remove("projectEnvVars"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectEnvVars = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEnvVars { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEnvVars { get => _explicitNullValueProjectEnvVars; set { _explicitNullValueProjectEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEnvVars"); else _explicitNullProperties?.Remove("projectEnvVars"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectEnvVars = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEnvVarsProduction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEnvVarsProduction { get => _explicitNullValueProjectEnvVarsProduction; set { _explicitNullValueProjectEnvVarsProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEnvVarsProduction"); else _explicitNullProperties?.Remove("projectEnvVarsProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectEnvVarsProduction = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEnvVarsProduction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEnvVarsProduction { get => _explicitNullValueProjectEnvVarsProduction; set { _explicitNullValueProjectEnvVarsProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEnvVarsProduction"); else _explicitNullProperties?.Remove("projectEnvVarsProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectEnvVarsProduction = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEnvVarsUnownedByIntegration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEnvVarsUnownedByIntegration { get => _explicitNullValueProjectEnvVarsUnownedByIntegration; set { _explicitNullValueProjectEnvVarsUnownedByIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEnvVarsUnownedByIntegration"); else _explicitNullProperties?.Remove("projectEnvVarsUnownedByIntegration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectEnvVarsUnownedByIntegration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEnvVarsUnownedByIntegration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEnvVarsUnownedByIntegration { get => _explicitNullValueProjectEnvVarsUnownedByIntegration; set { _explicitNullValueProjectEnvVarsUnownedByIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEnvVarsUnownedByIntegration"); else _explicitNullProperties?.Remove("projectEnvVarsUnownedByIntegration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectEnvVarsUnownedByIntegration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectEvent { get => _explicitNullValueProjectEvent; set { _explicitNullValueProjectEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEvent"); else _explicitNullProperties?.Remove("projectEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectEvent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectEvent { get => _explicitNullValueProjectEvent; set { _explicitNullValueProjectEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectEvent"); else _explicitNullProperties?.Remove("projectEvent"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectEvent = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlags { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlags { get => _explicitNullValueProjectFlags; set { _explicitNullValueProjectFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlags"); else _explicitNullProperties?.Remove("projectFlags"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectFlags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlags { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlags { get => _explicitNullValueProjectFlags; set { _explicitNullValueProjectFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlags"); else _explicitNullProperties?.Remove("projectFlags"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectFlags = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlagsProduction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlagsProduction { get => _explicitNullValueProjectFlagsProduction; set { _explicitNullValueProjectFlagsProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsProduction"); else _explicitNullProperties?.Remove("projectFlagsProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectFlagsProduction = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlagsProduction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlagsProduction { get => _explicitNullValueProjectFlagsProduction; set { _explicitNullValueProjectFlagsProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsProduction"); else _explicitNullProperties?.Remove("projectFlagsProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectFlagsProduction = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlagsSdkKey { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlagsSdkKey { get => _explicitNullValueProjectFlagsSdkKey; set { _explicitNullValueProjectFlagsSdkKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsSdkKey"); else _explicitNullProperties?.Remove("projectFlagsSdkKey"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectFlagsSdkKey = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlagsSdkKey { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlagsSdkKey { get => _explicitNullValueProjectFlagsSdkKey; set { _explicitNullValueProjectFlagsSdkKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsSdkKey"); else _explicitNullProperties?.Remove("projectFlagsSdkKey"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectFlagsSdkKey = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFromV0 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFromV0 { get => _explicitNullValueProjectFromV0; set { _explicitNullValueProjectFromV0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFromV0"); else _explicitNullProperties?.Remove("projectFromV0"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectFromV0 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFromV0 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFromV0 { get => _explicitNullValueProjectFromV0; set { _explicitNullValueProjectFromV0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFromV0"); else _explicitNullProperties?.Remove("projectFromV0"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectFromV0 = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectId = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectIntegrationConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectIntegrationConfiguration { get => _explicitNullValueProjectIntegrationConfiguration; set { _explicitNullValueProjectIntegrationConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIntegrationConfiguration"); else _explicitNullProperties?.Remove("projectIntegrationConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectIntegrationConfiguration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectIntegrationConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectIntegrationConfiguration { get => _explicitNullValueProjectIntegrationConfiguration; set { _explicitNullValueProjectIntegrationConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIntegrationConfiguration"); else _explicitNullProperties?.Remove("projectIntegrationConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectIntegrationConfiguration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectLink { get => _explicitNullValueProjectLink; set { _explicitNullValueProjectLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectLink"); else _explicitNullProperties?.Remove("projectLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectLink = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectLink { get => _explicitNullValueProjectLink; set { _explicitNullValueProjectLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectLink"); else _explicitNullProperties?.Remove("projectLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectLink = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectMember { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectMember { get => _explicitNullValueProjectMember; set { _explicitNullValueProjectMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectMember"); else _explicitNullProperties?.Remove("projectMember"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectMember = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectMember { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectMember { get => _explicitNullValueProjectMember; set { _explicitNullValueProjectMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectMember"); else _explicitNullProperties?.Remove("projectMember"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectMember = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectMonitoring { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectMonitoring { get => _explicitNullValueProjectMonitoring; set { _explicitNullValueProjectMonitoring = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectMonitoring"); else _explicitNullProperties?.Remove("projectMonitoring"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectMonitoring = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectMonitoring { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectMonitoring { get => _explicitNullValueProjectMonitoring; set { _explicitNullValueProjectMonitoring = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectMonitoring"); else _explicitNullProperties?.Remove("projectMonitoring"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectMonitoring = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectOIDCToken { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectOIDCToken { get => _explicitNullValueProjectOIDCToken; set { _explicitNullValueProjectOIDCToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectOIDCToken"); else _explicitNullProperties?.Remove("projectOIDCToken"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectOIDCToken = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectOIDCToken { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectOIDCToken { get => _explicitNullValueProjectOIDCToken; set { _explicitNullValueProjectOIDCToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectOIDCToken"); else _explicitNullProperties?.Remove("projectOIDCToken"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectOIDCToken = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectPermissions { get => _explicitNullValueProjectPermissions; set { _explicitNullValueProjectPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectPermissions"); else _explicitNullProperties?.Remove("projectPermissions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectPermissions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectPermissions { get => _explicitNullValueProjectPermissions; set { _explicitNullValueProjectPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectPermissions"); else _explicitNullProperties?.Remove("projectPermissions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectPermissions = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectProductionBranch { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectProductionBranch { get => _explicitNullValueProjectProductionBranch; set { _explicitNullValueProjectProductionBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectProductionBranch"); else _explicitNullProperties?.Remove("projectProductionBranch"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectProductionBranch = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectProductionBranch { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectProductionBranch { get => _explicitNullValueProjectProductionBranch; set { _explicitNullValueProjectProductionBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectProductionBranch"); else _explicitNullProperties?.Remove("projectProductionBranch"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectProductionBranch = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectProtectionBypass { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectProtectionBypass { get => _explicitNullValueProjectProtectionBypass; set { _explicitNullValueProjectProtectionBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectProtectionBypass"); else _explicitNullProperties?.Remove("projectProtectionBypass"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectProtectionBypass = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectProtectionBypass { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectProtectionBypass { get => _explicitNullValueProjectProtectionBypass; set { _explicitNullValueProjectProtectionBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectProtectionBypass"); else _explicitNullProperties?.Remove("projectProtectionBypass"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectProtectionBypass = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectRollingRelease { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectRollingRelease { get => _explicitNullValueProjectRollingRelease; set { _explicitNullValueProjectRollingRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectRollingRelease"); else _explicitNullProperties?.Remove("projectRollingRelease"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectRollingRelease = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectRollingRelease { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectRollingRelease { get => _explicitNullValueProjectRollingRelease; set { _explicitNullValueProjectRollingRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectRollingRelease"); else _explicitNullProperties?.Remove("projectRollingRelease"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectRollingRelease = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectRoutes { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectRoutes { get => _explicitNullValueProjectRoutes; set { _explicitNullValueProjectRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectRoutes"); else _explicitNullProperties?.Remove("projectRoutes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectRoutes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectRoutes { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectRoutes { get => _explicitNullValueProjectRoutes; set { _explicitNullValueProjectRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectRoutes"); else _explicitNullProperties?.Remove("projectRoutes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectRoutes = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectSetting { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectSetting { get => _explicitNullValueProjectSetting; set { _explicitNullValueProjectSetting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSetting"); else _explicitNullProperties?.Remove("projectSetting"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectSetting = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectSetting { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectSetting { get => _explicitNullValueProjectSetting; set { _explicitNullValueProjectSetting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSetting"); else _explicitNullProperties?.Remove("projectSetting"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectSetting = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectSupportCase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectSupportCase { get => _explicitNullValueProjectSupportCase; set { _explicitNullValueProjectSupportCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSupportCase"); else _explicitNullProperties?.Remove("projectSupportCase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectSupportCase = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectSupportCase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectSupportCase { get => _explicitNullValueProjectSupportCase; set { _explicitNullValueProjectSupportCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSupportCase"); else _explicitNullProperties?.Remove("projectSupportCase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectSupportCase = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectSupportCaseComment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectSupportCaseComment { get => _explicitNullValueProjectSupportCaseComment; set { _explicitNullValueProjectSupportCaseComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSupportCaseComment"); else _explicitNullProperties?.Remove("projectSupportCaseComment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectSupportCaseComment = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectSupportCaseComment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectSupportCaseComment { get => _explicitNullValueProjectSupportCaseComment; set { _explicitNullValueProjectSupportCaseComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSupportCaseComment"); else _explicitNullProperties?.Remove("projectSupportCaseComment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectSupportCaseComment = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTier { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTier { get => _explicitNullValueProjectTier; set { _explicitNullValueProjectTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTier"); else _explicitNullProperties?.Remove("projectTier"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectTier = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTier { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTier { get => _explicitNullValueProjectTier; set { _explicitNullValueProjectTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTier"); else _explicitNullProperties?.Remove("projectTier"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectTier = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransfer { get => _explicitNullValueProjectTransfer; set { _explicitNullValueProjectTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransfer"); else _explicitNullProperties?.Remove("projectTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectTransfer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransfer { get => _explicitNullValueProjectTransfer; set { _explicitNullValueProjectTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransfer"); else _explicitNullProperties?.Remove("projectTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectTransfer = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransferIn { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransferIn { get => _explicitNullValueProjectTransferIn; set { _explicitNullValueProjectTransferIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransferIn"); else _explicitNullProperties?.Remove("projectTransferIn"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectTransferIn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransferIn { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransferIn { get => _explicitNullValueProjectTransferIn; set { _explicitNullValueProjectTransferIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransferIn"); else _explicitNullProperties?.Remove("projectTransferIn"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectTransferIn = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransferOut { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransferOut { get => _explicitNullValueProjectTransferOut; set { _explicitNullValueProjectTransferOut = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransferOut"); else _explicitNullProperties?.Remove("projectTransferOut"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectTransferOut = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransferOut { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransferOut { get => _explicitNullValueProjectTransferOut; set { _explicitNullValueProjectTransferOut = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransferOut"); else _explicitNullProperties?.Remove("projectTransferOut"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectTransferOut = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransferRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectTransferRequest { get => _explicitNullValueProjectTransferRequest; set { _explicitNullValueProjectTransferRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransferRequest"); else _explicitNullProperties?.Remove("projectTransferRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectTransferRequest = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransferRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectTransferRequest { get => _explicitNullValueProjectTransferRequest; set { _explicitNullValueProjectTransferRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectTransferRequest"); else _explicitNullProperties?.Remove("projectTransferRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectTransferRequest = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectUsage { get => _explicitNullValueProjectUsage; set { _explicitNullValueProjectUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectUsage"); else _explicitNullProperties?.Remove("projectUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectUsage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectUsage { get => _explicitNullValueProjectUsage; set { _explicitNullValueProjectUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectUsage"); else _explicitNullProperties?.Remove("projectUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectUsage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProTrialOnboarding { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProTrialOnboarding { get => _explicitNullValueProTrialOnboarding; set { _explicitNullValueProTrialOnboarding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proTrialOnboarding"); else _explicitNullProperties?.Remove("proTrialOnboarding"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProTrialOnboarding = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProTrialOnboarding { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProTrialOnboarding { get => _explicitNullValueProTrialOnboarding; set { _explicitNullValueProTrialOnboarding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proTrialOnboarding"); else _explicitNullProperties?.Remove("proTrialOnboarding"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProTrialOnboarding = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? RateLimit { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueRateLimit = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> RateLimit { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueRateLimit = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Redis { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Redis { get => _explicitNullValueRedis; set { _explicitNullValueRedis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redis"); else _explicitNullProperties?.Remove("redis"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueRedis = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Redis { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Redis { get => _explicitNullValueRedis; set { _explicitNullValueRedis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redis"); else _explicitNullProperties?.Remove("redis"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueRedis = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? RedisStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? RedisStoreTokenSet { get => _explicitNullValueRedisStoreTokenSet; set { _explicitNullValueRedisStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redisStoreTokenSet"); else _explicitNullProperties?.Remove("redisStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueRedisStoreTokenSet = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> RedisStoreTokenSet { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> RedisStoreTokenSet { get => _explicitNullValueRedisStoreTokenSet; set { _explicitNullValueRedisStoreTokenSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redisStoreTokenSet"); else _explicitNullProperties?.Remove("redisStoreTokenSet"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueRedisStoreTokenSet = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? RemoteCaching { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueRemoteCaching = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> RemoteCaching { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueRemoteCaching = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Repository { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Repository { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueRepository = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SamlConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SamlConfig { get => _explicitNullValueSamlConfig; set { _explicitNullValueSamlConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samlConfig"); else _explicitNullProperties?.Remove("samlConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSamlConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SamlConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SamlConfig { get => _explicitNullValueSamlConfig; set { _explicitNullValueSamlConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samlConfig"); else _explicitNullProperties?.Remove("samlConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSamlConfig = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Schedule { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Schedule { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSchedule = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SeawallConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SeawallConfig { get => _explicitNullValueSeawallConfig; set { _explicitNullValueSeawallConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seawallConfig"); else _explicitNullProperties?.Remove("seawallConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSeawallConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SeawallConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SeawallConfig { get => _explicitNullValueSeawallConfig; set { _explicitNullValueSeawallConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seawallConfig"); else _explicitNullProperties?.Remove("seawallConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSeawallConfig = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Secret { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Secret { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSecret = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SecurityConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SecurityConfig { get => _explicitNullValueSecurityConfig; set { _explicitNullValueSecurityConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityConfig"); else _explicitNullProperties?.Remove("securityConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSecurityConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SecurityConfig { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SecurityConfig { get => _explicitNullValueSecurityConfig; set { _explicitNullValueSecurityConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityConfig"); else _explicitNullProperties?.Remove("securityConfig"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSecurityConfig = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SecurityPlusConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SecurityPlusConfiguration { get => _explicitNullValueSecurityPlusConfiguration; set { _explicitNullValueSecurityPlusConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityPlusConfiguration"); else _explicitNullProperties?.Remove("securityPlusConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSecurityPlusConfiguration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SecurityPlusConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SecurityPlusConfiguration { get => _explicitNullValueSecurityPlusConfiguration; set { _explicitNullValueSecurityPlusConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityPlusConfiguration"); else _explicitNullProperties?.Remove("securityPlusConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSecurityPlusConfiguration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SensitiveEnvironmentVariablePolicy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SensitiveEnvironmentVariablePolicy { get => _explicitNullValueSensitiveEnvironmentVariablePolicy; set { _explicitNullValueSensitiveEnvironmentVariablePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveEnvironmentVariablePolicy"); else _explicitNullProperties?.Remove("sensitiveEnvironmentVariablePolicy"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSensitiveEnvironmentVariablePolicy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SensitiveEnvironmentVariablePolicy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SensitiveEnvironmentVariablePolicy { get => _explicitNullValueSensitiveEnvironmentVariablePolicy; set { _explicitNullValueSensitiveEnvironmentVariablePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveEnvironmentVariablePolicy"); else _explicitNullProperties?.Remove("sensitiveEnvironmentVariablePolicy"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSensitiveEnvironmentVariablePolicy = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Setting { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Setting { get => _explicitNullValueSetting; set { _explicitNullValueSetting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setting"); else _explicitNullProperties?.Remove("setting"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSetting = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Setting { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Setting { get => _explicitNullValueSetting; set { _explicitNullValueSetting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setting"); else _explicitNullProperties?.Remove("setting"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSetting = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ShareableLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ShareableLink { get => _explicitNullValueShareableLink; set { _explicitNullValueShareableLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareableLink"); else _explicitNullProperties?.Remove("shareableLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueShareableLink = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ShareableLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ShareableLink { get => _explicitNullValueShareableLink; set { _explicitNullValueShareableLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareableLink"); else _explicitNullProperties?.Remove("shareableLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueShareableLink = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ShareableLinkStrict { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ShareableLinkStrict { get => _explicitNullValueShareableLinkStrict; set { _explicitNullValueShareableLinkStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareableLinkStrict"); else _explicitNullProperties?.Remove("shareableLinkStrict"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueShareableLinkStrict = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ShareableLinkStrict { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ShareableLinkStrict { get => _explicitNullValueShareableLinkStrict; set { _explicitNullValueShareableLinkStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareableLinkStrict"); else _explicitNullProperties?.Remove("shareableLinkStrict"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueShareableLinkStrict = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SharedEnvVarConnection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SharedEnvVarConnection { get => _explicitNullValueSharedEnvVarConnection; set { _explicitNullValueSharedEnvVarConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedEnvVarConnection"); else _explicitNullProperties?.Remove("sharedEnvVarConnection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSharedEnvVarConnection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SharedEnvVarConnection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SharedEnvVarConnection { get => _explicitNullValueSharedEnvVarConnection; set { _explicitNullValueSharedEnvVarConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedEnvVarConnection"); else _explicitNullProperties?.Remove("sharedEnvVarConnection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSharedEnvVarConnection = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SharedEnvVars { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SharedEnvVars { get => _explicitNullValueSharedEnvVars; set { _explicitNullValueSharedEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedEnvVars"); else _explicitNullProperties?.Remove("sharedEnvVars"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSharedEnvVars = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SharedEnvVars { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SharedEnvVars { get => _explicitNullValueSharedEnvVars; set { _explicitNullValueSharedEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedEnvVars"); else _explicitNullProperties?.Remove("sharedEnvVars"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSharedEnvVars = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SharedEnvVarsProduction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SharedEnvVarsProduction { get => _explicitNullValueSharedEnvVarsProduction; set { _explicitNullValueSharedEnvVarsProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedEnvVarsProduction"); else _explicitNullProperties?.Remove("sharedEnvVarsProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSharedEnvVarsProduction = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SharedEnvVarsProduction { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SharedEnvVarsProduction { get => _explicitNullValueSharedEnvVarsProduction; set { _explicitNullValueSharedEnvVarsProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedEnvVarsProduction"); else _explicitNullProperties?.Remove("sharedEnvVarsProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSharedEnvVarsProduction = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SkewProtection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SkewProtection { get => _explicitNullValueSkewProtection; set { _explicitNullValueSkewProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtection"); else _explicitNullProperties?.Remove("skewProtection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSkewProtection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SkewProtection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SkewProtection { get => _explicitNullValueSkewProtection; set { _explicitNullValueSkewProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtection"); else _explicitNullProperties?.Remove("skewProtection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSkewProtection = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Space { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Space { get => _explicitNullValueSpace; set { _explicitNullValueSpace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("space"); else _explicitNullProperties?.Remove("space"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSpace = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Space { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Space { get => _explicitNullValueSpace; set { _explicitNullValueSpace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("space"); else _explicitNullProperties?.Remove("space"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSpace = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SpaceRun { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SpaceRun { get => _explicitNullValueSpaceRun; set { _explicitNullValueSpaceRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spaceRun"); else _explicitNullProperties?.Remove("spaceRun"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSpaceRun = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SpaceRun { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SpaceRun { get => _explicitNullValueSpaceRun; set { _explicitNullValueSpaceRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spaceRun"); else _explicitNullProperties?.Remove("spaceRun"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSpaceRun = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? StoreIsLocked { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? StoreIsLocked { get => _explicitNullValueStoreIsLocked; set { _explicitNullValueStoreIsLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeIsLocked"); else _explicitNullProperties?.Remove("storeIsLocked"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueStoreIsLocked = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> StoreIsLocked { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> StoreIsLocked { get => _explicitNullValueStoreIsLocked; set { _explicitNullValueStoreIsLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeIsLocked"); else _explicitNullProperties?.Remove("storeIsLocked"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueStoreIsLocked = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? StoreTokenSetSensitive { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? StoreTokenSetSensitive { get => _explicitNullValueStoreTokenSetSensitive; set { _explicitNullValueStoreTokenSetSensitive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeTokenSetSensitive"); else _explicitNullProperties?.Remove("storeTokenSetSensitive"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueStoreTokenSetSensitive = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> StoreTokenSetSensitive { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> StoreTokenSetSensitive { get => _explicitNullValueStoreTokenSetSensitive; set { _explicitNullValueStoreTokenSetSensitive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeTokenSetSensitive"); else _explicitNullProperties?.Remove("storeTokenSetSensitive"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueStoreTokenSetSensitive = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? StoreTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? StoreTransfer { get => _explicitNullValueStoreTransfer; set { _explicitNullValueStoreTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeTransfer"); else _explicitNullProperties?.Remove("storeTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueStoreTransfer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> StoreTransfer { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> StoreTransfer { get => _explicitNullValueStoreTransfer; set { _explicitNullValueStoreTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeTransfer"); else _explicitNullProperties?.Remove("storeTransfer"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueStoreTransfer = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SupportCase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SupportCase { get => _explicitNullValueSupportCase; set { _explicitNullValueSupportCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportCase"); else _explicitNullProperties?.Remove("supportCase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSupportCase = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SupportCase { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SupportCase { get => _explicitNullValueSupportCase; set { _explicitNullValueSupportCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportCase"); else _explicitNullProperties?.Remove("supportCase"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSupportCase = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SupportCaseComment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SupportCaseComment { get => _explicitNullValueSupportCaseComment; set { _explicitNullValueSupportCaseComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportCaseComment"); else _explicitNullProperties?.Remove("supportCaseComment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSupportCaseComment = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SupportCaseComment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SupportCaseComment { get => _explicitNullValueSupportCaseComment; set { _explicitNullValueSupportCaseComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportCaseComment"); else _explicitNullProperties?.Remove("supportCaseComment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSupportCaseComment = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Team { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeam = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Team { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeam = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamAccessRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamAccessRequest { get => _explicitNullValueTeamAccessRequest; set { _explicitNullValueTeamAccessRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamAccessRequest"); else _explicitNullProperties?.Remove("teamAccessRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamAccessRequest = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamAccessRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamAccessRequest { get => _explicitNullValueTeamAccessRequest; set { _explicitNullValueTeamAccessRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamAccessRequest"); else _explicitNullProperties?.Remove("teamAccessRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamAccessRequest = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamFellowMembership { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamFellowMembership { get => _explicitNullValueTeamFellowMembership; set { _explicitNullValueTeamFellowMembership = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamFellowMembership"); else _explicitNullProperties?.Remove("teamFellowMembership"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamFellowMembership = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamFellowMembership { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamFellowMembership { get => _explicitNullValueTeamFellowMembership; set { _explicitNullValueTeamFellowMembership = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamFellowMembership"); else _explicitNullProperties?.Remove("teamFellowMembership"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamFellowMembership = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamGitExclusivity { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamGitExclusivity { get => _explicitNullValueTeamGitExclusivity; set { _explicitNullValueTeamGitExclusivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamGitExclusivity"); else _explicitNullProperties?.Remove("teamGitExclusivity"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamGitExclusivity = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamGitExclusivity { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamGitExclusivity { get => _explicitNullValueTeamGitExclusivity; set { _explicitNullValueTeamGitExclusivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamGitExclusivity"); else _explicitNullProperties?.Remove("teamGitExclusivity"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamGitExclusivity = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamInvite { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamInvite { get => _explicitNullValueTeamInvite; set { _explicitNullValueTeamInvite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamInvite"); else _explicitNullProperties?.Remove("teamInvite"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamInvite = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamInvite { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamInvite { get => _explicitNullValueTeamInvite; set { _explicitNullValueTeamInvite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamInvite"); else _explicitNullProperties?.Remove("teamInvite"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamInvite = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamInviteCode { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamInviteCode { get => _explicitNullValueTeamInviteCode; set { _explicitNullValueTeamInviteCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamInviteCode"); else _explicitNullProperties?.Remove("teamInviteCode"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamInviteCode = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamInviteCode { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamInviteCode { get => _explicitNullValueTeamInviteCode; set { _explicitNullValueTeamInviteCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamInviteCode"); else _explicitNullProperties?.Remove("teamInviteCode"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamInviteCode = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamInviteLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamInviteLink { get => _explicitNullValueTeamInviteLink; set { _explicitNullValueTeamInviteLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamInviteLink"); else _explicitNullProperties?.Remove("teamInviteLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamInviteLink = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamInviteLink { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamInviteLink { get => _explicitNullValueTeamInviteLink; set { _explicitNullValueTeamInviteLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamInviteLink"); else _explicitNullProperties?.Remove("teamInviteLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamInviteLink = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamJoin { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamJoin { get => _explicitNullValueTeamJoin; set { _explicitNullValueTeamJoin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamJoin"); else _explicitNullProperties?.Remove("teamJoin"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamJoin = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamJoin { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamJoin { get => _explicitNullValueTeamJoin; set { _explicitNullValueTeamJoin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamJoin"); else _explicitNullProperties?.Remove("teamJoin"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamJoin = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamMemberMfaStatus { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamMemberMfaStatus { get => _explicitNullValueTeamMemberMfaStatus; set { _explicitNullValueTeamMemberMfaStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamMemberMfaStatus"); else _explicitNullProperties?.Remove("teamMemberMfaStatus"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamMemberMfaStatus = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamMemberMfaStatus { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamMemberMfaStatus { get => _explicitNullValueTeamMemberMfaStatus; set { _explicitNullValueTeamMemberMfaStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamMemberMfaStatus"); else _explicitNullProperties?.Remove("teamMemberMfaStatus"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamMemberMfaStatus = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamMicrofrontends { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamMicrofrontends { get => _explicitNullValueTeamMicrofrontends; set { _explicitNullValueTeamMicrofrontends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamMicrofrontends"); else _explicitNullProperties?.Remove("teamMicrofrontends"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamMicrofrontends = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamMicrofrontends { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamMicrofrontends { get => _explicitNullValueTeamMicrofrontends; set { _explicitNullValueTeamMicrofrontends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamMicrofrontends"); else _explicitNullProperties?.Remove("teamMicrofrontends"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamMicrofrontends = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamOwnMembership { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamOwnMembership { get => _explicitNullValueTeamOwnMembership; set { _explicitNullValueTeamOwnMembership = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamOwnMembership"); else _explicitNullProperties?.Remove("teamOwnMembership"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamOwnMembership = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamOwnMembership { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamOwnMembership { get => _explicitNullValueTeamOwnMembership; set { _explicitNullValueTeamOwnMembership = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamOwnMembership"); else _explicitNullProperties?.Remove("teamOwnMembership"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamOwnMembership = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamOwnMembershipDisconnectSAML { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamOwnMembershipDisconnectSAML { get => _explicitNullValueTeamOwnMembershipDisconnectSAML; set { _explicitNullValueTeamOwnMembershipDisconnectSAML = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamOwnMembershipDisconnectSAML"); else _explicitNullProperties?.Remove("teamOwnMembershipDisconnectSAML"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamOwnMembershipDisconnectSAML = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamOwnMembershipDisconnectSAML { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamOwnMembershipDisconnectSAML { get => _explicitNullValueTeamOwnMembershipDisconnectSAML; set { _explicitNullValueTeamOwnMembershipDisconnectSAML = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamOwnMembershipDisconnectSAML"); else _explicitNullProperties?.Remove("teamOwnMembershipDisconnectSAML"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamOwnMembershipDisconnectSAML = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamSudo { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamSudo { get => _explicitNullValueTeamSudo; set { _explicitNullValueTeamSudo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamSudo"); else _explicitNullProperties?.Remove("teamSudo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamSudo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamSudo { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamSudo { get => _explicitNullValueTeamSudo; set { _explicitNullValueTeamSudo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamSudo"); else _explicitNullProperties?.Remove("teamSudo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamSudo = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamTokenInvalidation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TeamTokenInvalidation { get => _explicitNullValueTeamTokenInvalidation; set { _explicitNullValueTeamTokenInvalidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamTokenInvalidation"); else _explicitNullProperties?.Remove("teamTokenInvalidation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTeamTokenInvalidation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamTokenInvalidation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TeamTokenInvalidation { get => _explicitNullValueTeamTokenInvalidation; set { _explicitNullValueTeamTokenInvalidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamTokenInvalidation"); else _explicitNullProperties?.Remove("teamTokenInvalidation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTeamTokenInvalidation = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Token { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueToken = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Token { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueToken = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ToolbarComment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ToolbarComment { get => _explicitNullValueToolbarComment; set { _explicitNullValueToolbarComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolbarComment"); else _explicitNullProperties?.Remove("toolbarComment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueToolbarComment = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ToolbarComment { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ToolbarComment { get => _explicitNullValueToolbarComment; set { _explicitNullValueToolbarComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolbarComment"); else _explicitNullProperties?.Remove("toolbarComment"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueToolbarComment = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TrustedIps { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TrustedIps { get => _explicitNullValueTrustedIps; set { _explicitNullValueTrustedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedIps"); else _explicitNullProperties?.Remove("trustedIps"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTrustedIps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TrustedIps { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TrustedIps { get => _explicitNullValueTrustedIps; set { _explicitNullValueTrustedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedIps"); else _explicitNullProperties?.Remove("trustedIps"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTrustedIps = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TrustedSources { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? TrustedSources { get => _explicitNullValueTrustedSources; set { _explicitNullValueTrustedSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedSources"); else _explicitNullProperties?.Remove("trustedSources"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueTrustedSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TrustedSources { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> TrustedSources { get => _explicitNullValueTrustedSources; set { _explicitNullValueTrustedSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedSources"); else _explicitNullProperties?.Remove("trustedSources"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueTrustedSources = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Usage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Usage { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueUsage = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UsageCycle { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UsageCycle { get => _explicitNullValueUsageCycle; set { _explicitNullValueUsageCycle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usageCycle"); else _explicitNullProperties?.Remove("usageCycle"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueUsageCycle = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UsageCycle { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UsageCycle { get => _explicitNullValueUsageCycle; set { _explicitNullValueUsageCycle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usageCycle"); else _explicitNullProperties?.Remove("usageCycle"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueUsageCycle = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? User { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> User { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueUser = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserConnection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserConnection { get => _explicitNullValueUserConnection; set { _explicitNullValueUserConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userConnection"); else _explicitNullProperties?.Remove("userConnection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueUserConnection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserConnection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserConnection { get => _explicitNullValueUserConnection; set { _explicitNullValueUserConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userConnection"); else _explicitNullProperties?.Remove("userConnection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueUserConnection = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserMfaConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserMfaConfiguration { get => _explicitNullValueUserMfaConfiguration; set { _explicitNullValueUserMfaConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userMfaConfiguration"); else _explicitNullProperties?.Remove("userMfaConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueUserMfaConfiguration = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserMfaConfiguration { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserMfaConfiguration { get => _explicitNullValueUserMfaConfiguration; set { _explicitNullValueUserMfaConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userMfaConfiguration"); else _explicitNullProperties?.Remove("userMfaConfiguration"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueUserMfaConfiguration = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserPreference { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserPreference { get => _explicitNullValueUserPreference; set { _explicitNullValueUserPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userPreference"); else _explicitNullProperties?.Remove("userPreference"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueUserPreference = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserPreference { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserPreference { get => _explicitNullValueUserPreference; set { _explicitNullValueUserPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userPreference"); else _explicitNullProperties?.Remove("userPreference"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueUserPreference = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserSudo { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? UserSudo { get => _explicitNullValueUserSudo; set { _explicitNullValueUserSudo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userSudo"); else _explicitNullProperties?.Remove("userSudo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueUserSudo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserSudo { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> UserSudo { get => _explicitNullValueUserSudo; set { _explicitNullValueUserSudo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userSudo"); else _explicitNullProperties?.Remove("userSudo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueUserSudo = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? V0Chat { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? V0Chat { get => _explicitNullValueV0Chat; set { _explicitNullValueV0Chat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v0Chat"); else _explicitNullProperties?.Remove("v0Chat"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueV0Chat = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> V0Chat { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> V0Chat { get => _explicitNullValueV0Chat; set { _explicitNullValueV0Chat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v0Chat"); else _explicitNullProperties?.Remove("v0Chat"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueV0Chat = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VcrRepository { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VcrRepository { get => _explicitNullValueVcrRepository; set { _explicitNullValueVcrRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vcrRepository"); else _explicitNullProperties?.Remove("vcrRepository"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueVcrRepository = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VcrRepository { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VcrRepository { get => _explicitNullValueVcrRepository; set { _explicitNullValueVcrRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vcrRepository"); else _explicitNullProperties?.Remove("vcrRepository"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueVcrRepository = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelAppInstallation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelAppInstallation { get => _explicitNullValueVercelAppInstallation; set { _explicitNullValueVercelAppInstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelAppInstallation"); else _explicitNullProperties?.Remove("vercelAppInstallation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueVercelAppInstallation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelAppInstallation { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelAppInstallation { get => _explicitNullValueVercelAppInstallation; set { _explicitNullValueVercelAppInstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelAppInstallation"); else _explicitNullProperties?.Remove("vercelAppInstallation"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueVercelAppInstallation = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelAppInstallationRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelAppInstallationRequest { get => _explicitNullValueVercelAppInstallationRequest; set { _explicitNullValueVercelAppInstallationRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelAppInstallationRequest"); else _explicitNullProperties?.Remove("vercelAppInstallationRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueVercelAppInstallationRequest = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelAppInstallationRequest { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelAppInstallationRequest { get => _explicitNullValueVercelAppInstallationRequest; set { _explicitNullValueVercelAppInstallationRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelAppInstallationRequest"); else _explicitNullProperties?.Remove("vercelAppInstallationRequest"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueVercelAppInstallationRequest = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelAuth { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelAuth { get => _explicitNullValueVercelAuth; set { _explicitNullValueVercelAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelAuth"); else _explicitNullProperties?.Remove("vercelAuth"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueVercelAuth = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelAuth { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelAuth { get => _explicitNullValueVercelAuth; set { _explicitNullValueVercelAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelAuth"); else _explicitNullProperties?.Remove("vercelAuth"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueVercelAuth = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelRun { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VercelRun { get => _explicitNullValueVercelRun; set { _explicitNullValueVercelRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelRun"); else _explicitNullProperties?.Remove("vercelRun"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueVercelRun = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelRun { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VercelRun { get => _explicitNullValueVercelRun; set { _explicitNullValueVercelRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelRun"); else _explicitNullProperties?.Remove("vercelRun"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueVercelRun = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VpcPeeringConnection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? VpcPeeringConnection { get => _explicitNullValueVpcPeeringConnection; set { _explicitNullValueVpcPeeringConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vpcPeeringConnection"); else _explicitNullProperties?.Remove("vpcPeeringConnection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueVpcPeeringConnection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VpcPeeringConnection { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> VpcPeeringConnection { get => _explicitNullValueVpcPeeringConnection; set { _explicitNullValueVpcPeeringConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vpcPeeringConnection"); else _explicitNullProperties?.Remove("vpcPeeringConnection"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueVpcPeeringConnection = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebAnalytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueWebAnalytics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebAnalytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueWebAnalytics = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebAnalyticsPlan { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebAnalyticsPlan { get => _explicitNullValueWebAnalyticsPlan; set { _explicitNullValueWebAnalyticsPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalyticsPlan"); else _explicitNullProperties?.Remove("webAnalyticsPlan"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueWebAnalyticsPlan = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebAnalyticsPlan { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebAnalyticsPlan { get => _explicitNullValueWebAnalyticsPlan; set { _explicitNullValueWebAnalyticsPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalyticsPlan"); else _explicitNullProperties?.Remove("webAnalyticsPlan"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueWebAnalyticsPlan = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebAuthn { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebAuthn { get => _explicitNullValueWebAuthn; set { _explicitNullValueWebAuthn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAuthn"); else _explicitNullProperties?.Remove("webAuthn"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueWebAuthn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebAuthn { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebAuthn { get => _explicitNullValueWebAuthn; set { _explicitNullValueWebAuthn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAuthn"); else _explicitNullProperties?.Remove("webAuthn"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueWebAuthn = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Webhook { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Webhook { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueWebhook = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebhookEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WebhookEvent { get => _explicitNullValueWebhookEvent; set { _explicitNullValueWebhookEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook-event"); else _explicitNullProperties?.Remove("webhook-event"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueWebhookEvent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebhookEvent { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WebhookEvent { get => _explicitNullValueWebhookEvent; set { _explicitNullValueWebhookEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook-event"); else _explicitNullProperties?.Remove("webhook-event"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueWebhookEvent = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WorkflowRunData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? WorkflowRunData { get => _explicitNullValueWorkflowRunData; set { _explicitNullValueWorkflowRunData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflowRunData"); else _explicitNullProperties?.Remove("workflowRunData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueWorkflowRunData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WorkflowRunData { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> WorkflowRunData { get => _explicitNullValueWorkflowRunData; set { _explicitNullValueWorkflowRunData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflowRunData"); else _explicitNullProperties?.Remove("workflowRunData"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueWorkflowRunData = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponsePermissions"/> and sets the default values.
@@ -2398,7 +3293,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponsePermissions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponsePermissions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponsePermissions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -3009,6 +3904,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("webhook", Webhook);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("webhook-event", WebhookEvent);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("workflowRunData", WorkflowRunData);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

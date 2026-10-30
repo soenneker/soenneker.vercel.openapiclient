@@ -12,57 +12,125 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf382 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
+            if (parseNode.GetChildNode("factors") is { } nullNodeFactors && nullNodeFactors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Factors = null;
+            if (parseNode.GetChildNode("geolocation") is { } nullNodeGeolocation && nullNodeGeolocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocation = null;
+            if (parseNode.GetChildNode("os") is { } nullNodeOs && nullNodeOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Os = null;
+            if (parseNode.GetChildNode("ssoType") is { } nullNodeSsoType && nullNodeSsoType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoType = null;
+            if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
+            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+            if (parseNode.GetChildNode("viaApple") is { } nullNodeViaApple && nullNodeViaApple.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaApple = null;
+            if (parseNode.GetChildNode("viaBitbucket") is { } nullNodeViaBitbucket && nullNodeViaBitbucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaBitbucket = null;
+            if (parseNode.GetChildNode("viaGithub") is { } nullNodeViaGithub && nullNodeViaGithub.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaGithub = null;
+            if (parseNode.GetChildNode("viaGitlab") is { } nullNodeViaGitlab && nullNodeViaGitlab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaGitlab = null;
+            if (parseNode.GetChildNode("viaGoogle") is { } nullNodeViaGoogle && nullNodeViaGoogle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaGoogle = null;
+            if (parseNode.GetChildNode("viaOTP") is { } nullNodeViaOTP && nullNodeViaOTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaOTP = null;
+            if (parseNode.GetChildNode("viaPasskey") is { } nullNodeViaPasskey && nullNodeViaPasskey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaPasskey = null;
+            if (parseNode.GetChildNode("viaSamlSso") is { } nullNodeViaSamlSso && nullNodeViaSamlSso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaSamlSso = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bitbucketEmail property</summary>
+        /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketEmail { get; set; }
+        public string? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private string? _explicitNullValueEnv = default!;
 #nullable restore
 #else
-        public string BitbucketEmail { get; set; }
+        public string Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private string _explicitNullValueEnv = default!;
 #endif
-        /// <summary>The bitbucketLogin property</summary>
+        /// <summary>The factors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketLogin { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>? Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>? _explicitNullValueFactors = default!;
 #nullable restore
 #else
-        public string BitbucketLogin { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem> Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem> _explicitNullValueFactors = default!;
 #endif
-        /// <summary>The bitbucketName property</summary>
+        /// <summary>The geolocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation? Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation? _explicitNullValueGeolocation = default!;
 #nullable restore
 #else
-        public string BitbucketName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation _explicitNullValueGeolocation = default!;
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>The os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        private string? _explicitNullValueOs = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        private string _explicitNullValueOs = default!;
 #endif
-        /// <summary>The zeitAccount property</summary>
+        /// <summary>The ssoType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZeitAccount { get; set; }
+        public string? SsoType { get => _explicitNullValueSsoType; set { _explicitNullValueSsoType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoType"); else _explicitNullProperties?.Remove("ssoType"); } }
+        private string? _explicitNullValueSsoType = default!;
 #nullable restore
 #else
-        public string ZeitAccount { get; set; }
+        public string SsoType { get => _explicitNullValueSsoType; set { _explicitNullValueSsoType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoType"); else _explicitNullProperties?.Remove("ssoType"); } }
+        private string _explicitNullValueSsoType = default!;
 #endif
-        /// <summary>The zeitAccountType property</summary>
+        /// <summary>The userAgent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZeitAccountType { get; set; }
+        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        private string? _explicitNullValueUserAgent = default!;
 #nullable restore
 #else
-        public string ZeitAccountType { get; set; }
+        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        private string _explicitNullValueUserAgent = default!;
 #endif
+        /// <summary>The username property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string? _explicitNullValueUsername = default!;
+#nullable restore
+#else
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string _explicitNullValueUsername = default!;
+#endif
+        /// <summary>The viaApple property</summary>
+        public bool? ViaApple { get => _explicitNullValueViaApple; set { _explicitNullValueViaApple = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaApple"); else _explicitNullProperties?.Remove("viaApple"); } }
+        private bool? _explicitNullValueViaApple = default!;
+        /// <summary>The viaBitbucket property</summary>
+        public bool? ViaBitbucket { get => _explicitNullValueViaBitbucket; set { _explicitNullValueViaBitbucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaBitbucket"); else _explicitNullProperties?.Remove("viaBitbucket"); } }
+        private bool? _explicitNullValueViaBitbucket = default!;
+        /// <summary>The viaGithub property</summary>
+        public bool? ViaGithub { get => _explicitNullValueViaGithub; set { _explicitNullValueViaGithub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaGithub"); else _explicitNullProperties?.Remove("viaGithub"); } }
+        private bool? _explicitNullValueViaGithub = default!;
+        /// <summary>The viaGitlab property</summary>
+        public bool? ViaGitlab { get => _explicitNullValueViaGitlab; set { _explicitNullValueViaGitlab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaGitlab"); else _explicitNullProperties?.Remove("viaGitlab"); } }
+        private bool? _explicitNullValueViaGitlab = default!;
+        /// <summary>The viaGoogle property</summary>
+        public bool? ViaGoogle { get => _explicitNullValueViaGoogle; set { _explicitNullValueViaGoogle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaGoogle"); else _explicitNullProperties?.Remove("viaGoogle"); } }
+        private bool? _explicitNullValueViaGoogle = default!;
+        /// <summary>The viaOTP property</summary>
+        public bool? ViaOTP { get => _explicitNullValueViaOTP; set { _explicitNullValueViaOTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaOTP"); else _explicitNullProperties?.Remove("viaOTP"); } }
+        private bool? _explicitNullValueViaOTP = default!;
+        /// <summary>The viaPasskey property</summary>
+        public bool? ViaPasskey { get => _explicitNullValueViaPasskey; set { _explicitNullValueViaPasskey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaPasskey"); else _explicitNullProperties?.Remove("viaPasskey"); } }
+        private bool? _explicitNullValueViaPasskey = default!;
+        /// <summary>The viaSamlSso property</summary>
+        public bool? ViaSamlSso { get => _explicitNullValueViaSamlSso; set { _explicitNullValueViaSamlSso = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaSamlSso"); else _explicitNullProperties?.Remove("viaSamlSso"); } }
+        private bool? _explicitNullValueViaSamlSso = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382"/> and sets the default values.
         /// </summary>
@@ -78,7 +146,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,12 +156,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
-                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
-                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
-                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
+                { "env", n => { Env = n.GetStringValue(); } },
+                { "factors", n => { Factors = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation.CreateFromDiscriminatorValue); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "ssoType", n => { SsoType = n.GetStringValue(); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
+                { "viaApple", n => { ViaApple = n.GetBoolValue(); } },
+                { "viaBitbucket", n => { ViaBitbucket = n.GetBoolValue(); } },
+                { "viaGithub", n => { ViaGithub = n.GetBoolValue(); } },
+                { "viaGitlab", n => { ViaGitlab = n.GetBoolValue(); } },
+                { "viaGoogle", n => { ViaGoogle = n.GetBoolValue(); } },
+                { "viaOTP", n => { ViaOTP = n.GetBoolValue(); } },
+                { "viaPasskey", n => { ViaPasskey = n.GetBoolValue(); } },
+                { "viaSamlSso", n => { ViaSamlSso = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +180,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
-            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
-            writer.WriteStringValue("bitbucketName", BitbucketName);
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("zeitAccount", ZeitAccount);
-            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
+            writer.WriteStringValue("env", Env);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>("factors", Factors);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation>("geolocation", Geolocation);
+            writer.WriteStringValue("os", Os);
+            writer.WriteStringValue("ssoType", SsoType);
+            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteStringValue("username", Username);
+            writer.WriteBoolValue("viaApple", ViaApple);
+            writer.WriteBoolValue("viaBitbucket", ViaBitbucket);
+            writer.WriteBoolValue("viaGithub", ViaGithub);
+            writer.WriteBoolValue("viaGitlab", ViaGitlab);
+            writer.WriteBoolValue("viaGoogle", ViaGoogle);
+            writer.WriteBoolValue("viaOTP", ViaOTP);
+            writer.WriteBoolValue("viaPasskey", ViaPasskey);
+            writer.WriteBoolValue("viaSamlSso", ViaSamlSso);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

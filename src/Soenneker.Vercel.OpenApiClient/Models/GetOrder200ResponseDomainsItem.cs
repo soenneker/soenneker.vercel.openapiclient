@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetOrder200ResponseDomainsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItem();
             if("purchase".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetOrder200ResponseDomainsItemAnyOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1();
+                
             }
             else if("renewal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetOrder200ResponseDomainsItemAnyOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2();
+                
             }
             else if("transfer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetOrder200ResponseDomainsItemAnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("purchaseType") != null && (parseNode.GetChildNode("purchaseType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("purchase".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("autoRenew") != null && parseNode.GetChildNode("years") != null && parseNode.GetChildNode("domainName") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("pending".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "completed".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "refunded".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "refund-failed".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("price") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("purchaseType") != null && (parseNode.GetChildNode("purchaseType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("renewal".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("years") != null && parseNode.GetChildNode("domainName") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("pending".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "completed".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "refunded".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "refund-failed".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("price") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("purchaseType") != null && (parseNode.GetChildNode("purchaseType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("transfer".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("autoRenew") != null && parseNode.GetChildNode("years") != null && parseNode.GetChildNode("domainName") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("pending".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "completed".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "failed".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "refunded".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "refund-failed".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("price") != null))();
+            if (result.GetOrder200ResponseDomainsItemAnyOf1 == null && result.GetOrder200ResponseDomainsItemAnyOf2 == null && result.GetOrder200ResponseDomainsItemAnyOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.GetOrder200ResponseDomainsItemAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1(), parseNode);
+            if (result.GetOrder200ResponseDomainsItemAnyOf1 == null && result.GetOrder200ResponseDomainsItemAnyOf2 == null && result.GetOrder200ResponseDomainsItemAnyOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.GetOrder200ResponseDomainsItemAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2(), parseNode);
+            if (result.GetOrder200ResponseDomainsItemAnyOf1 == null && result.GetOrder200ResponseDomainsItemAnyOf2 == null && result.GetOrder200ResponseDomainsItemAnyOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.GetOrder200ResponseDomainsItemAnyOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3(), parseNode);
+            if (result.GetOrder200ResponseDomainsItemAnyOf1 == null && result.GetOrder200ResponseDomainsItemAnyOf2 == null && result.GetOrder200ResponseDomainsItemAnyOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GetOrder200ResponseDomainsItemAnyOf1 == null && GetOrder200ResponseDomainsItemAnyOf2 == null && GetOrder200ResponseDomainsItemAnyOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GetOrder200ResponseDomainsItemAnyOf1 != null && GetOrder200ResponseDomainsItemAnyOf2 == null && GetOrder200ResponseDomainsItemAnyOf3 == null) { if (GetOrder200ResponseDomainsItemAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetOrder200ResponseDomainsItemAnyOf1); return; }
+            if (GetOrder200ResponseDomainsItemAnyOf2 != null && GetOrder200ResponseDomainsItemAnyOf1 == null && GetOrder200ResponseDomainsItemAnyOf3 == null) { if (GetOrder200ResponseDomainsItemAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetOrder200ResponseDomainsItemAnyOf2); return; }
+            if (GetOrder200ResponseDomainsItemAnyOf3 != null && GetOrder200ResponseDomainsItemAnyOf1 == null && GetOrder200ResponseDomainsItemAnyOf2 == null) { if (GetOrder200ResponseDomainsItemAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetOrder200ResponseDomainsItemAnyOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GetOrder200ResponseDomainsItemAnyOf1 != null)
             {
+                if (GetOrder200ResponseDomainsItemAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1>(null, GetOrder200ResponseDomainsItemAnyOf1);
             }
             else if(GetOrder200ResponseDomainsItemAnyOf2 != null)
             {
+                if (GetOrder200ResponseDomainsItemAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2>(null, GetOrder200ResponseDomainsItemAnyOf2);
             }
             else if(GetOrder200ResponseDomainsItemAnyOf3 != null)
             {
+                if (GetOrder200ResponseDomainsItemAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3>(null, GetOrder200ResponseDomainsItemAnyOf3);
             }
         }

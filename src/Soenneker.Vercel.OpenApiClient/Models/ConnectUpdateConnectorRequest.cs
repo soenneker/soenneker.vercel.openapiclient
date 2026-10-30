@@ -12,82 +12,120 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectUpdateConnectorRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accentColor") is { } nullNodeAccentColor && nullNodeAccentColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccentColor = null;
+            if (parseNode.GetChildNode("backgroundColor") is { } nullNodeBackgroundColor && nullNodeBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundColor = null;
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("icon") is { } nullNodeIcon && nullNodeIcon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Icon = null;
+            if (parseNode.GetChildNode("mcpEventsUiVisibility") is { } nullNodeMcpEventsUiVisibility && nullNodeMcpEventsUiVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpEventsUiVisibility = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("triggerRegistrationInput") is { } nullNodeTriggerRegistrationInput && nullNodeTriggerRegistrationInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerRegistrationInput = null;
+            if (parseNode.GetChildNode("triggers") is { } nullNodeTriggers && nullNodeTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggers = null;
+            if (parseNode.GetChildNode("triggerVerificationInput") is { } nullNodeTriggerVerificationInput && nullNodeTriggerVerificationInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerVerificationInput = null;
+            if (parseNode.GetChildNode("uid") is { } nullNodeUid && nullNodeUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uid = null;
+        }
+
         /// <summary>The accentColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccentColor { get; set; }
+        public string? AccentColor { get => _explicitNullValueAccentColor; set { _explicitNullValueAccentColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accentColor"); else _explicitNullProperties?.Remove("accentColor"); } }
+        private string? _explicitNullValueAccentColor = default!;
 #nullable restore
 #else
-        public string AccentColor { get; set; }
+        public string AccentColor { get => _explicitNullValueAccentColor; set { _explicitNullValueAccentColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accentColor"); else _explicitNullProperties?.Remove("accentColor"); } }
+        private string _explicitNullValueAccentColor = default!;
 #endif
         /// <summary>The backgroundColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundColor { get; set; }
+        public string? BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backgroundColor"); else _explicitNullProperties?.Remove("backgroundColor"); } }
+        private string? _explicitNullValueBackgroundColor = default!;
 #nullable restore
 #else
-        public string BackgroundColor { get; set; }
+        public string BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backgroundColor"); else _explicitNullProperties?.Remove("backgroundColor"); } }
+        private string _explicitNullValueBackgroundColor = default!;
 #endif
         /// <summary>Provider configuration fields for the connector type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData? Data { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData Data { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateData _explicitNullValueData = default!;
 #endif
         /// <summary>Default trigger events for this connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Events { get; set; }
+        public List<string>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<string>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<string> Events { get; set; }
+        public List<string> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<string> _explicitNullValueEvents = default!;
 #endif
         /// <summary>SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes.First compute the digest and upload the raw image with [POST /v2/files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files). Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest.```jsimport { createHash } from &apos;node:crypto&apos;;import { readFile } from &apos;node:fs/promises&apos;;const VERCEL_TOKEN = process.env.VERCEL_TOKEN;const connectorId = &apos;scl_...&apos;;const bytes = await readFile(&apos;icon.png&apos;);const digest = createHash(&apos;sha1&apos;).update(bytes).digest(&apos;hex&apos;);await fetch(&apos;https://api.vercel.com/v2/files&apos;, {  method: &apos;POST&apos;,  headers: {    Authorization: `Bearer ${VERCEL_TOKEN}`,    &apos;Content-Type&apos;: &apos;application/octet-stream&apos;,    &apos;Content-Length&apos;: String(bytes.length),    &apos;x-vercel-digest&apos;: digest,  },  body: bytes,});await fetch(`https://api.vercel.com/v2/connect/connectors/${connectorId}`, {  method: &apos;PATCH&apos;,  headers: {    Authorization: `Bearer ${VERCEL_TOKEN}`,    &apos;Content-Type&apos;: &apos;application/json&apos;,  },  body: JSON.stringify({ icon: digest }),});```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Icon { get; set; }
+        public string? Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private string? _explicitNullValueIcon = default!;
 #nullable restore
 #else
-        public string Icon { get; set; }
+        public string Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private string _explicitNullValueIcon = default!;
 #endif
         /// <summary>MCP Events dashboard visibility. Auto (the default) shows the UI after the first successful delivery. Show and hide persist regardless of future deliveries. This does not enable or disable event delivery.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestMcpEventsUiVisibility? McpEventsUiVisibility { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestMcpEventsUiVisibility? McpEventsUiVisibility { get => _explicitNullValueMcpEventsUiVisibility; set { _explicitNullValueMcpEventsUiVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcpEventsUiVisibility"); else _explicitNullProperties?.Remove("mcpEventsUiVisibility"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestMcpEventsUiVisibility? _explicitNullValueMcpEventsUiVisibility = default!;
         /// <summary>Display name for the connector. It is trimmed and cannot be empty or contain control characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty? TriggerRegistrationInput { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty? TriggerRegistrationInput { get => _explicitNullValueTriggerRegistrationInput; set { _explicitNullValueTriggerRegistrationInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerRegistrationInput"); else _explicitNullProperties?.Remove("triggerRegistrationInput"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty? _explicitNullValueTriggerRegistrationInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty TriggerRegistrationInput { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty TriggerRegistrationInput { get => _explicitNullValueTriggerRegistrationInput; set { _explicitNullValueTriggerRegistrationInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerRegistrationInput"); else _explicitNullProperties?.Remove("triggerRegistrationInput"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty _explicitNullValueTriggerRegistrationInput = default!;
 #endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
-        public bool? Triggers { get; set; }
+        public bool? Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        private bool? _explicitNullValueTriggers = default!;
         /// <summary>Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty? TriggerVerificationInput { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty? TriggerVerificationInput { get => _explicitNullValueTriggerVerificationInput; set { _explicitNullValueTriggerVerificationInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerVerificationInput"); else _explicitNullProperties?.Remove("triggerVerificationInput"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty? _explicitNullValueTriggerVerificationInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty TriggerVerificationInput { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty TriggerVerificationInput { get => _explicitNullValueTriggerVerificationInput; set { _explicitNullValueTriggerVerificationInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerVerificationInput"); else _explicitNullProperties?.Remove("triggerVerificationInput"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty _explicitNullValueTriggerVerificationInput = default!;
 #endif
         /// <summary>Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public string? Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string? _explicitNullValueUid = default!;
 #nullable restore
 #else
-        public string Uid { get; set; }
+        public string Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }
+        private string _explicitNullValueUid = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,7 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -137,7 +175,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty>("triggerRegistrationInput", TriggerRegistrationInput);
             writer.WriteBoolValue("triggers", Triggers);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty>("triggerVerificationInput", TriggerVerificationInput);
-            writer.WriteStringValue("uid", Uid);
+            writer.WriteStringValue("uid", Uid);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,32 +11,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProject200ResponseInternalRoutesItemOneOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has") is { } nullNodeHas && nullNodeHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Has = null;
+            if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
+            if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The has property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem>? Has { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem>? Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem>? _explicitNullValueHas = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem> Has { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem> Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem> _explicitNullValueHas = default!;
 #endif
         /// <summary>The mitigate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2Mitigate? Mitigate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2Mitigate? Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2Mitigate? _explicitNullValueMitigate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2Mitigate Mitigate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2Mitigate Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2Mitigate _explicitNullValueMitigate = default!;
 #endif
         /// <summary>The src property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Src { get; set; }
+        public string? Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        private string? _explicitNullValueSrc = default!;
 #nullable restore
 #else
-        public string Src { get; set; }
+        public string Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        private string _explicitNullValueSrc = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem>("has", Has);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2Mitigate>("mitigate", Mitigate);
             writer.WriteStringValue("src", Src);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CancelDeployment200ResponseServicesItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem();
             if("experimentalServices".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CancelDeployment200ResponseServicesItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1();
+                
             }
             else if("experimentalServicesV2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CancelDeployment200ResponseServicesItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("builder") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("schema") != null && (parseNode.GetChildNode("schema")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("experimentalServices".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("cron".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "job".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "web".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "worker".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("workspace") != null && (parseNode.GetChildNode("routePrefixSource") == null || (parseNode.GetChildNode("routePrefixSource")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag7 && ("configured".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "generated".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("trigger") == null || (parseNode.GetChildNode("trigger")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("queue".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "schedule".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "workflow".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("builder") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("root") != null && parseNode.GetChildNode("schema") != null && (parseNode.GetChildNode("schema")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("experimentalServicesV2".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.CancelDeployment200ResponseServicesItemOneOf1 == null && result.CancelDeployment200ResponseServicesItemOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CancelDeployment200ResponseServicesItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1(), parseNode);
+            if (result.CancelDeployment200ResponseServicesItemOneOf1 == null && result.CancelDeployment200ResponseServicesItemOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CancelDeployment200ResponseServicesItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2(), parseNode);
+            if (result.CancelDeployment200ResponseServicesItemOneOf1 == null && result.CancelDeployment200ResponseServicesItemOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CancelDeployment200ResponseServicesItemOneOf1 == null && CancelDeployment200ResponseServicesItemOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CancelDeployment200ResponseServicesItemOneOf1 != null && CancelDeployment200ResponseServicesItemOneOf2 == null) { if (CancelDeployment200ResponseServicesItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CancelDeployment200ResponseServicesItemOneOf1); return; }
+            if (CancelDeployment200ResponseServicesItemOneOf2 != null && CancelDeployment200ResponseServicesItemOneOf1 == null) { if (CancelDeployment200ResponseServicesItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CancelDeployment200ResponseServicesItemOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CancelDeployment200ResponseServicesItemOneOf1 != null)
             {
+                if (CancelDeployment200ResponseServicesItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1>(null, CancelDeployment200ResponseServicesItemOneOf1);
             }
             else if(CancelDeployment200ResponseServicesItemOneOf2 != null)
             {
+                if (CancelDeployment200ResponseServicesItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2>(null, CancelDeployment200ResponseServicesItemOneOf2);
             }
         }

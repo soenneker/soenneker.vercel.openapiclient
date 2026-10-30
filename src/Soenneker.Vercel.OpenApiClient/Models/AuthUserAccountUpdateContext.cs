@@ -12,34 +12,52 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthUserAccountUpdateContext : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("canOptOut") is { } nullNodeCanOptOut && nullNodeCanOptOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanOptOut = null;
+            if (parseNode.GetChildNode("managedTeams") is { } nullNodeManagedTeams && nullNodeManagedTeams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedTeams = null;
+            if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("verifiedEmuDomains") is { } nullNodeVerifiedEmuDomains && nullNodeVerifiedEmuDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedEmuDomains = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this user can cancel their optional Account Update flow.</summary>
-        public bool? CanOptOut { get; set; }
+        public bool? CanOptOut { get => _explicitNullValueCanOptOut; set { _explicitNullValueCanOptOut = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canOptOut"); else _explicitNullProperties?.Remove("canOptOut"); } }
+        private bool? _explicitNullValueCanOptOut = default!;
         /// <summary>The managedTeams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>? ManagedTeams { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>? ManagedTeams { get => _explicitNullValueManagedTeams; set { _explicitNullValueManagedTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedTeams"); else _explicitNullProperties?.Remove("managedTeams"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>? _explicitNullValueManagedTeams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem> ManagedTeams { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem> ManagedTeams { get => _explicitNullValueManagedTeams; set { _explicitNullValueManagedTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedTeams"); else _explicitNullProperties?.Remove("managedTeams"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem> _explicitNullValueManagedTeams = default!;
 #endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization? Organization { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization Organization { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization _explicitNullValueOrganization = default!;
 #endif
         /// <summary>The verifiedEmuDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VerifiedEmuDomains { get; set; }
+        public List<string>? VerifiedEmuDomains { get => _explicitNullValueVerifiedEmuDomains; set { _explicitNullValueVerifiedEmuDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedEmuDomains"); else _explicitNullProperties?.Remove("verifiedEmuDomains"); } }
+        private List<string>? _explicitNullValueVerifiedEmuDomains = default!;
 #nullable restore
 #else
-        public List<string> VerifiedEmuDomains { get; set; }
+        public List<string> VerifiedEmuDomains { get => _explicitNullValueVerifiedEmuDomains; set { _explicitNullValueVerifiedEmuDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedEmuDomains"); else _explicitNullProperties?.Remove("verifiedEmuDomains"); } }
+        private List<string> _explicitNullValueVerifiedEmuDomains = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext"/> and sets the default values.
@@ -56,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>("managedTeams", ManagedTeams);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization>("organization", Organization);
             writer.WriteCollectionOfPrimitiveValues<string>("verifiedEmuDomains", VerifiedEmuDomains);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

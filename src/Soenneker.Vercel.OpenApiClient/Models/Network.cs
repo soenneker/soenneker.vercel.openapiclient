@@ -11,116 +11,166 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Network : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("awsAccountId") is { } nullNodeAwsAccountId && nullNodeAwsAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsAccountId = null;
+            if (parseNode.GetChildNode("awsAvailabilityZoneIds") is { } nullNodeAwsAvailabilityZoneIds && nullNodeAwsAvailabilityZoneIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsAvailabilityZoneIds = null;
+            if (parseNode.GetChildNode("awsRegion") is { } nullNodeAwsRegion && nullNodeAwsRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsRegion = null;
+            if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("egressIpAddresses") is { } nullNodeEgressIpAddresses && nullNodeEgressIpAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EgressIpAddresses = null;
+            if (parseNode.GetChildNode("hostedZones") is { } nullNodeHostedZones && nullNodeHostedZones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostedZones = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("peeringConnections") is { } nullNodePeeringConnections && nullNodePeeringConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeeringConnections = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("teamId") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
+            if (parseNode.GetChildNode("vpcId") is { } nullNodeVpcId && nullNodeVpcId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VpcId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the AWS Account in which the network exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AwsAccountId { get; set; }
+        public string? AwsAccountId { get => _explicitNullValueAwsAccountId; set { _explicitNullValueAwsAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAccountId"); else _explicitNullProperties?.Remove("awsAccountId"); } }
+        private string? _explicitNullValueAwsAccountId = default!;
 #nullable restore
 #else
-        public string AwsAccountId { get; set; }
+        public string AwsAccountId { get => _explicitNullValueAwsAccountId; set { _explicitNullValueAwsAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAccountId"); else _explicitNullProperties?.Remove("awsAccountId"); } }
+        private string _explicitNullValueAwsAccountId = default!;
 #endif
         /// <summary>The IDs of the AWS Availability Zones in which the network exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AwsAvailabilityZoneIds { get; set; }
+        public List<string>? AwsAvailabilityZoneIds { get => _explicitNullValueAwsAvailabilityZoneIds; set { _explicitNullValueAwsAvailabilityZoneIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAvailabilityZoneIds"); else _explicitNullProperties?.Remove("awsAvailabilityZoneIds"); } }
+        private List<string>? _explicitNullValueAwsAvailabilityZoneIds = default!;
 #nullable restore
 #else
-        public List<string> AwsAvailabilityZoneIds { get; set; }
+        public List<string> AwsAvailabilityZoneIds { get => _explicitNullValueAwsAvailabilityZoneIds; set { _explicitNullValueAwsAvailabilityZoneIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAvailabilityZoneIds"); else _explicitNullProperties?.Remove("awsAvailabilityZoneIds"); } }
+        private List<string> _explicitNullValueAwsAvailabilityZoneIds = default!;
 #endif
         /// <summary>The AWS Region in which the network exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AwsRegion { get; set; }
+        public string? AwsRegion { get => _explicitNullValueAwsRegion; set { _explicitNullValueAwsRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsRegion"); else _explicitNullProperties?.Remove("awsRegion"); } }
+        private string? _explicitNullValueAwsRegion = default!;
 #nullable restore
 #else
-        public string AwsRegion { get; set; }
+        public string AwsRegion { get => _explicitNullValueAwsRegion; set { _explicitNullValueAwsRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsRegion"); else _explicitNullProperties?.Remove("awsRegion"); } }
+        private string _explicitNullValueAwsRegion = default!;
 #endif
         /// <summary>The CIDR range of the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cidr { get; set; }
+        public string? Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        private string? _explicitNullValueCidr = default!;
 #nullable restore
 #else
-        public string Cidr { get; set; }
+        public string Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
+        private string _explicitNullValueCidr = default!;
 #endif
         /// <summary>The date at which the Network was created, represented as a UNIX timestamp since EPOCH.</summary>
-        public double? CreatedAt { get; set; }
+        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private double? _explicitNullValueCreatedAt = default!;
         /// <summary>The egressIpAddresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EgressIpAddresses { get; set; }
+        public List<string>? EgressIpAddresses { get => _explicitNullValueEgressIpAddresses; set { _explicitNullValueEgressIpAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egressIpAddresses"); else _explicitNullProperties?.Remove("egressIpAddresses"); } }
+        private List<string>? _explicitNullValueEgressIpAddresses = default!;
 #nullable restore
 #else
-        public List<string> EgressIpAddresses { get; set; }
+        public List<string> EgressIpAddresses { get => _explicitNullValueEgressIpAddresses; set { _explicitNullValueEgressIpAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egressIpAddresses"); else _explicitNullProperties?.Remove("egressIpAddresses"); } }
+        private List<string> _explicitNullValueEgressIpAddresses = default!;
 #endif
         /// <summary>Metadata about any AWS Route53 Hosted Zones associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones? HostedZones { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones? HostedZones { get => _explicitNullValueHostedZones; set { _explicitNullValueHostedZones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostedZones"); else _explicitNullProperties?.Remove("hostedZones"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones? _explicitNullValueHostedZones = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones HostedZones { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones HostedZones { get => _explicitNullValueHostedZones; set { _explicitNullValueHostedZones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostedZones"); else _explicitNullProperties?.Remove("hostedZones"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones _explicitNullValueHostedZones = default!;
 #endif
         /// <summary>The unique identifier of the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name of the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Metadata about any AWS Route53 Hosted Zones associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections? PeeringConnections { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections? PeeringConnections { get => _explicitNullValuePeeringConnections; set { _explicitNullValuePeeringConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peeringConnections"); else _explicitNullProperties?.Remove("peeringConnections"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections? _explicitNullValuePeeringConnections = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections PeeringConnections { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections PeeringConnections { get => _explicitNullValuePeeringConnections; set { _explicitNullValuePeeringConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peeringConnections"); else _explicitNullProperties?.Remove("peeringConnections"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections _explicitNullValuePeeringConnections = default!;
 #endif
         /// <summary>Metadata about any projects associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects? Projects { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects Projects { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects _explicitNullValueProjects = default!;
 #endif
         /// <summary>The Vercel region in which the Network exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The status of the Network.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus? Status { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus? _explicitNullValueStatus = default!;
         /// <summary>The unique identifier of the Team that owns the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public string? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
+        private string? _explicitNullValueTeamId = default!;
 #nullable restore
 #else
-        public string TeamId { get; set; }
+        public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
+        private string _explicitNullValueTeamId = default!;
 #endif
         /// <summary>The ID of the VPC which hosts the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VpcId { get; set; }
+        public string? VpcId { get => _explicitNullValueVpcId; set { _explicitNullValueVpcId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vpcId"); else _explicitNullProperties?.Remove("vpcId"); } }
+        private string? _explicitNullValueVpcId = default!;
 #nullable restore
 #else
-        public string VpcId { get; set; }
+        public string VpcId { get => _explicitNullValueVpcId; set { _explicitNullValueVpcId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vpcId"); else _explicitNullProperties?.Remove("vpcId"); } }
+        private string _explicitNullValueVpcId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Network"/> and sets the default values.
@@ -137,7 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.Network CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.Network();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.Network(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -186,6 +236,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus>("status", Status);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteStringValue("vpcId", VpcId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

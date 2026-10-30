@@ -12,24 +12,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf362 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("gitProvider") is { } nullNodeGitProvider && nullNodeGitProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitProvider = null;
+            if (parseNode.GetChildNode("gitProviderGroupDescriptor") is { } nullNodeGitProviderGroupDescriptor && nullNodeGitProviderGroupDescriptor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitProviderGroupDescriptor = null;
+            if (parseNode.GetChildNode("gitScope") is { } nullNodeGitScope && nullNodeGitScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitScope = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The connectionId property</summary>
+        /// <summary>The gitProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get; set; }
+        public string? GitProvider { get => _explicitNullValueGitProvider; set { _explicitNullValueGitProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProvider"); else _explicitNullProperties?.Remove("gitProvider"); } }
+        private string? _explicitNullValueGitProvider = default!;
 #nullable restore
 #else
-        public string ConnectionId { get; set; }
+        public string GitProvider { get => _explicitNullValueGitProvider; set { _explicitNullValueGitProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProvider"); else _explicitNullProperties?.Remove("gitProvider"); } }
+        private string _explicitNullValueGitProvider = default!;
 #endif
-        /// <summary>The connectionType property</summary>
+        /// <summary>The gitProviderGroupDescriptor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionType { get; set; }
+        public string? GitProviderGroupDescriptor { get => _explicitNullValueGitProviderGroupDescriptor; set { _explicitNullValueGitProviderGroupDescriptor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProviderGroupDescriptor"); else _explicitNullProperties?.Remove("gitProviderGroupDescriptor"); } }
+        private string? _explicitNullValueGitProviderGroupDescriptor = default!;
 #nullable restore
 #else
-        public string ConnectionType { get; set; }
+        public string GitProviderGroupDescriptor { get => _explicitNullValueGitProviderGroupDescriptor; set { _explicitNullValueGitProviderGroupDescriptor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProviderGroupDescriptor"); else _explicitNullProperties?.Remove("gitProviderGroupDescriptor"); } }
+        private string _explicitNullValueGitProviderGroupDescriptor = default!;
+#endif
+        /// <summary>The gitScope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitScope { get => _explicitNullValueGitScope; set { _explicitNullValueGitScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitScope"); else _explicitNullProperties?.Remove("gitScope"); } }
+        private string? _explicitNullValueGitScope = default!;
+#nullable restore
+#else
+        public string GitScope { get => _explicitNullValueGitScope; set { _explicitNullValueGitScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitScope"); else _explicitNullProperties?.Remove("gitScope"); } }
+        private string _explicitNullValueGitScope = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362"/> and sets the default values.
@@ -46,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +80,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
-                { "connectionType", n => { ConnectionType = n.GetStringValue(); } },
+                { "gitProvider", n => { GitProvider = n.GetStringValue(); } },
+                { "gitProviderGroupDescriptor", n => { GitProviderGroupDescriptor = n.GetStringValue(); } },
+                { "gitScope", n => { GitScope = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +92,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("connectionId", ConnectionId);
-            writer.WriteStringValue("connectionType", ConnectionType);
+            writer.WriteStringValue("gitProvider", GitProvider);
+            writer.WriteStringValue("gitProviderGroupDescriptor", GitProviderGroupDescriptor);
+            writer.WriteStringValue("gitScope", GitScope);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

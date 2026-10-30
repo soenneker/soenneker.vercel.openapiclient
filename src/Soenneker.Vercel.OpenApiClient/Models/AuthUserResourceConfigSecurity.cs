@@ -12,25 +12,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthUserResourceConfigSecurity : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customRules") is { } nullNodeCustomRules && nullNodeCustomRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRules = null;
+            if (parseNode.GetChildNode("ipBlocks") is { } nullNodeIpBlocks && nullNodeIpBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpBlocks = null;
+            if (parseNode.GetChildNode("ipBypass") is { } nullNodeIpBypass && nullNodeIpBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpBypass = null;
+            if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
+            if (parseNode.GetChildNode("securityLists") is { } nullNodeSecurityLists && nullNodeSecurityLists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityLists = null;
+            if (parseNode.GetChildNode("teamLevelConditions") is { } nullNodeTeamLevelConditions && nullNodeTeamLevelConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamLevelConditions = null;
+            if (parseNode.GetChildNode("teamLevelRules") is { } nullNodeTeamLevelRules && nullNodeTeamLevelRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamLevelRules = null;
+            if (parseNode.GetChildNode("teamLevelRulesets") is { } nullNodeTeamLevelRulesets && nullNodeTeamLevelRulesets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamLevelRulesets = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? CustomRules { get; set; }
+        public double? CustomRules { get => _explicitNullValueCustomRules; set { _explicitNullValueCustomRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRules"); else _explicitNullProperties?.Remove("customRules"); } }
+        private double? _explicitNullValueCustomRules = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? IpBlocks { get; set; }
+        public double? IpBlocks { get => _explicitNullValueIpBlocks; set { _explicitNullValueIpBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipBlocks"); else _explicitNullProperties?.Remove("ipBlocks"); } }
+        private double? _explicitNullValueIpBlocks = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? IpBypass { get; set; }
+        public double? IpBypass { get => _explicitNullValueIpBypass; set { _explicitNullValueIpBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipBypass"); else _explicitNullProperties?.Remove("ipBypass"); } }
+        private double? _explicitNullValueIpBypass = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? RateLimit { get; set; }
+        public double? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        private double? _explicitNullValueRateLimit = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? SecurityLists { get; set; }
+        public double? SecurityLists { get => _explicitNullValueSecurityLists; set { _explicitNullValueSecurityLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityLists"); else _explicitNullProperties?.Remove("securityLists"); } }
+        private double? _explicitNullValueSecurityLists = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? TeamLevelConditions { get; set; }
+        public double? TeamLevelConditions { get => _explicitNullValueTeamLevelConditions; set { _explicitNullValueTeamLevelConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamLevelConditions"); else _explicitNullProperties?.Remove("teamLevelConditions"); } }
+        private double? _explicitNullValueTeamLevelConditions = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? TeamLevelRules { get; set; }
+        public double? TeamLevelRules { get => _explicitNullValueTeamLevelRules; set { _explicitNullValueTeamLevelRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamLevelRules"); else _explicitNullProperties?.Remove("teamLevelRules"); } }
+        private double? _explicitNullValueTeamLevelRules = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? TeamLevelRulesets { get; set; }
+        public double? TeamLevelRulesets { get => _explicitNullValueTeamLevelRulesets; set { _explicitNullValueTeamLevelRulesets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamLevelRulesets"); else _explicitNullProperties?.Remove("teamLevelRulesets"); } }
+        private double? _explicitNullValueTeamLevelRulesets = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity"/> and sets the default values.
         /// </summary>
@@ -46,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("teamLevelConditions", TeamLevelConditions);
             writer.WriteDoubleValue("teamLevelRules", TeamLevelRules);
             writer.WriteDoubleValue("teamLevelRulesets", TeamLevelRulesets);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

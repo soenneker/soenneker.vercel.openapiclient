@@ -11,32 +11,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UserEventPayloadOneOf29Previous : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maximumMonthlySpend") is { } nullNodeMaximumMonthlySpend && nullNodeMaximumMonthlySpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumMonthlySpend = null;
+            if (parseNode.GetChildNode("minimumBalance") is { } nullNodeMinimumBalance && nullNodeMinimumBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumBalance = null;
+            if (parseNode.GetChildNode("targetBalance") is { } nullNodeTargetBalance && nullNodeTargetBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetBalance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximumMonthlySpend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaximumMonthlySpend { get; set; }
+        public string? MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
+        private string? _explicitNullValueMaximumMonthlySpend = default!;
 #nullable restore
 #else
-        public string MaximumMonthlySpend { get; set; }
+        public string MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
+        private string _explicitNullValueMaximumMonthlySpend = default!;
 #endif
         /// <summary>The minimumBalance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumBalance { get; set; }
+        public string? MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumBalance"); else _explicitNullProperties?.Remove("minimumBalance"); } }
+        private string? _explicitNullValueMinimumBalance = default!;
 #nullable restore
 #else
-        public string MinimumBalance { get; set; }
+        public string MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumBalance"); else _explicitNullProperties?.Remove("minimumBalance"); } }
+        private string _explicitNullValueMinimumBalance = default!;
 #endif
         /// <summary>The targetBalance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetBalance { get; set; }
+        public string? TargetBalance { get => _explicitNullValueTargetBalance; set { _explicitNullValueTargetBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetBalance"); else _explicitNullProperties?.Remove("targetBalance"); } }
+        private string? _explicitNullValueTargetBalance = default!;
 #nullable restore
 #else
-        public string TargetBalance { get; set; }
+        public string TargetBalance { get => _explicitNullValueTargetBalance; set { _explicitNullValueTargetBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetBalance"); else _explicitNullProperties?.Remove("targetBalance"); } }
+        private string _explicitNullValueTargetBalance = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Previous"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Previous CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Previous();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Previous(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("maximumMonthlySpend", MaximumMonthlySpend);
             writer.WriteStringValue("minimumBalance", MinimumBalance);
             writer.WriteStringValue("targetBalance", TargetBalance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

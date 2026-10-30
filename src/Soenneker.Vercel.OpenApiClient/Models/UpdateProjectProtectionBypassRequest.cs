@@ -11,30 +11,46 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProjectProtectionBypassRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("generate") is { } nullNodeGenerate && nullNodeGenerate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generate = null;
+            if (parseNode.GetChildNode("revoke") is { } nullNodeRevoke && nullNodeRevoke.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revoke = null;
+            if (parseNode.GetChildNode("update") is { } nullNodeUpdate && nullNodeUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Update = null;
+        }
+
         /// <summary>Generate a new secret. If neither generate or revoke are provided, a new random secret will be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestGenerate? Generate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestGenerate? Generate { get => _explicitNullValueGenerate; set { _explicitNullValueGenerate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate"); else _explicitNullProperties?.Remove("generate"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestGenerate? _explicitNullValueGenerate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestGenerate Generate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestGenerate Generate { get => _explicitNullValueGenerate; set { _explicitNullValueGenerate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate"); else _explicitNullProperties?.Remove("generate"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestGenerate _explicitNullValueGenerate = default!;
 #endif
         /// <summary>Optional instructions for revoking and regenerating a automation bypass</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestRevoke? Revoke { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestRevoke? Revoke { get => _explicitNullValueRevoke; set { _explicitNullValueRevoke = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revoke"); else _explicitNullProperties?.Remove("revoke"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestRevoke? _explicitNullValueRevoke = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestRevoke Revoke { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestRevoke Revoke { get => _explicitNullValueRevoke; set { _explicitNullValueRevoke = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revoke"); else _explicitNullProperties?.Remove("revoke"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestRevoke _explicitNullValueRevoke = default!;
 #endif
         /// <summary>Update an existing bypass</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate? Update { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate? Update { get => _explicitNullValueUpdate; set { _explicitNullValueUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update"); else _explicitNullProperties?.Remove("update"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate? _explicitNullValueUpdate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate Update { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate Update { get => _explicitNullValueUpdate; set { _explicitNullValueUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update"); else _explicitNullProperties?.Remove("update"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate _explicitNullValueUpdate = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +84,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestGenerate>("generate", Generate);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestRevoke>("revoke", Revoke);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate>("update", Update);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectProtectionBypassRequestUpdate>("update", Update);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

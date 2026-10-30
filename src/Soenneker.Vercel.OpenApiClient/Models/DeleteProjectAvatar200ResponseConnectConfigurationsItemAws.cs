@@ -11,24 +11,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DeleteProjectAvatar200ResponseConnectConfigurationsItemAws : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("securityGroupId") is { } nullNodeSecurityGroupId && nullNodeSecurityGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityGroupId = null;
+            if (parseNode.GetChildNode("subnetIds") is { } nullNodeSubnetIds && nullNodeSubnetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubnetIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The securityGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecurityGroupId { get; set; }
+        public string? SecurityGroupId { get => _explicitNullValueSecurityGroupId; set { _explicitNullValueSecurityGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityGroupId"); else _explicitNullProperties?.Remove("securityGroupId"); } }
+        private string? _explicitNullValueSecurityGroupId = default!;
 #nullable restore
 #else
-        public string SecurityGroupId { get; set; }
+        public string SecurityGroupId { get => _explicitNullValueSecurityGroupId; set { _explicitNullValueSecurityGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityGroupId"); else _explicitNullProperties?.Remove("securityGroupId"); } }
+        private string _explicitNullValueSecurityGroupId = default!;
 #endif
         /// <summary>The subnetIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SubnetIds { get; set; }
+        public List<string>? SubnetIds { get => _explicitNullValueSubnetIds; set { _explicitNullValueSubnetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnetIds"); else _explicitNullProperties?.Remove("subnetIds"); } }
+        private List<string>? _explicitNullValueSubnetIds = default!;
 #nullable restore
 #else
-        public List<string> SubnetIds { get; set; }
+        public List<string> SubnetIds { get => _explicitNullValueSubnetIds; set { _explicitNullValueSubnetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnetIds"); else _explicitNullProperties?.Remove("subnetIds"); } }
+        private List<string> _explicitNullValueSubnetIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseConnectConfigurationsItemAws"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseConnectConfigurationsItemAws CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseConnectConfigurationsItemAws();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseConnectConfigurationsItemAws(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("securityGroupId", SecurityGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("subnetIds", SubnetIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

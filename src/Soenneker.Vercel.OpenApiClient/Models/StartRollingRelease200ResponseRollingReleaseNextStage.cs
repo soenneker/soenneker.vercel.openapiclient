@@ -12,21 +12,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartRollingRelease200ResponseRollingReleaseNextStage : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("isFinalStage") is { } nullNodeIsFinalStage && nullNodeIsFinalStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFinalStage = null;
+            if (parseNode.GetChildNode("linearShift") is { } nullNodeLinearShift && nullNodeLinearShift.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinearShift = null;
+            if (parseNode.GetChildNode("requireApproval") is { } nullNodeRequireApproval && nullNodeRequireApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireApproval = null;
+            if (parseNode.GetChildNode("targetPercentage") is { } nullNodeTargetPercentage && nullNodeTargetPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetPercentage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Duration in seconds for automatic advancement, null for manual stages or the final stage</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The zero-based index of the stage</summary>
-        public double? Index { get; set; }
+        public double? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private double? _explicitNullValueIndex = default!;
         /// <summary>Whether or not this stage is the final stage (targetPercentage === 100)</summary>
-        public bool? IsFinalStage { get; set; }
+        public bool? IsFinalStage { get => _explicitNullValueIsFinalStage; set { _explicitNullValueIsFinalStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isFinalStage"); else _explicitNullProperties?.Remove("isFinalStage"); } }
+        private bool? _explicitNullValueIsFinalStage = default!;
         /// <summary>Whether to linearly shift traffic over the duration of this stage</summary>
-        public bool? LinearShift { get; set; }
+        public bool? LinearShift { get => _explicitNullValueLinearShift; set { _explicitNullValueLinearShift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linearShift"); else _explicitNullProperties?.Remove("linearShift"); } }
+        private bool? _explicitNullValueLinearShift = default!;
         /// <summary>Whether or not this stage requires manual approval to proceed</summary>
-        public bool? RequireApproval { get; set; }
+        public bool? RequireApproval { get => _explicitNullValueRequireApproval; set { _explicitNullValueRequireApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireApproval"); else _explicitNullProperties?.Remove("requireApproval"); } }
+        private bool? _explicitNullValueRequireApproval = default!;
         /// <summary>The percentage of traffic to serve to the canary deployment (0-100)</summary>
-        public double? TargetPercentage { get; set; }
+        public double? TargetPercentage { get => _explicitNullValueTargetPercentage; set { _explicitNullValueTargetPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetPercentage"); else _explicitNullProperties?.Remove("targetPercentage"); } }
+        private double? _explicitNullValueTargetPercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseNextStage"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseNextStage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseNextStage();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseNextStage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("linearShift", LinearShift);
             writer.WriteBoolValue("requireApproval", RequireApproval);
             writer.WriteDoubleValue("targetPercentage", TargetPercentage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

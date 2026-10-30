@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventViaItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItem();
             if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventViaItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1();
+                
             }
             else if("app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventViaItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2();
+                
             }
             else if("external".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventViaItemOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3();
+                
             }
             else if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventViaItemOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("avatar") != null && parseNode.GetChildNode("email") != null && parseNode.GetChildNode("uid") != null && parseNode.GetChildNode("username") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("user".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("clientId") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("app".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("external".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("system".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.UserEventViaItemOneOf1 == null && result.UserEventViaItemOneOf2 == null && result.UserEventViaItemOneOf3 == null && result.UserEventViaItemOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.UserEventViaItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1(), parseNode);
+            if (result.UserEventViaItemOneOf1 == null && result.UserEventViaItemOneOf2 == null && result.UserEventViaItemOneOf3 == null && result.UserEventViaItemOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.UserEventViaItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2(), parseNode);
+            if (result.UserEventViaItemOneOf1 == null && result.UserEventViaItemOneOf2 == null && result.UserEventViaItemOneOf3 == null && result.UserEventViaItemOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.UserEventViaItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3(), parseNode);
+            if (result.UserEventViaItemOneOf1 == null && result.UserEventViaItemOneOf2 == null && result.UserEventViaItemOneOf3 == null && result.UserEventViaItemOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.UserEventViaItemOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4(), parseNode);
+            if (result.UserEventViaItemOneOf1 == null && result.UserEventViaItemOneOf2 == null && result.UserEventViaItemOneOf3 == null && result.UserEventViaItemOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (UserEventViaItemOneOf1 == null && UserEventViaItemOneOf2 == null && UserEventViaItemOneOf3 == null && UserEventViaItemOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (UserEventViaItemOneOf1 != null && UserEventViaItemOneOf2 == null && UserEventViaItemOneOf3 == null && UserEventViaItemOneOf4 == null) { if (UserEventViaItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserEventViaItemOneOf1); return; }
+            if (UserEventViaItemOneOf2 != null && UserEventViaItemOneOf1 == null && UserEventViaItemOneOf3 == null && UserEventViaItemOneOf4 == null) { if (UserEventViaItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserEventViaItemOneOf2); return; }
+            if (UserEventViaItemOneOf3 != null && UserEventViaItemOneOf1 == null && UserEventViaItemOneOf2 == null && UserEventViaItemOneOf4 == null) { if (UserEventViaItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserEventViaItemOneOf3); return; }
+            if (UserEventViaItemOneOf4 != null && UserEventViaItemOneOf1 == null && UserEventViaItemOneOf2 == null && UserEventViaItemOneOf3 == null) { if (UserEventViaItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserEventViaItemOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(UserEventViaItemOneOf1 != null)
             {
+                if (UserEventViaItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1>(null, UserEventViaItemOneOf1);
             }
             else if(UserEventViaItemOneOf2 != null)
             {
+                if (UserEventViaItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2>(null, UserEventViaItemOneOf2);
             }
             else if(UserEventViaItemOneOf3 != null)
             {
+                if (UserEventViaItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3>(null, UserEventViaItemOneOf3);
             }
             else if(UserEventViaItemOneOf4 != null)
             {
+                if (UserEventViaItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4>(null, UserEventViaItemOneOf4);
             }
         }

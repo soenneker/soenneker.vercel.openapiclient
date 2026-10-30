@@ -12,22 +12,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateSandboxesByNameForkV2RequestNetworkPolicyOneOf1InjectionRulesItemMatchHeadersItemValue : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("exact") is { } nullNodeExact && nullNodeExact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exact = null;
+            if (parseNode.GetChildNode("startsWith") is { } nullNodeStartsWith && nullNodeStartsWith.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsWith = null;
+        }
+
         /// <summary>Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Exact { get; set; }
+        public string? Exact { get => _explicitNullValueExact; set { _explicitNullValueExact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exact"); else _explicitNullProperties?.Remove("exact"); } }
+        private string? _explicitNullValueExact = default!;
 #nullable restore
 #else
-        public string Exact { get; set; }
+        public string Exact { get => _explicitNullValueExact; set { _explicitNullValueExact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exact"); else _explicitNullProperties?.Remove("exact"); } }
+        private string _explicitNullValueExact = default!;
 #endif
         /// <summary>Match values that start with the given prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartsWith { get; set; }
+        public string? StartsWith { get => _explicitNullValueStartsWith; set { _explicitNullValueStartsWith = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsWith"); else _explicitNullProperties?.Remove("startsWith"); } }
+        private string? _explicitNullValueStartsWith = default!;
 #nullable restore
 #else
-        public string StartsWith { get; set; }
+        public string StartsWith { get => _explicitNullValueStartsWith; set { _explicitNullValueStartsWith = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsWith"); else _explicitNullProperties?.Remove("startsWith"); } }
+        private string _explicitNullValueStartsWith = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2RequestNetworkPolicyOneOf1InjectionRulesItemMatchHeadersItemValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2RequestNetworkPolicyOneOf1InjectionRulesItemMatchHeadersItemValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2RequestNetworkPolicyOneOf1InjectionRulesItemMatchHeadersItemValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("exact", Exact);
-            writer.WriteStringValue("startsWith", StartsWith);
+            writer.WriteStringValue("startsWith", StartsWith);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

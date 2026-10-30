@@ -11,24 +11,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateAiGatewayByokCredentialRequestMappingsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customModelId") is { } nullNodeCustomModelId && nullNodeCustomModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomModelId = null;
+            if (parseNode.GetChildNode("gatewayModelSlug") is { } nullNodeGatewayModelSlug && nullNodeGatewayModelSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayModelSlug = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customer&apos;s custom model ID (e.g., &quot;my-finetuned-gpt-5&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomModelId { get; set; }
+        public string? CustomModelId { get => _explicitNullValueCustomModelId; set { _explicitNullValueCustomModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customModelId"); else _explicitNullProperties?.Remove("customModelId"); } }
+        private string? _explicitNullValueCustomModelId = default!;
 #nullable restore
 #else
-        public string CustomModelId { get; set; }
+        public string CustomModelId { get => _explicitNullValueCustomModelId; set { _explicitNullValueCustomModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customModelId"); else _explicitNullProperties?.Remove("customModelId"); } }
+        private string _explicitNullValueCustomModelId = default!;
 #endif
         /// <summary>The AI Gateway model slug (e.g., &quot;openai/gpt-5.4&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GatewayModelSlug { get; set; }
+        public string? GatewayModelSlug { get => _explicitNullValueGatewayModelSlug; set { _explicitNullValueGatewayModelSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gatewayModelSlug"); else _explicitNullProperties?.Remove("gatewayModelSlug"); } }
+        private string? _explicitNullValueGatewayModelSlug = default!;
 #nullable restore
 #else
-        public string GatewayModelSlug { get; set; }
+        public string GatewayModelSlug { get => _explicitNullValueGatewayModelSlug; set { _explicitNullValueGatewayModelSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gatewayModelSlug"); else _explicitNullProperties?.Remove("gatewayModelSlug"); } }
+        private string _explicitNullValueGatewayModelSlug = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayByokCredentialRequestMappingsItem"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayByokCredentialRequestMappingsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayByokCredentialRequestMappingsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayByokCredentialRequestMappingsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customModelId", CustomModelId);
             writer.WriteStringValue("gatewayModelSlug", GatewayModelSlug);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

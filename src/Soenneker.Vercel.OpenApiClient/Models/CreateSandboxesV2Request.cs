@@ -11,123 +11,181 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateSandboxesV2Request : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("architecture") is { } nullNodeArchitecture && nullNodeArchitecture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Architecture = null;
+            if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
+            if (parseNode.GetChildNode("failoverRegions") is { } nullNodeFailoverRegions && nullNodeFailoverRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailoverRegions = null;
+            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("keepLastSnapshots") is { } nullNodeKeepLastSnapshots && nullNodeKeepLastSnapshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeepLastSnapshots = null;
+            if (parseNode.GetChildNode("mounts") is { } nullNodeMounts && nullNodeMounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mounts = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("networkId") is { } nullNodeNetworkId && nullNodeNetworkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkId = null;
+            if (parseNode.GetChildNode("networkPolicy") is { } nullNodeNetworkPolicy && nullNodeNetworkPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkPolicy = null;
+            if (parseNode.GetChildNode("persistent") is { } nullNodePersistent && nullNodePersistent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Persistent = null;
+            if (parseNode.GetChildNode("ports") is { } nullNodePorts && nullNodePorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ports = null;
+            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("resources") is { } nullNodeResources && nullNodeResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resources = null;
+            if (parseNode.GetChildNode("runtime") is { } nullNodeRuntime && nullNodeRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runtime = null;
+            if (parseNode.GetChildNode("snapshotExpiration") is { } nullNodeSnapshotExpiration && nullNodeSnapshotExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotExpiration = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+        }
+
         /// <summary>CPU architecture. Inherits a snapshot or single image manifest when omitted. Image indexes default to amd64. Must match the source. ARM64 creation requires API v3 or v4 without runtime and team access.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestArchitecture? Architecture { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestArchitecture? Architecture { get => _explicitNullValueArchitecture; set { _explicitNullValueArchitecture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("architecture"); else _explicitNullProperties?.Remove("architecture"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestArchitecture? _explicitNullValueArchitecture = default!;
         /// <summary>Default environment variables for the sandbox. These are inherited by all commands unless overridden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv? Env { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv? _explicitNullValueEnv = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv Env { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv _explicitNullValueEnv = default!;
 #endif
         /// <summary>The regions the sandbox falls back to when it cannot be created in `region`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem?>? FailoverRegions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem?>? FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem?>? _explicitNullValueFailoverRegions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem?> FailoverRegions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem?> FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem?> _explicitNullValueFailoverRegions = default!;
 #endif
         /// <summary>Image to use for the sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Image { get; set; }
+        public string? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public string Image { get; set; }
+        public string Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string _explicitNullValueImage = default!;
 #endif
         /// <summary>Protect the N most recent snapshots with different expiration/deletion behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshots? KeepLastSnapshots { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshots? KeepLastSnapshots { get => _explicitNullValueKeepLastSnapshots; set { _explicitNullValueKeepLastSnapshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keepLastSnapshots"); else _explicitNullProperties?.Remove("keepLastSnapshots"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshots? _explicitNullValueKeepLastSnapshots = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshots KeepLastSnapshots { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshots KeepLastSnapshots { get => _explicitNullValueKeepLastSnapshots; set { _explicitNullValueKeepLastSnapshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keepLastSnapshots"); else _explicitNullProperties?.Remove("keepLastSnapshots"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestKeepLastSnapshots _explicitNullValueKeepLastSnapshots = default!;
 #endif
         /// <summary>List of drives to mount to the sandbox at the provided path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestMounts? Mounts { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestMounts? Mounts { get => _explicitNullValueMounts; set { _explicitNullValueMounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mounts"); else _explicitNullProperties?.Remove("mounts"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestMounts? _explicitNullValueMounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestMounts Mounts { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestMounts Mounts { get => _explicitNullValueMounts; set { _explicitNullValueMounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mounts"); else _explicitNullProperties?.Remove("mounts"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestMounts _explicitNullValueMounts = default!;
 #endif
         /// <summary>Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The Connect network id for the target Secure Compute private network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkId { get; set; }
+        public string? NetworkId { get => _explicitNullValueNetworkId; set { _explicitNullValueNetworkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkId"); else _explicitNullProperties?.Remove("networkId"); } }
+        private string? _explicitNullValueNetworkId = default!;
 #nullable restore
 #else
-        public string NetworkId { get; set; }
+        public string NetworkId { get => _explicitNullValueNetworkId; set { _explicitNullValueNetworkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkId"); else _explicitNullProperties?.Remove("networkId"); } }
+        private string _explicitNullValueNetworkId = default!;
 #endif
         /// <summary>The networkPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestNetworkPolicy? NetworkPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestNetworkPolicy? NetworkPolicy { get => _explicitNullValueNetworkPolicy; set { _explicitNullValueNetworkPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPolicy"); else _explicitNullProperties?.Remove("networkPolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestNetworkPolicy? _explicitNullValueNetworkPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestNetworkPolicy NetworkPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestNetworkPolicy NetworkPolicy { get => _explicitNullValueNetworkPolicy; set { _explicitNullValueNetworkPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPolicy"); else _explicitNullProperties?.Remove("networkPolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestNetworkPolicy _explicitNullValueNetworkPolicy = default!;
 #endif
         /// <summary>Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to true.</summary>
-        public bool? Persistent { get; set; }
+        public bool? Persistent { get => _explicitNullValuePersistent; set { _explicitNullValuePersistent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persistent"); else _explicitNullProperties?.Remove("persistent"); } }
+        private bool? _explicitNullValuePersistent = default!;
         /// <summary>List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Ports { get; set; }
+        public List<int?>? Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
+        private List<int?>? _explicitNullValuePorts = default!;
 #nullable restore
 #else
-        public List<int?> Ports { get; set; }
+        public List<int?> Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
+        private List<int?> _explicitNullValuePorts = default!;
 #endif
         /// <summary>The target project slug or ID in which the sandbox will be assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The Vercel region in which to create the sandbox.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestRegion? Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestRegion? _explicitNullValueRegion = default!;
         /// <summary>Resources to define the VM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestResources? Resources { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestResources? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestResources? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestResources Resources { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestResources Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestResources _explicitNullValueResources = default!;
 #endif
         /// <summary>The runtime environment for the sandbox. Determines the pre-installed language runtimes and tools available.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestRuntime? Runtime { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestRuntime? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestRuntime? _explicitNullValueRuntime = default!;
         /// <summary>Default snapshot expiration time in milliseconds. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.</summary>
-        public int? SnapshotExpiration { get; set; }
+        public int? SnapshotExpiration { get => _explicitNullValueSnapshotExpiration; set { _explicitNullValueSnapshotExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotExpiration"); else _explicitNullProperties?.Remove("snapshotExpiration"); } }
+        private int? _explicitNullValueSnapshotExpiration = default!;
         /// <summary>The source from which to initialize the sandbox filesystem. Can be a Git repository, a tarball URL, or an existing snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource? Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource _explicitNullValueSource = default!;
 #endif
         /// <summary>Key-value tags to associate with the sandbox. Maximum 5 tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestTags? Tags { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestTags? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestTags Tags { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestTags _explicitNullValueTags = default!;
 #endif
         /// <summary>Maximum duration in milliseconds that the sandbox can run before being automatically stopped.</summary>
-        public int? Timeout { get; set; }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        private int? _explicitNullValueTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2Request"/> and sets the default values.
         /// </summary>
@@ -143,7 +201,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2Request CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2Request();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2Request(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,7 +257,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteIntValue("snapshotExpiration", SnapshotExpiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestSource>("source", Source);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestTags>("tags", Tags);
-            writer.WriteIntValue("timeout", Timeout);
+            writer.WriteIntValue("timeout", Timeout);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

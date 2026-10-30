@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlags200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlags200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlags200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlags200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.

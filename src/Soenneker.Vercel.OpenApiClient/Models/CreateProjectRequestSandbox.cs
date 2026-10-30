@@ -12,17 +12,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateProjectRequestSandbox : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("failoverRegions") is { } nullNodeFailoverRegions && nullNodeFailoverRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailoverRegions = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+        }
+
         /// <summary>The regions sandboxes in this project fall back to when they cannot be created in `region`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxFailoverRegionsItem?>? FailoverRegions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxFailoverRegionsItem?>? FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxFailoverRegionsItem?>? _explicitNullValueFailoverRegions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxFailoverRegionsItem?> FailoverRegions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxFailoverRegionsItem?> FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxFailoverRegionsItem?> _explicitNullValueFailoverRegions = default!;
 #endif
         /// <summary>The Vercel region sandboxes in this project are created in by default.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxRegion? Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxRegion? _explicitNullValueRegion = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandbox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandbox();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandbox(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +65,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxFailoverRegionsItem>("failoverRegions", FailoverRegions);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxRegion>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestSandboxRegion>("region", Region);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

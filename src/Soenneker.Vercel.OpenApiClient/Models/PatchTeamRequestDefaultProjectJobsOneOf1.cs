@@ -12,22 +12,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchTeamRequestDefaultProjectJobsOneOf1 : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("lint") is { } nullNodeLint && nullNodeLint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lint = null;
+            if (parseNode.GetChildNode("typecheck") is { } nullNodeTypecheck && nullNodeTypecheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Typecheck = null;
+        }
+
         /// <summary>The lint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Lint? Lint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Lint? Lint { get => _explicitNullValueLint; set { _explicitNullValueLint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint"); else _explicitNullProperties?.Remove("lint"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Lint? _explicitNullValueLint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Lint Lint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Lint Lint { get => _explicitNullValueLint; set { _explicitNullValueLint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint"); else _explicitNullProperties?.Remove("lint"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Lint _explicitNullValueLint = default!;
 #endif
         /// <summary>The typecheck property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck? Typecheck { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck? Typecheck { get => _explicitNullValueTypecheck; set { _explicitNullValueTypecheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typecheck"); else _explicitNullProperties?.Remove("typecheck"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck? _explicitNullValueTypecheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck Typecheck { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck Typecheck { get => _explicitNullValueTypecheck; set { _explicitNullValueTypecheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typecheck"); else _explicitNullProperties?.Remove("typecheck"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck _explicitNullValueTypecheck = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Lint>("lint", Lint);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck>("typecheck", Typecheck);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultProjectJobsOneOf1Typecheck>("typecheck", Typecheck);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

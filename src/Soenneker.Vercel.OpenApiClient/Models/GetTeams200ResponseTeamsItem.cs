@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetTeams200ResponseTeamsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Team"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetTeams200ResponseTeamsItem();
             if("Team".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.Team = new global::Soenneker.Vercel.OpenApiClient.Models.Team();
+                
             }
             else if("TeamLimited".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamLimited = new global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("avatar") != null && parseNode.GetChildNode("billing") != null && parseNode.GetChildNode("createdAt") != null && parseNode.GetChildNode("creatorId") != null && parseNode.GetChildNode("defaultDeploymentProtection") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("limited") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("slug") != null && parseNode.GetChildNode("stagingPrefix") != null && parseNode.GetChildNode("updatedAt") != null && (parseNode.GetChildNode("defaultContinuousUsageKind") == null || (parseNode.GetChildNode("defaultContinuousUsageKind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag12 && ("metered".Equals(optionalTag12.GetValue(), global::System.StringComparison.Ordinal) || "unmetered".Equals(optionalTag12.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("dpAccessRequestsMode") == null || (parseNode.GetChildNode("dpAccessRequestsMode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag13 && ("all".Equals(optionalTag13.GetValue(), global::System.StringComparison.Ordinal) || "email-domain".Equals(optionalTag13.GetValue(), global::System.StringComparison.Ordinal) || "none".Equals(optionalTag13.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("avatar") != null && parseNode.GetChildNode("createdAt") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("limited") != null && parseNode.GetChildNode("limitedBy") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("slug") != null))();
+            if (result.Team == null && result.TeamLimited == null && matchesUnionBranch0 && !matchesUnionBranch1) result.Team = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.Team(), parseNode);
+            if (result.Team == null && result.TeamLimited == null && matchesUnionBranch1 && !matchesUnionBranch0) result.TeamLimited = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited(), parseNode);
+            if (result.Team == null && result.TeamLimited == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Team == null && TeamLimited == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (Team != null && TeamLimited == null) { if (Team is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Team); return; }
+            if (TeamLimited != null && Team == null) { if (TeamLimited is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TeamLimited); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Team != null)
             {
+                if (Team is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team>(null, Team);
             }
             else if(TeamLimited != null)
             {
+                if (TeamLimited is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited>(null, TeamLimited);
             }
         }

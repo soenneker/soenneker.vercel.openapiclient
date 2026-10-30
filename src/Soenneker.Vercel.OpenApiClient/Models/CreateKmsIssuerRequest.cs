@@ -11,48 +11,72 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateKmsIssuerRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("algorithm") is { } nullNodeAlgorithm && nullNodeAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithm = null;
+            if (parseNode.GetChildNode("claimsSchema") is { } nullNodeClaimsSchema && nullNodeClaimsSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimsSchema = null;
+            if (parseNode.GetChildNode("importKey") is { } nullNodeImportKey && nullNodeImportKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportKey = null;
+            if (parseNode.GetChildNode("importKeyId") is { } nullNodeImportKeyId && nullNodeImportKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportKeyId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
+        }
+
         /// <summary>The signing algorithm to use for the issuer.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestAlgorithm? Algorithm { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestAlgorithm? Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestAlgorithm? _explicitNullValueAlgorithm = default!;
         /// <summary>A JSON Schema used to validate the resolved token claims when signing tokens for this issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestClaimsSchema? ClaimsSchema { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestClaimsSchema? ClaimsSchema { get => _explicitNullValueClaimsSchema; set { _explicitNullValueClaimsSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimsSchema"); else _explicitNullProperties?.Remove("claimsSchema"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestClaimsSchema? _explicitNullValueClaimsSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestClaimsSchema ClaimsSchema { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestClaimsSchema ClaimsSchema { get => _explicitNullValueClaimsSchema; set { _explicitNullValueClaimsSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimsSchema"); else _explicitNullProperties?.Remove("claimsSchema"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestClaimsSchema _explicitNullValueClaimsSchema = default!;
 #endif
         /// <summary>The PEM-encoded private key to use for the issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportKey { get; set; }
+        public string? ImportKey { get => _explicitNullValueImportKey; set { _explicitNullValueImportKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKey"); else _explicitNullProperties?.Remove("importKey"); } }
+        private string? _explicitNullValueImportKey = default!;
 #nullable restore
 #else
-        public string ImportKey { get; set; }
+        public string ImportKey { get => _explicitNullValueImportKey; set { _explicitNullValueImportKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKey"); else _explicitNullProperties?.Remove("importKey"); } }
+        private string _explicitNullValueImportKey = default!;
 #endif
         /// <summary>The key id to use as the imported key&apos;s JWT/JWKS `kid`. Only allowed when `importKey` is provided. Not required to be unique; the addressable key id is the server-minted `keyId` returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportKeyId { get; set; }
+        public string? ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
+        private string? _explicitNullValueImportKeyId = default!;
 #nullable restore
 #else
-        public string ImportKeyId { get; set; }
+        public string ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
+        private string _explicitNullValueImportKeyId = default!;
 #endif
         /// <summary>The name of the issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy? Policy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy? _explicitNullValuePolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy Policy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy _explicitNullValuePolicy = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +116,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("importKey", ImportKey);
             writer.WriteStringValue("importKeyId", ImportKeyId);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy>("policy", Policy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy>("policy", Policy);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

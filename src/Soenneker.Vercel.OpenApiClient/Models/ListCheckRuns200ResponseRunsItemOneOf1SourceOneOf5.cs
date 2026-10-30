@@ -12,21 +12,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("selection") is { } nullNodeSelection && nullNodeSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selection = null;
+            if (parseNode.GetChildNode("subKind") is { } nullNodeSubKind && nullNodeSubKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubKind = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The origin property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApiOrigin? Origin { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApiOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApiOrigin? _explicitNullValueOrigin = default!;
         /// <summary>The selection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection? Selection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection? Selection { get => _explicitNullValueSelection; set { _explicitNullValueSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selection"); else _explicitNullProperties?.Remove("selection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection? _explicitNullValueSelection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection Selection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection Selection { get => _explicitNullValueSelection; set { _explicitNullValueSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selection"); else _explicitNullProperties?.Remove("selection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection _explicitNullValueSelection = default!;
 #endif
         /// <summary>The subKind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VercelCiCheckSubKind? SubKind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VercelCiCheckSubKind? SubKind { get => _explicitNullValueSubKind; set { _explicitNullValueSubKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subKind"); else _explicitNullProperties?.Remove("subKind"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.VercelCiCheckSubKind? _explicitNullValueSubKind = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ApiOrigin>("origin", Origin);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection>("selection", Selection);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelCiCheckSubKind>("subKind", SubKind);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

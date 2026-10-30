@@ -12,108 +12,134 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf405 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("elevatedScopeCount") is { } nullNodeElevatedScopeCount && nullNodeElevatedScopeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElevatedScopeCount = null;
+            if (parseNode.GetChildNode("elevatedScopes") is { } nullNodeElevatedScopes && nullNodeElevatedScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElevatedScopes = null;
+            if (parseNode.GetChildNode("eventId") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("githubScopeCount") is { } nullNodeGithubScopeCount && nullNodeGithubScopeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GithubScopeCount = null;
+            if (parseNode.GetChildNode("githubScopes") is { } nullNodeGithubScopes && nullNodeGithubScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GithubScopes = null;
+            if (parseNode.GetChildNode("mergedScopeCount") is { } nullNodeMergedScopeCount && nullNodeMergedScopeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedScopeCount = null;
+            if (parseNode.GetChildNode("mergedScopes") is { } nullNodeMergedScopes && nullNodeMergedScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedScopes = null;
+            if (parseNode.GetChildNode("occurredAt") is { } nullNodeOccurredAt && nullNodeOccurredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OccurredAt = null;
+            if (parseNode.GetChildNode("planId") is { } nullNodePlanId && nullNodePlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanId = null;
+            if (parseNode.GetChildNode("requestedScopeCount") is { } nullNodeRequestedScopeCount && nullNodeRequestedScopeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedScopeCount = null;
+            if (parseNode.GetChildNode("requestedScopes") is { } nullNodeRequestedScopes && nullNodeRequestedScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedScopes = null;
+            if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
+            if (parseNode.GetChildNode("sessionKind") is { } nullNodeSessionKind && nullNodeSessionKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionKind = null;
+            if (parseNode.GetChildNode("surface") is { } nullNodeSurface && nullNodeSurface.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Surface = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The branchRef property</summary>
+        /// <summary>The elevatedScopeCount property</summary>
+        public double? ElevatedScopeCount { get => _explicitNullValueElevatedScopeCount; set { _explicitNullValueElevatedScopeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevatedScopeCount"); else _explicitNullProperties?.Remove("elevatedScopeCount"); } }
+        private double? _explicitNullValueElevatedScopeCount = default!;
+        /// <summary>Requested Vercel scopes that are not included in the baseline token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchRef { get; set; }
+        public List<string>? ElevatedScopes { get => _explicitNullValueElevatedScopes; set { _explicitNullValueElevatedScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevatedScopes"); else _explicitNullProperties?.Remove("elevatedScopes"); } }
+        private List<string>? _explicitNullValueElevatedScopes = default!;
 #nullable restore
 #else
-        public string BranchRef { get; set; }
-#endif
-        /// <summary>The deploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeploymentId { get; set; }
-#nullable restore
-#else
-        public string DeploymentId { get; set; }
-#endif
-        /// <summary>The environment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Environment { get; set; }
-#nullable restore
-#else
-        public string Environment { get; set; }
+        public List<string> ElevatedScopes { get => _explicitNullValueElevatedScopes; set { _explicitNullValueElevatedScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevatedScopes"); else _explicitNullProperties?.Remove("elevatedScopes"); } }
+        private List<string> _explicitNullValueElevatedScopes = default!;
 #endif
         /// <summary>The eventId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventId"); else _explicitNullProperties?.Remove("eventId"); } }
+        private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventId"); else _explicitNullProperties?.Remove("eventId"); } }
+        private string _explicitNullValueEventId = default!;
 #endif
-        /// <summary>The findingId property</summary>
+        /// <summary>The githubScopeCount property</summary>
+        public double? GithubScopeCount { get => _explicitNullValueGithubScopeCount; set { _explicitNullValueGithubScopeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubScopeCount"); else _explicitNullProperties?.Remove("githubScopeCount"); } }
+        private double? _explicitNullValueGithubScopeCount = default!;
+        /// <summary>External GitHub scopes requested by the plan; these are not Vercel token scopes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FindingId { get; set; }
+        public List<string>? GithubScopes { get => _explicitNullValueGithubScopes; set { _explicitNullValueGithubScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubScopes"); else _explicitNullProperties?.Remove("githubScopes"); } }
+        private List<string>? _explicitNullValueGithubScopes = default!;
 #nullable restore
 #else
-        public string FindingId { get; set; }
+        public List<string> GithubScopes { get => _explicitNullValueGithubScopes; set { _explicitNullValueGithubScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubScopes"); else _explicitNullProperties?.Remove("githubScopes"); } }
+        private List<string> _explicitNullValueGithubScopes = default!;
 #endif
-        /// <summary>The findingNumber property</summary>
-        public double? FindingNumber { get; set; }
+        /// <summary>The mergedScopeCount property</summary>
+        public double? MergedScopeCount { get => _explicitNullValueMergedScopeCount; set { _explicitNullValueMergedScopeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergedScopeCount"); else _explicitNullProperties?.Remove("mergedScopeCount"); } }
+        private double? _explicitNullValueMergedScopeCount = default!;
+        /// <summary>Baseline plus elevated Vercel scopes used when minting scoped tokens.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MergedScopes { get => _explicitNullValueMergedScopes; set { _explicitNullValueMergedScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergedScopes"); else _explicitNullProperties?.Remove("mergedScopes"); } }
+        private List<string>? _explicitNullValueMergedScopes = default!;
+#nullable restore
+#else
+        public List<string> MergedScopes { get => _explicitNullValueMergedScopes; set { _explicitNullValueMergedScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergedScopes"); else _explicitNullProperties?.Remove("mergedScopes"); } }
+        private List<string> _explicitNullValueMergedScopes = default!;
+#endif
         /// <summary>The occurredAt property</summary>
-        public double? OccurredAt { get; set; }
-        /// <summary>The projectId property</summary>
+        public double? OccurredAt { get => _explicitNullValueOccurredAt; set { _explicitNullValueOccurredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurredAt"); else _explicitNullProperties?.Remove("occurredAt"); } }
+        private double? _explicitNullValueOccurredAt = default!;
+        /// <summary>The planId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
+        private string? _explicitNullValuePlanId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
+        private string _explicitNullValuePlanId = default!;
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The requestedScopeCount property</summary>
+        public double? RequestedScopeCount { get => _explicitNullValueRequestedScopeCount; set { _explicitNullValueRequestedScopeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedScopeCount"); else _explicitNullProperties?.Remove("requestedScopeCount"); } }
+        private double? _explicitNullValueRequestedScopeCount = default!;
+        /// <summary>Scopes requested by the model-authored plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public List<string>? RequestedScopes { get => _explicitNullValueRequestedScopes; set { _explicitNullValueRequestedScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedScopes"); else _explicitNullProperties?.Remove("requestedScopes"); } }
+        private List<string>? _explicitNullValueRequestedScopes = default!;
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public List<string> RequestedScopes { get => _explicitNullValueRequestedScopes; set { _explicitNullValueRequestedScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedScopes"); else _explicitNullProperties?.Remove("requestedScopes"); } }
+        private List<string> _explicitNullValueRequestedScopes = default!;
 #endif
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId { get; set; }
+        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        private string? _explicitNullValueSessionId = default!;
 #nullable restore
 #else
-        public string SessionId { get; set; }
+        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        private string _explicitNullValueSessionId = default!;
 #endif
         /// <summary>Currently emitted session kinds: chat, investigation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionKind { get; set; }
+        public string? SessionKind { get => _explicitNullValueSessionKind; set { _explicitNullValueSessionKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionKind"); else _explicitNullProperties?.Remove("sessionKind"); } }
+        private string? _explicitNullValueSessionKind = default!;
 #nullable restore
 #else
-        public string SessionKind { get; set; }
-#endif
-        /// <summary>The severity property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Severity { get; set; }
-#nullable restore
-#else
-        public string Severity { get; set; }
+        public string SessionKind { get => _explicitNullValueSessionKind; set { _explicitNullValueSessionKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionKind"); else _explicitNullProperties?.Remove("sessionKind"); } }
+        private string _explicitNullValueSessionKind = default!;
 #endif
         /// <summary>Currently emitted surfaces: dashboard, internal, slack, automation, github.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Surface { get; set; }
+        public string? Surface { get => _explicitNullValueSurface; set { _explicitNullValueSurface = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surface"); else _explicitNullProperties?.Remove("surface"); } }
+        private string? _explicitNullValueSurface = default!;
 #nullable restore
 #else
-        public string Surface { get; set; }
-#endif
-        /// <summary>The vulnerabilityClass property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VulnerabilityClass { get; set; }
-#nullable restore
-#else
-        public string VulnerabilityClass { get; set; }
+        public string Surface { get => _explicitNullValueSurface; set { _explicitNullValueSurface = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surface"); else _explicitNullProperties?.Remove("surface"); } }
+        private string _explicitNullValueSurface = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405"/> and sets the default values.
@@ -130,7 +156,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,20 +166,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "branchRef", n => { BranchRef = n.GetStringValue(); } },
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "elevatedScopeCount", n => { ElevatedScopeCount = n.GetDoubleValue(); } },
+                { "elevatedScopes", n => { ElevatedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "eventId", n => { EventId = n.GetStringValue(); } },
-                { "findingId", n => { FindingId = n.GetStringValue(); } },
-                { "findingNumber", n => { FindingNumber = n.GetDoubleValue(); } },
+                { "githubScopeCount", n => { GithubScopeCount = n.GetDoubleValue(); } },
+                { "githubScopes", n => { GithubScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "mergedScopeCount", n => { MergedScopeCount = n.GetDoubleValue(); } },
+                { "mergedScopes", n => { MergedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "planId", n => { PlanId = n.GetStringValue(); } },
+                { "requestedScopeCount", n => { RequestedScopeCount = n.GetDoubleValue(); } },
+                { "requestedScopes", n => { RequestedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetStringValue(); } },
                 { "surface", n => { Surface = n.GetStringValue(); } },
-                { "vulnerabilityClass", n => { VulnerabilityClass = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -163,20 +189,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("branchRef", BranchRef);
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("environment", Environment);
+            writer.WriteDoubleValue("elevatedScopeCount", ElevatedScopeCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("elevatedScopes", ElevatedScopes);
             writer.WriteStringValue("eventId", EventId);
-            writer.WriteStringValue("findingId", FindingId);
-            writer.WriteDoubleValue("findingNumber", FindingNumber);
+            writer.WriteDoubleValue("githubScopeCount", GithubScopeCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("githubScopes", GithubScopes);
+            writer.WriteDoubleValue("mergedScopeCount", MergedScopeCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("mergedScopes", MergedScopes);
             writer.WriteDoubleValue("occurredAt", OccurredAt);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("planId", PlanId);
+            writer.WriteDoubleValue("requestedScopeCount", RequestedScopeCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("requestedScopes", RequestedScopes);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteStringValue("sessionKind", SessionKind);
-            writer.WriteStringValue("severity", Severity);
             writer.WriteStringValue("surface", Surface);
-            writer.WriteStringValue("vulnerabilityClass", VulnerabilityClass);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

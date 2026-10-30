@@ -11,140 +11,199 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetVercelCiInvocationTree200ResponseInvocation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attempt") is { } nullNodeAttempt && nullNodeAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attempt = null;
+            if (parseNode.GetChildNode("bootstrappingFailed") is { } nullNodeBootstrappingFailed && nullNodeBootstrappingFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BootstrappingFailed = null;
+            if (parseNode.GetChildNode("bootstrappingStarted") is { } nullNodeBootstrappingStarted && nullNodeBootstrappingStarted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BootstrappingStarted = null;
+            if (parseNode.GetChildNode("commitSha") is { } nullNodeCommitSha && nullNodeCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitSha = null;
+            if (parseNode.GetChildNode("completed") is { } nullNodeCompleted && nullNodeCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Completed = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
+            if (parseNode.GetChildNode("jobDefinitionsCreated") is { } nullNodeJobDefinitionsCreated && nullNodeJobDefinitionsCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDefinitionsCreated = null;
+            if (parseNode.GetChildNode("ref") is { } nullNodeRef && nullNodeRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ref = null;
+            if (parseNode.GetChildNode("repositoryKey") is { } nullNodeRepositoryKey && nullNodeRepositoryKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryKey = null;
+            if (parseNode.GetChildNode("runConclusion") is { } nullNodeRunConclusion && nullNodeRunConclusion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunConclusion = null;
+            if (parseNode.GetChildNode("sandboxNamed") is { } nullNodeSandboxNamed && nullNodeSandboxNamed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxNamed = null;
+            if (parseNode.GetChildNode("sandboxSnapshotted") is { } nullNodeSandboxSnapshotted && nullNodeSandboxSnapshotted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxSnapshotted = null;
+            if (parseNode.GetChildNode("setupConclusion") is { } nullNodeSetupConclusion && nullNodeSetupConclusion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetupConclusion = null;
+            if (parseNode.GetChildNode("skipped") is { } nullNodeSkipped && nullNodeSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skipped = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("teamId") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attempt property</summary>
-        public double? Attempt { get; set; }
+        public double? Attempt { get => _explicitNullValueAttempt; set { _explicitNullValueAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt"); else _explicitNullProperties?.Remove("attempt"); } }
+        private double? _explicitNullValueAttempt = default!;
         /// <summary>The bootstrappingFailed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingFailed? BootstrappingFailed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingFailed? BootstrappingFailed { get => _explicitNullValueBootstrappingFailed; set { _explicitNullValueBootstrappingFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bootstrappingFailed"); else _explicitNullProperties?.Remove("bootstrappingFailed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingFailed? _explicitNullValueBootstrappingFailed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingFailed BootstrappingFailed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingFailed BootstrappingFailed { get => _explicitNullValueBootstrappingFailed; set { _explicitNullValueBootstrappingFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bootstrappingFailed"); else _explicitNullProperties?.Remove("bootstrappingFailed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingFailed _explicitNullValueBootstrappingFailed = default!;
 #endif
         /// <summary>The bootstrappingStarted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingStarted? BootstrappingStarted { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingStarted? BootstrappingStarted { get => _explicitNullValueBootstrappingStarted; set { _explicitNullValueBootstrappingStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bootstrappingStarted"); else _explicitNullProperties?.Remove("bootstrappingStarted"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingStarted? _explicitNullValueBootstrappingStarted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingStarted BootstrappingStarted { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingStarted BootstrappingStarted { get => _explicitNullValueBootstrappingStarted; set { _explicitNullValueBootstrappingStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bootstrappingStarted"); else _explicitNullProperties?.Remove("bootstrappingStarted"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationBootstrappingStarted _explicitNullValueBootstrappingStarted = default!;
 #endif
         /// <summary>The commitSha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitSha { get; set; }
+        public string? CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
+        private string? _explicitNullValueCommitSha = default!;
 #nullable restore
 #else
-        public string CommitSha { get; set; }
+        public string CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
+        private string _explicitNullValueCommitSha = default!;
 #endif
         /// <summary>The completed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationCompleted? Completed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationCompleted? Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationCompleted? _explicitNullValueCompleted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationCompleted Completed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationCompleted Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationCompleted _explicitNullValueCompleted = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public double? CreatedAt { get; set; }
+        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private double? _explicitNullValueCreatedAt = default!;
         /// <summary>The invocationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvocationId { get; set; }
+        public string? InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        private string? _explicitNullValueInvocationId = default!;
 #nullable restore
 #else
-        public string InvocationId { get; set; }
+        public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        private string _explicitNullValueInvocationId = default!;
 #endif
         /// <summary>The jobDefinitionsCreated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationJobDefinitionsCreated? JobDefinitionsCreated { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationJobDefinitionsCreated? JobDefinitionsCreated { get => _explicitNullValueJobDefinitionsCreated; set { _explicitNullValueJobDefinitionsCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionsCreated"); else _explicitNullProperties?.Remove("jobDefinitionsCreated"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationJobDefinitionsCreated? _explicitNullValueJobDefinitionsCreated = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationJobDefinitionsCreated JobDefinitionsCreated { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationJobDefinitionsCreated JobDefinitionsCreated { get => _explicitNullValueJobDefinitionsCreated; set { _explicitNullValueJobDefinitionsCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionsCreated"); else _explicitNullProperties?.Remove("jobDefinitionsCreated"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationJobDefinitionsCreated _explicitNullValueJobDefinitionsCreated = default!;
 #endif
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ref { get; set; }
+        public string? Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        private string? _explicitNullValueRef = default!;
 #nullable restore
 #else
-        public string Ref { get; set; }
+        public string Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        private string _explicitNullValueRef = default!;
 #endif
         /// <summary>The repositoryKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepositoryKey { get; set; }
+        public string? RepositoryKey { get => _explicitNullValueRepositoryKey; set { _explicitNullValueRepositoryKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryKey"); else _explicitNullProperties?.Remove("repositoryKey"); } }
+        private string? _explicitNullValueRepositoryKey = default!;
 #nullable restore
 #else
-        public string RepositoryKey { get; set; }
+        public string RepositoryKey { get => _explicitNullValueRepositoryKey; set { _explicitNullValueRepositoryKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryKey"); else _explicitNullProperties?.Remove("repositoryKey"); } }
+        private string _explicitNullValueRepositoryKey = default!;
 #endif
         /// <summary>The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → &quot;failed&quot;; any (non-cascade) skipped job → &quot;skipped&quot;; else &quot;succeeded&quot;. Present on completed invocations written after the field shipped; absent on older rows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationRunConclusion? RunConclusion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationRunConclusion? RunConclusion { get => _explicitNullValueRunConclusion; set { _explicitNullValueRunConclusion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runConclusion"); else _explicitNullProperties?.Remove("runConclusion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationRunConclusion? _explicitNullValueRunConclusion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationRunConclusion RunConclusion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationRunConclusion RunConclusion { get => _explicitNullValueRunConclusion; set { _explicitNullValueRunConclusion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runConclusion"); else _explicitNullProperties?.Remove("runConclusion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationRunConclusion _explicitNullValueRunConclusion = default!;
 #endif
         /// <summary>The sandboxNamed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxNamed? SandboxNamed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxNamed? SandboxNamed { get => _explicitNullValueSandboxNamed; set { _explicitNullValueSandboxNamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxNamed"); else _explicitNullProperties?.Remove("sandboxNamed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxNamed? _explicitNullValueSandboxNamed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxNamed SandboxNamed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxNamed SandboxNamed { get => _explicitNullValueSandboxNamed; set { _explicitNullValueSandboxNamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxNamed"); else _explicitNullProperties?.Remove("sandboxNamed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxNamed _explicitNullValueSandboxNamed = default!;
 #endif
         /// <summary>The sandboxSnapshotted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxSnapshotted? SandboxSnapshotted { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxSnapshotted? SandboxSnapshotted { get => _explicitNullValueSandboxSnapshotted; set { _explicitNullValueSandboxSnapshotted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxSnapshotted"); else _explicitNullProperties?.Remove("sandboxSnapshotted"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxSnapshotted? _explicitNullValueSandboxSnapshotted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxSnapshotted SandboxSnapshotted { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxSnapshotted SandboxSnapshotted { get => _explicitNullValueSandboxSnapshotted; set { _explicitNullValueSandboxSnapshotted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxSnapshotted"); else _explicitNullProperties?.Remove("sandboxSnapshotted"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSandboxSnapshotted _explicitNullValueSandboxSnapshotted = default!;
 #endif
         /// <summary>The terminal setup result. Omitted while invocation setup is still running.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSetupConclusion? SetupConclusion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSetupConclusion? SetupConclusion { get => _explicitNullValueSetupConclusion; set { _explicitNullValueSetupConclusion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setupConclusion"); else _explicitNullProperties?.Remove("setupConclusion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSetupConclusion? _explicitNullValueSetupConclusion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSetupConclusion SetupConclusion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSetupConclusion SetupConclusion { get => _explicitNullValueSetupConclusion; set { _explicitNullValueSetupConclusion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setupConclusion"); else _explicitNullProperties?.Remove("setupConclusion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSetupConclusion _explicitNullValueSetupConclusion = default!;
 #endif
         /// <summary>The skipped property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSkipped? Skipped { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSkipped? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSkipped? _explicitNullValueSkipped = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSkipped Skipped { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSkipped Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSkipped _explicitNullValueSkipped = default!;
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSource? Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSource? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSource Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSource _explicitNullValueSource = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public string? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
+        private string? _explicitNullValueTeamId = default!;
 #nullable restore
 #else
-        public string TeamId { get; set; }
+        public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
+        private string _explicitNullValueTeamId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocation"/> and sets the default values.
@@ -161,7 +220,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -216,6 +275,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseInvocationSource>("source", Source);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("teamId", TeamId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

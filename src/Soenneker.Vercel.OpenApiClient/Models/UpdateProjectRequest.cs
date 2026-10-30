@@ -11,248 +11,392 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProjectRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoAssignCustomDomains") is { } nullNodeAutoAssignCustomDomains && nullNodeAutoAssignCustomDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAssignCustomDomains = null;
+            if (parseNode.GetChildNode("autoAssignCustomDomainsUpdatedBy") is { } nullNodeAutoAssignCustomDomainsUpdatedBy && nullNodeAutoAssignCustomDomainsUpdatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAssignCustomDomainsUpdatedBy = null;
+            if (parseNode.GetChildNode("autoExposeSystemEnvs") is { } nullNodeAutoExposeSystemEnvs && nullNodeAutoExposeSystemEnvs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoExposeSystemEnvs = null;
+            if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("commandForIgnoringBuildStep") is { } nullNodeCommandForIgnoringBuildStep && nullNodeCommandForIgnoringBuildStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommandForIgnoringBuildStep = null;
+            if (parseNode.GetChildNode("connectConfigurations") is { } nullNodeConnectConfigurations && nullNodeConnectConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectConfigurations = null;
+            if (parseNode.GetChildNode("customerSupportCodeVisibility") is { } nullNodeCustomerSupportCodeVisibility && nullNodeCustomerSupportCodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerSupportCodeVisibility = null;
+            if (parseNode.GetChildNode("deploymentPolicy") is { } nullNodeDeploymentPolicy && nullNodeDeploymentPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentPolicy = null;
+            if (parseNode.GetChildNode("devCommand") is { } nullNodeDevCommand && nullNodeDevCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevCommand = null;
+            if (parseNode.GetChildNode("directoryListing") is { } nullNodeDirectoryListing && nullNodeDirectoryListing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryListing = null;
+            if (parseNode.GetChildNode("dismissedToasts") is { } nullNodeDismissedToasts && nullNodeDismissedToasts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DismissedToasts = null;
+            if (parseNode.GetChildNode("enableAffectedProjectsDeployments") is { } nullNodeEnableAffectedProjectsDeployments && nullNodeEnableAffectedProjectsDeployments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAffectedProjectsDeployments = null;
+            if (parseNode.GetChildNode("enableExternalRewriteCaching") is { } nullNodeEnableExternalRewriteCaching && nullNodeEnableExternalRewriteCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableExternalRewriteCaching = null;
+            if (parseNode.GetChildNode("enablePreviewFeedback") is { } nullNodeEnablePreviewFeedback && nullNodeEnablePreviewFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePreviewFeedback = null;
+            if (parseNode.GetChildNode("enableProductionFeedback") is { } nullNodeEnableProductionFeedback && nullNodeEnableProductionFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableProductionFeedback = null;
+            if (parseNode.GetChildNode("framework") is { } nullNodeFramework && nullNodeFramework.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Framework = null;
+            if (parseNode.GetChildNode("gitComments") is { } nullNodeGitComments && nullNodeGitComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitComments = null;
+            if (parseNode.GetChildNode("gitForkProtection") is { } nullNodeGitForkProtection && nullNodeGitForkProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitForkProtection = null;
+            if (parseNode.GetChildNode("gitLFS") is { } nullNodeGitLFS && nullNodeGitLFS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitLFS = null;
+            if (parseNode.GetChildNode("gitProviderOptions") is { } nullNodeGitProviderOptions && nullNodeGitProviderOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitProviderOptions = null;
+            if (parseNode.GetChildNode("installCommand") is { } nullNodeInstallCommand && nullNodeInstallCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallCommand = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("nodeVersion") is { } nullNodeNodeVersion && nullNodeNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeVersion = null;
+            if (parseNode.GetChildNode("oidcTokenConfig") is { } nullNodeOidcTokenConfig && nullNodeOidcTokenConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OidcTokenConfig = null;
+            if (parseNode.GetChildNode("optionsAllowlist") is { } nullNodeOptionsAllowlist && nullNodeOptionsAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsAllowlist = null;
+            if (parseNode.GetChildNode("outputDirectory") is { } nullNodeOutputDirectory && nullNodeOutputDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputDirectory = null;
+            if (parseNode.GetChildNode("passport") is { } nullNodePassport && nullNodePassport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passport = null;
+            if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
+            if (parseNode.GetChildNode("previewDeploymentsDisabled") is { } nullNodePreviewDeploymentsDisabled && nullNodePreviewDeploymentsDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewDeploymentsDisabled = null;
+            if (parseNode.GetChildNode("previewDeploymentSuffix") is { } nullNodePreviewDeploymentSuffix && nullNodePreviewDeploymentSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewDeploymentSuffix = null;
+            if (parseNode.GetChildNode("protectedSourcemaps") is { } nullNodeProtectedSourcemaps && nullNodeProtectedSourcemaps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectedSourcemaps = null;
+            if (parseNode.GetChildNode("publicSource") is { } nullNodePublicSource && nullNodePublicSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicSource = null;
+            if (parseNode.GetChildNode("resourceConfig") is { } nullNodeResourceConfig && nullNodeResourceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceConfig = null;
+            if (parseNode.GetChildNode("rootDirectory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
+            if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
+            if (parseNode.GetChildNode("serverlessFunctionRegion") is { } nullNodeServerlessFunctionRegion && nullNodeServerlessFunctionRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerlessFunctionRegion = null;
+            if (parseNode.GetChildNode("serverlessFunctionZeroConfigFailover") is { } nullNodeServerlessFunctionZeroConfigFailover && nullNodeServerlessFunctionZeroConfigFailover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerlessFunctionZeroConfigFailover = null;
+            if (parseNode.GetChildNode("skewProtectionAllowedDomains") is { } nullNodeSkewProtectionAllowedDomains && nullNodeSkewProtectionAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionAllowedDomains = null;
+            if (parseNode.GetChildNode("skewProtectionBoundaryAt") is { } nullNodeSkewProtectionBoundaryAt && nullNodeSkewProtectionBoundaryAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionBoundaryAt = null;
+            if (parseNode.GetChildNode("skewProtectionMaxAge") is { } nullNodeSkewProtectionMaxAge && nullNodeSkewProtectionMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionMaxAge = null;
+            if (parseNode.GetChildNode("skipGitConnectDuringLink") is { } nullNodeSkipGitConnectDuringLink && nullNodeSkipGitConnectDuringLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipGitConnectDuringLink = null;
+            if (parseNode.GetChildNode("sourceFilesOutsideRootDirectory") is { } nullNodeSourceFilesOutsideRootDirectory && nullNodeSourceFilesOutsideRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFilesOutsideRootDirectory = null;
+            if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
+            if (parseNode.GetChildNode("staticIps") is { } nullNodeStaticIps && nullNodeStaticIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticIps = null;
+            if (parseNode.GetChildNode("tracing") is { } nullNodeTracing && nullNodeTracing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tracing = null;
+            if (parseNode.GetChildNode("trustedIps") is { } nullNodeTrustedIps && nullNodeTrustedIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustedIps = null;
+            if (parseNode.GetChildNode("trustedSources") is { } nullNodeTrustedSources && nullNodeTrustedSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustedSources = null;
+        }
+
         /// <summary>The autoAssignCustomDomains property</summary>
-        public bool? AutoAssignCustomDomains { get; set; }
+        public bool? AutoAssignCustomDomains { get => _explicitNullValueAutoAssignCustomDomains; set { _explicitNullValueAutoAssignCustomDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignCustomDomains"); else _explicitNullProperties?.Remove("autoAssignCustomDomains"); } }
+        private bool? _explicitNullValueAutoAssignCustomDomains = default!;
         /// <summary>The autoAssignCustomDomainsUpdatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutoAssignCustomDomainsUpdatedBy { get; set; }
+        public string? AutoAssignCustomDomainsUpdatedBy { get => _explicitNullValueAutoAssignCustomDomainsUpdatedBy; set { _explicitNullValueAutoAssignCustomDomainsUpdatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignCustomDomainsUpdatedBy"); else _explicitNullProperties?.Remove("autoAssignCustomDomainsUpdatedBy"); } }
+        private string? _explicitNullValueAutoAssignCustomDomainsUpdatedBy = default!;
 #nullable restore
 #else
-        public string AutoAssignCustomDomainsUpdatedBy { get; set; }
+        public string AutoAssignCustomDomainsUpdatedBy { get => _explicitNullValueAutoAssignCustomDomainsUpdatedBy; set { _explicitNullValueAutoAssignCustomDomainsUpdatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignCustomDomainsUpdatedBy"); else _explicitNullProperties?.Remove("autoAssignCustomDomainsUpdatedBy"); } }
+        private string _explicitNullValueAutoAssignCustomDomainsUpdatedBy = default!;
 #endif
         /// <summary>The autoExposeSystemEnvs property</summary>
-        public bool? AutoExposeSystemEnvs { get; set; }
+        public bool? AutoExposeSystemEnvs { get => _explicitNullValueAutoExposeSystemEnvs; set { _explicitNullValueAutoExposeSystemEnvs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoExposeSystemEnvs"); else _explicitNullProperties?.Remove("autoExposeSystemEnvs"); } }
+        private bool? _explicitNullValueAutoExposeSystemEnvs = default!;
         /// <summary>The build command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get; set; }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get; set; }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>The commandForIgnoringBuildStep property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommandForIgnoringBuildStep { get; set; }
+        public string? CommandForIgnoringBuildStep { get => _explicitNullValueCommandForIgnoringBuildStep; set { _explicitNullValueCommandForIgnoringBuildStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commandForIgnoringBuildStep"); else _explicitNullProperties?.Remove("commandForIgnoringBuildStep"); } }
+        private string? _explicitNullValueCommandForIgnoringBuildStep = default!;
 #nullable restore
 #else
-        public string CommandForIgnoringBuildStep { get; set; }
+        public string CommandForIgnoringBuildStep { get => _explicitNullValueCommandForIgnoringBuildStep; set { _explicitNullValueCommandForIgnoringBuildStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commandForIgnoringBuildStep"); else _explicitNullProperties?.Remove("commandForIgnoringBuildStep"); } }
+        private string _explicitNullValueCommandForIgnoringBuildStep = default!;
 #endif
         /// <summary>The list of connections from project environments to dedicated Secure Compute networks. Shared networks must be managed through the shared-connect-links endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem>? ConnectConfigurations { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem>? ConnectConfigurations { get => _explicitNullValueConnectConfigurations; set { _explicitNullValueConnectConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurations"); else _explicitNullProperties?.Remove("connectConfigurations"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem>? _explicitNullValueConnectConfigurations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem> ConnectConfigurations { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem> ConnectConfigurations { get => _explicitNullValueConnectConfigurations; set { _explicitNullValueConnectConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurations"); else _explicitNullProperties?.Remove("connectConfigurations"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem> _explicitNullValueConnectConfigurations = default!;
 #endif
         /// <summary>Specifies whether customer support can see git source for a deployment</summary>
-        public bool? CustomerSupportCodeVisibility { get; set; }
+        public bool? CustomerSupportCodeVisibility { get => _explicitNullValueCustomerSupportCodeVisibility; set { _explicitNullValueCustomerSupportCodeVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerSupportCodeVisibility"); else _explicitNullProperties?.Remove("customerSupportCodeVisibility"); } }
+        private bool? _explicitNullValueCustomerSupportCodeVisibility = default!;
         /// <summary>The deploymentPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDeploymentPolicy? DeploymentPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDeploymentPolicy? DeploymentPolicy { get => _explicitNullValueDeploymentPolicy; set { _explicitNullValueDeploymentPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPolicy"); else _explicitNullProperties?.Remove("deploymentPolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDeploymentPolicy? _explicitNullValueDeploymentPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDeploymentPolicy DeploymentPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDeploymentPolicy DeploymentPolicy { get => _explicitNullValueDeploymentPolicy; set { _explicitNullValueDeploymentPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPolicy"); else _explicitNullProperties?.Remove("deploymentPolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDeploymentPolicy _explicitNullValueDeploymentPolicy = default!;
 #endif
         /// <summary>The dev command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DevCommand { get; set; }
+        public string? DevCommand { get => _explicitNullValueDevCommand; set { _explicitNullValueDevCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devCommand"); else _explicitNullProperties?.Remove("devCommand"); } }
+        private string? _explicitNullValueDevCommand = default!;
 #nullable restore
 #else
-        public string DevCommand { get; set; }
+        public string DevCommand { get => _explicitNullValueDevCommand; set { _explicitNullValueDevCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devCommand"); else _explicitNullProperties?.Remove("devCommand"); } }
+        private string _explicitNullValueDevCommand = default!;
 #endif
         /// <summary>The directoryListing property</summary>
-        public bool? DirectoryListing { get; set; }
+        public bool? DirectoryListing { get => _explicitNullValueDirectoryListing; set { _explicitNullValueDirectoryListing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directoryListing"); else _explicitNullProperties?.Remove("directoryListing"); } }
+        private bool? _explicitNullValueDirectoryListing = default!;
         /// <summary>An array of objects representing a Dismissed Toast in regards to a Project. Objects are either merged with existing toasts (on key match), or added to the `dimissedToasts` array.`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItem>? DismissedToasts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItem>? DismissedToasts { get => _explicitNullValueDismissedToasts; set { _explicitNullValueDismissedToasts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissedToasts"); else _explicitNullProperties?.Remove("dismissedToasts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItem>? _explicitNullValueDismissedToasts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItem> DismissedToasts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItem> DismissedToasts { get => _explicitNullValueDismissedToasts; set { _explicitNullValueDismissedToasts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissedToasts"); else _explicitNullProperties?.Remove("dismissedToasts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItem> _explicitNullValueDismissedToasts = default!;
 #endif
         /// <summary>Opt-in to skip deployments when there are no changes to the root directory and its dependencies</summary>
-        public bool? EnableAffectedProjectsDeployments { get; set; }
+        public bool? EnableAffectedProjectsDeployments { get => _explicitNullValueEnableAffectedProjectsDeployments; set { _explicitNullValueEnableAffectedProjectsDeployments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAffectedProjectsDeployments"); else _explicitNullProperties?.Remove("enableAffectedProjectsDeployments"); } }
+        private bool? _explicitNullValueEnableAffectedProjectsDeployments = default!;
         /// <summary>Specifies whether external rewrite caching is enabled for this project.</summary>
-        public bool? EnableExternalRewriteCaching { get; set; }
+        public bool? EnableExternalRewriteCaching { get => _explicitNullValueEnableExternalRewriteCaching; set { _explicitNullValueEnableExternalRewriteCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableExternalRewriteCaching"); else _explicitNullProperties?.Remove("enableExternalRewriteCaching"); } }
+        private bool? _explicitNullValueEnableExternalRewriteCaching = default!;
         /// <summary>Opt-in to preview toolbar on the project level</summary>
-        public bool? EnablePreviewFeedback { get; set; }
+        public bool? EnablePreviewFeedback { get => _explicitNullValueEnablePreviewFeedback; set { _explicitNullValueEnablePreviewFeedback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePreviewFeedback"); else _explicitNullProperties?.Remove("enablePreviewFeedback"); } }
+        private bool? _explicitNullValueEnablePreviewFeedback = default!;
         /// <summary>Opt-in to production toolbar on the project level</summary>
-        public bool? EnableProductionFeedback { get; set; }
+        public bool? EnableProductionFeedback { get => _explicitNullValueEnableProductionFeedback; set { _explicitNullValueEnableProductionFeedback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableProductionFeedback"); else _explicitNullProperties?.Remove("enableProductionFeedback"); } }
+        private bool? _explicitNullValueEnableProductionFeedback = default!;
         /// <summary>The framework that is being used for this project. When `null` is used no framework is selected</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestFramework? Framework { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestFramework? _explicitNullValueFramework = default!;
+        /// <summary>Opt-in to Git pull request and commit comments on the project level. Replaces `github.silent`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitComments? GitComments { get => _explicitNullValueGitComments; set { _explicitNullValueGitComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitComments"); else _explicitNullProperties?.Remove("gitComments"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitComments? _explicitNullValueGitComments = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitComments GitComments { get => _explicitNullValueGitComments; set { _explicitNullValueGitComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitComments"); else _explicitNullProperties?.Remove("gitComments"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitComments _explicitNullValueGitComments = default!;
+#endif
         /// <summary>Specifies whether PRs from Git forks should require a team member&apos;s authorization before it can be deployed</summary>
-        public bool? GitForkProtection { get; set; }
+        public bool? GitForkProtection { get => _explicitNullValueGitForkProtection; set { _explicitNullValueGitForkProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitForkProtection"); else _explicitNullProperties?.Remove("gitForkProtection"); } }
+        private bool? _explicitNullValueGitForkProtection = default!;
         /// <summary>Specifies whether Git LFS is enabled for this project.</summary>
-        public bool? GitLFS { get; set; }
+        public bool? GitLFS { get => _explicitNullValueGitLFS; set { _explicitNullValueGitLFS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitLFS"); else _explicitNullProperties?.Remove("gitLFS"); } }
+        private bool? _explicitNullValueGitLFS = default!;
+        /// <summary>Miscellaneous options related to how this projects interacts with the linked git source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitProviderOptions? GitProviderOptions { get => _explicitNullValueGitProviderOptions; set { _explicitNullValueGitProviderOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProviderOptions"); else _explicitNullProperties?.Remove("gitProviderOptions"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitProviderOptions? _explicitNullValueGitProviderOptions = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitProviderOptions GitProviderOptions { get => _explicitNullValueGitProviderOptions; set { _explicitNullValueGitProviderOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProviderOptions"); else _explicitNullProperties?.Remove("gitProviderOptions"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitProviderOptions _explicitNullValueGitProviderOptions = default!;
+#endif
         /// <summary>The install command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallCommand { get; set; }
+        public string? InstallCommand { get => _explicitNullValueInstallCommand; set { _explicitNullValueInstallCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installCommand"); else _explicitNullProperties?.Remove("installCommand"); } }
+        private string? _explicitNullValueInstallCommand = default!;
 #nullable restore
 #else
-        public string InstallCommand { get; set; }
+        public string InstallCommand { get => _explicitNullValueInstallCommand; set { _explicitNullValueInstallCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installCommand"); else _explicitNullProperties?.Remove("installCommand"); } }
+        private string _explicitNullValueInstallCommand = default!;
 #endif
         /// <summary>The desired name for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The nodeVersion property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestNodeVersion? NodeVersion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestNodeVersion? NodeVersion { get => _explicitNullValueNodeVersion; set { _explicitNullValueNodeVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodeVersion"); else _explicitNullProperties?.Remove("nodeVersion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestNodeVersion? _explicitNullValueNodeVersion = default!;
         /// <summary>OpenID Connect JSON Web Token generation configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOidcTokenConfig? OidcTokenConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOidcTokenConfig? OidcTokenConfig { get => _explicitNullValueOidcTokenConfig; set { _explicitNullValueOidcTokenConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcTokenConfig"); else _explicitNullProperties?.Remove("oidcTokenConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOidcTokenConfig? _explicitNullValueOidcTokenConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOidcTokenConfig OidcTokenConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOidcTokenConfig OidcTokenConfig { get => _explicitNullValueOidcTokenConfig; set { _explicitNullValueOidcTokenConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcTokenConfig"); else _explicitNullProperties?.Remove("oidcTokenConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOidcTokenConfig _explicitNullValueOidcTokenConfig = default!;
 #endif
         /// <summary>Specify a list of paths that should not be protected by Deployment Protection to enable Cors preflight requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOptionsAllowlist? OptionsAllowlist { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOptionsAllowlist? OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOptionsAllowlist? _explicitNullValueOptionsAllowlist = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOptionsAllowlist OptionsAllowlist { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOptionsAllowlist OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestOptionsAllowlist _explicitNullValueOptionsAllowlist = default!;
 #endif
         /// <summary>The output directory of the project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputDirectory { get; set; }
+        public string? OutputDirectory { get => _explicitNullValueOutputDirectory; set { _explicitNullValueOutputDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputDirectory"); else _explicitNullProperties?.Remove("outputDirectory"); } }
+        private string? _explicitNullValueOutputDirectory = default!;
 #nullable restore
 #else
-        public string OutputDirectory { get; set; }
+        public string OutputDirectory { get => _explicitNullValueOutputDirectory; set { _explicitNullValueOutputDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputDirectory"); else _explicitNullProperties?.Remove("outputDirectory"); } }
+        private string _explicitNullValueOutputDirectory = default!;
 #endif
         /// <summary>Passport configuration for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassport? Passport { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassport? Passport { get => _explicitNullValuePassport; set { _explicitNullValuePassport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport"); else _explicitNullProperties?.Remove("passport"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassport? _explicitNullValuePassport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassport Passport { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassport Passport { get => _explicitNullValuePassport; set { _explicitNullValuePassport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport"); else _explicitNullProperties?.Remove("passport"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassport _explicitNullValuePassport = default!;
 #endif
         /// <summary>Allows to protect project deployments with a password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPasswordProtection? PasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPasswordProtection? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPasswordProtection? _explicitNullValuePasswordProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPasswordProtection PasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPasswordProtection PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPasswordProtection _explicitNullValuePasswordProtection = default!;
 #endif
         /// <summary>Specifies whether preview deployments are disabled for this project.</summary>
-        public bool? PreviewDeploymentsDisabled { get; set; }
+        public bool? PreviewDeploymentsDisabled { get => _explicitNullValuePreviewDeploymentsDisabled; set { _explicitNullValuePreviewDeploymentsDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentsDisabled"); else _explicitNullProperties?.Remove("previewDeploymentsDisabled"); } }
+        private bool? _explicitNullValuePreviewDeploymentsDisabled = default!;
         /// <summary>Custom domain suffix for preview deployments. Takes precedence over team-level suffix. Must be a domain owned by the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewDeploymentSuffix { get; set; }
+        public string? PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private string? _explicitNullValuePreviewDeploymentSuffix = default!;
 #nullable restore
 #else
-        public string PreviewDeploymentSuffix { get; set; }
+        public string PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private string _explicitNullValuePreviewDeploymentSuffix = default!;
 #endif
         /// <summary>Specifies whether sourcemaps are protected and require authentication to access.</summary>
-        public bool? ProtectedSourcemaps { get; set; }
+        public bool? ProtectedSourcemaps { get => _explicitNullValueProtectedSourcemaps; set { _explicitNullValueProtectedSourcemaps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protectedSourcemaps"); else _explicitNullProperties?.Remove("protectedSourcemaps"); } }
+        private bool? _explicitNullValueProtectedSourcemaps = default!;
         /// <summary>Deprecated. Accepted for backwards compatibility but ignored.</summary>
         [Obsolete("")]
-        public bool? PublicSource { get; set; }
+        public bool? PublicSource { get => _explicitNullValuePublicSource; set { _explicitNullValuePublicSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicSource"); else _explicitNullProperties?.Remove("publicSource"); } }
+        private bool? _explicitNullValuePublicSource = default!;
         /// <summary>Specifies resource override configuration for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig? ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig? ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig? _explicitNullValueResourceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig _explicitNullValueResourceConfig = default!;
 #endif
         /// <summary>The name of a directory or relative path to the source code of your project. When `null` is used it will default to the project root</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDirectory { get; set; }
+        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string? _explicitNullValueRootDirectory = default!;
 #nullable restore
 #else
-        public string RootDirectory { get; set; }
+        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string _explicitNullValueRootDirectory = default!;
 #endif
         /// <summary>Specifies the default region and failover regions for sandboxes created in the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox? Sandbox { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox? _explicitNullValueSandbox = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox Sandbox { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox _explicitNullValueSandbox = default!;
 #endif
         /// <summary>The region to deploy Serverless Functions in this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerlessFunctionRegion { get; set; }
+        public string? ServerlessFunctionRegion { get => _explicitNullValueServerlessFunctionRegion; set { _explicitNullValueServerlessFunctionRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionRegion"); else _explicitNullProperties?.Remove("serverlessFunctionRegion"); } }
+        private string? _explicitNullValueServerlessFunctionRegion = default!;
 #nullable restore
 #else
-        public string ServerlessFunctionRegion { get; set; }
+        public string ServerlessFunctionRegion { get => _explicitNullValueServerlessFunctionRegion; set { _explicitNullValueServerlessFunctionRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionRegion"); else _explicitNullProperties?.Remove("serverlessFunctionRegion"); } }
+        private string _explicitNullValueServerlessFunctionRegion = default!;
 #endif
         /// <summary>Specifies whether Zero Config Failover is enabled for this project.</summary>
-        public bool? ServerlessFunctionZeroConfigFailover { get; set; }
+        public bool? ServerlessFunctionZeroConfigFailover { get => _explicitNullValueServerlessFunctionZeroConfigFailover; set { _explicitNullValueServerlessFunctionZeroConfigFailover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionZeroConfigFailover"); else _explicitNullProperties?.Remove("serverlessFunctionZeroConfigFailover"); } }
+        private bool? _explicitNullValueServerlessFunctionZeroConfigFailover = default!;
         /// <summary>Cross-site domains allowed to fetch skew-protected assets (hostnames, optionally with leading wildcard like *.example.com).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SkewProtectionAllowedDomains { get; set; }
+        public List<string>? SkewProtectionAllowedDomains { get => _explicitNullValueSkewProtectionAllowedDomains; set { _explicitNullValueSkewProtectionAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionAllowedDomains"); else _explicitNullProperties?.Remove("skewProtectionAllowedDomains"); } }
+        private List<string>? _explicitNullValueSkewProtectionAllowedDomains = default!;
 #nullable restore
 #else
-        public List<string> SkewProtectionAllowedDomains { get; set; }
+        public List<string> SkewProtectionAllowedDomains { get => _explicitNullValueSkewProtectionAllowedDomains; set { _explicitNullValueSkewProtectionAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionAllowedDomains"); else _explicitNullProperties?.Remove("skewProtectionAllowedDomains"); } }
+        private List<string> _explicitNullValueSkewProtectionAllowedDomains = default!;
 #endif
         /// <summary>Deployments created before this absolute datetime have Skew Protection disabled. Value is in milliseconds since epoch to match \&quot;createdAt\&quot; fields.</summary>
-        public int? SkewProtectionBoundaryAt { get; set; }
+        public int? SkewProtectionBoundaryAt { get => _explicitNullValueSkewProtectionBoundaryAt; set { _explicitNullValueSkewProtectionBoundaryAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionBoundaryAt"); else _explicitNullProperties?.Remove("skewProtectionBoundaryAt"); } }
+        private int? _explicitNullValueSkewProtectionBoundaryAt = default!;
         /// <summary>Deployments created before this rolling window have Skew Protection disabled. Value is in seconds to match \&quot;revalidate\&quot; fields.</summary>
-        public int? SkewProtectionMaxAge { get; set; }
+        public int? SkewProtectionMaxAge { get => _explicitNullValueSkewProtectionMaxAge; set { _explicitNullValueSkewProtectionMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionMaxAge"); else _explicitNullProperties?.Remove("skewProtectionMaxAge"); } }
+        private int? _explicitNullValueSkewProtectionMaxAge = default!;
         /// <summary>Opts-out of the message prompting a CLI user to connect a Git repository in `vercel link`.</summary>
         [Obsolete("")]
-        public bool? SkipGitConnectDuringLink { get; set; }
+        public bool? SkipGitConnectDuringLink { get => _explicitNullValueSkipGitConnectDuringLink; set { _explicitNullValueSkipGitConnectDuringLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipGitConnectDuringLink"); else _explicitNullProperties?.Remove("skipGitConnectDuringLink"); } }
+        private bool? _explicitNullValueSkipGitConnectDuringLink = default!;
         /// <summary>Indicates if there are source files outside of the root directory</summary>
-        public bool? SourceFilesOutsideRootDirectory { get; set; }
+        public bool? SourceFilesOutsideRootDirectory { get => _explicitNullValueSourceFilesOutsideRootDirectory; set { _explicitNullValueSourceFilesOutsideRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceFilesOutsideRootDirectory"); else _explicitNullProperties?.Remove("sourceFilesOutsideRootDirectory"); } }
+        private bool? _explicitNullValueSourceFilesOutsideRootDirectory = default!;
         /// <summary>Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of Viewer access on your team</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSsoProtection? SsoProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSsoProtection? SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSsoProtection? _explicitNullValueSsoProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSsoProtection SsoProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSsoProtection SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSsoProtection _explicitNullValueSsoProtection = default!;
 #endif
         /// <summary>Manage Static IPs for this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestStaticIps? StaticIps { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestStaticIps? StaticIps { get => _explicitNullValueStaticIps; set { _explicitNullValueStaticIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staticIps"); else _explicitNullProperties?.Remove("staticIps"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestStaticIps? _explicitNullValueStaticIps = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestStaticIps StaticIps { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestStaticIps StaticIps { get => _explicitNullValueStaticIps; set { _explicitNullValueStaticIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staticIps"); else _explicitNullProperties?.Remove("staticIps"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestStaticIps _explicitNullValueStaticIps = default!;
 #endif
         /// <summary>Tracing configuration for this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTracing? Tracing { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTracing? Tracing { get => _explicitNullValueTracing; set { _explicitNullValueTracing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracing"); else _explicitNullProperties?.Remove("tracing"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTracing? _explicitNullValueTracing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTracing Tracing { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTracing Tracing { get => _explicitNullValueTracing; set { _explicitNullValueTracing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracing"); else _explicitNullProperties?.Remove("tracing"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTracing _explicitNullValueTracing = default!;
 #endif
         /// <summary>Restricts access to deployments based on the incoming request IP address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIps? TrustedIps { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIps? TrustedIps { get => _explicitNullValueTrustedIps; set { _explicitNullValueTrustedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedIps"); else _explicitNullProperties?.Remove("trustedIps"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIps? _explicitNullValueTrustedIps = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIps TrustedIps { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIps TrustedIps { get => _explicitNullValueTrustedIps; set { _explicitNullValueTrustedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedIps"); else _explicitNullProperties?.Remove("trustedIps"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIps _explicitNullValueTrustedIps = default!;
 #endif
         /// <summary>Deployment Protection Trusted Sources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources? TrustedSources { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources? TrustedSources { get => _explicitNullValueTrustedSources; set { _explicitNullValueTrustedSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedSources"); else _explicitNullProperties?.Remove("trustedSources"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources? _explicitNullValueTrustedSources = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources TrustedSources { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources TrustedSources { get => _explicitNullValueTrustedSources; set { _explicitNullValueTrustedSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedSources"); else _explicitNullProperties?.Remove("trustedSources"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources _explicitNullValueTrustedSources = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -262,7 +406,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -288,8 +432,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetBoolValue(); } },
                 { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetBoolValue(); } },
                 { "framework", n => { Framework = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestFramework>(); } },
+                { "gitComments", n => { GitComments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitComments>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitComments.CreateFromDiscriminatorValue); } },
                 { "gitForkProtection", n => { GitForkProtection = n.GetBoolValue(); } },
                 { "gitLFS", n => { GitLFS = n.GetBoolValue(); } },
+                { "gitProviderOptions", n => { GitProviderOptions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitProviderOptions>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitProviderOptions.CreateFromDiscriminatorValue); } },
                 { "installCommand", n => { InstallCommand = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nodeVersion", n => { NodeVersion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestNodeVersion>(); } },
@@ -342,8 +488,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("enablePreviewFeedback", EnablePreviewFeedback);
             writer.WriteBoolValue("enableProductionFeedback", EnableProductionFeedback);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestFramework>("framework", Framework);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitComments>("gitComments", GitComments);
             writer.WriteBoolValue("gitForkProtection", GitForkProtection);
             writer.WriteBoolValue("gitLFS", GitLFS);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestGitProviderOptions>("gitProviderOptions", GitProviderOptions);
             writer.WriteStringValue("installCommand", InstallCommand);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestNodeVersion>("nodeVersion", NodeVersion);
@@ -370,7 +518,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestStaticIps>("staticIps", StaticIps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTracing>("tracing", Tracing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIps>("trustedIps", TrustedIps);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources>("trustedSources", TrustedSources);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources>("trustedSources", TrustedSources);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

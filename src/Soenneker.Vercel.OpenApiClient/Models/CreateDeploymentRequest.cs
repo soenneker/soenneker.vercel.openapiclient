@@ -11,107 +11,154 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateDeploymentRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
+            if (parseNode.GetChildNode("customEnvironmentSlugOrId") is { } nullNodeCustomEnvironmentSlugOrId && nullNodeCustomEnvironmentSlugOrId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEnvironmentSlugOrId = null;
+            if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
+            if (parseNode.GetChildNode("files") is { } nullNodeFiles && nullNodeFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Files = null;
+            if (parseNode.GetChildNode("gitAccessToken") is { } nullNodeGitAccessToken && nullNodeGitAccessToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitAccessToken = null;
+            if (parseNode.GetChildNode("gitMetadata") is { } nullNodeGitMetadata && nullNodeGitMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitMetadata = null;
+            if (parseNode.GetChildNode("gitSource") is { } nullNodeGitSource && nullNodeGitSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitSource = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("monorepoManager") is { } nullNodeMonorepoManager && nullNodeMonorepoManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonorepoManager = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("projectSettings") is { } nullNodeProjectSettings && nullNodeProjectSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSettings = null;
+            if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+            if (parseNode.GetChildNode("withLatestCommit") is { } nullNodeWithLatestCommit && nullNodeWithLatestCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WithLatestCommit = null;
+        }
+
         /// <summary>Selects a custom build machine for this deployment without changing project settings.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TurboBuildMachine? BuildMachine { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TurboBuildMachine? BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TurboBuildMachine? _explicitNullValueBuildMachine = default!;
         /// <summary>The slug or ID of a custom environment to deploy to, overriding the default target environment. When omitted, the deployment targets the environment inferred from the branch (production or preview).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomEnvironmentSlugOrId { get; set; }
+        public string? CustomEnvironmentSlugOrId { get => _explicitNullValueCustomEnvironmentSlugOrId; set { _explicitNullValueCustomEnvironmentSlugOrId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customEnvironmentSlugOrId"); else _explicitNullProperties?.Remove("customEnvironmentSlugOrId"); } }
+        private string? _explicitNullValueCustomEnvironmentSlugOrId = default!;
 #nullable restore
 #else
-        public string CustomEnvironmentSlugOrId { get; set; }
+        public string CustomEnvironmentSlugOrId { get => _explicitNullValueCustomEnvironmentSlugOrId; set { _explicitNullValueCustomEnvironmentSlugOrId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customEnvironmentSlugOrId"); else _explicitNullProperties?.Remove("customEnvironmentSlugOrId"); } }
+        private string _explicitNullValueCustomEnvironmentSlugOrId = default!;
 #endif
         /// <summary>The ID of an existing deployment to redeploy. All project settings and environment variables are inherited from the original unless explicitly overridden in this request. The redeployment gets a new ID, URL, and build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get; set; }
+        public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        private string? _explicitNullValueDeploymentId = default!;
 #nullable restore
 #else
-        public string DeploymentId { get; set; }
+        public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        private string _explicitNullValueDeploymentId = default!;
 #endif
         /// <summary>The files to include in the deployment. Each entry is either an inlined file (with `data` and `encoding`) or a reference to a previously uploaded file (with `sha` and `size`). Required for non-git deployments. Cannot be used together with `gitSource`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem>? Files { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem>? Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem>? _explicitNullValueFiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem> Files { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem> Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem> _explicitNullValueFiles = default!;
 #endif
         /// <summary>Available only to Vercel platform accounts. A read-only GitHub access token scoped to the requested repository. Use a token with a lifetime of 24 hours or less that remains valid until source retrieval completes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitAccessToken { get; set; }
+        public string? GitAccessToken { get => _explicitNullValueGitAccessToken; set { _explicitNullValueGitAccessToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitAccessToken"); else _explicitNullProperties?.Remove("gitAccessToken"); } }
+        private string? _explicitNullValueGitAccessToken = default!;
 #nullable restore
 #else
-        public string GitAccessToken { get; set; }
+        public string GitAccessToken { get => _explicitNullValueGitAccessToken; set { _explicitNullValueGitAccessToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitAccessToken"); else _explicitNullProperties?.Remove("gitAccessToken"); } }
+        private string _explicitNullValueGitAccessToken = default!;
 #endif
         /// <summary>Populates initial git metadata for different git providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata? GitMetadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata? GitMetadata { get => _explicitNullValueGitMetadata; set { _explicitNullValueGitMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitMetadata"); else _explicitNullProperties?.Remove("gitMetadata"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata? _explicitNullValueGitMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata GitMetadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata GitMetadata { get => _explicitNullValueGitMetadata; set { _explicitNullValueGitMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitMetadata"); else _explicitNullProperties?.Remove("gitMetadata"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata _explicitNullValueGitMetadata = default!;
 #endif
         /// <summary>Defines the Git Repository source to be deployed. This property can not be used in combination with `files`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource? GitSource { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource? GitSource { get => _explicitNullValueGitSource; set { _explicitNullValueGitSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSource"); else _explicitNullProperties?.Remove("gitSource"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource? _explicitNullValueGitSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource GitSource { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource GitSource { get => _explicitNullValueGitSource; set { _explicitNullValueGitSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSource"); else _explicitNullProperties?.Remove("gitSource"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource _explicitNullValueGitSource = default!;
 #endif
         /// <summary>An object containing the deployment&apos;s metadata. Multiple key-value pairs can be attached to a deployment. For deployments created with a Cursor Origin `gitSource`, Vercel automatically adds `cursorOriginDeployment`, `cursorOriginCommitSha`, `cursorOriginCommitRef`, `cursorOriginCommitMessage`, `cursorOriginCommitAuthorName`, `cursorOriginCommitAuthorEmail` when available, `cursorOriginOwner`, `cursorOriginRepo`, `cursorOriginRepoId`, and `cursorOriginPrId` for pull request deployments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta? Meta { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta Meta { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The monorepo manager that is being used for this deployment. When `null` is used no monorepo manager is selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonorepoManager { get; set; }
+        public string? MonorepoManager { get => _explicitNullValueMonorepoManager; set { _explicitNullValueMonorepoManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monorepoManager"); else _explicitNullProperties?.Remove("monorepoManager"); } }
+        private string? _explicitNullValueMonorepoManager = default!;
 #nullable restore
 #else
-        public string MonorepoManager { get; set; }
+        public string MonorepoManager { get => _explicitNullValueMonorepoManager; set { _explicitNullValueMonorepoManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monorepoManager"); else _explicitNullProperties?.Remove("monorepoManager"); } }
+        private string _explicitNullValueMonorepoManager = default!;
 #endif
         /// <summary>A string with the project name used in the deployment URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The target project identifier in which the deployment will be created. When defined, this parameter overrides name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Project { get; set; }
+        public string? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private string? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public string Project { get; set; }
+        public string Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private string _explicitNullValueProject = default!;
 #endif
         /// <summary>Project settings that will be applied to the deployment. It is required for the first deployment of a project and will be saved for any following deployments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings? ProjectSettings { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings? ProjectSettings { get => _explicitNullValueProjectSettings; set { _explicitNullValueProjectSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSettings"); else _explicitNullProperties?.Remove("projectSettings"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings? _explicitNullValueProjectSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings ProjectSettings { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings ProjectSettings { get => _explicitNullValueProjectSettings; set { _explicitNullValueProjectSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSettings"); else _explicitNullProperties?.Remove("projectSettings"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings _explicitNullValueProjectSettings = default!;
 #endif
         /// <summary>Either not defined, `staging`, `production`, or a custom environment identifier. If `staging`, a staging alias in the format `&lt;project&gt;-&lt;team&gt;.vercel.app` will be assigned. If `production`, any aliases defined in `alias` will be assigned. If omitted, the target will be `preview`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Target { get; set; }
+        public string? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private string? _explicitNullValueTarget = default!;
 #nullable restore
 #else
-        public string Target { get; set; }
+        public string Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private string _explicitNullValueTarget = default!;
 #endif
         /// <summary>When `true` and `deploymentId` is passed in, the sha from the previous deployment&apos;s `gitSource` is removed forcing the latest commit to be used.</summary>
-        public bool? WithLatestCommit { get; set; }
+        public bool? WithLatestCommit { get => _explicitNullValueWithLatestCommit; set { _explicitNullValueWithLatestCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("withLatestCommit"); else _explicitNullProperties?.Remove("withLatestCommit"); } }
+        private bool? _explicitNullValueWithLatestCommit = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -120,7 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,7 +213,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("project", Project);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettings>("projectSettings", ProjectSettings);
             writer.WriteStringValue("target", Target);
-            writer.WriteBoolValue("withLatestCommit", WithLatestCommit);
+            writer.WriteBoolValue("withLatestCommit", WithLatestCommit);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

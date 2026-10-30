@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TestDrainRequestDelivery : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDelivery();
             if("TestDrainRequestDeliveryOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TestDrainRequestDeliveryOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1();
+                
             }
             else if("TestDrainRequestDeliveryOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TestDrainRequestDeliveryOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2();
+                
             }
             else if("TestDrainRequestDeliveryOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TestDrainRequestDeliveryOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && parseNode.GetChildNode("endpoint") != null && parseNode.GetChildNode("encoding") != null && (parseNode.GetChildNode("encoding")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("json".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "ndjson".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("headers") != null && (parseNode.GetChildNode("compression") == null || (parseNode.GetChildNode("compression")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag5 && ("gzip".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal) || "none".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && parseNode.GetChildNode("endpoint") != null && parseNode.GetChildNode("encoding") != null && (parseNode.GetChildNode("encoding")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("proto".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "json".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("headers") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && parseNode.GetChildNode("endpoint") != null && parseNode.GetChildNode("encoding") != null && (parseNode.GetChildNode("encoding")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("json".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "ndjson".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("compression") != null && (parseNode.GetChildNode("compression")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("none".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("fileStructure") != null && (parseNode.GetChildNode("fileStructure")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag7 && ("hive".Equals(tag7.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("roleArn") != null && parseNode.GetChildNode("region") != null && (parseNode.GetChildNode("serverSideEncryption") == null || (parseNode.GetChildNode("serverSideEncryption")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag10 && ("AES256".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "aws:kms".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "aws:kms:dsse".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("objectAcl") == null || (parseNode.GetChildNode("objectAcl")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag11 && ("private".Equals(optionalTag11.GetValue(), global::System.StringComparison.Ordinal) || "bucket-owner-read".Equals(optionalTag11.GetValue(), global::System.StringComparison.Ordinal) || "bucket-owner-full-control".Equals(optionalTag11.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.TestDrainRequestDeliveryOneOf1 == null && result.TestDrainRequestDeliveryOneOf2 == null && result.TestDrainRequestDeliveryOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.TestDrainRequestDeliveryOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1(), parseNode);
+            if (result.TestDrainRequestDeliveryOneOf1 == null && result.TestDrainRequestDeliveryOneOf2 == null && result.TestDrainRequestDeliveryOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.TestDrainRequestDeliveryOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2(), parseNode);
+            if (result.TestDrainRequestDeliveryOneOf1 == null && result.TestDrainRequestDeliveryOneOf2 == null && result.TestDrainRequestDeliveryOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.TestDrainRequestDeliveryOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3(), parseNode);
+            if (result.TestDrainRequestDeliveryOneOf1 == null && result.TestDrainRequestDeliveryOneOf2 == null && result.TestDrainRequestDeliveryOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TestDrainRequestDeliveryOneOf1 == null && TestDrainRequestDeliveryOneOf2 == null && TestDrainRequestDeliveryOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TestDrainRequestDeliveryOneOf1 != null && TestDrainRequestDeliveryOneOf2 == null && TestDrainRequestDeliveryOneOf3 == null) { if (TestDrainRequestDeliveryOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TestDrainRequestDeliveryOneOf1); return; }
+            if (TestDrainRequestDeliveryOneOf2 != null && TestDrainRequestDeliveryOneOf1 == null && TestDrainRequestDeliveryOneOf3 == null) { if (TestDrainRequestDeliveryOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TestDrainRequestDeliveryOneOf2); return; }
+            if (TestDrainRequestDeliveryOneOf3 != null && TestDrainRequestDeliveryOneOf1 == null && TestDrainRequestDeliveryOneOf2 == null) { if (TestDrainRequestDeliveryOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TestDrainRequestDeliveryOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TestDrainRequestDeliveryOneOf1 != null)
             {
+                if (TestDrainRequestDeliveryOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf1>(null, TestDrainRequestDeliveryOneOf1);
             }
             else if(TestDrainRequestDeliveryOneOf2 != null)
             {
+                if (TestDrainRequestDeliveryOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf2>(null, TestDrainRequestDeliveryOneOf2);
             }
             else if(TestDrainRequestDeliveryOneOf3 != null)
             {
+                if (TestDrainRequestDeliveryOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3>(null, TestDrainRequestDeliveryOneOf3);
             }
         }

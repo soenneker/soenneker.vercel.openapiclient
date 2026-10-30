@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhs : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="bool"/></summary>
         public bool? Boolean { get; set; }
         /// <summary>Composed type representation for type <see cref="double"/></summary>
@@ -53,25 +58,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhs();
             if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3();
+                
             }
             else if("UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4();
+                
             }
-            else if(parseNode.GetBoolValue() is bool booleanValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool booleanValue)
             {
                 result.Boolean = booleanValue;
             }
-            else if(parseNode.GetDoubleValue() is double doubleValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
             {
                 result.Double = doubleValue;
             }
-            else if(parseNode.GetStringValue() is string stringValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
             {
                 result.String = stringValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("items") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("list".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "list/inline".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("flags") != null && parseNode.GetChildNode("pattern") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("regex".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.Boolean == null && result.Double == null && result.String == null && result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 == null && result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3(), parseNode);
+            if (result.Boolean == null && result.Double == null && result.String == null && result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 == null && result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4(), parseNode);
+            if (result.Boolean == null && result.Double == null && result.String == null && result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 == null && result.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,13 +107,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Boolean == null && Double == null && String == null && UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 == null && UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 != null && Boolean == null && Double == null && String == null && UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 == null) { if (UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3); return; }
+            if (UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 != null && Boolean == null && Double == null && String == null && UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 == null) { if (UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 != null)
             {
+                if (UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3>(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf3);
             }
             else if(UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 != null)
             {
+                if (UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4>(null, UpdateFlagSegment200ResponseOneOf1DataRulesItemConditionsItemRhsOneOf4);
             }
             else if(Boolean != null)

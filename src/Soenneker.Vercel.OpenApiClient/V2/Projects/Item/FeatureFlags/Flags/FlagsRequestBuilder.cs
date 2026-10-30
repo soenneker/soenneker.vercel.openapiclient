@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Projects.Item.FeatureFlags.Flags
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListFlagsV2200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListFlagsV2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListFlagsV2200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListFlagsV2200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve feature flags for a project. Returns an opaque cursor for pagination.

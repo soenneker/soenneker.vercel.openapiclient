@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExchangeSsoTokenRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequest();
             if("authorization_code".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExchangeSsoTokenRequestOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1();
+                
             }
             else if("refresh_token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExchangeSsoTokenRequestOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && parseNode.GetChildNode("client_id") != null && parseNode.GetChildNode("client_secret") != null && parseNode.GetChildNode("grant_type") != null && (parseNode.GetChildNode("grant_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("authorization_code".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("refresh_token") != null && parseNode.GetChildNode("client_id") != null && parseNode.GetChildNode("client_secret") != null && parseNode.GetChildNode("grant_type") != null && (parseNode.GetChildNode("grant_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("refresh_token".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ExchangeSsoTokenRequestOneOf1 == null && result.ExchangeSsoTokenRequestOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ExchangeSsoTokenRequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1(), parseNode);
+            if (result.ExchangeSsoTokenRequestOneOf1 == null && result.ExchangeSsoTokenRequestOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ExchangeSsoTokenRequestOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2(), parseNode);
+            if (result.ExchangeSsoTokenRequestOneOf1 == null && result.ExchangeSsoTokenRequestOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ExchangeSsoTokenRequestOneOf1 == null && ExchangeSsoTokenRequestOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ExchangeSsoTokenRequestOneOf1 != null && ExchangeSsoTokenRequestOneOf2 == null) { if (ExchangeSsoTokenRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ExchangeSsoTokenRequestOneOf1); return; }
+            if (ExchangeSsoTokenRequestOneOf2 != null && ExchangeSsoTokenRequestOneOf1 == null) { if (ExchangeSsoTokenRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ExchangeSsoTokenRequestOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ExchangeSsoTokenRequestOneOf1 != null)
             {
+                if (ExchangeSsoTokenRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1>(null, ExchangeSsoTokenRequestOneOf1);
             }
             else if(ExchangeSsoTokenRequestOneOf2 != null)
             {
+                if (ExchangeSsoTokenRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2>(null, ExchangeSsoTokenRequestOneOf2);
             }
         }

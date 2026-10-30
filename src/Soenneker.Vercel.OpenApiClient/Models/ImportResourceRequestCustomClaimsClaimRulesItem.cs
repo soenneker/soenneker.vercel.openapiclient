@@ -11,22 +11,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ImportResourceRequestCustomClaimsClaimRulesItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("claims") is { } nullNodeClaims && nullNodeClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Claims = null;
+            if (parseNode.GetChildNode("when") is { } nullNodeWhen && nullNodeWhen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) When = null;
+        }
+
         /// <summary>Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims? Claims { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims? Claims { get => _explicitNullValueClaims; set { _explicitNullValueClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claims"); else _explicitNullProperties?.Remove("claims"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims? _explicitNullValueClaims = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims Claims { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims Claims { get => _explicitNullValueClaims; set { _explicitNullValueClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claims"); else _explicitNullProperties?.Remove("claims"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims _explicitNullValueClaims = default!;
 #endif
         /// <summary>The when property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen? When { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen? When { get => _explicitNullValueWhen; set { _explicitNullValueWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("when"); else _explicitNullProperties?.Remove("when"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen? _explicitNullValueWhen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen When { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen When { get => _explicitNullValueWhen; set { _explicitNullValueWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("when"); else _explicitNullProperties?.Remove("when"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen _explicitNullValueWhen = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims>("claims", Claims);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen>("when", When);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemWhen>("when", When);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

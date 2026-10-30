@@ -11,64 +11,97 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListVercelCiTaskRuns200ResponseTaskRunsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attempt") is { } nullNodeAttempt && nullNodeAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attempt = null;
+            if (parseNode.GetChildNode("completed") is { } nullNodeCompleted && nullNodeCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Completed = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("deploymentBinding") is { } nullNodeDeploymentBinding && nullNodeDeploymentBinding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentBinding = null;
+            if (parseNode.GetChildNode("invocationAttempt") is { } nullNodeInvocationAttempt && nullNodeInvocationAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationAttempt = null;
+            if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
+            if (parseNode.GetChildNode("jobDefinitionId") is { } nullNodeJobDefinitionId && nullNodeJobDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDefinitionId = null;
+            if (parseNode.GetChildNode("jobRunAttempt") is { } nullNodeJobRunAttempt && nullNodeJobRunAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobRunAttempt = null;
+            if (parseNode.GetChildNode("started") is { } nullNodeStarted && nullNodeStarted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Started = null;
+            if (parseNode.GetChildNode("taskDefinitionId") is { } nullNodeTaskDefinitionId && nullNodeTaskDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskDefinitionId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attempt property</summary>
-        public double? Attempt { get; set; }
+        public double? Attempt { get => _explicitNullValueAttempt; set { _explicitNullValueAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt"); else _explicitNullProperties?.Remove("attempt"); } }
+        private double? _explicitNullValueAttempt = default!;
         /// <summary>The completed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompleted? Completed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompleted? Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompleted? _explicitNullValueCompleted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompleted Completed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompleted Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemCompleted _explicitNullValueCompleted = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public double? CreatedAt { get; set; }
+        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private double? _explicitNullValueCreatedAt = default!;
         /// <summary>The deploymentBinding property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemDeploymentBinding? DeploymentBinding { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemDeploymentBinding? DeploymentBinding { get => _explicitNullValueDeploymentBinding; set { _explicitNullValueDeploymentBinding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentBinding"); else _explicitNullProperties?.Remove("deploymentBinding"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemDeploymentBinding? _explicitNullValueDeploymentBinding = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemDeploymentBinding DeploymentBinding { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemDeploymentBinding DeploymentBinding { get => _explicitNullValueDeploymentBinding; set { _explicitNullValueDeploymentBinding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentBinding"); else _explicitNullProperties?.Remove("deploymentBinding"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemDeploymentBinding _explicitNullValueDeploymentBinding = default!;
 #endif
         /// <summary>The invocationAttempt property</summary>
-        public double? InvocationAttempt { get; set; }
+        public double? InvocationAttempt { get => _explicitNullValueInvocationAttempt; set { _explicitNullValueInvocationAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationAttempt"); else _explicitNullProperties?.Remove("invocationAttempt"); } }
+        private double? _explicitNullValueInvocationAttempt = default!;
         /// <summary>The invocationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvocationId { get; set; }
+        public string? InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        private string? _explicitNullValueInvocationId = default!;
 #nullable restore
 #else
-        public string InvocationId { get; set; }
+        public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        private string _explicitNullValueInvocationId = default!;
 #endif
         /// <summary>The jobDefinitionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobDefinitionId { get; set; }
+        public string? JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
+        private string? _explicitNullValueJobDefinitionId = default!;
 #nullable restore
 #else
-        public string JobDefinitionId { get; set; }
+        public string JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
+        private string _explicitNullValueJobDefinitionId = default!;
 #endif
         /// <summary>The jobRunAttempt property</summary>
-        public double? JobRunAttempt { get; set; }
+        public double? JobRunAttempt { get => _explicitNullValueJobRunAttempt; set { _explicitNullValueJobRunAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRunAttempt"); else _explicitNullProperties?.Remove("jobRunAttempt"); } }
+        private double? _explicitNullValueJobRunAttempt = default!;
         /// <summary>The started property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemStarted? Started { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemStarted? Started { get => _explicitNullValueStarted; set { _explicitNullValueStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started"); else _explicitNullProperties?.Remove("started"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemStarted? _explicitNullValueStarted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemStarted Started { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemStarted Started { get => _explicitNullValueStarted; set { _explicitNullValueStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started"); else _explicitNullProperties?.Remove("started"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemStarted _explicitNullValueStarted = default!;
 #endif
         /// <summary>The taskDefinitionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaskDefinitionId { get; set; }
+        public string? TaskDefinitionId { get => _explicitNullValueTaskDefinitionId; set { _explicitNullValueTaskDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitionId"); else _explicitNullProperties?.Remove("taskDefinitionId"); } }
+        private string? _explicitNullValueTaskDefinitionId = default!;
 #nullable restore
 #else
-        public string TaskDefinitionId { get; set; }
+        public string TaskDefinitionId { get => _explicitNullValueTaskDefinitionId; set { _explicitNullValueTaskDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitionId"); else _explicitNullProperties?.Remove("taskDefinitionId"); } }
+        private string _explicitNullValueTaskDefinitionId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItem"/> and sets the default values.
@@ -85,7 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,6 +157,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("jobRunAttempt", JobRunAttempt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskRuns200ResponseTaskRunsItemStarted>("started", Started);
             writer.WriteStringValue("taskDefinitionId", TaskDefinitionId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

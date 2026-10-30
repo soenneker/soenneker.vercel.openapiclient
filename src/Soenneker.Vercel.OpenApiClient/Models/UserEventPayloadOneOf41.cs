@@ -12,42 +12,63 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf41 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("moderationPolicyCount") is { } nullNodeModerationPolicyCount && nullNodeModerationPolicyCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModerationPolicyCount = null;
+            if (parseNode.GetChildNode("piiRedaction") is { } nullNodePiiRedaction && nullNodePiiRedaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PiiRedaction = null;
+            if (parseNode.GetChildNode("policiesAdded") is { } nullNodePoliciesAdded && nullNodePoliciesAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoliciesAdded = null;
+            if (parseNode.GetChildNode("policiesModified") is { } nullNodePoliciesModified && nullNodePoliciesModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoliciesModified = null;
+            if (parseNode.GetChildNode("policiesRemoved") is { } nullNodePoliciesRemoved && nullNodePoliciesRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoliciesRemoved = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The moderationPolicyCount property</summary>
-        public double? ModerationPolicyCount { get; set; }
+        public double? ModerationPolicyCount { get => _explicitNullValueModerationPolicyCount; set { _explicitNullValueModerationPolicyCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderationPolicyCount"); else _explicitNullProperties?.Remove("moderationPolicyCount"); } }
+        private double? _explicitNullValueModerationPolicyCount = default!;
         /// <summary>The piiRedaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41PiiRedaction? PiiRedaction { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41PiiRedaction? PiiRedaction { get => _explicitNullValuePiiRedaction; set { _explicitNullValuePiiRedaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("piiRedaction"); else _explicitNullProperties?.Remove("piiRedaction"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41PiiRedaction? _explicitNullValuePiiRedaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41PiiRedaction PiiRedaction { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41PiiRedaction PiiRedaction { get => _explicitNullValuePiiRedaction; set { _explicitNullValuePiiRedaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("piiRedaction"); else _explicitNullProperties?.Remove("piiRedaction"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41PiiRedaction _explicitNullValuePiiRedaction = default!;
 #endif
         /// <summary>The policiesAdded property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PoliciesAdded { get; set; }
+        public List<string>? PoliciesAdded { get => _explicitNullValuePoliciesAdded; set { _explicitNullValuePoliciesAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policiesAdded"); else _explicitNullProperties?.Remove("policiesAdded"); } }
+        private List<string>? _explicitNullValuePoliciesAdded = default!;
 #nullable restore
 #else
-        public List<string> PoliciesAdded { get; set; }
+        public List<string> PoliciesAdded { get => _explicitNullValuePoliciesAdded; set { _explicitNullValuePoliciesAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policiesAdded"); else _explicitNullProperties?.Remove("policiesAdded"); } }
+        private List<string> _explicitNullValuePoliciesAdded = default!;
 #endif
         /// <summary>The policiesModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PoliciesModified { get; set; }
+        public List<string>? PoliciesModified { get => _explicitNullValuePoliciesModified; set { _explicitNullValuePoliciesModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policiesModified"); else _explicitNullProperties?.Remove("policiesModified"); } }
+        private List<string>? _explicitNullValuePoliciesModified = default!;
 #nullable restore
 #else
-        public List<string> PoliciesModified { get; set; }
+        public List<string> PoliciesModified { get => _explicitNullValuePoliciesModified; set { _explicitNullValuePoliciesModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policiesModified"); else _explicitNullProperties?.Remove("policiesModified"); } }
+        private List<string> _explicitNullValuePoliciesModified = default!;
 #endif
         /// <summary>The policiesRemoved property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PoliciesRemoved { get; set; }
+        public List<string>? PoliciesRemoved { get => _explicitNullValuePoliciesRemoved; set { _explicitNullValuePoliciesRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policiesRemoved"); else _explicitNullProperties?.Remove("policiesRemoved"); } }
+        private List<string>? _explicitNullValuePoliciesRemoved = default!;
 #nullable restore
 #else
-        public List<string> PoliciesRemoved { get; set; }
+        public List<string> PoliciesRemoved { get => _explicitNullValuePoliciesRemoved; set { _explicitNullValuePoliciesRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policiesRemoved"); else _explicitNullProperties?.Remove("policiesRemoved"); } }
+        private List<string> _explicitNullValuePoliciesRemoved = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("policiesAdded", PoliciesAdded);
             writer.WriteCollectionOfPrimitiveValues<string>("policiesModified", PoliciesModified);
             writer.WriteCollectionOfPrimitiveValues<string>("policiesRemoved", PoliciesRemoved);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

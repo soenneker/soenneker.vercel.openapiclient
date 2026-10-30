@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Test
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.TestDrain200ResponseOneOf2>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.TestDrain200ResponseOneOf2.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.TestDrain200ResponseOneOf2>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.TestDrain200ResponseOneOf2.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Validate the delivery configuration of a Drain using sample events.

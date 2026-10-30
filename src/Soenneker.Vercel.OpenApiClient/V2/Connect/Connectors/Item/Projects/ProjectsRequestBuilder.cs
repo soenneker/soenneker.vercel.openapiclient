@@ -65,6 +65,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Connect.Connectors.Item.Projects
                 { "409", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorProjectConnectionList>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorProjectConnectionList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

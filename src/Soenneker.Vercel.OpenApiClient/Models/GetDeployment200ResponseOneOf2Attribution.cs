@@ -12,32 +12,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDeployment200ResponseOneOf2Attribution : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("commitMeta") is { } nullNodeCommitMeta && nullNodeCommitMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitMeta = null;
+            if (parseNode.GetChildNode("gitUser") is { } nullNodeGitUser && nullNodeGitUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitUser = null;
+            if (parseNode.GetChildNode("vercelUser") is { } nullNodeVercelUser && nullNodeVercelUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VercelUser = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Commit metadata from the git commit author</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionCommitMeta? CommitMeta { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionCommitMeta? CommitMeta { get => _explicitNullValueCommitMeta; set { _explicitNullValueCommitMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitMeta"); else _explicitNullProperties?.Remove("commitMeta"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionCommitMeta? _explicitNullValueCommitMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionCommitMeta CommitMeta { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionCommitMeta CommitMeta { get => _explicitNullValueCommitMeta; set { _explicitNullValueCommitMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitMeta"); else _explicitNullProperties?.Remove("commitMeta"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionCommitMeta _explicitNullValueCommitMeta = default!;
 #endif
         /// <summary>Git provider user associated with the commit author email (only set if resolved)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionGitUser? GitUser { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionGitUser? GitUser { get => _explicitNullValueGitUser; set { _explicitNullValueGitUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUser"); else _explicitNullProperties?.Remove("gitUser"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionGitUser? _explicitNullValueGitUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionGitUser GitUser { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionGitUser GitUser { get => _explicitNullValueGitUser; set { _explicitNullValueGitUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUser"); else _explicitNullProperties?.Remove("gitUser"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionGitUser _explicitNullValueGitUser = default!;
 #endif
         /// <summary>Vercel user linked to the git provider account (only set if resolved)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionVercelUser? VercelUser { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionVercelUser? VercelUser { get => _explicitNullValueVercelUser; set { _explicitNullValueVercelUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelUser"); else _explicitNullProperties?.Remove("vercelUser"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionVercelUser? _explicitNullValueVercelUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionVercelUser VercelUser { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionVercelUser VercelUser { get => _explicitNullValueVercelUser; set { _explicitNullValueVercelUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vercelUser"); else _explicitNullProperties?.Remove("vercelUser"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionVercelUser _explicitNullValueVercelUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2Attribution"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2Attribution CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2Attribution();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2Attribution(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionCommitMeta>("commitMeta", CommitMeta);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionGitUser>("gitUser", GitUser);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AttributionVercelUser>("vercelUser", VercelUser);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

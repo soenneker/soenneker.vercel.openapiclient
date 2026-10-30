@@ -12,24 +12,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProjectRequestTrustedSources : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enableVercelCiSameRepository") is { } nullNodeEnableVercelCiSameRepository && nullNodeEnableVercelCiSameRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableVercelCiSameRepository = null;
+            if (parseNode.GetChildNode("oidcProviders") is { } nullNodeOidcProviders && nullNodeOidcProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OidcProviders = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+        }
+
         /// <summary>Allow same-team Vercel CI access to preview and production deployments built from the same repository as the CI run. The deployment source repository, not the current project repository link, is authoritative. Defaults to enabled when not stored. Omitting this field preserves its stored value, including when trustedSources is cleared. Set true explicitly to re-enable.</summary>
-        public bool? EnableVercelCiSameRepository { get; set; }
+        public bool? EnableVercelCiSameRepository { get => _explicitNullValueEnableVercelCiSameRepository; set { _explicitNullValueEnableVercelCiSameRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableVercelCiSameRepository"); else _explicitNullProperties?.Remove("enableVercelCiSameRepository"); } }
+        private bool? _explicitNullValueEnableVercelCiSameRepository = default!;
         /// <summary>The oidcProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders? OidcProviders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders? OidcProviders { get => _explicitNullValueOidcProviders; set { _explicitNullValueOidcProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcProviders"); else _explicitNullProperties?.Remove("oidcProviders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders? _explicitNullValueOidcProviders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders OidcProviders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders OidcProviders { get => _explicitNullValueOidcProviders; set { _explicitNullValueOidcProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcProviders"); else _explicitNullProperties?.Remove("oidcProviders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders _explicitNullValueOidcProviders = default!;
 #endif
         /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects? Projects { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects Projects { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects _explicitNullValueProjects = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +54,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSources(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +80,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enableVercelCiSameRepository", EnableVercelCiSameRepository);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders>("oidcProviders", OidcProviders);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects>("projects", Projects);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects>("projects", Projects);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

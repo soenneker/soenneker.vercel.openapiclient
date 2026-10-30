@@ -12,180 +12,259 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthUser : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accountUpdateContext") is { } nullNodeAccountUpdateContext && nullNodeAccountUpdateContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountUpdateContext = null;
+            if (parseNode.GetChildNode("activeDashboardViews") is { } nullNodeActiveDashboardViews && nullNodeActiveDashboardViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveDashboardViews = null;
+            if (parseNode.GetChildNode("avatar") is { } nullNodeAvatar && nullNodeAvatar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avatar = null;
+            if (parseNode.GetChildNode("billing") is { } nullNodeBilling && nullNodeBilling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billing = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("dataCache") is { } nullNodeDataCache && nullNodeDataCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCache = null;
+            if (parseNode.GetChildNode("defaultTeamId") is { } nullNodeDefaultTeamId && nullNodeDefaultTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultTeamId = null;
+            if (parseNode.GetChildNode("dismissedToasts") is { } nullNodeDismissedToasts && nullNodeDismissedToasts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DismissedToasts = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("favoriteProjectsAndSpaces") is { } nullNodeFavoriteProjectsAndSpaces && nullNodeFavoriteProjectsAndSpaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FavoriteProjectsAndSpaces = null;
+            if (parseNode.GetChildNode("featureBlocks") is { } nullNodeFeatureBlocks && nullNodeFeatureBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureBlocks = null;
+            if (parseNode.GetChildNode("hasTrialAvailable") is { } nullNodeHasTrialAvailable && nullNodeHasTrialAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasTrialAvailable = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("importFlowGitNamespace") is { } nullNodeImportFlowGitNamespace && nullNodeImportFlowGitNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportFlowGitNamespace = null;
+            if (parseNode.GetChildNode("importFlowGitNamespaceId") is { } nullNodeImportFlowGitNamespaceId && nullNodeImportFlowGitNamespaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportFlowGitNamespaceId = null;
+            if (parseNode.GetChildNode("importFlowGitProvider") is { } nullNodeImportFlowGitProvider && nullNodeImportFlowGitProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportFlowGitProvider = null;
+            if (parseNode.GetChildNode("isAccountUpdateRequired") is { } nullNodeIsAccountUpdateRequired && nullNodeIsAccountUpdateRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAccountUpdateRequired = null;
+            if (parseNode.GetChildNode("isEnterpriseManaged") is { } nullNodeIsEnterpriseManaged && nullNodeIsEnterpriseManaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEnterpriseManaged = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("preferredScopesAndGitNamespaces") is { } nullNodePreferredScopesAndGitNamespaces && nullNodePreferredScopesAndGitNamespaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredScopesAndGitNamespaces = null;
+            if (parseNode.GetChildNode("remoteCaching") is { } nullNodeRemoteCaching && nullNodeRemoteCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCaching = null;
+            if (parseNode.GetChildNode("resourceConfig") is { } nullNodeResourceConfig && nullNodeResourceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceConfig = null;
+            if (parseNode.GetChildNode("shouldShowEnterpriseManagedWelcome") is { } nullNodeShouldShowEnterpriseManagedWelcome && nullNodeShouldShowEnterpriseManagedWelcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShouldShowEnterpriseManagedWelcome = null;
+            if (parseNode.GetChildNode("softBlock") is { } nullNodeSoftBlock && nullNodeSoftBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftBlock = null;
+            if (parseNode.GetChildNode("stagingPrefix") is { } nullNodeStagingPrefix && nullNodeStagingPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StagingPrefix = null;
+            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+        }
+
         /// <summary>Context for the Update Account screen. Present only when `isAccountUpdateRequired` is true. `managedTeams` is empty for orphan mode (user matches an EMU domain but is not on the team). When the teams the user must complete Update Account for include an organization&apos;s backing team, that team is listed as the organization, followed by the organization&apos;s Enterprise Managed root and child teams the user is a member of, including through Directory Sync group mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext? AccountUpdateContext { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext? AccountUpdateContext { get => _explicitNullValueAccountUpdateContext; set { _explicitNullValueAccountUpdateContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountUpdateContext"); else _explicitNullProperties?.Remove("accountUpdateContext"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext? _explicitNullValueAccountUpdateContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext AccountUpdateContext { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext AccountUpdateContext { get => _explicitNullValueAccountUpdateContext; set { _explicitNullValueAccountUpdateContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountUpdateContext"); else _explicitNullProperties?.Remove("accountUpdateContext"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext _explicitNullValueAccountUpdateContext = default!;
 #endif
         /// <summary>set of dashboard view preferences (cards or list) per scopeId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem>? ActiveDashboardViews { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem>? ActiveDashboardViews { get => _explicitNullValueActiveDashboardViews; set { _explicitNullValueActiveDashboardViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeDashboardViews"); else _explicitNullProperties?.Remove("activeDashboardViews"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem>? _explicitNullValueActiveDashboardViews = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem> ActiveDashboardViews { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem> ActiveDashboardViews { get => _explicitNullValueActiveDashboardViews; set { _explicitNullValueActiveDashboardViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeDashboardViews"); else _explicitNullProperties?.Remove("activeDashboardViews"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem> _explicitNullValueActiveDashboardViews = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>SHA1 hash of the avatar for the User account. Can be used in conjuction with the ... endpoint to retrieve the avatar image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Avatar { get; set; }
+        public string? Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
+        private string? _explicitNullValueAvatar = default!;
 #nullable restore
 #else
-        public string Avatar { get; set; }
+        public string Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
+        private string _explicitNullValueAvatar = default!;
 #endif
         /// <summary>An object containing billing infomation associated with the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty? Billing { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty? Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty? _explicitNullValueBilling = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty Billing { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty Billing { get => _explicitNullValueBilling; set { _explicitNullValueBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing"); else _explicitNullProperties?.Remove("billing"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty _explicitNullValueBilling = default!;
 #endif
         /// <summary>UNIX timestamp (in milliseconds) when the User account was created.</summary>
-        public double? CreatedAt { get; set; }
+        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private double? _explicitNullValueCreatedAt = default!;
         /// <summary>data cache settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache? DataCache { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache? DataCache { get => _explicitNullValueDataCache; set { _explicitNullValueDataCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataCache"); else _explicitNullProperties?.Remove("dataCache"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache? _explicitNullValueDataCache = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache DataCache { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache DataCache { get => _explicitNullValueDataCache; set { _explicitNullValueDataCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataCache"); else _explicitNullProperties?.Remove("dataCache"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache _explicitNullValueDataCache = default!;
 #endif
         /// <summary>The user&apos;s default team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultTeamId { get; set; }
+        public string? DefaultTeamId { get => _explicitNullValueDefaultTeamId; set { _explicitNullValueDefaultTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultTeamId"); else _explicitNullProperties?.Remove("defaultTeamId"); } }
+        private string? _explicitNullValueDefaultTeamId = default!;
 #nullable restore
 #else
-        public string DefaultTeamId { get; set; }
+        public string DefaultTeamId { get => _explicitNullValueDefaultTeamId; set { _explicitNullValueDefaultTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultTeamId"); else _explicitNullProperties?.Remove("defaultTeamId"); } }
+        private string _explicitNullValueDefaultTeamId = default!;
 #endif
         /// <summary>A record of when, under a certain scopeId, a toast was dismissed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDismissedToastsItem>? DismissedToasts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDismissedToastsItem>? DismissedToasts { get => _explicitNullValueDismissedToasts; set { _explicitNullValueDismissedToasts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissedToasts"); else _explicitNullProperties?.Remove("dismissedToasts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDismissedToastsItem>? _explicitNullValueDismissedToasts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDismissedToastsItem> DismissedToasts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDismissedToastsItem> DismissedToasts { get => _explicitNullValueDismissedToasts; set { _explicitNullValueDismissedToasts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissedToasts"); else _explicitNullProperties?.Remove("dismissedToasts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDismissedToastsItem> _explicitNullValueDismissedToasts = default!;
 #endif
         /// <summary>Email address associated with the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>A list of projects and spaces across teams that a user has marked as a favorite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFavoriteProjectsAndSpacesItem>? FavoriteProjectsAndSpaces { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFavoriteProjectsAndSpacesItem>? FavoriteProjectsAndSpaces { get => _explicitNullValueFavoriteProjectsAndSpaces; set { _explicitNullValueFavoriteProjectsAndSpaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favoriteProjectsAndSpaces"); else _explicitNullProperties?.Remove("favoriteProjectsAndSpaces"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFavoriteProjectsAndSpacesItem>? _explicitNullValueFavoriteProjectsAndSpaces = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFavoriteProjectsAndSpacesItem> FavoriteProjectsAndSpaces { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFavoriteProjectsAndSpacesItem> FavoriteProjectsAndSpaces { get => _explicitNullValueFavoriteProjectsAndSpaces; set { _explicitNullValueFavoriteProjectsAndSpaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favoriteProjectsAndSpaces"); else _explicitNullProperties?.Remove("favoriteProjectsAndSpaces"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFavoriteProjectsAndSpacesItem> _explicitNullValueFavoriteProjectsAndSpaces = default!;
 #endif
         /// <summary>Feature blocks for the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks? FeatureBlocks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks? FeatureBlocks { get => _explicitNullValueFeatureBlocks; set { _explicitNullValueFeatureBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureBlocks"); else _explicitNullProperties?.Remove("featureBlocks"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks? _explicitNullValueFeatureBlocks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks FeatureBlocks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks FeatureBlocks { get => _explicitNullValueFeatureBlocks; set { _explicitNullValueFeatureBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureBlocks"); else _explicitNullProperties?.Remove("featureBlocks"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks _explicitNullValueFeatureBlocks = default!;
 #endif
         /// <summary>Whether the user has a trial available for a paid plan subscription.</summary>
-        public bool? HasTrialAvailable { get; set; }
+        public bool? HasTrialAvailable { get => _explicitNullValueHasTrialAvailable; set { _explicitNullValueHasTrialAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasTrialAvailable"); else _explicitNullProperties?.Remove("hasTrialAvailable"); } }
+        private bool? _explicitNullValueHasTrialAvailable = default!;
         /// <summary>The User&apos;s unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The importFlowGitNamespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace? ImportFlowGitNamespace { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? ImportFlowGitNamespace { get => _explicitNullValueImportFlowGitNamespace; set { _explicitNullValueImportFlowGitNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importFlowGitNamespace"); else _explicitNullProperties?.Remove("importFlowGitNamespace"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueImportFlowGitNamespace = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace ImportFlowGitNamespace { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode ImportFlowGitNamespace { get => _explicitNullValueImportFlowGitNamespace; set { _explicitNullValueImportFlowGitNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importFlowGitNamespace"); else _explicitNullProperties?.Remove("importFlowGitNamespace"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueImportFlowGitNamespace = default!;
 #endif
         /// <summary>The importFlowGitNamespaceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId? ImportFlowGitNamespaceId { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? ImportFlowGitNamespaceId { get => _explicitNullValueImportFlowGitNamespaceId; set { _explicitNullValueImportFlowGitNamespaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importFlowGitNamespaceId"); else _explicitNullProperties?.Remove("importFlowGitNamespaceId"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueImportFlowGitNamespaceId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId ImportFlowGitNamespaceId { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode ImportFlowGitNamespaceId { get => _explicitNullValueImportFlowGitNamespaceId; set { _explicitNullValueImportFlowGitNamespaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importFlowGitNamespaceId"); else _explicitNullProperties?.Remove("importFlowGitNamespaceId"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueImportFlowGitNamespaceId = default!;
 #endif
         /// <summary>The importFlowGitProvider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider? ImportFlowGitProvider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider? ImportFlowGitProvider { get => _explicitNullValueImportFlowGitProvider; set { _explicitNullValueImportFlowGitProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importFlowGitProvider"); else _explicitNullProperties?.Remove("importFlowGitProvider"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider? _explicitNullValueImportFlowGitProvider = default!;
         /// <summary>When `true`, the user must complete the EMU Update Account flow before they can use the dashboard.</summary>
-        public bool? IsAccountUpdateRequired { get; set; }
+        public bool? IsAccountUpdateRequired { get => _explicitNullValueIsAccountUpdateRequired; set { _explicitNullValueIsAccountUpdateRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAccountUpdateRequired"); else _explicitNullProperties?.Remove("isAccountUpdateRequired"); } }
+        private bool? _explicitNullValueIsAccountUpdateRequired = default!;
         /// <summary>Indicates whether the user is managed by an enterprise.</summary>
-        public bool? IsEnterpriseManaged { get; set; }
+        public bool? IsEnterpriseManaged { get => _explicitNullValueIsEnterpriseManaged; set { _explicitNullValueIsEnterpriseManaged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isEnterpriseManaged"); else _explicitNullProperties?.Remove("isEnterpriseManaged"); } }
+        private bool? _explicitNullValueIsEnterpriseManaged = default!;
         /// <summary>Name associated with the User account, or `null` if none has been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The preferredScopesAndGitNamespaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem>? PreferredScopesAndGitNamespaces { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem>? PreferredScopesAndGitNamespaces { get => _explicitNullValuePreferredScopesAndGitNamespaces; set { _explicitNullValuePreferredScopesAndGitNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredScopesAndGitNamespaces"); else _explicitNullProperties?.Remove("preferredScopesAndGitNamespaces"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem>? _explicitNullValuePreferredScopesAndGitNamespaces = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem> PreferredScopesAndGitNamespaces { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem> PreferredScopesAndGitNamespaces { get => _explicitNullValuePreferredScopesAndGitNamespaces; set { _explicitNullValuePreferredScopesAndGitNamespaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredScopesAndGitNamespaces"); else _explicitNullProperties?.Remove("preferredScopesAndGitNamespaces"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem> _explicitNullValuePreferredScopesAndGitNamespaces = default!;
 #endif
         /// <summary>remote caching settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching? RemoteCaching { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching? RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching? _explicitNullValueRemoteCaching = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching RemoteCaching { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching _explicitNullValueRemoteCaching = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig? ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig? ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig? _explicitNullValueResourceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig _explicitNullValueResourceConfig = default!;
 #endif
         /// <summary>Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.</summary>
-        public bool? ShouldShowEnterpriseManagedWelcome { get; set; }
+        public bool? ShouldShowEnterpriseManagedWelcome { get => _explicitNullValueShouldShowEnterpriseManagedWelcome; set { _explicitNullValueShouldShowEnterpriseManagedWelcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shouldShowEnterpriseManagedWelcome"); else _explicitNullProperties?.Remove("shouldShowEnterpriseManagedWelcome"); } }
+        private bool? _explicitNullValueShouldShowEnterpriseManagedWelcome = default!;
         /// <summary>When the User account has been &quot;soft blocked&quot;, this property will contain the date when the restriction was enacted, and the identifier for why.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock? SoftBlock { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock? SoftBlock { get => _explicitNullValueSoftBlock; set { _explicitNullValueSoftBlock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("softBlock"); else _explicitNullProperties?.Remove("softBlock"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock? _explicitNullValueSoftBlock = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock SoftBlock { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock SoftBlock { get => _explicitNullValueSoftBlock; set { _explicitNullValueSoftBlock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("softBlock"); else _explicitNullProperties?.Remove("softBlock"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock _explicitNullValueSoftBlock = default!;
 #endif
         /// <summary>Prefix that will be used in the URL of &quot;Preview&quot; deployments created by the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StagingPrefix { get; set; }
+        public string? StagingPrefix { get => _explicitNullValueStagingPrefix; set { _explicitNullValueStagingPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stagingPrefix"); else _explicitNullProperties?.Remove("stagingPrefix"); } }
+        private string? _explicitNullValueStagingPrefix = default!;
 #nullable restore
 #else
-        public string StagingPrefix { get; set; }
+        public string StagingPrefix { get => _explicitNullValueStagingPrefix; set { _explicitNullValueStagingPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stagingPrefix"); else _explicitNullProperties?.Remove("stagingPrefix"); } }
+        private string _explicitNullValueStagingPrefix = default!;
 #endif
         /// <summary>Unique username associated with the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get; set; }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get; set; }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUser"/> and sets the default values.
@@ -202,7 +281,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -225,8 +304,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "featureBlocks", n => { FeatureBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks.CreateFromDiscriminatorValue); } },
                 { "hasTrialAvailable", n => { HasTrialAvailable = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "importFlowGitNamespace", n => { ImportFlowGitNamespace = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace.CreateFromDiscriminatorValue); } },
-                { "importFlowGitNamespaceId", n => { ImportFlowGitNamespaceId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId.CreateFromDiscriminatorValue); } },
+                { "importFlowGitNamespace", n => { ImportFlowGitNamespace = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
+                { "importFlowGitNamespaceId", n => { ImportFlowGitNamespaceId = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "importFlowGitProvider", n => { ImportFlowGitProvider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider>(); } },
                 { "isAccountUpdateRequired", n => { IsAccountUpdateRequired = n.GetBoolValue(); } },
                 { "isEnterpriseManaged", n => { IsEnterpriseManaged = n.GetBoolValue(); } },
@@ -260,8 +339,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks>("featureBlocks", FeatureBlocks);
             writer.WriteBoolValue("hasTrialAvailable", HasTrialAvailable);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace>("importFlowGitNamespace", ImportFlowGitNamespace);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId>("importFlowGitNamespaceId", ImportFlowGitNamespaceId);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("importFlowGitNamespace", ImportFlowGitNamespace);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("importFlowGitNamespaceId", ImportFlowGitNamespaceId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider>("importFlowGitProvider", ImportFlowGitProvider);
             writer.WriteBoolValue("isAccountUpdateRequired", IsAccountUpdateRequired);
             writer.WriteBoolValue("isEnterpriseManaged", IsEnterpriseManaged);
@@ -273,6 +352,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock>("softBlock", SoftBlock);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
             writer.WriteStringValue("username", Username);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -298,14 +378,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace();
-                if(parseNode.GetDoubleValue() is double doubleValue)
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
                 {
                     result.Double = doubleValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -325,6 +409,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Double == null && String == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Double != null)
                 {
@@ -359,14 +447,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId();
-                if(parseNode.GetDoubleValue() is double doubleValue)
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
                 {
                     result.Double = doubleValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -386,6 +478,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Double == null && String == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Double != null)
                 {

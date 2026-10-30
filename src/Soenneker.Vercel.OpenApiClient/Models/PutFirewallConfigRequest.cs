@@ -11,58 +11,87 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutFirewallConfigRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("botIdEnabled") is { } nullNodeBotIdEnabled && nullNodeBotIdEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotIdEnabled = null;
+            if (parseNode.GetChildNode("crs") is { } nullNodeCrs && nullNodeCrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crs = null;
+            if (parseNode.GetChildNode("firewallEnabled") is { } nullNodeFirewallEnabled && nullNodeFirewallEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallEnabled = null;
+            if (parseNode.GetChildNode("ips") is { } nullNodeIps && nullNodeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ips = null;
+            if (parseNode.GetChildNode("logHeaders") is { } nullNodeLogHeaders && nullNodeLogHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogHeaders = null;
+            if (parseNode.GetChildNode("managedRules") is { } nullNodeManagedRules && nullNodeManagedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedRules = null;
+            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("rulesets") is { } nullNodeRulesets && nullNodeRulesets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rulesets = null;
+        }
+
         /// <summary>The botIdEnabled property</summary>
-        public bool? BotIdEnabled { get; set; }
+        public bool? BotIdEnabled { get => _explicitNullValueBotIdEnabled; set { _explicitNullValueBotIdEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botIdEnabled"); else _explicitNullProperties?.Remove("botIdEnabled"); } }
+        private bool? _explicitNullValueBotIdEnabled = default!;
         /// <summary>Custom Ruleset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs? Crs { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs? Crs { get => _explicitNullValueCrs; set { _explicitNullValueCrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crs"); else _explicitNullProperties?.Remove("crs"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs? _explicitNullValueCrs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs Crs { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs Crs { get => _explicitNullValueCrs; set { _explicitNullValueCrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crs"); else _explicitNullProperties?.Remove("crs"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs _explicitNullValueCrs = default!;
 #endif
         /// <summary>The firewallEnabled property</summary>
-        public bool? FirewallEnabled { get; set; }
+        public bool? FirewallEnabled { get => _explicitNullValueFirewallEnabled; set { _explicitNullValueFirewallEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firewallEnabled"); else _explicitNullProperties?.Remove("firewallEnabled"); } }
+        private bool? _explicitNullValueFirewallEnabled = default!;
         /// <summary>The ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem>? Ips { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem>? Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem>? _explicitNullValueIps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem> Ips { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem> Ips { get => _explicitNullValueIps; set { _explicitNullValueIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ips"); else _explicitNullProperties?.Remove("ips"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem> _explicitNullValueIps = default!;
 #endif
         /// <summary>The logHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders? LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders? LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders? _explicitNullValueLogHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders _explicitNullValueLogHeaders = default!;
 #endif
         /// <summary>The managedRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules? ManagedRules { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules? ManagedRules { get => _explicitNullValueManagedRules; set { _explicitNullValueManagedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedRules"); else _explicitNullProperties?.Remove("managedRules"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules? _explicitNullValueManagedRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules ManagedRules { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules ManagedRules { get => _explicitNullValueManagedRules; set { _explicitNullValueManagedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedRules"); else _explicitNullProperties?.Remove("managedRules"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules _explicitNullValueManagedRules = default!;
 #endif
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>? Rules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem> Rules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem> _explicitNullValueRules = default!;
 #endif
         /// <summary>The rulesets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets? Rulesets { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets? Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets? _explicitNullValueRulesets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets Rulesets { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets _explicitNullValueRulesets = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,7 +135,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders>("logHeaders", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules>("managedRules", ManagedRules);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>("rules", Rules);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets>("rulesets", Rulesets);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets>("rulesets", Rulesets);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

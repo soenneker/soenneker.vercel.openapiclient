@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProjectCheck200ResponseSource : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSource();
             if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateProjectCheck200ResponseSourceOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf1();
+                
             }
             else if("webhook".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateProjectCheck200ResponseSourceOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf2();
+                
             }
             else if("git-provider".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateProjectCheck200ResponseSourceOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf3();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("integrationConfigurationId") != null && parseNode.GetChildNode("integrationId") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("integration".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("webhook".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("externalCheckName") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("git-provider".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("provider") != null && (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("bitbucket".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "github".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "gitlab".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.UpdateProjectCheck200ResponseSourceOneOf1 == null && result.UpdateProjectCheck200ResponseSourceOneOf2 == null && result.UpdateProjectCheck200ResponseSourceOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.UpdateProjectCheck200ResponseSourceOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf1(), parseNode);
+            if (result.UpdateProjectCheck200ResponseSourceOneOf1 == null && result.UpdateProjectCheck200ResponseSourceOneOf2 == null && result.UpdateProjectCheck200ResponseSourceOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.UpdateProjectCheck200ResponseSourceOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf2(), parseNode);
+            if (result.UpdateProjectCheck200ResponseSourceOneOf1 == null && result.UpdateProjectCheck200ResponseSourceOneOf2 == null && result.UpdateProjectCheck200ResponseSourceOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.UpdateProjectCheck200ResponseSourceOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf3(), parseNode);
+            if (result.UpdateProjectCheck200ResponseSourceOneOf1 == null && result.UpdateProjectCheck200ResponseSourceOneOf2 == null && result.UpdateProjectCheck200ResponseSourceOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (UpdateProjectCheck200ResponseSourceOneOf1 == null && UpdateProjectCheck200ResponseSourceOneOf2 == null && UpdateProjectCheck200ResponseSourceOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (UpdateProjectCheck200ResponseSourceOneOf1 != null && UpdateProjectCheck200ResponseSourceOneOf2 == null && UpdateProjectCheck200ResponseSourceOneOf3 == null) { if (UpdateProjectCheck200ResponseSourceOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateProjectCheck200ResponseSourceOneOf1); return; }
+            if (UpdateProjectCheck200ResponseSourceOneOf2 != null && UpdateProjectCheck200ResponseSourceOneOf1 == null && UpdateProjectCheck200ResponseSourceOneOf3 == null) { if (UpdateProjectCheck200ResponseSourceOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateProjectCheck200ResponseSourceOneOf2); return; }
+            if (UpdateProjectCheck200ResponseSourceOneOf3 != null && UpdateProjectCheck200ResponseSourceOneOf1 == null && UpdateProjectCheck200ResponseSourceOneOf2 == null) { if (UpdateProjectCheck200ResponseSourceOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateProjectCheck200ResponseSourceOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(UpdateProjectCheck200ResponseSourceOneOf1 != null)
             {
+                if (UpdateProjectCheck200ResponseSourceOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf1>(null, UpdateProjectCheck200ResponseSourceOneOf1);
             }
             else if(UpdateProjectCheck200ResponseSourceOneOf2 != null)
             {
+                if (UpdateProjectCheck200ResponseSourceOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf2>(null, UpdateProjectCheck200ResponseSourceOneOf2);
             }
             else if(UpdateProjectCheck200ResponseSourceOneOf3 != null)
             {
+                if (UpdateProjectCheck200ResponseSourceOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200ResponseSourceOneOf3>(null, UpdateProjectCheck200ResponseSourceOneOf3);
             }
         }

@@ -11,30 +11,46 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectConnectorCreateDataTypeSalesforce : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("consumerKey") is { } nullNodeConsumerKey && nullNodeConsumerKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerKey = null;
+            if (parseNode.GetChildNode("consumerSecret") is { } nullNodeConsumerSecret && nullNodeConsumerSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerSecret = null;
+            if (parseNode.GetChildNode("loginHost") is { } nullNodeLoginHost && nullNodeLoginHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginHost = null;
+        }
+
         /// <summary>Salesforce connected app consumer key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerKey { get; set; }
+        public string? ConsumerKey { get => _explicitNullValueConsumerKey; set { _explicitNullValueConsumerKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerKey"); else _explicitNullProperties?.Remove("consumerKey"); } }
+        private string? _explicitNullValueConsumerKey = default!;
 #nullable restore
 #else
-        public string ConsumerKey { get; set; }
+        public string ConsumerKey { get => _explicitNullValueConsumerKey; set { _explicitNullValueConsumerKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerKey"); else _explicitNullProperties?.Remove("consumerKey"); } }
+        private string _explicitNullValueConsumerKey = default!;
 #endif
         /// <summary>Salesforce connected app consumer secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerSecret { get; set; }
+        public string? ConsumerSecret { get => _explicitNullValueConsumerSecret; set { _explicitNullValueConsumerSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerSecret"); else _explicitNullProperties?.Remove("consumerSecret"); } }
+        private string? _explicitNullValueConsumerSecret = default!;
 #nullable restore
 #else
-        public string ConsumerSecret { get; set; }
+        public string ConsumerSecret { get => _explicitNullValueConsumerSecret; set { _explicitNullValueConsumerSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerSecret"); else _explicitNullProperties?.Remove("consumerSecret"); } }
+        private string _explicitNullValueConsumerSecret = default!;
 #endif
         /// <summary>Salesforce login host, such as login.salesforce.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoginHost { get; set; }
+        public string? LoginHost { get => _explicitNullValueLoginHost; set { _explicitNullValueLoginHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginHost"); else _explicitNullProperties?.Remove("loginHost"); } }
+        private string? _explicitNullValueLoginHost = default!;
 #nullable restore
 #else
-        public string LoginHost { get; set; }
+        public string LoginHost { get => _explicitNullValueLoginHost; set { _explicitNullValueLoginHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginHost"); else _explicitNullProperties?.Remove("loginHost"); } }
+        private string _explicitNullValueLoginHost = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +84,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("consumerKey", ConsumerKey);
             writer.WriteStringValue("consumerSecret", ConsumerSecret);
-            writer.WriteStringValue("loginHost", LoginHost);
+            writer.WriteStringValue("loginHost", LoginHost);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

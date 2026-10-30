@@ -18,6 +18,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Deployments.Item
     public partial class WithDeploymentItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The checks property</summary>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.Checks.ChecksRequestBuilder Checks
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.Checks.ChecksRequestBuilder(PathParameters, RequestAdapter);

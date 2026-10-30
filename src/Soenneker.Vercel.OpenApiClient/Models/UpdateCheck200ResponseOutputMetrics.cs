@@ -11,48 +11,70 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateCheck200ResponseOutputMetrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("CLS") is { } nullNodeCLS && nullNodeCLS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CLS = null;
+            if (parseNode.GetChildNode("FCP") is { } nullNodeFCP && nullNodeFCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FCP = null;
+            if (parseNode.GetChildNode("LCP") is { } nullNodeLCP && nullNodeLCP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LCP = null;
+            if (parseNode.GetChildNode("TBT") is { } nullNodeTBT && nullNodeTBT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TBT = null;
+            if (parseNode.GetChildNode("virtualExperienceScore") is { } nullNodeVirtualExperienceScore && nullNodeVirtualExperienceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualExperienceScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The CLS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsCls? CLS { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsCls? CLS { get => _explicitNullValueCLS; set { _explicitNullValueCLS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLS"); else _explicitNullProperties?.Remove("CLS"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsCls? _explicitNullValueCLS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsCls CLS { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsCls CLS { get => _explicitNullValueCLS; set { _explicitNullValueCLS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CLS"); else _explicitNullProperties?.Remove("CLS"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsCls _explicitNullValueCLS = default!;
 #endif
         /// <summary>The FCP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsFcp? FCP { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsFcp? FCP { get => _explicitNullValueFCP; set { _explicitNullValueFCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FCP"); else _explicitNullProperties?.Remove("FCP"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsFcp? _explicitNullValueFCP = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsFcp FCP { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsFcp FCP { get => _explicitNullValueFCP; set { _explicitNullValueFCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FCP"); else _explicitNullProperties?.Remove("FCP"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsFcp _explicitNullValueFCP = default!;
 #endif
         /// <summary>The LCP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsLcp? LCP { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsLcp? LCP { get => _explicitNullValueLCP; set { _explicitNullValueLCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LCP"); else _explicitNullProperties?.Remove("LCP"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsLcp? _explicitNullValueLCP = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsLcp LCP { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsLcp LCP { get => _explicitNullValueLCP; set { _explicitNullValueLCP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LCP"); else _explicitNullProperties?.Remove("LCP"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsLcp _explicitNullValueLCP = default!;
 #endif
         /// <summary>The TBT property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsTbt? TBT { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsTbt? TBT { get => _explicitNullValueTBT; set { _explicitNullValueTBT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TBT"); else _explicitNullProperties?.Remove("TBT"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsTbt? _explicitNullValueTBT = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsTbt TBT { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsTbt TBT { get => _explicitNullValueTBT; set { _explicitNullValueTBT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TBT"); else _explicitNullProperties?.Remove("TBT"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsTbt _explicitNullValueTBT = default!;
 #endif
         /// <summary>The virtualExperienceScore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsVirtualExperienceScore? VirtualExperienceScore { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsVirtualExperienceScore? VirtualExperienceScore { get => _explicitNullValueVirtualExperienceScore; set { _explicitNullValueVirtualExperienceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtualExperienceScore"); else _explicitNullProperties?.Remove("virtualExperienceScore"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsVirtualExperienceScore? _explicitNullValueVirtualExperienceScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsVirtualExperienceScore VirtualExperienceScore { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsVirtualExperienceScore VirtualExperienceScore { get => _explicitNullValueVirtualExperienceScore; set { _explicitNullValueVirtualExperienceScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtualExperienceScore"); else _explicitNullProperties?.Remove("virtualExperienceScore"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsVirtualExperienceScore _explicitNullValueVirtualExperienceScore = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetrics"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsLcp>("LCP", LCP);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsTbt>("TBT", TBT);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateCheck200ResponseOutputMetricsVirtualExperienceScore>("virtualExperienceScore", VirtualExperienceScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

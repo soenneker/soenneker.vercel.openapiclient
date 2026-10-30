@@ -11,21 +11,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateProject200ResponseTrustedIpsOneOf1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addresses") is { } nullNodeAddresses && nullNodeAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Addresses = null;
+            if (parseNode.GetChildNode("deploymentType") is { } nullNodeDeploymentType && nullNodeDeploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentType = null;
+            if (parseNode.GetChildNode("protectionMode") is { } nullNodeProtectionMode && nullNodeProtectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectionMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The addresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1AddressesItem>? Addresses { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1AddressesItem>? Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1AddressesItem>? _explicitNullValueAddresses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1AddressesItem> Addresses { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1AddressesItem> Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1AddressesItem> _explicitNullValueAddresses = default!;
 #endif
         /// <summary>The deploymentType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1DeploymentType? DeploymentType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1DeploymentType? DeploymentType { get => _explicitNullValueDeploymentType; set { _explicitNullValueDeploymentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentType"); else _explicitNullProperties?.Remove("deploymentType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1DeploymentType? _explicitNullValueDeploymentType = default!;
         /// <summary>The protectionMode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1ProtectionMode? ProtectionMode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1ProtectionMode? ProtectionMode { get => _explicitNullValueProtectionMode; set { _explicitNullValueProtectionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protectionMode"); else _explicitNullProperties?.Remove("protectionMode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1ProtectionMode? _explicitNullValueProtectionMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1AddressesItem>("addresses", Addresses);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1DeploymentType>("deploymentType", DeploymentType);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseTrustedIpsOneOf1ProtectionMode>("protectionMode", ProtectionMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,43 +11,74 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TeamResourceConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blobStores") is { } nullNodeBlobStores && nullNodeBlobStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlobStores = null;
+            if (parseNode.GetChildNode("buildEntitlements") is { } nullNodeBuildEntitlements && nullNodeBuildEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildEntitlements = null;
+            if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
+            if (parseNode.GetChildNode("concurrentBuilds") is { } nullNodeConcurrentBuilds && nullNodeConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConcurrentBuilds = null;
+            if (parseNode.GetChildNode("customEnvironmentsPerProject") is { } nullNodeCustomEnvironmentsPerProject && nullNodeCustomEnvironmentsPerProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEnvironmentsPerProject = null;
+            if (parseNode.GetChildNode("edgeConfigs") is { } nullNodeEdgeConfigs && nullNodeEdgeConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigs = null;
+            if (parseNode.GetChildNode("edgeConfigSize") is { } nullNodeEdgeConfigSize && nullNodeEdgeConfigSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSize = null;
+            if (parseNode.GetChildNode("elasticConcurrencyEnabled") is { } nullNodeElasticConcurrencyEnabled && nullNodeElasticConcurrencyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElasticConcurrencyEnabled = null;
+            if (parseNode.GetChildNode("kvDatabases") is { } nullNodeKvDatabases && nullNodeKvDatabases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KvDatabases = null;
+            if (parseNode.GetChildNode("postgresDatabases") is { } nullNodePostgresDatabases && nullNodePostgresDatabases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostgresDatabases = null;
+            if (parseNode.GetChildNode("serverlessFunctionMaxMemorySize") is { } nullNodeServerlessFunctionMaxMemorySize && nullNodeServerlessFunctionMaxMemorySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerlessFunctionMaxMemorySize = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of blob stores an account can create.</summary>
-        public double? BlobStores { get; set; }
+        public double? BlobStores { get => _explicitNullValueBlobStores; set { _explicitNullValueBlobStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blobStores"); else _explicitNullProperties?.Remove("blobStores"); } }
+        private double? _explicitNullValueBlobStores = default!;
         /// <summary>The buildEntitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements? BuildEntitlements { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements? BuildEntitlements { get => _explicitNullValueBuildEntitlements; set { _explicitNullValueBuildEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildEntitlements"); else _explicitNullProperties?.Remove("buildEntitlements"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements? _explicitNullValueBuildEntitlements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements BuildEntitlements { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements BuildEntitlements { get => _explicitNullValueBuildEntitlements; set { _explicitNullValueBuildEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildEntitlements"); else _explicitNullProperties?.Remove("buildEntitlements"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements _explicitNullValueBuildEntitlements = default!;
 #endif
         /// <summary>Build machine configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine? BuildMachine { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine? BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine? _explicitNullValueBuildMachine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine BuildMachine { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine _explicitNullValueBuildMachine = default!;
 #endif
         /// <summary>The total amount of concurrent builds that can be used.</summary>
-        public double? ConcurrentBuilds { get; set; }
+        public double? ConcurrentBuilds { get => _explicitNullValueConcurrentBuilds; set { _explicitNullValueConcurrentBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrentBuilds"); else _explicitNullProperties?.Remove("concurrentBuilds"); } }
+        private double? _explicitNullValueConcurrentBuilds = default!;
         /// <summary>The maximum number of custom environments allowed per project.</summary>
-        public double? CustomEnvironmentsPerProject { get; set; }
+        public double? CustomEnvironmentsPerProject { get => _explicitNullValueCustomEnvironmentsPerProject; set { _explicitNullValueCustomEnvironmentsPerProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customEnvironmentsPerProject"); else _explicitNullProperties?.Remove("customEnvironmentsPerProject"); } }
+        private double? _explicitNullValueCustomEnvironmentsPerProject = default!;
         /// <summary>The maximum number of edge configs an account can create.</summary>
-        public double? EdgeConfigs { get; set; }
+        public double? EdgeConfigs { get => _explicitNullValueEdgeConfigs; set { _explicitNullValueEdgeConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigs"); else _explicitNullProperties?.Remove("edgeConfigs"); } }
+        private double? _explicitNullValueEdgeConfigs = default!;
         /// <summary>The maximum size in kilobytes of a Global Config. Only specified if a custom limit is set.</summary>
-        public double? EdgeConfigSize { get; set; }
+        public double? EdgeConfigSize { get => _explicitNullValueEdgeConfigSize; set { _explicitNullValueEdgeConfigSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSize"); else _explicitNullProperties?.Remove("edgeConfigSize"); } }
+        private double? _explicitNullValueEdgeConfigSize = default!;
         /// <summary>Whether every build for this team / user has elastic concurrency enabled automatically.</summary>
-        public bool? ElasticConcurrencyEnabled { get; set; }
+        public bool? ElasticConcurrencyEnabled { get => _explicitNullValueElasticConcurrencyEnabled; set { _explicitNullValueElasticConcurrencyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elasticConcurrencyEnabled"); else _explicitNullProperties?.Remove("elasticConcurrencyEnabled"); } }
+        private bool? _explicitNullValueElasticConcurrencyEnabled = default!;
         /// <summary>The maximum number of kv databases an account can create.</summary>
-        public double? KvDatabases { get; set; }
+        public double? KvDatabases { get => _explicitNullValueKvDatabases; set { _explicitNullValueKvDatabases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kvDatabases"); else _explicitNullProperties?.Remove("kvDatabases"); } }
+        private double? _explicitNullValueKvDatabases = default!;
         /// <summary>The maximum number of postgres databases an account can create.</summary>
-        public double? PostgresDatabases { get; set; }
+        public double? PostgresDatabases { get => _explicitNullValuePostgresDatabases; set { _explicitNullValuePostgresDatabases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgresDatabases"); else _explicitNullProperties?.Remove("postgresDatabases"); } }
+        private double? _explicitNullValuePostgresDatabases = default!;
         /// <summary>The maximum memory size (in MB) for a serverless function. Only specified if a custom limit is set.</summary>
-        public double? ServerlessFunctionMaxMemorySize { get; set; }
+        public double? ServerlessFunctionMaxMemorySize { get => _explicitNullValueServerlessFunctionMaxMemorySize; set { _explicitNullValueServerlessFunctionMaxMemorySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionMaxMemorySize"); else _explicitNullProperties?.Remove("serverlessFunctionMaxMemorySize"); } }
+        private double? _explicitNullValueServerlessFunctionMaxMemorySize = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig"/> and sets the default values.
         /// </summary>
@@ -63,7 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("kvDatabases", KvDatabases);
             writer.WriteDoubleValue("postgresDatabases", PostgresDatabases);
             writer.WriteDoubleValue("serverlessFunctionMaxMemorySize", ServerlessFunctionMaxMemorySize);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

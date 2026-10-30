@@ -11,15 +11,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AuthUserFeatureBlocksWebAnalytics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blockedFrom") is { } nullNodeBlockedFrom && nullNodeBlockedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedFrom = null;
+            if (parseNode.GetChildNode("blockedUntil") is { } nullNodeBlockedUntil && nullNodeBlockedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedUntil = null;
+            if (parseNode.GetChildNode("isCurrentlyBlocked") is { } nullNodeIsCurrentlyBlocked && nullNodeIsCurrentlyBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCurrentlyBlocked = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blockedFrom property</summary>
-        public double? BlockedFrom { get; set; }
+        public double? BlockedFrom { get => _explicitNullValueBlockedFrom; set { _explicitNullValueBlockedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedFrom"); else _explicitNullProperties?.Remove("blockedFrom"); } }
+        private double? _explicitNullValueBlockedFrom = default!;
         /// <summary>The blockedUntil property</summary>
-        public double? BlockedUntil { get; set; }
+        public double? BlockedUntil { get => _explicitNullValueBlockedUntil; set { _explicitNullValueBlockedUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedUntil"); else _explicitNullProperties?.Remove("blockedUntil"); } }
+        private double? _explicitNullValueBlockedUntil = default!;
         /// <summary>The isCurrentlyBlocked property</summary>
-        public bool? IsCurrentlyBlocked { get; set; }
+        public bool? IsCurrentlyBlocked { get => _explicitNullValueIsCurrentlyBlocked; set { _explicitNullValueIsCurrentlyBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCurrentlyBlocked"); else _explicitNullProperties?.Remove("isCurrentlyBlocked"); } }
+        private bool? _explicitNullValueIsCurrentlyBlocked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("blockedFrom", BlockedFrom);
             writer.WriteDoubleValue("blockedUntil", BlockedUntil);
             writer.WriteBoolValue("isCurrentlyBlocked", IsCurrentlyBlocked);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

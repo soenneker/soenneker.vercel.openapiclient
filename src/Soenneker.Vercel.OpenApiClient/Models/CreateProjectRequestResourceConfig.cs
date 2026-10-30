@@ -12,53 +12,91 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateProjectRequestResourceConfig : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buildMachineElasticLastUpdated") is { } nullNodeBuildMachineElasticLastUpdated && nullNodeBuildMachineElasticLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachineElasticLastUpdated = null;
+            if (parseNode.GetChildNode("buildMachineElasticReason") is { } nullNodeBuildMachineElasticReason && nullNodeBuildMachineElasticReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachineElasticReason = null;
+            if (parseNode.GetChildNode("buildMachineElasticTransition") is { } nullNodeBuildMachineElasticTransition && nullNodeBuildMachineElasticTransition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachineElasticTransition = null;
+            if (parseNode.GetChildNode("buildMachineSelection") is { } nullNodeBuildMachineSelection && nullNodeBuildMachineSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachineSelection = null;
+            if (parseNode.GetChildNode("buildMachineType") is { } nullNodeBuildMachineType && nullNodeBuildMachineType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachineType = null;
+            if (parseNode.GetChildNode("buildQueue") is { } nullNodeBuildQueue && nullNodeBuildQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildQueue = null;
+            if (parseNode.GetChildNode("elasticConcurrencyEnabled") is { } nullNodeElasticConcurrencyEnabled && nullNodeElasticConcurrencyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElasticConcurrencyEnabled = null;
+            if (parseNode.GetChildNode("enableFunctionsBeta") is { } nullNodeEnableFunctionsBeta && nullNodeEnableFunctionsBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableFunctionsBeta = null;
+            if (parseNode.GetChildNode("fluid") is { } nullNodeFluid && nullNodeFluid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fluid = null;
+            if (parseNode.GetChildNode("functionDefaultMemoryType") is { } nullNodeFunctionDefaultMemoryType && nullNodeFunctionDefaultMemoryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDefaultMemoryType = null;
+            if (parseNode.GetChildNode("functionDefaultRegions") is { } nullNodeFunctionDefaultRegions && nullNodeFunctionDefaultRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDefaultRegions = null;
+            if (parseNode.GetChildNode("functionDefaultTimeout") is { } nullNodeFunctionDefaultTimeout && nullNodeFunctionDefaultTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDefaultTimeout = null;
+            if (parseNode.GetChildNode("functionZeroConfigFailover") is { } nullNodeFunctionZeroConfigFailover && nullNodeFunctionZeroConfigFailover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionZeroConfigFailover = null;
+            if (parseNode.GetChildNode("isNSNBDisabled") is { } nullNodeIsNSNBDisabled && nullNodeIsNSNBDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNSNBDisabled = null;
+        }
+
         /// <summary>The buildMachineElasticLastUpdated property</summary>
-        public double? BuildMachineElasticLastUpdated { get; set; }
+        public double? BuildMachineElasticLastUpdated { get => _explicitNullValueBuildMachineElasticLastUpdated; set { _explicitNullValueBuildMachineElasticLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineElasticLastUpdated"); else _explicitNullProperties?.Remove("buildMachineElasticLastUpdated"); } }
+        private double? _explicitNullValueBuildMachineElasticLastUpdated = default!;
         /// <summary>The buildMachineElasticReason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticReason? BuildMachineElasticReason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticReason? BuildMachineElasticReason { get => _explicitNullValueBuildMachineElasticReason; set { _explicitNullValueBuildMachineElasticReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineElasticReason"); else _explicitNullProperties?.Remove("buildMachineElasticReason"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticReason? _explicitNullValueBuildMachineElasticReason = default!;
         /// <summary>The buildMachineElasticTransition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticTransition? BuildMachineElasticTransition { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticTransition? BuildMachineElasticTransition { get => _explicitNullValueBuildMachineElasticTransition; set { _explicitNullValueBuildMachineElasticTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineElasticTransition"); else _explicitNullProperties?.Remove("buildMachineElasticTransition"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticTransition? _explicitNullValueBuildMachineElasticTransition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticTransition BuildMachineElasticTransition { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticTransition BuildMachineElasticTransition { get => _explicitNullValueBuildMachineElasticTransition; set { _explicitNullValueBuildMachineElasticTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineElasticTransition"); else _explicitNullProperties?.Remove("buildMachineElasticTransition"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineElasticTransition _explicitNullValueBuildMachineElasticTransition = default!;
 #endif
         /// <summary>The buildMachineSelection property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineSelection? BuildMachineSelection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineSelection? BuildMachineSelection { get => _explicitNullValueBuildMachineSelection; set { _explicitNullValueBuildMachineSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineSelection"); else _explicitNullProperties?.Remove("buildMachineSelection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineSelection? _explicitNullValueBuildMachineSelection = default!;
         /// <summary>The buildMachineType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineType? BuildMachineType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineType? BuildMachineType { get => _explicitNullValueBuildMachineType; set { _explicitNullValueBuildMachineType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachineType"); else _explicitNullProperties?.Remove("buildMachineType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildMachineType? _explicitNullValueBuildMachineType = default!;
         /// <summary>The buildQueue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildQueue? BuildQueue { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildQueue? BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildQueue? _explicitNullValueBuildQueue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildQueue BuildQueue { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildQueue BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigBuildQueue _explicitNullValueBuildQueue = default!;
 #endif
         /// <summary>The elasticConcurrencyEnabled property</summary>
-        public bool? ElasticConcurrencyEnabled { get; set; }
+        public bool? ElasticConcurrencyEnabled { get => _explicitNullValueElasticConcurrencyEnabled; set { _explicitNullValueElasticConcurrencyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elasticConcurrencyEnabled"); else _explicitNullProperties?.Remove("elasticConcurrencyEnabled"); } }
+        private bool? _explicitNullValueElasticConcurrencyEnabled = default!;
         /// <summary>The enableFunctionsBeta property</summary>
-        public bool? EnableFunctionsBeta { get; set; }
+        public bool? EnableFunctionsBeta { get => _explicitNullValueEnableFunctionsBeta; set { _explicitNullValueEnableFunctionsBeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableFunctionsBeta"); else _explicitNullProperties?.Remove("enableFunctionsBeta"); } }
+        private bool? _explicitNullValueEnableFunctionsBeta = default!;
         /// <summary>The fluid property</summary>
-        public bool? Fluid { get; set; }
+        public bool? Fluid { get => _explicitNullValueFluid; set { _explicitNullValueFluid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fluid"); else _explicitNullProperties?.Remove("fluid"); } }
+        private bool? _explicitNullValueFluid = default!;
         /// <summary>The functionDefaultMemoryType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionDefaultMemoryType? FunctionDefaultMemoryType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionDefaultMemoryType? FunctionDefaultMemoryType { get => _explicitNullValueFunctionDefaultMemoryType; set { _explicitNullValueFunctionDefaultMemoryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultMemoryType"); else _explicitNullProperties?.Remove("functionDefaultMemoryType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionDefaultMemoryType? _explicitNullValueFunctionDefaultMemoryType = default!;
         /// <summary>The regions to deploy Vercel Functions to for this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FunctionDefaultRegions { get; set; }
+        public List<string>? FunctionDefaultRegions { get => _explicitNullValueFunctionDefaultRegions; set { _explicitNullValueFunctionDefaultRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultRegions"); else _explicitNullProperties?.Remove("functionDefaultRegions"); } }
+        private List<string>? _explicitNullValueFunctionDefaultRegions = default!;
 #nullable restore
 #else
-        public List<string> FunctionDefaultRegions { get; set; }
+        public List<string> FunctionDefaultRegions { get => _explicitNullValueFunctionDefaultRegions; set { _explicitNullValueFunctionDefaultRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultRegions"); else _explicitNullProperties?.Remove("functionDefaultRegions"); } }
+        private List<string> _explicitNullValueFunctionDefaultRegions = default!;
 #endif
         /// <summary>The functionDefaultTimeout property</summary>
-        public double? FunctionDefaultTimeout { get; set; }
+        public double? FunctionDefaultTimeout { get => _explicitNullValueFunctionDefaultTimeout; set { _explicitNullValueFunctionDefaultTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultTimeout"); else _explicitNullProperties?.Remove("functionDefaultTimeout"); } }
+        private double? _explicitNullValueFunctionDefaultTimeout = default!;
         /// <summary>Specifies whether Zero Config Failover is enabled for this project.</summary>
-        public bool? FunctionZeroConfigFailover { get; set; }
+        public bool? FunctionZeroConfigFailover { get => _explicitNullValueFunctionZeroConfigFailover; set { _explicitNullValueFunctionZeroConfigFailover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionZeroConfigFailover"); else _explicitNullProperties?.Remove("functionZeroConfigFailover"); } }
+        private bool? _explicitNullValueFunctionZeroConfigFailover = default!;
         /// <summary>The isNSNBDisabled property</summary>
-        public bool? IsNSNBDisabled { get; set; }
+        public bool? IsNSNBDisabled { get => _explicitNullValueIsNSNBDisabled; set { _explicitNullValueIsNSNBDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isNSNBDisabled"); else _explicitNullProperties?.Remove("isNSNBDisabled"); } }
+        private bool? _explicitNullValueIsNSNBDisabled = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,7 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,7 +151,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("functionDefaultRegions", FunctionDefaultRegions);
             writer.WriteDoubleValue("functionDefaultTimeout", FunctionDefaultTimeout);
             writer.WriteBoolValue("functionZeroConfigFailover", FunctionZeroConfigFailover);
-            writer.WriteBoolValue("isNSNBDisabled", IsNSNBDisabled);
+            writer.WriteBoolValue("isNSNBDisabled", IsNSNBDisabled);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

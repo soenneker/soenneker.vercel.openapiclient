@@ -59,6 +59,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.RepositorySettings
                 { "403", global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiRepositorySettings403Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiRepositorySettings429Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiRepositorySettings500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiRepositorySettings200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiRepositorySettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +92,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.RepositorySettings
                 { "403", global::Soenneker.Vercel.OpenApiClient.Models.UpdateVercelCiRepositorySettings403Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.UpdateVercelCiRepositorySettings429Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.UpdateVercelCiRepositorySettings500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateVercelCiRepositorySettings200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateVercelCiRepositorySettings200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

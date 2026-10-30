@@ -11,34 +11,54 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateKmsSigningKeyRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activation") is { } nullNodeActivation && nullNodeActivation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activation = null;
+            if (parseNode.GetChildNode("importKey") is { } nullNodeImportKey && nullNodeImportKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportKey = null;
+            if (parseNode.GetChildNode("importKeyId") is { } nullNodeImportKeyId && nullNodeImportKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportKeyId = null;
+            if (parseNode.GetChildNode("revokePreviousAfterHours") is { } nullNodeRevokePreviousAfterHours && nullNodeRevokePreviousAfterHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevokePreviousAfterHours = null;
+            if (parseNode.GetChildNode("revokePreviousAt") is { } nullNodeRevokePreviousAt && nullNodeRevokePreviousAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevokePreviousAt = null;
+        }
+
         /// <summary>Whether the new key is activated automatically after its public key has propagated, or manually via the activate endpoint. Defaults to `automatic`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequestActivation? Activation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequestActivation? Activation { get => _explicitNullValueActivation; set { _explicitNullValueActivation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activation"); else _explicitNullProperties?.Remove("activation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequestActivation? _explicitNullValueActivation = default!;
         /// <summary>The PEM-encoded private key to use for the issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportKey { get; set; }
+        public string? ImportKey { get => _explicitNullValueImportKey; set { _explicitNullValueImportKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKey"); else _explicitNullProperties?.Remove("importKey"); } }
+        private string? _explicitNullValueImportKey = default!;
 #nullable restore
 #else
-        public string ImportKey { get; set; }
+        public string ImportKey { get => _explicitNullValueImportKey; set { _explicitNullValueImportKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKey"); else _explicitNullProperties?.Remove("importKey"); } }
+        private string _explicitNullValueImportKey = default!;
 #endif
         /// <summary>The key id to use as the imported key&apos;s JWT/JWKS `kid`. Only allowed when `importKey` is provided. Not required to be unique; the addressable key id is the server-minted `keyId` returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportKeyId { get; set; }
+        public string? ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
+        private string? _explicitNullValueImportKeyId = default!;
 #nullable restore
 #else
-        public string ImportKeyId { get; set; }
+        public string ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
+        private string _explicitNullValueImportKeyId = default!;
 #endif
         /// <summary>For automatic activation, how many hours after activation the previous signing key should stop being used. Defaults to a 1 hour grace period so already-issued tokens keep verifying.</summary>
-        public double? RevokePreviousAfterHours { get; set; }
+        public double? RevokePreviousAfterHours { get => _explicitNullValueRevokePreviousAfterHours; set { _explicitNullValueRevokePreviousAfterHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revokePreviousAfterHours"); else _explicitNullProperties?.Remove("revokePreviousAfterHours"); } }
+        private double? _explicitNullValueRevokePreviousAfterHours = default!;
         /// <summary>Deprecated. The ISO date string or timestamp when the previous signing key should stop being used. Converted to a relative grace and applied at activation, not creation. Prefer revokePreviousAfterHours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt? RevokePreviousAt { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? RevokePreviousAt { get => _explicitNullValueRevokePreviousAt; set { _explicitNullValueRevokePreviousAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revokePreviousAt"); else _explicitNullProperties?.Remove("revokePreviousAt"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueRevokePreviousAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt RevokePreviousAt { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode RevokePreviousAt { get => _explicitNullValueRevokePreviousAt; set { _explicitNullValueRevokePreviousAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revokePreviousAt"); else _explicitNullProperties?.Remove("revokePreviousAt"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueRevokePreviousAt = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "importKey", n => { ImportKey = n.GetStringValue(); } },
                 { "importKeyId", n => { ImportKeyId = n.GetStringValue(); } },
                 { "revokePreviousAfterHours", n => { RevokePreviousAfterHours = n.GetDoubleValue(); } },
-                { "revokePreviousAt", n => { RevokePreviousAt = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt>(global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt.CreateFromDiscriminatorValue); } },
+                { "revokePreviousAt", n => { RevokePreviousAt = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,7 +96,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("importKey", ImportKey);
             writer.WriteStringValue("importKeyId", ImportKeyId);
             writer.WriteDoubleValue("revokePreviousAfterHours", RevokePreviousAfterHours);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt>("revokePreviousAt", RevokePreviousAt);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("revokePreviousAt", RevokePreviousAt);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
@@ -101,14 +122,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt();
-                if(parseNode.GetDoubleValue() is double doubleValue)
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
                 {
                     result.Double = doubleValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -128,6 +153,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Double == null && String == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Double != null)
                 {

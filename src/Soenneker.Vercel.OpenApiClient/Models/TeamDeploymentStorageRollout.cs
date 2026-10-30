@@ -12,19 +12,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamDeploymentStorageRollout : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cohort") is { } nullNodeCohort && nullNodeCohort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cohort = null;
+            if (parseNode.GetChildNode("meteredAt") is { } nullNodeMeteredAt && nullNodeMeteredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeteredAt = null;
+            if (parseNode.GetChildNode("meterReason") is { } nullNodeMeterReason && nullNodeMeterReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeterReason = null;
+            if (parseNode.GetChildNode("retentionAppliedAt") is { } nullNodeRetentionAppliedAt && nullNodeRetentionAppliedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionAppliedAt = null;
+            if (parseNode.GetChildNode("retentionOptOutAt") is { } nullNodeRetentionOptOutAt && nullNodeRetentionOptOutAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionOptOutAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cohort property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutCohort? Cohort { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutCohort? Cohort { get => _explicitNullValueCohort; set { _explicitNullValueCohort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cohort"); else _explicitNullProperties?.Remove("cohort"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutCohort? _explicitNullValueCohort = default!;
         /// <summary>When team-wide metering was recorded for this rollout.</summary>
-        public double? MeteredAt { get; set; }
+        public double? MeteredAt { get => _explicitNullValueMeteredAt; set { _explicitNullValueMeteredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meteredAt"); else _explicitNullProperties?.Remove("meteredAt"); } }
+        private double? _explicitNullValueMeteredAt = default!;
         /// <summary>The meterReason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutMeterReason? MeterReason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutMeterReason? MeterReason { get => _explicitNullValueMeterReason; set { _explicitNullValueMeterReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meterReason"); else _explicitNullProperties?.Remove("meterReason"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutMeterReason? _explicitNullValueMeterReason = default!;
         /// <summary>When the calendar retention-reduce migration applied 30d retention.</summary>
-        public double? RetentionAppliedAt { get; set; }
+        public double? RetentionAppliedAt { get => _explicitNullValueRetentionAppliedAt; set { _explicitNullValueRetentionAppliedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retentionAppliedAt"); else _explicitNullProperties?.Remove("retentionAppliedAt"); } }
+        private double? _explicitNullValueRetentionAppliedAt = default!;
         /// <summary>When the customer chose &quot;keep my retention&quot; before reduce day.</summary>
-        public double? RetentionOptOutAt { get; set; }
+        public double? RetentionOptOutAt { get => _explicitNullValueRetentionOptOutAt; set { _explicitNullValueRetentionOptOutAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retentionOptOutAt"); else _explicitNullProperties?.Remove("retentionOptOutAt"); } }
+        private double? _explicitNullValueRetentionOptOutAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutMeterReason>("meterReason", MeterReason);
             writer.WriteDoubleValue("retentionAppliedAt", RetentionAppliedAt);
             writer.WriteDoubleValue("retentionOptOutAt", RetentionOptOutAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

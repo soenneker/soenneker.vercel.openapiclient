@@ -12,43 +12,69 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateDeployment200ResponseOneOf2Config : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("functionMemoryType") is { } nullNodeFunctionMemoryType && nullNodeFunctionMemoryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionMemoryType = null;
+            if (parseNode.GetChildNode("functionTimeout") is { } nullNodeFunctionTimeout && nullNodeFunctionTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionTimeout = null;
+            if (parseNode.GetChildNode("functionType") is { } nullNodeFunctionType && nullNodeFunctionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionType = null;
+            if (parseNode.GetChildNode("isUsingActiveCPU") is { } nullNodeIsUsingActiveCPU && nullNodeIsUsingActiveCPU.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUsingActiveCPU = null;
+            if (parseNode.GetChildNode("resourceConfig") is { } nullNodeResourceConfig && nullNodeResourceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceConfig = null;
+            if (parseNode.GetChildNode("secureComputeFallbackRegion") is { } nullNodeSecureComputeFallbackRegion && nullNodeSecureComputeFallbackRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecureComputeFallbackRegion = null;
+            if (parseNode.GetChildNode("secureComputePrimaryRegion") is { } nullNodeSecureComputePrimaryRegion && nullNodeSecureComputePrimaryRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecureComputePrimaryRegion = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The functionMemoryType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigFunctionMemoryType? FunctionMemoryType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigFunctionMemoryType? FunctionMemoryType { get => _explicitNullValueFunctionMemoryType; set { _explicitNullValueFunctionMemoryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionMemoryType"); else _explicitNullProperties?.Remove("functionMemoryType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigFunctionMemoryType? _explicitNullValueFunctionMemoryType = default!;
         /// <summary>The functionTimeout property</summary>
-        public double? FunctionTimeout { get; set; }
+        public double? FunctionTimeout { get => _explicitNullValueFunctionTimeout; set { _explicitNullValueFunctionTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionTimeout"); else _explicitNullProperties?.Remove("functionTimeout"); } }
+        private double? _explicitNullValueFunctionTimeout = default!;
         /// <summary>The functionType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigFunctionType? FunctionType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigFunctionType? FunctionType { get => _explicitNullValueFunctionType; set { _explicitNullValueFunctionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionType"); else _explicitNullProperties?.Remove("functionType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigFunctionType? _explicitNullValueFunctionType = default!;
         /// <summary>The isUsingActiveCPU property</summary>
-        public bool? IsUsingActiveCPU { get; set; }
+        public bool? IsUsingActiveCPU { get => _explicitNullValueIsUsingActiveCPU; set { _explicitNullValueIsUsingActiveCPU = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isUsingActiveCPU"); else _explicitNullProperties?.Remove("isUsingActiveCPU"); } }
+        private bool? _explicitNullValueIsUsingActiveCPU = default!;
         /// <summary>Build resource configuration snapshot for this deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfig? ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfig? ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfig? _explicitNullValueResourceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfig ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfig ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfig _explicitNullValueResourceConfig = default!;
 #endif
         /// <summary>The secureComputeFallbackRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecureComputeFallbackRegion { get; set; }
+        public string? SecureComputeFallbackRegion { get => _explicitNullValueSecureComputeFallbackRegion; set { _explicitNullValueSecureComputeFallbackRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secureComputeFallbackRegion"); else _explicitNullProperties?.Remove("secureComputeFallbackRegion"); } }
+        private string? _explicitNullValueSecureComputeFallbackRegion = default!;
 #nullable restore
 #else
-        public string SecureComputeFallbackRegion { get; set; }
+        public string SecureComputeFallbackRegion { get => _explicitNullValueSecureComputeFallbackRegion; set { _explicitNullValueSecureComputeFallbackRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secureComputeFallbackRegion"); else _explicitNullProperties?.Remove("secureComputeFallbackRegion"); } }
+        private string _explicitNullValueSecureComputeFallbackRegion = default!;
 #endif
         /// <summary>The secureComputePrimaryRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecureComputePrimaryRegion { get; set; }
+        public string? SecureComputePrimaryRegion { get => _explicitNullValueSecureComputePrimaryRegion; set { _explicitNullValueSecureComputePrimaryRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secureComputePrimaryRegion"); else _explicitNullProperties?.Remove("secureComputePrimaryRegion"); } }
+        private string? _explicitNullValueSecureComputePrimaryRegion = default!;
 #nullable restore
 #else
-        public string SecureComputePrimaryRegion { get; set; }
+        public string SecureComputePrimaryRegion { get => _explicitNullValueSecureComputePrimaryRegion; set { _explicitNullValueSecureComputePrimaryRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secureComputePrimaryRegion"); else _explicitNullProperties?.Remove("secureComputePrimaryRegion"); } }
+        private string _explicitNullValueSecureComputePrimaryRegion = default!;
 #endif
         /// <summary>The version property</summary>
-        public double? Version { get; set; }
+        public double? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private double? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2Config"/> and sets the default values.
         /// </summary>
@@ -64,7 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2Config CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2Config();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2Config(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("secureComputeFallbackRegion", SecureComputeFallbackRegion);
             writer.WriteStringValue("secureComputePrimaryRegion", SecureComputePrimaryRegion);
             writer.WriteDoubleValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

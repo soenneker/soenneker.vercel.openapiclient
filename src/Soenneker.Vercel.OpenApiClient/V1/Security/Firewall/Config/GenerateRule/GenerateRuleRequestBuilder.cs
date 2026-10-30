@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.GenerateRul
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GenerateFirewallRule200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GenerateFirewallRule200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GenerateFirewallRule200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GenerateFirewallRule200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Generate a firewall rule from a natural language description.

@@ -12,43 +12,69 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectConnectorCreateResultAppTokens : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("crossInstallation") is { } nullNodeCrossInstallation && nullNodeCrossInstallation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrossInstallation = null;
+            if (parseNode.GetChildNode("isStaticCredential") is { } nullNodeIsStaticCredential && nullNodeIsStaticCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsStaticCredential = null;
+            if (parseNode.GetChildNode("permissionsUrl") is { } nullNodePermissionsUrl && nullNodePermissionsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionsUrl = null;
+            if (parseNode.GetChildNode("requiresReinstallation") is { } nullNodeRequiresReinstallation && nullNodeRequiresReinstallation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresReinstallation = null;
+            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("supportedAuthorizationDetails") is { } nullNodeSupportedAuthorizationDetails && nullNodeSupportedAuthorizationDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedAuthorizationDetails = null;
+            if (parseNode.GetChildNode("supportsRefinement") is { } nullNodeSupportsRefinement && nullNodeSupportsRefinement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsRefinement = null;
+            if (parseNode.GetChildNode("supportsResources") is { } nullNodeSupportsResources && nullNodeSupportsResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsResources = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether one app token can be used across installations.</summary>
-        public bool? CrossInstallation { get; set; }
+        public bool? CrossInstallation { get => _explicitNullValueCrossInstallation; set { _explicitNullValueCrossInstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crossInstallation"); else _explicitNullProperties?.Remove("crossInstallation"); } }
+        private bool? _explicitNullValueCrossInstallation = default!;
         /// <summary>The isStaticCredential property</summary>
-        public bool? IsStaticCredential { get; set; }
+        public bool? IsStaticCredential { get => _explicitNullValueIsStaticCredential; set { _explicitNullValueIsStaticCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isStaticCredential"); else _explicitNullProperties?.Remove("isStaticCredential"); } }
+        private bool? _explicitNullValueIsStaticCredential = default!;
         /// <summary>Link to the page on the service where this connector&apos;s app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionsUrl { get; set; }
+        public string? PermissionsUrl { get => _explicitNullValuePermissionsUrl; set { _explicitNullValuePermissionsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionsUrl"); else _explicitNullProperties?.Remove("permissionsUrl"); } }
+        private string? _explicitNullValuePermissionsUrl = default!;
 #nullable restore
 #else
-        public string PermissionsUrl { get; set; }
+        public string PermissionsUrl { get => _explicitNullValuePermissionsUrl; set { _explicitNullValuePermissionsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionsUrl"); else _explicitNullProperties?.Remove("permissionsUrl"); } }
+        private string _explicitNullValuePermissionsUrl = default!;
 #endif
         /// <summary>True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.</summary>
-        public bool? RequiresReinstallation { get; set; }
+        public bool? RequiresReinstallation { get => _explicitNullValueRequiresReinstallation; set { _explicitNullValueRequiresReinstallation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresReinstallation"); else _explicitNullProperties?.Remove("requiresReinstallation"); } }
+        private bool? _explicitNullValueRequiresReinstallation = default!;
         /// <summary>Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector&apos;s enabled `clientCredentials.scopes` configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get; set; }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get; set; }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>Supported OAuth authorization-detail type names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedAuthorizationDetails { get; set; }
+        public List<string>? SupportedAuthorizationDetails { get => _explicitNullValueSupportedAuthorizationDetails; set { _explicitNullValueSupportedAuthorizationDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedAuthorizationDetails"); else _explicitNullProperties?.Remove("supportedAuthorizationDetails"); } }
+        private List<string>? _explicitNullValueSupportedAuthorizationDetails = default!;
 #nullable restore
 #else
-        public List<string> SupportedAuthorizationDetails { get; set; }
+        public List<string> SupportedAuthorizationDetails { get => _explicitNullValueSupportedAuthorizationDetails; set { _explicitNullValueSupportedAuthorizationDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedAuthorizationDetails"); else _explicitNullProperties?.Remove("supportedAuthorizationDetails"); } }
+        private List<string> _explicitNullValueSupportedAuthorizationDetails = default!;
 #endif
         /// <summary>Whether callers can narrow app-token grants per request.</summary>
-        public bool? SupportsRefinement { get; set; }
+        public bool? SupportsRefinement { get => _explicitNullValueSupportsRefinement; set { _explicitNullValueSupportsRefinement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportsRefinement"); else _explicitNullProperties?.Remove("supportsRefinement"); } }
+        private bool? _explicitNullValueSupportsRefinement = default!;
         /// <summary>Whether callers can request resource-specific app tokens.</summary>
-        public bool? SupportsResources { get; set; }
+        public bool? SupportsResources { get => _explicitNullValueSupportsResources; set { _explicitNullValueSupportsResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportsResources"); else _explicitNullProperties?.Remove("supportsResources"); } }
+        private bool? _explicitNullValueSupportsResources = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultAppTokens"/> and sets the default values.
         /// </summary>
@@ -64,7 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultAppTokens CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultAppTokens();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultAppTokens(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("supportedAuthorizationDetails", SupportedAuthorizationDetails);
             writer.WriteBoolValue("supportsRefinement", SupportsRefinement);
             writer.WriteBoolValue("supportsResources", SupportsResources);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

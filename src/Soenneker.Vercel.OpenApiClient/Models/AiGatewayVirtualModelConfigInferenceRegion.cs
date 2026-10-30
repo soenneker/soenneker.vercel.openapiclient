@@ -12,35 +12,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiGatewayVirtualModelConfigInferenceRegion : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("geoRegion") is { } nullNodeGeoRegion && nullNodeGeoRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeoRegion = null;
+            if (parseNode.GetChildNode("providerRegion") is { } nullNodeProviderRegion && nullNodeProviderRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderRegion = null;
+            if (parseNode.GetChildNode("providers") is { } nullNodeProviders && nullNodeProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Providers = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Geo zone (e.g. &quot;us&quot;, &quot;eu&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeoRegion { get; set; }
+        public string? GeoRegion { get => _explicitNullValueGeoRegion; set { _explicitNullValueGeoRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoRegion"); else _explicitNullProperties?.Remove("geoRegion"); } }
+        private string? _explicitNullValueGeoRegion = default!;
 #nullable restore
 #else
-        public string GeoRegion { get; set; }
+        public string GeoRegion { get => _explicitNullValueGeoRegion; set { _explicitNullValueGeoRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoRegion"); else _explicitNullProperties?.Remove("geoRegion"); } }
+        private string _explicitNullValueGeoRegion = default!;
 #endif
         /// <summary>Provider-specific region identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderRegion { get; set; }
+        public string? ProviderRegion { get => _explicitNullValueProviderRegion; set { _explicitNullValueProviderRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerRegion"); else _explicitNullProperties?.Remove("providerRegion"); } }
+        private string? _explicitNullValueProviderRegion = default!;
 #nullable restore
 #else
-        public string ProviderRegion { get; set; }
+        public string ProviderRegion { get => _explicitNullValueProviderRegion; set { _explicitNullValueProviderRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerRegion"); else _explicitNullProperties?.Remove("providerRegion"); } }
+        private string _explicitNullValueProviderRegion = default!;
 #endif
         /// <summary>Per-provider region overrides keyed by provider slug.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty? Providers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty? Providers { get => _explicitNullValueProviders; set { _explicitNullValueProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providers"); else _explicitNullProperties?.Remove("providers"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty? _explicitNullValueProviders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty Providers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty Providers { get => _explicitNullValueProviders; set { _explicitNullValueProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providers"); else _explicitNullProperties?.Remove("providers"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty _explicitNullValueProviders = default!;
 #endif
         /// <summary>Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionScope? Scope { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionScope? _explicitNullValueScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegion"/> and sets the default values.
         /// </summary>
@@ -56,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegion();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegion(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("providerRegion", ProviderRegion);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty>("providers", Providers);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionScope>("scope", Scope);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
@@ -87,7 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.

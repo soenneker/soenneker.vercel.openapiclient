@@ -12,135 +12,42 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf502 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>optional since entries prior to 2025-10-13 do not contain app information</summary>
+        /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502App? App { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Next? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Next? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502App App { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Next Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Next _explicitNullValueNext = default!;
 #endif
-        /// <summary>the app&apos;s name at the time the event was published (it could have changed since then)</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Previous? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Previous? _explicitNullValuePrevious = default!;
 #nullable restore
 #else
-        public string AppName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Previous Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Previous _explicitNullValuePrevious = default!;
 #endif
-        /// <summary>access_token TTL</summary>
-        public double? AtTTL { get; set; }
-        /// <summary>The authMethod property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502AuthMethod? AuthMethod { get; set; }
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Geolocation? Geolocation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Geolocation Geolocation { get; set; }
-#endif
-        /// <summary>The grantType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502GrantType? GrantType { get; set; }
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-        public bool? IncludesRefreshToken { get; set; }
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Ip { get; set; }
-#nullable restore
-#else
-        public string Ip { get; set; }
-#endif
-        /// <summary>OIDC issuer (`iss`) of the token that authenticated the request. Present for OIDC-authenticated flows: the token-exchange grant, or `client_credentials` with the `oidc_token` client-authentication method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IssuerUrl { get; set; }
-#nullable restore
-#else
-        public string IssuerUrl { get; set; }
-#endif
-        /// <summary>`sub` claim of the OIDC token. Present for OIDC-authenticated flows (see {@link issuerUrl}).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OidcSubject { get; set; }
-#nullable restore
-#else
-        public string OidcSubject { get; set; }
-#endif
-        /// <summary>ID of the OIDC-exchange policy that authorized a token-exchange grant. Absent for the `client_credentials` + `oidc_token` flow, which matches an app `oidcProviders` entry rather than a policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PolicyId { get; set; }
-#nullable restore
-#else
-        public string PolicyId { get; set; }
-#endif
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PublicId { get; set; }
-#nullable restore
-#else
-        public string PublicId { get; set; }
-#endif
-        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix? RefreshTokenPrefix { get; set; }
-        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RefreshTokenPublicId { get; set; }
-#nullable restore
-#else
-        public string RefreshTokenPublicId { get; set; }
-#endif
-        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RefreshTokenSuffix { get; set; }
-#nullable restore
-#else
-        public string RefreshTokenSuffix { get; set; }
-#endif
-        /// <summary>refresh_token TTL</summary>
-        public double? RtTTL { get; set; }
         /// <summary>The scope property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Scope { get; set; }
-#nullable restore
-#else
-        public string Scope { get; set; }
-#endif
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionId { get; set; }
-#nullable restore
-#else
-        public string SessionId { get; set; }
-#endif
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix? TokenPrefix { get; set; }
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenSuffix { get; set; }
-#nullable restore
-#else
-        public string TokenSuffix { get; set; }
-#endif
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get; set; }
-#nullable restore
-#else
-        public string UserAgent { get; set; }
-#endif
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Scope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Scope? _explicitNullValueScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502"/> and sets the default values.
         /// </summary>
@@ -156,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,27 +73,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app", n => { App = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502App>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502App.CreateFromDiscriminatorValue); } },
-                { "appName", n => { AppName = n.GetStringValue(); } },
-                { "atTTL", n => { AtTTL = n.GetDoubleValue(); } },
-                { "authMethod", n => { AuthMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502AuthMethod>(); } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Geolocation.CreateFromDiscriminatorValue); } },
-                { "grantType", n => { GrantType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502GrantType>(); } },
-                { "includesRefreshToken", n => { IncludesRefreshToken = n.GetBoolValue(); } },
-                { "ip", n => { Ip = n.GetStringValue(); } },
-                { "issuerUrl", n => { IssuerUrl = n.GetStringValue(); } },
-                { "oidcSubject", n => { OidcSubject = n.GetStringValue(); } },
-                { "policyId", n => { PolicyId = n.GetStringValue(); } },
-                { "publicId", n => { PublicId = n.GetStringValue(); } },
-                { "refreshTokenPrefix", n => { RefreshTokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>(); } },
-                { "refreshTokenPublicId", n => { RefreshTokenPublicId = n.GetStringValue(); } },
-                { "refreshTokenSuffix", n => { RefreshTokenSuffix = n.GetStringValue(); } },
-                { "rtTTL", n => { RtTTL = n.GetDoubleValue(); } },
-                { "scope", n => { Scope = n.GetStringValue(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>(); } },
-                { "tokenSuffix", n => { TokenSuffix = n.GetStringValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Previous.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Scope>(); } },
             };
         }
         /// <summary>
@@ -196,27 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502App>("app", App);
-            writer.WriteStringValue("appName", AppName);
-            writer.WriteDoubleValue("atTTL", AtTTL);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502AuthMethod>("authMethod", AuthMethod);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Geolocation>("geolocation", Geolocation);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502GrantType>("grantType", GrantType);
-            writer.WriteBoolValue("includesRefreshToken", IncludesRefreshToken);
-            writer.WriteStringValue("ip", Ip);
-            writer.WriteStringValue("issuerUrl", IssuerUrl);
-            writer.WriteStringValue("oidcSubject", OidcSubject);
-            writer.WriteStringValue("policyId", PolicyId);
-            writer.WriteStringValue("publicId", PublicId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>("refreshTokenPrefix", RefreshTokenPrefix);
-            writer.WriteStringValue("refreshTokenPublicId", RefreshTokenPublicId);
-            writer.WriteStringValue("refreshTokenSuffix", RefreshTokenSuffix);
-            writer.WriteDoubleValue("rtTTL", RtTTL);
-            writer.WriteStringValue("scope", Scope);
-            writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>("tokenPrefix", TokenPrefix);
-            writer.WriteStringValue("tokenSuffix", TokenSuffix);
-            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Previous>("previous", Previous);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf502Scope>("scope", Scope);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,11 +11,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UserEventPayloadOneOf302Next : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("functionDefaultRegions") is { } nullNodeFunctionDefaultRegions && nullNodeFunctionDefaultRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDefaultRegions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The functionZeroConfigFailover property</summary>
-        public bool? FunctionZeroConfigFailover { get; set; }
+        /// <summary>The functionDefaultRegions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? FunctionDefaultRegions { get => _explicitNullValueFunctionDefaultRegions; set { _explicitNullValueFunctionDefaultRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultRegions"); else _explicitNullProperties?.Remove("functionDefaultRegions"); } }
+        private List<string>? _explicitNullValueFunctionDefaultRegions = default!;
+#nullable restore
+#else
+        public List<string> FunctionDefaultRegions { get => _explicitNullValueFunctionDefaultRegions; set { _explicitNullValueFunctionDefaultRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultRegions"); else _explicitNullProperties?.Remove("functionDefaultRegions"); } }
+        private List<string> _explicitNullValueFunctionDefaultRegions = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302Next"/> and sets the default values.
         /// </summary>
@@ -31,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302Next CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302Next();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302Next(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetBoolValue(); } },
+                { "functionDefaultRegions", n => { FunctionDefaultRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -51,7 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("functionZeroConfigFailover", FunctionZeroConfigFailover);
+            writer.WriteCollectionOfPrimitiveValues<string>("functionDefaultRegions", FunctionDefaultRegions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

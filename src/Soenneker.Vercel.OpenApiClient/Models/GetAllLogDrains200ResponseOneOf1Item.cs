@@ -11,64 +11,92 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAllLogDrains200ResponseOneOf1Item : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clientId") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("configurationId") is { } nullNodeConfigurationId && nullNodeConfigurationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationId = null;
+            if (parseNode.GetChildNode("createdFrom") is { } nullNodeCreatedFrom && nullNodeCreatedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFrom = null;
+            if (parseNode.GetChildNode("integrationConfigurationUri") is { } nullNodeIntegrationConfigurationUri && nullNodeIntegrationConfigurationUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConfigurationUri = null;
+            if (parseNode.GetChildNode("integrationIcon") is { } nullNodeIntegrationIcon && nullNodeIntegrationIcon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationIcon = null;
+            if (parseNode.GetChildNode("integrationWebsite") is { } nullNodeIntegrationWebsite && nullNodeIntegrationWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationWebsite = null;
+            if (parseNode.GetChildNode("projectsMetadata") is { } nullNodeProjectsMetadata && nullNodeProjectsMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectsMetadata = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clientId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationId { get; set; }
+        public string? ConfigurationId { get => _explicitNullValueConfigurationId; set { _explicitNullValueConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationId"); else _explicitNullProperties?.Remove("configurationId"); } }
+        private string? _explicitNullValueConfigurationId = default!;
 #nullable restore
 #else
-        public string ConfigurationId { get; set; }
+        public string ConfigurationId { get => _explicitNullValueConfigurationId; set { _explicitNullValueConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationId"); else _explicitNullProperties?.Remove("configurationId"); } }
+        private string _explicitNullValueConfigurationId = default!;
 #endif
         /// <summary>The createdFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedFrom { get; set; }
+        public string? CreatedFrom { get => _explicitNullValueCreatedFrom; set { _explicitNullValueCreatedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdFrom"); else _explicitNullProperties?.Remove("createdFrom"); } }
+        private string? _explicitNullValueCreatedFrom = default!;
 #nullable restore
 #else
-        public string CreatedFrom { get; set; }
+        public string CreatedFrom { get => _explicitNullValueCreatedFrom; set { _explicitNullValueCreatedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdFrom"); else _explicitNullProperties?.Remove("createdFrom"); } }
+        private string _explicitNullValueCreatedFrom = default!;
 #endif
         /// <summary>The integrationConfigurationUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConfigurationUri { get; set; }
+        public string? IntegrationConfigurationUri { get => _explicitNullValueIntegrationConfigurationUri; set { _explicitNullValueIntegrationConfigurationUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationUri"); else _explicitNullProperties?.Remove("integrationConfigurationUri"); } }
+        private string? _explicitNullValueIntegrationConfigurationUri = default!;
 #nullable restore
 #else
-        public string IntegrationConfigurationUri { get; set; }
+        public string IntegrationConfigurationUri { get => _explicitNullValueIntegrationConfigurationUri; set { _explicitNullValueIntegrationConfigurationUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfigurationUri"); else _explicitNullProperties?.Remove("integrationConfigurationUri"); } }
+        private string _explicitNullValueIntegrationConfigurationUri = default!;
 #endif
         /// <summary>The integrationIcon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationIcon { get; set; }
+        public string? IntegrationIcon { get => _explicitNullValueIntegrationIcon; set { _explicitNullValueIntegrationIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationIcon"); else _explicitNullProperties?.Remove("integrationIcon"); } }
+        private string? _explicitNullValueIntegrationIcon = default!;
 #nullable restore
 #else
-        public string IntegrationIcon { get; set; }
+        public string IntegrationIcon { get => _explicitNullValueIntegrationIcon; set { _explicitNullValueIntegrationIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationIcon"); else _explicitNullProperties?.Remove("integrationIcon"); } }
+        private string _explicitNullValueIntegrationIcon = default!;
 #endif
         /// <summary>The integrationWebsite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationWebsite { get; set; }
+        public string? IntegrationWebsite { get => _explicitNullValueIntegrationWebsite; set { _explicitNullValueIntegrationWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationWebsite"); else _explicitNullProperties?.Remove("integrationWebsite"); } }
+        private string? _explicitNullValueIntegrationWebsite = default!;
 #nullable restore
 #else
-        public string IntegrationWebsite { get; set; }
+        public string IntegrationWebsite { get => _explicitNullValueIntegrationWebsite; set { _explicitNullValueIntegrationWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationWebsite"); else _explicitNullProperties?.Remove("integrationWebsite"); } }
+        private string _explicitNullValueIntegrationWebsite = default!;
 #endif
         /// <summary>The projectsMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItem>? ProjectsMetadata { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItem>? ProjectsMetadata { get => _explicitNullValueProjectsMetadata; set { _explicitNullValueProjectsMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectsMetadata"); else _explicitNullProperties?.Remove("projectsMetadata"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItem>? _explicitNullValueProjectsMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItem> ProjectsMetadata { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItem> ProjectsMetadata { get => _explicitNullValueProjectsMetadata; set { _explicitNullValueProjectsMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectsMetadata"); else _explicitNullProperties?.Remove("projectsMetadata"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItem> _explicitNullValueProjectsMetadata = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("integrationIcon", IntegrationIcon);
             writer.WriteStringValue("integrationWebsite", IntegrationWebsite);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItem>("projectsMetadata", ProjectsMetadata);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

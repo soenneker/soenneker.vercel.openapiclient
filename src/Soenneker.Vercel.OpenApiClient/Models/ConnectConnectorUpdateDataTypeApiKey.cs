@@ -11,38 +11,57 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectConnectorUpdateDataTypeApiKey : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("instructions") is { } nullNodeInstructions && nullNodeInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instructions = null;
+            if (parseNode.GetChildNode("toAdd") is { } nullNodeToAdd && nullNodeToAdd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToAdd = null;
+            if (parseNode.GetChildNode("toDelete") is { } nullNodeToDelete && nullNodeToDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToDelete = null;
+            if (parseNode.GetChildNode("toUpdate") is { } nullNodeToUpdate && nullNodeToUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToUpdate = null;
+        }
+
         /// <summary>Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions? Instructions { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions? Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions? _explicitNullValueInstructions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions Instructions { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions _explicitNullValueInstructions = default!;
 #endif
         /// <summary>API key values to add.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem>? ToAdd { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem>? ToAdd { get => _explicitNullValueToAdd; set { _explicitNullValueToAdd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toAdd"); else _explicitNullProperties?.Remove("toAdd"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem>? _explicitNullValueToAdd = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem> ToAdd { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem> ToAdd { get => _explicitNullValueToAdd; set { _explicitNullValueToAdd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toAdd"); else _explicitNullProperties?.Remove("toAdd"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem> _explicitNullValueToAdd = default!;
 #endif
         /// <summary>Stored API key value IDs to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ToDelete { get; set; }
+        public List<string>? ToDelete { get => _explicitNullValueToDelete; set { _explicitNullValueToDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDelete"); else _explicitNullProperties?.Remove("toDelete"); } }
+        private List<string>? _explicitNullValueToDelete = default!;
 #nullable restore
 #else
-        public List<string> ToDelete { get; set; }
+        public List<string> ToDelete { get => _explicitNullValueToDelete; set { _explicitNullValueToDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDelete"); else _explicitNullProperties?.Remove("toDelete"); } }
+        private List<string> _explicitNullValueToDelete = default!;
 #endif
         /// <summary>Existing API key values to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem>? ToUpdate { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem>? ToUpdate { get => _explicitNullValueToUpdate; set { _explicitNullValueToUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toUpdate"); else _explicitNullProperties?.Remove("toUpdate"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem>? _explicitNullValueToUpdate = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem> ToUpdate { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem> ToUpdate { get => _explicitNullValueToUpdate; set { _explicitNullValueToUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toUpdate"); else _explicitNullProperties?.Remove("toUpdate"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem> _explicitNullValueToUpdate = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +97,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions>("instructions", Instructions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem>("toAdd", ToAdd);
             writer.WriteCollectionOfPrimitiveValues<string>("toDelete", ToDelete);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem>("toUpdate", ToUpdate);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem>("toUpdate", ToUpdate);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

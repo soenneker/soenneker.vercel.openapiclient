@@ -11,27 +11,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProjectRequestConnectConfigurationsItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buildsEnabled") is { } nullNodeBuildsEnabled && nullNodeBuildsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildsEnabled = null;
+            if (parseNode.GetChildNode("connectConfigurationId") is { } nullNodeConnectConfigurationId && nullNodeConnectConfigurationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectConfigurationId = null;
+            if (parseNode.GetChildNode("envId") is { } nullNodeEnvId && nullNodeEnvId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvId = null;
+            if (parseNode.GetChildNode("passive") is { } nullNodePassive && nullNodePassive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passive = null;
+        }
+
         /// <summary>Flag saying if project builds should use Secure Compute</summary>
-        public bool? BuildsEnabled { get; set; }
+        public bool? BuildsEnabled { get => _explicitNullValueBuildsEnabled; set { _explicitNullValueBuildsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildsEnabled"); else _explicitNullProperties?.Remove("buildsEnabled"); } }
+        private bool? _explicitNullValueBuildsEnabled = default!;
         /// <summary>The ID of the Secure Compute network</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectConfigurationId { get; set; }
+        public string? ConnectConfigurationId { get => _explicitNullValueConnectConfigurationId; set { _explicitNullValueConnectConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationId"); else _explicitNullProperties?.Remove("connectConfigurationId"); } }
+        private string? _explicitNullValueConnectConfigurationId = default!;
 #nullable restore
 #else
-        public string ConnectConfigurationId { get; set; }
+        public string ConnectConfigurationId { get => _explicitNullValueConnectConfigurationId; set { _explicitNullValueConnectConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationId"); else _explicitNullProperties?.Remove("connectConfigurationId"); } }
+        private string _explicitNullValueConnectConfigurationId = default!;
 #endif
         /// <summary>The ID of the environment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvId { get; set; }
+        public string? EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        private string? _explicitNullValueEnvId = default!;
 #nullable restore
 #else
-        public string EnvId { get; set; }
+        public string EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        private string _explicitNullValueEnvId = default!;
 #endif
         /// <summary>Whether the configuration should be passive, meaning builds will not run there and only passive Serverless Functions will be deployed</summary>
-        public bool? Passive { get; set; }
+        public bool? Passive { get => _explicitNullValuePassive; set { _explicitNullValuePassive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passive"); else _explicitNullProperties?.Remove("passive"); } }
+        private bool? _explicitNullValuePassive = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +83,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("buildsEnabled", BuildsEnabled);
             writer.WriteStringValue("connectConfigurationId", ConnectConfigurationId);
             writer.WriteStringValue("envId", EnvId);
-            writer.WriteBoolValue("passive", Passive);
+            writer.WriteBoolValue("passive", Passive);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

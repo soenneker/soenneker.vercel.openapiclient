@@ -11,36 +11,56 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDomainConfig200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acceptedChallenges") is { } nullNodeAcceptedChallenges && nullNodeAcceptedChallenges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedChallenges = null;
+            if (parseNode.GetChildNode("configuredBy") is { } nullNodeConfiguredBy && nullNodeConfiguredBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfiguredBy = null;
+            if (parseNode.GetChildNode("misconfigured") is { } nullNodeMisconfigured && nullNodeMisconfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Misconfigured = null;
+            if (parseNode.GetChildNode("recommendedCNAME") is { } nullNodeRecommendedCNAME && nullNodeRecommendedCNAME.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecommendedCNAME = null;
+            if (parseNode.GetChildNode("recommendedIPv4") is { } nullNodeRecommendedIPv4 && nullNodeRecommendedIPv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecommendedIPv4 = null;
+        }
+
         /// <summary>Which challenge types the domain can use for issuing certs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem?>? AcceptedChallenges { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem?>? AcceptedChallenges { get => _explicitNullValueAcceptedChallenges; set { _explicitNullValueAcceptedChallenges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedChallenges"); else _explicitNullProperties?.Remove("acceptedChallenges"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem?>? _explicitNullValueAcceptedChallenges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem?> AcceptedChallenges { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem?> AcceptedChallenges { get => _explicitNullValueAcceptedChallenges; set { _explicitNullValueAcceptedChallenges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedChallenges"); else _explicitNullProperties?.Remove("acceptedChallenges"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem?> _explicitNullValueAcceptedChallenges = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How we see the domain&apos;s configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain&apos;s A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy? ConfiguredBy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy? ConfiguredBy { get => _explicitNullValueConfiguredBy; set { _explicitNullValueConfiguredBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredBy"); else _explicitNullProperties?.Remove("configuredBy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy? _explicitNullValueConfiguredBy = default!;
         /// <summary>Whether or not the domain is configured AND we can automatically generate a TLS certificate.</summary>
-        public bool? Misconfigured { get; set; }
+        public bool? Misconfigured { get => _explicitNullValueMisconfigured; set { _explicitNullValueMisconfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misconfigured"); else _explicitNullProperties?.Remove("misconfigured"); } }
+        private bool? _explicitNullValueMisconfigured = default!;
         /// <summary>Recommended CNAMEs for the domain. rank=1 is the preferred value to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem>? RecommendedCNAME { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem>? RecommendedCNAME { get => _explicitNullValueRecommendedCNAME; set { _explicitNullValueRecommendedCNAME = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendedCNAME"); else _explicitNullProperties?.Remove("recommendedCNAME"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem>? _explicitNullValueRecommendedCNAME = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem> RecommendedCNAME { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem> RecommendedCNAME { get => _explicitNullValueRecommendedCNAME; set { _explicitNullValueRecommendedCNAME = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendedCNAME"); else _explicitNullProperties?.Remove("recommendedCNAME"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem> _explicitNullValueRecommendedCNAME = default!;
 #endif
         /// <summary>Recommended IPv4s for the domain. rank=1 is the preferred value(s) to use. Only using 1 ip value is acceptable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item>? RecommendedIPv4 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item>? RecommendedIPv4 { get => _explicitNullValueRecommendedIPv4; set { _explicitNullValueRecommendedIPv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendedIPv4"); else _explicitNullProperties?.Remove("recommendedIPv4"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item>? _explicitNullValueRecommendedIPv4 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item> RecommendedIPv4 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item> RecommendedIPv4 { get => _explicitNullValueRecommendedIPv4; set { _explicitNullValueRecommendedIPv4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendedIPv4"); else _explicitNullProperties?.Remove("recommendedIPv4"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item> _explicitNullValueRecommendedIPv4 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200Response"/> and sets the default values.
@@ -57,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("misconfigured", Misconfigured);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem>("recommendedCNAME", RecommendedCNAME);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item>("recommendedIPv4", RecommendedIPv4);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

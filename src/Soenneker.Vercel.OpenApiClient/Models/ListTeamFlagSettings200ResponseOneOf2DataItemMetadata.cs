@@ -11,21 +11,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListTeamFlagSettings200ResponseOneOf2DataItemMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activeFlagCount") is { } nullNodeActiveFlagCount && nullNodeActiveFlagCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveFlagCount = null;
+            if (parseNode.GetChildNode("archivedFlagCount") is { } nullNodeArchivedFlagCount && nullNodeArchivedFlagCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchivedFlagCount = null;
+            if (parseNode.GetChildNode("configUpdatedAt") is { } nullNodeConfigUpdatedAt && nullNodeConfigUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigUpdatedAt = null;
+            if (parseNode.GetChildNode("packRevision") is { } nullNodePackRevision && nullNodePackRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackRevision = null;
+            if (parseNode.GetChildNode("packSizeInBytes") is { } nullNodePackSizeInBytes && nullNodePackSizeInBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackSizeInBytes = null;
+            if (parseNode.GetChildNode("segmentCount") is { } nullNodeSegmentCount && nullNodeSegmentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentCount = null;
+        }
+
         /// <summary>The activeFlagCount property</summary>
-        public double? ActiveFlagCount { get; set; }
+        public double? ActiveFlagCount { get => _explicitNullValueActiveFlagCount; set { _explicitNullValueActiveFlagCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeFlagCount"); else _explicitNullProperties?.Remove("activeFlagCount"); } }
+        private double? _explicitNullValueActiveFlagCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archivedFlagCount property</summary>
-        public double? ArchivedFlagCount { get; set; }
+        public double? ArchivedFlagCount { get => _explicitNullValueArchivedFlagCount; set { _explicitNullValueArchivedFlagCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archivedFlagCount"); else _explicitNullProperties?.Remove("archivedFlagCount"); } }
+        private double? _explicitNullValueArchivedFlagCount = default!;
         /// <summary>The configUpdatedAt property</summary>
-        public double? ConfigUpdatedAt { get; set; }
+        public double? ConfigUpdatedAt { get => _explicitNullValueConfigUpdatedAt; set { _explicitNullValueConfigUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configUpdatedAt"); else _explicitNullProperties?.Remove("configUpdatedAt"); } }
+        private double? _explicitNullValueConfigUpdatedAt = default!;
         /// <summary>The packRevision property</summary>
-        public double? PackRevision { get; set; }
+        public double? PackRevision { get => _explicitNullValuePackRevision; set { _explicitNullValuePackRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packRevision"); else _explicitNullProperties?.Remove("packRevision"); } }
+        private double? _explicitNullValuePackRevision = default!;
         /// <summary>The packSizeInBytes property</summary>
-        public double? PackSizeInBytes { get; set; }
+        public double? PackSizeInBytes { get => _explicitNullValuePackSizeInBytes; set { _explicitNullValuePackSizeInBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packSizeInBytes"); else _explicitNullProperties?.Remove("packSizeInBytes"); } }
+        private double? _explicitNullValuePackSizeInBytes = default!;
         /// <summary>The segmentCount property</summary>
-        public double? SegmentCount { get; set; }
+        public double? SegmentCount { get => _explicitNullValueSegmentCount; set { _explicitNullValueSegmentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentCount"); else _explicitNullProperties?.Remove("segmentCount"); } }
+        private double? _explicitNullValueSegmentCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2DataItemMetadata"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2DataItemMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2DataItemMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagSettings200ResponseOneOf2DataItemMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("packRevision", PackRevision);
             writer.WriteDoubleValue("packSizeInBytes", PackSizeInBytes);
             writer.WriteDoubleValue("segmentCount", SegmentCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

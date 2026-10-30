@@ -12,96 +12,136 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutFirewallConfig200ResponseActiveCrs : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("gen") is { } nullNodeGen && nullNodeGen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gen = null;
+            if (parseNode.GetChildNode("java") is { } nullNodeJava && nullNodeJava.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Java = null;
+            if (parseNode.GetChildNode("lfi") is { } nullNodeLfi && nullNodeLfi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lfi = null;
+            if (parseNode.GetChildNode("ma") is { } nullNodeMa && nullNodeMa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ma = null;
+            if (parseNode.GetChildNode("php") is { } nullNodePhp && nullNodePhp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Php = null;
+            if (parseNode.GetChildNode("rce") is { } nullNodeRce && nullNodeRce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rce = null;
+            if (parseNode.GetChildNode("rfi") is { } nullNodeRfi && nullNodeRfi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rfi = null;
+            if (parseNode.GetChildNode("sd") is { } nullNodeSd && nullNodeSd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sd = null;
+            if (parseNode.GetChildNode("sf") is { } nullNodeSf && nullNodeSf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sf = null;
+            if (parseNode.GetChildNode("sqli") is { } nullNodeSqli && nullNodeSqli.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sqli = null;
+            if (parseNode.GetChildNode("xss") is { } nullNodeXss && nullNodeXss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Xss = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Generic Attack - Provide broad protection from various undefined or novel attack vectors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsGen? Gen { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsGen? Gen { get => _explicitNullValueGen; set { _explicitNullValueGen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gen"); else _explicitNullProperties?.Remove("gen"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsGen? _explicitNullValueGen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsGen Gen { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsGen Gen { get => _explicitNullValueGen; set { _explicitNullValueGen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gen"); else _explicitNullProperties?.Remove("gen"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsGen _explicitNullValueGen = default!;
 #endif
         /// <summary>Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsJava? Java { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsJava? Java { get => _explicitNullValueJava; set { _explicitNullValueJava = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("java"); else _explicitNullProperties?.Remove("java"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsJava? _explicitNullValueJava = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsJava Java { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsJava Java { get => _explicitNullValueJava; set { _explicitNullValueJava = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("java"); else _explicitNullProperties?.Remove("java"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsJava _explicitNullValueJava = default!;
 #endif
         /// <summary>Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsLfi? Lfi { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsLfi? Lfi { get => _explicitNullValueLfi; set { _explicitNullValueLfi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lfi"); else _explicitNullProperties?.Remove("lfi"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsLfi? _explicitNullValueLfi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsLfi Lfi { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsLfi Lfi { get => _explicitNullValueLfi; set { _explicitNullValueLfi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lfi"); else _explicitNullProperties?.Remove("lfi"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsLfi _explicitNullValueLfi = default!;
 #endif
         /// <summary>Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsMa? Ma { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsMa? Ma { get => _explicitNullValueMa; set { _explicitNullValueMa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ma"); else _explicitNullProperties?.Remove("ma"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsMa? _explicitNullValueMa = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsMa Ma { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsMa Ma { get => _explicitNullValueMa; set { _explicitNullValueMa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ma"); else _explicitNullProperties?.Remove("ma"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsMa _explicitNullValueMa = default!;
 #endif
         /// <summary>PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsPhp? Php { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsPhp? Php { get => _explicitNullValuePhp; set { _explicitNullValuePhp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("php"); else _explicitNullProperties?.Remove("php"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsPhp? _explicitNullValuePhp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsPhp Php { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsPhp Php { get => _explicitNullValuePhp; set { _explicitNullValuePhp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("php"); else _explicitNullProperties?.Remove("php"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsPhp _explicitNullValuePhp = default!;
 #endif
         /// <summary>Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRce? Rce { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRce? Rce { get => _explicitNullValueRce; set { _explicitNullValueRce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rce"); else _explicitNullProperties?.Remove("rce"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRce? _explicitNullValueRce = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRce Rce { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRce Rce { get => _explicitNullValueRce; set { _explicitNullValueRce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rce"); else _explicitNullProperties?.Remove("rce"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRce _explicitNullValueRce = default!;
 #endif
         /// <summary>Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRfi? Rfi { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRfi? Rfi { get => _explicitNullValueRfi; set { _explicitNullValueRfi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfi"); else _explicitNullProperties?.Remove("rfi"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRfi? _explicitNullValueRfi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRfi Rfi { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRfi Rfi { get => _explicitNullValueRfi; set { _explicitNullValueRfi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfi"); else _explicitNullProperties?.Remove("rfi"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsRfi _explicitNullValueRfi = default!;
 #endif
         /// <summary>Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSd? Sd { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSd? Sd { get => _explicitNullValueSd; set { _explicitNullValueSd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sd"); else _explicitNullProperties?.Remove("sd"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSd? _explicitNullValueSd = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSd Sd { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSd Sd { get => _explicitNullValueSd; set { _explicitNullValueSd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sd"); else _explicitNullProperties?.Remove("sd"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSd _explicitNullValueSd = default!;
 #endif
         /// <summary>Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSf? Sf { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSf? Sf { get => _explicitNullValueSf; set { _explicitNullValueSf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sf"); else _explicitNullProperties?.Remove("sf"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSf? _explicitNullValueSf = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSf Sf { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSf Sf { get => _explicitNullValueSf; set { _explicitNullValueSf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sf"); else _explicitNullProperties?.Remove("sf"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSf _explicitNullValueSf = default!;
 #endif
         /// <summary>SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSqli? Sqli { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSqli? Sqli { get => _explicitNullValueSqli; set { _explicitNullValueSqli = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sqli"); else _explicitNullProperties?.Remove("sqli"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSqli? _explicitNullValueSqli = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSqli Sqli { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSqli Sqli { get => _explicitNullValueSqli; set { _explicitNullValueSqli = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sqli"); else _explicitNullProperties?.Remove("sqli"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSqli _explicitNullValueSqli = default!;
 #endif
         /// <summary>XSS Attack - Prevent injection of malicious scripts into trusted webpages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsXss? Xss { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsXss? Xss { get => _explicitNullValueXss; set { _explicitNullValueXss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xss"); else _explicitNullProperties?.Remove("xss"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsXss? _explicitNullValueXss = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsXss Xss { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsXss Xss { get => _explicitNullValueXss; set { _explicitNullValueXss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xss"); else _explicitNullProperties?.Remove("xss"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsXss _explicitNullValueXss = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrs"/> and sets the default values.
@@ -118,7 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrs();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,6 +199,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSf>("sf", Sf);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsSqli>("sqli", Sqli);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveCrsXss>("xss", Xss);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

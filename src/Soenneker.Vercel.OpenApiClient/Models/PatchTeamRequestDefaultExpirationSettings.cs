@@ -11,19 +11,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchTeamRequestDefaultExpirationSettings : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acknowledgeStorageBilling") is { } nullNodeAcknowledgeStorageBilling && nullNodeAcknowledgeStorageBilling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcknowledgeStorageBilling = null;
+            if (parseNode.GetChildNode("expiration") is { } nullNodeExpiration && nullNodeExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiration = null;
+            if (parseNode.GetChildNode("expirationCanceled") is { } nullNodeExpirationCanceled && nullNodeExpirationCanceled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationCanceled = null;
+            if (parseNode.GetChildNode("expirationErrored") is { } nullNodeExpirationErrored && nullNodeExpirationErrored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationErrored = null;
+            if (parseNode.GetChildNode("expirationProduction") is { } nullNodeExpirationProduction && nullNodeExpirationProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationProduction = null;
+            if (parseNode.GetChildNode("keepCurrentRetention") is { } nullNodeKeepCurrentRetention && nullNodeKeepCurrentRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeepCurrentRetention = null;
+        }
+
         /// <summary>Required with keepCurrentRetention for unmetered Pro teams; acknowledges that keeping current retention will incur storage billing on a later date.</summary>
-        public bool? AcknowledgeStorageBilling { get; set; }
+        public bool? AcknowledgeStorageBilling { get => _explicitNullValueAcknowledgeStorageBilling; set { _explicitNullValueAcknowledgeStorageBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acknowledgeStorageBilling"); else _explicitNullProperties?.Remove("acknowledgeStorageBilling"); } }
+        private bool? _explicitNullValueAcknowledgeStorageBilling = default!;
         /// <summary>The time period to keep non-production deployments for</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpiration? Expiration { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpiration? Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpiration? _explicitNullValueExpiration = default!;
         /// <summary>The time period to keep canceled deployments for</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationCanceled? ExpirationCanceled { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationCanceled? ExpirationCanceled { get => _explicitNullValueExpirationCanceled; set { _explicitNullValueExpirationCanceled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationCanceled"); else _explicitNullProperties?.Remove("expirationCanceled"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationCanceled? _explicitNullValueExpirationCanceled = default!;
         /// <summary>The time period to keep errored deployments for</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored? ExpirationErrored { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored? ExpirationErrored { get => _explicitNullValueExpirationErrored; set { _explicitNullValueExpirationErrored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationErrored"); else _explicitNullProperties?.Remove("expirationErrored"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored? _explicitNullValueExpirationErrored = default!;
         /// <summary>The time period to keep production deployments for</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction? ExpirationProduction { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction? ExpirationProduction { get => _explicitNullValueExpirationProduction; set { _explicitNullValueExpirationProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationProduction"); else _explicitNullProperties?.Remove("expirationProduction"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction? _explicitNullValueExpirationProduction = default!;
         /// <summary>When true, opts a Pro team out of the upcoming deployment-storage retention reduce. Does not change expiration settings. Unmetered teams also require acknowledgeStorageBilling.</summary>
-        public bool? KeepCurrentRetention { get; set; }
+        public bool? KeepCurrentRetention { get => _explicitNullValueKeepCurrentRetention; set { _explicitNullValueKeepCurrentRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keepCurrentRetention"); else _explicitNullProperties?.Remove("keepCurrentRetention"); } }
+        private bool? _explicitNullValueKeepCurrentRetention = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +81,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationCanceled>("expirationCanceled", ExpirationCanceled);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored>("expirationErrored", ExpirationErrored);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction>("expirationProduction", ExpirationProduction);
-            writer.WriteBoolValue("keepCurrentRetention", KeepCurrentRetention);
+            writer.WriteBoolValue("keepCurrentRetention", KeepCurrentRetention);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

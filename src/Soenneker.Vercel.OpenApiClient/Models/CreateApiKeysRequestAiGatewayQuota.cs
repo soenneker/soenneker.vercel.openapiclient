@@ -12,23 +12,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateApiKeysRequestAiGatewayQuota : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
+            if (parseNode.GetChildNode("includeByokInQuota") is { } nullNodeIncludeByokInQuota && nullNodeIncludeByokInQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeByokInQuota = null;
+            if (parseNode.GetChildNode("limitAmount") is { } nullNodeLimitAmount && nullNodeLimitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitAmount = null;
+            if (parseNode.GetChildNode("refreshPeriod") is { } nullNodeRefreshPeriod && nullNodeRefreshPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshPeriod = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Spend percentages (a subset of [50, 75, 100]) at which to send a spend alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? AlertThresholds { get; set; }
+        public List<double?>? AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
+        private List<double?>? _explicitNullValueAlertThresholds = default!;
 #nullable restore
 #else
-        public List<double?> AlertThresholds { get; set; }
+        public List<double?> AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
+        private List<double?> _explicitNullValueAlertThresholds = default!;
 #endif
         /// <summary>Whether to include BYOK (Bring Your Own Key) usage in the quota.</summary>
-        public bool? IncludeByokInQuota { get; set; }
+        public bool? IncludeByokInQuota { get => _explicitNullValueIncludeByokInQuota; set { _explicitNullValueIncludeByokInQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeByokInQuota"); else _explicitNullProperties?.Remove("includeByokInQuota"); } }
+        private bool? _explicitNullValueIncludeByokInQuota = default!;
         /// <summary>The quota limit amount.</summary>
-        public double? LimitAmount { get; set; }
+        public double? LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
+        private double? _explicitNullValueLimitAmount = default!;
         /// <summary>How often the quota refreshes.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuotaRefreshPeriod? RefreshPeriod { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuotaRefreshPeriod? RefreshPeriod { get => _explicitNullValueRefreshPeriod; set { _explicitNullValueRefreshPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshPeriod"); else _explicitNullProperties?.Remove("refreshPeriod"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuotaRefreshPeriod? _explicitNullValueRefreshPeriod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuota"/> and sets the default values.
         /// </summary>
@@ -45,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuota CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuota();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuota(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("includeByokInQuota", IncludeByokInQuota);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuotaRefreshPeriod>("refreshPeriod", RefreshPeriod);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

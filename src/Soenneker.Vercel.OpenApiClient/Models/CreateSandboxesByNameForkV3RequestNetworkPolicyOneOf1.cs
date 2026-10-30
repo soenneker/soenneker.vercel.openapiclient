@@ -12,41 +12,62 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1 : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedCIDRs") is { } nullNodeAllowedCIDRs && nullNodeAllowedCIDRs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCIDRs = null;
+            if (parseNode.GetChildNode("allowedDomains") is { } nullNodeAllowedDomains && nullNodeAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDomains = null;
+            if (parseNode.GetChildNode("deniedCIDRs") is { } nullNodeDeniedCIDRs && nullNodeDeniedCIDRs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeniedCIDRs = null;
+            if (parseNode.GetChildNode("injectionRules") is { } nullNodeInjectionRules && nullNodeInjectionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectionRules = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+        }
+
         /// <summary>List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedCIDRs { get; set; }
+        public List<string>? AllowedCIDRs { get => _explicitNullValueAllowedCIDRs; set { _explicitNullValueAllowedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCIDRs"); else _explicitNullProperties?.Remove("allowedCIDRs"); } }
+        private List<string>? _explicitNullValueAllowedCIDRs = default!;
 #nullable restore
 #else
-        public List<string> AllowedCIDRs { get; set; }
+        public List<string> AllowedCIDRs { get => _explicitNullValueAllowedCIDRs; set { _explicitNullValueAllowedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCIDRs"); else _explicitNullProperties?.Remove("allowedCIDRs"); } }
+        private List<string> _explicitNullValueAllowedCIDRs = default!;
 #endif
         /// <summary>List of domain names the sandbox is allowed to connect to. Only applies when mode is \&quot;custom\&quot;. Supports wildcard patterns (e.g., \&quot;*.example.com\&quot; matches all subdomains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedDomains { get; set; }
+        public List<string>? AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        private List<string>? _explicitNullValueAllowedDomains = default!;
 #nullable restore
 #else
-        public List<string> AllowedDomains { get; set; }
+        public List<string> AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        private List<string> _explicitNullValueAllowedDomains = default!;
 #endif
         /// <summary>List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeniedCIDRs { get; set; }
+        public List<string>? DeniedCIDRs { get => _explicitNullValueDeniedCIDRs; set { _explicitNullValueDeniedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deniedCIDRs"); else _explicitNullProperties?.Remove("deniedCIDRs"); } }
+        private List<string>? _explicitNullValueDeniedCIDRs = default!;
 #nullable restore
 #else
-        public List<string> DeniedCIDRs { get; set; }
+        public List<string> DeniedCIDRs { get => _explicitNullValueDeniedCIDRs; set { _explicitNullValueDeniedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deniedCIDRs"); else _explicitNullProperties?.Remove("deniedCIDRs"); } }
+        private List<string> _explicitNullValueDeniedCIDRs = default!;
 #endif
         /// <summary>HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1InjectionRulesItem>? InjectionRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1InjectionRulesItem>? InjectionRules { get => _explicitNullValueInjectionRules; set { _explicitNullValueInjectionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectionRules"); else _explicitNullProperties?.Remove("injectionRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1InjectionRulesItem>? _explicitNullValueInjectionRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1InjectionRulesItem> InjectionRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1InjectionRulesItem> InjectionRules { get => _explicitNullValueInjectionRules; set { _explicitNullValueInjectionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectionRules"); else _explicitNullProperties?.Remove("injectionRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1InjectionRulesItem> _explicitNullValueInjectionRules = default!;
 #endif
         /// <summary>The network access policy mode. Use \&quot;allow-all\&quot; to permit all outbound traffic. Use \&quot;deny-all\&quot; to block all outbound traffic. Use \&quot;custom\&quot; to specify explicit allow/deny rules.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1Mode? Mode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1Mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1Mode? _explicitNullValueMode = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +104,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("deniedCIDRs", DeniedCIDRs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1InjectionRulesItem>("injectionRules", InjectionRules);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1Mode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV3RequestNetworkPolicyOneOf1Mode>("mode", Mode);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

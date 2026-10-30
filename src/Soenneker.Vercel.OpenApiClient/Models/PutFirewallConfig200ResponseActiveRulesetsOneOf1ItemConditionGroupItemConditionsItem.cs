@@ -11,30 +11,49 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("neg") is { } nullNodeNeg && nullNodeNeg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Neg = null;
+            if (parseNode.GetChildNode("op") is { } nullNodeOp && nullNodeOp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Op = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The neg property</summary>
-        public bool? Neg { get; set; }
+        public bool? Neg { get => _explicitNullValueNeg; set { _explicitNullValueNeg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neg"); else _explicitNullProperties?.Remove("neg"); } }
+        private bool? _explicitNullValueNeg = default!;
         /// <summary>The op property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemOp? Op { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemOp? Op { get => _explicitNullValueOp; set { _explicitNullValueOp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op"); else _explicitNullProperties?.Remove("op"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemOp? _explicitNullValueOp = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemType? _explicitNullValueType = default!;
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemValue? Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemValue Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItem"/> and sets the default values.
@@ -51,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemOp>("op", Op);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesetsOneOf1ItemConditionGroupItemConditionsItemValue>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

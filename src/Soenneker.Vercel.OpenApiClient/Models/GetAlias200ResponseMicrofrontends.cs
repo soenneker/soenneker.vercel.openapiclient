@@ -12,24 +12,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetAlias200ResponseMicrofrontends : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("applications") is { } nullNodeApplications && nullNodeApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Applications = null;
+            if (parseNode.GetChildNode("defaultApp") is { } nullNodeDefaultApp && nullNodeDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultApp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The applications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications? Applications { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications? Applications { get => _explicitNullValueApplications; set { _explicitNullValueApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applications"); else _explicitNullProperties?.Remove("applications"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications? _explicitNullValueApplications = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications Applications { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications Applications { get => _explicitNullValueApplications; set { _explicitNullValueApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applications"); else _explicitNullProperties?.Remove("applications"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications _explicitNullValueApplications = default!;
 #endif
         /// <summary>The defaultApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp? DefaultApp { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp? DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp? _explicitNullValueDefaultApp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp DefaultApp { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp _explicitNullValueDefaultApp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontends"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontends CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontends();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontends(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications>("applications", Applications);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp>("defaultApp", DefaultApp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

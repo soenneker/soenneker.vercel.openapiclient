@@ -11,37 +11,67 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateIntegrationStoreDirect200ResponseStoreCapabilities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agentTools") is { } nullNodeAgentTools && nullNodeAgentTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentTools = null;
+            if (parseNode.GetChildNode("autoSensitive") is { } nullNodeAutoSensitive && nullNodeAutoSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoSensitive = null;
+            if (parseNode.GetChildNode("billable") is { } nullNodeBillable && nullNodeBillable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billable = null;
+            if (parseNode.GetChildNode("mcp") is { } nullNodeMcp && nullNodeMcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mcp = null;
+            if (parseNode.GetChildNode("mcpReadonly") is { } nullNodeMcpReadonly && nullNodeMcpReadonly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpReadonly = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("secretRotation") is { } nullNodeSecretRotation && nullNodeSecretRotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretRotation = null;
+            if (parseNode.GetChildNode("secretsSync") is { } nullNodeSecretsSync && nullNodeSecretsSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretsSync = null;
+            if (parseNode.GetChildNode("sso") is { } nullNodeSso && nullNodeSso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sso = null;
+            if (parseNode.GetChildNode("transferable") is { } nullNodeTransferable && nullNodeTransferable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transferable = null;
+            if (parseNode.GetChildNode("v0") is { } nullNodeV0 && nullNodeV0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V0 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agentTools property</summary>
-        public bool? AgentTools { get; set; }
+        public bool? AgentTools { get => _explicitNullValueAgentTools; set { _explicitNullValueAgentTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentTools"); else _explicitNullProperties?.Remove("agentTools"); } }
+        private bool? _explicitNullValueAgentTools = default!;
         /// <summary>The autoSensitive property</summary>
-        public bool? AutoSensitive { get; set; }
+        public bool? AutoSensitive { get => _explicitNullValueAutoSensitive; set { _explicitNullValueAutoSensitive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoSensitive"); else _explicitNullProperties?.Remove("autoSensitive"); } }
+        private bool? _explicitNullValueAutoSensitive = default!;
         /// <summary>The billable property</summary>
-        public bool? Billable { get; set; }
+        public bool? Billable { get => _explicitNullValueBillable; set { _explicitNullValueBillable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable"); else _explicitNullProperties?.Remove("billable"); } }
+        private bool? _explicitNullValueBillable = default!;
         /// <summary>The mcp property</summary>
-        public bool? Mcp { get; set; }
+        public bool? Mcp { get => _explicitNullValueMcp; set { _explicitNullValueMcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp"); else _explicitNullProperties?.Remove("mcp"); } }
+        private bool? _explicitNullValueMcp = default!;
         /// <summary>The mcpReadonly property</summary>
-        public bool? McpReadonly { get; set; }
+        public bool? McpReadonly { get => _explicitNullValueMcpReadonly; set { _explicitNullValueMcpReadonly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcpReadonly"); else _explicitNullProperties?.Remove("mcpReadonly"); } }
+        private bool? _explicitNullValueMcpReadonly = default!;
         /// <summary>The projects property</summary>
-        public bool? Projects { get; set; }
+        public bool? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private bool? _explicitNullValueProjects = default!;
         /// <summary>The secretRotation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotation? SecretRotation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotation? SecretRotation { get => _explicitNullValueSecretRotation; set { _explicitNullValueSecretRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretRotation"); else _explicitNullProperties?.Remove("secretRotation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotation? _explicitNullValueSecretRotation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotation SecretRotation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotation SecretRotation { get => _explicitNullValueSecretRotation; set { _explicitNullValueSecretRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretRotation"); else _explicitNullProperties?.Remove("secretRotation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotation _explicitNullValueSecretRotation = default!;
 #endif
         /// <summary>The secretsSync property</summary>
-        public bool? SecretsSync { get; set; }
+        public bool? SecretsSync { get => _explicitNullValueSecretsSync; set { _explicitNullValueSecretsSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretsSync"); else _explicitNullProperties?.Remove("secretsSync"); } }
+        private bool? _explicitNullValueSecretsSync = default!;
         /// <summary>The sso property</summary>
-        public bool? Sso { get; set; }
+        public bool? Sso { get => _explicitNullValueSso; set { _explicitNullValueSso = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso"); else _explicitNullProperties?.Remove("sso"); } }
+        private bool? _explicitNullValueSso = default!;
         /// <summary>The transferable property</summary>
-        public bool? Transferable { get; set; }
+        public bool? Transferable { get => _explicitNullValueTransferable; set { _explicitNullValueTransferable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferable"); else _explicitNullProperties?.Remove("transferable"); } }
+        private bool? _explicitNullValueTransferable = default!;
         /// <summary>The v0 property</summary>
-        public bool? V0 { get; set; }
+        public bool? V0 { get => _explicitNullValueV0; set { _explicitNullValueV0 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v0"); else _explicitNullProperties?.Remove("v0"); } }
+        private bool? _explicitNullValueV0 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities"/> and sets the default values.
         /// </summary>
@@ -57,7 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("sso", Sso);
             writer.WriteBoolValue("transferable", Transferable);
             writer.WriteBoolValue("v0", V0);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

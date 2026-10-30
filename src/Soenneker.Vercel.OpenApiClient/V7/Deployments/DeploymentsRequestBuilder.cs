@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List deployments under the authenticated user or team. If a deployment hasn&apos;t finished uploading (is incomplete), the `url` property will have a value of `null`.

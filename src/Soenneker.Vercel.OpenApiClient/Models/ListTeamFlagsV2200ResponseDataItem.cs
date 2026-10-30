@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListTeamFlagsV2200ResponseDataItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Flag"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.ListTeamFlagsV2200ResponseDataItem();
             if("flag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.Flag = new global::Soenneker.Vercel.OpenApiClient.Models.Flag();
+                
             }
             else if("marketplaceFlag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MarketplaceFlag = new global::Soenneker.Vercel.OpenApiClient.Models.MarketplaceFlag();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("createdAt") != null && parseNode.GetChildNode("createdBy") != null && parseNode.GetChildNode("environments") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("boolean".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "json".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "number".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "string".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("ownerId") != null && parseNode.GetChildNode("projectId") != null && parseNode.GetChildNode("revision") != null && parseNode.GetChildNode("seed") != null && parseNode.GetChildNode("slug") != null && parseNode.GetChildNode("state") != null && (parseNode.GetChildNode("state")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag12 && ("active".Equals(tag12.GetValue(), global::System.StringComparison.Ordinal) || "archived".Equals(tag12.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("typeName") != null && (parseNode.GetChildNode("typeName")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag14 && ("flag".Equals(tag14.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("updatedAt") != null && parseNode.GetChildNode("variants") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("externalId") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("integrationConfigurationId") != null && parseNode.GetChildNode("origin") != null && parseNode.GetChildNode("ownerId") != null && parseNode.GetChildNode("projectId") != null && parseNode.GetChildNode("resourceId") != null && parseNode.GetChildNode("slug") != null && parseNode.GetChildNode("state") != null && (parseNode.GetChildNode("state")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("active".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "archived".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("typeName") != null && (parseNode.GetChildNode("typeName")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag11 && ("marketplaceFlag".Equals(tag11.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("category") == null || (parseNode.GetChildNode("category")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag12 && ("experiment".Equals(optionalTag12.GetValue(), global::System.StringComparison.Ordinal) || "flag".Equals(optionalTag12.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.Flag == null && result.MarketplaceFlag == null && matchesUnionBranch0 && !matchesUnionBranch1) result.Flag = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.Flag(), parseNode);
+            if (result.Flag == null && result.MarketplaceFlag == null && matchesUnionBranch1 && !matchesUnionBranch0) result.MarketplaceFlag = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.MarketplaceFlag(), parseNode);
+            if (result.Flag == null && result.MarketplaceFlag == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Flag == null && MarketplaceFlag == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (Flag != null && MarketplaceFlag == null) { if (Flag is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Flag); return; }
+            if (MarketplaceFlag != null && Flag == null) { if (MarketplaceFlag is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MarketplaceFlag); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Flag != null)
             {
+                if (Flag is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag>(null, Flag);
             }
             else if(MarketplaceFlag != null)
             {
+                if (MarketplaceFlag is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.MarketplaceFlag>(null, MarketplaceFlag);
             }
         }

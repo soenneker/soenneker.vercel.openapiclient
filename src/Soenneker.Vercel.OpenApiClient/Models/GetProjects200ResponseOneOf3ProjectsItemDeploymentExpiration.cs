@@ -12,19 +12,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetProjects200ResponseOneOf3ProjectsItemDeploymentExpiration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deploymentsToKeep") is { } nullNodeDeploymentsToKeep && nullNodeDeploymentsToKeep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentsToKeep = null;
+            if (parseNode.GetChildNode("expirationDays") is { } nullNodeExpirationDays && nullNodeExpirationDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDays = null;
+            if (parseNode.GetChildNode("expirationDaysCanceled") is { } nullNodeExpirationDaysCanceled && nullNodeExpirationDaysCanceled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDaysCanceled = null;
+            if (parseNode.GetChildNode("expirationDaysErrored") is { } nullNodeExpirationDaysErrored && nullNodeExpirationDaysErrored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDaysErrored = null;
+            if (parseNode.GetChildNode("expirationDaysProduction") is { } nullNodeExpirationDaysProduction && nullNodeExpirationDaysProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDaysProduction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Minimum number of production deployments to keep for this project, even if they are over the production expiration limit.</summary>
-        public double? DeploymentsToKeep { get; set; }
+        public double? DeploymentsToKeep { get => _explicitNullValueDeploymentsToKeep; set { _explicitNullValueDeploymentsToKeep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentsToKeep"); else _explicitNullProperties?.Remove("deploymentsToKeep"); } }
+        private double? _explicitNullValueDeploymentsToKeep = default!;
         /// <summary>Number of days to keep non-production deployments (mostly preview deployments) before soft deletion.</summary>
-        public double? ExpirationDays { get; set; }
+        public double? ExpirationDays { get => _explicitNullValueExpirationDays; set { _explicitNullValueExpirationDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDays"); else _explicitNullProperties?.Remove("expirationDays"); } }
+        private double? _explicitNullValueExpirationDays = default!;
         /// <summary>Number of days to keep canceled deployments before soft deletion.</summary>
-        public double? ExpirationDaysCanceled { get; set; }
+        public double? ExpirationDaysCanceled { get => _explicitNullValueExpirationDaysCanceled; set { _explicitNullValueExpirationDaysCanceled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDaysCanceled"); else _explicitNullProperties?.Remove("expirationDaysCanceled"); } }
+        private double? _explicitNullValueExpirationDaysCanceled = default!;
         /// <summary>Number of days to keep errored deployments before soft deletion.</summary>
-        public double? ExpirationDaysErrored { get; set; }
+        public double? ExpirationDaysErrored { get => _explicitNullValueExpirationDaysErrored; set { _explicitNullValueExpirationDaysErrored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDaysErrored"); else _explicitNullProperties?.Remove("expirationDaysErrored"); } }
+        private double? _explicitNullValueExpirationDaysErrored = default!;
         /// <summary>Number of days to keep production deployments before soft deletion.</summary>
-        public double? ExpirationDaysProduction { get; set; }
+        public double? ExpirationDaysProduction { get => _explicitNullValueExpirationDaysProduction; set { _explicitNullValueExpirationDaysProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDaysProduction"); else _explicitNullProperties?.Remove("expirationDaysProduction"); } }
+        private double? _explicitNullValueExpirationDaysProduction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemDeploymentExpiration"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemDeploymentExpiration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemDeploymentExpiration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemDeploymentExpiration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("expirationDaysCanceled", ExpirationDaysCanceled);
             writer.WriteDoubleValue("expirationDaysErrored", ExpirationDaysErrored);
             writer.WriteDoubleValue("expirationDaysProduction", ExpirationDaysProduction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

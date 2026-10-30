@@ -11,17 +11,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchUrlProtectionBypassRequestOneOf1 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("revoke") is { } nullNodeRevoke && nullNodeRevoke.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revoke = null;
+            if (parseNode.GetChildNode("ttl") is { } nullNodeTtl && nullNodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttl = null;
+        }
+
         /// <summary>Optional instructions for revoking and regenerating a shareable link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1Revoke? Revoke { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1Revoke? Revoke { get => _explicitNullValueRevoke; set { _explicitNullValueRevoke = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revoke"); else _explicitNullProperties?.Remove("revoke"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1Revoke? _explicitNullValueRevoke = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1Revoke Revoke { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1Revoke Revoke { get => _explicitNullValueRevoke; set { _explicitNullValueRevoke = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revoke"); else _explicitNullProperties?.Remove("revoke"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1Revoke _explicitNullValueRevoke = default!;
 #endif
         /// <summary>Optional time the shareable link is valid for in seconds. If not provided, the shareable link will never expire.</summary>
-        public double? Ttl { get; set; }
+        public double? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
+        private double? _explicitNullValueTtl = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequestOneOf1Revoke>("revoke", Revoke);
-            writer.WriteDoubleValue("ttl", Ttl);
+            writer.WriteDoubleValue("ttl", Ttl);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

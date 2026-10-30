@@ -1211,6 +1211,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         IntegrationInstallationRemoved,
         #pragma warning restore CS1591
+        [EnumMember(Value = "integration-previous-secret-revoked")]
+        #pragma warning disable CS1591
+        IntegrationPreviousSecretRevoked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "integration-resource-redis-command-executed")]
         #pragma warning disable CS1591
         IntegrationResourceRedisCommandExecuted,
@@ -1222,6 +1226,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "integration-scope-changed")]
         #pragma warning disable CS1591
         IntegrationScopeChanged,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "integration-secret-rotated")]
+        #pragma warning disable CS1591
+        IntegrationSecretRotated,
         #pragma warning restore CS1591
         [EnumMember(Value = "invoice-modified")]
         #pragma warning disable CS1591

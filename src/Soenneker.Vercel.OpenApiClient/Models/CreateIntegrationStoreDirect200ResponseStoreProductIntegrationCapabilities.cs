@@ -11,53 +11,99 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billable") is { } nullNodeBillable && nullNodeBillable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billable = null;
+            if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
+            if (parseNode.GetChildNode("connectedImportResource") is { } nullNodeConnectedImportResource && nullNodeConnectedImportResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedImportResource = null;
+            if (parseNode.GetChildNode("connectedProvisioning") is { } nullNodeConnectedProvisioning && nullNodeConnectedProvisioning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedProvisioning = null;
+            if (parseNode.GetChildNode("flexCommitEligible") is { } nullNodeFlexCommitEligible && nullNodeFlexCommitEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlexCommitEligible = null;
+            if (parseNode.GetChildNode("importResource") is { } nullNodeImportResource && nullNodeImportResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportResource = null;
+            if (parseNode.GetChildNode("maxAllowedTeams") is { } nullNodeMaxAllowedTeams && nullNodeMaxAllowedTeams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAllowedTeams = null;
+            if (parseNode.GetChildNode("mcp") is { } nullNodeMcp && nullNodeMcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mcp = null;
+            if (parseNode.GetChildNode("mcpConfiguration") is { } nullNodeMcpConfiguration && nullNodeMcpConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpConfiguration = null;
+            if (parseNode.GetChildNode("mcpReadonly") is { } nullNodeMcpReadonly && nullNodeMcpReadonly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpReadonly = null;
+            if (parseNode.GetChildNode("nativeImportResource") is { } nullNodeNativeImportResource && nullNodeNativeImportResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeImportResource = null;
+            if (parseNode.GetChildNode("provisioning") is { } nullNodeProvisioning && nullNodeProvisioning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provisioning = null;
+            if (parseNode.GetChildNode("requiresBrowserInstall") is { } nullNodeRequiresBrowserInstall && nullNodeRequiresBrowserInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresBrowserInstall = null;
+            if (parseNode.GetChildNode("secretRotation") is { } nullNodeSecretRotation && nullNodeSecretRotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretRotation = null;
+            if (parseNode.GetChildNode("sso") is { } nullNodeSso && nullNodeSso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sso = null;
+            if (parseNode.GetChildNode("templateCloneOnly") is { } nullNodeTemplateCloneOnly && nullNodeTemplateCloneOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateCloneOnly = null;
+            if (parseNode.GetChildNode("transferable") is { } nullNodeTransferable && nullNodeTransferable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transferable = null;
+            if (parseNode.GetChildNode("updateConfiguration") is { } nullNodeUpdateConfiguration && nullNodeUpdateConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateConfiguration = null;
+            if (parseNode.GetChildNode("v0Flavors") is { } nullNodeV0Flavors && nullNodeV0Flavors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) V0Flavors = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billable property</summary>
-        public bool? Billable { get; set; }
+        public bool? Billable { get => _explicitNullValueBillable; set { _explicitNullValueBillable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable"); else _explicitNullProperties?.Remove("billable"); } }
+        private bool? _explicitNullValueBillable = default!;
         /// <summary>The checks property</summary>
-        public bool? Checks { get; set; }
+        public bool? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        private bool? _explicitNullValueChecks = default!;
         /// <summary>The connectedImportResource property</summary>
-        public bool? ConnectedImportResource { get; set; }
+        public bool? ConnectedImportResource { get => _explicitNullValueConnectedImportResource; set { _explicitNullValueConnectedImportResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedImportResource"); else _explicitNullProperties?.Remove("connectedImportResource"); } }
+        private bool? _explicitNullValueConnectedImportResource = default!;
         /// <summary>The connectedProvisioning property</summary>
-        public bool? ConnectedProvisioning { get; set; }
+        public bool? ConnectedProvisioning { get => _explicitNullValueConnectedProvisioning; set { _explicitNullValueConnectedProvisioning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedProvisioning"); else _explicitNullProperties?.Remove("connectedProvisioning"); } }
+        private bool? _explicitNullValueConnectedProvisioning = default!;
         /// <summary>The flexCommitEligible property</summary>
-        public bool? FlexCommitEligible { get; set; }
+        public bool? FlexCommitEligible { get => _explicitNullValueFlexCommitEligible; set { _explicitNullValueFlexCommitEligible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flexCommitEligible"); else _explicitNullProperties?.Remove("flexCommitEligible"); } }
+        private bool? _explicitNullValueFlexCommitEligible = default!;
         /// <summary>The importResource property</summary>
-        public bool? ImportResource { get; set; }
+        public bool? ImportResource { get => _explicitNullValueImportResource; set { _explicitNullValueImportResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importResource"); else _explicitNullProperties?.Remove("importResource"); } }
+        private bool? _explicitNullValueImportResource = default!;
         /// <summary>The maxAllowedTeams property</summary>
-        public double? MaxAllowedTeams { get; set; }
+        public double? MaxAllowedTeams { get => _explicitNullValueMaxAllowedTeams; set { _explicitNullValueMaxAllowedTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAllowedTeams"); else _explicitNullProperties?.Remove("maxAllowedTeams"); } }
+        private double? _explicitNullValueMaxAllowedTeams = default!;
         /// <summary>The mcp property</summary>
-        public bool? Mcp { get; set; }
+        public bool? Mcp { get => _explicitNullValueMcp; set { _explicitNullValueMcp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp"); else _explicitNullProperties?.Remove("mcp"); } }
+        private bool? _explicitNullValueMcp = default!;
         /// <summary>The mcpConfiguration property</summary>
-        public bool? McpConfiguration { get; set; }
+        public bool? McpConfiguration { get => _explicitNullValueMcpConfiguration; set { _explicitNullValueMcpConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcpConfiguration"); else _explicitNullProperties?.Remove("mcpConfiguration"); } }
+        private bool? _explicitNullValueMcpConfiguration = default!;
         /// <summary>The mcpReadonly property</summary>
-        public bool? McpReadonly { get; set; }
+        public bool? McpReadonly { get => _explicitNullValueMcpReadonly; set { _explicitNullValueMcpReadonly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcpReadonly"); else _explicitNullProperties?.Remove("mcpReadonly"); } }
+        private bool? _explicitNullValueMcpReadonly = default!;
         /// <summary>The nativeImportResource property</summary>
-        public bool? NativeImportResource { get; set; }
+        public bool? NativeImportResource { get => _explicitNullValueNativeImportResource; set { _explicitNullValueNativeImportResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nativeImportResource"); else _explicitNullProperties?.Remove("nativeImportResource"); } }
+        private bool? _explicitNullValueNativeImportResource = default!;
         /// <summary>The provisioning property</summary>
-        public bool? Provisioning { get; set; }
+        public bool? Provisioning { get => _explicitNullValueProvisioning; set { _explicitNullValueProvisioning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioning"); else _explicitNullProperties?.Remove("provisioning"); } }
+        private bool? _explicitNullValueProvisioning = default!;
         /// <summary>The requiresBrowserInstall property</summary>
-        public bool? RequiresBrowserInstall { get; set; }
+        public bool? RequiresBrowserInstall { get => _explicitNullValueRequiresBrowserInstall; set { _explicitNullValueRequiresBrowserInstall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresBrowserInstall"); else _explicitNullProperties?.Remove("requiresBrowserInstall"); } }
+        private bool? _explicitNullValueRequiresBrowserInstall = default!;
         /// <summary>The secretRotation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotation? SecretRotation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotation? SecretRotation { get => _explicitNullValueSecretRotation; set { _explicitNullValueSecretRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretRotation"); else _explicitNullProperties?.Remove("secretRotation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotation? _explicitNullValueSecretRotation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotation SecretRotation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotation SecretRotation { get => _explicitNullValueSecretRotation; set { _explicitNullValueSecretRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretRotation"); else _explicitNullProperties?.Remove("secretRotation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotation _explicitNullValueSecretRotation = default!;
 #endif
         /// <summary>The sso property</summary>
-        public bool? Sso { get; set; }
+        public bool? Sso { get => _explicitNullValueSso; set { _explicitNullValueSso = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso"); else _explicitNullProperties?.Remove("sso"); } }
+        private bool? _explicitNullValueSso = default!;
         /// <summary>The templateCloneOnly property</summary>
-        public bool? TemplateCloneOnly { get; set; }
+        public bool? TemplateCloneOnly { get => _explicitNullValueTemplateCloneOnly; set { _explicitNullValueTemplateCloneOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("templateCloneOnly"); else _explicitNullProperties?.Remove("templateCloneOnly"); } }
+        private bool? _explicitNullValueTemplateCloneOnly = default!;
         /// <summary>The transferable property</summary>
-        public bool? Transferable { get; set; }
+        public bool? Transferable { get => _explicitNullValueTransferable; set { _explicitNullValueTransferable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferable"); else _explicitNullProperties?.Remove("transferable"); } }
+        private bool? _explicitNullValueTransferable = default!;
         /// <summary>The updateConfiguration property</summary>
-        public bool? UpdateConfiguration { get; set; }
+        public bool? UpdateConfiguration { get => _explicitNullValueUpdateConfiguration; set { _explicitNullValueUpdateConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateConfiguration"); else _explicitNullProperties?.Remove("updateConfiguration"); } }
+        private bool? _explicitNullValueUpdateConfiguration = default!;
         /// <summary>The v0Flavors property</summary>
-        public bool? V0Flavors { get; set; }
+        public bool? V0Flavors { get => _explicitNullValueV0Flavors; set { _explicitNullValueV0Flavors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v0Flavors"); else _explicitNullProperties?.Remove("v0Flavors"); } }
+        private bool? _explicitNullValueV0Flavors = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilities"/> and sets the default values.
         /// </summary>
@@ -73,7 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +176,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("transferable", Transferable);
             writer.WriteBoolValue("updateConfiguration", UpdateConfiguration);
             writer.WriteBoolValue("v0Flavors", V0Flavors);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

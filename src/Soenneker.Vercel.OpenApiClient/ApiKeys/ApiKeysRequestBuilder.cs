@@ -71,6 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.ApiKeys
                 { "403", global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeys403Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeys429Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeys500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeys200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeys200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

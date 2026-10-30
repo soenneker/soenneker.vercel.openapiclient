@@ -12,16 +12,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetRollingRelease200Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("rollingRelease") is { } nullNodeRollingRelease && nullNodeRollingRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollingRelease = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Rolling release information including configuration and document details, or null if no rolling release exists</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200ResponseRollingRelease? RollingRelease { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200ResponseRollingRelease? RollingRelease { get => _explicitNullValueRollingRelease; set { _explicitNullValueRollingRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollingRelease"); else _explicitNullProperties?.Remove("rollingRelease"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200ResponseRollingRelease? _explicitNullValueRollingRelease = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200ResponseRollingRelease RollingRelease { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200ResponseRollingRelease RollingRelease { get => _explicitNullValueRollingRelease; set { _explicitNullValueRollingRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollingRelease"); else _explicitNullProperties?.Remove("rollingRelease"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200ResponseRollingRelease _explicitNullValueRollingRelease = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200Response"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingRelease200ResponseRollingRelease>("rollingRelease", RollingRelease);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

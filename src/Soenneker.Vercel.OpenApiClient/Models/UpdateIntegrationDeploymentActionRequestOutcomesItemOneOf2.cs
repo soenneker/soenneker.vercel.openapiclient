@@ -12,22 +12,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2 : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("claimRules") is { } nullNodeClaimRules && nullNodeClaimRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimRules = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+        }
+
         /// <summary>Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItem>? ClaimRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItem>? ClaimRules { get => _explicitNullValueClaimRules; set { _explicitNullValueClaimRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimRules"); else _explicitNullProperties?.Remove("claimRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItem>? _explicitNullValueClaimRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItem> ClaimRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItem> ClaimRules { get => _explicitNullValueClaimRules; set { _explicitNullValueClaimRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimRules"); else _explicitNullProperties?.Remove("claimRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItem> _explicitNullValueClaimRules = default!;
 #endif
         /// <summary>The kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string _explicitNullValueKind = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItem>("claimRules", ClaimRules);
-            writer.WriteStringValue("kind", Kind);
+            writer.WriteStringValue("kind", Kind);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

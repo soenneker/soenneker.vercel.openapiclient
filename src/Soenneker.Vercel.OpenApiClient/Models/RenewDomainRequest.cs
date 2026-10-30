@@ -11,19 +11,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RenewDomainRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contactInformation") is { } nullNodeContactInformation && nullNodeContactInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactInformation = null;
+            if (parseNode.GetChildNode("expectedPrice") is { } nullNodeExpectedPrice && nullNodeExpectedPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedPrice = null;
+            if (parseNode.GetChildNode("years") is { } nullNodeYears && nullNodeYears.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Years = null;
+        }
+
         /// <summary>The contactInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequestContactInformation? ContactInformation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequestContactInformation? ContactInformation { get => _explicitNullValueContactInformation; set { _explicitNullValueContactInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactInformation"); else _explicitNullProperties?.Remove("contactInformation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequestContactInformation? _explicitNullValueContactInformation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequestContactInformation ContactInformation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequestContactInformation ContactInformation { get => _explicitNullValueContactInformation; set { _explicitNullValueContactInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactInformation"); else _explicitNullProperties?.Remove("contactInformation"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequestContactInformation _explicitNullValueContactInformation = default!;
 #endif
         /// <summary>The expectedPrice property</summary>
-        public double? ExpectedPrice { get; set; }
+        public double? ExpectedPrice { get => _explicitNullValueExpectedPrice; set { _explicitNullValueExpectedPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedPrice"); else _explicitNullProperties?.Remove("expectedPrice"); } }
+        private double? _explicitNullValueExpectedPrice = default!;
         /// <summary>The number of years to renew the domain for.</summary>
-        public double? Years { get; set; }
+        public double? Years { get => _explicitNullValueYears; set { _explicitNullValueYears = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("years"); else _explicitNullProperties?.Remove("years"); } }
+        private double? _explicitNullValueYears = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +46,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +70,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.RenewDomainRequestContactInformation>("contactInformation", ContactInformation);
             writer.WriteDoubleValue("expectedPrice", ExpectedPrice);
-            writer.WriteDoubleValue("years", Years);
+            writer.WriteDoubleValue("years", Years);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

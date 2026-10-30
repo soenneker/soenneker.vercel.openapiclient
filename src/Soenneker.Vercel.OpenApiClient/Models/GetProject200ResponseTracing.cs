@@ -11,32 +11,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProject200ResponseTracing : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("ignorePaths") is { } nullNodeIgnorePaths && nullNodeIgnorePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnorePaths = null;
+            if (parseNode.GetChildNode("samplingRules") is { } nullNodeSamplingRules && nullNodeSamplingRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamplingRules = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domains { get; set; }
+        public string? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private string? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public string Domains { get; set; }
+        public string Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private string _explicitNullValueDomains = default!;
 #endif
         /// <summary>The ignorePaths property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IgnorePaths { get; set; }
+        public List<string>? IgnorePaths { get => _explicitNullValueIgnorePaths; set { _explicitNullValueIgnorePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignorePaths"); else _explicitNullProperties?.Remove("ignorePaths"); } }
+        private List<string>? _explicitNullValueIgnorePaths = default!;
 #nullable restore
 #else
-        public List<string> IgnorePaths { get; set; }
+        public List<string> IgnorePaths { get => _explicitNullValueIgnorePaths; set { _explicitNullValueIgnorePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignorePaths"); else _explicitNullProperties?.Remove("ignorePaths"); } }
+        private List<string> _explicitNullValueIgnorePaths = default!;
 #endif
         /// <summary>The samplingRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracingSamplingRulesItem>? SamplingRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracingSamplingRulesItem>? SamplingRules { get => _explicitNullValueSamplingRules; set { _explicitNullValueSamplingRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samplingRules"); else _explicitNullProperties?.Remove("samplingRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracingSamplingRulesItem>? _explicitNullValueSamplingRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracingSamplingRulesItem> SamplingRules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracingSamplingRulesItem> SamplingRules { get => _explicitNullValueSamplingRules; set { _explicitNullValueSamplingRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samplingRules"); else _explicitNullProperties?.Remove("samplingRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracingSamplingRulesItem> _explicitNullValueSamplingRules = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracing"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracing CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracing();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracing(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("domains", Domains);
             writer.WriteCollectionOfPrimitiveValues<string>("ignorePaths", IgnorePaths);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracingSamplingRulesItem>("samplingRules", SamplingRules);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

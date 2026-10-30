@@ -12,90 +12,131 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateDeploymentRequestGitMetadata : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ci") is { } nullNodeCi && nullNodeCi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ci = null;
+            if (parseNode.GetChildNode("ciGitProviderUsername") is { } nullNodeCiGitProviderUsername && nullNodeCiGitProviderUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CiGitProviderUsername = null;
+            if (parseNode.GetChildNode("ciGitRepoVisibility") is { } nullNodeCiGitRepoVisibility && nullNodeCiGitRepoVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CiGitRepoVisibility = null;
+            if (parseNode.GetChildNode("ciType") is { } nullNodeCiType && nullNodeCiType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CiType = null;
+            if (parseNode.GetChildNode("commitAuthorEmail") is { } nullNodeCommitAuthorEmail && nullNodeCommitAuthorEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitAuthorEmail = null;
+            if (parseNode.GetChildNode("commitAuthorName") is { } nullNodeCommitAuthorName && nullNodeCommitAuthorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitAuthorName = null;
+            if (parseNode.GetChildNode("commitMessage") is { } nullNodeCommitMessage && nullNodeCommitMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitMessage = null;
+            if (parseNode.GetChildNode("commitRef") is { } nullNodeCommitRef && nullNodeCommitRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitRef = null;
+            if (parseNode.GetChildNode("commitSha") is { } nullNodeCommitSha && nullNodeCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitSha = null;
+            if (parseNode.GetChildNode("dirty") is { } nullNodeDirty && nullNodeDirty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dirty = null;
+            if (parseNode.GetChildNode("remoteUrl") is { } nullNodeRemoteUrl && nullNodeRemoteUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteUrl = null;
+            if (parseNode.GetChildNode("rootDirectory") is { } nullNodeRootDirectory && nullNodeRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDirectory = null;
+        }
+
         /// <summary>True if process.env.CI was set when deploying</summary>
-        public bool? Ci { get; set; }
+        public bool? Ci { get => _explicitNullValueCi; set { _explicitNullValueCi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ci"); else _explicitNullProperties?.Remove("ci"); } }
+        private bool? _explicitNullValueCi = default!;
         /// <summary>The username used for the Git Provider (e.g. GitHub) if their CI (e.g. GitHub Actions) was used, if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CiGitProviderUsername { get; set; }
+        public string? CiGitProviderUsername { get => _explicitNullValueCiGitProviderUsername; set { _explicitNullValueCiGitProviderUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciGitProviderUsername"); else _explicitNullProperties?.Remove("ciGitProviderUsername"); } }
+        private string? _explicitNullValueCiGitProviderUsername = default!;
 #nullable restore
 #else
-        public string CiGitProviderUsername { get; set; }
+        public string CiGitProviderUsername { get => _explicitNullValueCiGitProviderUsername; set { _explicitNullValueCiGitProviderUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciGitProviderUsername"); else _explicitNullProperties?.Remove("ciGitProviderUsername"); } }
+        private string _explicitNullValueCiGitProviderUsername = default!;
 #endif
         /// <summary>The visibility of the Git repository if their CI (e.g. GitHub Actions) was used, if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CiGitRepoVisibility { get; set; }
+        public string? CiGitRepoVisibility { get => _explicitNullValueCiGitRepoVisibility; set { _explicitNullValueCiGitRepoVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciGitRepoVisibility"); else _explicitNullProperties?.Remove("ciGitRepoVisibility"); } }
+        private string? _explicitNullValueCiGitRepoVisibility = default!;
 #nullable restore
 #else
-        public string CiGitRepoVisibility { get; set; }
+        public string CiGitRepoVisibility { get => _explicitNullValueCiGitRepoVisibility; set { _explicitNullValueCiGitRepoVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciGitRepoVisibility"); else _explicitNullProperties?.Remove("ciGitRepoVisibility"); } }
+        private string _explicitNullValueCiGitRepoVisibility = default!;
 #endif
         /// <summary>The type of CI system used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CiType { get; set; }
+        public string? CiType { get => _explicitNullValueCiType; set { _explicitNullValueCiType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciType"); else _explicitNullProperties?.Remove("ciType"); } }
+        private string? _explicitNullValueCiType = default!;
 #nullable restore
 #else
-        public string CiType { get; set; }
+        public string CiType { get => _explicitNullValueCiType; set { _explicitNullValueCiType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciType"); else _explicitNullProperties?.Remove("ciType"); } }
+        private string _explicitNullValueCiType = default!;
 #endif
         /// <summary>The email of the author of the commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitAuthorEmail { get; set; }
+        public string? CommitAuthorEmail { get => _explicitNullValueCommitAuthorEmail; set { _explicitNullValueCommitAuthorEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitAuthorEmail"); else _explicitNullProperties?.Remove("commitAuthorEmail"); } }
+        private string? _explicitNullValueCommitAuthorEmail = default!;
 #nullable restore
 #else
-        public string CommitAuthorEmail { get; set; }
+        public string CommitAuthorEmail { get => _explicitNullValueCommitAuthorEmail; set { _explicitNullValueCommitAuthorEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitAuthorEmail"); else _explicitNullProperties?.Remove("commitAuthorEmail"); } }
+        private string _explicitNullValueCommitAuthorEmail = default!;
 #endif
         /// <summary>The name of the author of the commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitAuthorName { get; set; }
+        public string? CommitAuthorName { get => _explicitNullValueCommitAuthorName; set { _explicitNullValueCommitAuthorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitAuthorName"); else _explicitNullProperties?.Remove("commitAuthorName"); } }
+        private string? _explicitNullValueCommitAuthorName = default!;
 #nullable restore
 #else
-        public string CommitAuthorName { get; set; }
+        public string CommitAuthorName { get => _explicitNullValueCommitAuthorName; set { _explicitNullValueCommitAuthorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitAuthorName"); else _explicitNullProperties?.Remove("commitAuthorName"); } }
+        private string _explicitNullValueCommitAuthorName = default!;
 #endif
         /// <summary>The commit message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitMessage { get; set; }
+        public string? CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitMessage"); else _explicitNullProperties?.Remove("commitMessage"); } }
+        private string? _explicitNullValueCommitMessage = default!;
 #nullable restore
 #else
-        public string CommitMessage { get; set; }
+        public string CommitMessage { get => _explicitNullValueCommitMessage; set { _explicitNullValueCommitMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitMessage"); else _explicitNullProperties?.Remove("commitMessage"); } }
+        private string _explicitNullValueCommitMessage = default!;
 #endif
         /// <summary>The branch on which the commit was made</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitRef { get; set; }
+        public string? CommitRef { get => _explicitNullValueCommitRef; set { _explicitNullValueCommitRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitRef"); else _explicitNullProperties?.Remove("commitRef"); } }
+        private string? _explicitNullValueCommitRef = default!;
 #nullable restore
 #else
-        public string CommitRef { get; set; }
+        public string CommitRef { get => _explicitNullValueCommitRef; set { _explicitNullValueCommitRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitRef"); else _explicitNullProperties?.Remove("commitRef"); } }
+        private string _explicitNullValueCommitRef = default!;
 #endif
         /// <summary>The hash of the commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitSha { get; set; }
+        public string? CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
+        private string? _explicitNullValueCommitSha = default!;
 #nullable restore
 #else
-        public string CommitSha { get; set; }
+        public string CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
+        private string _explicitNullValueCommitSha = default!;
 #endif
         /// <summary>Whether or not there have been modifications to the working tree since the latest commit</summary>
-        public bool? Dirty { get; set; }
+        public bool? Dirty { get => _explicitNullValueDirty; set { _explicitNullValueDirty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dirty"); else _explicitNullProperties?.Remove("dirty"); } }
+        private bool? _explicitNullValueDirty = default!;
         /// <summary>The git repository&apos;s remote origin url</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteUrl { get; set; }
+        public string? RemoteUrl { get => _explicitNullValueRemoteUrl; set { _explicitNullValueRemoteUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteUrl"); else _explicitNullProperties?.Remove("remoteUrl"); } }
+        private string? _explicitNullValueRemoteUrl = default!;
 #nullable restore
 #else
-        public string RemoteUrl { get; set; }
+        public string RemoteUrl { get => _explicitNullValueRemoteUrl; set { _explicitNullValueRemoteUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteUrl"); else _explicitNullProperties?.Remove("remoteUrl"); } }
+        private string _explicitNullValueRemoteUrl = default!;
 #endif
         /// <summary>Path of the deployed directory relative to the detected git repository root. Empty string when deploying from the repository root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDirectory { get; set; }
+        public string? RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string? _explicitNullValueRootDirectory = default!;
 #nullable restore
 #else
-        public string RootDirectory { get; set; }
+        public string RootDirectory { get => _explicitNullValueRootDirectory; set { _explicitNullValueRootDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDirectory"); else _explicitNullProperties?.Remove("rootDirectory"); } }
+        private string _explicitNullValueRootDirectory = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -105,7 +146,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +188,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("commitSha", CommitSha);
             writer.WriteBoolValue("dirty", Dirty);
             writer.WriteStringValue("remoteUrl", RemoteUrl);
-            writer.WriteStringValue("rootDirectory", RootDirectory);
+            writer.WriteStringValue("rootDirectory", RootDirectory);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

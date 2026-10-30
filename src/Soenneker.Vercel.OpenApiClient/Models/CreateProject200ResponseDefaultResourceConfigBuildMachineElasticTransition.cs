@@ -11,21 +11,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("algorithmVersion") is { } nullNodeAlgorithmVersion && nullNodeAlgorithmVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlgorithmVersion = null;
+            if (parseNode.GetChildNode("at") is { } nullNodeAt && nullNodeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) At = null;
+            if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The algorithmVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlgorithmVersion { get; set; }
+        public string? AlgorithmVersion { get => _explicitNullValueAlgorithmVersion; set { _explicitNullValueAlgorithmVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithmVersion"); else _explicitNullProperties?.Remove("algorithmVersion"); } }
+        private string? _explicitNullValueAlgorithmVersion = default!;
 #nullable restore
 #else
-        public string AlgorithmVersion { get; set; }
+        public string AlgorithmVersion { get => _explicitNullValueAlgorithmVersion; set { _explicitNullValueAlgorithmVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithmVersion"); else _explicitNullProperties?.Remove("algorithmVersion"); } }
+        private string _explicitNullValueAlgorithmVersion = default!;
 #endif
         /// <summary>The at property</summary>
-        public double? At { get; set; }
+        public double? At { get => _explicitNullValueAt; set { _explicitNullValueAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("at"); else _explicitNullProperties?.Remove("at"); } }
+        private double? _explicitNullValueAt = default!;
         /// <summary>The direction property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransitionDirection? Direction { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransitionDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransitionDirection? _explicitNullValueDirection = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransition"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransition();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransition(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("algorithmVersion", AlgorithmVersion);
             writer.WriteDoubleValue("at", At);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigBuildMachineElasticTransitionDirection>("direction", Direction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

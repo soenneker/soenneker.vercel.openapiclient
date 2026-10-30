@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateProjectCheckRequestSource : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSource();
             if("CreateProjectCheckRequestSourceOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CreateProjectCheckRequestSourceOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf1();
+                
             }
             else if("CreateProjectCheckRequestSourceOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CreateProjectCheckRequestSourceOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf2();
+                
             }
             else if("CreateProjectCheckRequestSourceOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CreateProjectCheckRequestSourceOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf3();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kind") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("kind") != null && parseNode.GetChildNode("externalCheckName") != null && parseNode.GetChildNode("provider") != null && (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("github".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.CreateProjectCheckRequestSourceOneOf1 == null && result.CreateProjectCheckRequestSourceOneOf2 == null && result.CreateProjectCheckRequestSourceOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CreateProjectCheckRequestSourceOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf2(), parseNode);
+            if (result.CreateProjectCheckRequestSourceOneOf1 == null && result.CreateProjectCheckRequestSourceOneOf2 == null && result.CreateProjectCheckRequestSourceOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CreateProjectCheckRequestSourceOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf3(), parseNode);
+            if (result.CreateProjectCheckRequestSourceOneOf1 == null && result.CreateProjectCheckRequestSourceOneOf2 == null && result.CreateProjectCheckRequestSourceOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +99,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CreateProjectCheckRequestSourceOneOf1 == null && CreateProjectCheckRequestSourceOneOf2 == null && CreateProjectCheckRequestSourceOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CreateProjectCheckRequestSourceOneOf1 != null && CreateProjectCheckRequestSourceOneOf2 == null && CreateProjectCheckRequestSourceOneOf3 == null) { if (CreateProjectCheckRequestSourceOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateProjectCheckRequestSourceOneOf1); return; }
+            if (CreateProjectCheckRequestSourceOneOf2 != null && CreateProjectCheckRequestSourceOneOf1 == null && CreateProjectCheckRequestSourceOneOf3 == null) { if (CreateProjectCheckRequestSourceOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateProjectCheckRequestSourceOneOf2); return; }
+            if (CreateProjectCheckRequestSourceOneOf3 != null && CreateProjectCheckRequestSourceOneOf1 == null && CreateProjectCheckRequestSourceOneOf2 == null) { if (CreateProjectCheckRequestSourceOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateProjectCheckRequestSourceOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CreateProjectCheckRequestSourceOneOf1 != null)
             {
+                if (CreateProjectCheckRequestSourceOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf1>(null, CreateProjectCheckRequestSourceOneOf1);
             }
             else if(CreateProjectCheckRequestSourceOneOf2 != null)
             {
+                if (CreateProjectCheckRequestSourceOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf2>(null, CreateProjectCheckRequestSourceOneOf2);
             }
             else if(CreateProjectCheckRequestSourceOneOf3 != null)
             {
+                if (CreateProjectCheckRequestSourceOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceOneOf3>(null, CreateProjectCheckRequestSourceOneOf3);
             }
         }

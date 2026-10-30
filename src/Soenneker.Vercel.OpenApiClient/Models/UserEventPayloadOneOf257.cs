@@ -12,98 +12,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf257 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("newName") is { } nullNodeNewName && nullNodeNewName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewName = null;
+            if (parseNode.GetChildNode("oldName") is { } nullNodeOldName && nullNodeOldName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The connectorId property</summary>
+        /// <summary>The newName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorId { get; set; }
+        public string? NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newName"); else _explicitNullProperties?.Remove("newName"); } }
+        private string? _explicitNullValueNewName = default!;
 #nullable restore
 #else
-        public string ConnectorId { get; set; }
+        public string NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newName"); else _explicitNullProperties?.Remove("newName"); } }
+        private string _explicitNullValueNewName = default!;
 #endif
-        /// <summary>The connectorService property</summary>
+        /// <summary>The oldName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorService { get; set; }
+        public string? OldName { get => _explicitNullValueOldName; set { _explicitNullValueOldName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldName"); else _explicitNullProperties?.Remove("oldName"); } }
+        private string? _explicitNullValueOldName = default!;
 #nullable restore
 #else
-        public string ConnectorService { get; set; }
-#endif
-        /// <summary>The connectorType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectorType { get; set; }
-#nullable restore
-#else
-        public string ConnectorType { get; set; }
-#endif
-        /// <summary>The emailVerified property</summary>
-        public bool? EmailVerified { get; set; }
-        /// <summary>The environment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Environment { get; set; }
-#nullable restore
-#else
-        public string Environment { get; set; }
-#endif
-        /// <summary>The externalIssuer property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalIssuer { get; set; }
-#nullable restore
-#else
-        public string ExternalIssuer { get; set; }
-#endif
-        /// <summary>The externalSubject property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalSubject { get; set; }
-#nullable restore
-#else
-        public string ExternalSubject { get; set; }
-#endif
-        /// <summary>The host property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Host { get; set; }
-#nullable restore
-#else
-        public string Host { get; set; }
-#endif
-        /// <summary>The installationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InstallationId { get; set; }
-#nullable restore
-#else
-        public string InstallationId { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The sessionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionId { get; set; }
-#nullable restore
-#else
-        public string SessionId { get; set; }
-#endif
-        /// <summary>The tenantId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TenantId { get; set; }
-#nullable restore
-#else
-        public string TenantId { get; set; }
+        public string OldName { get => _explicitNullValueOldName; set { _explicitNullValueOldName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldName"); else _explicitNullProperties?.Remove("oldName"); } }
+        private string _explicitNullValueOldName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257"/> and sets the default values.
@@ -120,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,18 +69,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
-                { "connectorService", n => { ConnectorService = n.GetStringValue(); } },
-                { "connectorType", n => { ConnectorType = n.GetStringValue(); } },
-                { "emailVerified", n => { EmailVerified = n.GetBoolValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "externalIssuer", n => { ExternalIssuer = n.GetStringValue(); } },
-                { "externalSubject", n => { ExternalSubject = n.GetStringValue(); } },
-                { "host", n => { Host = n.GetStringValue(); } },
-                { "installationId", n => { InstallationId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "newName", n => { NewName = n.GetStringValue(); } },
+                { "oldName", n => { OldName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -151,18 +80,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("connectorId", ConnectorId);
-            writer.WriteStringValue("connectorService", ConnectorService);
-            writer.WriteStringValue("connectorType", ConnectorType);
-            writer.WriteBoolValue("emailVerified", EmailVerified);
-            writer.WriteStringValue("environment", Environment);
-            writer.WriteStringValue("externalIssuer", ExternalIssuer);
-            writer.WriteStringValue("externalSubject", ExternalSubject);
-            writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("installationId", InstallationId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteStringValue("newName", NewName);
+            writer.WriteStringValue("oldName", OldName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

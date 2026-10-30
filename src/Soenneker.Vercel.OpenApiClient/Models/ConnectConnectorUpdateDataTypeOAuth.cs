@@ -11,146 +11,208 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectConnectorUpdateDataTypeOAuth : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorizationUrlParams") is { } nullNodeAuthorizationUrlParams && nullNodeAuthorizationUrlParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationUrlParams = null;
+            if (parseNode.GetChildNode("clientAssertion") is { } nullNodeClientAssertion && nullNodeClientAssertion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAssertion = null;
+            if (parseNode.GetChildNode("clientCredentials") is { } nullNodeClientCredentials && nullNodeClientCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientCredentials = null;
+            if (parseNode.GetChildNode("clientId") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("clientName") is { } nullNodeClientName && nullNodeClientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientName = null;
+            if (parseNode.GetChildNode("clientSecret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("codeChallengeMethod") is { } nullNodeCodeChallengeMethod && nullNodeCodeChallengeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeChallengeMethod = null;
+            if (parseNode.GetChildNode("defaultAudience") is { } nullNodeDefaultAudience && nullNodeDefaultAudience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAudience = null;
+            if (parseNode.GetChildNode("defaultResource") is { } nullNodeDefaultResource && nullNodeDefaultResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultResource = null;
+            if (parseNode.GetChildNode("defaultTokenExpiresIn") is { } nullNodeDefaultTokenExpiresIn && nullNodeDefaultTokenExpiresIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultTokenExpiresIn = null;
+            if (parseNode.GetChildNode("forwardedClaims") is { } nullNodeForwardedClaims && nullNodeForwardedClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForwardedClaims = null;
+            if (parseNode.GetChildNode("jwtBearer") is { } nullNodeJwtBearer && nullNodeJwtBearer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JwtBearer = null;
+            if (parseNode.GetChildNode("pkceRequired") is { } nullNodePkceRequired && nullNodePkceRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PkceRequired = null;
+            if (parseNode.GetChildNode("refreshTokens") is { } nullNodeRefreshTokens && nullNodeRefreshTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshTokens = null;
+            if (parseNode.GetChildNode("responseType") is { } nullNodeResponseType && nullNodeResponseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseType = null;
+            if (parseNode.GetChildNode("serverConfig") is { } nullNodeServerConfig && nullNodeServerConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerConfig = null;
+            if (parseNode.GetChildNode("serverUrl") is { } nullNodeServerUrl && nullNodeServerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerUrl = null;
+            if (parseNode.GetChildNode("tokenEndpointAuthMethod") is { } nullNodeTokenEndpointAuthMethod && nullNodeTokenEndpointAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenEndpointAuthMethod = null;
+            if (parseNode.GetChildNode("userAuthorization") is { } nullNodeUserAuthorization && nullNodeUserAuthorization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAuthorization = null;
+        }
+
         /// <summary>Extra query parameters added to authorization URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthAuthorizationUrlParamsProperty? AuthorizationUrlParams { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthAuthorizationUrlParamsProperty? AuthorizationUrlParams { get => _explicitNullValueAuthorizationUrlParams; set { _explicitNullValueAuthorizationUrlParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorizationUrlParams"); else _explicitNullProperties?.Remove("authorizationUrlParams"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthAuthorizationUrlParamsProperty? _explicitNullValueAuthorizationUrlParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthAuthorizationUrlParamsProperty AuthorizationUrlParams { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthAuthorizationUrlParamsProperty AuthorizationUrlParams { get => _explicitNullValueAuthorizationUrlParams; set { _explicitNullValueAuthorizationUrlParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorizationUrlParams"); else _explicitNullProperties?.Remove("authorizationUrlParams"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthAuthorizationUrlParamsProperty _explicitNullValueAuthorizationUrlParams = default!;
 #endif
         /// <summary>`private_key_jwt` client assertion settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientAssertion? ClientAssertion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientAssertion? ClientAssertion { get => _explicitNullValueClientAssertion; set { _explicitNullValueClientAssertion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientAssertion"); else _explicitNullProperties?.Remove("clientAssertion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientAssertion? _explicitNullValueClientAssertion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientAssertion ClientAssertion { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientAssertion ClientAssertion { get => _explicitNullValueClientAssertion; set { _explicitNullValueClientAssertion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientAssertion"); else _explicitNullProperties?.Remove("clientAssertion"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientAssertion _explicitNullValueClientAssertion = default!;
 #endif
         /// <summary>Client credentials grant settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientCredentials? ClientCredentials { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientCredentials? ClientCredentials { get => _explicitNullValueClientCredentials; set { _explicitNullValueClientCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCredentials"); else _explicitNullProperties?.Remove("clientCredentials"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientCredentials? _explicitNullValueClientCredentials = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientCredentials ClientCredentials { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientCredentials ClientCredentials { get => _explicitNullValueClientCredentials; set { _explicitNullValueClientCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientCredentials"); else _explicitNullProperties?.Remove("clientCredentials"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthClientCredentials _explicitNullValueClientCredentials = default!;
 #endif
         /// <summary>OAuth client ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>OAuth client name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientName { get; set; }
+        public string? ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientName"); else _explicitNullProperties?.Remove("clientName"); } }
+        private string? _explicitNullValueClientName = default!;
 #nullable restore
 #else
-        public string ClientName { get; set; }
+        public string ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientName"); else _explicitNullProperties?.Remove("clientName"); } }
+        private string _explicitNullValueClientName = default!;
 #endif
         /// <summary>OAuth client secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get; set; }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
+        private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get; set; }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
+        private string _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CodeChallengeMethod { get; set; }
+        public string? CodeChallengeMethod { get => _explicitNullValueCodeChallengeMethod; set { _explicitNullValueCodeChallengeMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeChallengeMethod"); else _explicitNullProperties?.Remove("codeChallengeMethod"); } }
+        private string? _explicitNullValueCodeChallengeMethod = default!;
 #nullable restore
 #else
-        public string CodeChallengeMethod { get; set; }
+        public string CodeChallengeMethod { get => _explicitNullValueCodeChallengeMethod; set { _explicitNullValueCodeChallengeMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeChallengeMethod"); else _explicitNullProperties?.Remove("codeChallengeMethod"); } }
+        private string _explicitNullValueCodeChallengeMethod = default!;
 #endif
         /// <summary>Default audience used when a token request omits one. An empty string clears the default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultAudience { get; set; }
+        public string? DefaultAudience { get => _explicitNullValueDefaultAudience; set { _explicitNullValueDefaultAudience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAudience"); else _explicitNullProperties?.Remove("defaultAudience"); } }
+        private string? _explicitNullValueDefaultAudience = default!;
 #nullable restore
 #else
-        public string DefaultAudience { get; set; }
+        public string DefaultAudience { get => _explicitNullValueDefaultAudience; set { _explicitNullValueDefaultAudience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAudience"); else _explicitNullProperties?.Remove("defaultAudience"); } }
+        private string _explicitNullValueDefaultAudience = default!;
 #endif
         /// <summary>Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultResource { get; set; }
+        public string? DefaultResource { get => _explicitNullValueDefaultResource; set { _explicitNullValueDefaultResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultResource"); else _explicitNullProperties?.Remove("defaultResource"); } }
+        private string? _explicitNullValueDefaultResource = default!;
 #nullable restore
 #else
-        public string DefaultResource { get; set; }
+        public string DefaultResource { get => _explicitNullValueDefaultResource; set { _explicitNullValueDefaultResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultResource"); else _explicitNullProperties?.Remove("defaultResource"); } }
+        private string _explicitNullValueDefaultResource = default!;
 #endif
         /// <summary>Default token lifetime in seconds to use when the token response omits expires_in.</summary>
-        public double? DefaultTokenExpiresIn { get; set; }
+        public double? DefaultTokenExpiresIn { get => _explicitNullValueDefaultTokenExpiresIn; set { _explicitNullValueDefaultTokenExpiresIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultTokenExpiresIn"); else _explicitNullProperties?.Remove("defaultTokenExpiresIn"); } }
+        private double? _explicitNullValueDefaultTokenExpiresIn = default!;
         /// <summary>Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthForwardedClaims? ForwardedClaims { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthForwardedClaims? ForwardedClaims { get => _explicitNullValueForwardedClaims; set { _explicitNullValueForwardedClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwardedClaims"); else _explicitNullProperties?.Remove("forwardedClaims"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthForwardedClaims? _explicitNullValueForwardedClaims = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthForwardedClaims ForwardedClaims { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthForwardedClaims ForwardedClaims { get => _explicitNullValueForwardedClaims; set { _explicitNullValueForwardedClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwardedClaims"); else _explicitNullProperties?.Remove("forwardedClaims"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthForwardedClaims _explicitNullValueForwardedClaims = default!;
 #endif
         /// <summary>JWT bearer grant settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthJwtBearer? JwtBearer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthJwtBearer? JwtBearer { get => _explicitNullValueJwtBearer; set { _explicitNullValueJwtBearer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwtBearer"); else _explicitNullProperties?.Remove("jwtBearer"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthJwtBearer? _explicitNullValueJwtBearer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthJwtBearer JwtBearer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthJwtBearer JwtBearer { get => _explicitNullValueJwtBearer; set { _explicitNullValueJwtBearer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwtBearer"); else _explicitNullProperties?.Remove("jwtBearer"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthJwtBearer _explicitNullValueJwtBearer = default!;
 #endif
         /// <summary>Whether user authorization must use PKCE.</summary>
-        public bool? PkceRequired { get; set; }
+        public bool? PkceRequired { get => _explicitNullValuePkceRequired; set { _explicitNullValuePkceRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pkceRequired"); else _explicitNullProperties?.Remove("pkceRequired"); } }
+        private bool? _explicitNullValuePkceRequired = default!;
         /// <summary>Refresh token settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthRefreshTokens? RefreshTokens { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthRefreshTokens? RefreshTokens { get => _explicitNullValueRefreshTokens; set { _explicitNullValueRefreshTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshTokens"); else _explicitNullProperties?.Remove("refreshTokens"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthRefreshTokens? _explicitNullValueRefreshTokens = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthRefreshTokens RefreshTokens { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthRefreshTokens RefreshTokens { get => _explicitNullValueRefreshTokens; set { _explicitNullValueRefreshTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshTokens"); else _explicitNullProperties?.Remove("refreshTokens"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthRefreshTokens _explicitNullValueRefreshTokens = default!;
 #endif
         /// <summary>OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResponseType { get; set; }
+        public string? ResponseType { get => _explicitNullValueResponseType; set { _explicitNullValueResponseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseType"); else _explicitNullProperties?.Remove("responseType"); } }
+        private string? _explicitNullValueResponseType = default!;
 #nullable restore
 #else
-        public string ResponseType { get; set; }
+        public string ResponseType { get => _explicitNullValueResponseType; set { _explicitNullValueResponseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseType"); else _explicitNullProperties?.Remove("responseType"); } }
+        private string _explicitNullValueResponseType = default!;
 #endif
         /// <summary>Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfig? ServerConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfig? ServerConfig { get => _explicitNullValueServerConfig; set { _explicitNullValueServerConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverConfig"); else _explicitNullProperties?.Remove("serverConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfig? _explicitNullValueServerConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfig ServerConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfig ServerConfig { get => _explicitNullValueServerConfig; set { _explicitNullValueServerConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverConfig"); else _explicitNullProperties?.Remove("serverConfig"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfig _explicitNullValueServerConfig = default!;
 #endif
         /// <summary>Authorization server base URL used for discovery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerUrl { get; set; }
+        public string? ServerUrl { get => _explicitNullValueServerUrl; set { _explicitNullValueServerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverUrl"); else _explicitNullProperties?.Remove("serverUrl"); } }
+        private string? _explicitNullValueServerUrl = default!;
 #nullable restore
 #else
-        public string ServerUrl { get; set; }
+        public string ServerUrl { get => _explicitNullValueServerUrl; set { _explicitNullValueServerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverUrl"); else _explicitNullProperties?.Remove("serverUrl"); } }
+        private string _explicitNullValueServerUrl = default!;
 #endif
         /// <summary>OAuth token endpoint authentication method. Common values are client_secret_post, client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method from serverConfig and otherwise uses client_secret_post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenEndpointAuthMethod { get; set; }
+        public string? TokenEndpointAuthMethod { get => _explicitNullValueTokenEndpointAuthMethod; set { _explicitNullValueTokenEndpointAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenEndpointAuthMethod"); else _explicitNullProperties?.Remove("tokenEndpointAuthMethod"); } }
+        private string? _explicitNullValueTokenEndpointAuthMethod = default!;
 #nullable restore
 #else
-        public string TokenEndpointAuthMethod { get; set; }
+        public string TokenEndpointAuthMethod { get => _explicitNullValueTokenEndpointAuthMethod; set { _explicitNullValueTokenEndpointAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenEndpointAuthMethod"); else _explicitNullProperties?.Remove("tokenEndpointAuthMethod"); } }
+        private string _explicitNullValueTokenEndpointAuthMethod = default!;
 #endif
         /// <summary>User authorization grant settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization? UserAuthorization { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization? UserAuthorization { get => _explicitNullValueUserAuthorization; set { _explicitNullValueUserAuthorization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAuthorization"); else _explicitNullProperties?.Remove("userAuthorization"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization? _explicitNullValueUserAuthorization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization UserAuthorization { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization UserAuthorization { get => _explicitNullValueUserAuthorization; set { _explicitNullValueUserAuthorization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAuthorization"); else _explicitNullProperties?.Remove("userAuthorization"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization _explicitNullValueUserAuthorization = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -160,7 +222,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuth();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuth(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -216,7 +278,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfig>("serverConfig", ServerConfig);
             writer.WriteStringValue("serverUrl", ServerUrl);
             writer.WriteStringValue("tokenEndpointAuthMethod", TokenEndpointAuthMethod);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization>("userAuthorization", UserAuthorization);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthUserAuthorization>("userAuthorization", UserAuthorization);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

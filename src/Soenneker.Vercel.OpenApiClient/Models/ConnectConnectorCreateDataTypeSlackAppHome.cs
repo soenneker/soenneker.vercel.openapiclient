@@ -12,13 +12,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectConnectorCreateDataTypeSlackAppHome : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("homeTabEnabled") is { } nullNodeHomeTabEnabled && nullNodeHomeTabEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HomeTabEnabled = null;
+            if (parseNode.GetChildNode("messagesTabEnabled") is { } nullNodeMessagesTabEnabled && nullNodeMessagesTabEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesTabEnabled = null;
+            if (parseNode.GetChildNode("messagesTabReadOnlyEnabled") is { } nullNodeMessagesTabReadOnlyEnabled && nullNodeMessagesTabReadOnlyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesTabReadOnlyEnabled = null;
+        }
+
         /// <summary>Enable the Home tab for views.publish. Defaults to false for new apps.</summary>
-        public bool? HomeTabEnabled { get; set; }
+        public bool? HomeTabEnabled { get => _explicitNullValueHomeTabEnabled; set { _explicitNullValueHomeTabEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeTabEnabled"); else _explicitNullProperties?.Remove("homeTabEnabled"); } }
+        private bool? _explicitNullValueHomeTabEnabled = default!;
         /// <summary>Enable the Messages tab. Defaults to true for new apps.</summary>
-        public bool? MessagesTabEnabled { get; set; }
+        public bool? MessagesTabEnabled { get => _explicitNullValueMessagesTabEnabled; set { _explicitNullValueMessagesTabEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messagesTabEnabled"); else _explicitNullProperties?.Remove("messagesTabEnabled"); } }
+        private bool? _explicitNullValueMessagesTabEnabled = default!;
         /// <summary>Make the Messages tab read-only. Defaults to false for new apps.</summary>
-        public bool? MessagesTabReadOnlyEnabled { get; set; }
+        public bool? MessagesTabReadOnlyEnabled { get => _explicitNullValueMessagesTabReadOnlyEnabled; set { _explicitNullValueMessagesTabReadOnlyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messagesTabReadOnlyEnabled"); else _explicitNullProperties?.Remove("messagesTabReadOnlyEnabled"); } }
+        private bool? _explicitNullValueMessagesTabReadOnlyEnabled = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -27,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +64,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("homeTabEnabled", HomeTabEnabled);
             writer.WriteBoolValue("messagesTabEnabled", MessagesTabEnabled);
-            writer.WriteBoolValue("messagesTabReadOnlyEnabled", MessagesTabReadOnlyEnabled);
+            writer.WriteBoolValue("messagesTabReadOnlyEnabled", MessagesTabReadOnlyEnabled);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

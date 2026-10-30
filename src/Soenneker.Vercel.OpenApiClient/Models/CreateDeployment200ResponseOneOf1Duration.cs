@@ -11,23 +11,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateDeployment200ResponseOneOf1Duration : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("endTime") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("endTimeCapped") is { } nullNodeEndTimeCapped && nullNodeEndTimeCapped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTimeCapped = null;
+            if (parseNode.GetChildNode("startTime") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("timeForBilling") is { } nullNodeTimeForBilling && nullNodeTimeForBilling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeForBilling = null;
+            if (parseNode.GetChildNode("timeToContainerExit") is { } nullNodeTimeToContainerExit && nullNodeTimeToContainerExit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeToContainerExit = null;
+            if (parseNode.GetChildNode("timeToContainerExitCapped") is { } nullNodeTimeToContainerExitCapped && nullNodeTimeToContainerExitCapped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeToContainerExitCapped = null;
+            if (parseNode.GetChildNode("timeToReady") is { } nullNodeTimeToReady && nullNodeTimeToReady.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeToReady = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unix timestamp in milliseconds when the build container exited.</summary>
-        public double? EndTime { get; set; }
+        public double? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endTime"); else _explicitNullProperties?.Remove("endTime"); } }
+        private double? _explicitNullValueEndTime = default!;
         /// <summary>Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.</summary>
-        public double? EndTimeCapped { get; set; }
+        public double? EndTimeCapped { get => _explicitNullValueEndTimeCapped; set { _explicitNullValueEndTimeCapped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endTimeCapped"); else _explicitNullProperties?.Remove("endTimeCapped"); } }
+        private double? _explicitNullValueEndTimeCapped = default!;
         /// <summary>Unix timestamp in milliseconds when the deployment entered BUILDING.</summary>
-        public double? StartTime { get; set; }
+        public double? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startTime"); else _explicitNullProperties?.Remove("startTime"); } }
+        private double? _explicitNullValueStartTime = default!;
         /// <summary>Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.</summary>
-        public double? TimeForBilling { get; set; }
+        public double? TimeForBilling { get => _explicitNullValueTimeForBilling; set { _explicitNullValueTimeForBilling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeForBilling"); else _explicitNullProperties?.Remove("timeForBilling"); } }
+        private double? _explicitNullValueTimeForBilling = default!;
         /// <summary>Milliseconds from entering BUILDING until the build container exited, without the billing cap.</summary>
-        public double? TimeToContainerExit { get; set; }
+        public double? TimeToContainerExit { get => _explicitNullValueTimeToContainerExit; set { _explicitNullValueTimeToContainerExit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeToContainerExit"); else _explicitNullProperties?.Remove("timeToContainerExit"); } }
+        private double? _explicitNullValueTimeToContainerExit = default!;
         /// <summary>Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.</summary>
-        public double? TimeToContainerExitCapped { get; set; }
+        public double? TimeToContainerExitCapped { get => _explicitNullValueTimeToContainerExitCapped; set { _explicitNullValueTimeToContainerExitCapped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeToContainerExitCapped"); else _explicitNullProperties?.Remove("timeToContainerExitCapped"); } }
+        private double? _explicitNullValueTimeToContainerExitCapped = default!;
         /// <summary>Milliseconds from entering BUILDING until the deployment reached its current ready state.</summary>
-        public double? TimeToReady { get; set; }
+        public double? TimeToReady { get => _explicitNullValueTimeToReady; set { _explicitNullValueTimeToReady = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeToReady"); else _explicitNullProperties?.Remove("timeToReady"); } }
+        private double? _explicitNullValueTimeToReady = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Duration"/> and sets the default values.
         /// </summary>
@@ -43,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Duration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Duration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Duration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("timeToContainerExit", TimeToContainerExit);
             writer.WriteDoubleValue("timeToContainerExitCapped", TimeToContainerExitCapped);
             writer.WriteDoubleValue("timeToReady", TimeToReady);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.

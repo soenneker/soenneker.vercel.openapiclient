@@ -11,19 +11,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotationOneOf1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customRotationWarning") is { } nullNodeCustomRotationWarning && nullNodeCustomRotationWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRotationWarning = null;
+            if (parseNode.GetChildNode("maxDelayHours") is { } nullNodeMaxDelayHours && nullNodeMaxDelayHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDelayHours = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customRotationWarning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomRotationWarning { get; set; }
+        public string? CustomRotationWarning { get => _explicitNullValueCustomRotationWarning; set { _explicitNullValueCustomRotationWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRotationWarning"); else _explicitNullProperties?.Remove("customRotationWarning"); } }
+        private string? _explicitNullValueCustomRotationWarning = default!;
 #nullable restore
 #else
-        public string CustomRotationWarning { get; set; }
+        public string CustomRotationWarning { get => _explicitNullValueCustomRotationWarning; set { _explicitNullValueCustomRotationWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRotationWarning"); else _explicitNullProperties?.Remove("customRotationWarning"); } }
+        private string _explicitNullValueCustomRotationWarning = default!;
 #endif
         /// <summary>The maxDelayHours property</summary>
-        public double? MaxDelayHours { get; set; }
+        public double? MaxDelayHours { get => _explicitNullValueMaxDelayHours; set { _explicitNullValueMaxDelayHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDelayHours"); else _explicitNullProperties?.Remove("maxDelayHours"); } }
+        private double? _explicitNullValueMaxDelayHours = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotationOneOf1"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotationOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotationOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotationOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customRotationWarning", CustomRotationWarning);
             writer.WriteDoubleValue("maxDelayHours", MaxDelayHours);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

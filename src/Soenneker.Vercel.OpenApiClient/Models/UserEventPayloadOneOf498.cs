@@ -12,54 +12,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf498 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chatId") is { } nullNodeChatId && nullNodeChatId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatId = null;
+            if (parseNode.GetChildNode("chatTitle") is { } nullNodeChatTitle && nullNodeChatTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatTitle = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The chatId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatId { get; set; }
+        public string? ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
+        private string? _explicitNullValueChatId = default!;
 #nullable restore
 #else
-        public string ChatId { get; set; }
+        public string ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
+        private string _explicitNullValueChatId = default!;
 #endif
-        /// <summary>The events property</summary>
+        /// <summary>The chatTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498EventsItem>? Events { get; set; }
+        public string? ChatTitle { get => _explicitNullValueChatTitle; set { _explicitNullValueChatTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatTitle"); else _explicitNullProperties?.Remove("chatTitle"); } }
+        private string? _explicitNullValueChatTitle = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498EventsItem> Events { get; set; }
-#endif
-        /// <summary>The inputTokens property</summary>
-        public double? InputTokens { get; set; }
-        /// <summary>The messageId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageId { get; set; }
-#nullable restore
-#else
-        public string MessageId { get; set; }
-#endif
-        /// <summary>The model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Model { get; set; }
-#nullable restore
-#else
-        public string Model { get; set; }
-#endif
-        /// <summary>The outputTokens property</summary>
-        public double? OutputTokens { get; set; }
-        /// <summary>The timestamp property</summary>
-        public double? Timestamp { get; set; }
-        /// <summary>The useCase property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UseCase { get; set; }
-#nullable restore
-#else
-        public string UseCase { get; set; }
+        public string ChatTitle { get => _explicitNullValueChatTitle; set { _explicitNullValueChatTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatTitle"); else _explicitNullProperties?.Remove("chatTitle"); } }
+        private string _explicitNullValueChatTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498"/> and sets the default values.
@@ -76,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,13 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chatId", n => { ChatId = n.GetStringValue(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498EventsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498EventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "inputTokens", n => { InputTokens = n.GetDoubleValue(); } },
-                { "messageId", n => { MessageId = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetStringValue(); } },
-                { "outputTokens", n => { OutputTokens = n.GetDoubleValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
-                { "useCase", n => { UseCase = n.GetStringValue(); } },
+                { "chatTitle", n => { ChatTitle = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -104,13 +81,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("chatId", ChatId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf498EventsItem>("events", Events);
-            writer.WriteDoubleValue("inputTokens", InputTokens);
-            writer.WriteStringValue("messageId", MessageId);
-            writer.WriteStringValue("model", Model);
-            writer.WriteDoubleValue("outputTokens", OutputTokens);
-            writer.WriteDoubleValue("timestamp", Timestamp);
-            writer.WriteStringValue("useCase", UseCase);
+            writer.WriteStringValue("chatTitle", ChatTitle);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

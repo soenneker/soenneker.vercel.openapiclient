@@ -12,111 +12,180 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthUserResourceConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("awsAccountIds") is { } nullNodeAwsAccountIds && nullNodeAwsAccountIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsAccountIds = null;
+            if (parseNode.GetChildNode("awsAccountType") is { } nullNodeAwsAccountType && nullNodeAwsAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsAccountType = null;
+            if (parseNode.GetChildNode("blobStores") is { } nullNodeBlobStores && nullNodeBlobStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlobStores = null;
+            if (parseNode.GetChildNode("buildEntitlements") is { } nullNodeBuildEntitlements && nullNodeBuildEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildEntitlements = null;
+            if (parseNode.GetChildNode("buildQueue") is { } nullNodeBuildQueue && nullNodeBuildQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildQueue = null;
+            if (parseNode.GetChildNode("bulkRedirectsFreeLimitOverride") is { } nullNodeBulkRedirectsFreeLimitOverride && nullNodeBulkRedirectsFreeLimitOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BulkRedirectsFreeLimitOverride = null;
+            if (parseNode.GetChildNode("cfZoneName") is { } nullNodeCfZoneName && nullNodeCfZoneName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CfZoneName = null;
+            if (parseNode.GetChildNode("concurrentBuilds") is { } nullNodeConcurrentBuilds && nullNodeConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConcurrentBuilds = null;
+            if (parseNode.GetChildNode("cronJobsPerProject") is { } nullNodeCronJobsPerProject && nullNodeCronJobsPerProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CronJobsPerProject = null;
+            if (parseNode.GetChildNode("customEnvironmentsPerProject") is { } nullNodeCustomEnvironmentsPerProject && nullNodeCustomEnvironmentsPerProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEnvironmentsPerProject = null;
+            if (parseNode.GetChildNode("edgeConfigs") is { } nullNodeEdgeConfigs && nullNodeEdgeConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigs = null;
+            if (parseNode.GetChildNode("edgeConfigSize") is { } nullNodeEdgeConfigSize && nullNodeEdgeConfigSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSize = null;
+            if (parseNode.GetChildNode("edgeFunctionExecutionTimeoutMs") is { } nullNodeEdgeFunctionExecutionTimeoutMs && nullNodeEdgeFunctionExecutionTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeFunctionExecutionTimeoutMs = null;
+            if (parseNode.GetChildNode("edgeFunctionMaxSizeBytes") is { } nullNodeEdgeFunctionMaxSizeBytes && nullNodeEdgeFunctionMaxSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeFunctionMaxSizeBytes = null;
+            if (parseNode.GetChildNode("elasticConcurrencyEnabled") is { } nullNodeElasticConcurrencyEnabled && nullNodeElasticConcurrencyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElasticConcurrencyEnabled = null;
+            if (parseNode.GetChildNode("flagsExplorerOverridesThreshold") is { } nullNodeFlagsExplorerOverridesThreshold && nullNodeFlagsExplorerOverridesThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagsExplorerOverridesThreshold = null;
+            if (parseNode.GetChildNode("flagsExplorerUnlimitedOverrides") is { } nullNodeFlagsExplorerUnlimitedOverrides && nullNodeFlagsExplorerUnlimitedOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagsExplorerUnlimitedOverrides = null;
+            if (parseNode.GetChildNode("imageOptimizationType") is { } nullNodeImageOptimizationType && nullNodeImageOptimizationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageOptimizationType = null;
+            if (parseNode.GetChildNode("integrationStores") is { } nullNodeIntegrationStores && nullNodeIntegrationStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationStores = null;
+            if (parseNode.GetChildNode("kvDatabases") is { } nullNodeKvDatabases && nullNodeKvDatabases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KvDatabases = null;
+            if (parseNode.GetChildNode("microfrontendGroupsPerTeam") is { } nullNodeMicrofrontendGroupsPerTeam && nullNodeMicrofrontendGroupsPerTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MicrofrontendGroupsPerTeam = null;
+            if (parseNode.GetChildNode("microfrontendProjectsPerGroup") is { } nullNodeMicrofrontendProjectsPerGroup && nullNodeMicrofrontendProjectsPerGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MicrofrontendProjectsPerGroup = null;
+            if (parseNode.GetChildNode("nodeType") is { } nullNodeNodeType && nullNodeNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeType = null;
+            if (parseNode.GetChildNode("postgresDatabases") is { } nullNodePostgresDatabases && nullNodePostgresDatabases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostgresDatabases = null;
+            if (parseNode.GetChildNode("security") is { } nullNodeSecurity && nullNodeSecurity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Security = null;
+            if (parseNode.GetChildNode("serverlessFunctionMaxDuration") is { } nullNodeServerlessFunctionMaxDuration && nullNodeServerlessFunctionMaxDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerlessFunctionMaxDuration = null;
+            if (parseNode.GetChildNode("serverlessFunctionMaxMemorySize") is { } nullNodeServerlessFunctionMaxMemorySize && nullNodeServerlessFunctionMaxMemorySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerlessFunctionMaxMemorySize = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AwsAccountIds { get; set; }
+        public List<string>? AwsAccountIds { get => _explicitNullValueAwsAccountIds; set { _explicitNullValueAwsAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAccountIds"); else _explicitNullProperties?.Remove("awsAccountIds"); } }
+        private List<string>? _explicitNullValueAwsAccountIds = default!;
 #nullable restore
 #else
-        public List<string> AwsAccountIds { get; set; }
+        public List<string> AwsAccountIds { get => _explicitNullValueAwsAccountIds; set { _explicitNullValueAwsAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAccountIds"); else _explicitNullProperties?.Remove("awsAccountIds"); } }
+        private List<string> _explicitNullValueAwsAccountIds = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AwsAccountType { get; set; }
+        public string? AwsAccountType { get => _explicitNullValueAwsAccountType; set { _explicitNullValueAwsAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAccountType"); else _explicitNullProperties?.Remove("awsAccountType"); } }
+        private string? _explicitNullValueAwsAccountType = default!;
 #nullable restore
 #else
-        public string AwsAccountType { get; set; }
+        public string AwsAccountType { get => _explicitNullValueAwsAccountType; set { _explicitNullValueAwsAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsAccountType"); else _explicitNullProperties?.Remove("awsAccountType"); } }
+        private string _explicitNullValueAwsAccountType = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? BlobStores { get; set; }
+        public double? BlobStores { get => _explicitNullValueBlobStores; set { _explicitNullValueBlobStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blobStores"); else _explicitNullProperties?.Remove("blobStores"); } }
+        private double? _explicitNullValueBlobStores = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements? BuildEntitlements { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements? BuildEntitlements { get => _explicitNullValueBuildEntitlements; set { _explicitNullValueBuildEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildEntitlements"); else _explicitNullProperties?.Remove("buildEntitlements"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements? _explicitNullValueBuildEntitlements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements BuildEntitlements { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements BuildEntitlements { get => _explicitNullValueBuildEntitlements; set { _explicitNullValueBuildEntitlements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildEntitlements"); else _explicitNullProperties?.Remove("buildEntitlements"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements _explicitNullValueBuildEntitlements = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue? BuildQueue { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue? BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue? _explicitNullValueBuildQueue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue BuildQueue { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue _explicitNullValueBuildQueue = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? BulkRedirectsFreeLimitOverride { get; set; }
+        public double? BulkRedirectsFreeLimitOverride { get => _explicitNullValueBulkRedirectsFreeLimitOverride; set { _explicitNullValueBulkRedirectsFreeLimitOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulkRedirectsFreeLimitOverride"); else _explicitNullProperties?.Remove("bulkRedirectsFreeLimitOverride"); } }
+        private double? _explicitNullValueBulkRedirectsFreeLimitOverride = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CfZoneName { get; set; }
+        public string? CfZoneName { get => _explicitNullValueCfZoneName; set { _explicitNullValueCfZoneName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cfZoneName"); else _explicitNullProperties?.Remove("cfZoneName"); } }
+        private string? _explicitNullValueCfZoneName = default!;
 #nullable restore
 #else
-        public string CfZoneName { get; set; }
+        public string CfZoneName { get => _explicitNullValueCfZoneName; set { _explicitNullValueCfZoneName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cfZoneName"); else _explicitNullProperties?.Remove("cfZoneName"); } }
+        private string _explicitNullValueCfZoneName = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? ConcurrentBuilds { get; set; }
+        public double? ConcurrentBuilds { get => _explicitNullValueConcurrentBuilds; set { _explicitNullValueConcurrentBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrentBuilds"); else _explicitNullProperties?.Remove("concurrentBuilds"); } }
+        private double? _explicitNullValueConcurrentBuilds = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? CronJobsPerProject { get; set; }
+        public double? CronJobsPerProject { get => _explicitNullValueCronJobsPerProject; set { _explicitNullValueCronJobsPerProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cronJobsPerProject"); else _explicitNullProperties?.Remove("cronJobsPerProject"); } }
+        private double? _explicitNullValueCronJobsPerProject = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? CustomEnvironmentsPerProject { get; set; }
+        public double? CustomEnvironmentsPerProject { get => _explicitNullValueCustomEnvironmentsPerProject; set { _explicitNullValueCustomEnvironmentsPerProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customEnvironmentsPerProject"); else _explicitNullProperties?.Remove("customEnvironmentsPerProject"); } }
+        private double? _explicitNullValueCustomEnvironmentsPerProject = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? EdgeConfigs { get; set; }
+        public double? EdgeConfigs { get => _explicitNullValueEdgeConfigs; set { _explicitNullValueEdgeConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigs"); else _explicitNullProperties?.Remove("edgeConfigs"); } }
+        private double? _explicitNullValueEdgeConfigs = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? EdgeConfigSize { get; set; }
+        public double? EdgeConfigSize { get => _explicitNullValueEdgeConfigSize; set { _explicitNullValueEdgeConfigSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSize"); else _explicitNullProperties?.Remove("edgeConfigSize"); } }
+        private double? _explicitNullValueEdgeConfigSize = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? EdgeFunctionExecutionTimeoutMs { get; set; }
+        public double? EdgeFunctionExecutionTimeoutMs { get => _explicitNullValueEdgeFunctionExecutionTimeoutMs; set { _explicitNullValueEdgeFunctionExecutionTimeoutMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeFunctionExecutionTimeoutMs"); else _explicitNullProperties?.Remove("edgeFunctionExecutionTimeoutMs"); } }
+        private double? _explicitNullValueEdgeFunctionExecutionTimeoutMs = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? EdgeFunctionMaxSizeBytes { get; set; }
+        public double? EdgeFunctionMaxSizeBytes { get => _explicitNullValueEdgeFunctionMaxSizeBytes; set { _explicitNullValueEdgeFunctionMaxSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeFunctionMaxSizeBytes"); else _explicitNullProperties?.Remove("edgeFunctionMaxSizeBytes"); } }
+        private double? _explicitNullValueEdgeFunctionMaxSizeBytes = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public bool? ElasticConcurrencyEnabled { get; set; }
+        public bool? ElasticConcurrencyEnabled { get => _explicitNullValueElasticConcurrencyEnabled; set { _explicitNullValueElasticConcurrencyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elasticConcurrencyEnabled"); else _explicitNullProperties?.Remove("elasticConcurrencyEnabled"); } }
+        private bool? _explicitNullValueElasticConcurrencyEnabled = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? FlagsExplorerOverridesThreshold { get; set; }
+        public double? FlagsExplorerOverridesThreshold { get => _explicitNullValueFlagsExplorerOverridesThreshold; set { _explicitNullValueFlagsExplorerOverridesThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsExplorerOverridesThreshold"); else _explicitNullProperties?.Remove("flagsExplorerOverridesThreshold"); } }
+        private double? _explicitNullValueFlagsExplorerOverridesThreshold = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public bool? FlagsExplorerUnlimitedOverrides { get; set; }
+        public bool? FlagsExplorerUnlimitedOverrides { get => _explicitNullValueFlagsExplorerUnlimitedOverrides; set { _explicitNullValueFlagsExplorerUnlimitedOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsExplorerUnlimitedOverrides"); else _explicitNullProperties?.Remove("flagsExplorerUnlimitedOverrides"); } }
+        private bool? _explicitNullValueFlagsExplorerUnlimitedOverrides = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageOptimizationType { get; set; }
+        public string? ImageOptimizationType { get => _explicitNullValueImageOptimizationType; set { _explicitNullValueImageOptimizationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageOptimizationType"); else _explicitNullProperties?.Remove("imageOptimizationType"); } }
+        private string? _explicitNullValueImageOptimizationType = default!;
 #nullable restore
 #else
-        public string ImageOptimizationType { get; set; }
+        public string ImageOptimizationType { get => _explicitNullValueImageOptimizationType; set { _explicitNullValueImageOptimizationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageOptimizationType"); else _explicitNullProperties?.Remove("imageOptimizationType"); } }
+        private string _explicitNullValueImageOptimizationType = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? IntegrationStores { get; set; }
+        public double? IntegrationStores { get => _explicitNullValueIntegrationStores; set { _explicitNullValueIntegrationStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationStores"); else _explicitNullProperties?.Remove("integrationStores"); } }
+        private double? _explicitNullValueIntegrationStores = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? KvDatabases { get; set; }
+        public double? KvDatabases { get => _explicitNullValueKvDatabases; set { _explicitNullValueKvDatabases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kvDatabases"); else _explicitNullProperties?.Remove("kvDatabases"); } }
+        private double? _explicitNullValueKvDatabases = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? MicrofrontendGroupsPerTeam { get; set; }
+        public double? MicrofrontendGroupsPerTeam { get => _explicitNullValueMicrofrontendGroupsPerTeam; set { _explicitNullValueMicrofrontendGroupsPerTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microfrontendGroupsPerTeam"); else _explicitNullProperties?.Remove("microfrontendGroupsPerTeam"); } }
+        private double? _explicitNullValueMicrofrontendGroupsPerTeam = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? MicrofrontendProjectsPerGroup { get; set; }
+        public double? MicrofrontendProjectsPerGroup { get => _explicitNullValueMicrofrontendProjectsPerGroup; set { _explicitNullValueMicrofrontendProjectsPerGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microfrontendProjectsPerGroup"); else _explicitNullProperties?.Remove("microfrontendProjectsPerGroup"); } }
+        private double? _explicitNullValueMicrofrontendProjectsPerGroup = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NodeType { get; set; }
+        public string? NodeType { get => _explicitNullValueNodeType; set { _explicitNullValueNodeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodeType"); else _explicitNullProperties?.Remove("nodeType"); } }
+        private string? _explicitNullValueNodeType = default!;
 #nullable restore
 #else
-        public string NodeType { get; set; }
+        public string NodeType { get => _explicitNullValueNodeType; set { _explicitNullValueNodeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodeType"); else _explicitNullProperties?.Remove("nodeType"); } }
+        private string _explicitNullValueNodeType = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? PostgresDatabases { get; set; }
+        public double? PostgresDatabases { get => _explicitNullValuePostgresDatabases; set { _explicitNullValuePostgresDatabases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgresDatabases"); else _explicitNullProperties?.Remove("postgresDatabases"); } }
+        private double? _explicitNullValuePostgresDatabases = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity? Security { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity? Security { get => _explicitNullValueSecurity; set { _explicitNullValueSecurity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security"); else _explicitNullProperties?.Remove("security"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity? _explicitNullValueSecurity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity Security { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity Security { get => _explicitNullValueSecurity; set { _explicitNullValueSecurity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security"); else _explicitNullProperties?.Remove("security"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity _explicitNullValueSecurity = default!;
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? ServerlessFunctionMaxDuration { get; set; }
+        public double? ServerlessFunctionMaxDuration { get => _explicitNullValueServerlessFunctionMaxDuration; set { _explicitNullValueServerlessFunctionMaxDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionMaxDuration"); else _explicitNullProperties?.Remove("serverlessFunctionMaxDuration"); } }
+        private double? _explicitNullValueServerlessFunctionMaxDuration = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public double? ServerlessFunctionMaxMemorySize { get; set; }
+        public double? ServerlessFunctionMaxMemorySize { get => _explicitNullValueServerlessFunctionMaxMemorySize; set { _explicitNullValueServerlessFunctionMaxMemorySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverlessFunctionMaxMemorySize"); else _explicitNullProperties?.Remove("serverlessFunctionMaxMemorySize"); } }
+        private double? _explicitNullValueServerlessFunctionMaxMemorySize = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig"/> and sets the default values.
         /// </summary>
@@ -132,7 +201,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -205,6 +274,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity>("security", Security);
             writer.WriteDoubleValue("serverlessFunctionMaxDuration", ServerlessFunctionMaxDuration);
             writer.WriteDoubleValue("serverlessFunctionMaxMemorySize", ServerlessFunctionMaxMemorySize);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

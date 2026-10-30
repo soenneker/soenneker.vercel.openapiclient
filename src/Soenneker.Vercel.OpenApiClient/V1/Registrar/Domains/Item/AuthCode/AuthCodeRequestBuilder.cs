@@ -61,6 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode
                 { "409", global::Soenneker.Vercel.OpenApiClient.Models.DomainCannotBeTransferedOutUntil.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainAuthCode200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDomainAuthCode200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

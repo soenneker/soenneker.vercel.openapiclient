@@ -12,32 +12,50 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubmitPrepaymentBalancesRequestBalancesItem : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
+            if (parseNode.GetChildNode("currencyValueInCents") is { } nullNodeCurrencyValueInCents && nullNodeCurrencyValueInCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyValueInCents = null;
+            if (parseNode.GetChildNode("nameLabel") is { } nullNodeNameLabel && nullNodeNameLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameLabel = null;
+            if (parseNode.GetChildNode("resourceId") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
+        }
+
         /// <summary>A human-readable description of the credits the user currently has, e.g. &quot;2,000 Tokens&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Credit { get; set; }
+        public string? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        private string? _explicitNullValueCredit = default!;
 #nullable restore
 #else
-        public string Credit { get; set; }
+        public string Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        private string _explicitNullValueCredit = default!;
 #endif
         /// <summary>The dollar value of the credit balance, in USD and provided in cents, which is used to trigger automatic purchase thresholds.</summary>
-        public double? CurrencyValueInCents { get; set; }
+        public double? CurrencyValueInCents { get => _explicitNullValueCurrencyValueInCents; set { _explicitNullValueCurrencyValueInCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyValueInCents"); else _explicitNullProperties?.Remove("currencyValueInCents"); } }
+        private double? _explicitNullValueCurrencyValueInCents = default!;
         /// <summary>The name of the credits, for display purposes, e.g. &quot;Tokens&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NameLabel { get; set; }
+        public string? NameLabel { get => _explicitNullValueNameLabel; set { _explicitNullValueNameLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameLabel"); else _explicitNullProperties?.Remove("nameLabel"); } }
+        private string? _explicitNullValueNameLabel = default!;
 #nullable restore
 #else
-        public string NameLabel { get; set; }
+        public string NameLabel { get => _explicitNullValueNameLabel; set { _explicitNullValueNameLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameLabel"); else _explicitNullProperties?.Remove("nameLabel"); } }
+        private string _explicitNullValueNameLabel = default!;
 #endif
         /// <summary>Partner&apos;s resource ID, exclude if credits are tied to the installation and not an individual resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId { get; set; }
+        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        private string? _explicitNullValueResourceId = default!;
 #nullable restore
 #else
-        public string ResourceId { get; set; }
+        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        private string _explicitNullValueResourceId = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.SubmitPrepaymentBalancesRequestBalancesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.SubmitPrepaymentBalancesRequestBalancesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.SubmitPrepaymentBalancesRequestBalancesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +91,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("credit", Credit);
             writer.WriteDoubleValue("currencyValueInCents", CurrencyValueInCents);
             writer.WriteStringValue("nameLabel", NameLabel);
-            writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("resourceId", ResourceId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

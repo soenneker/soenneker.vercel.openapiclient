@@ -12,18 +12,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf5OptionsReplacePricesItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fixedPriceQuantity") is { } nullNodeFixedPriceQuantity && nullNodeFixedPriceQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedPriceQuantity = null;
+            if (parseNode.GetChildNode("replacesPriceId") is { } nullNodeReplacesPriceId && nullNodeReplacesPriceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacesPriceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The quantity for the fixed price</summary>
-        public double? FixedPriceQuantity { get; set; }
+        public double? FixedPriceQuantity { get => _explicitNullValueFixedPriceQuantity; set { _explicitNullValueFixedPriceQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedPriceQuantity"); else _explicitNullProperties?.Remove("fixedPriceQuantity"); } }
+        private double? _explicitNullValueFixedPriceQuantity = default!;
         /// <summary>The ID of the price to replace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplacesPriceId { get; set; }
+        public string? ReplacesPriceId { get => _explicitNullValueReplacesPriceId; set { _explicitNullValueReplacesPriceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacesPriceId"); else _explicitNullProperties?.Remove("replacesPriceId"); } }
+        private string? _explicitNullValueReplacesPriceId = default!;
 #nullable restore
 #else
-        public string ReplacesPriceId { get; set; }
+        public string ReplacesPriceId { get => _explicitNullValueReplacesPriceId; set { _explicitNullValueReplacesPriceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacesPriceId"); else _explicitNullProperties?.Remove("replacesPriceId"); } }
+        private string _explicitNullValueReplacesPriceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf5OptionsReplacePricesItem"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf5OptionsReplacePricesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf5OptionsReplacePricesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf5OptionsReplacePricesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("fixedPriceQuantity", FixedPriceQuantity);
             writer.WriteStringValue("replacesPriceId", ReplacesPriceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

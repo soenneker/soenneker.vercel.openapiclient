@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Files
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200ResponseOneOf1>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200ResponseOneOf1.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200ResponseOneOf1>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200ResponseOneOf1.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that&apos;s completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you&apos;ll receive a status code 200 with an empty body.

@@ -61,6 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.TaskAnalyses.Item.PullReque
                 { "403", global::Soenneker.Vercel.OpenApiClient.Models.CreateVercelCiTaskConfigurationPullRequest403Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.CreateVercelCiTaskConfigurationPullRequest429Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.CreateVercelCiTaskConfigurationPullRequest500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateVercelCiTaskConfigurationPullRequest201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateVercelCiTaskConfigurationPullRequest201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

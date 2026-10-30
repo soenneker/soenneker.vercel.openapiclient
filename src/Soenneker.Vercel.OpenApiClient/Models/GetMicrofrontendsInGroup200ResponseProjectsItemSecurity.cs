@@ -11,62 +11,103 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetMicrofrontendsInGroup200ResponseProjectsItemSecurity : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attackModeActiveUntil") is { } nullNodeAttackModeActiveUntil && nullNodeAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
+            if (parseNode.GetChildNode("attackModeUpdatedAt") is { } nullNodeAttackModeUpdatedAt && nullNodeAttackModeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeUpdatedAt = null;
+            if (parseNode.GetChildNode("botIdEnabled") is { } nullNodeBotIdEnabled && nullNodeBotIdEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotIdEnabled = null;
+            if (parseNode.GetChildNode("firewallBypassIps") is { } nullNodeFirewallBypassIps && nullNodeFirewallBypassIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallBypassIps = null;
+            if (parseNode.GetChildNode("firewallConfigVersion") is { } nullNodeFirewallConfigVersion && nullNodeFirewallConfigVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallConfigVersion = null;
+            if (parseNode.GetChildNode("firewallEnabled") is { } nullNodeFirewallEnabled && nullNodeFirewallEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallEnabled = null;
+            if (parseNode.GetChildNode("firewallSeawallEnabled") is { } nullNodeFirewallSeawallEnabled && nullNodeFirewallSeawallEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallSeawallEnabled = null;
+            if (parseNode.GetChildNode("firewallUpdatedAt") is { } nullNodeFirewallUpdatedAt && nullNodeFirewallUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallUpdatedAt = null;
+            if (parseNode.GetChildNode("ja3Enabled") is { } nullNodeJa3Enabled && nullNodeJa3Enabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ja3Enabled = null;
+            if (parseNode.GetChildNode("ja4Enabled") is { } nullNodeJa4Enabled && nullNodeJa4Enabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ja4Enabled = null;
+            if (parseNode.GetChildNode("log_headers") is { } nullNodeLogHeaders && nullNodeLogHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogHeaders = null;
+            if (parseNode.GetChildNode("managedRules") is { } nullNodeManagedRules && nullNodeManagedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedRules = null;
+            if (parseNode.GetChildNode("pageIntegrityEnabled") is { } nullNodePageIntegrityEnabled && nullNodePageIntegrityEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageIntegrityEnabled = null;
+            if (parseNode.GetChildNode("rulesets") is { } nullNodeRulesets && nullNodeRulesets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rulesets = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attackModeActiveUntil property</summary>
-        public double? AttackModeActiveUntil { get; set; }
+        public double? AttackModeActiveUntil { get => _explicitNullValueAttackModeActiveUntil; set { _explicitNullValueAttackModeActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeActiveUntil"); else _explicitNullProperties?.Remove("attackModeActiveUntil"); } }
+        private double? _explicitNullValueAttackModeActiveUntil = default!;
         /// <summary>The attackModeEnabled property</summary>
-        public bool? AttackModeEnabled { get; set; }
+        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
+        private bool? _explicitNullValueAttackModeEnabled = default!;
         /// <summary>The attackModeUpdatedAt property</summary>
-        public double? AttackModeUpdatedAt { get; set; }
+        public double? AttackModeUpdatedAt { get => _explicitNullValueAttackModeUpdatedAt; set { _explicitNullValueAttackModeUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeUpdatedAt"); else _explicitNullProperties?.Remove("attackModeUpdatedAt"); } }
+        private double? _explicitNullValueAttackModeUpdatedAt = default!;
         /// <summary>The botIdEnabled property</summary>
-        public bool? BotIdEnabled { get; set; }
+        public bool? BotIdEnabled { get => _explicitNullValueBotIdEnabled; set { _explicitNullValueBotIdEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botIdEnabled"); else _explicitNullProperties?.Remove("botIdEnabled"); } }
+        private bool? _explicitNullValueBotIdEnabled = default!;
         /// <summary>The firewallBypassIps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FirewallBypassIps { get; set; }
+        public List<string>? FirewallBypassIps { get => _explicitNullValueFirewallBypassIps; set { _explicitNullValueFirewallBypassIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firewallBypassIps"); else _explicitNullProperties?.Remove("firewallBypassIps"); } }
+        private List<string>? _explicitNullValueFirewallBypassIps = default!;
 #nullable restore
 #else
-        public List<string> FirewallBypassIps { get; set; }
+        public List<string> FirewallBypassIps { get => _explicitNullValueFirewallBypassIps; set { _explicitNullValueFirewallBypassIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firewallBypassIps"); else _explicitNullProperties?.Remove("firewallBypassIps"); } }
+        private List<string> _explicitNullValueFirewallBypassIps = default!;
 #endif
         /// <summary>The firewallConfigVersion property</summary>
-        public double? FirewallConfigVersion { get; set; }
+        public double? FirewallConfigVersion { get => _explicitNullValueFirewallConfigVersion; set { _explicitNullValueFirewallConfigVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firewallConfigVersion"); else _explicitNullProperties?.Remove("firewallConfigVersion"); } }
+        private double? _explicitNullValueFirewallConfigVersion = default!;
         /// <summary>The firewallEnabled property</summary>
-        public bool? FirewallEnabled { get; set; }
+        public bool? FirewallEnabled { get => _explicitNullValueFirewallEnabled; set { _explicitNullValueFirewallEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firewallEnabled"); else _explicitNullProperties?.Remove("firewallEnabled"); } }
+        private bool? _explicitNullValueFirewallEnabled = default!;
         /// <summary>The firewallSeawallEnabled property</summary>
-        public bool? FirewallSeawallEnabled { get; set; }
+        public bool? FirewallSeawallEnabled { get => _explicitNullValueFirewallSeawallEnabled; set { _explicitNullValueFirewallSeawallEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firewallSeawallEnabled"); else _explicitNullProperties?.Remove("firewallSeawallEnabled"); } }
+        private bool? _explicitNullValueFirewallSeawallEnabled = default!;
         /// <summary>The firewallUpdatedAt property</summary>
-        public double? FirewallUpdatedAt { get; set; }
+        public double? FirewallUpdatedAt { get => _explicitNullValueFirewallUpdatedAt; set { _explicitNullValueFirewallUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firewallUpdatedAt"); else _explicitNullProperties?.Remove("firewallUpdatedAt"); } }
+        private double? _explicitNullValueFirewallUpdatedAt = default!;
         /// <summary>The ja3Enabled property</summary>
-        public bool? Ja3Enabled { get; set; }
+        public bool? Ja3Enabled { get => _explicitNullValueJa3Enabled; set { _explicitNullValueJa3Enabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ja3Enabled"); else _explicitNullProperties?.Remove("ja3Enabled"); } }
+        private bool? _explicitNullValueJa3Enabled = default!;
         /// <summary>The ja4Enabled property</summary>
-        public bool? Ja4Enabled { get; set; }
+        public bool? Ja4Enabled { get => _explicitNullValueJa4Enabled; set { _explicitNullValueJa4Enabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ja4Enabled"); else _explicitNullProperties?.Remove("ja4Enabled"); } }
+        private bool? _explicitNullValueJa4Enabled = default!;
         /// <summary>The log_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityLogHeaders? LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityLogHeaders? LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_headers"); else _explicitNullProperties?.Remove("log_headers"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityLogHeaders? _explicitNullValueLogHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityLogHeaders LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityLogHeaders LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_headers"); else _explicitNullProperties?.Remove("log_headers"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityLogHeaders _explicitNullValueLogHeaders = default!;
 #endif
         /// <summary>The managedRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules? ManagedRules { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules? ManagedRules { get => _explicitNullValueManagedRules; set { _explicitNullValueManagedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedRules"); else _explicitNullProperties?.Remove("managedRules"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules? _explicitNullValueManagedRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules ManagedRules { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules ManagedRules { get => _explicitNullValueManagedRules; set { _explicitNullValueManagedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedRules"); else _explicitNullProperties?.Remove("managedRules"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules _explicitNullValueManagedRules = default!;
 #endif
         /// <summary>Whether Page Integrity is enabled for this project. Used by the metadata service to gate DynamoDB lookups against the page-integrity-inventory table.</summary>
-        public bool? PageIntegrityEnabled { get; set; }
+        public bool? PageIntegrityEnabled { get => _explicitNullValuePageIntegrityEnabled; set { _explicitNullValuePageIntegrityEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageIntegrityEnabled"); else _explicitNullProperties?.Remove("pageIntegrityEnabled"); } }
+        private bool? _explicitNullValuePageIntegrityEnabled = default!;
         /// <summary>The rulesets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets? Rulesets { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets? Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets? _explicitNullValueRulesets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets Rulesets { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets Rulesets { get => _explicitNullValueRulesets; set { _explicitNullValueRulesets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesets"); else _explicitNullProperties?.Remove("rulesets"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets _explicitNullValueRulesets = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurity"/> and sets the default values.
@@ -83,7 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules>("managedRules", ManagedRules);
             writer.WriteBoolValue("pageIntegrityEnabled", PageIntegrityEnabled);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets>("rulesets", Rulesets);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,69 +12,106 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApproveRollingReleaseStage200ResponseRollingRelease : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activeStage") is { } nullNodeActiveStage && nullNodeActiveStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveStage = null;
+            if (parseNode.GetChildNode("advancementType") is { } nullNodeAdvancementType && nullNodeAdvancementType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvancementType = null;
+            if (parseNode.GetChildNode("canaryDeployment") is { } nullNodeCanaryDeployment && nullNodeCanaryDeployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanaryDeployment = null;
+            if (parseNode.GetChildNode("currentCanaryPercentage") is { } nullNodeCurrentCanaryPercentage && nullNodeCurrentCanaryPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCanaryPercentage = null;
+            if (parseNode.GetChildNode("currentDeployment") is { } nullNodeCurrentDeployment && nullNodeCurrentDeployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentDeployment = null;
+            if (parseNode.GetChildNode("nextStage") is { } nullNodeNextStage && nullNodeNextStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextStage = null;
+            if (parseNode.GetChildNode("queuedDeploymentId") is { } nullNodeQueuedDeploymentId && nullNodeQueuedDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueuedDeploymentId = null;
+            if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
+            if (parseNode.GetChildNode("startedAt") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("substate") is { } nullNodeSubstate && nullNodeSubstate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Substate = null;
+            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The currently active stage, null if the rollout is aborted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseActiveStage? ActiveStage { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseActiveStage? ActiveStage { get => _explicitNullValueActiveStage; set { _explicitNullValueActiveStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeStage"); else _explicitNullProperties?.Remove("activeStage"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseActiveStage? _explicitNullValueActiveStage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseActiveStage ActiveStage { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseActiveStage ActiveStage { get => _explicitNullValueActiveStage; set { _explicitNullValueActiveStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeStage"); else _explicitNullProperties?.Remove("activeStage"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseActiveStage _explicitNullValueActiveStage = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The advancement type of the rolling release</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseAdvancementType? AdvancementType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseAdvancementType? AdvancementType { get => _explicitNullValueAdvancementType; set { _explicitNullValueAdvancementType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advancementType"); else _explicitNullProperties?.Remove("advancementType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseAdvancementType? _explicitNullValueAdvancementType = default!;
         /// <summary>The canary deployment being rolled out</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCanaryDeployment? CanaryDeployment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCanaryDeployment? CanaryDeployment { get => _explicitNullValueCanaryDeployment; set { _explicitNullValueCanaryDeployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeployment"); else _explicitNullProperties?.Remove("canaryDeployment"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCanaryDeployment? _explicitNullValueCanaryDeployment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCanaryDeployment CanaryDeployment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCanaryDeployment CanaryDeployment { get => _explicitNullValueCanaryDeployment; set { _explicitNullValueCanaryDeployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeployment"); else _explicitNullProperties?.Remove("canaryDeployment"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCanaryDeployment _explicitNullValueCanaryDeployment = default!;
 #endif
         /// <summary>When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.</summary>
-        public double? CurrentCanaryPercentage { get; set; }
+        public double? CurrentCanaryPercentage { get => _explicitNullValueCurrentCanaryPercentage; set { _explicitNullValueCurrentCanaryPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCanaryPercentage"); else _explicitNullProperties?.Remove("currentCanaryPercentage"); } }
+        private double? _explicitNullValueCurrentCanaryPercentage = default!;
         /// <summary>The current deployment receiving production traffic</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCurrentDeployment? CurrentDeployment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCurrentDeployment? CurrentDeployment { get => _explicitNullValueCurrentDeployment; set { _explicitNullValueCurrentDeployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentDeployment"); else _explicitNullProperties?.Remove("currentDeployment"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCurrentDeployment? _explicitNullValueCurrentDeployment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCurrentDeployment CurrentDeployment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCurrentDeployment CurrentDeployment { get => _explicitNullValueCurrentDeployment; set { _explicitNullValueCurrentDeployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentDeployment"); else _explicitNullProperties?.Remove("currentDeployment"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseCurrentDeployment _explicitNullValueCurrentDeployment = default!;
 #endif
         /// <summary>The next stage to be activated, null if not in ACTIVE state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseNextStage? NextStage { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseNextStage? NextStage { get => _explicitNullValueNextStage; set { _explicitNullValueNextStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextStage"); else _explicitNullProperties?.Remove("nextStage"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseNextStage? _explicitNullValueNextStage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseNextStage NextStage { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseNextStage NextStage { get => _explicitNullValueNextStage; set { _explicitNullValueNextStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextStage"); else _explicitNullProperties?.Remove("nextStage"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseNextStage _explicitNullValueNextStage = default!;
 #endif
         /// <summary>The ID of a deployment queued for the next rolling release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueuedDeploymentId { get; set; }
+        public string? QueuedDeploymentId { get => _explicitNullValueQueuedDeploymentId; set { _explicitNullValueQueuedDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queuedDeploymentId"); else _explicitNullProperties?.Remove("queuedDeploymentId"); } }
+        private string? _explicitNullValueQueuedDeploymentId = default!;
 #nullable restore
 #else
-        public string QueuedDeploymentId { get; set; }
+        public string QueuedDeploymentId { get => _explicitNullValueQueuedDeploymentId; set { _explicitNullValueQueuedDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queuedDeploymentId"); else _explicitNullProperties?.Remove("queuedDeploymentId"); } }
+        private string _explicitNullValueQueuedDeploymentId = default!;
 #endif
         /// <summary>All stages configured for this rolling release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseStagesItem>? Stages { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseStagesItem>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseStagesItem>? _explicitNullValueStages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseStagesItem> Stages { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseStagesItem> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseStagesItem> _explicitNullValueStages = default!;
 #endif
         /// <summary>Unix timestamp in milliseconds when the rolling release started</summary>
-        public double? StartedAt { get; set; }
+        public double? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
+        private double? _explicitNullValueStartedAt = default!;
         /// <summary>The current state of the rolling release</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseState? State { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseState? _explicitNullValueState = default!;
         /// <summary>When set to `PAUSED`, the rollout is frozen at the current percentage until continued.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseSubstate? Substate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseSubstate? Substate { get => _explicitNullValueSubstate; set { _explicitNullValueSubstate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substate"); else _explicitNullProperties?.Remove("substate"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseSubstate? _explicitNullValueSubstate = default!;
         /// <summary>Unix timestamp in milliseconds when the rolling release was last updated</summary>
-        public double? UpdatedAt { get; set; }
+        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        private double? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingRelease"/> and sets the default values.
         /// </summary>
@@ -90,7 +127,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingRelease CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingRelease();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingRelease(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,6 +172,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseState>("state", State);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStage200ResponseRollingReleaseSubstate>("substate", Substate);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

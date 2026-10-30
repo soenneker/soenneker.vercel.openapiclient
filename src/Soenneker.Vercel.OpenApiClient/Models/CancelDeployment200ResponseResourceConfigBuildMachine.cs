@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CancelDeployment200ResponseResourceConfigBuildMachine : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachine();
             if("elastic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1();
+                
             }
             else if("fixed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("machineSelectionType") != null && (parseNode.GetChildNode("machineSelectionType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("elastic".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("purchaseType") == null || (parseNode.GetChildNode("purchaseType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("14cpu-28gb".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "basic".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "enhanced".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "standard".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "turbo".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("defaultPurchaseType") == null || (parseNode.GetChildNode("defaultPurchaseType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("basic".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "enhanced".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "none".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "standard".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("selectionSource") == null || (parseNode.GetChildNode("selectionSource")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("deployment-override".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "elastic-algorithm".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "plan-default".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "project-setting".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "team-entitlement".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "team-setting".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 == null && result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 == null && matchesUnionBranch0) result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1(), parseNode);
+            if (result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 == null && result.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +81,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 == null && CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 != null && CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 == null) { if (CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CancelDeployment200ResponseResourceConfigBuildMachineOneOf1); return; }
+            if (CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 != null && CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 == null) { if (CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CancelDeployment200ResponseResourceConfigBuildMachineOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 != null)
             {
+                if (CancelDeployment200ResponseResourceConfigBuildMachineOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf1>(null, CancelDeployment200ResponseResourceConfigBuildMachineOneOf1);
             }
             else if(CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 != null)
             {
+                if (CancelDeployment200ResponseResourceConfigBuildMachineOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineOneOf2>(null, CancelDeployment200ResponseResourceConfigBuildMachineOneOf2);
             }
         }

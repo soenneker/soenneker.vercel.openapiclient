@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetAiGatewayVirtualModelConfig200Response : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetAiGatewayVirtualModelConfig200Response();
             if("AiGatewayVirtualModelConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AiGatewayVirtualModelConfig = new global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig();
+                
             }
             else if("AiGatewayVirtualModelConfigList".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AiGatewayVirtualModelConfigList = new global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("createdAt") != null && parseNode.GetChildNode("deleted") != null && parseNode.GetChildNode("kind") != null && parseNode.GetChildNode("ownerId") != null && parseNode.GetChildNode("status") != null && parseNode.GetChildNode("updatedAt") != null && parseNode.GetChildNode("virtualModelSlug") != null && (parseNode.GetChildNode("caching") == null || (parseNode.GetChildNode("caching")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag7 && ("auto".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("selector") == null || (parseNode.GetChildNode("selector")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("cost".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "tps".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "ttft".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("serviceTier") == null || (parseNode.GetChildNode("serviceTier")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag9 && ("fast".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "flex".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "priority".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("sort") == null || (parseNode.GetChildNode("sort")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag10 && ("cost".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "latency".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "price".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "throughput".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "tps".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "ttft".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("speed") == null || (parseNode.GetChildNode("speed")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag11 && ("fast".Equals(optionalTag11.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("cursor") != null && parseNode.GetChildNode("virtualModelConfigs") != null))();
+            if (result.AiGatewayVirtualModelConfig == null && result.AiGatewayVirtualModelConfigList == null && matchesUnionBranch0 && !matchesUnionBranch1) result.AiGatewayVirtualModelConfig = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig(), parseNode);
+            if (result.AiGatewayVirtualModelConfig == null && result.AiGatewayVirtualModelConfigList == null && matchesUnionBranch1 && !matchesUnionBranch0) result.AiGatewayVirtualModelConfigList = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList(), parseNode);
+            if (result.AiGatewayVirtualModelConfig == null && result.AiGatewayVirtualModelConfigList == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AiGatewayVirtualModelConfig == null && AiGatewayVirtualModelConfigList == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AiGatewayVirtualModelConfig != null && AiGatewayVirtualModelConfigList == null) { if (AiGatewayVirtualModelConfig is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AiGatewayVirtualModelConfig); return; }
+            if (AiGatewayVirtualModelConfigList != null && AiGatewayVirtualModelConfig == null) { if (AiGatewayVirtualModelConfigList is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AiGatewayVirtualModelConfigList); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AiGatewayVirtualModelConfig != null)
             {
+                if (AiGatewayVirtualModelConfig is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig>(null, AiGatewayVirtualModelConfig);
             }
             else if(AiGatewayVirtualModelConfigList != null)
             {
+                if (AiGatewayVirtualModelConfigList is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList>(null, AiGatewayVirtualModelConfigList);
             }
         }

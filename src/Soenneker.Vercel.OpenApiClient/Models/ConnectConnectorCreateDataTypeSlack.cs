@@ -11,118 +11,178 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectConnectorCreateDataTypeSlack : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("appHome") is { } nullNodeAppHome && nullNodeAppHome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppHome = null;
+            if (parseNode.GetChildNode("appId") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
+            if (parseNode.GetChildNode("appName") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
+            if (parseNode.GetChildNode("botScopes") is { } nullNodeBotScopes && nullNodeBotScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotScopes = null;
+            if (parseNode.GetChildNode("clientId") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("clientSecret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("codeChannels") is { } nullNodeCodeChannels && nullNodeCodeChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeChannels = null;
+            if (parseNode.GetChildNode("extras") is { } nullNodeExtras && nullNodeExtras.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extras = null;
+            if (parseNode.GetChildNode("richPreviews") is { } nullNodeRichPreviews && nullNodeRichPreviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RichPreviews = null;
+            if (parseNode.GetChildNode("shortcuts") is { } nullNodeShortcuts && nullNodeShortcuts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shortcuts = null;
+            if (parseNode.GetChildNode("signingSecret") is { } nullNodeSigningSecret && nullNodeSigningSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningSecret = null;
+            if (parseNode.GetChildNode("slackTeam") is { } nullNodeSlackTeam && nullNodeSlackTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SlackTeam = null;
+            if (parseNode.GetChildNode("slashCommands") is { } nullNodeSlashCommands && nullNodeSlashCommands.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SlashCommands = null;
+            if (parseNode.GetChildNode("userScopes") is { } nullNodeUserScopes && nullNodeUserScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserScopes = null;
+            if (parseNode.GetChildNode("verificationToken") is { } nullNodeVerificationToken && nullNodeVerificationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationToken = null;
+        }
+
         /// <summary>App Home settings for the managed Slack app. Updates preserve omitted settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome? AppHome { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome? AppHome { get => _explicitNullValueAppHome; set { _explicitNullValueAppHome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appHome"); else _explicitNullProperties?.Remove("appHome"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome? _explicitNullValueAppHome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome AppHome { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome AppHome { get => _explicitNullValueAppHome; set { _explicitNullValueAppHome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appHome"); else _explicitNullProperties?.Remove("appHome"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackAppHome _explicitNullValueAppHome = default!;
 #endif
         /// <summary>Slack app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId { get; set; }
+        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
+        private string? _explicitNullValueAppId = default!;
 #nullable restore
 #else
-        public string AppId { get; set; }
+        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
+        private string _explicitNullValueAppId = default!;
 #endif
         /// <summary>Slack app display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get; set; }
+        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
+        private string? _explicitNullValueAppName = default!;
 #nullable restore
 #else
-        public string AppName { get; set; }
+        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
+        private string _explicitNullValueAppName = default!;
 #endif
         /// <summary>OAuth scopes requested for Slack bot tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BotScopes { get; set; }
+        public List<string>? BotScopes { get => _explicitNullValueBotScopes; set { _explicitNullValueBotScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botScopes"); else _explicitNullProperties?.Remove("botScopes"); } }
+        private List<string>? _explicitNullValueBotScopes = default!;
 #nullable restore
 #else
-        public List<string> BotScopes { get; set; }
+        public List<string> BotScopes { get => _explicitNullValueBotScopes; set { _explicitNullValueBotScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("botScopes"); else _explicitNullProperties?.Remove("botScopes"); } }
+        private List<string> _explicitNullValueBotScopes = default!;
 #endif
         /// <summary>OAuth client ID assigned by Slack.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Slack app OAuth client secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get; set; }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
+        private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get; set; }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
+        private string _explicitNullValueClientSecret = default!;
+#endif
+        /// <summary>Code channel settings for the managed Slack app. Updates preserve omitted settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackCodeChannels? CodeChannels { get => _explicitNullValueCodeChannels; set { _explicitNullValueCodeChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeChannels"); else _explicitNullProperties?.Remove("codeChannels"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackCodeChannels? _explicitNullValueCodeChannels = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackCodeChannels CodeChannels { get => _explicitNullValueCodeChannels; set { _explicitNullValueCodeChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeChannels"); else _explicitNullProperties?.Remove("codeChannels"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackCodeChannels _explicitNullValueCodeChannels = default!;
 #endif
         /// <summary>Additional provider metadata stored with the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty? Extras { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty? Extras { get => _explicitNullValueExtras; set { _explicitNullValueExtras = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extras"); else _explicitNullProperties?.Remove("extras"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty? _explicitNullValueExtras = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty Extras { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty Extras { get => _explicitNullValueExtras; set { _explicitNullValueExtras = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extras"); else _explicitNullProperties?.Remove("extras"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty _explicitNullValueExtras = default!;
 #endif
         /// <summary>Work Object preview settings for the managed Slack app. Updates preserve omitted settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews? RichPreviews { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews? RichPreviews { get => _explicitNullValueRichPreviews; set { _explicitNullValueRichPreviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("richPreviews"); else _explicitNullProperties?.Remove("richPreviews"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews? _explicitNullValueRichPreviews = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews RichPreviews { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews RichPreviews { get => _explicitNullValueRichPreviews; set { _explicitNullValueRichPreviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("richPreviews"); else _explicitNullProperties?.Remove("richPreviews"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews _explicitNullValueRichPreviews = default!;
 #endif
         /// <summary>Global and message shortcuts configured for the Slack app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>? Shortcuts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>? Shortcuts { get => _explicitNullValueShortcuts; set { _explicitNullValueShortcuts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortcuts"); else _explicitNullProperties?.Remove("shortcuts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>? _explicitNullValueShortcuts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem> Shortcuts { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem> Shortcuts { get => _explicitNullValueShortcuts; set { _explicitNullValueShortcuts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortcuts"); else _explicitNullProperties?.Remove("shortcuts"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem> _explicitNullValueShortcuts = default!;
 #endif
         /// <summary>Slack request signing secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigningSecret { get; set; }
+        public string? SigningSecret { get => _explicitNullValueSigningSecret; set { _explicitNullValueSigningSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signingSecret"); else _explicitNullProperties?.Remove("signingSecret"); } }
+        private string? _explicitNullValueSigningSecret = default!;
 #nullable restore
 #else
-        public string SigningSecret { get; set; }
+        public string SigningSecret { get => _explicitNullValueSigningSecret; set { _explicitNullValueSigningSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signingSecret"); else _explicitNullProperties?.Remove("signingSecret"); } }
+        private string _explicitNullValueSigningSecret = default!;
 #endif
         /// <summary>Slack workspace metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam? SlackTeam { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam? SlackTeam { get => _explicitNullValueSlackTeam; set { _explicitNullValueSlackTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slackTeam"); else _explicitNullProperties?.Remove("slackTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam? _explicitNullValueSlackTeam = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam SlackTeam { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam SlackTeam { get => _explicitNullValueSlackTeam; set { _explicitNullValueSlackTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slackTeam"); else _explicitNullProperties?.Remove("slackTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam _explicitNullValueSlackTeam = default!;
 #endif
         /// <summary>Slash commands configured for the managed Slack app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem>? SlashCommands { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem>? SlashCommands { get => _explicitNullValueSlashCommands; set { _explicitNullValueSlashCommands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slashCommands"); else _explicitNullProperties?.Remove("slashCommands"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem>? _explicitNullValueSlashCommands = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem> SlashCommands { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem> SlashCommands { get => _explicitNullValueSlashCommands; set { _explicitNullValueSlashCommands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slashCommands"); else _explicitNullProperties?.Remove("slashCommands"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem> _explicitNullValueSlashCommands = default!;
 #endif
         /// <summary>OAuth scopes requested for Slack user tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserScopes { get; set; }
+        public List<string>? UserScopes { get => _explicitNullValueUserScopes; set { _explicitNullValueUserScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userScopes"); else _explicitNullProperties?.Remove("userScopes"); } }
+        private List<string>? _explicitNullValueUserScopes = default!;
 #nullable restore
 #else
-        public List<string> UserScopes { get; set; }
+        public List<string> UserScopes { get => _explicitNullValueUserScopes; set { _explicitNullValueUserScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userScopes"); else _explicitNullProperties?.Remove("userScopes"); } }
+        private List<string> _explicitNullValueUserScopes = default!;
 #endif
         /// <summary>Legacy Slack webhook verification token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerificationToken { get; set; }
+        public string? VerificationToken { get => _explicitNullValueVerificationToken; set { _explicitNullValueVerificationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationToken"); else _explicitNullProperties?.Remove("verificationToken"); } }
+        private string? _explicitNullValueVerificationToken = default!;
 #nullable restore
 #else
-        public string VerificationToken { get; set; }
+        public string VerificationToken { get => _explicitNullValueVerificationToken; set { _explicitNullValueVerificationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationToken"); else _explicitNullProperties?.Remove("verificationToken"); } }
+        private string _explicitNullValueVerificationToken = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -132,7 +192,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,6 +208,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "botScopes", n => { BotScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
+                { "codeChannels", n => { CodeChannels = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackCodeChannels>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackCodeChannels.CreateFromDiscriminatorValue); } },
                 { "extras", n => { Extras = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty.CreateFromDiscriminatorValue); } },
                 { "richPreviews", n => { RichPreviews = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews.CreateFromDiscriminatorValue); } },
                 { "shortcuts", n => { Shortcuts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -171,6 +232,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("botScopes", BotScopes);
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientSecret", ClientSecret);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackCodeChannels>("codeChannels", CodeChannels);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty>("extras", Extras);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackRichPreviews>("richPreviews", RichPreviews);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>("shortcuts", Shortcuts);
@@ -178,7 +240,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam>("slackTeam", SlackTeam);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem>("slashCommands", SlashCommands);
             writer.WriteCollectionOfPrimitiveValues<string>("userScopes", UserScopes);
-            writer.WriteStringValue("verificationToken", VerificationToken);
+            writer.WriteStringValue("verificationToken", VerificationToken);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

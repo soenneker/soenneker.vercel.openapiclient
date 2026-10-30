@@ -12,32 +12,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf179 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("newEnvVar") is { } nullNodeNewEnvVar && nullNodeNewEnvVar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewEnvVar = null;
+            if (parseNode.GetChildNode("oldEnvVar") is { } nullNodeOldEnvVar && nullNodeOldEnvVar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldEnvVar = null;
+            if (parseNode.GetChildNode("updateDiff") is { } nullNodeUpdateDiff && nullNodeUpdateDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateDiff = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The newEnvVar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179NewEnvVar? NewEnvVar { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179NewEnvVar? NewEnvVar { get => _explicitNullValueNewEnvVar; set { _explicitNullValueNewEnvVar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newEnvVar"); else _explicitNullProperties?.Remove("newEnvVar"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179NewEnvVar? _explicitNullValueNewEnvVar = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179NewEnvVar NewEnvVar { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179NewEnvVar NewEnvVar { get => _explicitNullValueNewEnvVar; set { _explicitNullValueNewEnvVar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newEnvVar"); else _explicitNullProperties?.Remove("newEnvVar"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179NewEnvVar _explicitNullValueNewEnvVar = default!;
 #endif
         /// <summary>The oldEnvVar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVar? OldEnvVar { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVar? OldEnvVar { get => _explicitNullValueOldEnvVar; set { _explicitNullValueOldEnvVar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldEnvVar"); else _explicitNullProperties?.Remove("oldEnvVar"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVar? _explicitNullValueOldEnvVar = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVar OldEnvVar { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVar OldEnvVar { get => _explicitNullValueOldEnvVar; set { _explicitNullValueOldEnvVar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldEnvVar"); else _explicitNullProperties?.Remove("oldEnvVar"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVar _explicitNullValueOldEnvVar = default!;
 #endif
         /// <summary>The updateDiff property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179UpdateDiff? UpdateDiff { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179UpdateDiff? UpdateDiff { get => _explicitNullValueUpdateDiff; set { _explicitNullValueUpdateDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDiff"); else _explicitNullProperties?.Remove("updateDiff"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179UpdateDiff? _explicitNullValueUpdateDiff = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179UpdateDiff UpdateDiff { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179UpdateDiff UpdateDiff { get => _explicitNullValueUpdateDiff; set { _explicitNullValueUpdateDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDiff"); else _explicitNullProperties?.Remove("updateDiff"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179UpdateDiff _explicitNullValueUpdateDiff = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179NewEnvVar>("newEnvVar", NewEnvVar);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVar>("oldEnvVar", OldEnvVar);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179UpdateDiff>("updateDiff", UpdateDiff);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

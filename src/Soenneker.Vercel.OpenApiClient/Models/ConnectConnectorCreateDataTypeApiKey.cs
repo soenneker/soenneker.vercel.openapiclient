@@ -11,32 +11,50 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectConnectorCreateDataTypeApiKey : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("instructions") is { } nullNodeInstructions && nullNodeInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instructions = null;
+            if (parseNode.GetChildNode("serviceUrls") is { } nullNodeServiceUrls && nullNodeServiceUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceUrls = null;
+            if (parseNode.GetChildNode("subjectType") is { } nullNodeSubjectType && nullNodeSubjectType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectType = null;
+            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+        }
+
         /// <summary>Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Instructions { get; set; }
+        public string? Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private string? _explicitNullValueInstructions = default!;
 #nullable restore
 #else
-        public string Instructions { get; set; }
+        public string Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private string _explicitNullValueInstructions = default!;
 #endif
         /// <summary>The HTTPS resources the API key authenticates against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ServiceUrls { get; set; }
+        public List<string>? ServiceUrls { get => _explicitNullValueServiceUrls; set { _explicitNullValueServiceUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceUrls"); else _explicitNullProperties?.Remove("serviceUrls"); } }
+        private List<string>? _explicitNullValueServiceUrls = default!;
 #nullable restore
 #else
-        public List<string> ServiceUrls { get; set; }
+        public List<string> ServiceUrls { get => _explicitNullValueServiceUrls; set { _explicitNullValueServiceUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceUrls"); else _explicitNullProperties?.Remove("serviceUrls"); } }
+        private List<string> _explicitNullValueServiceUrls = default!;
 #endif
         /// <summary>Which subject the connector issues tokens for. Defaults to \&quot;app\&quot; (connector-level keys). \&quot;user\&quot; connectors store no connector-level values; each user supplies their own key during authorization.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeySubjectType? SubjectType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeySubjectType? SubjectType { get => _explicitNullValueSubjectType; set { _explicitNullValueSubjectType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectType"); else _explicitNullProperties?.Remove("subjectType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeySubjectType? _explicitNullValueSubjectType = default!;
         /// <summary>Initial API key values stored by the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem>? Values { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem> Values { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem> _explicitNullValueValues = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +90,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteCollectionOfPrimitiveValues<string>("serviceUrls", ServiceUrls);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeySubjectType>("subjectType", SubjectType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem>("values", Values);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem>("values", Values);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

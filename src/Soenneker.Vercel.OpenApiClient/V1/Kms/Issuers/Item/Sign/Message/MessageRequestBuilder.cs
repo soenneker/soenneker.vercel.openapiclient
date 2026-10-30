@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers.Item.Sign.Message
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sign a raw message with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer&apos;s JWKS.

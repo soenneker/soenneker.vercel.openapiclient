@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Tags.List
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response&apos;s `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.

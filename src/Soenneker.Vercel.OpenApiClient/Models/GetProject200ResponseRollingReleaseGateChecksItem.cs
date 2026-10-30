@@ -12,31 +12,50 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetProject200ResponseRollingReleaseGateChecksItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("excludePaths") is { } nullNodeExcludePaths && nullNodeExcludePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludePaths = null;
+            if (parseNode.GetChildNode("excludeStatusCodes") is { } nullNodeExcludeStatusCodes && nullNodeExcludeStatusCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeStatusCodes = null;
+            if (parseNode.GetChildNode("ingestWatermarkSeconds") is { } nullNodeIngestWatermarkSeconds && nullNodeIngestWatermarkSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IngestWatermarkSeconds = null;
+            if (parseNode.GetChildNode("significanceLevel") is { } nullNodeSignificanceLevel && nullNodeSignificanceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignificanceLevel = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludePaths { get; set; }
+        public List<string>? ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
+        private List<string>? _explicitNullValueExcludePaths = default!;
 #nullable restore
 #else
-        public List<string> ExcludePaths { get; set; }
+        public List<string> ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
+        private List<string> _explicitNullValueExcludePaths = default!;
 #endif
         /// <summary>Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? ExcludeStatusCodes { get; set; }
+        public List<double?>? ExcludeStatusCodes { get => _explicitNullValueExcludeStatusCodes; set { _explicitNullValueExcludeStatusCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeStatusCodes"); else _explicitNullProperties?.Remove("excludeStatusCodes"); } }
+        private List<double?>? _explicitNullValueExcludeStatusCodes = default!;
 #nullable restore
 #else
-        public List<double?> ExcludeStatusCodes { get; set; }
+        public List<double?> ExcludeStatusCodes { get => _explicitNullValueExcludeStatusCodes; set { _explicitNullValueExcludeStatusCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeStatusCodes"); else _explicitNullProperties?.Remove("excludeStatusCodes"); } }
+        private List<double?> _explicitNullValueExcludeStatusCodes = default!;
 #endif
         /// <summary>Seconds of ingest lag to allow for: the query&apos;s upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.</summary>
-        public double? IngestWatermarkSeconds { get; set; }
+        public double? IngestWatermarkSeconds { get => _explicitNullValueIngestWatermarkSeconds; set { _explicitNullValueIngestWatermarkSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestWatermarkSeconds"); else _explicitNullProperties?.Remove("ingestWatermarkSeconds"); } }
+        private double? _explicitNullValueIngestWatermarkSeconds = default!;
         /// <summary>A run fails only when the canary&apos;s error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.</summary>
-        public double? SignificanceLevel { get; set; }
+        public double? SignificanceLevel { get => _explicitNullValueSignificanceLevel; set { _explicitNullValueSignificanceLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significanceLevel"); else _explicitNullProperties?.Remove("significanceLevel"); } }
+        private double? _explicitNullValueSignificanceLevel = default!;
         /// <summary>The metric this check evaluates.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItem"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("ingestWatermarkSeconds", IngestWatermarkSeconds);
             writer.WriteDoubleValue("significanceLevel", SignificanceLevel);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

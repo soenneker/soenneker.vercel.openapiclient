@@ -11,30 +11,46 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AcceptProjectTransferRequestRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acceptedPolicies") is { } nullNodeAcceptedPolicies && nullNodeAcceptedPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedPolicies = null;
+            if (parseNode.GetChildNode("newProjectName") is { } nullNodeNewProjectName && nullNodeNewProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewProjectName = null;
+            if (parseNode.GetChildNode("paidFeatures") is { } nullNodePaidFeatures && nullNodePaidFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidFeatures = null;
+        }
+
         /// <summary>The acceptedPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestAcceptedPolicies? AcceptedPolicies { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestAcceptedPolicies? AcceptedPolicies { get => _explicitNullValueAcceptedPolicies; set { _explicitNullValueAcceptedPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedPolicies"); else _explicitNullProperties?.Remove("acceptedPolicies"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestAcceptedPolicies? _explicitNullValueAcceptedPolicies = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestAcceptedPolicies AcceptedPolicies { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestAcceptedPolicies AcceptedPolicies { get => _explicitNullValueAcceptedPolicies; set { _explicitNullValueAcceptedPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedPolicies"); else _explicitNullProperties?.Remove("acceptedPolicies"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestAcceptedPolicies _explicitNullValueAcceptedPolicies = default!;
 #endif
         /// <summary>The desired name for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewProjectName { get; set; }
+        public string? NewProjectName { get => _explicitNullValueNewProjectName; set { _explicitNullValueNewProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newProjectName"); else _explicitNullProperties?.Remove("newProjectName"); } }
+        private string? _explicitNullValueNewProjectName = default!;
 #nullable restore
 #else
-        public string NewProjectName { get; set; }
+        public string NewProjectName { get => _explicitNullValueNewProjectName; set { _explicitNullValueNewProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newProjectName"); else _explicitNullProperties?.Remove("newProjectName"); } }
+        private string _explicitNullValueNewProjectName = default!;
 #endif
         /// <summary>The paidFeatures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures? PaidFeatures { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures? PaidFeatures { get => _explicitNullValuePaidFeatures; set { _explicitNullValuePaidFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidFeatures"); else _explicitNullProperties?.Remove("paidFeatures"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures? _explicitNullValuePaidFeatures = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures PaidFeatures { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures PaidFeatures { get => _explicitNullValuePaidFeatures; set { _explicitNullValuePaidFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidFeatures"); else _explicitNullProperties?.Remove("paidFeatures"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures _explicitNullValuePaidFeatures = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +84,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestAcceptedPolicies>("acceptedPolicies", AcceptedPolicies);
             writer.WriteStringValue("newProjectName", NewProjectName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures>("paidFeatures", PaidFeatures);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequestRequestPaidFeatures>("paidFeatures", PaidFeatures);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

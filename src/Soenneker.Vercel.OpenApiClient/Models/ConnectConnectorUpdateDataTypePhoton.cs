@@ -11,24 +11,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectConnectorUpdateDataTypePhoton : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("projectSecret") is { } nullNodeProjectSecret && nullNodeProjectSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSecret = null;
+            if (parseNode.GetChildNode("repairWebhook") is { } nullNodeRepairWebhook && nullNodeRepairWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepairWebhook = null;
+            if (parseNode.GetChildNode("webhookSecret") is { } nullNodeWebhookSecret && nullNodeWebhookSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookSecret = null;
+        }
+
         /// <summary>Photon project secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectSecret { get; set; }
+        public string? ProjectSecret { get => _explicitNullValueProjectSecret; set { _explicitNullValueProjectSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSecret"); else _explicitNullProperties?.Remove("projectSecret"); } }
+        private string? _explicitNullValueProjectSecret = default!;
 #nullable restore
 #else
-        public string ProjectSecret { get; set; }
+        public string ProjectSecret { get => _explicitNullValueProjectSecret; set { _explicitNullValueProjectSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSecret"); else _explicitNullProperties?.Remove("projectSecret"); } }
+        private string _explicitNullValueProjectSecret = default!;
 #endif
         /// <summary>Whether Connect should recreate the Photon webhook.</summary>
-        public bool? RepairWebhook { get; set; }
+        public bool? RepairWebhook { get => _explicitNullValueRepairWebhook; set { _explicitNullValueRepairWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repairWebhook"); else _explicitNullProperties?.Remove("repairWebhook"); } }
+        private bool? _explicitNullValueRepairWebhook = default!;
         /// <summary>Photon webhook verification secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookSecret { get; set; }
+        public string? WebhookSecret { get => _explicitNullValueWebhookSecret; set { _explicitNullValueWebhookSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookSecret"); else _explicitNullProperties?.Remove("webhookSecret"); } }
+        private string? _explicitNullValueWebhookSecret = default!;
 #nullable restore
 #else
-        public string WebhookSecret { get; set; }
+        public string WebhookSecret { get => _explicitNullValueWebhookSecret; set { _explicitNullValueWebhookSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookSecret"); else _explicitNullProperties?.Remove("webhookSecret"); } }
+        private string _explicitNullValueWebhookSecret = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypePhoton CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypePhoton();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypePhoton(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +77,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectSecret", ProjectSecret);
             writer.WriteBoolValue("repairWebhook", RepairWebhook);
-            writer.WriteStringValue("webhookSecret", WebhookSecret);
+            writer.WriteStringValue("webhookSecret", WebhookSecret);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

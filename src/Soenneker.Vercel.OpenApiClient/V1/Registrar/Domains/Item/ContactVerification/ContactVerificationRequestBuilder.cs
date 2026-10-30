@@ -59,6 +59,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactVerifi
                 { "404", global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainContactVerification200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDomainContactVerification200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -62,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.CustomEnvironments
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a custom environment for the current project. Cannot be named &apos;Production&apos; or &apos;Preview&apos;.
@@ -82,7 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.CustomEnvironments
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironment201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironment201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironment201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironment201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve custom environments for the project. Must not be named &apos;Production&apos; or &apos;Preview&apos;.

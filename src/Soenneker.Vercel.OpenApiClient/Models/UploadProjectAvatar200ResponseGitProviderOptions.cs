@@ -11,25 +11,43 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UploadProjectAvatar200ResponseGitProviderOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("consolidatedGitCommitStatus") is { } nullNodeConsolidatedGitCommitStatus && nullNodeConsolidatedGitCommitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsolidatedGitCommitStatus = null;
+            if (parseNode.GetChildNode("createDeployments") is { } nullNodeCreateDeployments && nullNodeCreateDeployments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreateDeployments = null;
+            if (parseNode.GetChildNode("disableRepositoryDispatchEvents") is { } nullNodeDisableRepositoryDispatchEvents && nullNodeDisableRepositoryDispatchEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableRepositoryDispatchEvents = null;
+            if (parseNode.GetChildNode("gitCommitStatus") is { } nullNodeGitCommitStatus && nullNodeGitCommitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitCommitStatus = null;
+            if (parseNode.GetChildNode("requireVerifiedCommits") is { } nullNodeRequireVerifiedCommits && nullNodeRequireVerifiedCommits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireVerifiedCommits = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsConsolidatedGitCommitStatus? ConsolidatedGitCommitStatus { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsConsolidatedGitCommitStatus? ConsolidatedGitCommitStatus { get => _explicitNullValueConsolidatedGitCommitStatus; set { _explicitNullValueConsolidatedGitCommitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consolidatedGitCommitStatus"); else _explicitNullProperties?.Remove("consolidatedGitCommitStatus"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsConsolidatedGitCommitStatus? _explicitNullValueConsolidatedGitCommitStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsConsolidatedGitCommitStatus ConsolidatedGitCommitStatus { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsConsolidatedGitCommitStatus ConsolidatedGitCommitStatus { get => _explicitNullValueConsolidatedGitCommitStatus; set { _explicitNullValueConsolidatedGitCommitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consolidatedGitCommitStatus"); else _explicitNullProperties?.Remove("consolidatedGitCommitStatus"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsConsolidatedGitCommitStatus _explicitNullValueConsolidatedGitCommitStatus = default!;
 #endif
         /// <summary>Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsCreateDeployments? CreateDeployments { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsCreateDeployments? CreateDeployments { get => _explicitNullValueCreateDeployments; set { _explicitNullValueCreateDeployments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createDeployments"); else _explicitNullProperties?.Remove("createDeployments"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptionsCreateDeployments? _explicitNullValueCreateDeployments = default!;
         /// <summary>Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.</summary>
-        public bool? DisableRepositoryDispatchEvents { get; set; }
+        public bool? DisableRepositoryDispatchEvents { get => _explicitNullValueDisableRepositoryDispatchEvents; set { _explicitNullValueDisableRepositoryDispatchEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableRepositoryDispatchEvents"); else _explicitNullProperties?.Remove("disableRepositoryDispatchEvents"); } }
+        private bool? _explicitNullValueDisableRepositoryDispatchEvents = default!;
         /// <summary>Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.</summary>
-        public bool? GitCommitStatus { get; set; }
+        public bool? GitCommitStatus { get => _explicitNullValueGitCommitStatus; set { _explicitNullValueGitCommitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitCommitStatus"); else _explicitNullProperties?.Remove("gitCommitStatus"); } }
+        private bool? _explicitNullValueGitCommitStatus = default!;
         /// <summary>Whether the project requires commits to be signed &amp; verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.</summary>
-        public bool? RequireVerifiedCommits { get; set; }
+        public bool? RequireVerifiedCommits { get => _explicitNullValueRequireVerifiedCommits; set { _explicitNullValueRequireVerifiedCommits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireVerifiedCommits"); else _explicitNullProperties?.Remove("requireVerifiedCommits"); } }
+        private bool? _explicitNullValueRequireVerifiedCommits = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptions"/> and sets the default values.
         /// </summary>
@@ -45,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseGitProviderOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
             writer.WriteBoolValue("gitCommitStatus", GitCommitStatus);
             writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

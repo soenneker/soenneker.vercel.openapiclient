@@ -12,7 +12,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDeployment200ResponseOneOf2RoutesItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItem();
             if("GetDeployment200ResponseOneOf2RoutesItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetDeployment200ResponseOneOf2RoutesItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf1();
+                
             }
             else if("GetDeployment200ResponseOneOf2RoutesItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetDeployment200ResponseOneOf2RoutesItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf2();
+                
             }
             else if("GetDeployment200ResponseOneOf2RoutesItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetDeployment200ResponseOneOf2RoutesItemOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf3();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("src") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("handle") != null && (parseNode.GetChildNode("handle")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("error".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "filesystem".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "hit".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "miss".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "resource".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "rewrite".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("continue") != null && parseNode.GetChildNode("middleware") != null && parseNode.GetChildNode("src") != null))();
+            if (result.GetDeployment200ResponseOneOf2RoutesItemOneOf1 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf2 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.GetDeployment200ResponseOneOf2RoutesItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf1(), parseNode);
+            if (result.GetDeployment200ResponseOneOf2RoutesItemOneOf1 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf2 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.GetDeployment200ResponseOneOf2RoutesItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf2(), parseNode);
+            if (result.GetDeployment200ResponseOneOf2RoutesItemOneOf1 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf2 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.GetDeployment200ResponseOneOf2RoutesItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf3(), parseNode);
+            if (result.GetDeployment200ResponseOneOf2RoutesItemOneOf1 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf2 == null && result.GetDeployment200ResponseOneOf2RoutesItemOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GetDeployment200ResponseOneOf2RoutesItemOneOf1 == null && GetDeployment200ResponseOneOf2RoutesItemOneOf2 == null && GetDeployment200ResponseOneOf2RoutesItemOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GetDeployment200ResponseOneOf2RoutesItemOneOf1 != null && GetDeployment200ResponseOneOf2RoutesItemOneOf2 == null && GetDeployment200ResponseOneOf2RoutesItemOneOf3 == null) { if (GetDeployment200ResponseOneOf2RoutesItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetDeployment200ResponseOneOf2RoutesItemOneOf1); return; }
+            if (GetDeployment200ResponseOneOf2RoutesItemOneOf2 != null && GetDeployment200ResponseOneOf2RoutesItemOneOf1 == null && GetDeployment200ResponseOneOf2RoutesItemOneOf3 == null) { if (GetDeployment200ResponseOneOf2RoutesItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetDeployment200ResponseOneOf2RoutesItemOneOf2); return; }
+            if (GetDeployment200ResponseOneOf2RoutesItemOneOf3 != null && GetDeployment200ResponseOneOf2RoutesItemOneOf1 == null && GetDeployment200ResponseOneOf2RoutesItemOneOf2 == null) { if (GetDeployment200ResponseOneOf2RoutesItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetDeployment200ResponseOneOf2RoutesItemOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GetDeployment200ResponseOneOf2RoutesItemOneOf1 != null)
             {
+                if (GetDeployment200ResponseOneOf2RoutesItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf1>(null, GetDeployment200ResponseOneOf2RoutesItemOneOf1);
             }
             else if(GetDeployment200ResponseOneOf2RoutesItemOneOf2 != null)
             {
+                if (GetDeployment200ResponseOneOf2RoutesItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf2>(null, GetDeployment200ResponseOneOf2RoutesItemOneOf2);
             }
             else if(GetDeployment200ResponseOneOf2RoutesItemOneOf3 != null)
             {
+                if (GetDeployment200ResponseOneOf2RoutesItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2RoutesItemOneOf3>(null, GetDeployment200ResponseOneOf2RoutesItemOneOf3);
             }
         }

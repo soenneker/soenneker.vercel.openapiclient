@@ -16,6 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Products.Item.Res
     public partial class WithResourceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The secrets property</summary>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Products.Item.Resources.Item.Secrets.SecretsRequestBuilder Secrets
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Products.Item.Resources.Item.Secrets.SecretsRequestBuilder(PathParameters, RequestAdapter);

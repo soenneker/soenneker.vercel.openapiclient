@@ -12,36 +12,56 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamSaml : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connection") is { } nullNodeConnection && nullNodeConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connection = null;
+            if (parseNode.GetChildNode("defaultRedirectUri") is { } nullNodeDefaultRedirectUri && nullNodeDefaultRedirectUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRedirectUri = null;
+            if (parseNode.GetChildNode("directory") is { } nullNodeDirectory && nullNodeDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Directory = null;
+            if (parseNode.GetChildNode("enforced") is { } nullNodeEnforced && nullNodeEnforced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enforced = null;
+            if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information for the SAML Single Sign-On configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection? Connection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection? Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection"); else _explicitNullProperties?.Remove("connection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection? _explicitNullValueConnection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection Connection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection"); else _explicitNullProperties?.Remove("connection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection _explicitNullValueConnection = default!;
 #endif
         /// <summary>The default redirect URI to use after successful SAML authentication.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDefaultRedirectUri? DefaultRedirectUri { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDefaultRedirectUri? DefaultRedirectUri { get => _explicitNullValueDefaultRedirectUri; set { _explicitNullValueDefaultRedirectUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRedirectUri"); else _explicitNullProperties?.Remove("defaultRedirectUri"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDefaultRedirectUri? _explicitNullValueDefaultRedirectUri = default!;
         /// <summary>Information for the Directory Sync configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory? Directory { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory? _explicitNullValueDirectory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory Directory { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory _explicitNullValueDirectory = default!;
 #endif
         /// <summary>When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team&apos;s SAML Single Sign-On provider.</summary>
-        public bool? Enforced { get; set; }
+        public bool? Enforced { get => _explicitNullValueEnforced; set { _explicitNullValueEnforced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforced"); else _explicitNullProperties?.Remove("enforced"); } }
+        private bool? _explicitNullValueEnforced = default!;
         /// <summary>When &quot;Directory Sync&quot; is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty? Roles { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty? _explicitNullValueRoles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty Roles { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty _explicitNullValueRoles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml"/> and sets the default values.
@@ -58,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory>("directory", Directory);
             writer.WriteBoolValue("enforced", Enforced);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty>("roles", Roles);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

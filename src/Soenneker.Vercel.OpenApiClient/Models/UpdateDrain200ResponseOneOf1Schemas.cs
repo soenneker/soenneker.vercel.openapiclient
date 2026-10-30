@@ -11,64 +11,92 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateDrain200ResponseOneOf1Schemas : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ai_gateway") is { } nullNodeAiGateway && nullNodeAiGateway.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGateway = null;
+            if (parseNode.GetChildNode("analytics") is { } nullNodeAnalytics && nullNodeAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analytics = null;
+            if (parseNode.GetChildNode("audit_log") is { } nullNodeAuditLog && nullNodeAuditLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLog = null;
+            if (parseNode.GetChildNode("connect") is { } nullNodeConnect && nullNodeConnect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connect = null;
+            if (parseNode.GetChildNode("log") is { } nullNodeLog && nullNodeLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Log = null;
+            if (parseNode.GetChildNode("speed_insights") is { } nullNodeSpeedInsights && nullNodeSpeedInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeedInsights = null;
+            if (parseNode.GetChildNode("trace") is { } nullNodeTrace && nullNodeTrace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trace = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ai_gateway property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway? AiGateway { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway? AiGateway { get => _explicitNullValueAiGateway; set { _explicitNullValueAiGateway = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_gateway"); else _explicitNullProperties?.Remove("ai_gateway"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway? _explicitNullValueAiGateway = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway AiGateway { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway AiGateway { get => _explicitNullValueAiGateway; set { _explicitNullValueAiGateway = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_gateway"); else _explicitNullProperties?.Remove("ai_gateway"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway _explicitNullValueAiGateway = default!;
 #endif
         /// <summary>The analytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics? Analytics { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics? Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics? _explicitNullValueAnalytics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics Analytics { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics Analytics { get => _explicitNullValueAnalytics; set { _explicitNullValueAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analytics"); else _explicitNullProperties?.Remove("analytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics _explicitNullValueAnalytics = default!;
 #endif
         /// <summary>The audit_log property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog? AuditLog { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog? AuditLog { get => _explicitNullValueAuditLog; set { _explicitNullValueAuditLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log"); else _explicitNullProperties?.Remove("audit_log"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog? _explicitNullValueAuditLog = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog AuditLog { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog AuditLog { get => _explicitNullValueAuditLog; set { _explicitNullValueAuditLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log"); else _explicitNullProperties?.Remove("audit_log"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog _explicitNullValueAuditLog = default!;
 #endif
         /// <summary>The connect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect? Connect { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect? Connect { get => _explicitNullValueConnect; set { _explicitNullValueConnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect"); else _explicitNullProperties?.Remove("connect"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect? _explicitNullValueConnect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect Connect { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect Connect { get => _explicitNullValueConnect; set { _explicitNullValueConnect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connect"); else _explicitNullProperties?.Remove("connect"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect _explicitNullValueConnect = default!;
 #endif
         /// <summary>The log property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog? Log { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog? Log { get => _explicitNullValueLog; set { _explicitNullValueLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log"); else _explicitNullProperties?.Remove("log"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog? _explicitNullValueLog = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog Log { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog Log { get => _explicitNullValueLog; set { _explicitNullValueLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log"); else _explicitNullProperties?.Remove("log"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog _explicitNullValueLog = default!;
 #endif
         /// <summary>The speed_insights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights? SpeedInsights { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights? SpeedInsights { get => _explicitNullValueSpeedInsights; set { _explicitNullValueSpeedInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed_insights"); else _explicitNullProperties?.Remove("speed_insights"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights? _explicitNullValueSpeedInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights SpeedInsights { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights SpeedInsights { get => _explicitNullValueSpeedInsights; set { _explicitNullValueSpeedInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed_insights"); else _explicitNullProperties?.Remove("speed_insights"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights _explicitNullValueSpeedInsights = default!;
 #endif
         /// <summary>The trace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace? Trace { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace? Trace { get => _explicitNullValueTrace; set { _explicitNullValueTrace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace"); else _explicitNullProperties?.Remove("trace"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace? _explicitNullValueTrace = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace Trace { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace Trace { get => _explicitNullValueTrace; set { _explicitNullValueTrace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace"); else _explicitNullProperties?.Remove("trace"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace _explicitNullValueTrace = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1Schemas"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1Schemas CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1Schemas();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1Schemas(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog>("log", Log);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights>("speed_insights", SpeedInsights);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace>("trace", Trace);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

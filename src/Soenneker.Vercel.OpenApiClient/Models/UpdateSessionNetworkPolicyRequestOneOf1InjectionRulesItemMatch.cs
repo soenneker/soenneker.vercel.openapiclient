@@ -12,38 +12,57 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatch : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("queryString") is { } nullNodeQueryString && nullNodeQueryString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryString = null;
+        }
+
         /// <summary>Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchHeadersItem>? Headers { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchHeadersItem>? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchHeadersItem>? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchHeadersItem> Headers { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchHeadersItem> Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchHeadersItem> _explicitNullValueHeaders = default!;
 #endif
         /// <summary>HTTP methods to match. Any single match succeeds (OR semantics).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Method { get; set; }
+        public List<string>? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private List<string>? _explicitNullValueMethod = default!;
 #nullable restore
 #else
-        public List<string> Method { get; set; }
+        public List<string> Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private List<string> _explicitNullValueMethod = default!;
 #endif
         /// <summary>Match on the request path. Comparison is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchPath? Path { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchPath? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchPath? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchPath Path { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchPath Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchPath _explicitNullValuePath = default!;
 #endif
         /// <summary>Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem>? QueryString { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem>? QueryString { get => _explicitNullValueQueryString; set { _explicitNullValueQueryString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryString"); else _explicitNullProperties?.Remove("queryString"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem>? _explicitNullValueQueryString = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem> QueryString { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem> QueryString { get => _explicitNullValueQueryString; set { _explicitNullValueQueryString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryString"); else _explicitNullProperties?.Remove("queryString"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem> _explicitNullValueQueryString = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +98,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchHeadersItem>("headers", Headers);
             writer.WriteCollectionOfPrimitiveValues<string>("method", Method);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchPath>("path", Path);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem>("queryString", QueryString);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequestOneOf1InjectionRulesItemMatchQueryStringItem>("queryString", QueryString);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,70 +11,104 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CancelDeployment200ResponseImages : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contentDispositionType") is { } nullNodeContentDispositionType && nullNodeContentDispositionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentDispositionType = null;
+            if (parseNode.GetChildNode("contentSecurityPolicy") is { } nullNodeContentSecurityPolicy && nullNodeContentSecurityPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSecurityPolicy = null;
+            if (parseNode.GetChildNode("dangerouslyAllowSVG") is { } nullNodeDangerouslyAllowSVG && nullNodeDangerouslyAllowSVG.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DangerouslyAllowSVG = null;
+            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
+            if (parseNode.GetChildNode("localPatterns") is { } nullNodeLocalPatterns && nullNodeLocalPatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalPatterns = null;
+            if (parseNode.GetChildNode("minimumCacheTTL") is { } nullNodeMinimumCacheTTL && nullNodeMinimumCacheTTL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumCacheTTL = null;
+            if (parseNode.GetChildNode("qualities") is { } nullNodeQualities && nullNodeQualities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Qualities = null;
+            if (parseNode.GetChildNode("remotePatterns") is { } nullNodeRemotePatterns && nullNodeRemotePatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemotePatterns = null;
+            if (parseNode.GetChildNode("sizes") is { } nullNodeSizes && nullNodeSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sizes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contentDispositionType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesContentDispositionType? ContentDispositionType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesContentDispositionType? ContentDispositionType { get => _explicitNullValueContentDispositionType; set { _explicitNullValueContentDispositionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentDispositionType"); else _explicitNullProperties?.Remove("contentDispositionType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesContentDispositionType? _explicitNullValueContentDispositionType = default!;
         /// <summary>The contentSecurityPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentSecurityPolicy { get; set; }
+        public string? ContentSecurityPolicy { get => _explicitNullValueContentSecurityPolicy; set { _explicitNullValueContentSecurityPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentSecurityPolicy"); else _explicitNullProperties?.Remove("contentSecurityPolicy"); } }
+        private string? _explicitNullValueContentSecurityPolicy = default!;
 #nullable restore
 #else
-        public string ContentSecurityPolicy { get; set; }
+        public string ContentSecurityPolicy { get => _explicitNullValueContentSecurityPolicy; set { _explicitNullValueContentSecurityPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentSecurityPolicy"); else _explicitNullProperties?.Remove("contentSecurityPolicy"); } }
+        private string _explicitNullValueContentSecurityPolicy = default!;
 #endif
         /// <summary>The dangerouslyAllowSVG property</summary>
-        public bool? DangerouslyAllowSVG { get; set; }
+        public bool? DangerouslyAllowSVG { get => _explicitNullValueDangerouslyAllowSVG; set { _explicitNullValueDangerouslyAllowSVG = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dangerouslyAllowSVG"); else _explicitNullProperties?.Remove("dangerouslyAllowSVG"); } }
+        private bool? _explicitNullValueDangerouslyAllowSVG = default!;
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get; set; }
+        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private List<string>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<string> Domains { get; set; }
+        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private List<string> _explicitNullValueDomains = default!;
 #endif
         /// <summary>The formats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesFormatsItem?>? Formats { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesFormatsItem?>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesFormatsItem?>? _explicitNullValueFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesFormatsItem?> Formats { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesFormatsItem?> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesFormatsItem?> _explicitNullValueFormats = default!;
 #endif
         /// <summary>The localPatterns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesLocalPatternsItem>? LocalPatterns { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesLocalPatternsItem>? LocalPatterns { get => _explicitNullValueLocalPatterns; set { _explicitNullValueLocalPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localPatterns"); else _explicitNullProperties?.Remove("localPatterns"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesLocalPatternsItem>? _explicitNullValueLocalPatterns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesLocalPatternsItem> LocalPatterns { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesLocalPatternsItem> LocalPatterns { get => _explicitNullValueLocalPatterns; set { _explicitNullValueLocalPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localPatterns"); else _explicitNullProperties?.Remove("localPatterns"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesLocalPatternsItem> _explicitNullValueLocalPatterns = default!;
 #endif
         /// <summary>The minimumCacheTTL property</summary>
-        public double? MinimumCacheTTL { get; set; }
+        public double? MinimumCacheTTL { get => _explicitNullValueMinimumCacheTTL; set { _explicitNullValueMinimumCacheTTL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumCacheTTL"); else _explicitNullProperties?.Remove("minimumCacheTTL"); } }
+        private double? _explicitNullValueMinimumCacheTTL = default!;
         /// <summary>The qualities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Qualities { get; set; }
+        public List<double?>? Qualities { get => _explicitNullValueQualities; set { _explicitNullValueQualities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualities"); else _explicitNullProperties?.Remove("qualities"); } }
+        private List<double?>? _explicitNullValueQualities = default!;
 #nullable restore
 #else
-        public List<double?> Qualities { get; set; }
+        public List<double?> Qualities { get => _explicitNullValueQualities; set { _explicitNullValueQualities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualities"); else _explicitNullProperties?.Remove("qualities"); } }
+        private List<double?> _explicitNullValueQualities = default!;
 #endif
         /// <summary>The remotePatterns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesRemotePatternsItem>? RemotePatterns { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesRemotePatternsItem>? RemotePatterns { get => _explicitNullValueRemotePatterns; set { _explicitNullValueRemotePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remotePatterns"); else _explicitNullProperties?.Remove("remotePatterns"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesRemotePatternsItem>? _explicitNullValueRemotePatterns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesRemotePatternsItem> RemotePatterns { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesRemotePatternsItem> RemotePatterns { get => _explicitNullValueRemotePatterns; set { _explicitNullValueRemotePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remotePatterns"); else _explicitNullProperties?.Remove("remotePatterns"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesRemotePatternsItem> _explicitNullValueRemotePatterns = default!;
 #endif
         /// <summary>The sizes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Sizes { get; set; }
+        public List<double?>? Sizes { get => _explicitNullValueSizes; set { _explicitNullValueSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizes"); else _explicitNullProperties?.Remove("sizes"); } }
+        private List<double?>? _explicitNullValueSizes = default!;
 #nullable restore
 #else
-        public List<double?> Sizes { get; set; }
+        public List<double?> Sizes { get => _explicitNullValueSizes; set { _explicitNullValueSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizes"); else _explicitNullProperties?.Remove("sizes"); } }
+        private List<double?> _explicitNullValueSizes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImages"/> and sets the default values.
@@ -91,7 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImages CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImages();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImages(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +164,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("qualities", Qualities);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseImagesRemotePatternsItem>("remotePatterns", RemotePatterns);
             writer.WriteCollectionOfPrimitiveValues<double?>("sizes", Sizes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

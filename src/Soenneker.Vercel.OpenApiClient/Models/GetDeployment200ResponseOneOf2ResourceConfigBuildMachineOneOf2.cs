@@ -11,21 +11,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cores") is { } nullNodeCores && nullNodeCores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cores = null;
+            if (parseNode.GetChildNode("defaultPurchaseType") is { } nullNodeDefaultPurchaseType && nullNodeDefaultPurchaseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultPurchaseType = null;
+            if (parseNode.GetChildNode("machineSelectionType") is { } nullNodeMachineSelectionType && nullNodeMachineSelectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MachineSelectionType = null;
+            if (parseNode.GetChildNode("memory") is { } nullNodeMemory && nullNodeMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Memory = null;
+            if (parseNode.GetChildNode("purchaseType") is { } nullNodePurchaseType && nullNodePurchaseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseType = null;
+            if (parseNode.GetChildNode("selectionSource") is { } nullNodeSelectionSource && nullNodeSelectionSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectionSource = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.</summary>
-        public double? Cores { get; set; }
+        public double? Cores { get => _explicitNullValueCores; set { _explicitNullValueCores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cores"); else _explicitNullProperties?.Remove("cores"); } }
+        private double? _explicitNullValueCores = default!;
         /// <summary>The build machine tier included with the customer&apos;s plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2DefaultPurchaseType? DefaultPurchaseType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2DefaultPurchaseType? DefaultPurchaseType { get => _explicitNullValueDefaultPurchaseType; set { _explicitNullValueDefaultPurchaseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultPurchaseType"); else _explicitNullProperties?.Remove("defaultPurchaseType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2DefaultPurchaseType? _explicitNullValueDefaultPurchaseType = default!;
         /// <summary>The build ran on a fixed machine. Drives billing.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FixedValueMachineSelectionType? MachineSelectionType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FixedValueMachineSelectionType? MachineSelectionType { get => _explicitNullValueMachineSelectionType; set { _explicitNullValueMachineSelectionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machineSelectionType"); else _explicitNullProperties?.Remove("machineSelectionType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.FixedValueMachineSelectionType? _explicitNullValueMachineSelectionType = default!;
         /// <summary>Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.</summary>
-        public double? Memory { get; set; }
+        public double? Memory { get => _explicitNullValueMemory; set { _explicitNullValueMemory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory"); else _explicitNullProperties?.Remove("memory"); } }
+        private double? _explicitNullValueMemory = default!;
         /// <summary>Machine type purchased for this build.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2PurchaseType? PurchaseType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2PurchaseType? PurchaseType { get => _explicitNullValuePurchaseType; set { _explicitNullValuePurchaseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseType"); else _explicitNullProperties?.Remove("purchaseType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2PurchaseType? _explicitNullValuePurchaseType = default!;
         /// <summary>The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2SelectionSource? SelectionSource { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2SelectionSource? SelectionSource { get => _explicitNullValueSelectionSource; set { _explicitNullValueSelectionSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectionSource"); else _explicitNullProperties?.Remove("selectionSource"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2SelectionSource? _explicitNullValueSelectionSource = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("memory", Memory);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2PurchaseType>("purchaseType", PurchaseType);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2SelectionSource>("selectionSource", SelectionSource);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
