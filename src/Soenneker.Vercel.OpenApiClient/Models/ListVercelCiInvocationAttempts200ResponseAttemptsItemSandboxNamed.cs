@@ -17,34 +17,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("readyAt") is { } nullNodeReadyAt && nullNodeReadyAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyAt = null;
-            if (parseNode.GetChildNode("sandboxName") is { } nullNodeSandboxName && nullNodeSandboxName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxName = null;
-            if (parseNode.GetChildNode("workingDirectory") is { } nullNodeWorkingDirectory && nullNodeWorkingDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkingDirectory = null;
+            if (parseNode.GetChildNode("readyAt") is null) { _explicitNullValueReadyAt = default!; _explicitNullProperties?.Remove("readyAt"); }
+            else if (parseNode.GetChildNode("readyAt") is { } nullNodeReadyAt && nullNodeReadyAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyAt = null;
+            if (parseNode.GetChildNode("sandboxName") is null) { _explicitNullValueSandboxName = default!; _explicitNullProperties?.Remove("sandboxName"); }
+            else if (parseNode.GetChildNode("sandboxName") is { } nullNodeSandboxName && nullNodeSandboxName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxName = null;
+            if (parseNode.GetChildNode("workingDirectory") is null) { _explicitNullValueWorkingDirectory = default!; _explicitNullProperties?.Remove("workingDirectory"); }
+            else if (parseNode.GetChildNode("workingDirectory") is { } nullNodeWorkingDirectory && nullNodeWorkingDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkingDirectory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The readyAt property</summary>
-        public double? ReadyAt { get => _explicitNullValueReadyAt; set { _explicitNullValueReadyAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyAt"); else _explicitNullProperties?.Remove("readyAt"); } }
+        public double? ReadyAt { get => _explicitNullValueReadyAt; set { _explicitNullValueReadyAt = value; AdditionalData?.Remove("readyAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyAt"); else _explicitNullProperties?.Remove("readyAt"); } }
         private double? _explicitNullValueReadyAt = default!;
         /// <summary>The sandboxName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SandboxName { get => _explicitNullValueSandboxName; set { _explicitNullValueSandboxName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxName"); else _explicitNullProperties?.Remove("sandboxName"); } }
+        public string? SandboxName { get => _explicitNullValueSandboxName; set { _explicitNullValueSandboxName = value; AdditionalData?.Remove("sandboxName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxName"); else _explicitNullProperties?.Remove("sandboxName"); } }
         private string? _explicitNullValueSandboxName = default!;
 #nullable restore
 #else
-        public string SandboxName { get => _explicitNullValueSandboxName; set { _explicitNullValueSandboxName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxName"); else _explicitNullProperties?.Remove("sandboxName"); } }
+        public string SandboxName { get => _explicitNullValueSandboxName; set { _explicitNullValueSandboxName = value; AdditionalData?.Remove("sandboxName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxName"); else _explicitNullProperties?.Remove("sandboxName"); } }
         private string _explicitNullValueSandboxName = default!;
 #endif
         /// <summary>The workingDirectory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkingDirectory { get => _explicitNullValueWorkingDirectory; set { _explicitNullValueWorkingDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workingDirectory"); else _explicitNullProperties?.Remove("workingDirectory"); } }
+        public string? WorkingDirectory { get => _explicitNullValueWorkingDirectory; set { _explicitNullValueWorkingDirectory = value; AdditionalData?.Remove("workingDirectory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workingDirectory"); else _explicitNullProperties?.Remove("workingDirectory"); } }
         private string? _explicitNullValueWorkingDirectory = default!;
 #nullable restore
 #else
-        public string WorkingDirectory { get => _explicitNullValueWorkingDirectory; set { _explicitNullValueWorkingDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workingDirectory"); else _explicitNullProperties?.Remove("workingDirectory"); } }
+        public string WorkingDirectory { get => _explicitNullValueWorkingDirectory; set { _explicitNullValueWorkingDirectory = value; AdditionalData?.Remove("workingDirectory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workingDirectory"); else _explicitNullProperties?.Remove("workingDirectory"); } }
         private string _explicitNullValueWorkingDirectory = default!;
 #endif
         /// <summary>

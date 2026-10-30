@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contactInformation") is { } nullNodeContactInformation && nullNodeContactInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactInformation = null;
-            if (parseNode.GetChildNode("expectedPrice") is { } nullNodeExpectedPrice && nullNodeExpectedPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedPrice = null;
-            if (parseNode.GetChildNode("years") is { } nullNodeYears && nullNodeYears.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Years = null;
+            if (parseNode.GetChildNode("contactInformation") is null) { _explicitNullValueContactInformation = default!; _explicitNullProperties?.Remove("contactInformation"); }
+            else if (parseNode.GetChildNode("contactInformation") is { } nullNodeContactInformation && nullNodeContactInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactInformation = null;
+            if (parseNode.GetChildNode("expectedPrice") is null) { _explicitNullValueExpectedPrice = default!; _explicitNullProperties?.Remove("expectedPrice"); }
+            else if (parseNode.GetChildNode("expectedPrice") is { } nullNodeExpectedPrice && nullNodeExpectedPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedPrice = null;
+            if (parseNode.GetChildNode("years") is null) { _explicitNullValueYears = default!; _explicitNullProperties?.Remove("years"); }
+            else if (parseNode.GetChildNode("years") is { } nullNodeYears && nullNodeYears.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Years = null;
         }
 
         /// <summary>The contactInformation property</summary>

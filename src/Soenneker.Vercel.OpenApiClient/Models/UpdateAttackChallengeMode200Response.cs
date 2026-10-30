@@ -17,17 +17,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
-            if (parseNode.GetChildNode("attackModeUpdatedAt") is { } nullNodeAttackModeUpdatedAt && nullNodeAttackModeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeUpdatedAt = null;
+            if (parseNode.GetChildNode("attackModeEnabled") is null) { _explicitNullValueAttackModeEnabled = default!; _explicitNullProperties?.Remove("attackModeEnabled"); }
+            else if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
+            if (parseNode.GetChildNode("attackModeUpdatedAt") is null) { _explicitNullValueAttackModeUpdatedAt = default!; _explicitNullProperties?.Remove("attackModeUpdatedAt"); }
+            else if (parseNode.GetChildNode("attackModeUpdatedAt") is { } nullNodeAttackModeUpdatedAt && nullNodeAttackModeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeUpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attackModeEnabled property</summary>
-        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
+        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; AdditionalData?.Remove("attackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
         private bool? _explicitNullValueAttackModeEnabled = default!;
         /// <summary>The attackModeUpdatedAt property</summary>
-        public double? AttackModeUpdatedAt { get => _explicitNullValueAttackModeUpdatedAt; set { _explicitNullValueAttackModeUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeUpdatedAt"); else _explicitNullProperties?.Remove("attackModeUpdatedAt"); } }
+        public double? AttackModeUpdatedAt { get => _explicitNullValueAttackModeUpdatedAt; set { _explicitNullValueAttackModeUpdatedAt = value; AdditionalData?.Remove("attackModeUpdatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeUpdatedAt"); else _explicitNullProperties?.Remove("attackModeUpdatedAt"); } }
         private double? _explicitNullValueAttackModeUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode200Response"/> and sets the default values.

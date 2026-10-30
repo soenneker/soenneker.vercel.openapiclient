@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appUrls") is { } nullNodeAppUrls && nullNodeAppUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUrls = null;
+            if (parseNode.GetChildNode("appUrls") is null) { _explicitNullValueAppUrls = default!; _explicitNullProperties?.Remove("appUrls"); }
+            else if (parseNode.GetChildNode("appUrls") is { } nullNodeAppUrls && nullNodeAppUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUrls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The appUrls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItem>? AppUrls { get => _explicitNullValueAppUrls; set { _explicitNullValueAppUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appUrls"); else _explicitNullProperties?.Remove("appUrls"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItem>? AppUrls { get => _explicitNullValueAppUrls; set { _explicitNullValueAppUrls = value; AdditionalData?.Remove("appUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appUrls"); else _explicitNullProperties?.Remove("appUrls"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItem>? _explicitNullValueAppUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItem> AppUrls { get => _explicitNullValueAppUrls; set { _explicitNullValueAppUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appUrls"); else _explicitNullProperties?.Remove("appUrls"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItem> AppUrls { get => _explicitNullValueAppUrls; set { _explicitNullValueAppUrls = value; AdditionalData?.Remove("appUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appUrls"); else _explicitNullProperties?.Remove("appUrls"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItem> _explicitNullValueAppUrls = default!;
 #endif
         /// <summary>

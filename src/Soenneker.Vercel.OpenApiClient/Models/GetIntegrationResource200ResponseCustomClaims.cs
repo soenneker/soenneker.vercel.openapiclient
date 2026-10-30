@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("claimRules") is { } nullNodeClaimRules && nullNodeClaimRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimRules = null;
-            if (parseNode.GetChildNode("defaultRole") is { } nullNodeDefaultRole && nullNodeDefaultRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRole = null;
-            if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
+            if (parseNode.GetChildNode("claimRules") is null) { _explicitNullValueClaimRules = default!; _explicitNullProperties?.Remove("claimRules"); }
+            else if (parseNode.GetChildNode("claimRules") is { } nullNodeClaimRules && nullNodeClaimRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimRules = null;
+            if (parseNode.GetChildNode("defaultRole") is null) { _explicitNullValueDefaultRole = default!; _explicitNullProperties?.Remove("defaultRole"); }
+            else if (parseNode.GetChildNode("defaultRole") is { } nullNodeDefaultRole && nullNodeDefaultRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRole = null;
+            if (parseNode.GetChildNode("roles") is null) { _explicitNullValueRoles = default!; _explicitNullProperties?.Remove("roles"); }
+            else if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The claimRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaimsClaimRulesItem>? ClaimRules { get => _explicitNullValueClaimRules; set { _explicitNullValueClaimRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimRules"); else _explicitNullProperties?.Remove("claimRules"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaimsClaimRulesItem>? ClaimRules { get => _explicitNullValueClaimRules; set { _explicitNullValueClaimRules = value; AdditionalData?.Remove("claimRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimRules"); else _explicitNullProperties?.Remove("claimRules"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaimsClaimRulesItem>? _explicitNullValueClaimRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaimsClaimRulesItem> ClaimRules { get => _explicitNullValueClaimRules; set { _explicitNullValueClaimRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimRules"); else _explicitNullProperties?.Remove("claimRules"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaimsClaimRulesItem> ClaimRules { get => _explicitNullValueClaimRules; set { _explicitNullValueClaimRules = value; AdditionalData?.Remove("claimRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claimRules"); else _explicitNullProperties?.Remove("claimRules"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaimsClaimRulesItem> _explicitNullValueClaimRules = default!;
 #endif
         /// <summary>The defaultRole property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRole { get => _explicitNullValueDefaultRole; set { _explicitNullValueDefaultRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRole"); else _explicitNullProperties?.Remove("defaultRole"); } }
+        public string? DefaultRole { get => _explicitNullValueDefaultRole; set { _explicitNullValueDefaultRole = value; AdditionalData?.Remove("defaultRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRole"); else _explicitNullProperties?.Remove("defaultRole"); } }
         private string? _explicitNullValueDefaultRole = default!;
 #nullable restore
 #else
-        public string DefaultRole { get => _explicitNullValueDefaultRole; set { _explicitNullValueDefaultRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRole"); else _explicitNullProperties?.Remove("defaultRole"); } }
+        public string DefaultRole { get => _explicitNullValueDefaultRole; set { _explicitNullValueDefaultRole = value; AdditionalData?.Remove("defaultRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRole"); else _explicitNullProperties?.Remove("defaultRole"); } }
         private string _explicitNullValueDefaultRole = default!;
 #endif
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        public List<string>? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
         private List<string>? _explicitNullValueRoles = default!;
 #nullable restore
 #else
-        public List<string> Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        public List<string> Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
         private List<string> _explicitNullValueRoles = default!;
 #endif
         /// <summary>

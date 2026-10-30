@@ -18,7 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("externalResourceId") is { } nullNodeExternalResourceId && nullNodeExternalResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalResourceId = null;
+            if (parseNode.GetChildNode("externalResourceId") is null) { _explicitNullValueExternalResourceId = default!; _explicitNullProperties?.Remove("externalResourceId"); }
+            else if (parseNode.GetChildNode("externalResourceId") is { } nullNodeExternalResourceId && nullNodeExternalResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalResourceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The externalResourceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalResourceId { get => _explicitNullValueExternalResourceId; set { _explicitNullValueExternalResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalResourceId"); else _explicitNullProperties?.Remove("externalResourceId"); } }
+        public string? ExternalResourceId { get => _explicitNullValueExternalResourceId; set { _explicitNullValueExternalResourceId = value; AdditionalData?.Remove("externalResourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalResourceId"); else _explicitNullProperties?.Remove("externalResourceId"); } }
         private string? _explicitNullValueExternalResourceId = default!;
 #nullable restore
 #else
-        public string ExternalResourceId { get => _explicitNullValueExternalResourceId; set { _explicitNullValueExternalResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalResourceId"); else _explicitNullProperties?.Remove("externalResourceId"); } }
+        public string ExternalResourceId { get => _explicitNullValueExternalResourceId; set { _explicitNullValueExternalResourceId = value; AdditionalData?.Remove("externalResourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalResourceId"); else _explicitNullProperties?.Remove("externalResourceId"); } }
         private string _explicitNullValueExternalResourceId = default!;
 #endif
         /// <summary>

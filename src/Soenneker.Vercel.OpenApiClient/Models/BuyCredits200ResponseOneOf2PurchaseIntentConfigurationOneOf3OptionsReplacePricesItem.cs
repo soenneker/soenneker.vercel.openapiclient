@@ -18,23 +18,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fixedPriceQuantity") is { } nullNodeFixedPriceQuantity && nullNodeFixedPriceQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedPriceQuantity = null;
-            if (parseNode.GetChildNode("replacesPriceId") is { } nullNodeReplacesPriceId && nullNodeReplacesPriceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacesPriceId = null;
+            if (parseNode.GetChildNode("fixedPriceQuantity") is null) { _explicitNullValueFixedPriceQuantity = default!; _explicitNullProperties?.Remove("fixedPriceQuantity"); }
+            else if (parseNode.GetChildNode("fixedPriceQuantity") is { } nullNodeFixedPriceQuantity && nullNodeFixedPriceQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedPriceQuantity = null;
+            if (parseNode.GetChildNode("replacesPriceId") is null) { _explicitNullValueReplacesPriceId = default!; _explicitNullProperties?.Remove("replacesPriceId"); }
+            else if (parseNode.GetChildNode("replacesPriceId") is { } nullNodeReplacesPriceId && nullNodeReplacesPriceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacesPriceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The quantity for the fixed price</summary>
-        public double? FixedPriceQuantity { get => _explicitNullValueFixedPriceQuantity; set { _explicitNullValueFixedPriceQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedPriceQuantity"); else _explicitNullProperties?.Remove("fixedPriceQuantity"); } }
+        public double? FixedPriceQuantity { get => _explicitNullValueFixedPriceQuantity; set { _explicitNullValueFixedPriceQuantity = value; AdditionalData?.Remove("fixedPriceQuantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedPriceQuantity"); else _explicitNullProperties?.Remove("fixedPriceQuantity"); } }
         private double? _explicitNullValueFixedPriceQuantity = default!;
         /// <summary>The ID of the price to replace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplacesPriceId { get => _explicitNullValueReplacesPriceId; set { _explicitNullValueReplacesPriceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacesPriceId"); else _explicitNullProperties?.Remove("replacesPriceId"); } }
+        public string? ReplacesPriceId { get => _explicitNullValueReplacesPriceId; set { _explicitNullValueReplacesPriceId = value; AdditionalData?.Remove("replacesPriceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacesPriceId"); else _explicitNullProperties?.Remove("replacesPriceId"); } }
         private string? _explicitNullValueReplacesPriceId = default!;
 #nullable restore
 #else
-        public string ReplacesPriceId { get => _explicitNullValueReplacesPriceId; set { _explicitNullValueReplacesPriceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacesPriceId"); else _explicitNullProperties?.Remove("replacesPriceId"); } }
+        public string ReplacesPriceId { get => _explicitNullValueReplacesPriceId; set { _explicitNullValueReplacesPriceId = value; AdditionalData?.Remove("replacesPriceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacesPriceId"); else _explicitNullProperties?.Remove("replacesPriceId"); } }
         private string _explicitNullValueReplacesPriceId = default!;
 #endif
         /// <summary>

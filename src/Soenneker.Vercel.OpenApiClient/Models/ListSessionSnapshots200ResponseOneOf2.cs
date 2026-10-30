@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
-            if (parseNode.GetChildNode("snapshots") is { } nullNodeSnapshots && nullNodeSnapshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Snapshots = null;
+            if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
+            else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("snapshots") is null) { _explicitNullValueSnapshots = default!; _explicitNullProperties?.Remove("snapshots"); }
+            else if (parseNode.GetChildNode("snapshots") is { } nullNodeSnapshots && nullNodeSnapshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Snapshots = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The pagination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListSessionSnapshots200ResponseOneOf2Pagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListSessionSnapshots200ResponseOneOf2Pagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ListSessionSnapshots200ResponseOneOf2Pagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListSessionSnapshots200ResponseOneOf2Pagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListSessionSnapshots200ResponseOneOf2Pagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ListSessionSnapshots200ResponseOneOf2Pagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>The snapshots property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot>? Snapshots { get => _explicitNullValueSnapshots; set { _explicitNullValueSnapshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshots"); else _explicitNullProperties?.Remove("snapshots"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot>? Snapshots { get => _explicitNullValueSnapshots; set { _explicitNullValueSnapshots = value; AdditionalData?.Remove("snapshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshots"); else _explicitNullProperties?.Remove("snapshots"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot>? _explicitNullValueSnapshots = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot> Snapshots { get => _explicitNullValueSnapshots; set { _explicitNullValueSnapshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshots"); else _explicitNullProperties?.Remove("snapshots"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot> Snapshots { get => _explicitNullValueSnapshots; set { _explicitNullValueSnapshots = value; AdditionalData?.Remove("snapshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshots"); else _explicitNullProperties?.Remove("snapshots"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot> _explicitNullValueSnapshots = default!;
 #endif
         /// <summary>

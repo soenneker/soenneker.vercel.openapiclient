@@ -18,7 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("periods") is { } nullNodePeriods && nullNodePeriods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Periods = null;
+            if (parseNode.GetChildNode("periods") is null) { _explicitNullValuePeriods = default!; _explicitNullProperties?.Remove("periods"); }
+            else if (parseNode.GetChildNode("periods") is { } nullNodePeriods && nullNodePeriods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Periods = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The periods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221PeriodsItem>? Periods { get => _explicitNullValuePeriods; set { _explicitNullValuePeriods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periods"); else _explicitNullProperties?.Remove("periods"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221PeriodsItem>? Periods { get => _explicitNullValuePeriods; set { _explicitNullValuePeriods = value; AdditionalData?.Remove("periods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periods"); else _explicitNullProperties?.Remove("periods"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221PeriodsItem>? _explicitNullValuePeriods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221PeriodsItem> Periods { get => _explicitNullValuePeriods; set { _explicitNullValuePeriods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periods"); else _explicitNullProperties?.Remove("periods"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221PeriodsItem> Periods { get => _explicitNullValuePeriods; set { _explicitNullValuePeriods = value; AdditionalData?.Remove("periods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periods"); else _explicitNullProperties?.Remove("periods"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221PeriodsItem> _explicitNullValuePeriods = default!;
 #endif
         /// <summary>

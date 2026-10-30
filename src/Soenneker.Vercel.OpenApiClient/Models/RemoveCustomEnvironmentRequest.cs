@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deleteUnassignedEnvironmentVariables") is { } nullNodeDeleteUnassignedEnvironmentVariables && nullNodeDeleteUnassignedEnvironmentVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteUnassignedEnvironmentVariables = null;
+            if (parseNode.GetChildNode("deleteUnassignedEnvironmentVariables") is null) { _explicitNullValueDeleteUnassignedEnvironmentVariables = default!; _explicitNullProperties?.Remove("deleteUnassignedEnvironmentVariables"); }
+            else if (parseNode.GetChildNode("deleteUnassignedEnvironmentVariables") is { } nullNodeDeleteUnassignedEnvironmentVariables && nullNodeDeleteUnassignedEnvironmentVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteUnassignedEnvironmentVariables = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Delete Environment Variables that are not assigned to any environments.</summary>
-        public bool? DeleteUnassignedEnvironmentVariables { get => _explicitNullValueDeleteUnassignedEnvironmentVariables; set { _explicitNullValueDeleteUnassignedEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleteUnassignedEnvironmentVariables"); else _explicitNullProperties?.Remove("deleteUnassignedEnvironmentVariables"); } }
+        public bool? DeleteUnassignedEnvironmentVariables { get => _explicitNullValueDeleteUnassignedEnvironmentVariables; set { _explicitNullValueDeleteUnassignedEnvironmentVariables = value; AdditionalData?.Remove("deleteUnassignedEnvironmentVariables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleteUnassignedEnvironmentVariables"); else _explicitNullProperties?.Remove("deleteUnassignedEnvironmentVariables"); } }
         private bool? _explicitNullValueDeleteUnassignedEnvironmentVariables = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RemoveCustomEnvironmentRequest"/> and sets the default values.

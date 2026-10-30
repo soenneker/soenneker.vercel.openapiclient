@@ -63,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v10/projects/{idOrName}/promote/{deploymentId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow") is { } nullNodeAllow && nullNodeAllow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allow = null;
-            if (parseNode.GetChildNode("deny") is { } nullNodeDeny && nullNodeDeny.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deny = null;
+            if (parseNode.GetChildNode("allow") is null) { _explicitNullValueAllow = default!; _explicitNullProperties?.Remove("allow"); }
+            else if (parseNode.GetChildNode("allow") is { } nullNodeAllow && nullNodeAllow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allow = null;
+            if (parseNode.GetChildNode("deny") is null) { _explicitNullValueDeny = default!; _explicitNullProperties?.Remove("deny"); }
+            else if (parseNode.GetChildNode("deny") is { } nullNodeDeny && nullNodeDeny.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deny = null;
         }
 
         /// <summary>The allow property</summary>

@@ -17,44 +17,51 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("canceledAt") is { } nullNodeCanceledAt && nullNodeCanceledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanceledAt = null;
-            if (parseNode.GetChildNode("disabledAt") is { } nullNodeDisabledAt && nullNodeDisabledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisabledAt = null;
-            if (parseNode.GetChildNode("enabledAt") is { } nullNodeEnabledAt && nullNodeEnabledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledAt = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("paidAt") is { } nullNodePaidAt && nullNodePaidAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidAt = null;
-            if (parseNode.GetChildNode("sampleRatePercent") is { } nullNodeSampleRatePercent && nullNodeSampleRatePercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleRatePercent = null;
-            if (parseNode.GetChildNode("spendLimitInDollars") is { } nullNodeSpendLimitInDollars && nullNodeSpendLimitInDollars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendLimitInDollars = null;
+            if (parseNode.GetChildNode("canceledAt") is null) { _explicitNullValueCanceledAt = default!; _explicitNullProperties?.Remove("canceledAt"); }
+            else if (parseNode.GetChildNode("canceledAt") is { } nullNodeCanceledAt && nullNodeCanceledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanceledAt = null;
+            if (parseNode.GetChildNode("disabledAt") is null) { _explicitNullValueDisabledAt = default!; _explicitNullProperties?.Remove("disabledAt"); }
+            else if (parseNode.GetChildNode("disabledAt") is { } nullNodeDisabledAt && nullNodeDisabledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisabledAt = null;
+            if (parseNode.GetChildNode("enabledAt") is null) { _explicitNullValueEnabledAt = default!; _explicitNullProperties?.Remove("enabledAt"); }
+            else if (parseNode.GetChildNode("enabledAt") is { } nullNodeEnabledAt && nullNodeEnabledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("paidAt") is null) { _explicitNullValuePaidAt = default!; _explicitNullProperties?.Remove("paidAt"); }
+            else if (parseNode.GetChildNode("paidAt") is { } nullNodePaidAt && nullNodePaidAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidAt = null;
+            if (parseNode.GetChildNode("sampleRatePercent") is null) { _explicitNullValueSampleRatePercent = default!; _explicitNullProperties?.Remove("sampleRatePercent"); }
+            else if (parseNode.GetChildNode("sampleRatePercent") is { } nullNodeSampleRatePercent && nullNodeSampleRatePercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleRatePercent = null;
+            if (parseNode.GetChildNode("spendLimitInDollars") is null) { _explicitNullValueSpendLimitInDollars = default!; _explicitNullProperties?.Remove("spendLimitInDollars"); }
+            else if (parseNode.GetChildNode("spendLimitInDollars") is { } nullNodeSpendLimitInDollars && nullNodeSpendLimitInDollars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendLimitInDollars = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The canceledAt property</summary>
-        public double? CanceledAt { get => _explicitNullValueCanceledAt; set { _explicitNullValueCanceledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canceledAt"); else _explicitNullProperties?.Remove("canceledAt"); } }
+        public double? CanceledAt { get => _explicitNullValueCanceledAt; set { _explicitNullValueCanceledAt = value; AdditionalData?.Remove("canceledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canceledAt"); else _explicitNullProperties?.Remove("canceledAt"); } }
         private double? _explicitNullValueCanceledAt = default!;
         /// <summary>The disabledAt property</summary>
-        public double? DisabledAt { get => _explicitNullValueDisabledAt; set { _explicitNullValueDisabledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledAt"); else _explicitNullProperties?.Remove("disabledAt"); } }
+        public double? DisabledAt { get => _explicitNullValueDisabledAt; set { _explicitNullValueDisabledAt = value; AdditionalData?.Remove("disabledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledAt"); else _explicitNullProperties?.Remove("disabledAt"); } }
         private double? _explicitNullValueDisabledAt = default!;
         /// <summary>The enabledAt property</summary>
-        public double? EnabledAt { get => _explicitNullValueEnabledAt; set { _explicitNullValueEnabledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledAt"); else _explicitNullProperties?.Remove("enabledAt"); } }
+        public double? EnabledAt { get => _explicitNullValueEnabledAt; set { _explicitNullValueEnabledAt = value; AdditionalData?.Remove("enabledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledAt"); else _explicitNullProperties?.Remove("enabledAt"); } }
         private double? _explicitNullValueEnabledAt = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The paidAt property</summary>
-        public double? PaidAt { get => _explicitNullValuePaidAt; set { _explicitNullValuePaidAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidAt"); else _explicitNullProperties?.Remove("paidAt"); } }
+        public double? PaidAt { get => _explicitNullValuePaidAt; set { _explicitNullValuePaidAt = value; AdditionalData?.Remove("paidAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidAt"); else _explicitNullProperties?.Remove("paidAt"); } }
         private double? _explicitNullValuePaidAt = default!;
         /// <summary>The sampleRatePercent property</summary>
-        public double? SampleRatePercent { get => _explicitNullValueSampleRatePercent; set { _explicitNullValueSampleRatePercent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRatePercent"); else _explicitNullProperties?.Remove("sampleRatePercent"); } }
+        public double? SampleRatePercent { get => _explicitNullValueSampleRatePercent; set { _explicitNullValueSampleRatePercent = value; AdditionalData?.Remove("sampleRatePercent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRatePercent"); else _explicitNullProperties?.Remove("sampleRatePercent"); } }
         private double? _explicitNullValueSampleRatePercent = default!;
         /// <summary>The spendLimitInDollars property</summary>
-        public double? SpendLimitInDollars { get => _explicitNullValueSpendLimitInDollars; set { _explicitNullValueSpendLimitInDollars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spendLimitInDollars"); else _explicitNullProperties?.Remove("spendLimitInDollars"); } }
+        public double? SpendLimitInDollars { get => _explicitNullValueSpendLimitInDollars; set { _explicitNullValueSpendLimitInDollars = value; AdditionalData?.Remove("spendLimitInDollars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spendLimitInDollars"); else _explicitNullProperties?.Remove("spendLimitInDollars"); } }
         private double? _explicitNullValueSpendLimitInDollars = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseAnalytics"/> and sets the default values.

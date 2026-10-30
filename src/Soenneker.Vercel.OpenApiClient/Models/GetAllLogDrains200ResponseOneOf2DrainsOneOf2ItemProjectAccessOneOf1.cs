@@ -17,17 +17,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
-            if (parseNode.GetChildNode("managedBy") is { } nullNodeManagedBy && nullNodeManagedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedBy = null;
+            if (parseNode.GetChildNode("access") is null) { _explicitNullValueAccess = default!; _explicitNullProperties?.Remove("access"); }
+            else if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
+            if (parseNode.GetChildNode("managedBy") is null) { _explicitNullValueManagedBy = default!; _explicitNullProperties?.Remove("managedBy"); }
+            else if (parseNode.GetChildNode("managedBy") is { } nullNodeManagedBy && nullNodeManagedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedBy = null;
         }
 
         /// <summary>The access property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AllAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AllAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AllAccess? _explicitNullValueAccess = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The managedBy property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemProjectAccessOneOf1ManagedBy? ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedBy"); else _explicitNullProperties?.Remove("managedBy"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemProjectAccessOneOf1ManagedBy? ManagedBy { get => _explicitNullValueManagedBy; set { _explicitNullValueManagedBy = value; AdditionalData?.Remove("managedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managedBy"); else _explicitNullProperties?.Remove("managedBy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemProjectAccessOneOf1ManagedBy? _explicitNullValueManagedBy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemProjectAccessOneOf1"/> and sets the default values.
@@ -54,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AllAccess>(); } },
-                { "managedBy", n => { ManagedBy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemProjectAccessOneOf1ManagedBy>(); } },
+                { "access", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AllAccess>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccess = default; _explicitNullProperties?.Remove("access"); AdditionalData["access"] = unknown; } else { Access = parsed; AdditionalData.Remove("access"); } } },
+                { "managedBy", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemProjectAccessOneOf1ManagedBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueManagedBy = default; _explicitNullProperties?.Remove("managedBy"); AdditionalData["managedBy"] = unknown; } else { ManagedBy = parsed; AdditionalData.Remove("managedBy"); } } },
             };
         }
         /// <summary>

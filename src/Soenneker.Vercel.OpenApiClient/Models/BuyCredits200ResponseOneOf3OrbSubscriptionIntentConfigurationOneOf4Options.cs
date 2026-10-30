@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("productAlias") is { } nullNodeProductAlias && nullNodeProductAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductAlias = null;
-            if (parseNode.GetChildNode("resourceIds") is { } nullNodeResourceIds && nullNodeResourceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceIds = null;
+            if (parseNode.GetChildNode("productAlias") is null) { _explicitNullValueProductAlias = default!; _explicitNullProperties?.Remove("productAlias"); }
+            else if (parseNode.GetChildNode("productAlias") is { } nullNodeProductAlias && nullNodeProductAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductAlias = null;
+            if (parseNode.GetChildNode("resourceIds") is null) { _explicitNullValueResourceIds = default!; _explicitNullProperties?.Remove("resourceIds"); }
+            else if (parseNode.GetChildNode("resourceIds") is { } nullNodeResourceIds && nullNodeResourceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The alias of the product to decrease quantity for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
+        public string? ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; AdditionalData?.Remove("productAlias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
         private string? _explicitNullValueProductAlias = default!;
 #nullable restore
 #else
-        public string ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
+        public string ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; AdditionalData?.Remove("productAlias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
         private string _explicitNullValueProductAlias = default!;
 #endif
         /// <summary>The resource IDs to decrementally remove. The quantity of the plan item will be decreased by the number of resource IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResourceIds { get => _explicitNullValueResourceIds; set { _explicitNullValueResourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceIds"); else _explicitNullProperties?.Remove("resourceIds"); } }
+        public List<string>? ResourceIds { get => _explicitNullValueResourceIds; set { _explicitNullValueResourceIds = value; AdditionalData?.Remove("resourceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceIds"); else _explicitNullProperties?.Remove("resourceIds"); } }
         private List<string>? _explicitNullValueResourceIds = default!;
 #nullable restore
 #else
-        public List<string> ResourceIds { get => _explicitNullValueResourceIds; set { _explicitNullValueResourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceIds"); else _explicitNullProperties?.Remove("resourceIds"); } }
+        public List<string> ResourceIds { get => _explicitNullValueResourceIds; set { _explicitNullValueResourceIds = value; AdditionalData?.Remove("resourceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceIds"); else _explicitNullProperties?.Remove("resourceIds"); } }
         private List<string> _explicitNullValueResourceIds = default!;
 #endif
         /// <summary>

@@ -18,34 +18,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configChangeCount") is { } nullNodeConfigChangeCount && nullNodeConfigChangeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChangeCount = null;
-            if (parseNode.GetChildNode("configChanges") is { } nullNodeConfigChanges && nullNodeConfigChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChanges = null;
-            if (parseNode.GetChildNode("configVersion") is { } nullNodeConfigVersion && nullNodeConfigVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigVersion = null;
+            if (parseNode.GetChildNode("configChangeCount") is null) { _explicitNullValueConfigChangeCount = default!; _explicitNullProperties?.Remove("configChangeCount"); }
+            else if (parseNode.GetChildNode("configChangeCount") is { } nullNodeConfigChangeCount && nullNodeConfigChangeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChangeCount = null;
+            if (parseNode.GetChildNode("configChanges") is null) { _explicitNullValueConfigChanges = default!; _explicitNullProperties?.Remove("configChanges"); }
+            else if (parseNode.GetChildNode("configChanges") is { } nullNodeConfigChanges && nullNodeConfigChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChanges = null;
+            if (parseNode.GetChildNode("configVersion") is null) { _explicitNullValueConfigVersion = default!; _explicitNullProperties?.Remove("configVersion"); }
+            else if (parseNode.GetChildNode("configVersion") is { } nullNodeConfigVersion && nullNodeConfigVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configChangeCount property</summary>
-        public double? ConfigChangeCount { get => _explicitNullValueConfigChangeCount; set { _explicitNullValueConfigChangeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChangeCount"); else _explicitNullProperties?.Remove("configChangeCount"); } }
+        public double? ConfigChangeCount { get => _explicitNullValueConfigChangeCount; set { _explicitNullValueConfigChangeCount = value; AdditionalData?.Remove("configChangeCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChangeCount"); else _explicitNullProperties?.Remove("configChangeCount"); } }
         private double? _explicitNullValueConfigChangeCount = default!;
         /// <summary>The configChanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184ConfigChangesItemProperty>? ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184ConfigChangesItemProperty>? ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; AdditionalData?.Remove("configChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184ConfigChangesItemProperty>? _explicitNullValueConfigChanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184ConfigChangesItemProperty> ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184ConfigChangesItemProperty> ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; AdditionalData?.Remove("configChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184ConfigChangesItemProperty> _explicitNullValueConfigChanges = default!;
 #endif
         /// <summary>The configVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? ConfigVersion { get => _explicitNullValueConfigVersion; set { _explicitNullValueConfigVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configVersion"); else _explicitNullProperties?.Remove("configVersion"); } }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? ConfigVersion { get => _explicitNullValueConfigVersion; set { _explicitNullValueConfigVersion = value; AdditionalData?.Remove("configVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configVersion"); else _explicitNullProperties?.Remove("configVersion"); } }
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueConfigVersion = default!;
 #nullable restore
 #else
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode ConfigVersion { get => _explicitNullValueConfigVersion; set { _explicitNullValueConfigVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configVersion"); else _explicitNullProperties?.Remove("configVersion"); } }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode ConfigVersion { get => _explicitNullValueConfigVersion; set { _explicitNullValueConfigVersion = value; AdditionalData?.Remove("configVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configVersion"); else _explicitNullProperties?.Remove("configVersion"); } }
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueConfigVersion = default!;
 #endif
         /// <summary>

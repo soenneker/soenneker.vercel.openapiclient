@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env.Item.Unlink.Item
         public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.Item.Unlink.Item.WithProjectItemRequestBuilder.WithProjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/env/{id}/unlink/{projectId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

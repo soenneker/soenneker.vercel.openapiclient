@@ -17,47 +17,51 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cmp") is { } nullNodeCmp && nullNodeCmp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmp = null;
-            if (parseNode.GetChildNode("cmpOptions") is { } nullNodeCmpOptions && nullNodeCmpOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CmpOptions = null;
-            if (parseNode.GetChildNode("lhs") is { } nullNodeLhs && nullNodeLhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lhs = null;
-            if (parseNode.GetChildNode("rhs") is { } nullNodeRhs && nullNodeRhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rhs = null;
+            if (parseNode.GetChildNode("cmp") is null) { _explicitNullValueCmp = default!; _explicitNullProperties?.Remove("cmp"); }
+            else if (parseNode.GetChildNode("cmp") is { } nullNodeCmp && nullNodeCmp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmp = null;
+            if (parseNode.GetChildNode("cmpOptions") is null) { _explicitNullValueCmpOptions = default!; _explicitNullProperties?.Remove("cmpOptions"); }
+            else if (parseNode.GetChildNode("cmpOptions") is { } nullNodeCmpOptions && nullNodeCmpOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CmpOptions = null;
+            if (parseNode.GetChildNode("lhs") is null) { _explicitNullValueLhs = default!; _explicitNullProperties?.Remove("lhs"); }
+            else if (parseNode.GetChildNode("lhs") is { } nullNodeLhs && nullNodeLhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lhs = null;
+            if (parseNode.GetChildNode("rhs") is null) { _explicitNullValueRhs = default!; _explicitNullProperties?.Remove("rhs"); }
+            else if (parseNode.GetChildNode("rhs") is { } nullNodeRhs && nullNodeRhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rhs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cmp property</summary>
 #nullable enable
-        public string? Cmp { get => _explicitNullValueCmp; set { _explicitNullValueCmp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmp"); else _explicitNullProperties?.Remove("cmp"); } }
+        public string? Cmp { get => _explicitNullValueCmp; set { _explicitNullValueCmp = value; AdditionalData?.Remove("cmp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmp"); else _explicitNullProperties?.Remove("cmp"); } }
         private string? _explicitNullValueCmp = default!;
 #nullable restore
         /// <summary>The cmpOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemCmpOptions? CmpOptions { get => _explicitNullValueCmpOptions; set { _explicitNullValueCmpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmpOptions"); else _explicitNullProperties?.Remove("cmpOptions"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemCmpOptions? CmpOptions { get => _explicitNullValueCmpOptions; set { _explicitNullValueCmpOptions = value; AdditionalData?.Remove("cmpOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmpOptions"); else _explicitNullProperties?.Remove("cmpOptions"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemCmpOptions? _explicitNullValueCmpOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemCmpOptions CmpOptions { get => _explicitNullValueCmpOptions; set { _explicitNullValueCmpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmpOptions"); else _explicitNullProperties?.Remove("cmpOptions"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemCmpOptions CmpOptions { get => _explicitNullValueCmpOptions; set { _explicitNullValueCmpOptions = value; AdditionalData?.Remove("cmpOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmpOptions"); else _explicitNullProperties?.Remove("cmpOptions"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemCmpOptions _explicitNullValueCmpOptions = default!;
 #endif
         /// <summary>The lhs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemLhs? Lhs { get => _explicitNullValueLhs; set { _explicitNullValueLhs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lhs"); else _explicitNullProperties?.Remove("lhs"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemLhs? Lhs { get => _explicitNullValueLhs; set { _explicitNullValueLhs = value; AdditionalData?.Remove("lhs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lhs"); else _explicitNullProperties?.Remove("lhs"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemLhs? _explicitNullValueLhs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemLhs Lhs { get => _explicitNullValueLhs; set { _explicitNullValueLhs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lhs"); else _explicitNullProperties?.Remove("lhs"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemLhs Lhs { get => _explicitNullValueLhs; set { _explicitNullValueLhs = value; AdditionalData?.Remove("lhs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lhs"); else _explicitNullProperties?.Remove("lhs"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemLhs _explicitNullValueLhs = default!;
 #endif
         /// <summary>The rhs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemRhs? Rhs { get => _explicitNullValueRhs; set { _explicitNullValueRhs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rhs"); else _explicitNullProperties?.Remove("rhs"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemRhs? Rhs { get => _explicitNullValueRhs; set { _explicitNullValueRhs = value; AdditionalData?.Remove("rhs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rhs"); else _explicitNullProperties?.Remove("rhs"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemRhs? _explicitNullValueRhs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemRhs Rhs { get => _explicitNullValueRhs; set { _explicitNullValueRhs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rhs"); else _explicitNullProperties?.Remove("rhs"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemRhs Rhs { get => _explicitNullValueRhs; set { _explicitNullValueRhs = value; AdditionalData?.Remove("rhs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rhs"); else _explicitNullProperties?.Remove("rhs"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemRhs _explicitNullValueRhs = default!;
 #endif
         /// <summary>

@@ -18,10 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connector") is { } nullNodeConnector && nullNodeConnector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connector = null;
-            if (parseNode.GetChildNode("reconsentNeeded") is { } nullNodeReconsentNeeded && nullNodeReconsentNeeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReconsentNeeded = null;
-            if (parseNode.GetChildNode("reinstallNeeded") is { } nullNodeReinstallNeeded && nullNodeReinstallNeeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReinstallNeeded = null;
-            if (parseNode.GetChildNode("serviceSync") is { } nullNodeServiceSync && nullNodeServiceSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceSync = null;
+            if (parseNode.GetChildNode("connector") is null) { _explicitNullValueConnector = default!; _explicitNullProperties?.Remove("connector"); }
+            else if (parseNode.GetChildNode("connector") is { } nullNodeConnector && nullNodeConnector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connector = null;
+            if (parseNode.GetChildNode("reconsentNeeded") is null) { _explicitNullValueReconsentNeeded = default!; _explicitNullProperties?.Remove("reconsentNeeded"); }
+            else if (parseNode.GetChildNode("reconsentNeeded") is { } nullNodeReconsentNeeded && nullNodeReconsentNeeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReconsentNeeded = null;
+            if (parseNode.GetChildNode("reinstallNeeded") is null) { _explicitNullValueReinstallNeeded = default!; _explicitNullProperties?.Remove("reinstallNeeded"); }
+            else if (parseNode.GetChildNode("reinstallNeeded") is { } nullNodeReinstallNeeded && nullNodeReinstallNeeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReinstallNeeded = null;
+            if (parseNode.GetChildNode("serviceSync") is null) { _explicitNullValueServiceSync = default!; _explicitNullProperties?.Remove("serviceSync"); }
+            else if (parseNode.GetChildNode("serviceSync") is { } nullNodeServiceSync && nullNodeServiceSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceSync = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>A connector that defines how Vercel accesses an external service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector? Connector { get => _explicitNullValueConnector; set { _explicitNullValueConnector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connector"); else _explicitNullProperties?.Remove("connector"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector? Connector { get => _explicitNullValueConnector; set { _explicitNullValueConnector = value; AdditionalData?.Remove("connector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connector"); else _explicitNullProperties?.Remove("connector"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector? _explicitNullValueConnector = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector Connector { get => _explicitNullValueConnector; set { _explicitNullValueConnector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connector"); else _explicitNullProperties?.Remove("connector"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector Connector { get => _explicitNullValueConnector; set { _explicitNullValueConnector = value; AdditionalData?.Remove("connector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connector"); else _explicitNullProperties?.Remove("connector"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnector _explicitNullValueConnector = default!;
 #endif
         /// <summary>Existing authorizations no longer cover the connector&apos;s configured scopes, so they must be re-authorized.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent? ReconsentNeeded { get => _explicitNullValueReconsentNeeded; set { _explicitNullValueReconsentNeeded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reconsentNeeded"); else _explicitNullProperties?.Remove("reconsentNeeded"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent? ReconsentNeeded { get => _explicitNullValueReconsentNeeded; set { _explicitNullValueReconsentNeeded = value; AdditionalData?.Remove("reconsentNeeded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reconsentNeeded"); else _explicitNullProperties?.Remove("reconsentNeeded"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent? _explicitNullValueReconsentNeeded = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent ReconsentNeeded { get => _explicitNullValueReconsentNeeded; set { _explicitNullValueReconsentNeeded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reconsentNeeded"); else _explicitNullProperties?.Remove("reconsentNeeded"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent ReconsentNeeded { get => _explicitNullValueReconsentNeeded; set { _explicitNullValueReconsentNeeded = value; AdditionalData?.Remove("reconsentNeeded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reconsentNeeded"); else _explicitNullProperties?.Remove("reconsentNeeded"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent _explicitNullValueReconsentNeeded = default!;
 #endif
         /// <summary>When true, prompt a team owner or administrator to reinstall the connector before relying on the change.</summary>
-        public bool? ReinstallNeeded { get => _explicitNullValueReinstallNeeded; set { _explicitNullValueReinstallNeeded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reinstallNeeded"); else _explicitNullProperties?.Remove("reinstallNeeded"); } }
+        public bool? ReinstallNeeded { get => _explicitNullValueReinstallNeeded; set { _explicitNullValueReinstallNeeded = value; AdditionalData?.Remove("reinstallNeeded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reinstallNeeded"); else _explicitNullProperties?.Remove("reinstallNeeded"); } }
         private bool? _explicitNullValueReinstallNeeded = default!;
         /// <summary>Provider-side configuration synchronization result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync? ServiceSync { get => _explicitNullValueServiceSync; set { _explicitNullValueServiceSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceSync"); else _explicitNullProperties?.Remove("serviceSync"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync? ServiceSync { get => _explicitNullValueServiceSync; set { _explicitNullValueServiceSync = value; AdditionalData?.Remove("serviceSync"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceSync"); else _explicitNullProperties?.Remove("serviceSync"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync? _explicitNullValueServiceSync = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync ServiceSync { get => _explicitNullValueServiceSync; set { _explicitNullValueServiceSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceSync"); else _explicitNullProperties?.Remove("serviceSync"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync ServiceSync { get => _explicitNullValueServiceSync; set { _explicitNullValueServiceSync = value; AdditionalData?.Remove("serviceSync"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceSync"); else _explicitNullProperties?.Remove("serviceSync"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync _explicitNullValueServiceSync = default!;
 #endif
         /// <summary>

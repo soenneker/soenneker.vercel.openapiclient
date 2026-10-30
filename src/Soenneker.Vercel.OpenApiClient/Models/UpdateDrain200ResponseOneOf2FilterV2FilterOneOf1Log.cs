@@ -17,23 +17,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("legacy_excludeCachedStaticAssetLogs") is { } nullNodeLegacyExcludeCachedStaticAssetLogs && nullNodeLegacyExcludeCachedStaticAssetLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegacyExcludeCachedStaticAssetLogs = null;
-            if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
+            if (parseNode.GetChildNode("legacy_excludeCachedStaticAssetLogs") is null) { _explicitNullValueLegacyExcludeCachedStaticAssetLogs = default!; _explicitNullProperties?.Remove("legacy_excludeCachedStaticAssetLogs"); }
+            else if (parseNode.GetChildNode("legacy_excludeCachedStaticAssetLogs") is { } nullNodeLegacyExcludeCachedStaticAssetLogs && nullNodeLegacyExcludeCachedStaticAssetLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegacyExcludeCachedStaticAssetLogs = null;
+            if (parseNode.GetChildNode("sources") is null) { _explicitNullValueSources = default!; _explicitNullProperties?.Remove("sources"); }
+            else if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The legacy_excludeCachedStaticAssetLogs property</summary>
-        public bool? LegacyExcludeCachedStaticAssetLogs { get => _explicitNullValueLegacyExcludeCachedStaticAssetLogs; set { _explicitNullValueLegacyExcludeCachedStaticAssetLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy_excludeCachedStaticAssetLogs"); else _explicitNullProperties?.Remove("legacy_excludeCachedStaticAssetLogs"); } }
+        public bool? LegacyExcludeCachedStaticAssetLogs { get => _explicitNullValueLegacyExcludeCachedStaticAssetLogs; set { _explicitNullValueLegacyExcludeCachedStaticAssetLogs = value; AdditionalData?.Remove("legacy_excludeCachedStaticAssetLogs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy_excludeCachedStaticAssetLogs"); else _explicitNullProperties?.Remove("legacy_excludeCachedStaticAssetLogs"); } }
         private bool? _explicitNullValueLegacyExcludeCachedStaticAssetLogs = default!;
         /// <summary>The sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2FilterV2FilterOneOf1LogSourcesItem?>? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2FilterV2FilterOneOf1LogSourcesItem?>? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; AdditionalData?.Remove("sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2FilterV2FilterOneOf1LogSourcesItem?>? _explicitNullValueSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2FilterV2FilterOneOf1LogSourcesItem?> Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2FilterV2FilterOneOf1LogSourcesItem?> Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; AdditionalData?.Remove("sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2FilterV2FilterOneOf1LogSourcesItem?> _explicitNullValueSources = default!;
 #endif
         /// <summary>

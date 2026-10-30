@@ -18,25 +18,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blockedAt") is { } nullNodeBlockedAt && nullNodeBlockedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedAt = null;
-            if (parseNode.GetChildNode("blockedDueToOverageType") is { } nullNodeBlockedDueToOverageType && nullNodeBlockedDueToOverageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedDueToOverageType = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("unpauseAt") is { } nullNodeUnpauseAt && nullNodeUnpauseAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnpauseAt = null;
+            if (parseNode.GetChildNode("blockedAt") is null) { _explicitNullValueBlockedAt = default!; _explicitNullProperties?.Remove("blockedAt"); }
+            else if (parseNode.GetChildNode("blockedAt") is { } nullNodeBlockedAt && nullNodeBlockedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedAt = null;
+            if (parseNode.GetChildNode("blockedDueToOverageType") is null) { _explicitNullValueBlockedDueToOverageType = default!; _explicitNullProperties?.Remove("blockedDueToOverageType"); }
+            else if (parseNode.GetChildNode("blockedDueToOverageType") is { } nullNodeBlockedDueToOverageType && nullNodeBlockedDueToOverageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedDueToOverageType = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("unpauseAt") is null) { _explicitNullValueUnpauseAt = default!; _explicitNullProperties?.Remove("unpauseAt"); }
+            else if (parseNode.GetChildNode("unpauseAt") is { } nullNodeUnpauseAt && nullNodeUnpauseAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnpauseAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blockedAt property</summary>
-        public double? BlockedAt { get => _explicitNullValueBlockedAt; set { _explicitNullValueBlockedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedAt"); else _explicitNullProperties?.Remove("blockedAt"); } }
+        public double? BlockedAt { get => _explicitNullValueBlockedAt; set { _explicitNullValueBlockedAt = value; AdditionalData?.Remove("blockedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedAt"); else _explicitNullProperties?.Remove("blockedAt"); } }
         private double? _explicitNullValueBlockedAt = default!;
         /// <summary>The blockedDueToOverageType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType? BlockedDueToOverageType { get => _explicitNullValueBlockedDueToOverageType; set { _explicitNullValueBlockedDueToOverageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedDueToOverageType"); else _explicitNullProperties?.Remove("blockedDueToOverageType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType? BlockedDueToOverageType { get => _explicitNullValueBlockedDueToOverageType; set { _explicitNullValueBlockedDueToOverageType = value; AdditionalData?.Remove("blockedDueToOverageType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedDueToOverageType"); else _explicitNullProperties?.Remove("blockedDueToOverageType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType? _explicitNullValueBlockedDueToOverageType = default!;
         /// <summary>The reason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason? _explicitNullValueReason = default!;
         /// <summary>Since September 2026. Set only by `billing-usage-alerts` for usage plans with a `blockDurationMs`; its presence marks a pause that expires on its own.</summary>
-        public double? UnpauseAt { get => _explicitNullValueUnpauseAt; set { _explicitNullValueUnpauseAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unpauseAt"); else _explicitNullProperties?.Remove("unpauseAt"); } }
+        public double? UnpauseAt { get => _explicitNullValueUnpauseAt; set { _explicitNullValueUnpauseAt = value; AdditionalData?.Remove("unpauseAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unpauseAt"); else _explicitNullProperties?.Remove("unpauseAt"); } }
         private double? _explicitNullValueUnpauseAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock"/> and sets the default values.
@@ -66,8 +70,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blockedAt", n => { BlockedAt = n.GetDoubleValue(); } },
-                { "blockedDueToOverageType", n => { BlockedDueToOverageType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType>(); } },
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason>(); } },
+                { "blockedDueToOverageType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBlockedDueToOverageType = default; _explicitNullProperties?.Remove("blockedDueToOverageType"); AdditionalData["blockedDueToOverageType"] = unknown; } else { BlockedDueToOverageType = parsed; AdditionalData.Remove("blockedDueToOverageType"); } } },
+                { "reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReason = default; _explicitNullProperties?.Remove("reason"); AdditionalData["reason"] = unknown; } else { Reason = parsed; AdditionalData.Remove("reason"); } } },
                 { "unpauseAt", n => { UnpauseAt = n.GetDoubleValue(); } },
             };
         }

@@ -18,29 +18,141 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("actorId") is null) { _explicitNullValueActorId = default!; _explicitNullProperties?.Remove("actorId"); }
+            else if (parseNode.GetChildNode("actorId") is { } nullNodeActorId && nullNodeActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorId = null;
+            if (parseNode.GetChildNode("actorName") is null) { _explicitNullValueActorName = default!; _explicitNullProperties?.Remove("actorName"); }
+            else if (parseNode.GetChildNode("actorName") is { } nullNodeActorName && nullNodeActorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorName = null;
+            if (parseNode.GetChildNode("actorType") is null) { _explicitNullValueActorType = default!; _explicitNullProperties?.Remove("actorType"); }
+            else if (parseNode.GetChildNode("actorType") is { } nullNodeActorType && nullNodeActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorType = null;
+            if (parseNode.GetChildNode("automated") is null) { _explicitNullValueAutomated = default!; _explicitNullProperties?.Remove("automated"); }
+            else if (parseNode.GetChildNode("automated") is { } nullNodeAutomated && nullNodeAutomated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Automated = null;
+            if (parseNode.GetChildNode("isDowngrade") is null) { _explicitNullValueIsDowngrade = default!; _explicitNullProperties?.Remove("isDowngrade"); }
+            else if (parseNode.GetChildNode("isDowngrade") is { } nullNodeIsDowngrade && nullNodeIsDowngrade.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDowngrade = null;
+            if (parseNode.GetChildNode("isReactivate") is null) { _explicitNullValueIsReactivate = default!; _explicitNullProperties?.Remove("isReactivate"); }
+            else if (parseNode.GetChildNode("isReactivate") is { } nullNodeIsReactivate && nullNodeIsReactivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReactivate = null;
+            if (parseNode.GetChildNode("isTrialUpgrade") is null) { _explicitNullValueIsTrialUpgrade = default!; _explicitNullProperties?.Remove("isTrialUpgrade"); }
+            else if (parseNode.GetChildNode("isTrialUpgrade") is { } nullNodeIsTrialUpgrade && nullNodeIsTrialUpgrade.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTrialUpgrade = null;
+            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
+            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("prevPlan") is null) { _explicitNullValuePrevPlan = default!; _explicitNullProperties?.Remove("prevPlan"); }
+            else if (parseNode.GetChildNode("prevPlan") is { } nullNodePrevPlan && nullNodePrevPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevPlan = null;
+            if (parseNode.GetChildNode("priorPlan") is null) { _explicitNullValuePriorPlan = default!; _explicitNullProperties?.Remove("priorPlan"); }
+            else if (parseNode.GetChildNode("priorPlan") is { } nullNodePriorPlan && nullNodePriorPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriorPlan = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("removedMemberCount") is null) { _explicitNullValueRemovedMemberCount = default!; _explicitNullProperties?.Remove("removedMemberCount"); }
+            else if (parseNode.GetChildNode("removedMemberCount") is { } nullNodeRemovedMemberCount && nullNodeRemovedMemberCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedMemberCount = null;
+            if (parseNode.GetChildNode("removedUsers") is null) { _explicitNullValueRemovedUsers = default!; _explicitNullProperties?.Remove("removedUsers"); }
+            else if (parseNode.GetChildNode("removedUsers") is { } nullNodeRemovedUsers && nullNodeRemovedUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedUsers = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("userAgent") is null) { _explicitNullValueUserAgent = default!; _explicitNullProperties?.Remove("userAgent"); }
+            else if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
         }
 
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>Okta user id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
-        private string? _explicitNullValueCurrency = default!;
+        public string? ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; AdditionalData?.Remove("actorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorId"); else _explicitNullProperties?.Remove("actorId"); } }
+        private string? _explicitNullValueActorId = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
-        private string _explicitNullValueCurrency = default!;
+        public string ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; AdditionalData?.Remove("actorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorId"); else _explicitNullProperties?.Remove("actorId"); } }
+        private string _explicitNullValueActorId = default!;
 #endif
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
-        private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The price property</summary>
-        public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
-        private double? _explicitNullValuePrice = default!;
+        /// <summary>The actorName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorName { get => _explicitNullValueActorName; set { _explicitNullValueActorName = value; AdditionalData?.Remove("actorName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorName"); else _explicitNullProperties?.Remove("actorName"); } }
+        private string? _explicitNullValueActorName = default!;
+#nullable restore
+#else
+        public string ActorName { get => _explicitNullValueActorName; set { _explicitNullValueActorName = value; AdditionalData?.Remove("actorName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorName"); else _explicitNullProperties?.Remove("actorName"); } }
+        private string _explicitNullValueActorName = default!;
+#endif
+        /// <summary>The actorType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get => _explicitNullValueActorType; set { _explicitNullValueActorType = value; AdditionalData?.Remove("actorType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorType"); else _explicitNullProperties?.Remove("actorType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? _explicitNullValueActorType = default!;
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether the plan change was system-initiated rather than human-initiated.</summary>
+        public bool? Automated { get => _explicitNullValueAutomated; set { _explicitNullValueAutomated = value; AdditionalData?.Remove("automated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automated"); else _explicitNullProperties?.Remove("automated"); } }
+        private bool? _explicitNullValueAutomated = default!;
+        /// <summary>The isDowngrade property</summary>
+        public bool? IsDowngrade { get => _explicitNullValueIsDowngrade; set { _explicitNullValueIsDowngrade = value; AdditionalData?.Remove("isDowngrade"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDowngrade"); else _explicitNullProperties?.Remove("isDowngrade"); } }
+        private bool? _explicitNullValueIsDowngrade = default!;
+        /// <summary>The isReactivate property</summary>
+        public bool? IsReactivate { get => _explicitNullValueIsReactivate; set { _explicitNullValueIsReactivate = value; AdditionalData?.Remove("isReactivate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isReactivate"); else _explicitNullProperties?.Remove("isReactivate"); } }
+        private bool? _explicitNullValueIsReactivate = default!;
+        /// <summary>The isTrialUpgrade property</summary>
+        public bool? IsTrialUpgrade { get => _explicitNullValueIsTrialUpgrade; set { _explicitNullValueIsTrialUpgrade = value; AdditionalData?.Remove("isTrialUpgrade"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isTrialUpgrade"); else _explicitNullProperties?.Remove("isTrialUpgrade"); } }
+        private bool? _explicitNullValueIsTrialUpgrade = default!;
+        /// <summary>The plan property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        private string? _explicitNullValuePlan = default!;
+#nullable restore
+#else
+        public string Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        private string _explicitNullValuePlan = default!;
+#endif
+        /// <summary>The prevPlan property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrevPlan { get => _explicitNullValuePrevPlan; set { _explicitNullValuePrevPlan = value; AdditionalData?.Remove("prevPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevPlan"); else _explicitNullProperties?.Remove("prevPlan"); } }
+        private string? _explicitNullValuePrevPlan = default!;
+#nullable restore
+#else
+        public string PrevPlan { get => _explicitNullValuePrevPlan; set { _explicitNullValuePrevPlan = value; AdditionalData?.Remove("prevPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevPlan"); else _explicitNullProperties?.Remove("prevPlan"); } }
+        private string _explicitNullValuePrevPlan = default!;
+#endif
+        /// <summary>The priorPlan property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PriorPlan { get => _explicitNullValuePriorPlan; set { _explicitNullValuePriorPlan = value; AdditionalData?.Remove("priorPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorPlan"); else _explicitNullProperties?.Remove("priorPlan"); } }
+        private string? _explicitNullValuePriorPlan = default!;
+#nullable restore
+#else
+        public string PriorPlan { get => _explicitNullValuePriorPlan; set { _explicitNullValuePriorPlan = value; AdditionalData?.Remove("priorPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorPlan"); else _explicitNullProperties?.Remove("priorPlan"); } }
+        private string _explicitNullValuePriorPlan = default!;
+#endif
+        /// <summary>Why the plan changed. For downgrades, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `user_downgrade`, `trial_expired`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string? _explicitNullValueReason = default!;
+#nullable restore
+#else
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string _explicitNullValueReason = default!;
+#endif
+        /// <summary>The removedMemberCount property</summary>
+        public double? RemovedMemberCount { get => _explicitNullValueRemovedMemberCount; set { _explicitNullValueRemovedMemberCount = value; AdditionalData?.Remove("removedMemberCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedMemberCount"); else _explicitNullProperties?.Remove("removedMemberCount"); } }
+        private double? _explicitNullValueRemovedMemberCount = default!;
+        /// <summary>The removedUsers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263RemovedUsersProperty? RemovedUsers { get => _explicitNullValueRemovedUsers; set { _explicitNullValueRemovedUsers = value; AdditionalData?.Remove("removedUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedUsers"); else _explicitNullProperties?.Remove("removedUsers"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263RemovedUsersProperty? _explicitNullValueRemovedUsers = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263RemovedUsersProperty RemovedUsers { get => _explicitNullValueRemovedUsers; set { _explicitNullValueRemovedUsers = value; AdditionalData?.Remove("removedUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedUsers"); else _explicitNullProperties?.Remove("removedUsers"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263RemovedUsersProperty _explicitNullValueRemovedUsers = default!;
+#endif
+        /// <summary>The timestamp property</summary>
+        public double? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private double? _explicitNullValueTimestamp = default!;
+        /// <summary>The userAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        private string? _explicitNullValueUserAgent = default!;
+#nullable restore
+#else
+        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        private string _explicitNullValueUserAgent = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263"/> and sets the default values.
         /// </summary>
@@ -66,9 +178,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency", n => { Currency = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "price", n => { Price = n.GetDoubleValue(); } },
+                { "actorId", n => { ActorId = n.GetStringValue(); } },
+                { "actorName", n => { ActorName = n.GetStringValue(); } },
+                { "actorType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActorType = default; _explicitNullProperties?.Remove("actorType"); AdditionalData["actorType"] = unknown; } else { ActorType = parsed; AdditionalData.Remove("actorType"); } } },
+                { "automated", n => { Automated = n.GetBoolValue(); } },
+                { "isDowngrade", n => { IsDowngrade = n.GetBoolValue(); } },
+                { "isReactivate", n => { IsReactivate = n.GetBoolValue(); } },
+                { "isTrialUpgrade", n => { IsTrialUpgrade = n.GetBoolValue(); } },
+                { "plan", n => { Plan = n.GetStringValue(); } },
+                { "prevPlan", n => { PrevPlan = n.GetStringValue(); } },
+                { "priorPlan", n => { PriorPlan = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "removedMemberCount", n => { RemovedMemberCount = n.GetDoubleValue(); } },
+                { "removedUsers", n => { RemovedUsers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263RemovedUsersProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263RemovedUsersProperty.CreateFromDiscriminatorValue); } },
+                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,9 +202,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteDoubleValue("price", Price);
+            writer.WriteStringValue("actorId", ActorId);
+            writer.WriteStringValue("actorName", ActorName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
+            writer.WriteBoolValue("automated", Automated);
+            writer.WriteBoolValue("isDowngrade", IsDowngrade);
+            writer.WriteBoolValue("isReactivate", IsReactivate);
+            writer.WriteBoolValue("isTrialUpgrade", IsTrialUpgrade);
+            writer.WriteStringValue("plan", Plan);
+            writer.WriteStringValue("prevPlan", PrevPlan);
+            writer.WriteStringValue("priorPlan", PriorPlan);
+            writer.WriteStringValue("reason", Reason);
+            writer.WriteDoubleValue("removedMemberCount", RemovedMemberCount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263RemovedUsersProperty>("removedUsers", RemovedUsers);
+            writer.WriteDoubleValue("timestamp", Timestamp);
+            writer.WriteStringValue("userAgent", UserAgent);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

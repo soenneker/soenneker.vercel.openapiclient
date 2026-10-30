@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customRotationWarning") is { } nullNodeCustomRotationWarning && nullNodeCustomRotationWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRotationWarning = null;
-            if (parseNode.GetChildNode("maxDelayHours") is { } nullNodeMaxDelayHours && nullNodeMaxDelayHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDelayHours = null;
+            if (parseNode.GetChildNode("customRotationWarning") is null) { _explicitNullValueCustomRotationWarning = default!; _explicitNullProperties?.Remove("customRotationWarning"); }
+            else if (parseNode.GetChildNode("customRotationWarning") is { } nullNodeCustomRotationWarning && nullNodeCustomRotationWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRotationWarning = null;
+            if (parseNode.GetChildNode("maxDelayHours") is null) { _explicitNullValueMaxDelayHours = default!; _explicitNullProperties?.Remove("maxDelayHours"); }
+            else if (parseNode.GetChildNode("maxDelayHours") is { } nullNodeMaxDelayHours && nullNodeMaxDelayHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDelayHours = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The customRotationWarning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomRotationWarning { get => _explicitNullValueCustomRotationWarning; set { _explicitNullValueCustomRotationWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRotationWarning"); else _explicitNullProperties?.Remove("customRotationWarning"); } }
+        public string? CustomRotationWarning { get => _explicitNullValueCustomRotationWarning; set { _explicitNullValueCustomRotationWarning = value; AdditionalData?.Remove("customRotationWarning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRotationWarning"); else _explicitNullProperties?.Remove("customRotationWarning"); } }
         private string? _explicitNullValueCustomRotationWarning = default!;
 #nullable restore
 #else
-        public string CustomRotationWarning { get => _explicitNullValueCustomRotationWarning; set { _explicitNullValueCustomRotationWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRotationWarning"); else _explicitNullProperties?.Remove("customRotationWarning"); } }
+        public string CustomRotationWarning { get => _explicitNullValueCustomRotationWarning; set { _explicitNullValueCustomRotationWarning = value; AdditionalData?.Remove("customRotationWarning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRotationWarning"); else _explicitNullProperties?.Remove("customRotationWarning"); } }
         private string _explicitNullValueCustomRotationWarning = default!;
 #endif
         /// <summary>The maxDelayHours property</summary>
-        public double? MaxDelayHours { get => _explicitNullValueMaxDelayHours; set { _explicitNullValueMaxDelayHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDelayHours"); else _explicitNullProperties?.Remove("maxDelayHours"); } }
+        public double? MaxDelayHours { get => _explicitNullValueMaxDelayHours; set { _explicitNullValueMaxDelayHours = value; AdditionalData?.Remove("maxDelayHours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDelayHours"); else _explicitNullProperties?.Remove("maxDelayHours"); } }
         private double? _explicitNullValueMaxDelayHours = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotationOneOf1"/> and sets the default values.

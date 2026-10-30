@@ -18,10 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gitOwnerName") is { } nullNodeGitOwnerName && nullNodeGitOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitOwnerName = null;
-            if (parseNode.GetChildNode("gitRepositoryName") is { } nullNodeGitRepositoryName && nullNodeGitRepositoryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitRepositoryName = null;
-            if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
-            if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
+            if (parseNode.GetChildNode("gitOwnerName") is null) { _explicitNullValueGitOwnerName = default!; _explicitNullProperties?.Remove("gitOwnerName"); }
+            else if (parseNode.GetChildNode("gitOwnerName") is { } nullNodeGitOwnerName && nullNodeGitOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitOwnerName = null;
+            if (parseNode.GetChildNode("gitRepositoryName") is null) { _explicitNullValueGitRepositoryName = default!; _explicitNullProperties?.Remove("gitRepositoryName"); }
+            else if (parseNode.GetChildNode("gitRepositoryName") is { } nullNodeGitRepositoryName && nullNodeGitRepositoryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitRepositoryName = null;
+            if (parseNode.GetChildNode("next") is null) { _explicitNullValueNext = default!; _explicitNullProperties?.Remove("next"); }
+            else if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("previous") is null) { _explicitNullValuePrevious = default!; _explicitNullProperties?.Remove("previous"); }
+            else if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The gitOwnerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitOwnerName { get => _explicitNullValueGitOwnerName; set { _explicitNullValueGitOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitOwnerName"); else _explicitNullProperties?.Remove("gitOwnerName"); } }
+        public string? GitOwnerName { get => _explicitNullValueGitOwnerName; set { _explicitNullValueGitOwnerName = value; AdditionalData?.Remove("gitOwnerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitOwnerName"); else _explicitNullProperties?.Remove("gitOwnerName"); } }
         private string? _explicitNullValueGitOwnerName = default!;
 #nullable restore
 #else
-        public string GitOwnerName { get => _explicitNullValueGitOwnerName; set { _explicitNullValueGitOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitOwnerName"); else _explicitNullProperties?.Remove("gitOwnerName"); } }
+        public string GitOwnerName { get => _explicitNullValueGitOwnerName; set { _explicitNullValueGitOwnerName = value; AdditionalData?.Remove("gitOwnerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitOwnerName"); else _explicitNullProperties?.Remove("gitOwnerName"); } }
         private string _explicitNullValueGitOwnerName = default!;
 #endif
         /// <summary>The gitRepositoryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitRepositoryName { get => _explicitNullValueGitRepositoryName; set { _explicitNullValueGitRepositoryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepositoryName"); else _explicitNullProperties?.Remove("gitRepositoryName"); } }
+        public string? GitRepositoryName { get => _explicitNullValueGitRepositoryName; set { _explicitNullValueGitRepositoryName = value; AdditionalData?.Remove("gitRepositoryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepositoryName"); else _explicitNullProperties?.Remove("gitRepositoryName"); } }
         private string? _explicitNullValueGitRepositoryName = default!;
 #nullable restore
 #else
-        public string GitRepositoryName { get => _explicitNullValueGitRepositoryName; set { _explicitNullValueGitRepositoryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepositoryName"); else _explicitNullProperties?.Remove("gitRepositoryName"); } }
+        public string GitRepositoryName { get => _explicitNullValueGitRepositoryName; set { _explicitNullValueGitRepositoryName = value; AdditionalData?.Remove("gitRepositoryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepositoryName"); else _explicitNullProperties?.Remove("gitRepositoryName"); } }
         private string _explicitNullValueGitRepositoryName = default!;
 #endif
         /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Next? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Next? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Next? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Next Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Next Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Next _explicitNullValueNext = default!;
 #endif
         /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Previous? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Previous? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Previous? _explicitNullValuePrevious = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Previous Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Previous Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Previous _explicitNullValuePrevious = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
-            if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
+            if (parseNode.GetChildNode("passwordProtection") is null) { _explicitNullValuePasswordProtection = default!; _explicitNullProperties?.Remove("passwordProtection"); }
+            else if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
+            if (parseNode.GetChildNode("ssoProtection") is null) { _explicitNullValueSsoProtection = default!; _explicitNullProperties?.Remove("ssoProtection"); }
+            else if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
         }
 
         /// <summary>Allows to protect project deployments with a password</summary>

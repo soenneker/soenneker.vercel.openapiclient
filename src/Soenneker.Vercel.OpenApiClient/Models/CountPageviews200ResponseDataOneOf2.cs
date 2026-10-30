@@ -17,17 +17,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pageviews") is { } nullNodePageviews && nullNodePageviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pageviews = null;
-            if (parseNode.GetChildNode("visitors") is { } nullNodeVisitors && nullNodeVisitors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visitors = null;
+            if (parseNode.GetChildNode("pageviews") is null) { _explicitNullValuePageviews = default!; _explicitNullProperties?.Remove("pageviews"); }
+            else if (parseNode.GetChildNode("pageviews") is { } nullNodePageviews && nullNodePageviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pageviews = null;
+            if (parseNode.GetChildNode("visitors") is null) { _explicitNullValueVisitors = default!; _explicitNullProperties?.Remove("visitors"); }
+            else if (parseNode.GetChildNode("visitors") is { } nullNodeVisitors && nullNodeVisitors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visitors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The pageviews property</summary>
-        public double? Pageviews { get => _explicitNullValuePageviews; set { _explicitNullValuePageviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageviews"); else _explicitNullProperties?.Remove("pageviews"); } }
+        public double? Pageviews { get => _explicitNullValuePageviews; set { _explicitNullValuePageviews = value; AdditionalData?.Remove("pageviews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageviews"); else _explicitNullProperties?.Remove("pageviews"); } }
         private double? _explicitNullValuePageviews = default!;
         /// <summary>The visitors property</summary>
-        public double? Visitors { get => _explicitNullValueVisitors; set { _explicitNullValueVisitors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visitors"); else _explicitNullProperties?.Remove("visitors"); } }
+        public double? Visitors { get => _explicitNullValueVisitors; set { _explicitNullValueVisitors = value; AdditionalData?.Remove("visitors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visitors"); else _explicitNullProperties?.Remove("visitors"); } }
         private double? _explicitNullValueVisitors = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CountPageviews200ResponseDataOneOf2"/> and sets the default values.

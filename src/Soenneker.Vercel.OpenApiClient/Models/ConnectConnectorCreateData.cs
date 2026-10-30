@@ -8,112 +8,27 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKey"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeGithub"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinear"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinq"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuth"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypePhoton"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSendblue"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflake"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflakeWif"/>
+    /// Provider configuration. With type, provide the complete configuration for that type. With service and connectionMethod, provide only credentials and preferences; Connect supplies the type, endpoints, templates, and defaults. Other connector types accept an arbitrary object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConnectConnectorCreateData : IComposedTypeWrapper, IParsable
-    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
-        // Preserve ambiguous union payloads without inventing a discriminator.
-        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    public partial class ConnectConnectorCreateData : IAdditionalDataHolder, IParsable
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataMember1? ConnectConnectorCreateDataMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataMember1 ConnectConnectorCreateDataMember1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKey"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKey? ConnectConnectorCreateDataTypeApiKey { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKey ConnectConnectorCreateDataTypeApiKey { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeGithub"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeGithub? ConnectConnectorCreateDataTypeGithub { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeGithub ConnectConnectorCreateDataTypeGithub { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinear"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinear? ConnectConnectorCreateDataTypeLinear { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinear ConnectConnectorCreateDataTypeLinear { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinq"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinq? ConnectConnectorCreateDataTypeLinq { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinq ConnectConnectorCreateDataTypeLinq { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuth"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuth? ConnectConnectorCreateDataTypeOAuth { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuth ConnectConnectorCreateDataTypeOAuth { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypePhoton"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypePhoton? ConnectConnectorCreateDataTypePhoton { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypePhoton ConnectConnectorCreateDataTypePhoton { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce? ConnectConnectorCreateDataTypeSalesforce { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce ConnectConnectorCreateDataTypeSalesforce { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSendblue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSendblue? ConnectConnectorCreateDataTypeSendblue { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSendblue ConnectConnectorCreateDataTypeSendblue { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack? ConnectConnectorCreateDataTypeSlack { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack ConnectConnectorCreateDataTypeSlack { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflake"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflake? ConnectConnectorCreateDataTypeSnowflake { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflake ConnectConnectorCreateDataTypeSnowflake { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflakeWif"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflakeWif? ConnectConnectorCreateDataTypeSnowflakeWif { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflakeWif ConnectConnectorCreateDataTypeSnowflakeWif { get; set; }
-#endif
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+        }
+
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateData"/> and sets the default values.
+        /// </summary>
+        public ConnectConnectorCreateData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -122,41 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateData();
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("clientId") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("appId") != null && parseNode.GetChildNode("appSlug") != null && parseNode.GetChildNode("appName") != null && parseNode.GetChildNode("clientId") != null))();
-            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("clientId") != null && parseNode.GetChildNode("clientSecret") != null))();
-            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("apiToken") != null))();
-            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("consumerKey") != null && parseNode.GetChildNode("consumerSecret") != null && parseNode.GetChildNode("loginHost") != null))();
-            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("apiKeyId") != null && parseNode.GetChildNode("apiSecretKey") != null))();
-            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("appId") != null && parseNode.GetChildNode("appName") != null && parseNode.GetChildNode("clientId") != null && parseNode.GetChildNode("clientSecret") != null))();
-            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("accountIdentifier") != null))();
-            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("projectId") != null && parseNode.GetChildNode("projectSecret") != null))();
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeOAuth = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuth(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeGithub = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeGithub(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeLinear = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinear(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeLinq = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeLinq(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeSalesforce = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSalesforce(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeSendblue = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSendblue(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeSlack = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlack(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8) result.ConnectConnectorCreateDataTypeSnowflake = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSnowflake(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ConnectConnectorCreateDataTypePhoton = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypePhoton(), parseNode);
-            if (result.ConnectConnectorCreateDataMember1 == null && result.ConnectConnectorCreateDataTypeApiKey == null && result.ConnectConnectorCreateDataTypeGithub == null && result.ConnectConnectorCreateDataTypeLinear == null && result.ConnectConnectorCreateDataTypeLinq == null && result.ConnectConnectorCreateDataTypeOAuth == null && result.ConnectConnectorCreateDataTypePhoton == null && result.ConnectConnectorCreateDataTypeSalesforce == null && result.ConnectConnectorCreateDataTypeSendblue == null && result.ConnectConnectorCreateDataTypeSlack == null && result.ConnectConnectorCreateDataTypeSnowflake == null && result.ConnectConnectorCreateDataTypeSnowflakeWif == null) result.UnrecognizedValue = unionPayload;
-return result;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,11 +45,9 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ConnectConnectorCreateDataMember1 != null || ConnectConnectorCreateDataTypeApiKey != null || ConnectConnectorCreateDataTypeGithub != null || ConnectConnectorCreateDataTypeLinear != null || ConnectConnectorCreateDataTypeLinq != null || ConnectConnectorCreateDataTypeOAuth != null || ConnectConnectorCreateDataTypePhoton != null || ConnectConnectorCreateDataTypeSalesforce != null || ConnectConnectorCreateDataTypeSendblue != null || ConnectConnectorCreateDataTypeSlack != null || ConnectConnectorCreateDataTypeSnowflake != null || ConnectConnectorCreateDataTypeSnowflakeWif != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConnectConnectorCreateDataMember1, ConnectConnectorCreateDataTypeApiKey, ConnectConnectorCreateDataTypeGithub, ConnectConnectorCreateDataTypeLinear, ConnectConnectorCreateDataTypeLinq, ConnectConnectorCreateDataTypeOAuth, ConnectConnectorCreateDataTypePhoton, ConnectConnectorCreateDataTypeSalesforce, ConnectConnectorCreateDataTypeSendblue, ConnectConnectorCreateDataTypeSlack, ConnectConnectorCreateDataTypeSnowflake, ConnectConnectorCreateDataTypeSnowflakeWif);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -176,23 +55,9 @@ return result;
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ConnectConnectorCreateDataMember1 != null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataMember1); return; }
-            if (ConnectConnectorCreateDataTypeApiKey != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeApiKey is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeApiKey); return; }
-            if (ConnectConnectorCreateDataTypeGithub != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeGithub is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeGithub); return; }
-            if (ConnectConnectorCreateDataTypeLinear != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeLinear is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeLinear); return; }
-            if (ConnectConnectorCreateDataTypeLinq != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeLinq is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeLinq); return; }
-            if (ConnectConnectorCreateDataTypeOAuth != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeOAuth is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeOAuth); return; }
-            if (ConnectConnectorCreateDataTypePhoton != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypePhoton is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypePhoton); return; }
-            if (ConnectConnectorCreateDataTypeSalesforce != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeSalesforce is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeSalesforce); return; }
-            if (ConnectConnectorCreateDataTypeSendblue != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeSendblue is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeSendblue); return; }
-            if (ConnectConnectorCreateDataTypeSlack != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSnowflake == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeSlack is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeSlack); return; }
-            if (ConnectConnectorCreateDataTypeSnowflake != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflakeWif == null) { if (ConnectConnectorCreateDataTypeSnowflake is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeSnowflake); return; }
-            if (ConnectConnectorCreateDataTypeSnowflakeWif != null && ConnectConnectorCreateDataMember1 == null && ConnectConnectorCreateDataTypeApiKey == null && ConnectConnectorCreateDataTypeGithub == null && ConnectConnectorCreateDataTypeLinear == null && ConnectConnectorCreateDataTypeLinq == null && ConnectConnectorCreateDataTypeOAuth == null && ConnectConnectorCreateDataTypePhoton == null && ConnectConnectorCreateDataTypeSalesforce == null && ConnectConnectorCreateDataTypeSendblue == null && ConnectConnectorCreateDataTypeSlack == null && ConnectConnectorCreateDataTypeSnowflake == null) { if (ConnectConnectorCreateDataTypeSnowflakeWif is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectConnectorCreateDataTypeSnowflakeWif); return; }
-
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataMember1>(null, ConnectConnectorCreateDataMember1, ConnectConnectorCreateDataTypeApiKey, ConnectConnectorCreateDataTypeGithub, ConnectConnectorCreateDataTypeLinear, ConnectConnectorCreateDataTypeLinq, ConnectConnectorCreateDataTypeOAuth, ConnectConnectorCreateDataTypePhoton, ConnectConnectorCreateDataTypeSalesforce, ConnectConnectorCreateDataTypeSendblue, ConnectConnectorCreateDataTypeSlack, ConnectConnectorCreateDataTypeSnowflake, ConnectConnectorCreateDataTypeSnowflakeWif);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("en") is { } nullNodeEn && nullNodeEn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) En = null;
+            if (parseNode.GetChildNode("en") is null) { _explicitNullValueEn = default!; _explicitNullProperties?.Remove("en"); }
+            else if (parseNode.GetChildNode("en") is { } nullNodeEn && nullNodeEn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) En = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The en property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? En { get => _explicitNullValueEn; set { _explicitNullValueEn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("en"); else _explicitNullProperties?.Remove("en"); } }
+        public string? En { get => _explicitNullValueEn; set { _explicitNullValueEn = value; AdditionalData?.Remove("en"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("en"); else _explicitNullProperties?.Remove("en"); } }
         private string? _explicitNullValueEn = default!;
 #nullable restore
 #else
-        public string En { get => _explicitNullValueEn; set { _explicitNullValueEn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("en"); else _explicitNullProperties?.Remove("en"); } }
+        public string En { get => _explicitNullValueEn; set { _explicitNullValueEn = value; AdditionalData?.Remove("en"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("en"); else _explicitNullProperties?.Remove("en"); } }
         private string _explicitNullValueEn = default!;
 #endif
         /// <summary>

@@ -17,86 +17,95 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("caseSensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
-            if (parseNode.GetChildNode("dest") is { } nullNodeDest && nullNodeDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dest = null;
-            if (parseNode.GetChildNode("has") is { } nullNodeHas && nullNodeHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Has = null;
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("missing") is { } nullNodeMissing && nullNodeMissing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Missing = null;
-            if (parseNode.GetChildNode("respectOriginCacheControl") is { } nullNodeRespectOriginCacheControl && nullNodeRespectOriginCacheControl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespectOriginCacheControl = null;
-            if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("transforms") is { } nullNodeTransforms && nullNodeTransforms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transforms = null;
+            if (parseNode.GetChildNode("caseSensitive") is null) { _explicitNullValueCaseSensitive = default!; _explicitNullProperties?.Remove("caseSensitive"); }
+            else if (parseNode.GetChildNode("caseSensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
+            if (parseNode.GetChildNode("dest") is null) { _explicitNullValueDest = default!; _explicitNullProperties?.Remove("dest"); }
+            else if (parseNode.GetChildNode("dest") is { } nullNodeDest && nullNodeDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dest = null;
+            if (parseNode.GetChildNode("has") is null) { _explicitNullValueHas = default!; _explicitNullProperties?.Remove("has"); }
+            else if (parseNode.GetChildNode("has") is { } nullNodeHas && nullNodeHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Has = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("missing") is null) { _explicitNullValueMissing = default!; _explicitNullProperties?.Remove("missing"); }
+            else if (parseNode.GetChildNode("missing") is { } nullNodeMissing && nullNodeMissing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Missing = null;
+            if (parseNode.GetChildNode("respectOriginCacheControl") is null) { _explicitNullValueRespectOriginCacheControl = default!; _explicitNullProperties?.Remove("respectOriginCacheControl"); }
+            else if (parseNode.GetChildNode("respectOriginCacheControl") is { } nullNodeRespectOriginCacheControl && nullNodeRespectOriginCacheControl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespectOriginCacheControl = null;
+            if (parseNode.GetChildNode("src") is null) { _explicitNullValueSrc = default!; _explicitNullProperties?.Remove("src"); }
+            else if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("transforms") is null) { _explicitNullValueTransforms = default!; _explicitNullProperties?.Remove("transforms"); }
+            else if (parseNode.GetChildNode("transforms") is { } nullNodeTransforms && nullNodeTransforms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transforms = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The caseSensitive property</summary>
-        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caseSensitive"); else _explicitNullProperties?.Remove("caseSensitive"); } }
+        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; AdditionalData?.Remove("caseSensitive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caseSensitive"); else _explicitNullProperties?.Remove("caseSensitive"); } }
         private bool? _explicitNullValueCaseSensitive = default!;
         /// <summary>The dest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
+        public string? Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; AdditionalData?.Remove("dest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
         private string? _explicitNullValueDest = default!;
 #nullable restore
 #else
-        public string Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
+        public string Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; AdditionalData?.Remove("dest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
         private string _explicitNullValueDest = default!;
 #endif
         /// <summary>The has property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHasItem>? Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHasItem>? Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; AdditionalData?.Remove("has"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHasItem>? _explicitNullValueHas = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHasItem> Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHasItem> Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; AdditionalData?.Remove("has"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHasItem> _explicitNullValueHas = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The missing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteMissingItem>? Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteMissingItem>? Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; AdditionalData?.Remove("missing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteMissingItem>? _explicitNullValueMissing = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteMissingItem> Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteMissingItem> Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; AdditionalData?.Remove("missing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteMissingItem> _explicitNullValueMissing = default!;
 #endif
         /// <summary>The respectOriginCacheControl property</summary>
-        public bool? RespectOriginCacheControl { get => _explicitNullValueRespectOriginCacheControl; set { _explicitNullValueRespectOriginCacheControl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("respectOriginCacheControl"); else _explicitNullProperties?.Remove("respectOriginCacheControl"); } }
+        public bool? RespectOriginCacheControl { get => _explicitNullValueRespectOriginCacheControl; set { _explicitNullValueRespectOriginCacheControl = value; AdditionalData?.Remove("respectOriginCacheControl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("respectOriginCacheControl"); else _explicitNullProperties?.Remove("respectOriginCacheControl"); } }
         private bool? _explicitNullValueRespectOriginCacheControl = default!;
         /// <summary>The src property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        public string? Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; AdditionalData?.Remove("src"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
         private string? _explicitNullValueSrc = default!;
 #nullable restore
 #else
-        public string Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        public string Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; AdditionalData?.Remove("src"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
         private string _explicitNullValueSrc = default!;
 #endif
         /// <summary>The status property</summary>
-        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private int? _explicitNullValueStatus = default!;
         /// <summary>The transforms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteTransformsItem>? Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteTransformsItem>? Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; AdditionalData?.Remove("transforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteTransformsItem>? _explicitNullValueTransforms = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteTransformsItem> Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteTransformsItem> Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; AdditionalData?.Remove("transforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AddRouteRequestRouteRouteTransformsItem> _explicitNullValueTransforms = default!;
 #endif
         /// <summary>

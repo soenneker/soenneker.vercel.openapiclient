@@ -17,11 +17,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
-            if (parseNode.GetChildNode("edgeConfigSyncingEnabled") is { } nullNodeEdgeConfigSyncingEnabled && nullNodeEdgeConfigSyncingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSyncingEnabled = null;
-            if (parseNode.GetChildNode("edgeConfigTokenId") is { } nullNodeEdgeConfigTokenId && nullNodeEdgeConfigTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigTokenId = null;
-            if (parseNode.GetChildNode("globalConfigId") is { } nullNodeGlobalConfigId && nullNodeGlobalConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalConfigId = null;
-            if (parseNode.GetChildNode("globalConfigSyncingEnabled") is { } nullNodeGlobalConfigSyncingEnabled && nullNodeGlobalConfigSyncingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalConfigSyncingEnabled = null;
+            if (parseNode.GetChildNode("edgeConfigId") is null) { _explicitNullValueEdgeConfigId = default!; _explicitNullProperties?.Remove("edgeConfigId"); }
+            else if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
+            if (parseNode.GetChildNode("edgeConfigSyncingEnabled") is null) { _explicitNullValueEdgeConfigSyncingEnabled = default!; _explicitNullProperties?.Remove("edgeConfigSyncingEnabled"); }
+            else if (parseNode.GetChildNode("edgeConfigSyncingEnabled") is { } nullNodeEdgeConfigSyncingEnabled && nullNodeEdgeConfigSyncingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSyncingEnabled = null;
+            if (parseNode.GetChildNode("edgeConfigTokenId") is null) { _explicitNullValueEdgeConfigTokenId = default!; _explicitNullProperties?.Remove("edgeConfigTokenId"); }
+            else if (parseNode.GetChildNode("edgeConfigTokenId") is { } nullNodeEdgeConfigTokenId && nullNodeEdgeConfigTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigTokenId = null;
+            if (parseNode.GetChildNode("globalConfigId") is null) { _explicitNullValueGlobalConfigId = default!; _explicitNullProperties?.Remove("globalConfigId"); }
+            else if (parseNode.GetChildNode("globalConfigId") is { } nullNodeGlobalConfigId && nullNodeGlobalConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalConfigId = null;
+            if (parseNode.GetChildNode("globalConfigSyncingEnabled") is null) { _explicitNullValueGlobalConfigSyncingEnabled = default!; _explicitNullProperties?.Remove("globalConfigSyncingEnabled"); }
+            else if (parseNode.GetChildNode("globalConfigSyncingEnabled") is { } nullNodeGlobalConfigSyncingEnabled && nullNodeGlobalConfigSyncingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalConfigSyncingEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        public string? EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
         private string? _explicitNullValueEdgeConfigId = default!;
 #nullable restore
 #else
-        public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
         private string _explicitNullValueEdgeConfigId = default!;
 #endif
         /// <summary>The edgeConfigSyncingEnabled property</summary>
-        public bool? EdgeConfigSyncingEnabled { get => _explicitNullValueEdgeConfigSyncingEnabled; set { _explicitNullValueEdgeConfigSyncingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSyncingEnabled"); else _explicitNullProperties?.Remove("edgeConfigSyncingEnabled"); } }
+        public bool? EdgeConfigSyncingEnabled { get => _explicitNullValueEdgeConfigSyncingEnabled; set { _explicitNullValueEdgeConfigSyncingEnabled = value; AdditionalData?.Remove("edgeConfigSyncingEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSyncingEnabled"); else _explicitNullProperties?.Remove("edgeConfigSyncingEnabled"); } }
         private bool? _explicitNullValueEdgeConfigSyncingEnabled = default!;
         /// <summary>The edgeConfigTokenId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigTokenId { get => _explicitNullValueEdgeConfigTokenId; set { _explicitNullValueEdgeConfigTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenId"); else _explicitNullProperties?.Remove("edgeConfigTokenId"); } }
+        public string? EdgeConfigTokenId { get => _explicitNullValueEdgeConfigTokenId; set { _explicitNullValueEdgeConfigTokenId = value; AdditionalData?.Remove("edgeConfigTokenId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenId"); else _explicitNullProperties?.Remove("edgeConfigTokenId"); } }
         private string? _explicitNullValueEdgeConfigTokenId = default!;
 #nullable restore
 #else
-        public string EdgeConfigTokenId { get => _explicitNullValueEdgeConfigTokenId; set { _explicitNullValueEdgeConfigTokenId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenId"); else _explicitNullProperties?.Remove("edgeConfigTokenId"); } }
+        public string EdgeConfigTokenId { get => _explicitNullValueEdgeConfigTokenId; set { _explicitNullValueEdgeConfigTokenId = value; AdditionalData?.Remove("edgeConfigTokenId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenId"); else _explicitNullProperties?.Remove("edgeConfigTokenId"); } }
         private string _explicitNullValueEdgeConfigTokenId = default!;
 #endif
         /// <summary>The globalConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
+        public string? GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; AdditionalData?.Remove("globalConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
         private string? _explicitNullValueGlobalConfigId = default!;
 #nullable restore
 #else
-        public string GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
+        public string GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; AdditionalData?.Remove("globalConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
         private string _explicitNullValueGlobalConfigId = default!;
 #endif
         /// <summary>The globalConfigSyncingEnabled property</summary>
-        public bool? GlobalConfigSyncingEnabled { get => _explicitNullValueGlobalConfigSyncingEnabled; set { _explicitNullValueGlobalConfigSyncingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigSyncingEnabled"); else _explicitNullProperties?.Remove("globalConfigSyncingEnabled"); } }
+        public bool? GlobalConfigSyncingEnabled { get => _explicitNullValueGlobalConfigSyncingEnabled; set { _explicitNullValueGlobalConfigSyncingEnabled = value; AdditionalData?.Remove("globalConfigSyncingEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigSyncingEnabled"); else _explicitNullProperties?.Remove("globalConfigSyncingEnabled"); } }
         private bool? _explicitNullValueGlobalConfigSyncingEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsExperimentation"/> and sets the default values.

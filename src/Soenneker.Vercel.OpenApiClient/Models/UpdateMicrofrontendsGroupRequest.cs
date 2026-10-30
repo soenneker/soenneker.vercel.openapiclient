@@ -17,34 +17,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enablePolyrepoBranchRouting") is { } nullNodeEnablePolyrepoBranchRouting && nullNodeEnablePolyrepoBranchRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePolyrepoBranchRouting = null;
-            if (parseNode.GetChildNode("fallbackEnvironment") is { } nullNodeFallbackEnvironment && nullNodeFallbackEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackEnvironment = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("enablePolyrepoBranchRouting") is null) { _explicitNullValueEnablePolyrepoBranchRouting = default!; _explicitNullProperties?.Remove("enablePolyrepoBranchRouting"); }
+            else if (parseNode.GetChildNode("enablePolyrepoBranchRouting") is { } nullNodeEnablePolyrepoBranchRouting && nullNodeEnablePolyrepoBranchRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePolyrepoBranchRouting = null;
+            if (parseNode.GetChildNode("fallbackEnvironment") is null) { _explicitNullValueFallbackEnvironment = default!; _explicitNullProperties?.Remove("fallbackEnvironment"); }
+            else if (parseNode.GetChildNode("fallbackEnvironment") is { } nullNodeFallbackEnvironment && nullNodeFallbackEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackEnvironment = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether Preview Deployments can link to branches with the same name in other Git repositories.</summary>
-        public bool? EnablePolyrepoBranchRouting { get => _explicitNullValueEnablePolyrepoBranchRouting; set { _explicitNullValueEnablePolyrepoBranchRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePolyrepoBranchRouting"); else _explicitNullProperties?.Remove("enablePolyrepoBranchRouting"); } }
+        public bool? EnablePolyrepoBranchRouting { get => _explicitNullValueEnablePolyrepoBranchRouting; set { _explicitNullValueEnablePolyrepoBranchRouting = value; AdditionalData?.Remove("enablePolyrepoBranchRouting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePolyrepoBranchRouting"); else _explicitNullProperties?.Remove("enablePolyrepoBranchRouting"); } }
         private bool? _explicitNullValueEnablePolyrepoBranchRouting = default!;
         /// <summary>The new fallback environment for the microfrontends group. Must be &quot;SAME_ENV&quot;, &quot;PRODUCTION&quot;, or a valid custom environment slug from the default app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackEnvironment { get => _explicitNullValueFallbackEnvironment; set { _explicitNullValueFallbackEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackEnvironment"); else _explicitNullProperties?.Remove("fallbackEnvironment"); } }
+        public string? FallbackEnvironment { get => _explicitNullValueFallbackEnvironment; set { _explicitNullValueFallbackEnvironment = value; AdditionalData?.Remove("fallbackEnvironment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackEnvironment"); else _explicitNullProperties?.Remove("fallbackEnvironment"); } }
         private string? _explicitNullValueFallbackEnvironment = default!;
 #nullable restore
 #else
-        public string FallbackEnvironment { get => _explicitNullValueFallbackEnvironment; set { _explicitNullValueFallbackEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackEnvironment"); else _explicitNullProperties?.Remove("fallbackEnvironment"); } }
+        public string FallbackEnvironment { get => _explicitNullValueFallbackEnvironment; set { _explicitNullValueFallbackEnvironment = value; AdditionalData?.Remove("fallbackEnvironment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackEnvironment"); else _explicitNullProperties?.Remove("fallbackEnvironment"); } }
         private string _explicitNullValueFallbackEnvironment = default!;
 #endif
         /// <summary>The new name for the existing microfrontends group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

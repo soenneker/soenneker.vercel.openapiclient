@@ -17,10 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currencyConversionRate") is { } nullNodeCurrencyConversionRate && nullNodeCurrencyConversionRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyConversionRate = null;
-            if (parseNode.GetChildNode("resourceId") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
-            if (parseNode.GetChildNode("stripeSharedPaymentTokenUsed") is { } nullNodeStripeSharedPaymentTokenUsed && nullNodeStripeSharedPaymentTokenUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StripeSharedPaymentTokenUsed = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("currencyConversionRate") is null) { _explicitNullValueCurrencyConversionRate = default!; _explicitNullProperties?.Remove("currencyConversionRate"); }
+            else if (parseNode.GetChildNode("currencyConversionRate") is { } nullNodeCurrencyConversionRate && nullNodeCurrencyConversionRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyConversionRate = null;
+            if (parseNode.GetChildNode("resourceId") is null) { _explicitNullValueResourceId = default!; _explicitNullProperties?.Remove("resourceId"); }
+            else if (parseNode.GetChildNode("resourceId") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
+            if (parseNode.GetChildNode("stripeSharedPaymentTokenUsed") is null) { _explicitNullValueStripeSharedPaymentTokenUsed = default!; _explicitNullProperties?.Remove("stripeSharedPaymentTokenUsed"); }
+            else if (parseNode.GetChildNode("stripeSharedPaymentTokenUsed") is { } nullNodeStripeSharedPaymentTokenUsed && nullNodeStripeSharedPaymentTokenUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StripeSharedPaymentTokenUsed = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The currency conversion rate used by the provider</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyConversionRate { get => _explicitNullValueCurrencyConversionRate; set { _explicitNullValueCurrencyConversionRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyConversionRate"); else _explicitNullProperties?.Remove("currencyConversionRate"); } }
+        public string? CurrencyConversionRate { get => _explicitNullValueCurrencyConversionRate; set { _explicitNullValueCurrencyConversionRate = value; AdditionalData?.Remove("currencyConversionRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyConversionRate"); else _explicitNullProperties?.Remove("currencyConversionRate"); } }
         private string? _explicitNullValueCurrencyConversionRate = default!;
 #nullable restore
 #else
-        public string CurrencyConversionRate { get => _explicitNullValueCurrencyConversionRate; set { _explicitNullValueCurrencyConversionRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyConversionRate"); else _explicitNullProperties?.Remove("currencyConversionRate"); } }
+        public string CurrencyConversionRate { get => _explicitNullValueCurrencyConversionRate; set { _explicitNullValueCurrencyConversionRate = value; AdditionalData?.Remove("currencyConversionRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyConversionRate"); else _explicitNullProperties?.Remove("currencyConversionRate"); } }
         private string _explicitNullValueCurrencyConversionRate = default!;
 #endif
         /// <summary>Provider resource id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
         private string? _explicitNullValueResourceId = default!;
 #nullable restore
 #else
-        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
         private string _explicitNullValueResourceId = default!;
 #endif
         /// <summary>Whether a Stripe Shared Payment Token was used for this purchase. Only applicable when type is stripe_invoice_immediate.</summary>
-        public bool? StripeSharedPaymentTokenUsed { get => _explicitNullValueStripeSharedPaymentTokenUsed; set { _explicitNullValueStripeSharedPaymentTokenUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripeSharedPaymentTokenUsed"); else _explicitNullProperties?.Remove("stripeSharedPaymentTokenUsed"); } }
+        public bool? StripeSharedPaymentTokenUsed { get => _explicitNullValueStripeSharedPaymentTokenUsed; set { _explicitNullValueStripeSharedPaymentTokenUsed = value; AdditionalData?.Remove("stripeSharedPaymentTokenUsed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripeSharedPaymentTokenUsed"); else _explicitNullProperties?.Remove("stripeSharedPaymentTokenUsed"); } }
         private bool? _explicitNullValueStripeSharedPaymentTokenUsed = default!;
         /// <summary>The type of the purchase provider</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentProviderType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentProviderType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentProviderType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentProvider"/> and sets the default values.
@@ -79,7 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "currencyConversionRate", n => { CurrencyConversionRate = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "stripeSharedPaymentTokenUsed", n => { StripeSharedPaymentTokenUsed = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentProviderType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentProviderType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

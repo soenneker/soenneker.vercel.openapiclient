@@ -18,23 +18,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("gitUserLogin") is { } nullNodeGitUserLogin && nullNodeGitUserLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitUserLogin = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("gitUserLogin") is null) { _explicitNullValueGitUserLogin = default!; _explicitNullProperties?.Remove("gitUserLogin"); }
+            else if (parseNode.GetChildNode("gitUserLogin") is { } nullNodeGitUserLogin && nullNodeGitUserLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitUserLogin = null;
         }
 
         /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf1NsnbSideEffectAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf1NsnbSideEffectAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf1NsnbSideEffectAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The gitUserLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitUserLogin { get => _explicitNullValueGitUserLogin; set { _explicitNullValueGitUserLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUserLogin"); else _explicitNullProperties?.Remove("gitUserLogin"); } }
+        public string? GitUserLogin { get => _explicitNullValueGitUserLogin; set { _explicitNullValueGitUserLogin = value; AdditionalData?.Remove("gitUserLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUserLogin"); else _explicitNullProperties?.Remove("gitUserLogin"); } }
         private string? _explicitNullValueGitUserLogin = default!;
 #nullable restore
 #else
-        public string GitUserLogin { get => _explicitNullValueGitUserLogin; set { _explicitNullValueGitUserLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUserLogin"); else _explicitNullProperties?.Remove("gitUserLogin"); } }
+        public string GitUserLogin { get => _explicitNullValueGitUserLogin; set { _explicitNullValueGitUserLogin = value; AdditionalData?.Remove("gitUserLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUserLogin"); else _explicitNullProperties?.Remove("gitUserLogin"); } }
         private string _explicitNullValueGitUserLogin = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf1NsnbSideEffectAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf1NsnbSideEffectAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "gitUserLogin", n => { GitUserLogin = n.GetStringValue(); } },
             };
         }

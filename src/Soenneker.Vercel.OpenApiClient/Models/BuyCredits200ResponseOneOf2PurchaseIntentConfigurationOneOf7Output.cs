@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("planChangeId") is { } nullNodePlanChangeId && nullNodePlanChangeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanChangeId = null;
+            if (parseNode.GetChildNode("planChangeId") is null) { _explicitNullValuePlanChangeId = default!; _explicitNullProperties?.Remove("planChangeId"); }
+            else if (parseNode.GetChildNode("planChangeId") is { } nullNodePlanChangeId && nullNodePlanChangeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanChangeId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The committed Plan revision used to calculate the purchase price</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanChangeId { get => _explicitNullValuePlanChangeId; set { _explicitNullValuePlanChangeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planChangeId"); else _explicitNullProperties?.Remove("planChangeId"); } }
+        public string? PlanChangeId { get => _explicitNullValuePlanChangeId; set { _explicitNullValuePlanChangeId = value; AdditionalData?.Remove("planChangeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planChangeId"); else _explicitNullProperties?.Remove("planChangeId"); } }
         private string? _explicitNullValuePlanChangeId = default!;
 #nullable restore
 #else
-        public string PlanChangeId { get => _explicitNullValuePlanChangeId; set { _explicitNullValuePlanChangeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planChangeId"); else _explicitNullProperties?.Remove("planChangeId"); } }
+        public string PlanChangeId { get => _explicitNullValuePlanChangeId; set { _explicitNullValuePlanChangeId = value; AdditionalData?.Remove("planChangeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planChangeId"); else _explicitNullProperties?.Remove("planChangeId"); } }
         private string _explicitNullValuePlanChangeId = default!;
 #endif
         /// <summary>

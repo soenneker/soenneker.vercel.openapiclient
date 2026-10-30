@@ -17,25 +17,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ceilingDays") is { } nullNodeCeilingDays && nullNodeCeilingDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CeilingDays = null;
-            if (parseNode.GetChildNode("ceilingMode") is { } nullNodeCeilingMode && nullNodeCeilingMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CeilingMode = null;
-            if (parseNode.GetChildNode("defaultDays") is { } nullNodeDefaultDays && nullNodeDefaultDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDays = null;
-            if (parseNode.GetChildNode("defaultMode") is { } nullNodeDefaultMode && nullNodeDefaultMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultMode = null;
+            if (parseNode.GetChildNode("ceilingDays") is null) { _explicitNullValueCeilingDays = default!; _explicitNullProperties?.Remove("ceilingDays"); }
+            else if (parseNode.GetChildNode("ceilingDays") is { } nullNodeCeilingDays && nullNodeCeilingDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CeilingDays = null;
+            if (parseNode.GetChildNode("ceilingMode") is null) { _explicitNullValueCeilingMode = default!; _explicitNullProperties?.Remove("ceilingMode"); }
+            else if (parseNode.GetChildNode("ceilingMode") is { } nullNodeCeilingMode && nullNodeCeilingMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CeilingMode = null;
+            if (parseNode.GetChildNode("defaultDays") is null) { _explicitNullValueDefaultDays = default!; _explicitNullProperties?.Remove("defaultDays"); }
+            else if (parseNode.GetChildNode("defaultDays") is { } nullNodeDefaultDays && nullNodeDefaultDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDays = null;
+            if (parseNode.GetChildNode("defaultMode") is null) { _explicitNullValueDefaultMode = default!; _explicitNullProperties?.Remove("defaultMode"); }
+            else if (parseNode.GetChildNode("defaultMode") is { } nullNodeDefaultMode && nullNodeDefaultMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ceilingDays property</summary>
-        public double? CeilingDays { get => _explicitNullValueCeilingDays; set { _explicitNullValueCeilingDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ceilingDays"); else _explicitNullProperties?.Remove("ceilingDays"); } }
+        public double? CeilingDays { get => _explicitNullValueCeilingDays; set { _explicitNullValueCeilingDays = value; AdditionalData?.Remove("ceilingDays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ceilingDays"); else _explicitNullProperties?.Remove("ceilingDays"); } }
         private double? _explicitNullValueCeilingDays = default!;
         /// <summary>The ceilingMode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionCeilingMode? CeilingMode { get => _explicitNullValueCeilingMode; set { _explicitNullValueCeilingMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ceilingMode"); else _explicitNullProperties?.Remove("ceilingMode"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionCeilingMode? CeilingMode { get => _explicitNullValueCeilingMode; set { _explicitNullValueCeilingMode = value; AdditionalData?.Remove("ceilingMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ceilingMode"); else _explicitNullProperties?.Remove("ceilingMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionCeilingMode? _explicitNullValueCeilingMode = default!;
         /// <summary>The defaultDays property</summary>
-        public double? DefaultDays { get => _explicitNullValueDefaultDays; set { _explicitNullValueDefaultDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultDays"); else _explicitNullProperties?.Remove("defaultDays"); } }
+        public double? DefaultDays { get => _explicitNullValueDefaultDays; set { _explicitNullValueDefaultDays = value; AdditionalData?.Remove("defaultDays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultDays"); else _explicitNullProperties?.Remove("defaultDays"); } }
         private double? _explicitNullValueDefaultDays = default!;
         /// <summary>The defaultMode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionDefaultMode? DefaultMode { get => _explicitNullValueDefaultMode; set { _explicitNullValueDefaultMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultMode"); else _explicitNullProperties?.Remove("defaultMode"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionDefaultMode? DefaultMode { get => _explicitNullValueDefaultMode; set { _explicitNullValueDefaultMode = value; AdditionalData?.Remove("defaultMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultMode"); else _explicitNullProperties?.Remove("defaultMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionDefaultMode? _explicitNullValueDefaultMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43Retention"/> and sets the default values.
@@ -63,9 +67,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ceilingDays", n => { CeilingDays = n.GetDoubleValue(); } },
-                { "ceilingMode", n => { CeilingMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionCeilingMode>(); } },
+                { "ceilingMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionCeilingMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCeilingMode = default; _explicitNullProperties?.Remove("ceilingMode"); AdditionalData["ceilingMode"] = unknown; } else { CeilingMode = parsed; AdditionalData.Remove("ceilingMode"); } } },
                 { "defaultDays", n => { DefaultDays = n.GetDoubleValue(); } },
-                { "defaultMode", n => { DefaultMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionDefaultMode>(); } },
+                { "defaultMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43RetentionDefaultMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDefaultMode = default; _explicitNullProperties?.Remove("defaultMode"); AdditionalData["defaultMode"] = unknown; } else { DefaultMode = parsed; AdditionalData.Remove("defaultMode"); } } },
             };
         }
         /// <summary>

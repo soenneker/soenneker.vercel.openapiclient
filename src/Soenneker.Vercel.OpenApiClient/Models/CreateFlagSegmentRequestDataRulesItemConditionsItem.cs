@@ -17,10 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cmp") is { } nullNodeCmp && nullNodeCmp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmp = null;
-            if (parseNode.GetChildNode("cmpOptions") is { } nullNodeCmpOptions && nullNodeCmpOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CmpOptions = null;
-            if (parseNode.GetChildNode("lhs") is { } nullNodeLhs && nullNodeLhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lhs = null;
-            if (parseNode.GetChildNode("rhs") is { } nullNodeRhs && nullNodeRhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rhs = null;
+            if (parseNode.GetChildNode("cmp") is null) { _explicitNullValueCmp = default!; _explicitNullProperties?.Remove("cmp"); }
+            else if (parseNode.GetChildNode("cmp") is { } nullNodeCmp && nullNodeCmp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmp = null;
+            if (parseNode.GetChildNode("cmpOptions") is null) { _explicitNullValueCmpOptions = default!; _explicitNullProperties?.Remove("cmpOptions"); }
+            else if (parseNode.GetChildNode("cmpOptions") is { } nullNodeCmpOptions && nullNodeCmpOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CmpOptions = null;
+            if (parseNode.GetChildNode("lhs") is null) { _explicitNullValueLhs = default!; _explicitNullProperties?.Remove("lhs"); }
+            else if (parseNode.GetChildNode("lhs") is { } nullNodeLhs && nullNodeLhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lhs = null;
+            if (parseNode.GetChildNode("rhs") is null) { _explicitNullValueRhs = default!; _explicitNullProperties?.Remove("rhs"); }
+            else if (parseNode.GetChildNode("rhs") is { } nullNodeRhs && nullNodeRhs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rhs = null;
         }
 
         /// <summary>The cmp property</summary>

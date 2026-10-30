@@ -18,10 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("drainName") is { } nullNodeDrainName && nullNodeDrainName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DrainName = null;
-            if (parseNode.GetChildNode("drainUrl") is { } nullNodeDrainUrl && nullNodeDrainUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DrainUrl = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("integrationName") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
+            if (parseNode.GetChildNode("drainName") is null) { _explicitNullValueDrainName = default!; _explicitNullProperties?.Remove("drainName"); }
+            else if (parseNode.GetChildNode("drainName") is { } nullNodeDrainName && nullNodeDrainName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DrainName = null;
+            if (parseNode.GetChildNode("drainUrl") is null) { _explicitNullValueDrainUrl = default!; _explicitNullProperties?.Remove("drainUrl"); }
+            else if (parseNode.GetChildNode("drainUrl") is { } nullNodeDrainUrl && nullNodeDrainUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DrainUrl = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("integrationName") is null) { _explicitNullValueIntegrationName = default!; _explicitNullProperties?.Remove("integrationName"); }
+            else if (parseNode.GetChildNode("integrationName") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The drainName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DrainName { get => _explicitNullValueDrainName; set { _explicitNullValueDrainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainName"); else _explicitNullProperties?.Remove("drainName"); } }
+        public string? DrainName { get => _explicitNullValueDrainName; set { _explicitNullValueDrainName = value; AdditionalData?.Remove("drainName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainName"); else _explicitNullProperties?.Remove("drainName"); } }
         private string? _explicitNullValueDrainName = default!;
 #nullable restore
 #else
-        public string DrainName { get => _explicitNullValueDrainName; set { _explicitNullValueDrainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainName"); else _explicitNullProperties?.Remove("drainName"); } }
+        public string DrainName { get => _explicitNullValueDrainName; set { _explicitNullValueDrainName = value; AdditionalData?.Remove("drainName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainName"); else _explicitNullProperties?.Remove("drainName"); } }
         private string _explicitNullValueDrainName = default!;
 #endif
         /// <summary>The drainUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DrainUrl { get => _explicitNullValueDrainUrl; set { _explicitNullValueDrainUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainUrl"); else _explicitNullProperties?.Remove("drainUrl"); } }
+        public string? DrainUrl { get => _explicitNullValueDrainUrl; set { _explicitNullValueDrainUrl = value; AdditionalData?.Remove("drainUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainUrl"); else _explicitNullProperties?.Remove("drainUrl"); } }
         private string? _explicitNullValueDrainUrl = default!;
 #nullable restore
 #else
-        public string DrainUrl { get => _explicitNullValueDrainUrl; set { _explicitNullValueDrainUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainUrl"); else _explicitNullProperties?.Remove("drainUrl"); } }
+        public string DrainUrl { get => _explicitNullValueDrainUrl; set { _explicitNullValueDrainUrl = value; AdditionalData?.Remove("drainUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drainUrl"); else _explicitNullProperties?.Remove("drainUrl"); } }
         private string _explicitNullValueDrainUrl = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The integrationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
         private string? _explicitNullValueIntegrationName = default!;
 #nullable restore
 #else
-        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
         private string _explicitNullValueIntegrationName = default!;
 #endif
         /// <summary>

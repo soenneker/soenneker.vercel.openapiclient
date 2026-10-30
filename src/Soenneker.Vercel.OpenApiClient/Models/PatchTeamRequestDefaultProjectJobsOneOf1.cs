@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lint") is { } nullNodeLint && nullNodeLint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lint = null;
-            if (parseNode.GetChildNode("typecheck") is { } nullNodeTypecheck && nullNodeTypecheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Typecheck = null;
+            if (parseNode.GetChildNode("lint") is null) { _explicitNullValueLint = default!; _explicitNullProperties?.Remove("lint"); }
+            else if (parseNode.GetChildNode("lint") is { } nullNodeLint && nullNodeLint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lint = null;
+            if (parseNode.GetChildNode("typecheck") is null) { _explicitNullValueTypecheck = default!; _explicitNullProperties?.Remove("typecheck"); }
+            else if (parseNode.GetChildNode("typecheck") is { } nullNodeTypecheck && nullNodeTypecheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Typecheck = null;
         }
 
         /// <summary>The lint property</summary>

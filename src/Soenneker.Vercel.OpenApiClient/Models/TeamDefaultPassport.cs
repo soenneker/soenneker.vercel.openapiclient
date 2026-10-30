@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connectorId") is { } nullNodeConnectorId && nullNodeConnectorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectorId = null;
-            if (parseNode.GetChildNode("deploymentType") is { } nullNodeDeploymentType && nullNodeDeploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentType = null;
+            if (parseNode.GetChildNode("connectorId") is null) { _explicitNullValueConnectorId = default!; _explicitNullProperties?.Remove("connectorId"); }
+            else if (parseNode.GetChildNode("connectorId") is { } nullNodeConnectorId && nullNodeConnectorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectorId = null;
+            if (parseNode.GetChildNode("deploymentType") is null) { _explicitNullValueDeploymentType = default!; _explicitNullProperties?.Remove("deploymentType"); }
+            else if (parseNode.GetChildNode("deploymentType") is { } nullNodeDeploymentType && nullNodeDeploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Default Passport configuration for new projects in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorId { get => _explicitNullValueConnectorId; set { _explicitNullValueConnectorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorId"); else _explicitNullProperties?.Remove("connectorId"); } }
+        public string? ConnectorId { get => _explicitNullValueConnectorId; set { _explicitNullValueConnectorId = value; AdditionalData?.Remove("connectorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorId"); else _explicitNullProperties?.Remove("connectorId"); } }
         private string? _explicitNullValueConnectorId = default!;
 #nullable restore
 #else
-        public string ConnectorId { get => _explicitNullValueConnectorId; set { _explicitNullValueConnectorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorId"); else _explicitNullProperties?.Remove("connectorId"); } }
+        public string ConnectorId { get => _explicitNullValueConnectorId; set { _explicitNullValueConnectorId = value; AdditionalData?.Remove("connectorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorId"); else _explicitNullProperties?.Remove("connectorId"); } }
         private string _explicitNullValueConnectorId = default!;
 #endif
         /// <summary>Default Passport configuration for new projects in this team.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassportDeploymentType? DeploymentType { get => _explicitNullValueDeploymentType; set { _explicitNullValueDeploymentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentType"); else _explicitNullProperties?.Remove("deploymentType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassportDeploymentType? DeploymentType { get => _explicitNullValueDeploymentType; set { _explicitNullValueDeploymentType = value; AdditionalData?.Remove("deploymentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentType"); else _explicitNullProperties?.Remove("deploymentType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassportDeploymentType? _explicitNullValueDeploymentType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport"/> and sets the default values.
@@ -65,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
-                { "deploymentType", n => { DeploymentType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassportDeploymentType>(); } },
+                { "deploymentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassportDeploymentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeploymentType = default; _explicitNullProperties?.Remove("deploymentType"); AdditionalData["deploymentType"] = unknown; } else { DeploymentType = parsed; AdditionalData.Remove("deploymentType"); } } },
             };
         }
         /// <summary>

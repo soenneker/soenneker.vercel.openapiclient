@@ -17,12 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("conditionGroup") is { } nullNodeConditionGroup && nullNodeConditionGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionGroup = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("valid") is { } nullNodeValid && nullNodeValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Valid = null;
-            if (parseNode.GetChildNode("validationErrors") is { } nullNodeValidationErrors && nullNodeValidationErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationErrors = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("conditionGroup") is null) { _explicitNullValueConditionGroup = default!; _explicitNullProperties?.Remove("conditionGroup"); }
+            else if (parseNode.GetChildNode("conditionGroup") is { } nullNodeConditionGroup && nullNodeConditionGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionGroup = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("valid") is null) { _explicitNullValueValid = default!; _explicitNullProperties?.Remove("valid"); }
+            else if (parseNode.GetChildNode("valid") is { } nullNodeValid && nullNodeValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Valid = null;
+            if (parseNode.GetChildNode("validationErrors") is null) { _explicitNullValueValidationErrors = default!; _explicitNullProperties?.Remove("validationErrors"); }
+            else if (parseNode.GetChildNode("validationErrors") is { } nullNodeValidationErrors && nullNodeValidationErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationErrors = null;
         }
 
         /// <summary>The active property</summary>
@@ -64,12 +70,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The validationErrors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5ValueValidationErrors? ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationErrors"); else _explicitNullProperties?.Remove("validationErrors"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5ValueValidationErrors? _explicitNullValueValidationErrors = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemValidationErrors? ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationErrors"); else _explicitNullProperties?.Remove("validationErrors"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemValidationErrors? _explicitNullValueValidationErrors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5ValueValidationErrors ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationErrors"); else _explicitNullProperties?.Remove("validationErrors"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5ValueValidationErrors _explicitNullValueValidationErrors = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemValidationErrors ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationErrors"); else _explicitNullProperties?.Remove("validationErrors"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemValidationErrors _explicitNullValueValidationErrors = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -94,7 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "valid", n => { Valid = n.GetBoolValue(); } },
-                { "validationErrors", n => { ValidationErrors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5ValueValidationErrors>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5ValueValidationErrors.CreateFromDiscriminatorValue); } },
+                { "validationErrors", n => { ValidationErrors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemValidationErrors>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemValidationErrors.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,7 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("valid", Valid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5ValueValidationErrors>("validationErrors", ValidationErrors);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemValidationErrors>("validationErrors", ValidationErrors);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

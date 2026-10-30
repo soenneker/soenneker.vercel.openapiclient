@@ -18,17 +18,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("onCommit") is { } nullNodeOnCommit && nullNodeOnCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnCommit = null;
-            if (parseNode.GetChildNode("onPullRequest") is { } nullNodeOnPullRequest && nullNodeOnPullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnPullRequest = null;
+            if (parseNode.GetChildNode("onCommit") is null) { _explicitNullValueOnCommit = default!; _explicitNullProperties?.Remove("onCommit"); }
+            else if (parseNode.GetChildNode("onCommit") is { } nullNodeOnCommit && nullNodeOnCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnCommit = null;
+            if (parseNode.GetChildNode("onPullRequest") is null) { _explicitNullValueOnPullRequest = default!; _explicitNullProperties?.Remove("onPullRequest"); }
+            else if (parseNode.GetChildNode("onPullRequest") is { } nullNodeOnPullRequest && nullNodeOnPullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnPullRequest = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The onCommit property</summary>
-        public bool? OnCommit { get => _explicitNullValueOnCommit; set { _explicitNullValueOnCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onCommit"); else _explicitNullProperties?.Remove("onCommit"); } }
+        public bool? OnCommit { get => _explicitNullValueOnCommit; set { _explicitNullValueOnCommit = value; AdditionalData?.Remove("onCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onCommit"); else _explicitNullProperties?.Remove("onCommit"); } }
         private bool? _explicitNullValueOnCommit = default!;
         /// <summary>The onPullRequest property</summary>
-        public bool? OnPullRequest { get => _explicitNullValueOnPullRequest; set { _explicitNullValueOnPullRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onPullRequest"); else _explicitNullProperties?.Remove("onPullRequest"); } }
+        public bool? OnPullRequest { get => _explicitNullValueOnPullRequest; set { _explicitNullValueOnPullRequest = value; AdditionalData?.Remove("onPullRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onPullRequest"); else _explicitNullProperties?.Remove("onPullRequest"); } }
         private bool? _explicitNullValueOnPullRequest = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf9GitComments"/> and sets the default values.

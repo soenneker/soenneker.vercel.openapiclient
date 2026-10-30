@@ -17,13 +17,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alg") is { } nullNodeAlg && nullNodeAlg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alg = null;
-            if (parseNode.GetChildNode("key_ops") is { } nullNodeKeyOps && nullNodeKeyOps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyOps = null;
-            if (parseNode.GetChildNode("kid") is { } nullNodeKid && nullNodeKid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kid = null;
-            if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
-            if (parseNode.GetChildNode("use") is { } nullNodeUse && nullNodeUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Use = null;
-            if (parseNode.GetChildNode("x5c") is { } nullNodeX5c && nullNodeX5c.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X5c = null;
-            if (parseNode.GetChildNode("x5t#S256") is { } nullNodeX5tS256 && nullNodeX5tS256.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X5tS256 = null;
+            if (parseNode.GetChildNode("alg") is null) { _explicitNullValueAlg = default!; _explicitNullProperties?.Remove("alg"); }
+            else if (parseNode.GetChildNode("alg") is { } nullNodeAlg && nullNodeAlg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alg = null;
+            if (parseNode.GetChildNode("key_ops") is null) { _explicitNullValueKeyOps = default!; _explicitNullProperties?.Remove("key_ops"); }
+            else if (parseNode.GetChildNode("key_ops") is { } nullNodeKeyOps && nullNodeKeyOps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyOps = null;
+            if (parseNode.GetChildNode("kid") is null) { _explicitNullValueKid = default!; _explicitNullProperties?.Remove("kid"); }
+            else if (parseNode.GetChildNode("kid") is { } nullNodeKid && nullNodeKid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kid = null;
+            if (parseNode.GetChildNode("kty") is null) { _explicitNullValueKty = default!; _explicitNullProperties?.Remove("kty"); }
+            else if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
+            if (parseNode.GetChildNode("use") is null) { _explicitNullValueUse = default!; _explicitNullProperties?.Remove("use"); }
+            else if (parseNode.GetChildNode("use") is { } nullNodeUse && nullNodeUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Use = null;
+            if (parseNode.GetChildNode("x5c") is null) { _explicitNullValueX5c = default!; _explicitNullProperties?.Remove("x5c"); }
+            else if (parseNode.GetChildNode("x5c") is { } nullNodeX5c && nullNodeX5c.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X5c = null;
+            if (parseNode.GetChildNode("x5t#S256") is null) { _explicitNullValueX5tS256 = default!; _explicitNullProperties?.Remove("x5t#S256"); }
+            else if (parseNode.GetChildNode("x5t#S256") is { } nullNodeX5tS256 && nullNodeX5tS256.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X5tS256 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The alg property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
+        public string? Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; AdditionalData?.Remove("alg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
         private string? _explicitNullValueAlg = default!;
 #nullable restore
 #else
-        public string Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
+        public string Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; AdditionalData?.Remove("alg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
         private string _explicitNullValueAlg = default!;
 #endif
         /// <summary>The key_ops property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KeyOps { get => _explicitNullValueKeyOps; set { _explicitNullValueKeyOps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_ops"); else _explicitNullProperties?.Remove("key_ops"); } }
+        public List<string>? KeyOps { get => _explicitNullValueKeyOps; set { _explicitNullValueKeyOps = value; AdditionalData?.Remove("key_ops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_ops"); else _explicitNullProperties?.Remove("key_ops"); } }
         private List<string>? _explicitNullValueKeyOps = default!;
 #nullable restore
 #else
-        public List<string> KeyOps { get => _explicitNullValueKeyOps; set { _explicitNullValueKeyOps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_ops"); else _explicitNullProperties?.Remove("key_ops"); } }
+        public List<string> KeyOps { get => _explicitNullValueKeyOps; set { _explicitNullValueKeyOps = value; AdditionalData?.Remove("key_ops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_ops"); else _explicitNullProperties?.Remove("key_ops"); } }
         private List<string> _explicitNullValueKeyOps = default!;
 #endif
         /// <summary>The kid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        public string? Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; AdditionalData?.Remove("kid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
         private string? _explicitNullValueKid = default!;
 #nullable restore
 #else
-        public string Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        public string Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; AdditionalData?.Remove("kid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
         private string _explicitNullValueKid = default!;
 #endif
         /// <summary>The kty property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        public string? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; AdditionalData?.Remove("kty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
         private string? _explicitNullValueKty = default!;
 #nullable restore
 #else
-        public string Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        public string Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; AdditionalData?.Remove("kty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
         private string _explicitNullValueKty = default!;
 #endif
         /// <summary>The use property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Use { get => _explicitNullValueUse; set { _explicitNullValueUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use"); else _explicitNullProperties?.Remove("use"); } }
+        public string? Use { get => _explicitNullValueUse; set { _explicitNullValueUse = value; AdditionalData?.Remove("use"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use"); else _explicitNullProperties?.Remove("use"); } }
         private string? _explicitNullValueUse = default!;
 #nullable restore
 #else
-        public string Use { get => _explicitNullValueUse; set { _explicitNullValueUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use"); else _explicitNullProperties?.Remove("use"); } }
+        public string Use { get => _explicitNullValueUse; set { _explicitNullValueUse = value; AdditionalData?.Remove("use"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use"); else _explicitNullProperties?.Remove("use"); } }
         private string _explicitNullValueUse = default!;
 #endif
         /// <summary>The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? X5c { get => _explicitNullValueX5c; set { _explicitNullValueX5c = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5c"); else _explicitNullProperties?.Remove("x5c"); } }
+        public List<string>? X5c { get => _explicitNullValueX5c; set { _explicitNullValueX5c = value; AdditionalData?.Remove("x5c"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5c"); else _explicitNullProperties?.Remove("x5c"); } }
         private List<string>? _explicitNullValueX5c = default!;
 #nullable restore
 #else
-        public List<string> X5c { get => _explicitNullValueX5c; set { _explicitNullValueX5c = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5c"); else _explicitNullProperties?.Remove("x5c"); } }
+        public List<string> X5c { get => _explicitNullValueX5c; set { _explicitNullValueX5c = value; AdditionalData?.Remove("x5c"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5c"); else _explicitNullProperties?.Remove("x5c"); } }
         private List<string> _explicitNullValueX5c = default!;
 #endif
         /// <summary>The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? X5tS256 { get => _explicitNullValueX5tS256; set { _explicitNullValueX5tS256 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5t#S256"); else _explicitNullProperties?.Remove("x5t#S256"); } }
+        public string? X5tS256 { get => _explicitNullValueX5tS256; set { _explicitNullValueX5tS256 = value; AdditionalData?.Remove("x5t#S256"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5t#S256"); else _explicitNullProperties?.Remove("x5t#S256"); } }
         private string? _explicitNullValueX5tS256 = default!;
 #nullable restore
 #else
-        public string X5tS256 { get => _explicitNullValueX5tS256; set { _explicitNullValueX5tS256 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5t#S256"); else _explicitNullProperties?.Remove("x5t#S256"); } }
+        public string X5tS256 { get => _explicitNullValueX5tS256; set { _explicitNullValueX5tS256 = value; AdditionalData?.Remove("x5t#S256"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x5t#S256"); else _explicitNullProperties?.Remove("x5t#S256"); } }
         private string _explicitNullValueX5tS256 = default!;
 #endif
         /// <summary>

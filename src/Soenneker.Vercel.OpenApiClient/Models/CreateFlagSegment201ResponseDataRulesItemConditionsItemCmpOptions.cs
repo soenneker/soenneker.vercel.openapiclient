@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ignoreCase") is { } nullNodeIgnoreCase && nullNodeIgnoreCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCase = null;
+            if (parseNode.GetChildNode("ignoreCase") is null) { _explicitNullValueIgnoreCase = default!; _explicitNullProperties?.Remove("ignoreCase"); }
+            else if (parseNode.GetChildNode("ignoreCase") is { } nullNodeIgnoreCase && nullNodeIgnoreCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCase = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ignoreCase property</summary>
-        public bool? IgnoreCase { get => _explicitNullValueIgnoreCase; set { _explicitNullValueIgnoreCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCase"); else _explicitNullProperties?.Remove("ignoreCase"); } }
+        public bool? IgnoreCase { get => _explicitNullValueIgnoreCase; set { _explicitNullValueIgnoreCase = value; AdditionalData?.Remove("ignoreCase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCase"); else _explicitNullProperties?.Remove("ignoreCase"); } }
         private bool? _explicitNullValueIgnoreCase = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201ResponseDataRulesItemConditionsItemCmpOptions"/> and sets the default values.

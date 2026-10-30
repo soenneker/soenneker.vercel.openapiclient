@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deploymentSources") is { } nullNodeDeploymentSources && nullNodeDeploymentSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentSources = null;
-            if (parseNode.GetChildNode("gitSources") is { } nullNodeGitSources && nullNodeGitSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitSources = null;
+            if (parseNode.GetChildNode("deploymentSources") is null) { _explicitNullValueDeploymentSources = default!; _explicitNullProperties?.Remove("deploymentSources"); }
+            else if (parseNode.GetChildNode("deploymentSources") is { } nullNodeDeploymentSources && nullNodeDeploymentSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentSources = null;
+            if (parseNode.GetChildNode("gitSources") is null) { _explicitNullValueGitSources = default!; _explicitNullProperties?.Remove("gitSources"); }
+            else if (parseNode.GetChildNode("gitSources") is { } nullNodeGitSources && nullNodeGitSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitSources = null;
         }
 
         /// <summary>The deploymentSources property</summary>

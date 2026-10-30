@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("newMicrofrontendsGroup") is { } nullNodeNewMicrofrontendsGroup && nullNodeNewMicrofrontendsGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewMicrofrontendsGroup = null;
+            if (parseNode.GetChildNode("newMicrofrontendsGroup") is null) { _explicitNullValueNewMicrofrontendsGroup = default!; _explicitNullProperties?.Remove("newMicrofrontendsGroup"); }
+            else if (parseNode.GetChildNode("newMicrofrontendsGroup") is { } nullNodeNewMicrofrontendsGroup && nullNodeNewMicrofrontendsGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewMicrofrontendsGroup = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The newMicrofrontendsGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroup? NewMicrofrontendsGroup { get => _explicitNullValueNewMicrofrontendsGroup; set { _explicitNullValueNewMicrofrontendsGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newMicrofrontendsGroup"); else _explicitNullProperties?.Remove("newMicrofrontendsGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroup? NewMicrofrontendsGroup { get => _explicitNullValueNewMicrofrontendsGroup; set { _explicitNullValueNewMicrofrontendsGroup = value; AdditionalData?.Remove("newMicrofrontendsGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newMicrofrontendsGroup"); else _explicitNullProperties?.Remove("newMicrofrontendsGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroup? _explicitNullValueNewMicrofrontendsGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroup NewMicrofrontendsGroup { get => _explicitNullValueNewMicrofrontendsGroup; set { _explicitNullValueNewMicrofrontendsGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newMicrofrontendsGroup"); else _explicitNullProperties?.Remove("newMicrofrontendsGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroup NewMicrofrontendsGroup { get => _explicitNullValueNewMicrofrontendsGroup; set { _explicitNullValueNewMicrofrontendsGroup = value; AdditionalData?.Remove("newMicrofrontendsGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newMicrofrontendsGroup"); else _explicitNullProperties?.Remove("newMicrofrontendsGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroup _explicitNullValueNewMicrofrontendsGroup = default!;
 #endif
         /// <summary>

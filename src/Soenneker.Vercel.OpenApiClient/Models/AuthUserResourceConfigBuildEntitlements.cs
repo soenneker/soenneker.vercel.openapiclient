@@ -18,13 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enhancedBuilds") is { } nullNodeEnhancedBuilds && nullNodeEnhancedBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnhancedBuilds = null;
+            if (parseNode.GetChildNode("enhancedBuilds") is null) { _explicitNullValueEnhancedBuilds = default!; _explicitNullProperties?.Remove("enhancedBuilds"); }
+            else if (parseNode.GetChildNode("enhancedBuilds") is { } nullNodeEnhancedBuilds && nullNodeEnhancedBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnhancedBuilds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-        public bool? EnhancedBuilds { get => _explicitNullValueEnhancedBuilds; set { _explicitNullValueEnhancedBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhancedBuilds"); else _explicitNullProperties?.Remove("enhancedBuilds"); } }
+        public bool? EnhancedBuilds { get => _explicitNullValueEnhancedBuilds; set { _explicitNullValueEnhancedBuilds = value; AdditionalData?.Remove("enhancedBuilds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhancedBuilds"); else _explicitNullProperties?.Remove("enhancedBuilds"); } }
         private bool? _explicitNullValueEnhancedBuilds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements"/> and sets the default values.

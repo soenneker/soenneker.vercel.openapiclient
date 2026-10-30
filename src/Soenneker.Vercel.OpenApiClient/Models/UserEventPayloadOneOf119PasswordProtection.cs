@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deploymentType") is { } nullNodeDeploymentType && nullNodeDeploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentType = null;
+            if (parseNode.GetChildNode("deploymentType") is null) { _explicitNullValueDeploymentType = default!; _explicitNullProperties?.Remove("deploymentType"); }
+            else if (parseNode.GetChildNode("deploymentType") is { } nullNodeDeploymentType && nullNodeDeploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deploymentType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtectionDeploymentType? DeploymentType { get => _explicitNullValueDeploymentType; set { _explicitNullValueDeploymentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentType"); else _explicitNullProperties?.Remove("deploymentType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtectionDeploymentType? DeploymentType { get => _explicitNullValueDeploymentType; set { _explicitNullValueDeploymentType = value; AdditionalData?.Remove("deploymentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentType"); else _explicitNullProperties?.Remove("deploymentType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtectionDeploymentType? _explicitNullValueDeploymentType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection"/> and sets the default values.
@@ -52,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentType", n => { DeploymentType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtectionDeploymentType>(); } },
+                { "deploymentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtectionDeploymentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeploymentType = default; _explicitNullProperties?.Remove("deploymentType"); AdditionalData["deploymentType"] = unknown; } else { DeploymentType = parsed; AdditionalData.Remove("deploymentType"); } } },
             };
         }
         /// <summary>

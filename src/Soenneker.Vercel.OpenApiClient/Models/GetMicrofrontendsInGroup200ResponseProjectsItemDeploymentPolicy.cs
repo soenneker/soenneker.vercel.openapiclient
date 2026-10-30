@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deploymentSources") is { } nullNodeDeploymentSources && nullNodeDeploymentSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentSources = null;
-            if (parseNode.GetChildNode("gitSources") is { } nullNodeGitSources && nullNodeGitSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitSources = null;
+            if (parseNode.GetChildNode("deploymentSources") is null) { _explicitNullValueDeploymentSources = default!; _explicitNullProperties?.Remove("deploymentSources"); }
+            else if (parseNode.GetChildNode("deploymentSources") is { } nullNodeDeploymentSources && nullNodeDeploymentSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentSources = null;
+            if (parseNode.GetChildNode("gitSources") is null) { _explicitNullValueGitSources = default!; _explicitNullProperties?.Remove("gitSources"); }
+            else if (parseNode.GetChildNode("gitSources") is { } nullNodeGitSources && nullNodeGitSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitSources = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The deploymentSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyDeploymentSourcesItem>? DeploymentSources { get => _explicitNullValueDeploymentSources; set { _explicitNullValueDeploymentSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentSources"); else _explicitNullProperties?.Remove("deploymentSources"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyDeploymentSourcesItem>? DeploymentSources { get => _explicitNullValueDeploymentSources; set { _explicitNullValueDeploymentSources = value; AdditionalData?.Remove("deploymentSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentSources"); else _explicitNullProperties?.Remove("deploymentSources"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyDeploymentSourcesItem>? _explicitNullValueDeploymentSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyDeploymentSourcesItem> DeploymentSources { get => _explicitNullValueDeploymentSources; set { _explicitNullValueDeploymentSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentSources"); else _explicitNullProperties?.Remove("deploymentSources"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyDeploymentSourcesItem> DeploymentSources { get => _explicitNullValueDeploymentSources; set { _explicitNullValueDeploymentSources = value; AdditionalData?.Remove("deploymentSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentSources"); else _explicitNullProperties?.Remove("deploymentSources"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyDeploymentSourcesItem> _explicitNullValueDeploymentSources = default!;
 #endif
         /// <summary>The gitSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyGitSourcesItem>? GitSources { get => _explicitNullValueGitSources; set { _explicitNullValueGitSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSources"); else _explicitNullProperties?.Remove("gitSources"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyGitSourcesItem>? GitSources { get => _explicitNullValueGitSources; set { _explicitNullValueGitSources = value; AdditionalData?.Remove("gitSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSources"); else _explicitNullProperties?.Remove("gitSources"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyGitSourcesItem>? _explicitNullValueGitSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyGitSourcesItem> GitSources { get => _explicitNullValueGitSources; set { _explicitNullValueGitSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSources"); else _explicitNullProperties?.Remove("gitSources"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyGitSourcesItem> GitSources { get => _explicitNullValueGitSources; set { _explicitNullValueGitSources = value; AdditionalData?.Remove("gitSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSources"); else _explicitNullProperties?.Remove("gitSources"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyGitSourcesItem> _explicitNullValueGitSources = default!;
 #endif
         /// <summary>

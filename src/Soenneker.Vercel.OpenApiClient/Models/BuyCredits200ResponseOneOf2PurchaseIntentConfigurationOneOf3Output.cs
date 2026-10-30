@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pendingSubscriptionChangeId") is { } nullNodePendingSubscriptionChangeId && nullNodePendingSubscriptionChangeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingSubscriptionChangeId = null;
+            if (parseNode.GetChildNode("pendingSubscriptionChangeId") is null) { _explicitNullValuePendingSubscriptionChangeId = default!; _explicitNullProperties?.Remove("pendingSubscriptionChangeId"); }
+            else if (parseNode.GetChildNode("pendingSubscriptionChangeId") is { } nullNodePendingSubscriptionChangeId && nullNodePendingSubscriptionChangeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingSubscriptionChangeId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The ID of the pending subscription change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PendingSubscriptionChangeId { get => _explicitNullValuePendingSubscriptionChangeId; set { _explicitNullValuePendingSubscriptionChangeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("pendingSubscriptionChangeId"); } }
+        public string? PendingSubscriptionChangeId { get => _explicitNullValuePendingSubscriptionChangeId; set { _explicitNullValuePendingSubscriptionChangeId = value; AdditionalData?.Remove("pendingSubscriptionChangeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("pendingSubscriptionChangeId"); } }
         private string? _explicitNullValuePendingSubscriptionChangeId = default!;
 #nullable restore
 #else
-        public string PendingSubscriptionChangeId { get => _explicitNullValuePendingSubscriptionChangeId; set { _explicitNullValuePendingSubscriptionChangeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("pendingSubscriptionChangeId"); } }
+        public string PendingSubscriptionChangeId { get => _explicitNullValuePendingSubscriptionChangeId; set { _explicitNullValuePendingSubscriptionChangeId = value; AdditionalData?.Remove("pendingSubscriptionChangeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("pendingSubscriptionChangeId"); } }
         private string _explicitNullValuePendingSubscriptionChangeId = default!;
 #endif
         /// <summary>

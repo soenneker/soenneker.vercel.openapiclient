@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("txtRecord") is { } nullNodeTxtRecord && nullNodeTxtRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxtRecord = null;
-            if (parseNode.GetChildNode("verificationDomain") is { } nullNodeVerificationDomain && nullNodeVerificationDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationDomain = null;
+            if (parseNode.GetChildNode("txtRecord") is null) { _explicitNullValueTxtRecord = default!; _explicitNullProperties?.Remove("txtRecord"); }
+            else if (parseNode.GetChildNode("txtRecord") is { } nullNodeTxtRecord && nullNodeTxtRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxtRecord = null;
+            if (parseNode.GetChildNode("verificationDomain") is null) { _explicitNullValueVerificationDomain = default!; _explicitNullProperties?.Remove("verificationDomain"); }
+            else if (parseNode.GetChildNode("verificationDomain") is { } nullNodeVerificationDomain && nullNodeVerificationDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationDomain = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The txtRecord property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TxtRecord { get => _explicitNullValueTxtRecord; set { _explicitNullValueTxtRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txtRecord"); else _explicitNullProperties?.Remove("txtRecord"); } }
+        public string? TxtRecord { get => _explicitNullValueTxtRecord; set { _explicitNullValueTxtRecord = value; AdditionalData?.Remove("txtRecord"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txtRecord"); else _explicitNullProperties?.Remove("txtRecord"); } }
         private string? _explicitNullValueTxtRecord = default!;
 #nullable restore
 #else
-        public string TxtRecord { get => _explicitNullValueTxtRecord; set { _explicitNullValueTxtRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txtRecord"); else _explicitNullProperties?.Remove("txtRecord"); } }
+        public string TxtRecord { get => _explicitNullValueTxtRecord; set { _explicitNullValueTxtRecord = value; AdditionalData?.Remove("txtRecord"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txtRecord"); else _explicitNullProperties?.Remove("txtRecord"); } }
         private string _explicitNullValueTxtRecord = default!;
 #endif
         /// <summary>The verificationDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerificationDomain { get => _explicitNullValueVerificationDomain; set { _explicitNullValueVerificationDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationDomain"); else _explicitNullProperties?.Remove("verificationDomain"); } }
+        public string? VerificationDomain { get => _explicitNullValueVerificationDomain; set { _explicitNullValueVerificationDomain = value; AdditionalData?.Remove("verificationDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationDomain"); else _explicitNullProperties?.Remove("verificationDomain"); } }
         private string? _explicitNullValueVerificationDomain = default!;
 #nullable restore
 #else
-        public string VerificationDomain { get => _explicitNullValueVerificationDomain; set { _explicitNullValueVerificationDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationDomain"); else _explicitNullProperties?.Remove("verificationDomain"); } }
+        public string VerificationDomain { get => _explicitNullValueVerificationDomain; set { _explicitNullValueVerificationDomain = value; AdditionalData?.Remove("verificationDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationDomain"); else _explicitNullProperties?.Remove("verificationDomain"); } }
         private string _explicitNullValueVerificationDomain = default!;
 #endif
         /// <summary>

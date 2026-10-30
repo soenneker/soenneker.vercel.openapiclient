@@ -18,134 +18,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connectorId") is { } nullNodeConnectorId && nullNodeConnectorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectorId = null;
-            if (parseNode.GetChildNode("connectorService") is { } nullNodeConnectorService && nullNodeConnectorService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectorService = null;
-            if (parseNode.GetChildNode("connectorType") is { } nullNodeConnectorType && nullNodeConnectorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectorType = null;
-            if (parseNode.GetChildNode("emailVerified") is { } nullNodeEmailVerified && nullNodeEmailVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailVerified = null;
-            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
-            if (parseNode.GetChildNode("externalIssuer") is { } nullNodeExternalIssuer && nullNodeExternalIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalIssuer = null;
-            if (parseNode.GetChildNode("externalSubject") is { } nullNodeExternalSubject && nullNodeExternalSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSubject = null;
-            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
-            if (parseNode.GetChildNode("installationId") is { } nullNodeInstallationId && nullNodeInstallationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallationId = null;
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
-            if (parseNode.GetChildNode("tenantId") is { } nullNodeTenantId && nullNodeTenantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantId = null;
+            if (parseNode.GetChildNode("newName") is null) { _explicitNullValueNewName = default!; _explicitNullProperties?.Remove("newName"); }
+            else if (parseNode.GetChildNode("newName") is { } nullNodeNewName && nullNodeNewName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewName = null;
+            if (parseNode.GetChildNode("oldName") is null) { _explicitNullValueOldName = default!; _explicitNullProperties?.Remove("oldName"); }
+            else if (parseNode.GetChildNode("oldName") is { } nullNodeOldName && nullNodeOldName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The connectorId property</summary>
+        /// <summary>The newName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorId { get => _explicitNullValueConnectorId; set { _explicitNullValueConnectorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorId"); else _explicitNullProperties?.Remove("connectorId"); } }
-        private string? _explicitNullValueConnectorId = default!;
+        public string? NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; AdditionalData?.Remove("newName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newName"); else _explicitNullProperties?.Remove("newName"); } }
+        private string? _explicitNullValueNewName = default!;
 #nullable restore
 #else
-        public string ConnectorId { get => _explicitNullValueConnectorId; set { _explicitNullValueConnectorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorId"); else _explicitNullProperties?.Remove("connectorId"); } }
-        private string _explicitNullValueConnectorId = default!;
+        public string NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; AdditionalData?.Remove("newName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newName"); else _explicitNullProperties?.Remove("newName"); } }
+        private string _explicitNullValueNewName = default!;
 #endif
-        /// <summary>The connectorService property</summary>
+        /// <summary>The oldName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorService { get => _explicitNullValueConnectorService; set { _explicitNullValueConnectorService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorService"); else _explicitNullProperties?.Remove("connectorService"); } }
-        private string? _explicitNullValueConnectorService = default!;
+        public string? OldName { get => _explicitNullValueOldName; set { _explicitNullValueOldName = value; AdditionalData?.Remove("oldName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldName"); else _explicitNullProperties?.Remove("oldName"); } }
+        private string? _explicitNullValueOldName = default!;
 #nullable restore
 #else
-        public string ConnectorService { get => _explicitNullValueConnectorService; set { _explicitNullValueConnectorService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorService"); else _explicitNullProperties?.Remove("connectorService"); } }
-        private string _explicitNullValueConnectorService = default!;
-#endif
-        /// <summary>The connectorType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectorType { get => _explicitNullValueConnectorType; set { _explicitNullValueConnectorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorType"); else _explicitNullProperties?.Remove("connectorType"); } }
-        private string? _explicitNullValueConnectorType = default!;
-#nullable restore
-#else
-        public string ConnectorType { get => _explicitNullValueConnectorType; set { _explicitNullValueConnectorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectorType"); else _explicitNullProperties?.Remove("connectorType"); } }
-        private string _explicitNullValueConnectorType = default!;
-#endif
-        /// <summary>The emailVerified property</summary>
-        public bool? EmailVerified { get => _explicitNullValueEmailVerified; set { _explicitNullValueEmailVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailVerified"); else _explicitNullProperties?.Remove("emailVerified"); } }
-        private bool? _explicitNullValueEmailVerified = default!;
-        /// <summary>The environment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
-        private string? _explicitNullValueEnvironment = default!;
-#nullable restore
-#else
-        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
-        private string _explicitNullValueEnvironment = default!;
-#endif
-        /// <summary>The externalIssuer property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalIssuer { get => _explicitNullValueExternalIssuer; set { _explicitNullValueExternalIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalIssuer"); else _explicitNullProperties?.Remove("externalIssuer"); } }
-        private string? _explicitNullValueExternalIssuer = default!;
-#nullable restore
-#else
-        public string ExternalIssuer { get => _explicitNullValueExternalIssuer; set { _explicitNullValueExternalIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalIssuer"); else _explicitNullProperties?.Remove("externalIssuer"); } }
-        private string _explicitNullValueExternalIssuer = default!;
-#endif
-        /// <summary>The externalSubject property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalSubject { get => _explicitNullValueExternalSubject; set { _explicitNullValueExternalSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalSubject"); else _explicitNullProperties?.Remove("externalSubject"); } }
-        private string? _explicitNullValueExternalSubject = default!;
-#nullable restore
-#else
-        public string ExternalSubject { get => _explicitNullValueExternalSubject; set { _explicitNullValueExternalSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalSubject"); else _explicitNullProperties?.Remove("externalSubject"); } }
-        private string _explicitNullValueExternalSubject = default!;
-#endif
-        /// <summary>The host property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
-        private string? _explicitNullValueHost = default!;
-#nullable restore
-#else
-        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
-        private string _explicitNullValueHost = default!;
-#endif
-        /// <summary>The installationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
-        private string? _explicitNullValueInstallationId = default!;
-#nullable restore
-#else
-        public string InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
-        private string _explicitNullValueInstallationId = default!;
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string? _explicitNullValueProjectId = default!;
-#nullable restore
-#else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string _explicitNullValueProjectId = default!;
-#endif
-        /// <summary>The sessionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
-        private string? _explicitNullValueSessionId = default!;
-#nullable restore
-#else
-        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
-        private string _explicitNullValueSessionId = default!;
-#endif
-        /// <summary>The tenantId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TenantId { get => _explicitNullValueTenantId; set { _explicitNullValueTenantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenantId"); else _explicitNullProperties?.Remove("tenantId"); } }
-        private string? _explicitNullValueTenantId = default!;
-#nullable restore
-#else
-        public string TenantId { get => _explicitNullValueTenantId; set { _explicitNullValueTenantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenantId"); else _explicitNullProperties?.Remove("tenantId"); } }
-        private string _explicitNullValueTenantId = default!;
+        public string OldName { get => _explicitNullValueOldName; set { _explicitNullValueOldName = value; AdditionalData?.Remove("oldName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldName"); else _explicitNullProperties?.Remove("oldName"); } }
+        private string _explicitNullValueOldName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf258"/> and sets the default values.
@@ -172,18 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
-                { "connectorService", n => { ConnectorService = n.GetStringValue(); } },
-                { "connectorType", n => { ConnectorType = n.GetStringValue(); } },
-                { "emailVerified", n => { EmailVerified = n.GetBoolValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "externalIssuer", n => { ExternalIssuer = n.GetStringValue(); } },
-                { "externalSubject", n => { ExternalSubject = n.GetStringValue(); } },
-                { "host", n => { Host = n.GetStringValue(); } },
-                { "installationId", n => { InstallationId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "newName", n => { NewName = n.GetStringValue(); } },
+                { "oldName", n => { OldName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -193,18 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("connectorId", ConnectorId);
-            writer.WriteStringValue("connectorService", ConnectorService);
-            writer.WriteStringValue("connectorType", ConnectorType);
-            writer.WriteBoolValue("emailVerified", EmailVerified);
-            writer.WriteStringValue("environment", Environment);
-            writer.WriteStringValue("externalIssuer", ExternalIssuer);
-            writer.WriteStringValue("externalSubject", ExternalSubject);
-            writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("installationId", InstallationId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteStringValue("newName", NewName);
+            writer.WriteStringValue("oldName", OldName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

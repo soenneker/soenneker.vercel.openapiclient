@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entrypoints") is { } nullNodeEntrypoints && nullNodeEntrypoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoints = null;
-            if (parseNode.GetChildNode("outputPath") is { } nullNodeOutputPath && nullNodeOutputPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputPath = null;
+            if (parseNode.GetChildNode("entrypoints") is null) { _explicitNullValueEntrypoints = default!; _explicitNullProperties?.Remove("entrypoints"); }
+            else if (parseNode.GetChildNode("entrypoints") is { } nullNodeEntrypoints && nullNodeEntrypoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoints = null;
+            if (parseNode.GetChildNode("outputPath") is null) { _explicitNullValueOutputPath = default!; _explicitNullProperties?.Remove("outputPath"); }
+            else if (parseNode.GetChildNode("outputPath") is { } nullNodeOutputPath && nullNodeOutputPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputPath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The entrypoints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigScheduleFunctionEntrypointsItem>? Entrypoints { get => _explicitNullValueEntrypoints; set { _explicitNullValueEntrypoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoints"); else _explicitNullProperties?.Remove("entrypoints"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigScheduleFunctionEntrypointsItem>? Entrypoints { get => _explicitNullValueEntrypoints; set { _explicitNullValueEntrypoints = value; AdditionalData?.Remove("entrypoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoints"); else _explicitNullProperties?.Remove("entrypoints"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigScheduleFunctionEntrypointsItem>? _explicitNullValueEntrypoints = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigScheduleFunctionEntrypointsItem> Entrypoints { get => _explicitNullValueEntrypoints; set { _explicitNullValueEntrypoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoints"); else _explicitNullProperties?.Remove("entrypoints"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigScheduleFunctionEntrypointsItem> Entrypoints { get => _explicitNullValueEntrypoints; set { _explicitNullValueEntrypoints = value; AdditionalData?.Remove("entrypoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoints"); else _explicitNullProperties?.Remove("entrypoints"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2BuilderConfigScheduleFunctionEntrypointsItem> _explicitNullValueEntrypoints = default!;
 #endif
         /// <summary>Function output path every schedule in this build targets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputPath { get => _explicitNullValueOutputPath; set { _explicitNullValueOutputPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputPath"); else _explicitNullProperties?.Remove("outputPath"); } }
+        public string? OutputPath { get => _explicitNullValueOutputPath; set { _explicitNullValueOutputPath = value; AdditionalData?.Remove("outputPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputPath"); else _explicitNullProperties?.Remove("outputPath"); } }
         private string? _explicitNullValueOutputPath = default!;
 #nullable restore
 #else
-        public string OutputPath { get => _explicitNullValueOutputPath; set { _explicitNullValueOutputPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputPath"); else _explicitNullProperties?.Remove("outputPath"); } }
+        public string OutputPath { get => _explicitNullValueOutputPath; set { _explicitNullValueOutputPath = value; AdditionalData?.Remove("outputPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputPath"); else _explicitNullProperties?.Remove("outputPath"); } }
         private string _explicitNullValueOutputPath = default!;
 #endif
         /// <summary>

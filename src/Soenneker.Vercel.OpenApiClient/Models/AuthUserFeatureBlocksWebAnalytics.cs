@@ -17,21 +17,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blockedFrom") is { } nullNodeBlockedFrom && nullNodeBlockedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedFrom = null;
-            if (parseNode.GetChildNode("blockedUntil") is { } nullNodeBlockedUntil && nullNodeBlockedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedUntil = null;
-            if (parseNode.GetChildNode("isCurrentlyBlocked") is { } nullNodeIsCurrentlyBlocked && nullNodeIsCurrentlyBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCurrentlyBlocked = null;
+            if (parseNode.GetChildNode("blockedFrom") is null) { _explicitNullValueBlockedFrom = default!; _explicitNullProperties?.Remove("blockedFrom"); }
+            else if (parseNode.GetChildNode("blockedFrom") is { } nullNodeBlockedFrom && nullNodeBlockedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedFrom = null;
+            if (parseNode.GetChildNode("blockedUntil") is null) { _explicitNullValueBlockedUntil = default!; _explicitNullProperties?.Remove("blockedUntil"); }
+            else if (parseNode.GetChildNode("blockedUntil") is { } nullNodeBlockedUntil && nullNodeBlockedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedUntil = null;
+            if (parseNode.GetChildNode("isCurrentlyBlocked") is null) { _explicitNullValueIsCurrentlyBlocked = default!; _explicitNullProperties?.Remove("isCurrentlyBlocked"); }
+            else if (parseNode.GetChildNode("isCurrentlyBlocked") is { } nullNodeIsCurrentlyBlocked && nullNodeIsCurrentlyBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCurrentlyBlocked = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blockedFrom property</summary>
-        public double? BlockedFrom { get => _explicitNullValueBlockedFrom; set { _explicitNullValueBlockedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedFrom"); else _explicitNullProperties?.Remove("blockedFrom"); } }
+        public double? BlockedFrom { get => _explicitNullValueBlockedFrom; set { _explicitNullValueBlockedFrom = value; AdditionalData?.Remove("blockedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedFrom"); else _explicitNullProperties?.Remove("blockedFrom"); } }
         private double? _explicitNullValueBlockedFrom = default!;
         /// <summary>The blockedUntil property</summary>
-        public double? BlockedUntil { get => _explicitNullValueBlockedUntil; set { _explicitNullValueBlockedUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedUntil"); else _explicitNullProperties?.Remove("blockedUntil"); } }
+        public double? BlockedUntil { get => _explicitNullValueBlockedUntil; set { _explicitNullValueBlockedUntil = value; AdditionalData?.Remove("blockedUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedUntil"); else _explicitNullProperties?.Remove("blockedUntil"); } }
         private double? _explicitNullValueBlockedUntil = default!;
         /// <summary>The isCurrentlyBlocked property</summary>
-        public bool? IsCurrentlyBlocked { get => _explicitNullValueIsCurrentlyBlocked; set { _explicitNullValueIsCurrentlyBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCurrentlyBlocked"); else _explicitNullProperties?.Remove("isCurrentlyBlocked"); } }
+        public bool? IsCurrentlyBlocked { get => _explicitNullValueIsCurrentlyBlocked; set { _explicitNullValueIsCurrentlyBlocked = value; AdditionalData?.Remove("isCurrentlyBlocked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCurrentlyBlocked"); else _explicitNullProperties?.Remove("isCurrentlyBlocked"); } }
         private bool? _explicitNullValueIsCurrentlyBlocked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics"/> and sets the default values.

@@ -18,16 +18,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("rawDest") is { } nullNodeRawDest && nullNodeRawDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawDest = null;
-            if (parseNode.GetChildNode("rawSrc") is { } nullNodeRawSrc && nullNodeRawSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawSrc = null;
-            if (parseNode.GetChildNode("route") is { } nullNodeRoute && nullNodeRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Route = null;
-            if (parseNode.GetChildNode("routeType") is { } nullNodeRouteType && nullNodeRouteType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouteType = null;
-            if (parseNode.GetChildNode("srcSyntax") is { } nullNodeSrcSyntax && nullNodeSrcSyntax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcSyntax = null;
-            if (parseNode.GetChildNode("staged") is { } nullNodeStaged && nullNodeStaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Staged = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("rawDest") is null) { _explicitNullValueRawDest = default!; _explicitNullProperties?.Remove("rawDest"); }
+            else if (parseNode.GetChildNode("rawDest") is { } nullNodeRawDest && nullNodeRawDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawDest = null;
+            if (parseNode.GetChildNode("rawSrc") is null) { _explicitNullValueRawSrc = default!; _explicitNullProperties?.Remove("rawSrc"); }
+            else if (parseNode.GetChildNode("rawSrc") is { } nullNodeRawSrc && nullNodeRawSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawSrc = null;
+            if (parseNode.GetChildNode("route") is null) { _explicitNullValueRoute = default!; _explicitNullProperties?.Remove("route"); }
+            else if (parseNode.GetChildNode("route") is { } nullNodeRoute && nullNodeRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Route = null;
+            if (parseNode.GetChildNode("routeType") is null) { _explicitNullValueRouteType = default!; _explicitNullProperties?.Remove("routeType"); }
+            else if (parseNode.GetChildNode("routeType") is { } nullNodeRouteType && nullNodeRouteType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouteType = null;
+            if (parseNode.GetChildNode("srcSyntax") is null) { _explicitNullValueSrcSyntax = default!; _explicitNullProperties?.Remove("srcSyntax"); }
+            else if (parseNode.GetChildNode("srcSyntax") is { } nullNodeSrcSyntax && nullNodeSrcSyntax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcSyntax = null;
+            if (parseNode.GetChildNode("staged") is null) { _explicitNullValueStaged = default!; _explicitNullProperties?.Remove("staged"); }
+            else if (parseNode.GetChildNode("staged") is { } nullNodeStaged && nullNodeStaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Staged = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,74 +45,74 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Optional description of what the routing rule does.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether the routing rule is enabled. Defaults to true.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Unique identifier for the routing rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Human-readable name for the routing rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Original destination provided by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawDest { get => _explicitNullValueRawDest; set { _explicitNullValueRawDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawDest"); else _explicitNullProperties?.Remove("rawDest"); } }
+        public string? RawDest { get => _explicitNullValueRawDest; set { _explicitNullValueRawDest = value; AdditionalData?.Remove("rawDest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawDest"); else _explicitNullProperties?.Remove("rawDest"); } }
         private string? _explicitNullValueRawDest = default!;
 #nullable restore
 #else
-        public string RawDest { get => _explicitNullValueRawDest; set { _explicitNullValueRawDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawDest"); else _explicitNullProperties?.Remove("rawDest"); } }
+        public string RawDest { get => _explicitNullValueRawDest; set { _explicitNullValueRawDest = value; AdditionalData?.Remove("rawDest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawDest"); else _explicitNullProperties?.Remove("rawDest"); } }
         private string _explicitNullValueRawDest = default!;
 #endif
         /// <summary>Original source pattern provided by user (path-to-regexp or regex). Used to display the user&apos;s input in API responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawSrc { get => _explicitNullValueRawSrc; set { _explicitNullValueRawSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawSrc"); else _explicitNullProperties?.Remove("rawSrc"); } }
+        public string? RawSrc { get => _explicitNullValueRawSrc; set { _explicitNullValueRawSrc = value; AdditionalData?.Remove("rawSrc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawSrc"); else _explicitNullProperties?.Remove("rawSrc"); } }
         private string? _explicitNullValueRawSrc = default!;
 #nullable restore
 #else
-        public string RawSrc { get => _explicitNullValueRawSrc; set { _explicitNullValueRawSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawSrc"); else _explicitNullProperties?.Remove("rawSrc"); } }
+        public string RawSrc { get => _explicitNullValueRawSrc; set { _explicitNullValueRawSrc = value; AdditionalData?.Remove("rawSrc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawSrc"); else _explicitNullProperties?.Remove("rawSrc"); } }
         private string _explicitNullValueRawSrc = default!;
 #endif
         /// <summary>The route definition from @vercel/routing-utils.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute? Route { get => _explicitNullValueRoute; set { _explicitNullValueRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("route"); else _explicitNullProperties?.Remove("route"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute? Route { get => _explicitNullValueRoute; set { _explicitNullValueRoute = value; AdditionalData?.Remove("route"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("route"); else _explicitNullProperties?.Remove("route"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute? _explicitNullValueRoute = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute Route { get => _explicitNullValueRoute; set { _explicitNullValueRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("route"); else _explicitNullProperties?.Remove("route"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute Route { get => _explicitNullValueRoute; set { _explicitNullValueRoute = value; AdditionalData?.Remove("route"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("route"); else _explicitNullProperties?.Remove("route"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute _explicitNullValueRoute = default!;
 #endif
         /// <summary>Computed route type based on the route configuration. Only present in API responses, not stored in S3.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRouteType? RouteType { get => _explicitNullValueRouteType; set { _explicitNullValueRouteType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routeType"); else _explicitNullProperties?.Remove("routeType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRouteType? RouteType { get => _explicitNullValueRouteType; set { _explicitNullValueRouteType = value; AdditionalData?.Remove("routeType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routeType"); else _explicitNullProperties?.Remove("routeType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRouteType? _explicitNullValueRouteType = default!;
         /// <summary>The syntax type of the source pattern. Determines how the pattern is compiled to regex.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemSrcSyntax? SrcSyntax { get => _explicitNullValueSrcSyntax; set { _explicitNullValueSrcSyntax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srcSyntax"); else _explicitNullProperties?.Remove("srcSyntax"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemSrcSyntax? SrcSyntax { get => _explicitNullValueSrcSyntax; set { _explicitNullValueSrcSyntax = value; AdditionalData?.Remove("srcSyntax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srcSyntax"); else _explicitNullProperties?.Remove("srcSyntax"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemSrcSyntax? _explicitNullValueSrcSyntax = default!;
         /// <summary>Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.</summary>
-        public bool? Staged { get => _explicitNullValueStaged; set { _explicitNullValueStaged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staged"); else _explicitNullProperties?.Remove("staged"); } }
+        public bool? Staged { get => _explicitNullValueStaged; set { _explicitNullValueStaged = value; AdditionalData?.Remove("staged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staged"); else _explicitNullProperties?.Remove("staged"); } }
         private bool? _explicitNullValueStaged = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItem"/> and sets the default values.
@@ -136,8 +146,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "rawDest", n => { RawDest = n.GetStringValue(); } },
                 { "rawSrc", n => { RawSrc = n.GetStringValue(); } },
                 { "route", n => { Route = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute>(global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRoute.CreateFromDiscriminatorValue); } },
-                { "routeType", n => { RouteType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRouteType>(); } },
-                { "srcSyntax", n => { SrcSyntax = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemSrcSyntax>(); } },
+                { "routeType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemRouteType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRouteType = default; _explicitNullProperties?.Remove("routeType"); AdditionalData["routeType"] = unknown; } else { RouteType = parsed; AdditionalData.Remove("routeType"); } } },
+                { "srcSyntax", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf4RoutesItemSrcSyntax>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSrcSyntax = default; _explicitNullProperties?.Remove("srcSyntax"); AdditionalData["srcSyntax"] = unknown; } else { SrcSyntax = parsed; AdditionalData.Remove("srcSyntax"); } } },
                 { "staged", n => { Staged = n.GetBoolValue(); } },
             };
         }

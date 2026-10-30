@@ -18,7 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("byok") is { } nullNodeByok && nullNodeByok.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Byok = null;
+            if (parseNode.GetChildNode("byok") is null) { _explicitNullValueByok = default!; _explicitNullProperties?.Remove("byok"); }
+            else if (parseNode.GetChildNode("byok") is { } nullNodeByok && nullNodeByok.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Byok = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The byok property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeoutsByokProperty? Byok { get => _explicitNullValueByok; set { _explicitNullValueByok = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byok"); else _explicitNullProperties?.Remove("byok"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeoutsByokProperty? Byok { get => _explicitNullValueByok; set { _explicitNullValueByok = value; AdditionalData?.Remove("byok"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byok"); else _explicitNullProperties?.Remove("byok"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeoutsByokProperty? _explicitNullValueByok = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeoutsByokProperty Byok { get => _explicitNullValueByok; set { _explicitNullValueByok = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byok"); else _explicitNullProperties?.Remove("byok"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeoutsByokProperty Byok { get => _explicitNullValueByok; set { _explicitNullValueByok = value; AdditionalData?.Remove("byok"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byok"); else _explicitNullProperties?.Remove("byok"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeoutsByokProperty _explicitNullValueByok = default!;
 #endif
         /// <summary>

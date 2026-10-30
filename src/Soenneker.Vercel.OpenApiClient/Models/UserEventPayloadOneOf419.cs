@@ -18,24 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletedCount") is { } nullNodeDeletedCount && nullNodeDeletedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedCount = null;
-            if (parseNode.GetChildNode("inviteIds") is { } nullNodeInviteIds && nullNodeInviteIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InviteIds = null;
+            if (parseNode.GetChildNode("emailDomain") is null) { _explicitNullValueEmailDomain = default!; _explicitNullProperties?.Remove("emailDomain"); }
+            else if (parseNode.GetChildNode("emailDomain") is { } nullNodeEmailDomain && nullNodeEmailDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDomain = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deletedCount property</summary>
-        public double? DeletedCount { get => _explicitNullValueDeletedCount; set { _explicitNullValueDeletedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedCount"); else _explicitNullProperties?.Remove("deletedCount"); } }
-        private double? _explicitNullValueDeletedCount = default!;
-        /// <summary>The inviteIds property</summary>
+        /// <summary>The emailDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InviteIds { get => _explicitNullValueInviteIds; set { _explicitNullValueInviteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteIds"); else _explicitNullProperties?.Remove("inviteIds"); } }
-        private List<string>? _explicitNullValueInviteIds = default!;
+        public string? EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; AdditionalData?.Remove("emailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
+        private string? _explicitNullValueEmailDomain = default!;
 #nullable restore
 #else
-        public List<string> InviteIds { get => _explicitNullValueInviteIds; set { _explicitNullValueInviteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteIds"); else _explicitNullProperties?.Remove("inviteIds"); } }
-        private List<string> _explicitNullValueInviteIds = default!;
+        public string EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; AdditionalData?.Remove("emailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
+        private string _explicitNullValueEmailDomain = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf419"/> and sets the default values.
@@ -62,8 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deletedCount", n => { DeletedCount = n.GetDoubleValue(); } },
-                { "inviteIds", n => { InviteIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,8 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("deletedCount", DeletedCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("inviteIds", InviteIds);
+            writer.WriteStringValue("emailDomain", EmailDomain);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

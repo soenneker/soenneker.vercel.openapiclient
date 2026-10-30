@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("newTeam") is { } nullNodeNewTeam && nullNodeNewTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTeam = null;
-            if (parseNode.GetChildNode("oldTeam") is { } nullNodeOldTeam && nullNodeOldTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTeam = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("newTeam") is null) { _explicitNullValueNewTeam = default!; _explicitNullProperties?.Remove("newTeam"); }
+            else if (parseNode.GetChildNode("newTeam") is { } nullNodeNewTeam && nullNodeNewTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTeam = null;
+            if (parseNode.GetChildNode("oldTeam") is null) { _explicitNullValueOldTeam = default!; _explicitNullProperties?.Remove("oldTeam"); }
+            else if (parseNode.GetChildNode("oldTeam") is { } nullNodeOldTeam && nullNodeOldTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTeam = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The newTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94NewTeam? NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94NewTeam? NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; AdditionalData?.Remove("newTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94NewTeam? _explicitNullValueNewTeam = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94NewTeam NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94NewTeam NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; AdditionalData?.Remove("newTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94NewTeam _explicitNullValueNewTeam = default!;
 #endif
         /// <summary>The oldTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94OldTeam? OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94OldTeam? OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; AdditionalData?.Remove("oldTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94OldTeam? _explicitNullValueOldTeam = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94OldTeam OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94OldTeam OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; AdditionalData?.Remove("oldTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94OldTeam _explicitNullValueOldTeam = default!;
 #endif
         /// <summary>

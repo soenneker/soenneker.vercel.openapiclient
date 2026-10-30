@@ -17,14 +17,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("botIdEnabled") is { } nullNodeBotIdEnabled && nullNodeBotIdEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotIdEnabled = null;
-            if (parseNode.GetChildNode("crs") is { } nullNodeCrs && nullNodeCrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crs = null;
-            if (parseNode.GetChildNode("firewallEnabled") is { } nullNodeFirewallEnabled && nullNodeFirewallEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallEnabled = null;
-            if (parseNode.GetChildNode("ips") is { } nullNodeIps && nullNodeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ips = null;
-            if (parseNode.GetChildNode("logHeaders") is { } nullNodeLogHeaders && nullNodeLogHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogHeaders = null;
-            if (parseNode.GetChildNode("managedRules") is { } nullNodeManagedRules && nullNodeManagedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedRules = null;
-            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
-            if (parseNode.GetChildNode("rulesets") is { } nullNodeRulesets && nullNodeRulesets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rulesets = null;
+            if (parseNode.GetChildNode("botIdEnabled") is null) { _explicitNullValueBotIdEnabled = default!; _explicitNullProperties?.Remove("botIdEnabled"); }
+            else if (parseNode.GetChildNode("botIdEnabled") is { } nullNodeBotIdEnabled && nullNodeBotIdEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotIdEnabled = null;
+            if (parseNode.GetChildNode("crs") is null) { _explicitNullValueCrs = default!; _explicitNullProperties?.Remove("crs"); }
+            else if (parseNode.GetChildNode("crs") is { } nullNodeCrs && nullNodeCrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crs = null;
+            if (parseNode.GetChildNode("firewallEnabled") is null) { _explicitNullValueFirewallEnabled = default!; _explicitNullProperties?.Remove("firewallEnabled"); }
+            else if (parseNode.GetChildNode("firewallEnabled") is { } nullNodeFirewallEnabled && nullNodeFirewallEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirewallEnabled = null;
+            if (parseNode.GetChildNode("ips") is null) { _explicitNullValueIps = default!; _explicitNullProperties?.Remove("ips"); }
+            else if (parseNode.GetChildNode("ips") is { } nullNodeIps && nullNodeIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ips = null;
+            if (parseNode.GetChildNode("logHeaders") is null) { _explicitNullValueLogHeaders = default!; _explicitNullProperties?.Remove("logHeaders"); }
+            else if (parseNode.GetChildNode("logHeaders") is { } nullNodeLogHeaders && nullNodeLogHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogHeaders = null;
+            if (parseNode.GetChildNode("managedRules") is null) { _explicitNullValueManagedRules = default!; _explicitNullProperties?.Remove("managedRules"); }
+            else if (parseNode.GetChildNode("managedRules") is { } nullNodeManagedRules && nullNodeManagedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedRules = null;
+            if (parseNode.GetChildNode("rules") is null) { _explicitNullValueRules = default!; _explicitNullProperties?.Remove("rules"); }
+            else if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("rulesets") is null) { _explicitNullValueRulesets = default!; _explicitNullProperties?.Remove("rulesets"); }
+            else if (parseNode.GetChildNode("rulesets") is { } nullNodeRulesets && nullNodeRulesets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rulesets = null;
         }
 
         /// <summary>The botIdEnabled property</summary>
@@ -56,12 +64,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The logHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders? LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders? _explicitNullValueLogHeaders = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args? LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args? _explicitNullValueLogHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders _explicitNullValueLogHeaders = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args _explicitNullValueLogHeaders = default!;
 #endif
         /// <summary>The managedRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "crs", n => { Crs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs.CreateFromDiscriminatorValue); } },
                 { "firewallEnabled", n => { FirewallEnabled = n.GetBoolValue(); } },
                 { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders.CreateFromDiscriminatorValue); } },
+                { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args>(global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args.CreateFromDiscriminatorValue); } },
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rulesets", n => { Rulesets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets.CreateFromDiscriminatorValue); } },
@@ -132,7 +140,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs>("crs", Crs);
             writer.WriteBoolValue("firewallEnabled", FirewallEnabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestIpsItem>("ips", Ips);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders>("logHeaders", LogHeaders);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args>("logHeaders", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules>("managedRules", ManagedRules);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>("rules", Rules);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets>("rulesets", Rulesets);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

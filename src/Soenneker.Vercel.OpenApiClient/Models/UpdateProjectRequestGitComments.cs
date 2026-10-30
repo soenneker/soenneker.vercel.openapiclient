@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("onCommit") is { } nullNodeOnCommit && nullNodeOnCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnCommit = null;
-            if (parseNode.GetChildNode("onPullRequest") is { } nullNodeOnPullRequest && nullNodeOnPullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnPullRequest = null;
+            if (parseNode.GetChildNode("onCommit") is null) { _explicitNullValueOnCommit = default!; _explicitNullProperties?.Remove("onCommit"); }
+            else if (parseNode.GetChildNode("onCommit") is { } nullNodeOnCommit && nullNodeOnCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnCommit = null;
+            if (parseNode.GetChildNode("onPullRequest") is null) { _explicitNullValueOnPullRequest = default!; _explicitNullProperties?.Remove("onPullRequest"); }
+            else if (parseNode.GetChildNode("onPullRequest") is { } nullNodeOnPullRequest && nullNodeOnPullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnPullRequest = null;
         }
 
         /// <summary>Whether or not Vercel should comment on commits</summary>

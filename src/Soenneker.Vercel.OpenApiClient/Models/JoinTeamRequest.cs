@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inviteCode") is { } nullNodeInviteCode && nullNodeInviteCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InviteCode = null;
+            if (parseNode.GetChildNode("inviteCode") is null) { _explicitNullValueInviteCode = default!; _explicitNullProperties?.Remove("inviteCode"); }
+            else if (parseNode.GetChildNode("inviteCode") is { } nullNodeInviteCode && nullNodeInviteCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InviteCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The invite code to join the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InviteCode { get => _explicitNullValueInviteCode; set { _explicitNullValueInviteCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteCode"); else _explicitNullProperties?.Remove("inviteCode"); } }
+        public string? InviteCode { get => _explicitNullValueInviteCode; set { _explicitNullValueInviteCode = value; AdditionalData?.Remove("inviteCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteCode"); else _explicitNullProperties?.Remove("inviteCode"); } }
         private string? _explicitNullValueInviteCode = default!;
 #nullable restore
 #else
-        public string InviteCode { get => _explicitNullValueInviteCode; set { _explicitNullValueInviteCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteCode"); else _explicitNullProperties?.Remove("inviteCode"); } }
+        public string InviteCode { get => _explicitNullValueInviteCode; set { _explicitNullValueInviteCode = value; AdditionalData?.Remove("inviteCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteCode"); else _explicitNullProperties?.Remove("inviteCode"); } }
         private string _explicitNullValueInviteCode = default!;
 #endif
         /// <summary>

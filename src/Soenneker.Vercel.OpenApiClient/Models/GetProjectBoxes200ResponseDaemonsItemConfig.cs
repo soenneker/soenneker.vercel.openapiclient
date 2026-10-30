@@ -17,13 +17,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
-            if (parseNode.GetChildNode("configuredInstances") is { } nullNodeConfiguredInstances && nullNodeConfiguredInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfiguredInstances = null;
-            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
-            if (parseNode.GetChildNode("instances") is { } nullNodeInstances && nullNodeInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instances = null;
-            if (parseNode.GetChildNode("livenessProbe") is { } nullNodeLivenessProbe && nullNodeLivenessProbe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LivenessProbe = null;
-            if (parseNode.GetChildNode("resources") is { } nullNodeResources && nullNodeResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resources = null;
-            if (parseNode.GetChildNode("terminationGracePeriodSeconds") is { } nullNodeTerminationGracePeriodSeconds && nullNodeTerminationGracePeriodSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminationGracePeriodSeconds = null;
+            if (parseNode.GetChildNode("command") is null) { _explicitNullValueCommand = default!; _explicitNullProperties?.Remove("command"); }
+            else if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
+            if (parseNode.GetChildNode("configuredInstances") is null) { _explicitNullValueConfiguredInstances = default!; _explicitNullProperties?.Remove("configuredInstances"); }
+            else if (parseNode.GetChildNode("configuredInstances") is { } nullNodeConfiguredInstances && nullNodeConfiguredInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfiguredInstances = null;
+            if (parseNode.GetChildNode("image") is null) { _explicitNullValueImage = default!; _explicitNullProperties?.Remove("image"); }
+            else if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("instances") is null) { _explicitNullValueInstances = default!; _explicitNullProperties?.Remove("instances"); }
+            else if (parseNode.GetChildNode("instances") is { } nullNodeInstances && nullNodeInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instances = null;
+            if (parseNode.GetChildNode("livenessProbe") is null) { _explicitNullValueLivenessProbe = default!; _explicitNullProperties?.Remove("livenessProbe"); }
+            else if (parseNode.GetChildNode("livenessProbe") is { } nullNodeLivenessProbe && nullNodeLivenessProbe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LivenessProbe = null;
+            if (parseNode.GetChildNode("resources") is null) { _explicitNullValueResources = default!; _explicitNullProperties?.Remove("resources"); }
+            else if (parseNode.GetChildNode("resources") is { } nullNodeResources && nullNodeResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resources = null;
+            if (parseNode.GetChildNode("terminationGracePeriodSeconds") is null) { _explicitNullValueTerminationGracePeriodSeconds = default!; _explicitNullProperties?.Remove("terminationGracePeriodSeconds"); }
+            else if (parseNode.GetChildNode("terminationGracePeriodSeconds") is { } nullNodeTerminationGracePeriodSeconds && nullNodeTerminationGracePeriodSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminationGracePeriodSeconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,65 +38,65 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The command property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        public List<string>? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private List<string>? _explicitNullValueCommand = default!;
 #nullable restore
 #else
-        public List<string> Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        public List<string> Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private List<string> _explicitNullValueCommand = default!;
 #endif
         /// <summary>The configuredInstances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances? ConfiguredInstances { get => _explicitNullValueConfiguredInstances; set { _explicitNullValueConfiguredInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredInstances"); else _explicitNullProperties?.Remove("configuredInstances"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances? ConfiguredInstances { get => _explicitNullValueConfiguredInstances; set { _explicitNullValueConfiguredInstances = value; AdditionalData?.Remove("configuredInstances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredInstances"); else _explicitNullProperties?.Remove("configuredInstances"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances? _explicitNullValueConfiguredInstances = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances ConfiguredInstances { get => _explicitNullValueConfiguredInstances; set { _explicitNullValueConfiguredInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredInstances"); else _explicitNullProperties?.Remove("configuredInstances"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances ConfiguredInstances { get => _explicitNullValueConfiguredInstances; set { _explicitNullValueConfiguredInstances = value; AdditionalData?.Remove("configuredInstances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredInstances"); else _explicitNullProperties?.Remove("configuredInstances"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances _explicitNullValueConfiguredInstances = default!;
 #endif
         /// <summary>The image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage _explicitNullValueImage = default!;
 #endif
         /// <summary>The instances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances? Instances { get => _explicitNullValueInstances; set { _explicitNullValueInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instances"); else _explicitNullProperties?.Remove("instances"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances? Instances { get => _explicitNullValueInstances; set { _explicitNullValueInstances = value; AdditionalData?.Remove("instances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instances"); else _explicitNullProperties?.Remove("instances"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances? _explicitNullValueInstances = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances Instances { get => _explicitNullValueInstances; set { _explicitNullValueInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instances"); else _explicitNullProperties?.Remove("instances"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances Instances { get => _explicitNullValueInstances; set { _explicitNullValueInstances = value; AdditionalData?.Remove("instances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instances"); else _explicitNullProperties?.Remove("instances"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances _explicitNullValueInstances = default!;
 #endif
         /// <summary>The livenessProbe property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe? LivenessProbe { get => _explicitNullValueLivenessProbe; set { _explicitNullValueLivenessProbe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livenessProbe"); else _explicitNullProperties?.Remove("livenessProbe"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe? LivenessProbe { get => _explicitNullValueLivenessProbe; set { _explicitNullValueLivenessProbe = value; AdditionalData?.Remove("livenessProbe"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livenessProbe"); else _explicitNullProperties?.Remove("livenessProbe"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe? _explicitNullValueLivenessProbe = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe LivenessProbe { get => _explicitNullValueLivenessProbe; set { _explicitNullValueLivenessProbe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livenessProbe"); else _explicitNullProperties?.Remove("livenessProbe"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe LivenessProbe { get => _explicitNullValueLivenessProbe; set { _explicitNullValueLivenessProbe = value; AdditionalData?.Remove("livenessProbe"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("livenessProbe"); else _explicitNullProperties?.Remove("livenessProbe"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe _explicitNullValueLivenessProbe = default!;
 #endif
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources _explicitNullValueResources = default!;
 #endif
         /// <summary>The terminationGracePeriodSeconds property</summary>
-        public double? TerminationGracePeriodSeconds { get => _explicitNullValueTerminationGracePeriodSeconds; set { _explicitNullValueTerminationGracePeriodSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminationGracePeriodSeconds"); else _explicitNullProperties?.Remove("terminationGracePeriodSeconds"); } }
+        public double? TerminationGracePeriodSeconds { get => _explicitNullValueTerminationGracePeriodSeconds; set { _explicitNullValueTerminationGracePeriodSeconds = value; AdditionalData?.Remove("terminationGracePeriodSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminationGracePeriodSeconds"); else _explicitNullProperties?.Remove("terminationGracePeriodSeconds"); } }
         private double? _explicitNullValueTerminationGracePeriodSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfig"/> and sets the default values.

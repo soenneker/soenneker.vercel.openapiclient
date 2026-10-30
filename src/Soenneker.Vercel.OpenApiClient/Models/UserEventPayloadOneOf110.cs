@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gitlabLogin") is { } nullNodeGitlabLogin && nullNodeGitlabLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitlabLogin = null;
-            if (parseNode.GetChildNode("gitlabUserId") is { } nullNodeGitlabUserId && nullNodeGitlabUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitlabUserId = null;
+            if (parseNode.GetChildNode("gitlabLogin") is null) { _explicitNullValueGitlabLogin = default!; _explicitNullProperties?.Remove("gitlabLogin"); }
+            else if (parseNode.GetChildNode("gitlabLogin") is { } nullNodeGitlabLogin && nullNodeGitlabLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitlabLogin = null;
+            if (parseNode.GetChildNode("gitlabUserId") is null) { _explicitNullValueGitlabUserId = default!; _explicitNullProperties?.Remove("gitlabUserId"); }
+            else if (parseNode.GetChildNode("gitlabUserId") is { } nullNodeGitlabUserId && nullNodeGitlabUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitlabUserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The gitlabLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabLogin { get => _explicitNullValueGitlabLogin; set { _explicitNullValueGitlabLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabLogin"); else _explicitNullProperties?.Remove("gitlabLogin"); } }
+        public string? GitlabLogin { get => _explicitNullValueGitlabLogin; set { _explicitNullValueGitlabLogin = value; AdditionalData?.Remove("gitlabLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabLogin"); else _explicitNullProperties?.Remove("gitlabLogin"); } }
         private string? _explicitNullValueGitlabLogin = default!;
 #nullable restore
 #else
-        public string GitlabLogin { get => _explicitNullValueGitlabLogin; set { _explicitNullValueGitlabLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabLogin"); else _explicitNullProperties?.Remove("gitlabLogin"); } }
+        public string GitlabLogin { get => _explicitNullValueGitlabLogin; set { _explicitNullValueGitlabLogin = value; AdditionalData?.Remove("gitlabLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabLogin"); else _explicitNullProperties?.Remove("gitlabLogin"); } }
         private string _explicitNullValueGitlabLogin = default!;
 #endif
         /// <summary>The gitlabUserId property</summary>
-        public double? GitlabUserId { get => _explicitNullValueGitlabUserId; set { _explicitNullValueGitlabUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabUserId"); else _explicitNullProperties?.Remove("gitlabUserId"); } }
+        public double? GitlabUserId { get => _explicitNullValueGitlabUserId; set { _explicitNullValueGitlabUserId = value; AdditionalData?.Remove("gitlabUserId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabUserId"); else _explicitNullProperties?.Remove("gitlabUserId"); } }
         private double? _explicitNullValueGitlabUserId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110"/> and sets the default values.

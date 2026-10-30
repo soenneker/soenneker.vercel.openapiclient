@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("memory") is { } nullNodeMemory && nullNodeMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Memory = null;
+            if (parseNode.GetChildNode("memory") is null) { _explicitNullValueMemory = default!; _explicitNullProperties?.Remove("memory"); }
+            else if (parseNode.GetChildNode("memory") is { } nullNodeMemory && nullNodeMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Memory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The memory property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResourcesRequestsMemory? Memory { get => _explicitNullValueMemory; set { _explicitNullValueMemory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory"); else _explicitNullProperties?.Remove("memory"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResourcesRequestsMemory? Memory { get => _explicitNullValueMemory; set { _explicitNullValueMemory = value; AdditionalData?.Remove("memory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory"); else _explicitNullProperties?.Remove("memory"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResourcesRequestsMemory? _explicitNullValueMemory = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResourcesRequests"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "memory", n => { Memory = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResourcesRequestsMemory>(); } },
+                { "memory", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonResourcesRequestsMemory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMemory = default; _explicitNullProperties?.Remove("memory"); AdditionalData["memory"] = unknown; } else { Memory = parsed; AdditionalData.Remove("memory"); } } },
             };
         }
         /// <summary>

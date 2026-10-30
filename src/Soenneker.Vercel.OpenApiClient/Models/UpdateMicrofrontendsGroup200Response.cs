@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("updatedMicrofrontendsGroup") is { } nullNodeUpdatedMicrofrontendsGroup && nullNodeUpdatedMicrofrontendsGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedMicrofrontendsGroup = null;
+            if (parseNode.GetChildNode("updatedMicrofrontendsGroup") is null) { _explicitNullValueUpdatedMicrofrontendsGroup = default!; _explicitNullProperties?.Remove("updatedMicrofrontendsGroup"); }
+            else if (parseNode.GetChildNode("updatedMicrofrontendsGroup") is { } nullNodeUpdatedMicrofrontendsGroup && nullNodeUpdatedMicrofrontendsGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedMicrofrontendsGroup = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The updatedMicrofrontendsGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroup? UpdatedMicrofrontendsGroup { get => _explicitNullValueUpdatedMicrofrontendsGroup; set { _explicitNullValueUpdatedMicrofrontendsGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedMicrofrontendsGroup"); else _explicitNullProperties?.Remove("updatedMicrofrontendsGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroup? UpdatedMicrofrontendsGroup { get => _explicitNullValueUpdatedMicrofrontendsGroup; set { _explicitNullValueUpdatedMicrofrontendsGroup = value; AdditionalData?.Remove("updatedMicrofrontendsGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedMicrofrontendsGroup"); else _explicitNullProperties?.Remove("updatedMicrofrontendsGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroup? _explicitNullValueUpdatedMicrofrontendsGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroup UpdatedMicrofrontendsGroup { get => _explicitNullValueUpdatedMicrofrontendsGroup; set { _explicitNullValueUpdatedMicrofrontendsGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedMicrofrontendsGroup"); else _explicitNullProperties?.Remove("updatedMicrofrontendsGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroup UpdatedMicrofrontendsGroup { get => _explicitNullValueUpdatedMicrofrontendsGroup; set { _explicitNullValueUpdatedMicrofrontendsGroup = value; AdditionalData?.Remove("updatedMicrofrontendsGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedMicrofrontendsGroup"); else _explicitNullProperties?.Remove("updatedMicrofrontendsGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroup _explicitNullValueUpdatedMicrofrontendsGroup = default!;
 #endif
         /// <summary>

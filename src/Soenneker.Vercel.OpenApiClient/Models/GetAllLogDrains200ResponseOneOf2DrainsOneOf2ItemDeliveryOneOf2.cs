@@ -17,50 +17,55 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("encoding") is { } nullNodeEncoding && nullNodeEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Encoding = null;
-            if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("encoding") is null) { _explicitNullValueEncoding = default!; _explicitNullProperties?.Remove("encoding"); }
+            else if (parseNode.GetChildNode("encoding") is { } nullNodeEncoding && nullNodeEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Encoding = null;
+            if (parseNode.GetChildNode("endpoint") is null) { _explicitNullValueEndpoint = default!; _explicitNullProperties?.Remove("endpoint"); }
+            else if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("secret") is null) { _explicitNullValueSecret = default!; _explicitNullProperties?.Remove("secret"); }
+            else if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The encoding property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Encoding? Encoding { get => _explicitNullValueEncoding; set { _explicitNullValueEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoding"); else _explicitNullProperties?.Remove("encoding"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Encoding? Encoding { get => _explicitNullValueEncoding; set { _explicitNullValueEncoding = value; AdditionalData?.Remove("encoding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoding"); else _explicitNullProperties?.Remove("encoding"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Encoding? _explicitNullValueEncoding = default!;
         /// <summary>The endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint? _explicitNullValueEndpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint _explicitNullValueEndpoint = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret _explicitNullValueSecret = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.OtlphttpType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.OtlphttpType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.OtlphttpType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2"/> and sets the default values.
@@ -87,11 +92,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Encoding>(); } },
+                { "encoding", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Encoding>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEncoding = default; _explicitNullProperties?.Remove("encoding"); AdditionalData["encoding"] = unknown; } else { Encoding = parsed; AdditionalData.Remove("encoding"); } } },
                 { "endpoint", n => { Endpoint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Endpoint.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Headers.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Secret.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OtlphttpType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OtlphttpType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

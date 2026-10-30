@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ssoUserId") is { } nullNodeSsoUserId && nullNodeSsoUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoUserId = null;
+            if (parseNode.GetChildNode("ssoUserId") is null) { _explicitNullValueSsoUserId = default!; _explicitNullProperties?.Remove("ssoUserId"); }
+            else if (parseNode.GetChildNode("ssoUserId") is { } nullNodeSsoUserId && nullNodeSsoUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoUserId = null;
         }
 
         /// <summary>The ssoUserId property</summary>

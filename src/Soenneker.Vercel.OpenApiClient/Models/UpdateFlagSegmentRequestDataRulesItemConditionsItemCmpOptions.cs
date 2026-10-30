@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ignoreCase") is { } nullNodeIgnoreCase && nullNodeIgnoreCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCase = null;
+            if (parseNode.GetChildNode("ignoreCase") is null) { _explicitNullValueIgnoreCase = default!; _explicitNullProperties?.Remove("ignoreCase"); }
+            else if (parseNode.GetChildNode("ignoreCase") is { } nullNodeIgnoreCase && nullNodeIgnoreCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCase = null;
         }
 
         /// <summary>The ignoreCase property</summary>

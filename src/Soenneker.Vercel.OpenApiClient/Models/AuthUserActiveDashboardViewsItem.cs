@@ -18,32 +18,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("favoritesViewPreference") is { } nullNodeFavoritesViewPreference && nullNodeFavoritesViewPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FavoritesViewPreference = null;
-            if (parseNode.GetChildNode("recentsViewPreference") is { } nullNodeRecentsViewPreference && nullNodeRecentsViewPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentsViewPreference = null;
-            if (parseNode.GetChildNode("scopeId") is { } nullNodeScopeId && nullNodeScopeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeId = null;
-            if (parseNode.GetChildNode("viewPreference") is { } nullNodeViewPreference && nullNodeViewPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewPreference = null;
+            if (parseNode.GetChildNode("favoritesViewPreference") is null) { _explicitNullValueFavoritesViewPreference = default!; _explicitNullProperties?.Remove("favoritesViewPreference"); }
+            else if (parseNode.GetChildNode("favoritesViewPreference") is { } nullNodeFavoritesViewPreference && nullNodeFavoritesViewPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FavoritesViewPreference = null;
+            if (parseNode.GetChildNode("recentsViewPreference") is null) { _explicitNullValueRecentsViewPreference = default!; _explicitNullProperties?.Remove("recentsViewPreference"); }
+            else if (parseNode.GetChildNode("recentsViewPreference") is { } nullNodeRecentsViewPreference && nullNodeRecentsViewPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentsViewPreference = null;
+            if (parseNode.GetChildNode("scopeId") is null) { _explicitNullValueScopeId = default!; _explicitNullProperties?.Remove("scopeId"); }
+            else if (parseNode.GetChildNode("scopeId") is { } nullNodeScopeId && nullNodeScopeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeId = null;
+            if (parseNode.GetChildNode("viewPreference") is null) { _explicitNullValueViewPreference = default!; _explicitNullProperties?.Remove("viewPreference"); }
+            else if (parseNode.GetChildNode("viewPreference") is { } nullNodeViewPreference && nullNodeViewPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewPreference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The favoritesViewPreference property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemFavoritesViewPreference? FavoritesViewPreference { get => _explicitNullValueFavoritesViewPreference; set { _explicitNullValueFavoritesViewPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favoritesViewPreference"); else _explicitNullProperties?.Remove("favoritesViewPreference"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemFavoritesViewPreference? FavoritesViewPreference { get => _explicitNullValueFavoritesViewPreference; set { _explicitNullValueFavoritesViewPreference = value; AdditionalData?.Remove("favoritesViewPreference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favoritesViewPreference"); else _explicitNullProperties?.Remove("favoritesViewPreference"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemFavoritesViewPreference? _explicitNullValueFavoritesViewPreference = default!;
         /// <summary>The recentsViewPreference property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemRecentsViewPreference? RecentsViewPreference { get => _explicitNullValueRecentsViewPreference; set { _explicitNullValueRecentsViewPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recentsViewPreference"); else _explicitNullProperties?.Remove("recentsViewPreference"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemRecentsViewPreference? RecentsViewPreference { get => _explicitNullValueRecentsViewPreference; set { _explicitNullValueRecentsViewPreference = value; AdditionalData?.Remove("recentsViewPreference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recentsViewPreference"); else _explicitNullProperties?.Remove("recentsViewPreference"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemRecentsViewPreference? _explicitNullValueRecentsViewPreference = default!;
         /// <summary>The scopeId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }
+        public string? ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; AdditionalData?.Remove("scopeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }
         private string? _explicitNullValueScopeId = default!;
 #nullable restore
 #else
-        public string ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }
+        public string ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; AdditionalData?.Remove("scopeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }
         private string _explicitNullValueScopeId = default!;
 #endif
         /// <summary>The viewPreference property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemViewPreference? ViewPreference { get => _explicitNullValueViewPreference; set { _explicitNullValueViewPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewPreference"); else _explicitNullProperties?.Remove("viewPreference"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemViewPreference? ViewPreference { get => _explicitNullValueViewPreference; set { _explicitNullValueViewPreference = value; AdditionalData?.Remove("viewPreference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewPreference"); else _explicitNullProperties?.Remove("viewPreference"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemViewPreference? _explicitNullValueViewPreference = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem"/> and sets the default values.
@@ -70,10 +74,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "favoritesViewPreference", n => { FavoritesViewPreference = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemFavoritesViewPreference>(); } },
-                { "recentsViewPreference", n => { RecentsViewPreference = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemRecentsViewPreference>(); } },
+                { "favoritesViewPreference", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemFavoritesViewPreference>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFavoritesViewPreference = default; _explicitNullProperties?.Remove("favoritesViewPreference"); AdditionalData["favoritesViewPreference"] = unknown; } else { FavoritesViewPreference = parsed; AdditionalData.Remove("favoritesViewPreference"); } } },
+                { "recentsViewPreference", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemRecentsViewPreference>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecentsViewPreference = default; _explicitNullProperties?.Remove("recentsViewPreference"); AdditionalData["recentsViewPreference"] = unknown; } else { RecentsViewPreference = parsed; AdditionalData.Remove("recentsViewPreference"); } } },
                 { "scopeId", n => { ScopeId = n.GetStringValue(); } },
-                { "viewPreference", n => { ViewPreference = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemViewPreference>(); } },
+                { "viewPreference", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemViewPreference>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueViewPreference = default; _explicitNullProperties?.Remove("viewPreference"); AdditionalData["viewPreference"] = unknown; } else { ViewPreference = parsed; AdditionalData.Remove("viewPreference"); } } },
             };
         }
         /// <summary>

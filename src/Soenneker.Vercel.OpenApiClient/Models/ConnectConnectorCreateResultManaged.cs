@@ -18,13 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sync") is { } nullNodeSync && nullNodeSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sync = null;
+            if (parseNode.GetChildNode("sync") is null) { _explicitNullValueSync = default!; _explicitNullProperties?.Remove("sync"); }
+            else if (parseNode.GetChildNode("sync") is { } nullNodeSync && nullNodeSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sync = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether Vercel synchronizes provider-side configuration.</summary>
-        public bool? Sync { get => _explicitNullValueSync; set { _explicitNullValueSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync"); else _explicitNullProperties?.Remove("sync"); } }
+        public bool? Sync { get => _explicitNullValueSync; set { _explicitNullValueSync = value; AdditionalData?.Remove("sync"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync"); else _explicitNullProperties?.Remove("sync"); } }
         private bool? _explicitNullValueSync = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultManaged"/> and sets the default values.

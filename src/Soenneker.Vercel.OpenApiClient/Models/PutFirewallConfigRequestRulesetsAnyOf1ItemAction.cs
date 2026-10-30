@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
+            if (parseNode.GetChildNode("mitigate") is null) { _explicitNullValueMitigate = default!; _explicitNullProperties?.Remove("mitigate"); }
+            else if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
         }
 
         /// <summary>The mitigate property</summary>

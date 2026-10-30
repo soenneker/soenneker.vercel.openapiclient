@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
-            if (parseNode.GetChildNode("experimentation") is { } nullNodeExperimentation && nullNodeExperimentation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Experimentation = null;
+            if (parseNode.GetChildNode("authentication") is null) { _explicitNullValueAuthentication = default!; _explicitNullProperties?.Remove("authentication"); }
+            else if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("experimentation") is null) { _explicitNullValueExperimentation = default!; _explicitNullProperties?.Remove("experimentation"); }
+            else if (parseNode.GetChildNode("experimentation") is { } nullNodeExperimentation && nullNodeExperimentation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Experimentation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The authentication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsAuthentication? _explicitNullValueAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsAuthentication _explicitNullValueAuthentication = default!;
 #endif
         /// <summary>The experimentation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsExperimentation? Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsExperimentation? Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; AdditionalData?.Remove("experimentation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsExperimentation? _explicitNullValueExperimentation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsExperimentation Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsExperimentation Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; AdditionalData?.Remove("experimentation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseProtocolSettingsExperimentation _explicitNullValueExperimentation = default!;
 #endif
         /// <summary>

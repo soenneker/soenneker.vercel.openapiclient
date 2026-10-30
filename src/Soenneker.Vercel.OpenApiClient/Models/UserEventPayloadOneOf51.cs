@@ -18,38 +18,42 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accessGroup") is { } nullNodeAccessGroup && nullNodeAccessGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessGroup = null;
-            if (parseNode.GetChildNode("next_role") is { } nullNodeNextRole && nullNodeNextRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRole = null;
-            if (parseNode.GetChildNode("previous_role") is { } nullNodePreviousRole && nullNodePreviousRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRole = null;
-            if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("accessGroup") is null) { _explicitNullValueAccessGroup = default!; _explicitNullProperties?.Remove("accessGroup"); }
+            else if (parseNode.GetChildNode("accessGroup") is { } nullNodeAccessGroup && nullNodeAccessGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessGroup = null;
+            if (parseNode.GetChildNode("next_role") is null) { _explicitNullValueNextRole = default!; _explicitNullProperties?.Remove("next_role"); }
+            else if (parseNode.GetChildNode("next_role") is { } nullNodeNextRole && nullNodeNextRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRole = null;
+            if (parseNode.GetChildNode("previous_role") is null) { _explicitNullValuePreviousRole = default!; _explicitNullProperties?.Remove("previous_role"); }
+            else if (parseNode.GetChildNode("previous_role") is { } nullNodePreviousRole && nullNodePreviousRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRole = null;
+            if (parseNode.GetChildNode("project") is null) { _explicitNullValueProject = default!; _explicitNullProperties?.Remove("project"); }
+            else if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
         }
 
         /// <summary>The accessGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup? AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup? AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; AdditionalData?.Remove("accessGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup? _explicitNullValueAccessGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; AdditionalData?.Remove("accessGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup _explicitNullValueAccessGroup = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The next_role property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole? NextRole { get => _explicitNullValueNextRole; set { _explicitNullValueNextRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_role"); else _explicitNullProperties?.Remove("next_role"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole? NextRole { get => _explicitNullValueNextRole; set { _explicitNullValueNextRole = value; AdditionalData?.Remove("next_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_role"); else _explicitNullProperties?.Remove("next_role"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole? _explicitNullValueNextRole = default!;
         /// <summary>The previous_role property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole? PreviousRole { get => _explicitNullValuePreviousRole; set { _explicitNullValuePreviousRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_role"); else _explicitNullProperties?.Remove("previous_role"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole? PreviousRole { get => _explicitNullValuePreviousRole; set { _explicitNullValuePreviousRole = value; AdditionalData?.Remove("previous_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_role"); else _explicitNullProperties?.Remove("previous_role"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole? _explicitNullValuePreviousRole = default!;
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project _explicitNullValueProject = default!;
 #endif
         /// <summary>
@@ -78,8 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup.CreateFromDiscriminatorValue); } },
-                { "next_role", n => { NextRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole>(); } },
-                { "previous_role", n => { PreviousRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole>(); } },
+                { "next_role", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNextRole = default; _explicitNullProperties?.Remove("next_role"); AdditionalData["next_role"] = unknown; } else { NextRole = parsed; AdditionalData.Remove("next_role"); } } },
+                { "previous_role", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousRole = default; _explicitNullProperties?.Remove("previous_role"); AdditionalData["previous_role"] = unknown; } else { PreviousRole = parsed; AdditionalData.Remove("previous_role"); } } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project.CreateFromDiscriminatorValue); } },
             };
         }

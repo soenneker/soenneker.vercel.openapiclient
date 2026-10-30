@@ -17,21 +17,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additionalClaims") is { } nullNodeAdditionalClaims && nullNodeAdditionalClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalClaims = null;
-            if (parseNode.GetChildNode("aud") is { } nullNodeAud && nullNodeAud.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aud = null;
-            if (parseNode.GetChildNode("iss") is { } nullNodeIss && nullNodeIss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iss = null;
-            if (parseNode.GetChildNode("sub") is { } nullNodeSub && nullNodeSub.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sub = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("additionalClaims") is null) { _explicitNullValueAdditionalClaims = default!; _explicitNullProperties?.Remove("additionalClaims"); }
+            else if (parseNode.GetChildNode("additionalClaims") is { } nullNodeAdditionalClaims && nullNodeAdditionalClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalClaims = null;
+            if (parseNode.GetChildNode("aud") is null) { _explicitNullValueAud = default!; _explicitNullProperties?.Remove("aud"); }
+            else if (parseNode.GetChildNode("aud") is { } nullNodeAud && nullNodeAud.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aud = null;
+            if (parseNode.GetChildNode("iss") is null) { _explicitNullValueIss = default!; _explicitNullProperties?.Remove("iss"); }
+            else if (parseNode.GetChildNode("iss") is { } nullNodeIss && nullNodeIss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iss = null;
+            if (parseNode.GetChildNode("sub") is null) { _explicitNullValueSub = default!; _explicitNullProperties?.Remove("sub"); }
+            else if (parseNode.GetChildNode("sub") is { } nullNodeSub && nullNodeSub.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sub = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>The additionalClaims property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectTypeJwtBearerAdditionalClaims? AdditionalClaims { get => _explicitNullValueAdditionalClaims; set { _explicitNullValueAdditionalClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalClaims"); else _explicitNullProperties?.Remove("additionalClaims"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectTypeJwtBearerAdditionalClaims? AdditionalClaims { get => _explicitNullValueAdditionalClaims; set { _explicitNullValueAdditionalClaims = value; AdditionalData?.Remove("additionalClaims"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalClaims"); else _explicitNullProperties?.Remove("additionalClaims"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectTypeJwtBearerAdditionalClaims? _explicitNullValueAdditionalClaims = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectTypeJwtBearerAdditionalClaims AdditionalClaims { get => _explicitNullValueAdditionalClaims; set { _explicitNullValueAdditionalClaims = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalClaims"); else _explicitNullProperties?.Remove("additionalClaims"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectTypeJwtBearerAdditionalClaims AdditionalClaims { get => _explicitNullValueAdditionalClaims; set { _explicitNullValueAdditionalClaims = value; AdditionalData?.Remove("additionalClaims"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalClaims"); else _explicitNullProperties?.Remove("additionalClaims"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectTypeJwtBearerAdditionalClaims _explicitNullValueAdditionalClaims = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,35 +44,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The aud property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
+        public string? Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; AdditionalData?.Remove("aud"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
         private string? _explicitNullValueAud = default!;
 #nullable restore
 #else
-        public string Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
+        public string Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; AdditionalData?.Remove("aud"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
         private string _explicitNullValueAud = default!;
 #endif
         /// <summary>The iss property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iss { get => _explicitNullValueIss; set { _explicitNullValueIss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iss"); else _explicitNullProperties?.Remove("iss"); } }
+        public string? Iss { get => _explicitNullValueIss; set { _explicitNullValueIss = value; AdditionalData?.Remove("iss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iss"); else _explicitNullProperties?.Remove("iss"); } }
         private string? _explicitNullValueIss = default!;
 #nullable restore
 #else
-        public string Iss { get => _explicitNullValueIss; set { _explicitNullValueIss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iss"); else _explicitNullProperties?.Remove("iss"); } }
+        public string Iss { get => _explicitNullValueIss; set { _explicitNullValueIss = value; AdditionalData?.Remove("iss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iss"); else _explicitNullProperties?.Remove("iss"); } }
         private string _explicitNullValueIss = default!;
 #endif
         /// <summary>The sub property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sub { get => _explicitNullValueSub; set { _explicitNullValueSub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub"); else _explicitNullProperties?.Remove("sub"); } }
+        public string? Sub { get => _explicitNullValueSub; set { _explicitNullValueSub = value; AdditionalData?.Remove("sub"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub"); else _explicitNullProperties?.Remove("sub"); } }
         private string? _explicitNullValueSub = default!;
 #nullable restore
 #else
-        public string Sub { get => _explicitNullValueSub; set { _explicitNullValueSub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub"); else _explicitNullProperties?.Remove("sub"); } }
+        public string Sub { get => _explicitNullValueSub; set { _explicitNullValueSub = value; AdditionalData?.Remove("sub"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub"); else _explicitNullProperties?.Remove("sub"); } }
         private string _explicitNullValueSub = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.JwtBearerType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.JwtBearerType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.JwtBearerType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectTypeJwtBearer"/> and sets the default values.
@@ -98,7 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "aud", n => { Aud = n.GetStringValue(); } },
                 { "iss", n => { Iss = n.GetStringValue(); } },
                 { "sub", n => { Sub = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.JwtBearerType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.JwtBearerType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

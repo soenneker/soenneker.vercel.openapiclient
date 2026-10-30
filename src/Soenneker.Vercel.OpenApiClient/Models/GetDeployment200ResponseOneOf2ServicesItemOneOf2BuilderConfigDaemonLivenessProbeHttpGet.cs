@@ -17,11 +17,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
-            if (parseNode.GetChildNode("httpHeaders") is { } nullNodeHttpHeaders && nullNodeHttpHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpHeaders = null;
-            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
-            if (parseNode.GetChildNode("port") is { } nullNodePort && nullNodePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Port = null;
-            if (parseNode.GetChildNode("scheme") is { } nullNodeScheme && nullNodeScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scheme = null;
+            if (parseNode.GetChildNode("host") is null) { _explicitNullValueHost = default!; _explicitNullProperties?.Remove("host"); }
+            else if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("httpHeaders") is null) { _explicitNullValueHttpHeaders = default!; _explicitNullProperties?.Remove("httpHeaders"); }
+            else if (parseNode.GetChildNode("httpHeaders") is { } nullNodeHttpHeaders && nullNodeHttpHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpHeaders = null;
+            if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
+            else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("port") is null) { _explicitNullValuePort = default!; _explicitNullProperties?.Remove("port"); }
+            else if (parseNode.GetChildNode("port") is { } nullNodePort && nullNodePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Port = null;
+            if (parseNode.GetChildNode("scheme") is null) { _explicitNullValueScheme = default!; _explicitNullProperties?.Remove("scheme"); }
+            else if (parseNode.GetChildNode("scheme") is { } nullNodeScheme && nullNodeScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scheme = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string _explicitNullValueHost = default!;
 #endif
         /// <summary>The httpHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem>? HttpHeaders { get => _explicitNullValueHttpHeaders; set { _explicitNullValueHttpHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpHeaders"); else _explicitNullProperties?.Remove("httpHeaders"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem>? HttpHeaders { get => _explicitNullValueHttpHeaders; set { _explicitNullValueHttpHeaders = value; AdditionalData?.Remove("httpHeaders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpHeaders"); else _explicitNullProperties?.Remove("httpHeaders"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem>? _explicitNullValueHttpHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem> HttpHeaders { get => _explicitNullValueHttpHeaders; set { _explicitNullValueHttpHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpHeaders"); else _explicitNullProperties?.Remove("httpHeaders"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem> HttpHeaders { get => _explicitNullValueHttpHeaders; set { _explicitNullValueHttpHeaders = value; AdditionalData?.Remove("httpHeaders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpHeaders"); else _explicitNullProperties?.Remove("httpHeaders"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem> _explicitNullValueHttpHeaders = default!;
 #endif
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
         /// <summary>The port property</summary>
-        public double? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
+        public double? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; AdditionalData?.Remove("port"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
         private double? _explicitNullValuePort = default!;
         /// <summary>The scheme property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetScheme? _explicitNullValueScheme = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGet"/> and sets the default values.
@@ -91,7 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "httpHeaders", n => { HttpHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetHttpHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "port", n => { Port = n.GetDoubleValue(); } },
-                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetScheme>(); } },
+                { "scheme", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonLivenessProbeHttpGetScheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScheme = default; _explicitNullProperties?.Remove("scheme"); AdditionalData["scheme"] = unknown; } else { Scheme = parsed; AdditionalData.Remove("scheme"); } } },
             };
         }
         /// <summary>

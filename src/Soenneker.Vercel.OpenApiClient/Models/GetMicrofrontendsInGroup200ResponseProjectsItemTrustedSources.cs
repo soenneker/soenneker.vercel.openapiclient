@@ -17,34 +17,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enableVercelCiSameRepository") is { } nullNodeEnableVercelCiSameRepository && nullNodeEnableVercelCiSameRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableVercelCiSameRepository = null;
-            if (parseNode.GetChildNode("oidcProviders") is { } nullNodeOidcProviders && nullNodeOidcProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OidcProviders = null;
-            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("enableVercelCiSameRepository") is null) { _explicitNullValueEnableVercelCiSameRepository = default!; _explicitNullProperties?.Remove("enableVercelCiSameRepository"); }
+            else if (parseNode.GetChildNode("enableVercelCiSameRepository") is { } nullNodeEnableVercelCiSameRepository && nullNodeEnableVercelCiSameRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableVercelCiSameRepository = null;
+            if (parseNode.GetChildNode("oidcProviders") is null) { _explicitNullValueOidcProviders = default!; _explicitNullProperties?.Remove("oidcProviders"); }
+            else if (parseNode.GetChildNode("oidcProviders") is { } nullNodeOidcProviders && nullNodeOidcProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OidcProviders = null;
+            if (parseNode.GetChildNode("projects") is null) { _explicitNullValueProjects = default!; _explicitNullProperties?.Remove("projects"); }
+            else if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow same-team Vercel CI access to preview and production deployments built from the CI run&apos;s repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.</summary>
-        public bool? EnableVercelCiSameRepository { get => _explicitNullValueEnableVercelCiSameRepository; set { _explicitNullValueEnableVercelCiSameRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableVercelCiSameRepository"); else _explicitNullProperties?.Remove("enableVercelCiSameRepository"); } }
+        public bool? EnableVercelCiSameRepository { get => _explicitNullValueEnableVercelCiSameRepository; set { _explicitNullValueEnableVercelCiSameRepository = value; AdditionalData?.Remove("enableVercelCiSameRepository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableVercelCiSameRepository"); else _explicitNullProperties?.Remove("enableVercelCiSameRepository"); } }
         private bool? _explicitNullValueEnableVercelCiSameRepository = default!;
         /// <summary>The oidcProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesOidcProviders? OidcProviders { get => _explicitNullValueOidcProviders; set { _explicitNullValueOidcProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcProviders"); else _explicitNullProperties?.Remove("oidcProviders"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesOidcProviders? OidcProviders { get => _explicitNullValueOidcProviders; set { _explicitNullValueOidcProviders = value; AdditionalData?.Remove("oidcProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcProviders"); else _explicitNullProperties?.Remove("oidcProviders"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesOidcProviders? _explicitNullValueOidcProviders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesOidcProviders OidcProviders { get => _explicitNullValueOidcProviders; set { _explicitNullValueOidcProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcProviders"); else _explicitNullProperties?.Remove("oidcProviders"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesOidcProviders OidcProviders { get => _explicitNullValueOidcProviders; set { _explicitNullValueOidcProviders = value; AdditionalData?.Remove("oidcProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcProviders"); else _explicitNullProperties?.Remove("oidcProviders"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesOidcProviders _explicitNullValueOidcProviders = default!;
 #endif
         /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesProjects? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesProjects? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; AdditionalData?.Remove("projects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesProjects? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesProjects Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesProjects Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; AdditionalData?.Remove("projects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesProjects _explicitNullValueProjects = default!;
 #endif
         /// <summary>

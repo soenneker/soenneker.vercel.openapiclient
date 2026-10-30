@@ -17,12 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("actionDuration") is { } nullNodeActionDuration && nullNodeActionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionDuration = null;
-            if (parseNode.GetChildNode("bypassSystem") is { } nullNodeBypassSystem && nullNodeBypassSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassSystem = null;
-            if (parseNode.GetChildNode("logHeaders") is { } nullNodeLogHeaders && nullNodeLogHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogHeaders = null;
-            if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
-            if (parseNode.GetChildNode("redirect") is { } nullNodeRedirect && nullNodeRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirect = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("actionDuration") is null) { _explicitNullValueActionDuration = default!; _explicitNullProperties?.Remove("actionDuration"); }
+            else if (parseNode.GetChildNode("actionDuration") is { } nullNodeActionDuration && nullNodeActionDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionDuration = null;
+            if (parseNode.GetChildNode("bypassSystem") is null) { _explicitNullValueBypassSystem = default!; _explicitNullProperties?.Remove("bypassSystem"); }
+            else if (parseNode.GetChildNode("bypassSystem") is { } nullNodeBypassSystem && nullNodeBypassSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassSystem = null;
+            if (parseNode.GetChildNode("logHeaders") is null) { _explicitNullValueLogHeaders = default!; _explicitNullProperties?.Remove("logHeaders"); }
+            else if (parseNode.GetChildNode("logHeaders") is { } nullNodeLogHeaders && nullNodeLogHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogHeaders = null;
+            if (parseNode.GetChildNode("rateLimit") is null) { _explicitNullValueRateLimit = default!; _explicitNullProperties?.Remove("rateLimit"); }
+            else if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
+            if (parseNode.GetChildNode("redirect") is null) { _explicitNullValueRedirect = default!; _explicitNullProperties?.Remove("redirect"); }
+            else if (parseNode.GetChildNode("redirect") is { } nullNodeRedirect && nullNodeRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirect = null;
         }
 
         /// <summary>The action property</summary>
@@ -44,32 +50,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The logHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateLogHeaders? LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateLogHeaders? _explicitNullValueLogHeaders = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args? LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args? _explicitNullValueLogHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateLogHeaders LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateLogHeaders _explicitNullValueLogHeaders = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args LogHeaders { get => _explicitNullValueLogHeaders; set { _explicitNullValueLogHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logHeaders"); else _explicitNullProperties?.Remove("logHeaders"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args _explicitNullValueLogHeaders = default!;
 #endif
         /// <summary>The rateLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1? _explicitNullValueRateLimit = default!;
+        public UntypedNode? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        private UntypedNode? _explicitNullValueRateLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1 RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1 _explicitNullValueRateLimit = default!;
+        public UntypedNode RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        private UntypedNode _explicitNullValueRateLimit = default!;
 #endif
         /// <summary>The redirect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1? Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1? _explicitNullValueRedirect = default!;
+        public UntypedNode? Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private UntypedNode? _explicitNullValueRedirect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1 Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1 _explicitNullValueRedirect = default!;
+        public UntypedNode Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private UntypedNode _explicitNullValueRedirect = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -92,9 +98,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateAction>(); } },
                 { "actionDuration", n => { ActionDuration = n.GetStringValue(); } },
                 { "bypassSystem", n => { BypassSystem = n.GetBoolValue(); } },
-                { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateLogHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateLogHeaders.CreateFromDiscriminatorValue); } },
-                { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1.CreateFromDiscriminatorValue); } },
-                { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1.CreateFromDiscriminatorValue); } },
+                { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args>(global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args.CreateFromDiscriminatorValue); } },
+                { "rateLimit", n => { RateLimit = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "redirect", n => { Redirect = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,9 +113,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateAction>("action", Action);
             writer.WriteStringValue("actionDuration", ActionDuration);
             writer.WriteBoolValue("bypassSystem", BypassSystem);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateLogHeaders>("logHeaders", LogHeaders);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1>("rateLimit", RateLimit);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1>("redirect", Redirect);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddRoute200ResponseRouteRouteTransformsItemOneOf1Args>("logHeaders", LogHeaders);
+            writer.WriteObjectValue<UntypedNode>("rateLimit", RateLimit);
+            writer.WriteObjectValue<UntypedNode>("redirect", Redirect);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

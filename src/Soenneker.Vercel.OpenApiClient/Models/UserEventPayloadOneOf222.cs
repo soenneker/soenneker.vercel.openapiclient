@@ -18,32 +18,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowedIntegrationCount") is { } nullNodeAllowedIntegrationCount && nullNodeAllowedIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationCount = null;
-            if (parseNode.GetChildNode("allowedIntegrationIds") is { } nullNodeAllowedIntegrationIds && nullNodeAllowedIntegrationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationIds = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("resourceOnlyIntegrationCount") is { } nullNodeResourceOnlyIntegrationCount && nullNodeResourceOnlyIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceOnlyIntegrationCount = null;
+            if (parseNode.GetChildNode("allowedIntegrationCount") is null) { _explicitNullValueAllowedIntegrationCount = default!; _explicitNullProperties?.Remove("allowedIntegrationCount"); }
+            else if (parseNode.GetChildNode("allowedIntegrationCount") is { } nullNodeAllowedIntegrationCount && nullNodeAllowedIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationCount = null;
+            if (parseNode.GetChildNode("allowedIntegrationIds") is null) { _explicitNullValueAllowedIntegrationIds = default!; _explicitNullProperties?.Remove("allowedIntegrationIds"); }
+            else if (parseNode.GetChildNode("allowedIntegrationIds") is { } nullNodeAllowedIntegrationIds && nullNodeAllowedIntegrationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationIds = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("resourceOnlyIntegrationCount") is null) { _explicitNullValueResourceOnlyIntegrationCount = default!; _explicitNullProperties?.Remove("resourceOnlyIntegrationCount"); }
+            else if (parseNode.GetChildNode("resourceOnlyIntegrationCount") is { } nullNodeResourceOnlyIntegrationCount && nullNodeResourceOnlyIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceOnlyIntegrationCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allowedIntegrationCount property</summary>
-        public double? AllowedIntegrationCount { get => _explicitNullValueAllowedIntegrationCount; set { _explicitNullValueAllowedIntegrationCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationCount"); else _explicitNullProperties?.Remove("allowedIntegrationCount"); } }
+        public double? AllowedIntegrationCount { get => _explicitNullValueAllowedIntegrationCount; set { _explicitNullValueAllowedIntegrationCount = value; AdditionalData?.Remove("allowedIntegrationCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationCount"); else _explicitNullProperties?.Remove("allowedIntegrationCount"); } }
         private double? _explicitNullValueAllowedIntegrationCount = default!;
         /// <summary>The allowedIntegrationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
+        public List<string>? AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; AdditionalData?.Remove("allowedIntegrationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
         private List<string>? _explicitNullValueAllowedIntegrationIds = default!;
 #nullable restore
 #else
-        public List<string> AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
+        public List<string> AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; AdditionalData?.Remove("allowedIntegrationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
         private List<string> _explicitNullValueAllowedIntegrationIds = default!;
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The resourceOnlyIntegrationCount property</summary>
-        public double? ResourceOnlyIntegrationCount { get => _explicitNullValueResourceOnlyIntegrationCount; set { _explicitNullValueResourceOnlyIntegrationCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceOnlyIntegrationCount"); else _explicitNullProperties?.Remove("resourceOnlyIntegrationCount"); } }
+        public double? ResourceOnlyIntegrationCount { get => _explicitNullValueResourceOnlyIntegrationCount; set { _explicitNullValueResourceOnlyIntegrationCount = value; AdditionalData?.Remove("resourceOnlyIntegrationCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceOnlyIntegrationCount"); else _explicitNullProperties?.Remove("resourceOnlyIntegrationCount"); } }
         private double? _explicitNullValueResourceOnlyIntegrationCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222"/> and sets the default values.

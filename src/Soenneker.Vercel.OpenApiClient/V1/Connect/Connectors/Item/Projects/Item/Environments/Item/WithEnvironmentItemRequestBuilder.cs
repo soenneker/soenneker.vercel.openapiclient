@@ -63,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.Ite
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.Item.Environments.Item.WithEnvironmentItemRequestBuilder.WithEnvironmentItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

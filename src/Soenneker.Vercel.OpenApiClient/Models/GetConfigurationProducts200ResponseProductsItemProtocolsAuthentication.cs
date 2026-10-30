@@ -17,17 +17,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appUrlRegistrationSupport") is { } nullNodeAppUrlRegistrationSupport && nullNodeAppUrlRegistrationSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUrlRegistrationSupport = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("appUrlRegistrationSupport") is null) { _explicitNullValueAppUrlRegistrationSupport = default!; _explicitNullProperties?.Remove("appUrlRegistrationSupport"); }
+            else if (parseNode.GetChildNode("appUrlRegistrationSupport") is { } nullNodeAppUrlRegistrationSupport && nullNodeAppUrlRegistrationSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUrlRegistrationSupport = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The partner accepts Vercel-managed app URLs via `protocolSettings.authentication.appUrls` on provision-resource and update-resource, and reconciles them into its trusted-origin / redirect-URL allowlist. When absent, consumers surface the URL for a one-time manual registration instead.</summary>
-        public bool? AppUrlRegistrationSupport { get => _explicitNullValueAppUrlRegistrationSupport; set { _explicitNullValueAppUrlRegistrationSupport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appUrlRegistrationSupport"); else _explicitNullProperties?.Remove("appUrlRegistrationSupport"); } }
+        public bool? AppUrlRegistrationSupport { get => _explicitNullValueAppUrlRegistrationSupport; set { _explicitNullValueAppUrlRegistrationSupport = value; AdditionalData?.Remove("appUrlRegistrationSupport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appUrlRegistrationSupport"); else _explicitNullProperties?.Remove("appUrlRegistrationSupport"); } }
         private bool? _explicitNullValueAppUrlRegistrationSupport = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthenticationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthenticationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthenticationStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthentication"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "appUrlRegistrationSupport", n => { AppUrlRegistrationSupport = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthenticationStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthenticationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

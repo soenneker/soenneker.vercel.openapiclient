@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("budgets") is { } nullNodeBudgets && nullNodeBudgets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budgets = null;
-            if (parseNode.GetChildNode("defaultCoveredCounts") is { } nullNodeDefaultCoveredCounts && nullNodeDefaultCoveredCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultCoveredCounts = null;
-            if (parseNode.GetChildNode("nextCursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("budgets") is null) { _explicitNullValueBudgets = default!; _explicitNullProperties?.Remove("budgets"); }
+            else if (parseNode.GetChildNode("budgets") is { } nullNodeBudgets && nullNodeBudgets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budgets = null;
+            if (parseNode.GetChildNode("defaultCoveredCounts") is null) { _explicitNullValueDefaultCoveredCounts = default!; _explicitNullProperties?.Remove("defaultCoveredCounts"); }
+            else if (parseNode.GetChildNode("defaultCoveredCounts") is { } nullNodeDefaultCoveredCounts && nullNodeDefaultCoveredCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultCoveredCounts = null;
+            if (parseNode.GetChildNode("nextCursor") is null) { _explicitNullValueNextCursor = default!; _explicitNullProperties?.Remove("nextCursor"); }
+            else if (parseNode.GetChildNode("nextCursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The budgets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget>? Budgets { get => _explicitNullValueBudgets; set { _explicitNullValueBudgets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgets"); else _explicitNullProperties?.Remove("budgets"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget>? Budgets { get => _explicitNullValueBudgets; set { _explicitNullValueBudgets = value; AdditionalData?.Remove("budgets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgets"); else _explicitNullProperties?.Remove("budgets"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget>? _explicitNullValueBudgets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget> Budgets { get => _explicitNullValueBudgets; set { _explicitNullValueBudgets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgets"); else _explicitNullProperties?.Remove("budgets"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget> Budgets { get => _explicitNullValueBudgets; set { _explicitNullValueBudgets = value; AdditionalData?.Remove("budgets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgets"); else _explicitNullProperties?.Remove("budgets"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget> _explicitNullValueBudgets = default!;
 #endif
         /// <summary>Paged requests only: `source: &apos;default&apos;` rows per scope type across the whole `scopeType`-filtered list, independent of the page and of `includeDefaultCovered`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetListDefaultCoveredCounts? DefaultCoveredCounts { get => _explicitNullValueDefaultCoveredCounts; set { _explicitNullValueDefaultCoveredCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultCoveredCounts"); else _explicitNullProperties?.Remove("defaultCoveredCounts"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetListDefaultCoveredCounts? DefaultCoveredCounts { get => _explicitNullValueDefaultCoveredCounts; set { _explicitNullValueDefaultCoveredCounts = value; AdditionalData?.Remove("defaultCoveredCounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultCoveredCounts"); else _explicitNullProperties?.Remove("defaultCoveredCounts"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetListDefaultCoveredCounts? _explicitNullValueDefaultCoveredCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetListDefaultCoveredCounts DefaultCoveredCounts { get => _explicitNullValueDefaultCoveredCounts; set { _explicitNullValueDefaultCoveredCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultCoveredCounts"); else _explicitNullProperties?.Remove("defaultCoveredCounts"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetListDefaultCoveredCounts DefaultCoveredCounts { get => _explicitNullValueDefaultCoveredCounts; set { _explicitNullValueDefaultCoveredCounts = value; AdditionalData?.Remove("defaultCoveredCounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultCoveredCounts"); else _explicitNullProperties?.Remove("defaultCoveredCounts"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetListDefaultCoveredCounts _explicitNullValueDefaultCoveredCounts = default!;
 #endif
         /// <summary>Paged requests only (`limit` or `cursor` set): pass as `cursor` to read the next page; null on the last page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCursor"); else _explicitNullProperties?.Remove("nextCursor"); } }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("nextCursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCursor"); else _explicitNullProperties?.Remove("nextCursor"); } }
         private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCursor"); else _explicitNullProperties?.Remove("nextCursor"); } }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("nextCursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCursor"); else _explicitNullProperties?.Remove("nextCursor"); } }
         private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("microfrontends") is { } nullNodeMicrofrontends && nullNodeMicrofrontends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Microfrontends = null;
+            if (parseNode.GetChildNode("microfrontends") is null) { _explicitNullValueMicrofrontends = default!; _explicitNullProperties?.Remove("microfrontends"); }
+            else if (parseNode.GetChildNode("microfrontends") is { } nullNodeMicrofrontends && nullNodeMicrofrontends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Microfrontends = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The microfrontends property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226PrevProjectMicrofrontends? Microfrontends { get => _explicitNullValueMicrofrontends; set { _explicitNullValueMicrofrontends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microfrontends"); else _explicitNullProperties?.Remove("microfrontends"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226PrevProjectMicrofrontends? Microfrontends { get => _explicitNullValueMicrofrontends; set { _explicitNullValueMicrofrontends = value; AdditionalData?.Remove("microfrontends"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microfrontends"); else _explicitNullProperties?.Remove("microfrontends"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226PrevProjectMicrofrontends? _explicitNullValueMicrofrontends = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226PrevProjectMicrofrontends Microfrontends { get => _explicitNullValueMicrofrontends; set { _explicitNullValueMicrofrontends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microfrontends"); else _explicitNullProperties?.Remove("microfrontends"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226PrevProjectMicrofrontends Microfrontends { get => _explicitNullValueMicrofrontends; set { _explicitNullValueMicrofrontends = value; AdditionalData?.Remove("microfrontends"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microfrontends"); else _explicitNullProperties?.Remove("microfrontends"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226PrevProjectMicrofrontends _explicitNullValueMicrofrontends = default!;
 #endif
         /// <summary>

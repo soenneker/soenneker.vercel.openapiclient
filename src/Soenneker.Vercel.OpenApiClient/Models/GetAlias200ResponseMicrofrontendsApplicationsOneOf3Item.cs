@@ -18,12 +18,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("branchAlias") is { } nullNodeBranchAlias && nullNodeBranchAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchAlias = null;
-            if (parseNode.GetChildNode("branchDeploymentId") is { } nullNodeBranchDeploymentId && nullNodeBranchDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchDeploymentId = null;
-            if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
-            if (parseNode.GetChildNode("fallbackDeploymentId") is { } nullNodeFallbackDeploymentId && nullNodeFallbackDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackDeploymentId = null;
-            if (parseNode.GetChildNode("fallbackHost") is { } nullNodeFallbackHost && nullNodeFallbackHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackHost = null;
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("branchAlias") is null) { _explicitNullValueBranchAlias = default!; _explicitNullProperties?.Remove("branchAlias"); }
+            else if (parseNode.GetChildNode("branchAlias") is { } nullNodeBranchAlias && nullNodeBranchAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchAlias = null;
+            if (parseNode.GetChildNode("branchDeploymentId") is null) { _explicitNullValueBranchDeploymentId = default!; _explicitNullProperties?.Remove("branchDeploymentId"); }
+            else if (parseNode.GetChildNode("branchDeploymentId") is { } nullNodeBranchDeploymentId && nullNodeBranchDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchDeploymentId = null;
+            if (parseNode.GetChildNode("deploymentId") is null) { _explicitNullValueDeploymentId = default!; _explicitNullProperties?.Remove("deploymentId"); }
+            else if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
+            if (parseNode.GetChildNode("fallbackDeploymentId") is null) { _explicitNullValueFallbackDeploymentId = default!; _explicitNullProperties?.Remove("fallbackDeploymentId"); }
+            else if (parseNode.GetChildNode("fallbackDeploymentId") is { } nullNodeFallbackDeploymentId && nullNodeFallbackDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackDeploymentId = null;
+            if (parseNode.GetChildNode("fallbackHost") is null) { _explicitNullValueFallbackHost = default!; _explicitNullProperties?.Remove("fallbackHost"); }
+            else if (parseNode.GetChildNode("fallbackHost") is { } nullNodeFallbackHost && nullNodeFallbackHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackHost = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The branchAlias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchAlias { get => _explicitNullValueBranchAlias; set { _explicitNullValueBranchAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchAlias"); else _explicitNullProperties?.Remove("branchAlias"); } }
+        public string? BranchAlias { get => _explicitNullValueBranchAlias; set { _explicitNullValueBranchAlias = value; AdditionalData?.Remove("branchAlias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchAlias"); else _explicitNullProperties?.Remove("branchAlias"); } }
         private string? _explicitNullValueBranchAlias = default!;
 #nullable restore
 #else
-        public string BranchAlias { get => _explicitNullValueBranchAlias; set { _explicitNullValueBranchAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchAlias"); else _explicitNullProperties?.Remove("branchAlias"); } }
+        public string BranchAlias { get => _explicitNullValueBranchAlias; set { _explicitNullValueBranchAlias = value; AdditionalData?.Remove("branchAlias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchAlias"); else _explicitNullProperties?.Remove("branchAlias"); } }
         private string _explicitNullValueBranchAlias = default!;
 #endif
         /// <summary>This is the latest non-cancelled deployment of the branch alias at the time the commit alias was created. It is possible there is no deployment for the branch, or this was set before the deployment was canceled, in which case this will point to a cancelled deployment, in either case the proxy will fallback to the fallbackDeploymentId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchDeploymentId { get => _explicitNullValueBranchDeploymentId; set { _explicitNullValueBranchDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchDeploymentId"); else _explicitNullProperties?.Remove("branchDeploymentId"); } }
+        public string? BranchDeploymentId { get => _explicitNullValueBranchDeploymentId; set { _explicitNullValueBranchDeploymentId = value; AdditionalData?.Remove("branchDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchDeploymentId"); else _explicitNullProperties?.Remove("branchDeploymentId"); } }
         private string? _explicitNullValueBranchDeploymentId = default!;
 #nullable restore
 #else
-        public string BranchDeploymentId { get => _explicitNullValueBranchDeploymentId; set { _explicitNullValueBranchDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchDeploymentId"); else _explicitNullProperties?.Remove("branchDeploymentId"); } }
+        public string BranchDeploymentId { get => _explicitNullValueBranchDeploymentId; set { _explicitNullValueBranchDeploymentId = value; AdditionalData?.Remove("branchDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchDeploymentId"); else _explicitNullProperties?.Remove("branchDeploymentId"); } }
         private string _explicitNullValueBranchDeploymentId = default!;
 #endif
         /// <summary>This is the deployment for the same commit, it could be a cancelled deployment. The proxy will fallback to the branchDeploymentId and then the fallbackDeploymentId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
         private string? _explicitNullValueDeploymentId = default!;
 #nullable restore
 #else
-        public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
         private string _explicitNullValueDeploymentId = default!;
 #endif
         /// <summary>This is the deployment of the fallback host at the time the commit alias was created. It is possible for this to be a deleted deployment, in which case the proxy will show that the deployment is deleted. It will not use the fallbackHost, as a future deployment on the fallback host could be invalid for this deployment, and it could lead to confusion / incorrect behavior for the commit alias.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackDeploymentId { get => _explicitNullValueFallbackDeploymentId; set { _explicitNullValueFallbackDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackDeploymentId"); else _explicitNullProperties?.Remove("fallbackDeploymentId"); } }
+        public string? FallbackDeploymentId { get => _explicitNullValueFallbackDeploymentId; set { _explicitNullValueFallbackDeploymentId = value; AdditionalData?.Remove("fallbackDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackDeploymentId"); else _explicitNullProperties?.Remove("fallbackDeploymentId"); } }
         private string? _explicitNullValueFallbackDeploymentId = default!;
 #nullable restore
 #else
-        public string FallbackDeploymentId { get => _explicitNullValueFallbackDeploymentId; set { _explicitNullValueFallbackDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackDeploymentId"); else _explicitNullProperties?.Remove("fallbackDeploymentId"); } }
+        public string FallbackDeploymentId { get => _explicitNullValueFallbackDeploymentId; set { _explicitNullValueFallbackDeploymentId = value; AdditionalData?.Remove("fallbackDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackDeploymentId"); else _explicitNullProperties?.Remove("fallbackDeploymentId"); } }
         private string _explicitNullValueFallbackDeploymentId = default!;
 #endif
         /// <summary>Temporary for backwards compatibility. Can remove when metadata change is released</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackHost { get => _explicitNullValueFallbackHost; set { _explicitNullValueFallbackHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackHost"); else _explicitNullProperties?.Remove("fallbackHost"); } }
+        public string? FallbackHost { get => _explicitNullValueFallbackHost; set { _explicitNullValueFallbackHost = value; AdditionalData?.Remove("fallbackHost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackHost"); else _explicitNullProperties?.Remove("fallbackHost"); } }
         private string? _explicitNullValueFallbackHost = default!;
 #nullable restore
 #else
-        public string FallbackHost { get => _explicitNullValueFallbackHost; set { _explicitNullValueFallbackHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackHost"); else _explicitNullProperties?.Remove("fallbackHost"); } }
+        public string FallbackHost { get => _explicitNullValueFallbackHost; set { _explicitNullValueFallbackHost = value; AdditionalData?.Remove("fallbackHost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackHost"); else _explicitNullProperties?.Remove("fallbackHost"); } }
         private string _explicitNullValueFallbackHost = default!;
 #endif
         /// <summary>The project ID of the microfrontends application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>

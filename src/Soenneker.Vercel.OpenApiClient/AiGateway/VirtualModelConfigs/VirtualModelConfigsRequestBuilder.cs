@@ -137,7 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/virtual-model-configs?virtualModelSlug={virtualModelSlug}{&actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/ai-gateway/virtual-model-configs?virtualModelSlug={virtualModelSlug}{&actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/virtual-model-configs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -156,7 +156,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/virtual-model-configs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -175,7 +175,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs
         public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/virtual-model-configs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -194,7 +194,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/virtual-model-configs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

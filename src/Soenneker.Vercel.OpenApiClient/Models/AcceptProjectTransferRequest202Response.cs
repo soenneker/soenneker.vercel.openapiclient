@@ -17,10 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("partnerCalls") is { } nullNodePartnerCalls && nullNodePartnerCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerCalls = null;
-            if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("resourceTransferErrors") is { } nullNodeResourceTransferErrors && nullNodeResourceTransferErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceTransferErrors = null;
-            if (parseNode.GetChildNode("transferredStoreIds") is { } nullNodeTransferredStoreIds && nullNodeTransferredStoreIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferredStoreIds = null;
+            if (parseNode.GetChildNode("partnerCalls") is null) { _explicitNullValuePartnerCalls = default!; _explicitNullProperties?.Remove("partnerCalls"); }
+            else if (parseNode.GetChildNode("partnerCalls") is { } nullNodePartnerCalls && nullNodePartnerCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerCalls = null;
+            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
+            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("resourceTransferErrors") is null) { _explicitNullValueResourceTransferErrors = default!; _explicitNullProperties?.Remove("resourceTransferErrors"); }
+            else if (parseNode.GetChildNode("resourceTransferErrors") is { } nullNodeResourceTransferErrors && nullNodeResourceTransferErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceTransferErrors = null;
+            if (parseNode.GetChildNode("transferredStoreIds") is null) { _explicitNullValueTransferredStoreIds = default!; _explicitNullProperties?.Remove("transferredStoreIds"); }
+            else if (parseNode.GetChildNode("transferredStoreIds") is { } nullNodeTransferredStoreIds && nullNodeTransferredStoreIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferredStoreIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The partnerCalls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem>? PartnerCalls { get => _explicitNullValuePartnerCalls; set { _explicitNullValuePartnerCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerCalls"); else _explicitNullProperties?.Remove("partnerCalls"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem>? PartnerCalls { get => _explicitNullValuePartnerCalls; set { _explicitNullValuePartnerCalls = value; AdditionalData?.Remove("partnerCalls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerCalls"); else _explicitNullProperties?.Remove("partnerCalls"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem>? _explicitNullValuePartnerCalls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem> PartnerCalls { get => _explicitNullValuePartnerCalls; set { _explicitNullValuePartnerCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerCalls"); else _explicitNullProperties?.Remove("partnerCalls"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem> PartnerCalls { get => _explicitNullValuePartnerCalls; set { _explicitNullValuePartnerCalls = value; AdditionalData?.Remove("partnerCalls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerCalls"); else _explicitNullProperties?.Remove("partnerCalls"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem> _explicitNullValuePartnerCalls = default!;
 #endif
         /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string? _explicitNullValueProjectName = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
         /// <summary>The resourceTransferErrors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem>? ResourceTransferErrors { get => _explicitNullValueResourceTransferErrors; set { _explicitNullValueResourceTransferErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceTransferErrors"); else _explicitNullProperties?.Remove("resourceTransferErrors"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem>? ResourceTransferErrors { get => _explicitNullValueResourceTransferErrors; set { _explicitNullValueResourceTransferErrors = value; AdditionalData?.Remove("resourceTransferErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceTransferErrors"); else _explicitNullProperties?.Remove("resourceTransferErrors"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem>? _explicitNullValueResourceTransferErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem> ResourceTransferErrors { get => _explicitNullValueResourceTransferErrors; set { _explicitNullValueResourceTransferErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceTransferErrors"); else _explicitNullProperties?.Remove("resourceTransferErrors"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem> ResourceTransferErrors { get => _explicitNullValueResourceTransferErrors; set { _explicitNullValueResourceTransferErrors = value; AdditionalData?.Remove("resourceTransferErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceTransferErrors"); else _explicitNullProperties?.Remove("resourceTransferErrors"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem> _explicitNullValueResourceTransferErrors = default!;
 #endif
         /// <summary>The transferredStoreIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TransferredStoreIds { get => _explicitNullValueTransferredStoreIds; set { _explicitNullValueTransferredStoreIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferredStoreIds"); else _explicitNullProperties?.Remove("transferredStoreIds"); } }
+        public List<string>? TransferredStoreIds { get => _explicitNullValueTransferredStoreIds; set { _explicitNullValueTransferredStoreIds = value; AdditionalData?.Remove("transferredStoreIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferredStoreIds"); else _explicitNullProperties?.Remove("transferredStoreIds"); } }
         private List<string>? _explicitNullValueTransferredStoreIds = default!;
 #nullable restore
 #else
-        public List<string> TransferredStoreIds { get => _explicitNullValueTransferredStoreIds; set { _explicitNullValueTransferredStoreIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferredStoreIds"); else _explicitNullProperties?.Remove("transferredStoreIds"); } }
+        public List<string> TransferredStoreIds { get => _explicitNullValueTransferredStoreIds; set { _explicitNullValueTransferredStoreIds = value; AdditionalData?.Remove("transferredStoreIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferredStoreIds"); else _explicitNullProperties?.Remove("transferredStoreIds"); } }
         private List<string> _explicitNullValueTransferredStoreIds = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("ruleGroups") is { } nullNodeRuleGroups && nullNodeRuleGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleGroups = null;
-            if (parseNode.GetChildNode("rulesetName") is { } nullNodeRulesetName && nullNodeRulesetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetName = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("ruleGroups") is null) { _explicitNullValueRuleGroups = default!; _explicitNullProperties?.Remove("ruleGroups"); }
+            else if (parseNode.GetChildNode("ruleGroups") is { } nullNodeRuleGroups && nullNodeRuleGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleGroups = null;
+            if (parseNode.GetChildNode("rulesetName") is null) { _explicitNullValueRulesetName = default!; _explicitNullProperties?.Remove("rulesetName"); }
+            else if (parseNode.GetChildNode("rulesetName") is { } nullNodeRulesetName && nullNodeRulesetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The ruleGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186RuleGroupsProperty? RuleGroups { get => _explicitNullValueRuleGroups; set { _explicitNullValueRuleGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleGroups"); else _explicitNullProperties?.Remove("ruleGroups"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186RuleGroupsProperty? RuleGroups { get => _explicitNullValueRuleGroups; set { _explicitNullValueRuleGroups = value; AdditionalData?.Remove("ruleGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleGroups"); else _explicitNullProperties?.Remove("ruleGroups"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186RuleGroupsProperty? _explicitNullValueRuleGroups = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186RuleGroupsProperty RuleGroups { get => _explicitNullValueRuleGroups; set { _explicitNullValueRuleGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleGroups"); else _explicitNullProperties?.Remove("ruleGroups"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186RuleGroupsProperty RuleGroups { get => _explicitNullValueRuleGroups; set { _explicitNullValueRuleGroups = value; AdditionalData?.Remove("ruleGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleGroups"); else _explicitNullProperties?.Remove("ruleGroups"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186RuleGroupsProperty _explicitNullValueRuleGroups = default!;
 #endif
         /// <summary>The rulesetName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RulesetName { get => _explicitNullValueRulesetName; set { _explicitNullValueRulesetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesetName"); else _explicitNullProperties?.Remove("rulesetName"); } }
+        public string? RulesetName { get => _explicitNullValueRulesetName; set { _explicitNullValueRulesetName = value; AdditionalData?.Remove("rulesetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesetName"); else _explicitNullProperties?.Remove("rulesetName"); } }
         private string? _explicitNullValueRulesetName = default!;
 #nullable restore
 #else
-        public string RulesetName { get => _explicitNullValueRulesetName; set { _explicitNullValueRulesetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesetName"); else _explicitNullProperties?.Remove("rulesetName"); } }
+        public string RulesetName { get => _explicitNullValueRulesetName; set { _explicitNullValueRulesetName = value; AdditionalData?.Remove("rulesetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesetName"); else _explicitNullProperties?.Remove("rulesetName"); } }
         private string _explicitNullValueRulesetName = default!;
 #endif
         /// <summary>

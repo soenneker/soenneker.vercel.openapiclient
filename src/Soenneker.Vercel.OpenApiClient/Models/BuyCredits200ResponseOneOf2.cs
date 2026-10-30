@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("purchaseIntent") is { } nullNodePurchaseIntent && nullNodePurchaseIntent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseIntent = null;
+            if (parseNode.GetChildNode("purchaseIntent") is null) { _explicitNullValuePurchaseIntent = default!; _explicitNullProperties?.Remove("purchaseIntent"); }
+            else if (parseNode.GetChildNode("purchaseIntent") is { } nullNodePurchaseIntent && nullNodePurchaseIntent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseIntent = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The created purchase intent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntent? PurchaseIntent { get => _explicitNullValuePurchaseIntent; set { _explicitNullValuePurchaseIntent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseIntent"); else _explicitNullProperties?.Remove("purchaseIntent"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntent? PurchaseIntent { get => _explicitNullValuePurchaseIntent; set { _explicitNullValuePurchaseIntent = value; AdditionalData?.Remove("purchaseIntent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseIntent"); else _explicitNullProperties?.Remove("purchaseIntent"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntent? _explicitNullValuePurchaseIntent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntent PurchaseIntent { get => _explicitNullValuePurchaseIntent; set { _explicitNullValuePurchaseIntent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseIntent"); else _explicitNullProperties?.Remove("purchaseIntent"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntent PurchaseIntent { get => _explicitNullValuePurchaseIntent; set { _explicitNullValuePurchaseIntent = value; AdditionalData?.Remove("purchaseIntent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseIntent"); else _explicitNullProperties?.Remove("purchaseIntent"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntent _explicitNullValuePurchaseIntent = default!;
 #endif
         /// <summary>

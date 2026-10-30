@@ -18,11 +18,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("excludePaths") is { } nullNodeExcludePaths && nullNodeExcludePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludePaths = null;
-            if (parseNode.GetChildNode("excludeStatusCodes") is { } nullNodeExcludeStatusCodes && nullNodeExcludeStatusCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeStatusCodes = null;
-            if (parseNode.GetChildNode("ingestWatermarkSeconds") is { } nullNodeIngestWatermarkSeconds && nullNodeIngestWatermarkSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IngestWatermarkSeconds = null;
-            if (parseNode.GetChildNode("significanceLevel") is { } nullNodeSignificanceLevel && nullNodeSignificanceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignificanceLevel = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("excludePaths") is null) { _explicitNullValueExcludePaths = default!; _explicitNullProperties?.Remove("excludePaths"); }
+            else if (parseNode.GetChildNode("excludePaths") is { } nullNodeExcludePaths && nullNodeExcludePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludePaths = null;
+            if (parseNode.GetChildNode("excludeStatusCodes") is null) { _explicitNullValueExcludeStatusCodes = default!; _explicitNullProperties?.Remove("excludeStatusCodes"); }
+            else if (parseNode.GetChildNode("excludeStatusCodes") is { } nullNodeExcludeStatusCodes && nullNodeExcludeStatusCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeStatusCodes = null;
+            if (parseNode.GetChildNode("ingestWatermarkSeconds") is null) { _explicitNullValueIngestWatermarkSeconds = default!; _explicitNullProperties?.Remove("ingestWatermarkSeconds"); }
+            else if (parseNode.GetChildNode("ingestWatermarkSeconds") is { } nullNodeIngestWatermarkSeconds && nullNodeIngestWatermarkSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IngestWatermarkSeconds = null;
+            if (parseNode.GetChildNode("significanceLevel") is null) { _explicitNullValueSignificanceLevel = default!; _explicitNullProperties?.Remove("significanceLevel"); }
+            else if (parseNode.GetChildNode("significanceLevel") is { } nullNodeSignificanceLevel && nullNodeSignificanceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignificanceLevel = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,31 +35,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
+        public List<string>? ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; AdditionalData?.Remove("excludePaths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
         private List<string>? _explicitNullValueExcludePaths = default!;
 #nullable restore
 #else
-        public List<string> ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
+        public List<string> ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; AdditionalData?.Remove("excludePaths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
         private List<string> _explicitNullValueExcludePaths = default!;
 #endif
         /// <summary>Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? ExcludeStatusCodes { get => _explicitNullValueExcludeStatusCodes; set { _explicitNullValueExcludeStatusCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeStatusCodes"); else _explicitNullProperties?.Remove("excludeStatusCodes"); } }
+        public List<double?>? ExcludeStatusCodes { get => _explicitNullValueExcludeStatusCodes; set { _explicitNullValueExcludeStatusCodes = value; AdditionalData?.Remove("excludeStatusCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeStatusCodes"); else _explicitNullProperties?.Remove("excludeStatusCodes"); } }
         private List<double?>? _explicitNullValueExcludeStatusCodes = default!;
 #nullable restore
 #else
-        public List<double?> ExcludeStatusCodes { get => _explicitNullValueExcludeStatusCodes; set { _explicitNullValueExcludeStatusCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeStatusCodes"); else _explicitNullProperties?.Remove("excludeStatusCodes"); } }
+        public List<double?> ExcludeStatusCodes { get => _explicitNullValueExcludeStatusCodes; set { _explicitNullValueExcludeStatusCodes = value; AdditionalData?.Remove("excludeStatusCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeStatusCodes"); else _explicitNullProperties?.Remove("excludeStatusCodes"); } }
         private List<double?> _explicitNullValueExcludeStatusCodes = default!;
 #endif
         /// <summary>Seconds of ingest lag to allow for: the query&apos;s upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.</summary>
-        public double? IngestWatermarkSeconds { get => _explicitNullValueIngestWatermarkSeconds; set { _explicitNullValueIngestWatermarkSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestWatermarkSeconds"); else _explicitNullProperties?.Remove("ingestWatermarkSeconds"); } }
+        public double? IngestWatermarkSeconds { get => _explicitNullValueIngestWatermarkSeconds; set { _explicitNullValueIngestWatermarkSeconds = value; AdditionalData?.Remove("ingestWatermarkSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestWatermarkSeconds"); else _explicitNullProperties?.Remove("ingestWatermarkSeconds"); } }
         private double? _explicitNullValueIngestWatermarkSeconds = default!;
         /// <summary>A run fails only when the canary&apos;s error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.</summary>
-        public double? SignificanceLevel { get => _explicitNullValueSignificanceLevel; set { _explicitNullValueSignificanceLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significanceLevel"); else _explicitNullProperties?.Remove("significanceLevel"); } }
+        public double? SignificanceLevel { get => _explicitNullValueSignificanceLevel; set { _explicitNullValueSignificanceLevel = value; AdditionalData?.Remove("significanceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significanceLevel"); else _explicitNullProperties?.Remove("significanceLevel"); } }
         private double? _explicitNullValueSignificanceLevel = default!;
         /// <summary>The metric this check evaluates.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemRollingReleaseGateChecksItem"/> and sets the default values.
@@ -85,7 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "excludeStatusCodes", n => { ExcludeStatusCodes = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "ingestWatermarkSeconds", n => { IngestWatermarkSeconds = n.GetDoubleValue(); } },
                 { "significanceLevel", n => { SignificanceLevel = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

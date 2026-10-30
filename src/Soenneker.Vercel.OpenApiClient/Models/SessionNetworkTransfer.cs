@@ -18,17 +18,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("egress") is { } nullNodeEgress && nullNodeEgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Egress = null;
-            if (parseNode.GetChildNode("ingress") is { } nullNodeIngress && nullNodeIngress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ingress = null;
+            if (parseNode.GetChildNode("egress") is null) { _explicitNullValueEgress = default!; _explicitNullProperties?.Remove("egress"); }
+            else if (parseNode.GetChildNode("egress") is { } nullNodeEgress && nullNodeEgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Egress = null;
+            if (parseNode.GetChildNode("ingress") is null) { _explicitNullValueIngress = default!; _explicitNullProperties?.Remove("ingress"); }
+            else if (parseNode.GetChildNode("ingress") is { } nullNodeIngress && nullNodeIngress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ingress = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The egress property</summary>
-        public double? Egress { get => _explicitNullValueEgress; set { _explicitNullValueEgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egress"); else _explicitNullProperties?.Remove("egress"); } }
+        public double? Egress { get => _explicitNullValueEgress; set { _explicitNullValueEgress = value; AdditionalData?.Remove("egress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egress"); else _explicitNullProperties?.Remove("egress"); } }
         private double? _explicitNullValueEgress = default!;
         /// <summary>The ingress property</summary>
-        public double? Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
+        public double? Ingress { get => _explicitNullValueIngress; set { _explicitNullValueIngress = value; AdditionalData?.Remove("ingress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress"); else _explicitNullProperties?.Remove("ingress"); } }
         private double? _explicitNullValueIngress = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SessionNetworkTransfer"/> and sets the default values.

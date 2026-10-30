@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("isDefaultApp") is { } nullNodeIsDefaultApp && nullNodeIsDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefaultApp = null;
+            if (parseNode.GetChildNode("isDefaultApp") is null) { _explicitNullValueIsDefaultApp = default!; _explicitNullProperties?.Remove("isDefaultApp"); }
+            else if (parseNode.GetChildNode("isDefaultApp") is { } nullNodeIsDefaultApp && nullNodeIsDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefaultApp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Marks the team-level, Vercel-managed default blob project (`vercel-blob-default-project`) that orphan blob stores are scoped to when connected without an explicit project. Set only by internal storage flows and immutable after creation — guards rely on it to protect the connected stores from being lost when the project is deleted or transferred.</summary>
-        public bool? IsDefaultApp { get => _explicitNullValueIsDefaultApp; set { _explicitNullValueIsDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDefaultApp"); else _explicitNullProperties?.Remove("isDefaultApp"); } }
+        public bool? IsDefaultApp { get => _explicitNullValueIsDefaultApp; set { _explicitNullValueIsDefaultApp = value; AdditionalData?.Remove("isDefaultApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDefaultApp"); else _explicitNullProperties?.Remove("isDefaultApp"); } }
         private bool? _explicitNullValueIsDefaultApp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemBlobs"/> and sets the default values.

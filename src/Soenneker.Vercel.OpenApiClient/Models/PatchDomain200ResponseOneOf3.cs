@@ -17,10 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customNameservers") is { } nullNodeCustomNameservers && nullNodeCustomNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomNameservers = null;
-            if (parseNode.GetChildNode("echMode") is { } nullNodeEchMode && nullNodeEchMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EchMode = null;
-            if (parseNode.GetChildNode("renew") is { } nullNodeRenew && nullNodeRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Renew = null;
-            if (parseNode.GetChildNode("zone") is { } nullNodeZone && nullNodeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zone = null;
+            if (parseNode.GetChildNode("customNameservers") is null) { _explicitNullValueCustomNameservers = default!; _explicitNullProperties?.Remove("customNameservers"); }
+            else if (parseNode.GetChildNode("customNameservers") is { } nullNodeCustomNameservers && nullNodeCustomNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomNameservers = null;
+            if (parseNode.GetChildNode("echMode") is null) { _explicitNullValueEchMode = default!; _explicitNullProperties?.Remove("echMode"); }
+            else if (parseNode.GetChildNode("echMode") is { } nullNodeEchMode && nullNodeEchMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EchMode = null;
+            if (parseNode.GetChildNode("renew") is null) { _explicitNullValueRenew = default!; _explicitNullProperties?.Remove("renew"); }
+            else if (parseNode.GetChildNode("renew") is { } nullNodeRenew && nullNodeRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Renew = null;
+            if (parseNode.GetChildNode("zone") is null) { _explicitNullValueZone = default!; _explicitNullProperties?.Remove("zone"); }
+            else if (parseNode.GetChildNode("zone") is { } nullNodeZone && nullNodeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +32,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The customNameservers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
+        public List<string>? CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; AdditionalData?.Remove("customNameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
         private List<string>? _explicitNullValueCustomNameservers = default!;
 #nullable restore
 #else
-        public List<string> CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
+        public List<string> CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; AdditionalData?.Remove("customNameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
         private List<string> _explicitNullValueCustomNameservers = default!;
 #endif
         /// <summary>The echMode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseOneOf3EchMode? EchMode { get => _explicitNullValueEchMode; set { _explicitNullValueEchMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("echMode"); else _explicitNullProperties?.Remove("echMode"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseOneOf3EchMode? EchMode { get => _explicitNullValueEchMode; set { _explicitNullValueEchMode = value; AdditionalData?.Remove("echMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("echMode"); else _explicitNullProperties?.Remove("echMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseOneOf3EchMode? _explicitNullValueEchMode = default!;
         /// <summary>The renew property</summary>
-        public bool? Renew { get => _explicitNullValueRenew; set { _explicitNullValueRenew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renew"); else _explicitNullProperties?.Remove("renew"); } }
+        public bool? Renew { get => _explicitNullValueRenew; set { _explicitNullValueRenew = value; AdditionalData?.Remove("renew"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renew"); else _explicitNullProperties?.Remove("renew"); } }
         private bool? _explicitNullValueRenew = default!;
         /// <summary>The zone property</summary>
-        public bool? Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
+        public bool? Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; AdditionalData?.Remove("zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
         private bool? _explicitNullValueZone = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseOneOf3"/> and sets the default values.
@@ -70,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customNameservers", n => { CustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "echMode", n => { EchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseOneOf3EchMode>(); } },
+                { "echMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseOneOf3EchMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEchMode = default; _explicitNullProperties?.Remove("echMode"); AdditionalData["echMode"] = unknown; } else { EchMode = parsed; AdditionalData.Remove("echMode"); } } },
                 { "renew", n => { Renew = n.GetBoolValue(); } },
                 { "zone", n => { Zone = n.GetBoolValue(); } },
             };

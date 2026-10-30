@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
-            if (parseNode.GetChildNode("globalConfigId") is { } nullNodeGlobalConfigId && nullNodeGlobalConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalConfigId = null;
+            if (parseNode.GetChildNode("edgeConfigId") is null) { _explicitNullValueEdgeConfigId = default!; _explicitNullProperties?.Remove("edgeConfigId"); }
+            else if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
+            if (parseNode.GetChildNode("globalConfigId") is null) { _explicitNullValueGlobalConfigId = default!; _explicitNullProperties?.Remove("globalConfigId"); }
+            else if (parseNode.GetChildNode("globalConfigId") is { } nullNodeGlobalConfigId && nullNodeGlobalConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalConfigId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        public string? EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
         private string? _explicitNullValueEdgeConfigId = default!;
 #nullable restore
 #else
-        public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
         private string _explicitNullValueEdgeConfigId = default!;
 #endif
         /// <summary>The globalConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
+        public string? GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; AdditionalData?.Remove("globalConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
         private string? _explicitNullValueGlobalConfigId = default!;
 #nullable restore
 #else
-        public string GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
+        public string GlobalConfigId { get => _explicitNullValueGlobalConfigId; set { _explicitNullValueGlobalConfigId = value; AdditionalData?.Remove("globalConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalConfigId"); else _explicitNullProperties?.Remove("globalConfigId"); } }
         private string _explicitNullValueGlobalConfigId = default!;
 #endif
         /// <summary>

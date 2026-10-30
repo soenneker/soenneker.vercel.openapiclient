@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("planSlug") is { } nullNodePlanSlug && nullNodePlanSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanSlug = null;
+            if (parseNode.GetChildNode("planSlug") is null) { _explicitNullValuePlanSlug = default!; _explicitNullProperties?.Remove("planSlug"); }
+            else if (parseNode.GetChildNode("planSlug") is { } nullNodePlanSlug && nullNodePlanSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The planSlug property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86DataPlanSlug? PlanSlug { get => _explicitNullValuePlanSlug; set { _explicitNullValuePlanSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planSlug"); else _explicitNullProperties?.Remove("planSlug"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86DataPlanSlug? PlanSlug { get => _explicitNullValuePlanSlug; set { _explicitNullValuePlanSlug = value; AdditionalData?.Remove("planSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planSlug"); else _explicitNullProperties?.Remove("planSlug"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86DataPlanSlug? _explicitNullValuePlanSlug = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86Data"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "planSlug", n => { PlanSlug = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86DataPlanSlug>(); } },
+                { "planSlug", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86DataPlanSlug>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlanSlug = default; _explicitNullProperties?.Remove("planSlug"); AdditionalData["planSlug"] = unknown; } else { PlanSlug = parsed; AdditionalData.Remove("planSlug"); } } },
             };
         }
         /// <summary>

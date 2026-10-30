@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Backups.Item.Resto
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Backups.Item.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

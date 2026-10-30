@@ -18,13 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("excessBillingEnabled") is { } nullNodeExcessBillingEnabled && nullNodeExcessBillingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcessBillingEnabled = null;
+            if (parseNode.GetChildNode("excessBillingEnabled") is null) { _explicitNullValueExcessBillingEnabled = default!; _explicitNullProperties?.Remove("excessBillingEnabled"); }
+            else if (parseNode.GetChildNode("excessBillingEnabled") is { } nullNodeExcessBillingEnabled && nullNodeExcessBillingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcessBillingEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The excessBillingEnabled property</summary>
-        public bool? ExcessBillingEnabled { get => _explicitNullValueExcessBillingEnabled; set { _explicitNullValueExcessBillingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excessBillingEnabled"); else _explicitNullProperties?.Remove("excessBillingEnabled"); } }
+        public bool? ExcessBillingEnabled { get => _explicitNullValueExcessBillingEnabled; set { _explicitNullValueExcessBillingEnabled = value; AdditionalData?.Remove("excessBillingEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excessBillingEnabled"); else _explicitNullProperties?.Remove("excessBillingEnabled"); } }
         private bool? _explicitNullValueExcessBillingEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache"/> and sets the default values.

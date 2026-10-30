@@ -17,14 +17,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("skewProtectionMaxAge") is { } nullNodeSkewProtectionMaxAge && nullNodeSkewProtectionMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionMaxAge = null;
+            if (parseNode.GetChildNode("skewProtectionBoundaryAt") is null) { _explicitNullValueSkewProtectionBoundaryAt = default!; _explicitNullProperties?.Remove("skewProtectionBoundaryAt"); }
+            else if (parseNode.GetChildNode("skewProtectionBoundaryAt") is { } nullNodeSkewProtectionBoundaryAt && nullNodeSkewProtectionBoundaryAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionBoundaryAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The skewProtectionMaxAge property</summary>
-        public double? SkewProtectionMaxAge { get => _explicitNullValueSkewProtectionMaxAge; set { _explicitNullValueSkewProtectionMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionMaxAge"); else _explicitNullProperties?.Remove("skewProtectionMaxAge"); } }
-        private double? _explicitNullValueSkewProtectionMaxAge = default!;
+        /// <summary>The skewProtectionBoundaryAt property</summary>
+        public double? SkewProtectionBoundaryAt { get => _explicitNullValueSkewProtectionBoundaryAt; set { _explicitNullValueSkewProtectionBoundaryAt = value; AdditionalData?.Remove("skewProtectionBoundaryAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionBoundaryAt"); else _explicitNullProperties?.Remove("skewProtectionBoundaryAt"); } }
+        private double? _explicitNullValueSkewProtectionBoundaryAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354Next"/> and sets the default values.
         /// </summary>
@@ -50,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "skewProtectionMaxAge", n => { SkewProtectionMaxAge = n.GetDoubleValue(); } },
+                { "skewProtectionBoundaryAt", n => { SkewProtectionBoundaryAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -60,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("skewProtectionMaxAge", SkewProtectionMaxAge);
+            writer.WriteDoubleValue("skewProtectionBoundaryAt", SkewProtectionBoundaryAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

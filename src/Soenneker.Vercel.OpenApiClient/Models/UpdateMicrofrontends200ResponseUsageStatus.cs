@@ -17,29 +17,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bypassThrottleUntil") is { } nullNodeBypassThrottleUntil && nullNodeBypassThrottleUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassThrottleUntil = null;
-            if (parseNode.GetChildNode("exceededAllowanceUntil") is { } nullNodeExceededAllowanceUntil && nullNodeExceededAllowanceUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExceededAllowanceUntil = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("teamThrottled") is { } nullNodeTeamThrottled && nullNodeTeamThrottled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamThrottled = null;
-            if (parseNode.GetChildNode("throttled") is { } nullNodeThrottled && nullNodeThrottled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Throttled = null;
+            if (parseNode.GetChildNode("bypassThrottleUntil") is null) { _explicitNullValueBypassThrottleUntil = default!; _explicitNullProperties?.Remove("bypassThrottleUntil"); }
+            else if (parseNode.GetChildNode("bypassThrottleUntil") is { } nullNodeBypassThrottleUntil && nullNodeBypassThrottleUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassThrottleUntil = null;
+            if (parseNode.GetChildNode("exceededAllowanceUntil") is null) { _explicitNullValueExceededAllowanceUntil = default!; _explicitNullProperties?.Remove("exceededAllowanceUntil"); }
+            else if (parseNode.GetChildNode("exceededAllowanceUntil") is { } nullNodeExceededAllowanceUntil && nullNodeExceededAllowanceUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExceededAllowanceUntil = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("teamThrottled") is null) { _explicitNullValueTeamThrottled = default!; _explicitNullProperties?.Remove("teamThrottled"); }
+            else if (parseNode.GetChildNode("teamThrottled") is { } nullNodeTeamThrottled && nullNodeTeamThrottled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamThrottled = null;
+            if (parseNode.GetChildNode("throttled") is null) { _explicitNullValueThrottled = default!; _explicitNullProperties?.Remove("throttled"); }
+            else if (parseNode.GetChildNode("throttled") is { } nullNodeThrottled && nullNodeThrottled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Throttled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp until which throttling is bypassed (project pays list rates for overage).</summary>
-        public double? BypassThrottleUntil { get => _explicitNullValueBypassThrottleUntil; set { _explicitNullValueBypassThrottleUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassThrottleUntil"); else _explicitNullProperties?.Remove("bypassThrottleUntil"); } }
+        public double? BypassThrottleUntil { get => _explicitNullValueBypassThrottleUntil; set { _explicitNullValueBypassThrottleUntil = value; AdditionalData?.Remove("bypassThrottleUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassThrottleUntil"); else _explicitNullProperties?.Remove("bypassThrottleUntil"); } }
         private double? _explicitNullValueBypassThrottleUntil = default!;
         /// <summary>Timestamp until which the project has exceeded its CDN allowance.</summary>
-        public double? ExceededAllowanceUntil { get => _explicitNullValueExceededAllowanceUntil; set { _explicitNullValueExceededAllowanceUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceededAllowanceUntil"); else _explicitNullProperties?.Remove("exceededAllowanceUntil"); } }
+        public double? ExceededAllowanceUntil { get => _explicitNullValueExceededAllowanceUntil; set { _explicitNullValueExceededAllowanceUntil = value; AdditionalData?.Remove("exceededAllowanceUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceededAllowanceUntil"); else _explicitNullProperties?.Remove("exceededAllowanceUntil"); } }
         private double? _explicitNullValueExceededAllowanceUntil = default!;
         /// <summary>Billing mode. Always &apos;flat&apos; for flat-rate projects.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FlatKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlatKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.FlatKind? _explicitNullValueKind = default!;
         /// <summary>Synced from `team.billing.usageStatus.throttled`. When `true`, the team has throttled all of its projects regardless of `throttled`. The effective throttle the CDN enforces is `throttled || teamThrottled`.</summary>
-        public bool? TeamThrottled { get => _explicitNullValueTeamThrottled; set { _explicitNullValueTeamThrottled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamThrottled"); else _explicitNullProperties?.Remove("teamThrottled"); } }
+        public bool? TeamThrottled { get => _explicitNullValueTeamThrottled; set { _explicitNullValueTeamThrottled = value; AdditionalData?.Remove("teamThrottled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamThrottled"); else _explicitNullProperties?.Remove("teamThrottled"); } }
         private bool? _explicitNullValueTeamThrottled = default!;
         /// <summary>Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).</summary>
-        public bool? Throttled { get => _explicitNullValueThrottled; set { _explicitNullValueThrottled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttled"); else _explicitNullProperties?.Remove("throttled"); } }
+        public bool? Throttled { get => _explicitNullValueThrottled; set { _explicitNullValueThrottled = value; AdditionalData?.Remove("throttled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttled"); else _explicitNullProperties?.Remove("throttled"); } }
         private bool? _explicitNullValueThrottled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseUsageStatus"/> and sets the default values.
@@ -68,7 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "bypassThrottleUntil", n => { BypassThrottleUntil = n.GetDoubleValue(); } },
                 { "exceededAllowanceUntil", n => { ExceededAllowanceUntil = n.GetDoubleValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlatKind>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlatKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "teamThrottled", n => { TeamThrottled = n.GetBoolValue(); } },
                 { "throttled", n => { Throttled = n.GetBoolValue(); } },
             };

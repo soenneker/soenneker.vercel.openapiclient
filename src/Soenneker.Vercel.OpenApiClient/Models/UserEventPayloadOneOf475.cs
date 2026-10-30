@@ -18,18 +18,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("totpVerified") is { } nullNodeTotpVerified && nullNodeTotpVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotpVerified = null;
+            if (parseNode.GetChildNode("mfa") is null) { _explicitNullValueMfa = default!; _explicitNullProperties?.Remove("mfa"); }
+            else if (parseNode.GetChildNode("mfa") is { } nullNodeMfa && nullNodeMfa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mfa = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
-        private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The totpVerified property</summary>
-        public bool? TotpVerified { get => _explicitNullValueTotpVerified; set { _explicitNullValueTotpVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totpVerified"); else _explicitNullProperties?.Remove("totpVerified"); } }
-        private bool? _explicitNullValueTotpVerified = default!;
+        /// <summary>The mfa property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475Mfa? Mfa { get => _explicitNullValueMfa; set { _explicitNullValueMfa = value; AdditionalData?.Remove("mfa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa"); else _explicitNullProperties?.Remove("mfa"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475Mfa? _explicitNullValueMfa = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475Mfa Mfa { get => _explicitNullValueMfa; set { _explicitNullValueMfa = value; AdditionalData?.Remove("mfa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa"); else _explicitNullProperties?.Remove("mfa"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475Mfa _explicitNullValueMfa = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475"/> and sets the default values.
         /// </summary>
@@ -55,8 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "totpVerified", n => { TotpVerified = n.GetBoolValue(); } },
+                { "mfa", n => { Mfa = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475Mfa>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475Mfa.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteBoolValue("totpVerified", TotpVerified);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475Mfa>("mfa", Mfa);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

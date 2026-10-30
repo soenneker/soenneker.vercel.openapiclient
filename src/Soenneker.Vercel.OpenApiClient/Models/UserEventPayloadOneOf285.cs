@@ -18,36 +18,111 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("widget") is { } nullNodeWidget && nullNodeWidget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Widget = null;
+            if (parseNode.GetChildNode("deploymentId") is null) { _explicitNullValueDeploymentId = default!; _explicitNullProperties?.Remove("deploymentId"); }
+            else if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
+            if (parseNode.GetChildNode("isSystemInitiated") is null) { _explicitNullValueIsSystemInitiated = default!; _explicitNullProperties?.Remove("isSystemInitiated"); }
+            else if (parseNode.GetChildNode("isSystemInitiated") is { } nullNodeIsSystemInitiated && nullNodeIsSystemInitiated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSystemInitiated = null;
+            if (parseNode.GetChildNode("nextBuildMachineSelection") is null) { _explicitNullValueNextBuildMachineSelection = default!; _explicitNullProperties?.Remove("nextBuildMachineSelection"); }
+            else if (parseNode.GetChildNode("nextBuildMachineSelection") is { } nullNodeNextBuildMachineSelection && nullNodeNextBuildMachineSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBuildMachineSelection = null;
+            if (parseNode.GetChildNode("nextBuildMachineType") is null) { _explicitNullValueNextBuildMachineType = default!; _explicitNullProperties?.Remove("nextBuildMachineType"); }
+            else if (parseNode.GetChildNode("nextBuildMachineType") is { } nullNodeNextBuildMachineType && nullNodeNextBuildMachineType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBuildMachineType = null;
+            if (parseNode.GetChildNode("previousBuildMachineSelection") is null) { _explicitNullValuePreviousBuildMachineSelection = default!; _explicitNullProperties?.Remove("previousBuildMachineSelection"); }
+            else if (parseNode.GetChildNode("previousBuildMachineSelection") is { } nullNodePreviousBuildMachineSelection && nullNodePreviousBuildMachineSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousBuildMachineSelection = null;
+            if (parseNode.GetChildNode("previousBuildMachineType") is null) { _explicitNullValuePreviousBuildMachineType = default!; _explicitNullProperties?.Remove("previousBuildMachineType"); }
+            else if (parseNode.GetChildNode("previousBuildMachineType") is { } nullNodePreviousBuildMachineType && nullNodePreviousBuildMachineType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousBuildMachineType = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
+            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Deployment whose outcome caused a system-initiated elastic resize.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        private string? _explicitNullValueDeploymentId = default!;
+#nullable restore
+#else
+        public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        private string _explicitNullValueDeploymentId = default!;
+#endif
+        /// <summary>The isSystemInitiated property</summary>
+        public bool? IsSystemInitiated { get => _explicitNullValueIsSystemInitiated; set { _explicitNullValueIsSystemInitiated = value; AdditionalData?.Remove("isSystemInitiated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isSystemInitiated"); else _explicitNullProperties?.Remove("isSystemInitiated"); } }
+        private bool? _explicitNullValueIsSystemInitiated = default!;
+        /// <summary>The nextBuildMachineSelection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextBuildMachineSelection { get => _explicitNullValueNextBuildMachineSelection; set { _explicitNullValueNextBuildMachineSelection = value; AdditionalData?.Remove("nextBuildMachineSelection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextBuildMachineSelection"); else _explicitNullProperties?.Remove("nextBuildMachineSelection"); } }
+        private string? _explicitNullValueNextBuildMachineSelection = default!;
+#nullable restore
+#else
+        public string NextBuildMachineSelection { get => _explicitNullValueNextBuildMachineSelection; set { _explicitNullValueNextBuildMachineSelection = value; AdditionalData?.Remove("nextBuildMachineSelection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextBuildMachineSelection"); else _explicitNullProperties?.Remove("nextBuildMachineSelection"); } }
+        private string _explicitNullValueNextBuildMachineSelection = default!;
+#endif
+        /// <summary>The nextBuildMachineType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextBuildMachineType { get => _explicitNullValueNextBuildMachineType; set { _explicitNullValueNextBuildMachineType = value; AdditionalData?.Remove("nextBuildMachineType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextBuildMachineType"); else _explicitNullProperties?.Remove("nextBuildMachineType"); } }
+        private string? _explicitNullValueNextBuildMachineType = default!;
+#nullable restore
+#else
+        public string NextBuildMachineType { get => _explicitNullValueNextBuildMachineType; set { _explicitNullValueNextBuildMachineType = value; AdditionalData?.Remove("nextBuildMachineType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextBuildMachineType"); else _explicitNullProperties?.Remove("nextBuildMachineType"); } }
+        private string _explicitNullValueNextBuildMachineType = default!;
+#endif
+        /// <summary>The previousBuildMachineSelection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousBuildMachineSelection { get => _explicitNullValuePreviousBuildMachineSelection; set { _explicitNullValuePreviousBuildMachineSelection = value; AdditionalData?.Remove("previousBuildMachineSelection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousBuildMachineSelection"); else _explicitNullProperties?.Remove("previousBuildMachineSelection"); } }
+        private string? _explicitNullValuePreviousBuildMachineSelection = default!;
+#nullable restore
+#else
+        public string PreviousBuildMachineSelection { get => _explicitNullValuePreviousBuildMachineSelection; set { _explicitNullValuePreviousBuildMachineSelection = value; AdditionalData?.Remove("previousBuildMachineSelection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousBuildMachineSelection"); else _explicitNullProperties?.Remove("previousBuildMachineSelection"); } }
+        private string _explicitNullValuePreviousBuildMachineSelection = default!;
+#endif
+        /// <summary>The previousBuildMachineType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousBuildMachineType { get => _explicitNullValuePreviousBuildMachineType; set { _explicitNullValuePreviousBuildMachineType = value; AdditionalData?.Remove("previousBuildMachineType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousBuildMachineType"); else _explicitNullProperties?.Remove("previousBuildMachineType"); } }
+        private string? _explicitNullValuePreviousBuildMachineType = default!;
+#nullable restore
+#else
+        public string PreviousBuildMachineType { get => _explicitNullValuePreviousBuildMachineType; set { _explicitNullValuePreviousBuildMachineType = value; AdditionalData?.Remove("previousBuildMachineType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousBuildMachineType"); else _explicitNullProperties?.Remove("previousBuildMachineType"); } }
+        private string _explicitNullValuePreviousBuildMachineType = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string? _explicitNullValueProjectName = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
-        /// <summary>The widget property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285Widget? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285Widget? _explicitNullValueWidget = default!;
+        /// <summary>For system-initiated (elastic) changes, why the build machine was upgraded/downgraded. Stored as the raw reason code (see `ElasticChangeReason` in `@api/build-machines-types`) and rendered as a human-readable clause in the activity/audit log.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string? _explicitNullValueReason = default!;
+#nullable restore
+#else
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string _explicitNullValueReason = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285"/> and sets the default values.
         /// </summary>
@@ -73,9 +148,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "isSystemInitiated", n => { IsSystemInitiated = n.GetBoolValue(); } },
+                { "nextBuildMachineSelection", n => { NextBuildMachineSelection = n.GetStringValue(); } },
+                { "nextBuildMachineType", n => { NextBuildMachineType = n.GetStringValue(); } },
+                { "previousBuildMachineSelection", n => { PreviousBuildMachineSelection = n.GetStringValue(); } },
+                { "previousBuildMachineType", n => { PreviousBuildMachineType = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "widget", n => { Widget = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285Widget>(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +166,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteBoolValue("isSystemInitiated", IsSystemInitiated);
+            writer.WriteStringValue("nextBuildMachineSelection", NextBuildMachineSelection);
+            writer.WriteStringValue("nextBuildMachineType", NextBuildMachineType);
+            writer.WriteStringValue("previousBuildMachineSelection", PreviousBuildMachineSelection);
+            writer.WriteStringValue("previousBuildMachineType", PreviousBuildMachineType);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285Widget>("widget", Widget);
+            writer.WriteStringValue("reason", Reason);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

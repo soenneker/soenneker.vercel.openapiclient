@@ -17,12 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defaultRoute") is { } nullNodeDefaultRoute && nullNodeDefaultRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRoute = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("freeProjectForLegacyLimits") is { } nullNodeFreeProjectForLegacyLimits && nullNodeFreeProjectForLegacyLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeProjectForLegacyLimits = null;
-            if (parseNode.GetChildNode("groupIds") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
-            if (parseNode.GetChildNode("isDefaultApp") is { } nullNodeIsDefaultApp && nullNodeIsDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefaultApp = null;
-            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("defaultRoute") is null) { _explicitNullValueDefaultRoute = default!; _explicitNullProperties?.Remove("defaultRoute"); }
+            else if (parseNode.GetChildNode("defaultRoute") is { } nullNodeDefaultRoute && nullNodeDefaultRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRoute = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("freeProjectForLegacyLimits") is null) { _explicitNullValueFreeProjectForLegacyLimits = default!; _explicitNullProperties?.Remove("freeProjectForLegacyLimits"); }
+            else if (parseNode.GetChildNode("freeProjectForLegacyLimits") is { } nullNodeFreeProjectForLegacyLimits && nullNodeFreeProjectForLegacyLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeProjectForLegacyLimits = null;
+            if (parseNode.GetChildNode("groupIds") is null) { _explicitNullValueGroupIds = default!; _explicitNullProperties?.Remove("groupIds"); }
+            else if (parseNode.GetChildNode("groupIds") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
+            if (parseNode.GetChildNode("isDefaultApp") is null) { _explicitNullValueIsDefaultApp = default!; _explicitNullProperties?.Remove("isDefaultApp"); }
+            else if (parseNode.GetChildNode("isDefaultApp") is { } nullNodeIsDefaultApp && nullNodeIsDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefaultApp = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,34 +36,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
+        public string? DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; AdditionalData?.Remove("defaultRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
         private string? _explicitNullValueDefaultRoute = default!;
 #nullable restore
 #else
-        public string DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
+        public string DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; AdditionalData?.Remove("defaultRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
         private string _explicitNullValueDefaultRoute = default!;
 #endif
         /// <summary>Whether microfrontends are enabled for this project.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.</summary>
-        public bool? FreeProjectForLegacyLimits { get => _explicitNullValueFreeProjectForLegacyLimits; set { _explicitNullValueFreeProjectForLegacyLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("freeProjectForLegacyLimits"); else _explicitNullProperties?.Remove("freeProjectForLegacyLimits"); } }
+        public bool? FreeProjectForLegacyLimits { get => _explicitNullValueFreeProjectForLegacyLimits; set { _explicitNullValueFreeProjectForLegacyLimits = value; AdditionalData?.Remove("freeProjectForLegacyLimits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("freeProjectForLegacyLimits"); else _explicitNullProperties?.Remove("freeProjectForLegacyLimits"); } }
         private bool? _explicitNullValueFreeProjectForLegacyLimits = default!;
         /// <summary>The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
+        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; AdditionalData?.Remove("groupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
         private List<string>? _explicitNullValueGroupIds = default!;
 #nullable restore
 #else
-        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
+        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; AdditionalData?.Remove("groupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
         private List<string> _explicitNullValueGroupIds = default!;
 #endif
         /// <summary>The isDefaultApp property</summary>
-        public bool? IsDefaultApp { get => _explicitNullValueIsDefaultApp; set { _explicitNullValueIsDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDefaultApp"); else _explicitNullProperties?.Remove("isDefaultApp"); } }
+        public bool? IsDefaultApp { get => _explicitNullValueIsDefaultApp; set { _explicitNullValueIsDefaultApp = value; AdditionalData?.Remove("isDefaultApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDefaultApp"); else _explicitNullProperties?.Remove("isDefaultApp"); } }
         private bool? _explicitNullValueIsDefaultApp = default!;
         /// <summary>Timestamp when the microfrontends settings were last updated.</summary>
-        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private double? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemMicrofrontendsOneOf1"/> and sets the default values.

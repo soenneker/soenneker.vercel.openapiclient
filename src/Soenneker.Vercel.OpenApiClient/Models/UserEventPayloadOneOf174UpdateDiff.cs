@@ -17,108 +17,119 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("changedComment") is { } nullNodeChangedComment && nullNodeChangedComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedComment = null;
-            if (parseNode.GetChildNode("changedGitBranch") is { } nullNodeChangedGitBranch && nullNodeChangedGitBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedGitBranch = null;
-            if (parseNode.GetChildNode("changedValue") is { } nullNodeChangedValue && nullNodeChangedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedValue = null;
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("newCustomEnvironmentIds") is { } nullNodeNewCustomEnvironmentIds && nullNodeNewCustomEnvironmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewCustomEnvironmentIds = null;
-            if (parseNode.GetChildNode("newKey") is { } nullNodeNewKey && nullNodeNewKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewKey = null;
-            if (parseNode.GetChildNode("newTarget") is { } nullNodeNewTarget && nullNodeNewTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTarget = null;
-            if (parseNode.GetChildNode("newType") is { } nullNodeNewType && nullNodeNewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewType = null;
-            if (parseNode.GetChildNode("oldCustomEnvironmentIds") is { } nullNodeOldCustomEnvironmentIds && nullNodeOldCustomEnvironmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldCustomEnvironmentIds = null;
-            if (parseNode.GetChildNode("oldTarget") is { } nullNodeOldTarget && nullNodeOldTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTarget = null;
-            if (parseNode.GetChildNode("oldType") is { } nullNodeOldType && nullNodeOldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldType = null;
+            if (parseNode.GetChildNode("changedComment") is null) { _explicitNullValueChangedComment = default!; _explicitNullProperties?.Remove("changedComment"); }
+            else if (parseNode.GetChildNode("changedComment") is { } nullNodeChangedComment && nullNodeChangedComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedComment = null;
+            if (parseNode.GetChildNode("changedGitBranch") is null) { _explicitNullValueChangedGitBranch = default!; _explicitNullProperties?.Remove("changedGitBranch"); }
+            else if (parseNode.GetChildNode("changedGitBranch") is { } nullNodeChangedGitBranch && nullNodeChangedGitBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedGitBranch = null;
+            if (parseNode.GetChildNode("changedValue") is null) { _explicitNullValueChangedValue = default!; _explicitNullProperties?.Remove("changedValue"); }
+            else if (parseNode.GetChildNode("changedValue") is { } nullNodeChangedValue && nullNodeChangedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedValue = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("newCustomEnvironmentIds") is null) { _explicitNullValueNewCustomEnvironmentIds = default!; _explicitNullProperties?.Remove("newCustomEnvironmentIds"); }
+            else if (parseNode.GetChildNode("newCustomEnvironmentIds") is { } nullNodeNewCustomEnvironmentIds && nullNodeNewCustomEnvironmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewCustomEnvironmentIds = null;
+            if (parseNode.GetChildNode("newKey") is null) { _explicitNullValueNewKey = default!; _explicitNullProperties?.Remove("newKey"); }
+            else if (parseNode.GetChildNode("newKey") is { } nullNodeNewKey && nullNodeNewKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewKey = null;
+            if (parseNode.GetChildNode("newTarget") is null) { _explicitNullValueNewTarget = default!; _explicitNullProperties?.Remove("newTarget"); }
+            else if (parseNode.GetChildNode("newTarget") is { } nullNodeNewTarget && nullNodeNewTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTarget = null;
+            if (parseNode.GetChildNode("newType") is null) { _explicitNullValueNewType = default!; _explicitNullProperties?.Remove("newType"); }
+            else if (parseNode.GetChildNode("newType") is { } nullNodeNewType && nullNodeNewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewType = null;
+            if (parseNode.GetChildNode("oldCustomEnvironmentIds") is null) { _explicitNullValueOldCustomEnvironmentIds = default!; _explicitNullProperties?.Remove("oldCustomEnvironmentIds"); }
+            else if (parseNode.GetChildNode("oldCustomEnvironmentIds") is { } nullNodeOldCustomEnvironmentIds && nullNodeOldCustomEnvironmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldCustomEnvironmentIds = null;
+            if (parseNode.GetChildNode("oldTarget") is null) { _explicitNullValueOldTarget = default!; _explicitNullProperties?.Remove("oldTarget"); }
+            else if (parseNode.GetChildNode("oldTarget") is { } nullNodeOldTarget && nullNodeOldTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTarget = null;
+            if (parseNode.GetChildNode("oldType") is null) { _explicitNullValueOldType = default!; _explicitNullProperties?.Remove("oldType"); }
+            else if (parseNode.GetChildNode("oldType") is { } nullNodeOldType && nullNodeOldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The changedComment property</summary>
-        public bool? ChangedComment { get => _explicitNullValueChangedComment; set { _explicitNullValueChangedComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedComment"); else _explicitNullProperties?.Remove("changedComment"); } }
+        public bool? ChangedComment { get => _explicitNullValueChangedComment; set { _explicitNullValueChangedComment = value; AdditionalData?.Remove("changedComment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedComment"); else _explicitNullProperties?.Remove("changedComment"); } }
         private bool? _explicitNullValueChangedComment = default!;
         /// <summary>The changedGitBranch property</summary>
-        public bool? ChangedGitBranch { get => _explicitNullValueChangedGitBranch; set { _explicitNullValueChangedGitBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedGitBranch"); else _explicitNullProperties?.Remove("changedGitBranch"); } }
+        public bool? ChangedGitBranch { get => _explicitNullValueChangedGitBranch; set { _explicitNullValueChangedGitBranch = value; AdditionalData?.Remove("changedGitBranch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedGitBranch"); else _explicitNullProperties?.Remove("changedGitBranch"); } }
         private bool? _explicitNullValueChangedGitBranch = default!;
         /// <summary>Indicates a value was submitted, not whether its plaintext changed.</summary>
-        public bool? ChangedValue { get => _explicitNullValueChangedValue; set { _explicitNullValueChangedValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedValue"); else _explicitNullProperties?.Remove("changedValue"); } }
+        public bool? ChangedValue { get => _explicitNullValueChangedValue; set { _explicitNullValueChangedValue = value; AdditionalData?.Remove("changedValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedValue"); else _explicitNullProperties?.Remove("changedValue"); } }
         private bool? _explicitNullValueChangedValue = default!;
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The newCustomEnvironmentIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NewCustomEnvironmentIds { get => _explicitNullValueNewCustomEnvironmentIds; set { _explicitNullValueNewCustomEnvironmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newCustomEnvironmentIds"); else _explicitNullProperties?.Remove("newCustomEnvironmentIds"); } }
+        public List<string>? NewCustomEnvironmentIds { get => _explicitNullValueNewCustomEnvironmentIds; set { _explicitNullValueNewCustomEnvironmentIds = value; AdditionalData?.Remove("newCustomEnvironmentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newCustomEnvironmentIds"); else _explicitNullProperties?.Remove("newCustomEnvironmentIds"); } }
         private List<string>? _explicitNullValueNewCustomEnvironmentIds = default!;
 #nullable restore
 #else
-        public List<string> NewCustomEnvironmentIds { get => _explicitNullValueNewCustomEnvironmentIds; set { _explicitNullValueNewCustomEnvironmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newCustomEnvironmentIds"); else _explicitNullProperties?.Remove("newCustomEnvironmentIds"); } }
+        public List<string> NewCustomEnvironmentIds { get => _explicitNullValueNewCustomEnvironmentIds; set { _explicitNullValueNewCustomEnvironmentIds = value; AdditionalData?.Remove("newCustomEnvironmentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newCustomEnvironmentIds"); else _explicitNullProperties?.Remove("newCustomEnvironmentIds"); } }
         private List<string> _explicitNullValueNewCustomEnvironmentIds = default!;
 #endif
         /// <summary>The newKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewKey { get => _explicitNullValueNewKey; set { _explicitNullValueNewKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newKey"); else _explicitNullProperties?.Remove("newKey"); } }
+        public string? NewKey { get => _explicitNullValueNewKey; set { _explicitNullValueNewKey = value; AdditionalData?.Remove("newKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newKey"); else _explicitNullProperties?.Remove("newKey"); } }
         private string? _explicitNullValueNewKey = default!;
 #nullable restore
 #else
-        public string NewKey { get => _explicitNullValueNewKey; set { _explicitNullValueNewKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newKey"); else _explicitNullProperties?.Remove("newKey"); } }
+        public string NewKey { get => _explicitNullValueNewKey; set { _explicitNullValueNewKey = value; AdditionalData?.Remove("newKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newKey"); else _explicitNullProperties?.Remove("newKey"); } }
         private string _explicitNullValueNewKey = default!;
 #endif
         /// <summary>The newTarget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffNewTargetItem?>? NewTarget { get => _explicitNullValueNewTarget; set { _explicitNullValueNewTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTarget"); else _explicitNullProperties?.Remove("newTarget"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffNewTargetItem?>? NewTarget { get => _explicitNullValueNewTarget; set { _explicitNullValueNewTarget = value; AdditionalData?.Remove("newTarget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTarget"); else _explicitNullProperties?.Remove("newTarget"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffNewTargetItem?>? _explicitNullValueNewTarget = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffNewTargetItem?> NewTarget { get => _explicitNullValueNewTarget; set { _explicitNullValueNewTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTarget"); else _explicitNullProperties?.Remove("newTarget"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffNewTargetItem?> NewTarget { get => _explicitNullValueNewTarget; set { _explicitNullValueNewTarget = value; AdditionalData?.Remove("newTarget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTarget"); else _explicitNullProperties?.Remove("newTarget"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffNewTargetItem?> _explicitNullValueNewTarget = default!;
 #endif
         /// <summary>The newType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewType { get => _explicitNullValueNewType; set { _explicitNullValueNewType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newType"); else _explicitNullProperties?.Remove("newType"); } }
+        public string? NewType { get => _explicitNullValueNewType; set { _explicitNullValueNewType = value; AdditionalData?.Remove("newType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newType"); else _explicitNullProperties?.Remove("newType"); } }
         private string? _explicitNullValueNewType = default!;
 #nullable restore
 #else
-        public string NewType { get => _explicitNullValueNewType; set { _explicitNullValueNewType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newType"); else _explicitNullProperties?.Remove("newType"); } }
+        public string NewType { get => _explicitNullValueNewType; set { _explicitNullValueNewType = value; AdditionalData?.Remove("newType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newType"); else _explicitNullProperties?.Remove("newType"); } }
         private string _explicitNullValueNewType = default!;
 #endif
         /// <summary>The oldCustomEnvironmentIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OldCustomEnvironmentIds { get => _explicitNullValueOldCustomEnvironmentIds; set { _explicitNullValueOldCustomEnvironmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldCustomEnvironmentIds"); else _explicitNullProperties?.Remove("oldCustomEnvironmentIds"); } }
+        public List<string>? OldCustomEnvironmentIds { get => _explicitNullValueOldCustomEnvironmentIds; set { _explicitNullValueOldCustomEnvironmentIds = value; AdditionalData?.Remove("oldCustomEnvironmentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldCustomEnvironmentIds"); else _explicitNullProperties?.Remove("oldCustomEnvironmentIds"); } }
         private List<string>? _explicitNullValueOldCustomEnvironmentIds = default!;
 #nullable restore
 #else
-        public List<string> OldCustomEnvironmentIds { get => _explicitNullValueOldCustomEnvironmentIds; set { _explicitNullValueOldCustomEnvironmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldCustomEnvironmentIds"); else _explicitNullProperties?.Remove("oldCustomEnvironmentIds"); } }
+        public List<string> OldCustomEnvironmentIds { get => _explicitNullValueOldCustomEnvironmentIds; set { _explicitNullValueOldCustomEnvironmentIds = value; AdditionalData?.Remove("oldCustomEnvironmentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldCustomEnvironmentIds"); else _explicitNullProperties?.Remove("oldCustomEnvironmentIds"); } }
         private List<string> _explicitNullValueOldCustomEnvironmentIds = default!;
 #endif
         /// <summary>The oldTarget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffOldTargetItem?>? OldTarget { get => _explicitNullValueOldTarget; set { _explicitNullValueOldTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTarget"); else _explicitNullProperties?.Remove("oldTarget"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffOldTargetItem?>? OldTarget { get => _explicitNullValueOldTarget; set { _explicitNullValueOldTarget = value; AdditionalData?.Remove("oldTarget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTarget"); else _explicitNullProperties?.Remove("oldTarget"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffOldTargetItem?>? _explicitNullValueOldTarget = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffOldTargetItem?> OldTarget { get => _explicitNullValueOldTarget; set { _explicitNullValueOldTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTarget"); else _explicitNullProperties?.Remove("oldTarget"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffOldTargetItem?> OldTarget { get => _explicitNullValueOldTarget; set { _explicitNullValueOldTarget = value; AdditionalData?.Remove("oldTarget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTarget"); else _explicitNullProperties?.Remove("oldTarget"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174UpdateDiffOldTargetItem?> _explicitNullValueOldTarget = default!;
 #endif
         /// <summary>The oldType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldType { get => _explicitNullValueOldType; set { _explicitNullValueOldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldType"); else _explicitNullProperties?.Remove("oldType"); } }
+        public string? OldType { get => _explicitNullValueOldType; set { _explicitNullValueOldType = value; AdditionalData?.Remove("oldType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldType"); else _explicitNullProperties?.Remove("oldType"); } }
         private string? _explicitNullValueOldType = default!;
 #nullable restore
 #else
-        public string OldType { get => _explicitNullValueOldType; set { _explicitNullValueOldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldType"); else _explicitNullProperties?.Remove("oldType"); } }
+        public string OldType { get => _explicitNullValueOldType; set { _explicitNullValueOldType = value; AdditionalData?.Remove("oldType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldType"); else _explicitNullProperties?.Remove("oldType"); } }
         private string _explicitNullValueOldType = default!;
 #endif
         /// <summary>

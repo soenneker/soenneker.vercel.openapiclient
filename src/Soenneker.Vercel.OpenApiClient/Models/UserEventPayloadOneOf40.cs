@@ -18,7 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("privateProvider") is { } nullNodePrivateProvider && nullNodePrivateProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateProvider = null;
+            if (parseNode.GetChildNode("privateProvider") is null) { _explicitNullValuePrivateProvider = default!; _explicitNullProperties?.Remove("privateProvider"); }
+            else if (parseNode.GetChildNode("privateProvider") is { } nullNodePrivateProvider && nullNodePrivateProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateProvider = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The privateProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40PrivateProvider? PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40PrivateProvider? PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; AdditionalData?.Remove("privateProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40PrivateProvider? _explicitNullValuePrivateProvider = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40PrivateProvider PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40PrivateProvider PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; AdditionalData?.Remove("privateProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40PrivateProvider _explicitNullValuePrivateProvider = default!;
 #endif
         /// <summary>

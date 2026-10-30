@@ -18,25 +18,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
-            if (parseNode.GetChildNode("trial") is { } nullNodeTrial && nullNodeTrial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trial = null;
+            if (parseNode.GetChildNode("nextConcurrentBuilds") is null) { _explicitNullValueNextConcurrentBuilds = default!; _explicitNullProperties?.Remove("nextConcurrentBuilds"); }
+            else if (parseNode.GetChildNode("nextConcurrentBuilds") is { } nullNodeNextConcurrentBuilds && nullNodeNextConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextConcurrentBuilds = null;
+            if (parseNode.GetChildNode("previousConcurrentBuilds") is null) { _explicitNullValuePreviousConcurrentBuilds = default!; _explicitNullProperties?.Remove("previousConcurrentBuilds"); }
+            else if (parseNode.GetChildNode("previousConcurrentBuilds") is { } nullNodePreviousConcurrentBuilds && nullNodePreviousConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousConcurrentBuilds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The plan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Plan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Plan? _explicitNullValuePlan = default!;
-        /// <summary>The trial property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Trial? Trial { get => _explicitNullValueTrial; set { _explicitNullValueTrial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial"); else _explicitNullProperties?.Remove("trial"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Trial? _explicitNullValueTrial = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Trial Trial { get => _explicitNullValueTrial; set { _explicitNullValueTrial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial"); else _explicitNullProperties?.Remove("trial"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Trial _explicitNullValueTrial = default!;
-#endif
+        /// <summary>The nextConcurrentBuilds property</summary>
+        public double? NextConcurrentBuilds { get => _explicitNullValueNextConcurrentBuilds; set { _explicitNullValueNextConcurrentBuilds = value; AdditionalData?.Remove("nextConcurrentBuilds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextConcurrentBuilds"); else _explicitNullProperties?.Remove("nextConcurrentBuilds"); } }
+        private double? _explicitNullValueNextConcurrentBuilds = default!;
+        /// <summary>The previousConcurrentBuilds property</summary>
+        public double? PreviousConcurrentBuilds { get => _explicitNullValuePreviousConcurrentBuilds; set { _explicitNullValuePreviousConcurrentBuilds = value; AdditionalData?.Remove("previousConcurrentBuilds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousConcurrentBuilds"); else _explicitNullProperties?.Remove("previousConcurrentBuilds"); } }
+        private double? _explicitNullValuePreviousConcurrentBuilds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434"/> and sets the default values.
         /// </summary>
@@ -62,8 +57,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Plan>(); } },
-                { "trial", n => { Trial = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Trial>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Trial.CreateFromDiscriminatorValue); } },
+                { "nextConcurrentBuilds", n => { NextConcurrentBuilds = n.GetDoubleValue(); } },
+                { "previousConcurrentBuilds", n => { PreviousConcurrentBuilds = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -73,8 +68,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Plan>("plan", Plan);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf434Trial>("trial", Trial);
+            writer.WriteDoubleValue("nextConcurrentBuilds", NextConcurrentBuilds);
+            writer.WriteDoubleValue("previousConcurrentBuilds", PreviousConcurrentBuilds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

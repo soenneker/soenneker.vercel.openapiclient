@@ -18,25 +18,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accessGroup") is { } nullNodeAccessGroup && nullNodeAccessGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessGroup = null;
-            if (parseNode.GetChildNode("entitlementsAdded") is { } nullNodeEntitlementsAdded && nullNodeEntitlementsAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntitlementsAdded = null;
-            if (parseNode.GetChildNode("entitlementsRemoved") is { } nullNodeEntitlementsRemoved && nullNodeEntitlementsRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntitlementsRemoved = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("previousName") is { } nullNodePreviousName && nullNodePreviousName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousName = null;
-            if (parseNode.GetChildNode("previousTeamPermissions") is { } nullNodePreviousTeamPermissions && nullNodePreviousTeamPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTeamPermissions = null;
-            if (parseNode.GetChildNode("previousTeamRoles") is { } nullNodePreviousTeamRoles && nullNodePreviousTeamRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTeamRoles = null;
-            if (parseNode.GetChildNode("teamPermissions") is { } nullNodeTeamPermissions && nullNodeTeamPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamPermissions = null;
-            if (parseNode.GetChildNode("teamRoles") is { } nullNodeTeamRoles && nullNodeTeamRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamRoles = null;
+            if (parseNode.GetChildNode("accessGroup") is null) { _explicitNullValueAccessGroup = default!; _explicitNullProperties?.Remove("accessGroup"); }
+            else if (parseNode.GetChildNode("accessGroup") is { } nullNodeAccessGroup && nullNodeAccessGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessGroup = null;
+            if (parseNode.GetChildNode("entitlementsAdded") is null) { _explicitNullValueEntitlementsAdded = default!; _explicitNullProperties?.Remove("entitlementsAdded"); }
+            else if (parseNode.GetChildNode("entitlementsAdded") is { } nullNodeEntitlementsAdded && nullNodeEntitlementsAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntitlementsAdded = null;
+            if (parseNode.GetChildNode("entitlementsRemoved") is null) { _explicitNullValueEntitlementsRemoved = default!; _explicitNullProperties?.Remove("entitlementsRemoved"); }
+            else if (parseNode.GetChildNode("entitlementsRemoved") is { } nullNodeEntitlementsRemoved && nullNodeEntitlementsRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntitlementsRemoved = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("previousName") is null) { _explicitNullValuePreviousName = default!; _explicitNullProperties?.Remove("previousName"); }
+            else if (parseNode.GetChildNode("previousName") is { } nullNodePreviousName && nullNodePreviousName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousName = null;
+            if (parseNode.GetChildNode("previousTeamPermissions") is null) { _explicitNullValuePreviousTeamPermissions = default!; _explicitNullProperties?.Remove("previousTeamPermissions"); }
+            else if (parseNode.GetChildNode("previousTeamPermissions") is { } nullNodePreviousTeamPermissions && nullNodePreviousTeamPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTeamPermissions = null;
+            if (parseNode.GetChildNode("previousTeamRoles") is null) { _explicitNullValuePreviousTeamRoles = default!; _explicitNullProperties?.Remove("previousTeamRoles"); }
+            else if (parseNode.GetChildNode("previousTeamRoles") is { } nullNodePreviousTeamRoles && nullNodePreviousTeamRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTeamRoles = null;
+            if (parseNode.GetChildNode("teamPermissions") is null) { _explicitNullValueTeamPermissions = default!; _explicitNullProperties?.Remove("teamPermissions"); }
+            else if (parseNode.GetChildNode("teamPermissions") is { } nullNodeTeamPermissions && nullNodeTeamPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamPermissions = null;
+            if (parseNode.GetChildNode("teamRoles") is null) { _explicitNullValueTeamRoles = default!; _explicitNullProperties?.Remove("teamRoles"); }
+            else if (parseNode.GetChildNode("teamRoles") is { } nullNodeTeamRoles && nullNodeTeamRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamRoles = null;
         }
 
         /// <summary>The accessGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52AccessGroup? AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52AccessGroup? AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; AdditionalData?.Remove("accessGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52AccessGroup? _explicitNullValueAccessGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52AccessGroup AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52AccessGroup AccessGroup { get => _explicitNullValueAccessGroup; set { _explicitNullValueAccessGroup = value; AdditionalData?.Remove("accessGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessGroup"); else _explicitNullProperties?.Remove("accessGroup"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52AccessGroup _explicitNullValueAccessGroup = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,81 +53,81 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The entitlementsAdded property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntitlementsAdded { get => _explicitNullValueEntitlementsAdded; set { _explicitNullValueEntitlementsAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsAdded"); else _explicitNullProperties?.Remove("entitlementsAdded"); } }
+        public List<string>? EntitlementsAdded { get => _explicitNullValueEntitlementsAdded; set { _explicitNullValueEntitlementsAdded = value; AdditionalData?.Remove("entitlementsAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsAdded"); else _explicitNullProperties?.Remove("entitlementsAdded"); } }
         private List<string>? _explicitNullValueEntitlementsAdded = default!;
 #nullable restore
 #else
-        public List<string> EntitlementsAdded { get => _explicitNullValueEntitlementsAdded; set { _explicitNullValueEntitlementsAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsAdded"); else _explicitNullProperties?.Remove("entitlementsAdded"); } }
+        public List<string> EntitlementsAdded { get => _explicitNullValueEntitlementsAdded; set { _explicitNullValueEntitlementsAdded = value; AdditionalData?.Remove("entitlementsAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsAdded"); else _explicitNullProperties?.Remove("entitlementsAdded"); } }
         private List<string> _explicitNullValueEntitlementsAdded = default!;
 #endif
         /// <summary>The entitlementsRemoved property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntitlementsRemoved { get => _explicitNullValueEntitlementsRemoved; set { _explicitNullValueEntitlementsRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsRemoved"); else _explicitNullProperties?.Remove("entitlementsRemoved"); } }
+        public List<string>? EntitlementsRemoved { get => _explicitNullValueEntitlementsRemoved; set { _explicitNullValueEntitlementsRemoved = value; AdditionalData?.Remove("entitlementsRemoved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsRemoved"); else _explicitNullProperties?.Remove("entitlementsRemoved"); } }
         private List<string>? _explicitNullValueEntitlementsRemoved = default!;
 #nullable restore
 #else
-        public List<string> EntitlementsRemoved { get => _explicitNullValueEntitlementsRemoved; set { _explicitNullValueEntitlementsRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsRemoved"); else _explicitNullProperties?.Remove("entitlementsRemoved"); } }
+        public List<string> EntitlementsRemoved { get => _explicitNullValueEntitlementsRemoved; set { _explicitNullValueEntitlementsRemoved = value; AdditionalData?.Remove("entitlementsRemoved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlementsRemoved"); else _explicitNullProperties?.Remove("entitlementsRemoved"); } }
         private List<string> _explicitNullValueEntitlementsRemoved = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The previousName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
+        public string? PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; AdditionalData?.Remove("previousName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
         private string? _explicitNullValuePreviousName = default!;
 #nullable restore
 #else
-        public string PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
+        public string PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; AdditionalData?.Remove("previousName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
         private string _explicitNullValuePreviousName = default!;
 #endif
         /// <summary>The previousTeamPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreviousTeamPermissions { get => _explicitNullValuePreviousTeamPermissions; set { _explicitNullValuePreviousTeamPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamPermissions"); else _explicitNullProperties?.Remove("previousTeamPermissions"); } }
+        public List<string>? PreviousTeamPermissions { get => _explicitNullValuePreviousTeamPermissions; set { _explicitNullValuePreviousTeamPermissions = value; AdditionalData?.Remove("previousTeamPermissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamPermissions"); else _explicitNullProperties?.Remove("previousTeamPermissions"); } }
         private List<string>? _explicitNullValuePreviousTeamPermissions = default!;
 #nullable restore
 #else
-        public List<string> PreviousTeamPermissions { get => _explicitNullValuePreviousTeamPermissions; set { _explicitNullValuePreviousTeamPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamPermissions"); else _explicitNullProperties?.Remove("previousTeamPermissions"); } }
+        public List<string> PreviousTeamPermissions { get => _explicitNullValuePreviousTeamPermissions; set { _explicitNullValuePreviousTeamPermissions = value; AdditionalData?.Remove("previousTeamPermissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamPermissions"); else _explicitNullProperties?.Remove("previousTeamPermissions"); } }
         private List<string> _explicitNullValuePreviousTeamPermissions = default!;
 #endif
         /// <summary>The previousTeamRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreviousTeamRoles { get => _explicitNullValuePreviousTeamRoles; set { _explicitNullValuePreviousTeamRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamRoles"); else _explicitNullProperties?.Remove("previousTeamRoles"); } }
+        public List<string>? PreviousTeamRoles { get => _explicitNullValuePreviousTeamRoles; set { _explicitNullValuePreviousTeamRoles = value; AdditionalData?.Remove("previousTeamRoles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamRoles"); else _explicitNullProperties?.Remove("previousTeamRoles"); } }
         private List<string>? _explicitNullValuePreviousTeamRoles = default!;
 #nullable restore
 #else
-        public List<string> PreviousTeamRoles { get => _explicitNullValuePreviousTeamRoles; set { _explicitNullValuePreviousTeamRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamRoles"); else _explicitNullProperties?.Remove("previousTeamRoles"); } }
+        public List<string> PreviousTeamRoles { get => _explicitNullValuePreviousTeamRoles; set { _explicitNullValuePreviousTeamRoles = value; AdditionalData?.Remove("previousTeamRoles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamRoles"); else _explicitNullProperties?.Remove("previousTeamRoles"); } }
         private List<string> _explicitNullValuePreviousTeamRoles = default!;
 #endif
         /// <summary>The teamPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamPermissions { get => _explicitNullValueTeamPermissions; set { _explicitNullValueTeamPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamPermissions"); else _explicitNullProperties?.Remove("teamPermissions"); } }
+        public List<string>? TeamPermissions { get => _explicitNullValueTeamPermissions; set { _explicitNullValueTeamPermissions = value; AdditionalData?.Remove("teamPermissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamPermissions"); else _explicitNullProperties?.Remove("teamPermissions"); } }
         private List<string>? _explicitNullValueTeamPermissions = default!;
 #nullable restore
 #else
-        public List<string> TeamPermissions { get => _explicitNullValueTeamPermissions; set { _explicitNullValueTeamPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamPermissions"); else _explicitNullProperties?.Remove("teamPermissions"); } }
+        public List<string> TeamPermissions { get => _explicitNullValueTeamPermissions; set { _explicitNullValueTeamPermissions = value; AdditionalData?.Remove("teamPermissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamPermissions"); else _explicitNullProperties?.Remove("teamPermissions"); } }
         private List<string> _explicitNullValueTeamPermissions = default!;
 #endif
         /// <summary>The teamRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
+        public List<string>? TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; AdditionalData?.Remove("teamRoles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
         private List<string>? _explicitNullValueTeamRoles = default!;
 #nullable restore
 #else
-        public List<string> TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
+        public List<string> TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; AdditionalData?.Remove("teamRoles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
         private List<string> _explicitNullValueTeamRoles = default!;
 #endif
         /// <summary>

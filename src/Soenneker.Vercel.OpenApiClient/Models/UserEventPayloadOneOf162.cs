@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("edgeConfigDigest") is { } nullNodeEdgeConfigDigest && nullNodeEdgeConfigDigest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigDigest = null;
-            if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
-            if (parseNode.GetChildNode("edgeConfigSlug") is { } nullNodeEdgeConfigSlug && nullNodeEdgeConfigSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSlug = null;
+            if (parseNode.GetChildNode("edgeConfigDigest") is null) { _explicitNullValueEdgeConfigDigest = default!; _explicitNullProperties?.Remove("edgeConfigDigest"); }
+            else if (parseNode.GetChildNode("edgeConfigDigest") is { } nullNodeEdgeConfigDigest && nullNodeEdgeConfigDigest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigDigest = null;
+            if (parseNode.GetChildNode("edgeConfigId") is null) { _explicitNullValueEdgeConfigId = default!; _explicitNullProperties?.Remove("edgeConfigId"); }
+            else if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
+            if (parseNode.GetChildNode("edgeConfigSlug") is null) { _explicitNullValueEdgeConfigSlug = default!; _explicitNullProperties?.Remove("edgeConfigSlug"); }
+            else if (parseNode.GetChildNode("edgeConfigSlug") is { } nullNodeEdgeConfigSlug && nullNodeEdgeConfigSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The edgeConfigDigest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigDigest { get => _explicitNullValueEdgeConfigDigest; set { _explicitNullValueEdgeConfigDigest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigDigest"); else _explicitNullProperties?.Remove("edgeConfigDigest"); } }
+        public string? EdgeConfigDigest { get => _explicitNullValueEdgeConfigDigest; set { _explicitNullValueEdgeConfigDigest = value; AdditionalData?.Remove("edgeConfigDigest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigDigest"); else _explicitNullProperties?.Remove("edgeConfigDigest"); } }
         private string? _explicitNullValueEdgeConfigDigest = default!;
 #nullable restore
 #else
-        public string EdgeConfigDigest { get => _explicitNullValueEdgeConfigDigest; set { _explicitNullValueEdgeConfigDigest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigDigest"); else _explicitNullProperties?.Remove("edgeConfigDigest"); } }
+        public string EdgeConfigDigest { get => _explicitNullValueEdgeConfigDigest; set { _explicitNullValueEdgeConfigDigest = value; AdditionalData?.Remove("edgeConfigDigest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigDigest"); else _explicitNullProperties?.Remove("edgeConfigDigest"); } }
         private string _explicitNullValueEdgeConfigDigest = default!;
 #endif
         /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        public string? EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
         private string? _explicitNullValueEdgeConfigId = default!;
 #nullable restore
 #else
-        public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
         private string _explicitNullValueEdgeConfigId = default!;
 #endif
         /// <summary>The edgeConfigSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigSlug { get => _explicitNullValueEdgeConfigSlug; set { _explicitNullValueEdgeConfigSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSlug"); else _explicitNullProperties?.Remove("edgeConfigSlug"); } }
+        public string? EdgeConfigSlug { get => _explicitNullValueEdgeConfigSlug; set { _explicitNullValueEdgeConfigSlug = value; AdditionalData?.Remove("edgeConfigSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSlug"); else _explicitNullProperties?.Remove("edgeConfigSlug"); } }
         private string? _explicitNullValueEdgeConfigSlug = default!;
 #nullable restore
 #else
-        public string EdgeConfigSlug { get => _explicitNullValueEdgeConfigSlug; set { _explicitNullValueEdgeConfigSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSlug"); else _explicitNullProperties?.Remove("edgeConfigSlug"); } }
+        public string EdgeConfigSlug { get => _explicitNullValueEdgeConfigSlug; set { _explicitNullValueEdgeConfigSlug = value; AdditionalData?.Remove("edgeConfigSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSlug"); else _explicitNullProperties?.Remove("edgeConfigSlug"); } }
         private string _explicitNullValueEdgeConfigSlug = default!;
 #endif
         /// <summary>

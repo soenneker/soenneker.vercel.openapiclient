@@ -17,19 +17,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
-            if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
         }
 
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTags? _explicitNullValueTags = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTags _explicitNullValueTags = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags _explicitNullValueTags = default!;
 #endif
         /// <summary>The target property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
@@ -52,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTags>(global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags>(global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTarget>(); } },
             };
         }
@@ -63,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.InvalidateByTagsRequestTarget>("target", Target);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

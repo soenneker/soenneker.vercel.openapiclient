@@ -18,61 +18,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actorId") is { } nullNodeActorId && nullNodeActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorId = null;
-            if (parseNode.GetChildNode("actorName") is { } nullNodeActorName && nullNodeActorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorName = null;
-            if (parseNode.GetChildNode("actorType") is { } nullNodeActorType && nullNodeActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorType = null;
-            if (parseNode.GetChildNode("previousTeamSuffix") is { } nullNodePreviousTeamSuffix && nullNodePreviousTeamSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTeamSuffix = null;
-            if (parseNode.GetChildNode("projectCount") is { } nullNodeProjectCount && nullNodeProjectCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectCount = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("previewDeploymentSuffix") is null) { _explicitNullValuePreviewDeploymentSuffix = default!; _explicitNullProperties?.Remove("previewDeploymentSuffix"); }
+            else if (parseNode.GetChildNode("previewDeploymentSuffix") is { } nullNodePreviewDeploymentSuffix && nullNodePreviewDeploymentSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewDeploymentSuffix = null;
+            if (parseNode.GetChildNode("previousPreviewDeploymentSuffix") is null) { _explicitNullValuePreviousPreviewDeploymentSuffix = default!; _explicitNullProperties?.Remove("previousPreviewDeploymentSuffix"); }
+            else if (parseNode.GetChildNode("previousPreviewDeploymentSuffix") is { } nullNodePreviousPreviewDeploymentSuffix && nullNodePreviousPreviewDeploymentSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousPreviewDeploymentSuffix = null;
         }
 
-        /// <summary>Okta user id.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorId"); else _explicitNullProperties?.Remove("actorId"); } }
-        private string? _explicitNullValueActorId = default!;
-#nullable restore
-#else
-        public string ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorId"); else _explicitNullProperties?.Remove("actorId"); } }
-        private string _explicitNullValueActorId = default!;
-#endif
-        /// <summary>The actorName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorName { get => _explicitNullValueActorName; set { _explicitNullValueActorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorName"); else _explicitNullProperties?.Remove("actorName"); } }
-        private string? _explicitNullValueActorName = default!;
-#nullable restore
-#else
-        public string ActorName { get => _explicitNullValueActorName; set { _explicitNullValueActorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorName"); else _explicitNullProperties?.Remove("actorName"); } }
-        private string _explicitNullValueActorName = default!;
-#endif
-        /// <summary>The actorType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get => _explicitNullValueActorType; set { _explicitNullValueActorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorType"); else _explicitNullProperties?.Remove("actorType"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? _explicitNullValueActorType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previousTeamSuffix property</summary>
+        /// <summary>The previewDeploymentSuffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousTeamSuffix { get => _explicitNullValuePreviousTeamSuffix; set { _explicitNullValuePreviousTeamSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamSuffix"); else _explicitNullProperties?.Remove("previousTeamSuffix"); } }
-        private string? _explicitNullValuePreviousTeamSuffix = default!;
+        public string? PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; AdditionalData?.Remove("previewDeploymentSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private string? _explicitNullValuePreviewDeploymentSuffix = default!;
 #nullable restore
 #else
-        public string PreviousTeamSuffix { get => _explicitNullValuePreviousTeamSuffix; set { _explicitNullValuePreviousTeamSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousTeamSuffix"); else _explicitNullProperties?.Remove("previousTeamSuffix"); } }
-        private string _explicitNullValuePreviousTeamSuffix = default!;
+        public string PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; AdditionalData?.Remove("previewDeploymentSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private string _explicitNullValuePreviewDeploymentSuffix = default!;
 #endif
-        /// <summary>The projectCount property</summary>
-        public double? ProjectCount { get => _explicitNullValueProjectCount; set { _explicitNullValueProjectCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectCount"); else _explicitNullProperties?.Remove("projectCount"); } }
-        private double? _explicitNullValueProjectCount = default!;
-        /// <summary>The reason property</summary>
+        /// <summary>The previousPreviewDeploymentSuffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string? _explicitNullValueReason = default!;
+        public string? PreviousPreviewDeploymentSuffix { get => _explicitNullValuePreviousPreviewDeploymentSuffix; set { _explicitNullValuePreviousPreviewDeploymentSuffix = value; AdditionalData?.Remove("previousPreviewDeploymentSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousPreviewDeploymentSuffix"); else _explicitNullProperties?.Remove("previousPreviewDeploymentSuffix"); } }
+        private string? _explicitNullValuePreviousPreviewDeploymentSuffix = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string _explicitNullValueReason = default!;
+        public string PreviousPreviewDeploymentSuffix { get => _explicitNullValuePreviousPreviewDeploymentSuffix; set { _explicitNullValuePreviousPreviewDeploymentSuffix = value; AdditionalData?.Remove("previousPreviewDeploymentSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousPreviewDeploymentSuffix"); else _explicitNullProperties?.Remove("previousPreviewDeploymentSuffix"); } }
+        private string _explicitNullValuePreviousPreviewDeploymentSuffix = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf265"/> and sets the default values.
@@ -99,12 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorId", n => { ActorId = n.GetStringValue(); } },
-                { "actorName", n => { ActorName = n.GetStringValue(); } },
-                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
-                { "previousTeamSuffix", n => { PreviousTeamSuffix = n.GetStringValue(); } },
-                { "projectCount", n => { ProjectCount = n.GetDoubleValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
+                { "previousPreviewDeploymentSuffix", n => { PreviousPreviewDeploymentSuffix = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -114,12 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorId", ActorId);
-            writer.WriteStringValue("actorName", ActorName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
-            writer.WriteStringValue("previousTeamSuffix", PreviousTeamSuffix);
-            writer.WriteDoubleValue("projectCount", ProjectCount);
-            writer.WriteStringValue("reason", Reason);
+            writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
+            writer.WriteStringValue("previousPreviewDeploymentSuffix", PreviousPreviewDeploymentSuffix);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

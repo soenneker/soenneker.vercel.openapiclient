@@ -17,23 +17,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hasMore") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
-            if (parseNode.GetChildNode("invocations") is { } nullNodeInvocations && nullNodeInvocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invocations = null;
+            if (parseNode.GetChildNode("hasMore") is null) { _explicitNullValueHasMore = default!; _explicitNullProperties?.Remove("hasMore"); }
+            else if (parseNode.GetChildNode("hasMore") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("invocations") is null) { _explicitNullValueInvocations = default!; _explicitNullProperties?.Remove("invocations"); }
+            else if (parseNode.GetChildNode("invocations") is { } nullNodeInvocations && nullNodeInvocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invocations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether more than 1000 lines matched. The newest lines are returned.</summary>
-        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMore"); else _explicitNullProperties?.Remove("hasMore"); } }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; AdditionalData?.Remove("hasMore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMore"); else _explicitNullProperties?.Remove("hasMore"); } }
         private bool? _explicitNullValueHasMore = default!;
         /// <summary>The invocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItem>? Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItem>? Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; AdditionalData?.Remove("invocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItem>? _explicitNullValueInvocations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItem> Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItem> Invocations { get => _explicitNullValueInvocations; set { _explicitNullValueInvocations = value; AdditionalData?.Remove("invocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocations"); else _explicitNullProperties?.Remove("invocations"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItem> _explicitNullValueInvocations = default!;
 #endif
         /// <summary>

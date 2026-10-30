@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currentCycleEndDate") is { } nullNodeCurrentCycleEndDate && nullNodeCurrentCycleEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCycleEndDate = null;
-            if (parseNode.GetChildNode("orbSubscriptionId") is { } nullNodeOrbSubscriptionId && nullNodeOrbSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbSubscriptionId = null;
-            if (parseNode.GetChildNode("planId") is { } nullNodePlanId && nullNodePlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanId = null;
+            if (parseNode.GetChildNode("currentCycleEndDate") is null) { _explicitNullValueCurrentCycleEndDate = default!; _explicitNullProperties?.Remove("currentCycleEndDate"); }
+            else if (parseNode.GetChildNode("currentCycleEndDate") is { } nullNodeCurrentCycleEndDate && nullNodeCurrentCycleEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCycleEndDate = null;
+            if (parseNode.GetChildNode("orbSubscriptionId") is null) { _explicitNullValueOrbSubscriptionId = default!; _explicitNullProperties?.Remove("orbSubscriptionId"); }
+            else if (parseNode.GetChildNode("orbSubscriptionId") is { } nullNodeOrbSubscriptionId && nullNodeOrbSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbSubscriptionId = null;
+            if (parseNode.GetChildNode("planId") is null) { _explicitNullValuePlanId = default!; _explicitNullProperties?.Remove("planId"); }
+            else if (parseNode.GetChildNode("planId") is { } nullNodePlanId && nullNodePlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The end of the additional source subscription billing cycle</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentCycleEndDate { get => _explicitNullValueCurrentCycleEndDate; set { _explicitNullValueCurrentCycleEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCycleEndDate"); else _explicitNullProperties?.Remove("currentCycleEndDate"); } }
+        public string? CurrentCycleEndDate { get => _explicitNullValueCurrentCycleEndDate; set { _explicitNullValueCurrentCycleEndDate = value; AdditionalData?.Remove("currentCycleEndDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCycleEndDate"); else _explicitNullProperties?.Remove("currentCycleEndDate"); } }
         private string? _explicitNullValueCurrentCycleEndDate = default!;
 #nullable restore
 #else
-        public string CurrentCycleEndDate { get => _explicitNullValueCurrentCycleEndDate; set { _explicitNullValueCurrentCycleEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCycleEndDate"); else _explicitNullProperties?.Remove("currentCycleEndDate"); } }
+        public string CurrentCycleEndDate { get => _explicitNullValueCurrentCycleEndDate; set { _explicitNullValueCurrentCycleEndDate = value; AdditionalData?.Remove("currentCycleEndDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCycleEndDate"); else _explicitNullProperties?.Remove("currentCycleEndDate"); } }
         private string _explicitNullValueCurrentCycleEndDate = default!;
 #endif
         /// <summary>The additional source Orb subscription ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
+        public string? OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; AdditionalData?.Remove("orbSubscriptionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
         private string? _explicitNullValueOrbSubscriptionId = default!;
 #nullable restore
 #else
-        public string OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
+        public string OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; AdditionalData?.Remove("orbSubscriptionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
         private string _explicitNullValueOrbSubscriptionId = default!;
 #endif
         /// <summary>The ID of the plan assigned to the additional source subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
+        public string? PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; AdditionalData?.Remove("planId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
         private string? _explicitNullValuePlanId = default!;
 #nullable restore
 #else
-        public string PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
+        public string PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; AdditionalData?.Remove("planId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
         private string _explicitNullValuePlanId = default!;
 #endif
         /// <summary>

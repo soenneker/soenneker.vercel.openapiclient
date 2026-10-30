@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rollingRelease") is { } nullNodeRollingRelease && nullNodeRollingRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollingRelease = null;
+            if (parseNode.GetChildNode("rollingRelease") is null) { _explicitNullValueRollingRelease = default!; _explicitNullProperties?.Remove("rollingRelease"); }
+            else if (parseNode.GetChildNode("rollingRelease") is { } nullNodeRollingRelease && nullNodeRollingRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollingRelease = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Project-level rolling release configuration that defines how deployments should be gradually rolled out</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingRelease? RollingRelease { get => _explicitNullValueRollingRelease; set { _explicitNullValueRollingRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollingRelease"); else _explicitNullProperties?.Remove("rollingRelease"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingRelease? RollingRelease { get => _explicitNullValueRollingRelease; set { _explicitNullValueRollingRelease = value; AdditionalData?.Remove("rollingRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollingRelease"); else _explicitNullProperties?.Remove("rollingRelease"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingRelease? _explicitNullValueRollingRelease = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingRelease RollingRelease { get => _explicitNullValueRollingRelease; set { _explicitNullValueRollingRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollingRelease"); else _explicitNullProperties?.Remove("rollingRelease"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingRelease RollingRelease { get => _explicitNullValueRollingRelease; set { _explicitNullValueRollingRelease = value; AdditionalData?.Remove("rollingRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollingRelease"); else _explicitNullProperties?.Remove("rollingRelease"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingRelease _explicitNullValueRollingRelease = default!;
 #endif
         /// <summary>

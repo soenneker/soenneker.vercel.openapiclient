@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
+            if (parseNode.GetChildNode("mitigate") is null) { _explicitNullValueMitigate = default!; _explicitNullProperties?.Remove("mitigate"); }
+            else if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The mitigate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigate? Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigate? Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; AdditionalData?.Remove("mitigate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigate? _explicitNullValueMitigate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigate Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigate Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; AdditionalData?.Remove("mitigate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigate _explicitNullValueMitigate = default!;
 #endif
         /// <summary>

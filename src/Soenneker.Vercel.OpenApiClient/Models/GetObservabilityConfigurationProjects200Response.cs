@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("disabledProjects") is { } nullNodeDisabledProjects && nullNodeDisabledProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisabledProjects = null;
+            if (parseNode.GetChildNode("disabledProjects") is null) { _explicitNullValueDisabledProjects = default!; _explicitNullProperties?.Remove("disabledProjects"); }
+            else if (parseNode.GetChildNode("disabledProjects") is { } nullNodeDisabledProjects && nullNodeDisabledProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisabledProjects = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The disabledProjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetObservabilityConfigurationProjects200ResponseDisabledProjectsItem>? DisabledProjects { get => _explicitNullValueDisabledProjects; set { _explicitNullValueDisabledProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledProjects"); else _explicitNullProperties?.Remove("disabledProjects"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetObservabilityConfigurationProjects200ResponseDisabledProjectsItem>? DisabledProjects { get => _explicitNullValueDisabledProjects; set { _explicitNullValueDisabledProjects = value; AdditionalData?.Remove("disabledProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledProjects"); else _explicitNullProperties?.Remove("disabledProjects"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetObservabilityConfigurationProjects200ResponseDisabledProjectsItem>? _explicitNullValueDisabledProjects = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetObservabilityConfigurationProjects200ResponseDisabledProjectsItem> DisabledProjects { get => _explicitNullValueDisabledProjects; set { _explicitNullValueDisabledProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledProjects"); else _explicitNullProperties?.Remove("disabledProjects"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetObservabilityConfigurationProjects200ResponseDisabledProjectsItem> DisabledProjects { get => _explicitNullValueDisabledProjects; set { _explicitNullValueDisabledProjects = value; AdditionalData?.Remove("disabledProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabledProjects"); else _explicitNullProperties?.Remove("disabledProjects"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetObservabilityConfigurationProjects200ResponseDisabledProjectsItem> _explicitNullValueDisabledProjects = default!;
 #endif
         /// <summary>

@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inheritDeploymentProtection") is { } nullNodeInheritDeploymentProtection && nullNodeInheritDeploymentProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InheritDeploymentProtection = null;
+            if (parseNode.GetChildNode("inheritDeploymentProtection") is null) { _explicitNullValueInheritDeploymentProtection = default!; _explicitNullProperties?.Remove("inheritDeploymentProtection"); }
+            else if (parseNode.GetChildNode("inheritDeploymentProtection") is { } nullNodeInheritDeploymentProtection && nullNodeInheritDeploymentProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InheritDeploymentProtection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The inheritDeploymentProtection property</summary>
-        public bool? InheritDeploymentProtection { get => _explicitNullValueInheritDeploymentProtection; set { _explicitNullValueInheritDeploymentProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inheritDeploymentProtection"); else _explicitNullProperties?.Remove("inheritDeploymentProtection"); } }
+        public bool? InheritDeploymentProtection { get => _explicitNullValueInheritDeploymentProtection; set { _explicitNullValueInheritDeploymentProtection = value; AdditionalData?.Remove("inheritDeploymentProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inheritDeploymentProtection"); else _explicitNullProperties?.Remove("inheritDeploymentProtection"); } }
         private bool? _explicitNullValueInheritDeploymentProtection = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseProtectionConfigSandboxUrls"/> and sets the default values.

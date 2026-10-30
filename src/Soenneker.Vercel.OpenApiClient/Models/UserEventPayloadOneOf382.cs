@@ -18,119 +18,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
-            if (parseNode.GetChildNode("factors") is { } nullNodeFactors && nullNodeFactors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Factors = null;
-            if (parseNode.GetChildNode("geolocation") is { } nullNodeGeolocation && nullNodeGeolocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocation = null;
-            if (parseNode.GetChildNode("os") is { } nullNodeOs && nullNodeOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Os = null;
-            if (parseNode.GetChildNode("ssoType") is { } nullNodeSsoType && nullNodeSsoType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoType = null;
-            if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
-            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
-            if (parseNode.GetChildNode("viaApple") is { } nullNodeViaApple && nullNodeViaApple.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaApple = null;
-            if (parseNode.GetChildNode("viaBitbucket") is { } nullNodeViaBitbucket && nullNodeViaBitbucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaBitbucket = null;
-            if (parseNode.GetChildNode("viaGithub") is { } nullNodeViaGithub && nullNodeViaGithub.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaGithub = null;
-            if (parseNode.GetChildNode("viaGitlab") is { } nullNodeViaGitlab && nullNodeViaGitlab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaGitlab = null;
-            if (parseNode.GetChildNode("viaGoogle") is { } nullNodeViaGoogle && nullNodeViaGoogle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaGoogle = null;
-            if (parseNode.GetChildNode("viaOTP") is { } nullNodeViaOTP && nullNodeViaOTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaOTP = null;
-            if (parseNode.GetChildNode("viaPasskey") is { } nullNodeViaPasskey && nullNodeViaPasskey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaPasskey = null;
-            if (parseNode.GetChildNode("viaSamlSso") is { } nullNodeViaSamlSso && nullNodeViaSamlSso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViaSamlSso = null;
+            if (parseNode.GetChildNode("max") is null) { _explicitNullValueMax = default!; _explicitNullProperties?.Remove("max"); }
+            else if (parseNode.GetChildNode("max") is { } nullNodeMax && nullNodeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Max = null;
+            if (parseNode.GetChildNode("min") is null) { _explicitNullValueMin = default!; _explicitNullProperties?.Remove("min"); }
+            else if (parseNode.GetChildNode("min") is { } nullNodeMin && nullNodeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Min = null;
+            if (parseNode.GetChildNode("scalingRules") is null) { _explicitNullValueScalingRules = default!; _explicitNullProperties?.Remove("scalingRules"); }
+            else if (parseNode.GetChildNode("scalingRules") is { } nullNodeScalingRules && nullNodeScalingRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScalingRules = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The env property</summary>
+        /// <summary>The max property</summary>
+        public double? Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; AdditionalData?.Remove("max"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        private double? _explicitNullValueMax = default!;
+        /// <summary>The min property</summary>
+        public double? Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; AdditionalData?.Remove("min"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        private double? _explicitNullValueMin = default!;
+        /// <summary>The scalingRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
-        private string? _explicitNullValueEnv = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382ScalingRulesProperty? ScalingRules { get => _explicitNullValueScalingRules; set { _explicitNullValueScalingRules = value; AdditionalData?.Remove("scalingRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scalingRules"); else _explicitNullProperties?.Remove("scalingRules"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382ScalingRulesProperty? _explicitNullValueScalingRules = default!;
 #nullable restore
 #else
-        public string Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
-        private string _explicitNullValueEnv = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382ScalingRulesProperty ScalingRules { get => _explicitNullValueScalingRules; set { _explicitNullValueScalingRules = value; AdditionalData?.Remove("scalingRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scalingRules"); else _explicitNullProperties?.Remove("scalingRules"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382ScalingRulesProperty _explicitNullValueScalingRules = default!;
 #endif
-        /// <summary>The factors property</summary>
+        /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>? Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>? _explicitNullValueFactors = default!;
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem> Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem> _explicitNullValueFactors = default!;
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
-        /// <summary>The geolocation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation? Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation? _explicitNullValueGeolocation = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation _explicitNullValueGeolocation = default!;
-#endif
-        /// <summary>The os property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
-        private string? _explicitNullValueOs = default!;
-#nullable restore
-#else
-        public string Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
-        private string _explicitNullValueOs = default!;
-#endif
-        /// <summary>The ssoType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SsoType { get => _explicitNullValueSsoType; set { _explicitNullValueSsoType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoType"); else _explicitNullProperties?.Remove("ssoType"); } }
-        private string? _explicitNullValueSsoType = default!;
-#nullable restore
-#else
-        public string SsoType { get => _explicitNullValueSsoType; set { _explicitNullValueSsoType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoType"); else _explicitNullProperties?.Remove("ssoType"); } }
-        private string _explicitNullValueSsoType = default!;
-#endif
-        /// <summary>The userAgent property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
-        private string? _explicitNullValueUserAgent = default!;
-#nullable restore
-#else
-        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
-        private string _explicitNullValueUserAgent = default!;
-#endif
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
-        private string? _explicitNullValueUsername = default!;
-#nullable restore
-#else
-        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
-        private string _explicitNullValueUsername = default!;
-#endif
-        /// <summary>The viaApple property</summary>
-        public bool? ViaApple { get => _explicitNullValueViaApple; set { _explicitNullValueViaApple = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaApple"); else _explicitNullProperties?.Remove("viaApple"); } }
-        private bool? _explicitNullValueViaApple = default!;
-        /// <summary>The viaBitbucket property</summary>
-        public bool? ViaBitbucket { get => _explicitNullValueViaBitbucket; set { _explicitNullValueViaBitbucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaBitbucket"); else _explicitNullProperties?.Remove("viaBitbucket"); } }
-        private bool? _explicitNullValueViaBitbucket = default!;
-        /// <summary>The viaGithub property</summary>
-        public bool? ViaGithub { get => _explicitNullValueViaGithub; set { _explicitNullValueViaGithub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaGithub"); else _explicitNullProperties?.Remove("viaGithub"); } }
-        private bool? _explicitNullValueViaGithub = default!;
-        /// <summary>The viaGitlab property</summary>
-        public bool? ViaGitlab { get => _explicitNullValueViaGitlab; set { _explicitNullValueViaGitlab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaGitlab"); else _explicitNullProperties?.Remove("viaGitlab"); } }
-        private bool? _explicitNullValueViaGitlab = default!;
-        /// <summary>The viaGoogle property</summary>
-        public bool? ViaGoogle { get => _explicitNullValueViaGoogle; set { _explicitNullValueViaGoogle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaGoogle"); else _explicitNullProperties?.Remove("viaGoogle"); } }
-        private bool? _explicitNullValueViaGoogle = default!;
-        /// <summary>The viaOTP property</summary>
-        public bool? ViaOTP { get => _explicitNullValueViaOTP; set { _explicitNullValueViaOTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaOTP"); else _explicitNullProperties?.Remove("viaOTP"); } }
-        private bool? _explicitNullValueViaOTP = default!;
-        /// <summary>The viaPasskey property</summary>
-        public bool? ViaPasskey { get => _explicitNullValueViaPasskey; set { _explicitNullValueViaPasskey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaPasskey"); else _explicitNullProperties?.Remove("viaPasskey"); } }
-        private bool? _explicitNullValueViaPasskey = default!;
-        /// <summary>The viaSamlSso property</summary>
-        public bool? ViaSamlSso { get => _explicitNullValueViaSamlSso; set { _explicitNullValueViaSamlSso = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viaSamlSso"); else _explicitNullProperties?.Remove("viaSamlSso"); } }
-        private bool? _explicitNullValueViaSamlSso = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382"/> and sets the default values.
         /// </summary>
@@ -156,21 +81,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "env", n => { Env = n.GetStringValue(); } },
-                { "factors", n => { Factors = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation.CreateFromDiscriminatorValue); } },
-                { "os", n => { Os = n.GetStringValue(); } },
-                { "ssoType", n => { SsoType = n.GetStringValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-                { "viaApple", n => { ViaApple = n.GetBoolValue(); } },
-                { "viaBitbucket", n => { ViaBitbucket = n.GetBoolValue(); } },
-                { "viaGithub", n => { ViaGithub = n.GetBoolValue(); } },
-                { "viaGitlab", n => { ViaGitlab = n.GetBoolValue(); } },
-                { "viaGoogle", n => { ViaGoogle = n.GetBoolValue(); } },
-                { "viaOTP", n => { ViaOTP = n.GetBoolValue(); } },
-                { "viaPasskey", n => { ViaPasskey = n.GetBoolValue(); } },
-                { "viaSamlSso", n => { ViaSamlSso = n.GetBoolValue(); } },
+                { "max", n => { Max = n.GetDoubleValue(); } },
+                { "min", n => { Min = n.GetDoubleValue(); } },
+                { "scalingRules", n => { ScalingRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382ScalingRulesProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382ScalingRulesProperty.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -180,21 +94,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("env", Env);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382FactorsItem>("factors", Factors);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382Geolocation>("geolocation", Geolocation);
-            writer.WriteStringValue("os", Os);
-            writer.WriteStringValue("ssoType", SsoType);
-            writer.WriteStringValue("userAgent", UserAgent);
-            writer.WriteStringValue("username", Username);
-            writer.WriteBoolValue("viaApple", ViaApple);
-            writer.WriteBoolValue("viaBitbucket", ViaBitbucket);
-            writer.WriteBoolValue("viaGithub", ViaGithub);
-            writer.WriteBoolValue("viaGitlab", ViaGitlab);
-            writer.WriteBoolValue("viaGoogle", ViaGoogle);
-            writer.WriteBoolValue("viaOTP", ViaOTP);
-            writer.WriteBoolValue("viaPasskey", ViaPasskey);
-            writer.WriteBoolValue("viaSamlSso", ViaSamlSso);
+            writer.WriteDoubleValue("max", Max);
+            writer.WriteDoubleValue("min", Min);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382ScalingRulesProperty>("scalingRules", ScalingRules);
+            writer.WriteStringValue("url", Url);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

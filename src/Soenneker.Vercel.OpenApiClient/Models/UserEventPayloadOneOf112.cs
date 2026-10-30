@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitbucketAccountId") is { } nullNodeBitbucketAccountId && nullNodeBitbucketAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketAccountId = null;
-            if (parseNode.GetChildNode("bitbucketLogin") is { } nullNodeBitbucketLogin && nullNodeBitbucketLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketLogin = null;
+            if (parseNode.GetChildNode("bitbucketAccountId") is null) { _explicitNullValueBitbucketAccountId = default!; _explicitNullProperties?.Remove("bitbucketAccountId"); }
+            else if (parseNode.GetChildNode("bitbucketAccountId") is { } nullNodeBitbucketAccountId && nullNodeBitbucketAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketAccountId = null;
+            if (parseNode.GetChildNode("bitbucketLogin") is null) { _explicitNullValueBitbucketLogin = default!; _explicitNullProperties?.Remove("bitbucketLogin"); }
+            else if (parseNode.GetChildNode("bitbucketLogin") is { } nullNodeBitbucketLogin && nullNodeBitbucketLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketLogin = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The bitbucketAccountId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketAccountId { get => _explicitNullValueBitbucketAccountId; set { _explicitNullValueBitbucketAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketAccountId"); else _explicitNullProperties?.Remove("bitbucketAccountId"); } }
+        public string? BitbucketAccountId { get => _explicitNullValueBitbucketAccountId; set { _explicitNullValueBitbucketAccountId = value; AdditionalData?.Remove("bitbucketAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketAccountId"); else _explicitNullProperties?.Remove("bitbucketAccountId"); } }
         private string? _explicitNullValueBitbucketAccountId = default!;
 #nullable restore
 #else
-        public string BitbucketAccountId { get => _explicitNullValueBitbucketAccountId; set { _explicitNullValueBitbucketAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketAccountId"); else _explicitNullProperties?.Remove("bitbucketAccountId"); } }
+        public string BitbucketAccountId { get => _explicitNullValueBitbucketAccountId; set { _explicitNullValueBitbucketAccountId = value; AdditionalData?.Remove("bitbucketAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketAccountId"); else _explicitNullProperties?.Remove("bitbucketAccountId"); } }
         private string _explicitNullValueBitbucketAccountId = default!;
 #endif
         /// <summary>The bitbucketLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
+        public string? BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
         private string? _explicitNullValueBitbucketLogin = default!;
 #nullable restore
 #else
-        public string BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
+        public string BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
         private string _explicitNullValueBitbucketLogin = default!;
 #endif
         /// <summary>

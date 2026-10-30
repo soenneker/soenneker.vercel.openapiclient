@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("routers") is { } nullNodeRouters && nullNodeRouters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Routers = null;
+            if (parseNode.GetChildNode("routers") is null) { _explicitNullValueRouters = default!; _explicitNullProperties?.Remove("routers"); }
+            else if (parseNode.GetChildNode("routers") is { } nullNodeRouters && nullNodeRouters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Routers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Active and archived router configurations owned by the authenticated team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig>? Routers { get => _explicitNullValueRouters; set { _explicitNullValueRouters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routers"); else _explicitNullProperties?.Remove("routers"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig>? Routers { get => _explicitNullValueRouters; set { _explicitNullValueRouters = value; AdditionalData?.Remove("routers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routers"); else _explicitNullProperties?.Remove("routers"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig>? _explicitNullValueRouters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> Routers { get => _explicitNullValueRouters; set { _explicitNullValueRouters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routers"); else _explicitNullProperties?.Remove("routers"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> Routers { get => _explicitNullValueRouters; set { _explicitNullValueRouters = value; AdditionalData?.Remove("routers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routers"); else _explicitNullProperties?.Remove("routers"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> _explicitNullValueRouters = default!;
 #endif
         /// <summary>

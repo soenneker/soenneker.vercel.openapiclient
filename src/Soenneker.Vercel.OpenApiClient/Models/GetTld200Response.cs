@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("supportedLanguageCodes") is { } nullNodeSupportedLanguageCodes && nullNodeSupportedLanguageCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedLanguageCodes = null;
+            if (parseNode.GetChildNode("supportedLanguageCodes") is null) { _explicitNullValueSupportedLanguageCodes = default!; _explicitNullProperties?.Remove("supportedLanguageCodes"); }
+            else if (parseNode.GetChildNode("supportedLanguageCodes") is { } nullNodeSupportedLanguageCodes && nullNodeSupportedLanguageCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedLanguageCodes = null;
         }
 
         /// <summary>The language codes that are supported for the TLD. The key is the language code, and the value is the name of the language.</summary>

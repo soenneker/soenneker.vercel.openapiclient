@@ -17,67 +17,73 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("add") is { } nullNodeAdd && nullNodeAdd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Add = null;
-            if (parseNode.GetChildNode("addAdjustments") is { } nullNodeAddAdjustments && nullNodeAddAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddAdjustments = null;
-            if (parseNode.GetChildNode("allowInvoiceCreditOrVoid") is { } nullNodeAllowInvoiceCreditOrVoid && nullNodeAllowInvoiceCreditOrVoid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowInvoiceCreditOrVoid = null;
-            if (parseNode.GetChildNode("edit") is { } nullNodeEdit && nullNodeEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edit = null;
-            if (parseNode.GetChildNode("editAdjustments") is { } nullNodeEditAdjustments && nullNodeEditAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditAdjustments = null;
-            if (parseNode.GetChildNode("orbSubscriptionId") is { } nullNodeOrbSubscriptionId && nullNodeOrbSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbSubscriptionId = null;
+            if (parseNode.GetChildNode("add") is null) { _explicitNullValueAdd = default!; _explicitNullProperties?.Remove("add"); }
+            else if (parseNode.GetChildNode("add") is { } nullNodeAdd && nullNodeAdd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Add = null;
+            if (parseNode.GetChildNode("addAdjustments") is null) { _explicitNullValueAddAdjustments = default!; _explicitNullProperties?.Remove("addAdjustments"); }
+            else if (parseNode.GetChildNode("addAdjustments") is { } nullNodeAddAdjustments && nullNodeAddAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddAdjustments = null;
+            if (parseNode.GetChildNode("allowInvoiceCreditOrVoid") is null) { _explicitNullValueAllowInvoiceCreditOrVoid = default!; _explicitNullProperties?.Remove("allowInvoiceCreditOrVoid"); }
+            else if (parseNode.GetChildNode("allowInvoiceCreditOrVoid") is { } nullNodeAllowInvoiceCreditOrVoid && nullNodeAllowInvoiceCreditOrVoid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowInvoiceCreditOrVoid = null;
+            if (parseNode.GetChildNode("edit") is null) { _explicitNullValueEdit = default!; _explicitNullProperties?.Remove("edit"); }
+            else if (parseNode.GetChildNode("edit") is { } nullNodeEdit && nullNodeEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edit = null;
+            if (parseNode.GetChildNode("editAdjustments") is null) { _explicitNullValueEditAdjustments = default!; _explicitNullProperties?.Remove("editAdjustments"); }
+            else if (parseNode.GetChildNode("editAdjustments") is { } nullNodeEditAdjustments && nullNodeEditAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditAdjustments = null;
+            if (parseNode.GetChildNode("orbSubscriptionId") is null) { _explicitNullValueOrbSubscriptionId = default!; _explicitNullProperties?.Remove("orbSubscriptionId"); }
+            else if (parseNode.GetChildNode("orbSubscriptionId") is { } nullNodeOrbSubscriptionId && nullNodeOrbSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbSubscriptionId = null;
         }
 
         /// <summary>The price intervals to add to the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Add { get => _explicitNullValueAdd; set { _explicitNullValueAdd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add"); else _explicitNullProperties?.Remove("add"); } }
+        public UntypedNode? Add { get => _explicitNullValueAdd; set { _explicitNullValueAdd = value; AdditionalData?.Remove("add"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add"); else _explicitNullProperties?.Remove("add"); } }
         private UntypedNode? _explicitNullValueAdd = default!;
 #nullable restore
 #else
-        public UntypedNode Add { get => _explicitNullValueAdd; set { _explicitNullValueAdd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add"); else _explicitNullProperties?.Remove("add"); } }
+        public UntypedNode Add { get => _explicitNullValueAdd; set { _explicitNullValueAdd = value; AdditionalData?.Remove("add"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add"); else _explicitNullProperties?.Remove("add"); } }
         private UntypedNode _explicitNullValueAdd = default!;
 #endif
         /// <summary>The adjustment intervals to add to the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AddAdjustments { get => _explicitNullValueAddAdjustments; set { _explicitNullValueAddAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addAdjustments"); else _explicitNullProperties?.Remove("addAdjustments"); } }
+        public UntypedNode? AddAdjustments { get => _explicitNullValueAddAdjustments; set { _explicitNullValueAddAdjustments = value; AdditionalData?.Remove("addAdjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addAdjustments"); else _explicitNullProperties?.Remove("addAdjustments"); } }
         private UntypedNode? _explicitNullValueAddAdjustments = default!;
 #nullable restore
 #else
-        public UntypedNode AddAdjustments { get => _explicitNullValueAddAdjustments; set { _explicitNullValueAddAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addAdjustments"); else _explicitNullProperties?.Remove("addAdjustments"); } }
+        public UntypedNode AddAdjustments { get => _explicitNullValueAddAdjustments; set { _explicitNullValueAddAdjustments = value; AdditionalData?.Remove("addAdjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addAdjustments"); else _explicitNullProperties?.Remove("addAdjustments"); } }
         private UntypedNode _explicitNullValueAddAdjustments = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow invoice credit or void</summary>
-        public bool? AllowInvoiceCreditOrVoid { get => _explicitNullValueAllowInvoiceCreditOrVoid; set { _explicitNullValueAllowInvoiceCreditOrVoid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowInvoiceCreditOrVoid"); else _explicitNullProperties?.Remove("allowInvoiceCreditOrVoid"); } }
+        public bool? AllowInvoiceCreditOrVoid { get => _explicitNullValueAllowInvoiceCreditOrVoid; set { _explicitNullValueAllowInvoiceCreditOrVoid = value; AdditionalData?.Remove("allowInvoiceCreditOrVoid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowInvoiceCreditOrVoid"); else _explicitNullProperties?.Remove("allowInvoiceCreditOrVoid"); } }
         private bool? _explicitNullValueAllowInvoiceCreditOrVoid = default!;
         /// <summary>The price intervals to edit on the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
+        public UntypedNode? Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; AdditionalData?.Remove("edit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
         private UntypedNode? _explicitNullValueEdit = default!;
 #nullable restore
 #else
-        public UntypedNode Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
+        public UntypedNode Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; AdditionalData?.Remove("edit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
         private UntypedNode _explicitNullValueEdit = default!;
 #endif
         /// <summary>The adjustment intervals to edit on the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? EditAdjustments { get => _explicitNullValueEditAdjustments; set { _explicitNullValueEditAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editAdjustments"); else _explicitNullProperties?.Remove("editAdjustments"); } }
+        public UntypedNode? EditAdjustments { get => _explicitNullValueEditAdjustments; set { _explicitNullValueEditAdjustments = value; AdditionalData?.Remove("editAdjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editAdjustments"); else _explicitNullProperties?.Remove("editAdjustments"); } }
         private UntypedNode? _explicitNullValueEditAdjustments = default!;
 #nullable restore
 #else
-        public UntypedNode EditAdjustments { get => _explicitNullValueEditAdjustments; set { _explicitNullValueEditAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editAdjustments"); else _explicitNullProperties?.Remove("editAdjustments"); } }
+        public UntypedNode EditAdjustments { get => _explicitNullValueEditAdjustments; set { _explicitNullValueEditAdjustments = value; AdditionalData?.Remove("editAdjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editAdjustments"); else _explicitNullProperties?.Remove("editAdjustments"); } }
         private UntypedNode _explicitNullValueEditAdjustments = default!;
 #endif
         /// <summary>The ID of the Orb subscription to modify price intervals for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
+        public string? OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; AdditionalData?.Remove("orbSubscriptionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
         private string? _explicitNullValueOrbSubscriptionId = default!;
 #nullable restore
 #else
-        public string OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
+        public string OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; AdditionalData?.Remove("orbSubscriptionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
         private string _explicitNullValueOrbSubscriptionId = default!;
 #endif
         /// <summary>

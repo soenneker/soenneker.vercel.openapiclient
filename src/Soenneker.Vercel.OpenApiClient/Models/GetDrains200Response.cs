@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("drains") is { } nullNodeDrains && nullNodeDrains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Drains = null;
+            if (parseNode.GetChildNode("drains") is null) { _explicitNullValueDrains = default!; _explicitNullProperties?.Remove("drains"); }
+            else if (parseNode.GetChildNode("drains") is { } nullNodeDrains && nullNodeDrains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Drains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The drains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrains? Drains { get => _explicitNullValueDrains; set { _explicitNullValueDrains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drains"); else _explicitNullProperties?.Remove("drains"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrains? Drains { get => _explicitNullValueDrains; set { _explicitNullValueDrains = value; AdditionalData?.Remove("drains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drains"); else _explicitNullProperties?.Remove("drains"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrains? _explicitNullValueDrains = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrains Drains { get => _explicitNullValueDrains; set { _explicitNullValueDrains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drains"); else _explicitNullProperties?.Remove("drains"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrains Drains { get => _explicitNullValueDrains; set { _explicitNullValueDrains = value; AdditionalData?.Remove("drains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drains"); else _explicitNullProperties?.Remove("drains"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrains _explicitNullValueDrains = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("repl") is { } nullNodeRepl && nullNodeRepl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repl = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("repl") is null) { _explicitNullValueRepl = default!; _explicitNullProperties?.Remove("repl"); }
+            else if (parseNode.GetChildNode("repl") is { } nullNodeRepl && nullNodeRepl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repl = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The repl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl? Repl { get => _explicitNullValueRepl; set { _explicitNullValueRepl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repl"); else _explicitNullProperties?.Remove("repl"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl? Repl { get => _explicitNullValueRepl; set { _explicitNullValueRepl = value; AdditionalData?.Remove("repl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repl"); else _explicitNullProperties?.Remove("repl"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl? _explicitNullValueRepl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl Repl { get => _explicitNullValueRepl; set { _explicitNullValueRepl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repl"); else _explicitNullProperties?.Remove("repl"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl Repl { get => _explicitNullValueRepl; set { _explicitNullValueRepl = value; AdditionalData?.Remove("repl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repl"); else _explicitNullProperties?.Remove("repl"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl _explicitNullValueRepl = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorage"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "repl", n => { Repl = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageRepl.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorageStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

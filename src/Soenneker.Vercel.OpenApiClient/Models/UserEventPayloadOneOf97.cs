@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cn") is { } nullNodeCn && nullNodeCn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cn = null;
-            if (parseNode.GetChildNode("cns") is { } nullNodeCns && nullNodeCns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cns = null;
+            if (parseNode.GetChildNode("cn") is null) { _explicitNullValueCn = default!; _explicitNullProperties?.Remove("cn"); }
+            else if (parseNode.GetChildNode("cn") is { } nullNodeCn && nullNodeCn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cn = null;
+            if (parseNode.GetChildNode("cns") is null) { _explicitNullValueCns = default!; _explicitNullProperties?.Remove("cns"); }
+            else if (parseNode.GetChildNode("cns") is { } nullNodeCns && nullNodeCns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cns = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The cn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
+        public string? Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; AdditionalData?.Remove("cn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
         private string? _explicitNullValueCn = default!;
 #nullable restore
 #else
-        public string Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
+        public string Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; AdditionalData?.Remove("cn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
         private string _explicitNullValueCn = default!;
 #endif
         /// <summary>The cns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Cns { get => _explicitNullValueCns; set { _explicitNullValueCns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cns"); else _explicitNullProperties?.Remove("cns"); } }
+        public List<string>? Cns { get => _explicitNullValueCns; set { _explicitNullValueCns = value; AdditionalData?.Remove("cns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cns"); else _explicitNullProperties?.Remove("cns"); } }
         private List<string>? _explicitNullValueCns = default!;
 #nullable restore
 #else
-        public List<string> Cns { get => _explicitNullValueCns; set { _explicitNullValueCns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cns"); else _explicitNullProperties?.Remove("cns"); } }
+        public List<string> Cns { get => _explicitNullValueCns; set { _explicitNullValueCns = value; AdditionalData?.Remove("cns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cns"); else _explicitNullProperties?.Remove("cns"); } }
         private List<string> _explicitNullValueCns = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("maximumMonthlySpend") is { } nullNodeMaximumMonthlySpend && nullNodeMaximumMonthlySpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumMonthlySpend = null;
-            if (parseNode.GetChildNode("minimumBalance") is { } nullNodeMinimumBalance && nullNodeMinimumBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumBalance = null;
-            if (parseNode.GetChildNode("targetBalance") is { } nullNodeTargetBalance && nullNodeTargetBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetBalance = null;
+            if (parseNode.GetChildNode("maximumMonthlySpend") is null) { _explicitNullValueMaximumMonthlySpend = default!; _explicitNullProperties?.Remove("maximumMonthlySpend"); }
+            else if (parseNode.GetChildNode("maximumMonthlySpend") is { } nullNodeMaximumMonthlySpend && nullNodeMaximumMonthlySpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumMonthlySpend = null;
+            if (parseNode.GetChildNode("minimumBalance") is null) { _explicitNullValueMinimumBalance = default!; _explicitNullProperties?.Remove("minimumBalance"); }
+            else if (parseNode.GetChildNode("minimumBalance") is { } nullNodeMinimumBalance && nullNodeMinimumBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumBalance = null;
+            if (parseNode.GetChildNode("targetBalance") is null) { _explicitNullValueTargetBalance = default!; _explicitNullProperties?.Remove("targetBalance"); }
+            else if (parseNode.GetChildNode("targetBalance") is { } nullNodeTargetBalance && nullNodeTargetBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetBalance = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The maximumMonthlySpend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
+        public string? MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; AdditionalData?.Remove("maximumMonthlySpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
         private string? _explicitNullValueMaximumMonthlySpend = default!;
 #nullable restore
 #else
-        public string MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
+        public string MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; AdditionalData?.Remove("maximumMonthlySpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
         private string _explicitNullValueMaximumMonthlySpend = default!;
 #endif
         /// <summary>The minimumBalance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumBalance"); else _explicitNullProperties?.Remove("minimumBalance"); } }
+        public string? MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; AdditionalData?.Remove("minimumBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumBalance"); else _explicitNullProperties?.Remove("minimumBalance"); } }
         private string? _explicitNullValueMinimumBalance = default!;
 #nullable restore
 #else
-        public string MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumBalance"); else _explicitNullProperties?.Remove("minimumBalance"); } }
+        public string MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; AdditionalData?.Remove("minimumBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumBalance"); else _explicitNullProperties?.Remove("minimumBalance"); } }
         private string _explicitNullValueMinimumBalance = default!;
 #endif
         /// <summary>The targetBalance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetBalance { get => _explicitNullValueTargetBalance; set { _explicitNullValueTargetBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetBalance"); else _explicitNullProperties?.Remove("targetBalance"); } }
+        public string? TargetBalance { get => _explicitNullValueTargetBalance; set { _explicitNullValueTargetBalance = value; AdditionalData?.Remove("targetBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetBalance"); else _explicitNullProperties?.Remove("targetBalance"); } }
         private string? _explicitNullValueTargetBalance = default!;
 #nullable restore
 #else
-        public string TargetBalance { get => _explicitNullValueTargetBalance; set { _explicitNullValueTargetBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetBalance"); else _explicitNullProperties?.Remove("targetBalance"); } }
+        public string TargetBalance { get => _explicitNullValueTargetBalance; set { _explicitNullValueTargetBalance = value; AdditionalData?.Remove("targetBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetBalance"); else _explicitNullProperties?.Remove("targetBalance"); } }
         private string _explicitNullValueTargetBalance = default!;
 #endif
         /// <summary>

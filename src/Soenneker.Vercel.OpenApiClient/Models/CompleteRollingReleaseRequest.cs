@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("canaryDeploymentId") is { } nullNodeCanaryDeploymentId && nullNodeCanaryDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanaryDeploymentId = null;
+            if (parseNode.GetChildNode("canaryDeploymentId") is null) { _explicitNullValueCanaryDeploymentId = default!; _explicitNullProperties?.Remove("canaryDeploymentId"); }
+            else if (parseNode.GetChildNode("canaryDeploymentId") is { } nullNodeCanaryDeploymentId && nullNodeCanaryDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanaryDeploymentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The ID of the canary deployment to complete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
+        public string? CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; AdditionalData?.Remove("canaryDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
         private string? _explicitNullValueCanaryDeploymentId = default!;
 #nullable restore
 #else
-        public string CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
+        public string CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; AdditionalData?.Remove("canaryDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
         private string _explicitNullValueCanaryDeploymentId = default!;
 #endif
         /// <summary>

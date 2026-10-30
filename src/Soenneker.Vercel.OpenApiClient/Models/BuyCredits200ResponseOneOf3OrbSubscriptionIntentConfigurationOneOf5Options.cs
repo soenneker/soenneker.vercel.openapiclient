@@ -18,19 +18,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("addedResourceIds") is { } nullNodeAddedResourceIds && nullNodeAddedResourceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedResourceIds = null;
-            if (parseNode.GetChildNode("productAlias") is { } nullNodeProductAlias && nullNodeProductAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductAlias = null;
-            if (parseNode.GetChildNode("removedResourceIds") is { } nullNodeRemovedResourceIds && nullNodeRemovedResourceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedResourceIds = null;
+            if (parseNode.GetChildNode("addedResourceIds") is null) { _explicitNullValueAddedResourceIds = default!; _explicitNullProperties?.Remove("addedResourceIds"); }
+            else if (parseNode.GetChildNode("addedResourceIds") is { } nullNodeAddedResourceIds && nullNodeAddedResourceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedResourceIds = null;
+            if (parseNode.GetChildNode("productAlias") is null) { _explicitNullValueProductAlias = default!; _explicitNullProperties?.Remove("productAlias"); }
+            else if (parseNode.GetChildNode("productAlias") is { } nullNodeProductAlias && nullNodeProductAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductAlias = null;
+            if (parseNode.GetChildNode("removedResourceIds") is null) { _explicitNullValueRemovedResourceIds = default!; _explicitNullProperties?.Remove("removedResourceIds"); }
+            else if (parseNode.GetChildNode("removedResourceIds") is { } nullNodeRemovedResourceIds && nullNodeRemovedResourceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedResourceIds = null;
         }
 
         /// <summary>The resource IDs to incrementally add. The quantity of the plan item will be increased by the number of resource IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AddedResourceIds { get => _explicitNullValueAddedResourceIds; set { _explicitNullValueAddedResourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedResourceIds"); else _explicitNullProperties?.Remove("addedResourceIds"); } }
+        public List<string>? AddedResourceIds { get => _explicitNullValueAddedResourceIds; set { _explicitNullValueAddedResourceIds = value; AdditionalData?.Remove("addedResourceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedResourceIds"); else _explicitNullProperties?.Remove("addedResourceIds"); } }
         private List<string>? _explicitNullValueAddedResourceIds = default!;
 #nullable restore
 #else
-        public List<string> AddedResourceIds { get => _explicitNullValueAddedResourceIds; set { _explicitNullValueAddedResourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedResourceIds"); else _explicitNullProperties?.Remove("addedResourceIds"); } }
+        public List<string> AddedResourceIds { get => _explicitNullValueAddedResourceIds; set { _explicitNullValueAddedResourceIds = value; AdditionalData?.Remove("addedResourceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedResourceIds"); else _explicitNullProperties?.Remove("addedResourceIds"); } }
         private List<string> _explicitNullValueAddedResourceIds = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +41,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The alias of the product to adjust quantity for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
+        public string? ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; AdditionalData?.Remove("productAlias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
         private string? _explicitNullValueProductAlias = default!;
 #nullable restore
 #else
-        public string ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
+        public string ProductAlias { get => _explicitNullValueProductAlias; set { _explicitNullValueProductAlias = value; AdditionalData?.Remove("productAlias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productAlias"); else _explicitNullProperties?.Remove("productAlias"); } }
         private string _explicitNullValueProductAlias = default!;
 #endif
         /// <summary>The resource IDs to incrementally remove. The quantity of the plan item will be decreased by the number of resource IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemovedResourceIds { get => _explicitNullValueRemovedResourceIds; set { _explicitNullValueRemovedResourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedResourceIds"); else _explicitNullProperties?.Remove("removedResourceIds"); } }
+        public List<string>? RemovedResourceIds { get => _explicitNullValueRemovedResourceIds; set { _explicitNullValueRemovedResourceIds = value; AdditionalData?.Remove("removedResourceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedResourceIds"); else _explicitNullProperties?.Remove("removedResourceIds"); } }
         private List<string>? _explicitNullValueRemovedResourceIds = default!;
 #nullable restore
 #else
-        public List<string> RemovedResourceIds { get => _explicitNullValueRemovedResourceIds; set { _explicitNullValueRemovedResourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedResourceIds"); else _explicitNullProperties?.Remove("removedResourceIds"); } }
+        public List<string> RemovedResourceIds { get => _explicitNullValueRemovedResourceIds; set { _explicitNullValueRemovedResourceIds = value; AdditionalData?.Remove("removedResourceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedResourceIds"); else _explicitNullProperties?.Remove("removedResourceIds"); } }
         private List<string> _explicitNullValueRemovedResourceIds = default!;
 #endif
         /// <summary>

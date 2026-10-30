@@ -253104,6 +253104,58 @@
               },
               {
                 "properties": {
+                  "next": {
+                    "properties": {
+                      "dsyncMode": {
+                        "type": "string",
+                        "enum": [
+                          "organization",
+                          "team"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "dsyncMode"
+                    ],
+                    "type": "object"
+                  },
+                  "organizationId": {
+                    "type": "string"
+                  },
+                  "previous": {
+                    "properties": {
+                      "dsyncMode": {
+                        "type": "string",
+                        "enum": [
+                          "organization",
+                          "team"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "dsyncMode"
+                    ],
+                    "type": "object"
+                  },
+                  "teamId": {
+                    "type": "string"
+                  },
+                  "teamName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "next",
+                  "organizationId",
+                  "previous",
+                  "teamId",
+                  "teamName"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "connectionType": {
                     "type": "string"
                   },
@@ -264779,6 +264831,7 @@
               "organization-team-add",
               "organization-team-create",
               "organization-team-delete",
+              "organization-team-dsync-update",
               "organization-team-sso-update",
               "organization-update-account-flow-dismissed",
               "organization-update-account-flow-triggered",
@@ -265748,6 +265801,7 @@
               "organization-team-add",
               "organization-team-create",
               "organization-team-delete",
+              "organization-team-dsync-update",
               "organization-team-sso-update",
               "organization-update-account-flow-dismissed",
               "organization-update-account-flow-triggered",
@@ -266505,6 +266559,7 @@
                 "organization-team-add",
                 "organization-team-create",
                 "organization-team-delete",
+                "organization-team-dsync-update",
                 "organization-team-sso-update",
                 "organization-update-account-flow-dismissed",
                 "organization-update-account-flow-triggered",

@@ -18,7 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deployment-alias") is { } nullNodeDeploymentAlias && nullNodeDeploymentAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentAlias = null;
+            if (parseNode.GetChildNode("deployment-alias") is null) { _explicitNullValueDeploymentAlias = default!; _explicitNullProperties?.Remove("deployment-alias"); }
+            else if (parseNode.GetChildNode("deployment-alias") is { } nullNodeDeploymentAlias && nullNodeDeploymentAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentAlias = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The deploymentAlias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemChecksDeploymentAlias? DeploymentAlias { get => _explicitNullValueDeploymentAlias; set { _explicitNullValueDeploymentAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment-alias"); else _explicitNullProperties?.Remove("deployment-alias"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemChecksDeploymentAlias? DeploymentAlias { get => _explicitNullValueDeploymentAlias; set { _explicitNullValueDeploymentAlias = value; AdditionalData?.Remove("deployment-alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment-alias"); else _explicitNullProperties?.Remove("deployment-alias"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemChecksDeploymentAlias? _explicitNullValueDeploymentAlias = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemChecksDeploymentAlias DeploymentAlias { get => _explicitNullValueDeploymentAlias; set { _explicitNullValueDeploymentAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment-alias"); else _explicitNullProperties?.Remove("deployment-alias"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemChecksDeploymentAlias DeploymentAlias { get => _explicitNullValueDeploymentAlias; set { _explicitNullValueDeploymentAlias = value; AdditionalData?.Remove("deployment-alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment-alias"); else _explicitNullProperties?.Remove("deployment-alias"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemChecksDeploymentAlias _explicitNullValueDeploymentAlias = default!;
 #endif
         /// <summary>

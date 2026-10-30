@@ -18,13 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabledAt") is { } nullNodeEnabledAt && nullNodeEnabledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledAt = null;
+            if (parseNode.GetChildNode("enabledAt") is null) { _explicitNullValueEnabledAt = default!; _explicitNullProperties?.Remove("enabledAt"); }
+            else if (parseNode.GetChildNode("enabledAt") is { } nullNodeEnabledAt && nullNodeEnabledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabledAt property</summary>
-        public double? EnabledAt { get => _explicitNullValueEnabledAt; set { _explicitNullValueEnabledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledAt"); else _explicitNullProperties?.Remove("enabledAt"); } }
+        public double? EnabledAt { get => _explicitNullValueEnabledAt; set { _explicitNullValueEnabledAt = value; AdditionalData?.Remove("enabledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledAt"); else _explicitNullProperties?.Remove("enabledAt"); } }
         private double? _explicitNullValueEnabledAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ProjectSettingsVercelFlags"/> and sets the default values.

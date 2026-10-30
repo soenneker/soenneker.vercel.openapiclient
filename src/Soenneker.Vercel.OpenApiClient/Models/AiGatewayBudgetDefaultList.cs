@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defaults") is { } nullNodeDefaults && nullNodeDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Defaults = null;
+            if (parseNode.GetChildNode("defaults") is null) { _explicitNullValueDefaults = default!; _explicitNullProperties?.Remove("defaults"); }
+            else if (parseNode.GetChildNode("defaults") is { } nullNodeDefaults && nullNodeDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Defaults = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The defaults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefault>? Defaults { get => _explicitNullValueDefaults; set { _explicitNullValueDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaults"); else _explicitNullProperties?.Remove("defaults"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefault>? Defaults { get => _explicitNullValueDefaults; set { _explicitNullValueDefaults = value; AdditionalData?.Remove("defaults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaults"); else _explicitNullProperties?.Remove("defaults"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefault>? _explicitNullValueDefaults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefault> Defaults { get => _explicitNullValueDefaults; set { _explicitNullValueDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaults"); else _explicitNullProperties?.Remove("defaults"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefault> Defaults { get => _explicitNullValueDefaults; set { _explicitNullValueDefaults = value; AdditionalData?.Remove("defaults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaults"); else _explicitNullProperties?.Remove("defaults"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefault> _explicitNullValueDefaults = default!;
 #endif
         /// <summary>

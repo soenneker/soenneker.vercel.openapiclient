@@ -18,10 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("oldPasswordProtection") is { } nullNodeOldPasswordProtection && nullNodeOldPasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPasswordProtection = null;
-            if (parseNode.GetChildNode("passwordChanged") is { } nullNodePasswordChanged && nullNodePasswordChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordChanged = null;
-            if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("oldPasswordProtection") is null) { _explicitNullValueOldPasswordProtection = default!; _explicitNullProperties?.Remove("oldPasswordProtection"); }
+            else if (parseNode.GetChildNode("oldPasswordProtection") is { } nullNodeOldPasswordProtection && nullNodeOldPasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPasswordProtection = null;
+            if (parseNode.GetChildNode("passwordChanged") is null) { _explicitNullValuePasswordChanged = default!; _explicitNullProperties?.Remove("passwordChanged"); }
+            else if (parseNode.GetChildNode("passwordChanged") is { } nullNodePasswordChanged && nullNodePasswordChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordChanged = null;
+            if (parseNode.GetChildNode("passwordProtection") is null) { _explicitNullValuePasswordProtection = default!; _explicitNullProperties?.Remove("passwordProtection"); }
+            else if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The oldPasswordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection? OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection? OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; AdditionalData?.Remove("oldPasswordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection? _explicitNullValueOldPasswordProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; AdditionalData?.Remove("oldPasswordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection _explicitNullValueOldPasswordProtection = default!;
 #endif
         /// <summary>The passwordChanged property</summary>
-        public bool? PasswordChanged { get => _explicitNullValuePasswordChanged; set { _explicitNullValuePasswordChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordChanged"); else _explicitNullProperties?.Remove("passwordChanged"); } }
+        public bool? PasswordChanged { get => _explicitNullValuePasswordChanged; set { _explicitNullValuePasswordChanged = value; AdditionalData?.Remove("passwordChanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordChanged"); else _explicitNullProperties?.Remove("passwordChanged"); } }
         private bool? _explicitNullValuePasswordChanged = default!;
         /// <summary>The passwordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; AdditionalData?.Remove("passwordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection? _explicitNullValuePasswordProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; AdditionalData?.Remove("passwordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection _explicitNullValuePasswordProtection = default!;
 #endif
         /// <summary>The scope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamScope? _explicitNullValueScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119"/> and sets the default values.
@@ -80,7 +84,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "oldPasswordProtection", n => { OldPasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119OldPasswordProtection.CreateFromDiscriminatorValue); } },
                 { "passwordChanged", n => { PasswordChanged = n.GetBoolValue(); } },
                 { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119PasswordProtection.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamScope>(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
             };
         }
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("taskDefinitions") is { } nullNodeTaskDefinitions && nullNodeTaskDefinitions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskDefinitions = null;
+            if (parseNode.GetChildNode("taskDefinitions") is null) { _explicitNullValueTaskDefinitions = default!; _explicitNullProperties?.Remove("taskDefinitions"); }
+            else if (parseNode.GetChildNode("taskDefinitions") is { } nullNodeTaskDefinitions && nullNodeTaskDefinitions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskDefinitions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The taskDefinitions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItem>? TaskDefinitions { get => _explicitNullValueTaskDefinitions; set { _explicitNullValueTaskDefinitions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitions"); else _explicitNullProperties?.Remove("taskDefinitions"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItem>? TaskDefinitions { get => _explicitNullValueTaskDefinitions; set { _explicitNullValueTaskDefinitions = value; AdditionalData?.Remove("taskDefinitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitions"); else _explicitNullProperties?.Remove("taskDefinitions"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItem>? _explicitNullValueTaskDefinitions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItem> TaskDefinitions { get => _explicitNullValueTaskDefinitions; set { _explicitNullValueTaskDefinitions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitions"); else _explicitNullProperties?.Remove("taskDefinitions"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItem> TaskDefinitions { get => _explicitNullValueTaskDefinitions; set { _explicitNullValueTaskDefinitions = value; AdditionalData?.Remove("taskDefinitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitions"); else _explicitNullProperties?.Remove("taskDefinitions"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItem> _explicitNullValueTaskDefinitions = default!;
 #endif
         /// <summary>

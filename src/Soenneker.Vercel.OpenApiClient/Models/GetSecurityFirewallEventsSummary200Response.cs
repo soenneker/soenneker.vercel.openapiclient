@@ -17,47 +17,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blockingIps") is { } nullNodeBlockingIps && nullNodeBlockingIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockingIps = null;
-            if (parseNode.GetChildNode("byAction") is { } nullNodeByAction && nullNodeByAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByAction = null;
-            if (parseNode.GetChildNode("byActionType") is { } nullNodeByActionType && nullNodeByActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByActionType = null;
-            if (parseNode.GetChildNode("challengingIps") is { } nullNodeChallengingIps && nullNodeChallengingIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengingIps = null;
-            if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("blockingIps") is null) { _explicitNullValueBlockingIps = default!; _explicitNullProperties?.Remove("blockingIps"); }
+            else if (parseNode.GetChildNode("blockingIps") is { } nullNodeBlockingIps && nullNodeBlockingIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockingIps = null;
+            if (parseNode.GetChildNode("byAction") is null) { _explicitNullValueByAction = default!; _explicitNullProperties?.Remove("byAction"); }
+            else if (parseNode.GetChildNode("byAction") is { } nullNodeByAction && nullNodeByAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByAction = null;
+            if (parseNode.GetChildNode("byActionType") is null) { _explicitNullValueByActionType = default!; _explicitNullProperties?.Remove("byActionType"); }
+            else if (parseNode.GetChildNode("byActionType") is { } nullNodeByActionType && nullNodeByActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByActionType = null;
+            if (parseNode.GetChildNode("challengingIps") is null) { _explicitNullValueChallengingIps = default!; _explicitNullProperties?.Remove("challengingIps"); }
+            else if (parseNode.GetChildNode("challengingIps") is { } nullNodeChallengingIps && nullNodeChallengingIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengingIps = null;
+            if (parseNode.GetChildNode("other") is null) { _explicitNullValueOther = default!; _explicitNullProperties?.Remove("other"); }
+            else if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blockingIps property</summary>
-        public double? BlockingIps { get => _explicitNullValueBlockingIps; set { _explicitNullValueBlockingIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingIps"); else _explicitNullProperties?.Remove("blockingIps"); } }
+        public double? BlockingIps { get => _explicitNullValueBlockingIps; set { _explicitNullValueBlockingIps = value; AdditionalData?.Remove("blockingIps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingIps"); else _explicitNullProperties?.Remove("blockingIps"); } }
         private double? _explicitNullValueBlockingIps = default!;
         /// <summary>The byAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByAction? ByAction { get => _explicitNullValueByAction; set { _explicitNullValueByAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byAction"); else _explicitNullProperties?.Remove("byAction"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByAction? ByAction { get => _explicitNullValueByAction; set { _explicitNullValueByAction = value; AdditionalData?.Remove("byAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byAction"); else _explicitNullProperties?.Remove("byAction"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByAction? _explicitNullValueByAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByAction ByAction { get => _explicitNullValueByAction; set { _explicitNullValueByAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byAction"); else _explicitNullProperties?.Remove("byAction"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByAction ByAction { get => _explicitNullValueByAction; set { _explicitNullValueByAction = value; AdditionalData?.Remove("byAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byAction"); else _explicitNullProperties?.Remove("byAction"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByAction _explicitNullValueByAction = default!;
 #endif
         /// <summary>The byActionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByActionType? ByActionType { get => _explicitNullValueByActionType; set { _explicitNullValueByActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byActionType"); else _explicitNullProperties?.Remove("byActionType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByActionType? ByActionType { get => _explicitNullValueByActionType; set { _explicitNullValueByActionType = value; AdditionalData?.Remove("byActionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byActionType"); else _explicitNullProperties?.Remove("byActionType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByActionType? _explicitNullValueByActionType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByActionType ByActionType { get => _explicitNullValueByActionType; set { _explicitNullValueByActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byActionType"); else _explicitNullProperties?.Remove("byActionType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByActionType ByActionType { get => _explicitNullValueByActionType; set { _explicitNullValueByActionType = value; AdditionalData?.Remove("byActionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byActionType"); else _explicitNullProperties?.Remove("byActionType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200ResponseByActionType _explicitNullValueByActionType = default!;
 #endif
         /// <summary>The challengingIps property</summary>
-        public double? ChallengingIps { get => _explicitNullValueChallengingIps; set { _explicitNullValueChallengingIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengingIps"); else _explicitNullProperties?.Remove("challengingIps"); } }
+        public double? ChallengingIps { get => _explicitNullValueChallengingIps; set { _explicitNullValueChallengingIps = value; AdditionalData?.Remove("challengingIps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengingIps"); else _explicitNullProperties?.Remove("challengingIps"); } }
         private double? _explicitNullValueChallengingIps = default!;
         /// <summary>The other property</summary>
-        public double? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        public double? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; AdditionalData?.Remove("other"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
         private double? _explicitNullValueOther = default!;
         /// <summary>The total property</summary>
-        public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private double? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSummary200Response"/> and sets the default values.

@@ -17,18 +17,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountLimit") is { } nullNodeAccountLimit && nullNodeAccountLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountLimit = null;
-            if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
+            if (parseNode.GetChildNode("accountLimit") is null) { _explicitNullValueAccountLimit = default!; _explicitNullProperties?.Remove("accountLimit"); }
+            else if (parseNode.GetChildNode("accountLimit") is { } nullNodeAccountLimit && nullNodeAccountLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountLimit = null;
+            if (parseNode.GetChildNode("environments") is null) { _explicitNullValueEnvironments = default!; _explicitNullProperties?.Remove("environments"); }
+            else if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
         }
 
         /// <summary>The maximum number of custom environments allowed either by the team&apos;s plan type or a custom override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseAccountLimit? AccountLimit { get => _explicitNullValueAccountLimit; set { _explicitNullValueAccountLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLimit"); else _explicitNullProperties?.Remove("accountLimit"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseAccountLimit? AccountLimit { get => _explicitNullValueAccountLimit; set { _explicitNullValueAccountLimit = value; AdditionalData?.Remove("accountLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLimit"); else _explicitNullProperties?.Remove("accountLimit"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseAccountLimit? _explicitNullValueAccountLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseAccountLimit AccountLimit { get => _explicitNullValueAccountLimit; set { _explicitNullValueAccountLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLimit"); else _explicitNullProperties?.Remove("accountLimit"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseAccountLimit AccountLimit { get => _explicitNullValueAccountLimit; set { _explicitNullValueAccountLimit = value; AdditionalData?.Remove("accountLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLimit"); else _explicitNullProperties?.Remove("accountLimit"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseAccountLimit _explicitNullValueAccountLimit = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseEnvironmentsItem>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseEnvironmentsItem>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseEnvironmentsItem>? _explicitNullValueEnvironments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseEnvironmentsItem> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseEnvironmentsItem> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsByIdOrNameCustomEnvironments200ResponseEnvironmentsItem> _explicitNullValueEnvironments = default!;
 #endif
         /// <summary>

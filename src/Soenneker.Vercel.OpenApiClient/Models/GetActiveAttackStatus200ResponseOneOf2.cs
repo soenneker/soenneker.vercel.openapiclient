@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("anomalies") is { } nullNodeAnomalies && nullNodeAnomalies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Anomalies = null;
+            if (parseNode.GetChildNode("anomalies") is null) { _explicitNullValueAnomalies = default!; _explicitNullProperties?.Remove("anomalies"); }
+            else if (parseNode.GetChildNode("anomalies") is { } nullNodeAnomalies && nullNodeAnomalies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Anomalies = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The anomalies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItem>? Anomalies { get => _explicitNullValueAnomalies; set { _explicitNullValueAnomalies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anomalies"); else _explicitNullProperties?.Remove("anomalies"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItem>? Anomalies { get => _explicitNullValueAnomalies; set { _explicitNullValueAnomalies = value; AdditionalData?.Remove("anomalies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anomalies"); else _explicitNullProperties?.Remove("anomalies"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItem>? _explicitNullValueAnomalies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItem> Anomalies { get => _explicitNullValueAnomalies; set { _explicitNullValueAnomalies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anomalies"); else _explicitNullProperties?.Remove("anomalies"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItem> Anomalies { get => _explicitNullValueAnomalies; set { _explicitNullValueAnomalies = value; AdditionalData?.Remove("anomalies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anomalies"); else _explicitNullProperties?.Remove("anomalies"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItem> _explicitNullValueAnomalies = default!;
 #endif
         /// <summary>

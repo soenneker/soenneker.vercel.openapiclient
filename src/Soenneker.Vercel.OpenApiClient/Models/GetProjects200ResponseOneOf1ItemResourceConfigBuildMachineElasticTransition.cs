@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("algorithmVersion") is { } nullNodeAlgorithmVersion && nullNodeAlgorithmVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlgorithmVersion = null;
-            if (parseNode.GetChildNode("at") is { } nullNodeAt && nullNodeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) At = null;
-            if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+            if (parseNode.GetChildNode("algorithmVersion") is null) { _explicitNullValueAlgorithmVersion = default!; _explicitNullProperties?.Remove("algorithmVersion"); }
+            else if (parseNode.GetChildNode("algorithmVersion") is { } nullNodeAlgorithmVersion && nullNodeAlgorithmVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlgorithmVersion = null;
+            if (parseNode.GetChildNode("at") is null) { _explicitNullValueAt = default!; _explicitNullProperties?.Remove("at"); }
+            else if (parseNode.GetChildNode("at") is { } nullNodeAt && nullNodeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) At = null;
+            if (parseNode.GetChildNode("direction") is null) { _explicitNullValueDirection = default!; _explicitNullProperties?.Remove("direction"); }
+            else if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The algorithmVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlgorithmVersion { get => _explicitNullValueAlgorithmVersion; set { _explicitNullValueAlgorithmVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithmVersion"); else _explicitNullProperties?.Remove("algorithmVersion"); } }
+        public string? AlgorithmVersion { get => _explicitNullValueAlgorithmVersion; set { _explicitNullValueAlgorithmVersion = value; AdditionalData?.Remove("algorithmVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithmVersion"); else _explicitNullProperties?.Remove("algorithmVersion"); } }
         private string? _explicitNullValueAlgorithmVersion = default!;
 #nullable restore
 #else
-        public string AlgorithmVersion { get => _explicitNullValueAlgorithmVersion; set { _explicitNullValueAlgorithmVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithmVersion"); else _explicitNullProperties?.Remove("algorithmVersion"); } }
+        public string AlgorithmVersion { get => _explicitNullValueAlgorithmVersion; set { _explicitNullValueAlgorithmVersion = value; AdditionalData?.Remove("algorithmVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithmVersion"); else _explicitNullProperties?.Remove("algorithmVersion"); } }
         private string _explicitNullValueAlgorithmVersion = default!;
 #endif
         /// <summary>The at property</summary>
-        public double? At { get => _explicitNullValueAt; set { _explicitNullValueAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("at"); else _explicitNullProperties?.Remove("at"); } }
+        public double? At { get => _explicitNullValueAt; set { _explicitNullValueAt = value; AdditionalData?.Remove("at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("at"); else _explicitNullProperties?.Remove("at"); } }
         private double? _explicitNullValueAt = default!;
         /// <summary>The direction property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemResourceConfigBuildMachineElasticTransitionDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemResourceConfigBuildMachineElasticTransitionDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemResourceConfigBuildMachineElasticTransitionDirection? _explicitNullValueDirection = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemResourceConfigBuildMachineElasticTransition"/> and sets the default values.
@@ -67,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "algorithmVersion", n => { AlgorithmVersion = n.GetStringValue(); } },
                 { "at", n => { At = n.GetDoubleValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemResourceConfigBuildMachineElasticTransitionDirection>(); } },
+                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemResourceConfigBuildMachineElasticTransitionDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
             };
         }
         /// <summary>

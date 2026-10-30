@@ -17,16 +17,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dest") is { } nullNodeDest && nullNodeDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dest = null;
-            if (parseNode.GetChildNode("handle") is { } nullNodeHandle && nullNodeHandle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Handle = null;
-            if (parseNode.GetChildNode("has") is { } nullNodeHas && nullNodeHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Has = null;
-            if (parseNode.GetChildNode("missing") is { } nullNodeMissing && nullNodeMissing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Missing = null;
-            if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
-            if (parseNode.GetChildNode("response_has") is { } nullNodeResponseHas && nullNodeResponseHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseHas = null;
-            if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("tierRequirement") is { } nullNodeTierRequirement && nullNodeTierRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierRequirement = null;
-            if (parseNode.GetChildNode("transforms") is { } nullNodeTransforms && nullNodeTransforms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transforms = null;
+            if (parseNode.GetChildNode("dest") is null) { _explicitNullValueDest = default!; _explicitNullProperties?.Remove("dest"); }
+            else if (parseNode.GetChildNode("dest") is { } nullNodeDest && nullNodeDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dest = null;
+            if (parseNode.GetChildNode("handle") is null) { _explicitNullValueHandle = default!; _explicitNullProperties?.Remove("handle"); }
+            else if (parseNode.GetChildNode("handle") is { } nullNodeHandle && nullNodeHandle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Handle = null;
+            if (parseNode.GetChildNode("has") is null) { _explicitNullValueHas = default!; _explicitNullProperties?.Remove("has"); }
+            else if (parseNode.GetChildNode("has") is { } nullNodeHas && nullNodeHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Has = null;
+            if (parseNode.GetChildNode("missing") is null) { _explicitNullValueMissing = default!; _explicitNullProperties?.Remove("missing"); }
+            else if (parseNode.GetChildNode("missing") is { } nullNodeMissing && nullNodeMissing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Missing = null;
+            if (parseNode.GetChildNode("mitigate") is null) { _explicitNullValueMitigate = default!; _explicitNullProperties?.Remove("mitigate"); }
+            else if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
+            if (parseNode.GetChildNode("response_has") is null) { _explicitNullValueResponseHas = default!; _explicitNullProperties?.Remove("response_has"); }
+            else if (parseNode.GetChildNode("response_has") is { } nullNodeResponseHas && nullNodeResponseHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseHas = null;
+            if (parseNode.GetChildNode("src") is null) { _explicitNullValueSrc = default!; _explicitNullProperties?.Remove("src"); }
+            else if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("tierRequirement") is null) { _explicitNullValueTierRequirement = default!; _explicitNullProperties?.Remove("tierRequirement"); }
+            else if (parseNode.GetChildNode("tierRequirement") is { } nullNodeTierRequirement && nullNodeTierRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierRequirement = null;
+            if (parseNode.GetChildNode("transforms") is null) { _explicitNullValueTransforms = default!; _explicitNullProperties?.Remove("transforms"); }
+            else if (parseNode.GetChildNode("transforms") is { } nullNodeTransforms && nullNodeTransforms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transforms = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,80 +44,80 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The dest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
+        public string? Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; AdditionalData?.Remove("dest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
         private string? _explicitNullValueDest = default!;
 #nullable restore
 #else
-        public string Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
+        public string Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; AdditionalData?.Remove("dest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
         private string _explicitNullValueDest = default!;
 #endif
         /// <summary>The handle property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHandle? Handle { get => _explicitNullValueHandle; set { _explicitNullValueHandle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handle"); else _explicitNullProperties?.Remove("handle"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHandle? Handle { get => _explicitNullValueHandle; set { _explicitNullValueHandle = value; AdditionalData?.Remove("handle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handle"); else _explicitNullProperties?.Remove("handle"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHandle? _explicitNullValueHandle = default!;
         /// <summary>The has property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem>? Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem>? Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; AdditionalData?.Remove("has"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem>? _explicitNullValueHas = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem> Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem> Has { get => _explicitNullValueHas; set { _explicitNullValueHas = value; AdditionalData?.Remove("has"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has"); else _explicitNullProperties?.Remove("has"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem> _explicitNullValueHas = default!;
 #endif
         /// <summary>The missing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem>? Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem>? Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; AdditionalData?.Remove("missing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem>? _explicitNullValueMissing = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem> Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem> Missing { get => _explicitNullValueMissing; set { _explicitNullValueMissing = value; AdditionalData?.Remove("missing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing"); else _explicitNullProperties?.Remove("missing"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem> _explicitNullValueMissing = default!;
 #endif
         /// <summary>The mitigate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate? Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate? Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; AdditionalData?.Remove("mitigate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate? _explicitNullValueMitigate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate Mitigate { get => _explicitNullValueMitigate; set { _explicitNullValueMitigate = value; AdditionalData?.Remove("mitigate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mitigate"); else _explicitNullProperties?.Remove("mitigate"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate _explicitNullValueMitigate = default!;
 #endif
         /// <summary>The response_has property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem>? ResponseHas { get => _explicitNullValueResponseHas; set { _explicitNullValueResponseHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_has"); else _explicitNullProperties?.Remove("response_has"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem>? ResponseHas { get => _explicitNullValueResponseHas; set { _explicitNullValueResponseHas = value; AdditionalData?.Remove("response_has"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_has"); else _explicitNullProperties?.Remove("response_has"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem>? _explicitNullValueResponseHas = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem> ResponseHas { get => _explicitNullValueResponseHas; set { _explicitNullValueResponseHas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_has"); else _explicitNullProperties?.Remove("response_has"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem> ResponseHas { get => _explicitNullValueResponseHas; set { _explicitNullValueResponseHas = value; AdditionalData?.Remove("response_has"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_has"); else _explicitNullProperties?.Remove("response_has"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem> _explicitNullValueResponseHas = default!;
 #endif
         /// <summary>The src property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc? Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc? Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; AdditionalData?.Remove("src"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc? _explicitNullValueSrc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; AdditionalData?.Remove("src"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc _explicitNullValueSrc = default!;
 #endif
         /// <summary>The status property</summary>
-        public double? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public double? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private double? _explicitNullValueStatus = default!;
         /// <summary>The tierRequirement property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement? TierRequirement { get => _explicitNullValueTierRequirement; set { _explicitNullValueTierRequirement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tierRequirement"); else _explicitNullProperties?.Remove("tierRequirement"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement? TierRequirement { get => _explicitNullValueTierRequirement; set { _explicitNullValueTierRequirement = value; AdditionalData?.Remove("tierRequirement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tierRequirement"); else _explicitNullProperties?.Remove("tierRequirement"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement? _explicitNullValueTierRequirement = default!;
         /// <summary>The transforms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem>? Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem>? Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; AdditionalData?.Remove("transforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem>? _explicitNullValueTransforms = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem> Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem> Transforms { get => _explicitNullValueTransforms; set { _explicitNullValueTransforms = value; AdditionalData?.Remove("transforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transforms"); else _explicitNullProperties?.Remove("transforms"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem> _explicitNullValueTransforms = default!;
 #endif
         /// <summary>
@@ -136,14 +146,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dest", n => { Dest = n.GetStringValue(); } },
-                { "handle", n => { Handle = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHandle>(); } },
+                { "handle", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHandle>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHandle = default; _explicitNullProperties?.Remove("handle"); AdditionalData["handle"] = unknown; } else { Handle = parsed; AdditionalData.Remove("handle"); } } },
                 { "has", n => { Has = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHasItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "missing", n => { Missing = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMissingItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mitigate", n => { Mitigate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigate.CreateFromDiscriminatorValue); } },
                 { "response_has", n => { ResponseHas = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemResponseHasItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "src", n => { Src = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemSrc.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
-                { "tierRequirement", n => { TierRequirement = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement>(); } },
+                { "tierRequirement", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTierRequirement = default; _explicitNullProperties?.Remove("tierRequirement"); AdditionalData["tierRequirement"] = unknown; } else { TierRequirement = parsed; AdditionalData.Remove("tierRequirement"); } } },
                 { "transforms", n => { Transforms = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemTransformsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

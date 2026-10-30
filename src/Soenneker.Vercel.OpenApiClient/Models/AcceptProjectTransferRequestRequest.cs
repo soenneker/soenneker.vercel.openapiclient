@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acceptedPolicies") is { } nullNodeAcceptedPolicies && nullNodeAcceptedPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedPolicies = null;
-            if (parseNode.GetChildNode("newProjectName") is { } nullNodeNewProjectName && nullNodeNewProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewProjectName = null;
-            if (parseNode.GetChildNode("paidFeatures") is { } nullNodePaidFeatures && nullNodePaidFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidFeatures = null;
+            if (parseNode.GetChildNode("acceptedPolicies") is null) { _explicitNullValueAcceptedPolicies = default!; _explicitNullProperties?.Remove("acceptedPolicies"); }
+            else if (parseNode.GetChildNode("acceptedPolicies") is { } nullNodeAcceptedPolicies && nullNodeAcceptedPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedPolicies = null;
+            if (parseNode.GetChildNode("newProjectName") is null) { _explicitNullValueNewProjectName = default!; _explicitNullProperties?.Remove("newProjectName"); }
+            else if (parseNode.GetChildNode("newProjectName") is { } nullNodeNewProjectName && nullNodeNewProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewProjectName = null;
+            if (parseNode.GetChildNode("paidFeatures") is null) { _explicitNullValuePaidFeatures = default!; _explicitNullProperties?.Remove("paidFeatures"); }
+            else if (parseNode.GetChildNode("paidFeatures") is { } nullNodePaidFeatures && nullNodePaidFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidFeatures = null;
         }
 
         /// <summary>The acceptedPolicies property</summary>

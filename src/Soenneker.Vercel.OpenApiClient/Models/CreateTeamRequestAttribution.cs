@@ -18,10 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("landingPage") is { } nullNodeLandingPage && nullNodeLandingPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPage = null;
-            if (parseNode.GetChildNode("pageBeforeConversionPage") is { } nullNodePageBeforeConversionPage && nullNodePageBeforeConversionPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageBeforeConversionPage = null;
-            if (parseNode.GetChildNode("sessionReferrer") is { } nullNodeSessionReferrer && nullNodeSessionReferrer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionReferrer = null;
-            if (parseNode.GetChildNode("utm") is { } nullNodeUtm && nullNodeUtm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Utm = null;
+            if (parseNode.GetChildNode("landingPage") is null) { _explicitNullValueLandingPage = default!; _explicitNullProperties?.Remove("landingPage"); }
+            else if (parseNode.GetChildNode("landingPage") is { } nullNodeLandingPage && nullNodeLandingPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPage = null;
+            if (parseNode.GetChildNode("pageBeforeConversionPage") is null) { _explicitNullValuePageBeforeConversionPage = default!; _explicitNullProperties?.Remove("pageBeforeConversionPage"); }
+            else if (parseNode.GetChildNode("pageBeforeConversionPage") is { } nullNodePageBeforeConversionPage && nullNodePageBeforeConversionPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageBeforeConversionPage = null;
+            if (parseNode.GetChildNode("sessionReferrer") is null) { _explicitNullValueSessionReferrer = default!; _explicitNullProperties?.Remove("sessionReferrer"); }
+            else if (parseNode.GetChildNode("sessionReferrer") is { } nullNodeSessionReferrer && nullNodeSessionReferrer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionReferrer = null;
+            if (parseNode.GetChildNode("utm") is null) { _explicitNullValueUtm = default!; _explicitNullProperties?.Remove("utm"); }
+            else if (parseNode.GetChildNode("utm") is { } nullNodeUtm && nullNodeUtm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Utm = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Session landing page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
+        public string? LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; AdditionalData?.Remove("landingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
         private string? _explicitNullValueLandingPage = default!;
 #nullable restore
 #else
-        public string LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
+        public string LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; AdditionalData?.Remove("landingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
         private string _explicitNullValueLandingPage = default!;
 #endif
         /// <summary>Referrer to the signup page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PageBeforeConversionPage { get => _explicitNullValuePageBeforeConversionPage; set { _explicitNullValuePageBeforeConversionPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageBeforeConversionPage"); else _explicitNullProperties?.Remove("pageBeforeConversionPage"); } }
+        public string? PageBeforeConversionPage { get => _explicitNullValuePageBeforeConversionPage; set { _explicitNullValuePageBeforeConversionPage = value; AdditionalData?.Remove("pageBeforeConversionPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageBeforeConversionPage"); else _explicitNullProperties?.Remove("pageBeforeConversionPage"); } }
         private string? _explicitNullValuePageBeforeConversionPage = default!;
 #nullable restore
 #else
-        public string PageBeforeConversionPage { get => _explicitNullValuePageBeforeConversionPage; set { _explicitNullValuePageBeforeConversionPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageBeforeConversionPage"); else _explicitNullProperties?.Remove("pageBeforeConversionPage"); } }
+        public string PageBeforeConversionPage { get => _explicitNullValuePageBeforeConversionPage; set { _explicitNullValuePageBeforeConversionPage = value; AdditionalData?.Remove("pageBeforeConversionPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageBeforeConversionPage"); else _explicitNullProperties?.Remove("pageBeforeConversionPage"); } }
         private string _explicitNullValuePageBeforeConversionPage = default!;
 #endif
         /// <summary>Session referrer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionReferrer { get => _explicitNullValueSessionReferrer; set { _explicitNullValueSessionReferrer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionReferrer"); else _explicitNullProperties?.Remove("sessionReferrer"); } }
+        public string? SessionReferrer { get => _explicitNullValueSessionReferrer; set { _explicitNullValueSessionReferrer = value; AdditionalData?.Remove("sessionReferrer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionReferrer"); else _explicitNullProperties?.Remove("sessionReferrer"); } }
         private string? _explicitNullValueSessionReferrer = default!;
 #nullable restore
 #else
-        public string SessionReferrer { get => _explicitNullValueSessionReferrer; set { _explicitNullValueSessionReferrer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionReferrer"); else _explicitNullProperties?.Remove("sessionReferrer"); } }
+        public string SessionReferrer { get => _explicitNullValueSessionReferrer; set { _explicitNullValueSessionReferrer = value; AdditionalData?.Remove("sessionReferrer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionReferrer"); else _explicitNullProperties?.Remove("sessionReferrer"); } }
         private string _explicitNullValueSessionReferrer = default!;
 #endif
         /// <summary>The utm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateTeamRequestAttributionUtm? Utm { get => _explicitNullValueUtm; set { _explicitNullValueUtm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("utm"); else _explicitNullProperties?.Remove("utm"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateTeamRequestAttributionUtm? Utm { get => _explicitNullValueUtm; set { _explicitNullValueUtm = value; AdditionalData?.Remove("utm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("utm"); else _explicitNullProperties?.Remove("utm"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateTeamRequestAttributionUtm? _explicitNullValueUtm = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateTeamRequestAttributionUtm Utm { get => _explicitNullValueUtm; set { _explicitNullValueUtm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("utm"); else _explicitNullProperties?.Remove("utm"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateTeamRequestAttributionUtm Utm { get => _explicitNullValueUtm; set { _explicitNullValueUtm = value; AdditionalData?.Remove("utm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("utm"); else _explicitNullProperties?.Remove("utm"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateTeamRequestAttributionUtm _explicitNullValueUtm = default!;
 #endif
         /// <summary>

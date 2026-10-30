@@ -17,10 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("city") is { } nullNodeCity && nullNodeCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) City = null;
-            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
-            if (parseNode.GetChildNode("most_specific_subdivision") is { } nullNodeMostSpecificSubdivision && nullNodeMostSpecificSubdivision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostSpecificSubdivision = null;
-            if (parseNode.GetChildNode("regionName") is { } nullNodeRegionName && nullNodeRegionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionName = null;
+            if (parseNode.GetChildNode("city") is null) { _explicitNullValueCity = default!; _explicitNullProperties?.Remove("city"); }
+            else if (parseNode.GetChildNode("city") is { } nullNodeCity && nullNodeCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) City = null;
+            if (parseNode.GetChildNode("country") is null) { _explicitNullValueCountry = default!; _explicitNullProperties?.Remove("country"); }
+            else if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("most_specific_subdivision") is null) { _explicitNullValueMostSpecificSubdivision = default!; _explicitNullProperties?.Remove("most_specific_subdivision"); }
+            else if (parseNode.GetChildNode("most_specific_subdivision") is { } nullNodeMostSpecificSubdivision && nullNodeMostSpecificSubdivision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostSpecificSubdivision = null;
+            if (parseNode.GetChildNode("regionName") is null) { _explicitNullValueRegionName = default!; _explicitNullProperties?.Remove("regionName"); }
+            else if (parseNode.GetChildNode("regionName") is { } nullNodeRegionName && nullNodeRegionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The city property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCity? City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCity? City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; AdditionalData?.Remove("city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCity? _explicitNullValueCity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCity City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCity City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; AdditionalData?.Remove("city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCity _explicitNullValueCity = default!;
 #endif
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCountry? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCountry? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; AdditionalData?.Remove("country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCountry? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCountry Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCountry Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; AdditionalData?.Remove("country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationCountry _explicitNullValueCountry = default!;
 #endif
         /// <summary>The most_specific_subdivision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationMostSpecificSubdivision? MostSpecificSubdivision { get => _explicitNullValueMostSpecificSubdivision; set { _explicitNullValueMostSpecificSubdivision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_specific_subdivision"); else _explicitNullProperties?.Remove("most_specific_subdivision"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationMostSpecificSubdivision? MostSpecificSubdivision { get => _explicitNullValueMostSpecificSubdivision; set { _explicitNullValueMostSpecificSubdivision = value; AdditionalData?.Remove("most_specific_subdivision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_specific_subdivision"); else _explicitNullProperties?.Remove("most_specific_subdivision"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationMostSpecificSubdivision? _explicitNullValueMostSpecificSubdivision = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationMostSpecificSubdivision MostSpecificSubdivision { get => _explicitNullValueMostSpecificSubdivision; set { _explicitNullValueMostSpecificSubdivision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_specific_subdivision"); else _explicitNullProperties?.Remove("most_specific_subdivision"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationMostSpecificSubdivision MostSpecificSubdivision { get => _explicitNullValueMostSpecificSubdivision; set { _explicitNullValueMostSpecificSubdivision = value; AdditionalData?.Remove("most_specific_subdivision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_specific_subdivision"); else _explicitNullProperties?.Remove("most_specific_subdivision"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508GeolocationMostSpecificSubdivision _explicitNullValueMostSpecificSubdivision = default!;
 #endif
         /// <summary>The regionName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegionName { get => _explicitNullValueRegionName; set { _explicitNullValueRegionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionName"); else _explicitNullProperties?.Remove("regionName"); } }
+        public string? RegionName { get => _explicitNullValueRegionName; set { _explicitNullValueRegionName = value; AdditionalData?.Remove("regionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionName"); else _explicitNullProperties?.Remove("regionName"); } }
         private string? _explicitNullValueRegionName = default!;
 #nullable restore
 #else
-        public string RegionName { get => _explicitNullValueRegionName; set { _explicitNullValueRegionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionName"); else _explicitNullProperties?.Remove("regionName"); } }
+        public string RegionName { get => _explicitNullValueRegionName; set { _explicitNullValueRegionName = value; AdditionalData?.Remove("regionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionName"); else _explicitNullProperties?.Remove("regionName"); } }
         private string _explicitNullValueRegionName = default!;
 #endif
         /// <summary>

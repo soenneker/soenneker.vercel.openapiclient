@@ -18,62 +18,69 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("approvalScope") is { } nullNodeApprovalScope && nullNodeApprovalScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalScope = null;
-            if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("previousStatus") is { } nullNodePreviousStatus && nullNodePreviousStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousStatus = null;
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("connectSrcCount") is null) { _explicitNullValueConnectSrcCount = default!; _explicitNullProperties?.Remove("connectSrcCount"); }
+            else if (parseNode.GetChildNode("connectSrcCount") is { } nullNodeConnectSrcCount && nullNodeConnectSrcCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectSrcCount = null;
+            if (parseNode.GetChildNode("connectSrcNormalizationRulesCleared") is null) { _explicitNullValueConnectSrcNormalizationRulesCleared = default!; _explicitNullProperties?.Remove("connectSrcNormalizationRulesCleared"); }
+            else if (parseNode.GetChildNode("connectSrcNormalizationRulesCleared") is { } nullNodeConnectSrcNormalizationRulesCleared && nullNodeConnectSrcNormalizationRulesCleared.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectSrcNormalizationRulesCleared = null;
+            if (parseNode.GetChildNode("connectSrcOriginCount") is null) { _explicitNullValueConnectSrcOriginCount = default!; _explicitNullProperties?.Remove("connectSrcOriginCount"); }
+            else if (parseNode.GetChildNode("connectSrcOriginCount") is { } nullNodeConnectSrcOriginCount && nullNodeConnectSrcOriginCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectSrcOriginCount = null;
+            if (parseNode.GetChildNode("connectSrcUserNormalizationRuleCount") is null) { _explicitNullValueConnectSrcUserNormalizationRuleCount = default!; _explicitNullProperties?.Remove("connectSrcUserNormalizationRuleCount"); }
+            else if (parseNode.GetChildNode("connectSrcUserNormalizationRuleCount") is { } nullNodeConnectSrcUserNormalizationRuleCount && nullNodeConnectSrcUserNormalizationRuleCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectSrcUserNormalizationRuleCount = null;
+            if (parseNode.GetChildNode("deletedCount") is null) { _explicitNullValueDeletedCount = default!; _explicitNullProperties?.Remove("deletedCount"); }
+            else if (parseNode.GetChildNode("deletedCount") is { } nullNodeDeletedCount && nullNodeDeletedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedCount = null;
+            if (parseNode.GetChildNode("headerCount") is null) { _explicitNullValueHeaderCount = default!; _explicitNullProperties?.Remove("headerCount"); }
+            else if (parseNode.GetChildNode("headerCount") is { } nullNodeHeaderCount && nullNodeHeaderCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderCount = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
+            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("scriptCount") is null) { _explicitNullValueScriptCount = default!; _explicitNullProperties?.Remove("scriptCount"); }
+            else if (parseNode.GetChildNode("scriptCount") is { } nullNodeScriptCount && nullNodeScriptCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScriptCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The approvalScope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251ApprovalScope? ApprovalScope { get => _explicitNullValueApprovalScope; set { _explicitNullValueApprovalScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvalScope"); else _explicitNullProperties?.Remove("approvalScope"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251ApprovalScope? _explicitNullValueApprovalScope = default!;
-        /// <summary>The justification property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
-        private string? _explicitNullValueJustification = default!;
-#nullable restore
-#else
-        public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
-        private string _explicitNullValueJustification = default!;
-#endif
-        /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Kind? _explicitNullValueKind = default!;
-        /// <summary>The previousStatus property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousStatus { get => _explicitNullValuePreviousStatus; set { _explicitNullValuePreviousStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousStatus"); else _explicitNullProperties?.Remove("previousStatus"); } }
-        private string? _explicitNullValuePreviousStatus = default!;
-#nullable restore
-#else
-        public string PreviousStatus { get => _explicitNullValuePreviousStatus; set { _explicitNullValuePreviousStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousStatus"); else _explicitNullProperties?.Remove("previousStatus"); } }
-        private string _explicitNullValuePreviousStatus = default!;
-#endif
+        /// <summary>The connectSrcCount property</summary>
+        public double? ConnectSrcCount { get => _explicitNullValueConnectSrcCount; set { _explicitNullValueConnectSrcCount = value; AdditionalData?.Remove("connectSrcCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectSrcCount"); else _explicitNullProperties?.Remove("connectSrcCount"); } }
+        private double? _explicitNullValueConnectSrcCount = default!;
+        /// <summary>The connectSrcNormalizationRulesCleared property</summary>
+        public bool? ConnectSrcNormalizationRulesCleared { get => _explicitNullValueConnectSrcNormalizationRulesCleared; set { _explicitNullValueConnectSrcNormalizationRulesCleared = value; AdditionalData?.Remove("connectSrcNormalizationRulesCleared"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectSrcNormalizationRulesCleared"); else _explicitNullProperties?.Remove("connectSrcNormalizationRulesCleared"); } }
+        private bool? _explicitNullValueConnectSrcNormalizationRulesCleared = default!;
+        /// <summary>The connectSrcOriginCount property</summary>
+        public double? ConnectSrcOriginCount { get => _explicitNullValueConnectSrcOriginCount; set { _explicitNullValueConnectSrcOriginCount = value; AdditionalData?.Remove("connectSrcOriginCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectSrcOriginCount"); else _explicitNullProperties?.Remove("connectSrcOriginCount"); } }
+        private double? _explicitNullValueConnectSrcOriginCount = default!;
+        /// <summary>The connectSrcUserNormalizationRuleCount property</summary>
+        public double? ConnectSrcUserNormalizationRuleCount { get => _explicitNullValueConnectSrcUserNormalizationRuleCount; set { _explicitNullValueConnectSrcUserNormalizationRuleCount = value; AdditionalData?.Remove("connectSrcUserNormalizationRuleCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectSrcUserNormalizationRuleCount"); else _explicitNullProperties?.Remove("connectSrcUserNormalizationRuleCount"); } }
+        private double? _explicitNullValueConnectSrcUserNormalizationRuleCount = default!;
+        /// <summary>The deletedCount property</summary>
+        public double? DeletedCount { get => _explicitNullValueDeletedCount; set { _explicitNullValueDeletedCount = value; AdditionalData?.Remove("deletedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedCount"); else _explicitNullProperties?.Remove("deletedCount"); } }
+        private double? _explicitNullValueDeletedCount = default!;
+        /// <summary>The headerCount property</summary>
+        public double? HeaderCount { get => _explicitNullValueHeaderCount; set { _explicitNullValueHeaderCount = value; AdditionalData?.Remove("headerCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerCount"); else _explicitNullProperties?.Remove("headerCount"); } }
+        private double? _explicitNullValueHeaderCount = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
-        private string? _explicitNullValueUrl = default!;
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string? _explicitNullValueProjectName = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
-        private string _explicitNullValueUrl = default!;
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string _explicitNullValueProjectName = default!;
 #endif
+        /// <summary>The scriptCount property</summary>
+        public double? ScriptCount { get => _explicitNullValueScriptCount; set { _explicitNullValueScriptCount = value; AdditionalData?.Remove("scriptCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scriptCount"); else _explicitNullProperties?.Remove("scriptCount"); } }
+        private double? _explicitNullValueScriptCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251"/> and sets the default values.
         /// </summary>
@@ -99,12 +106,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approvalScope", n => { ApprovalScope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251ApprovalScope>(); } },
-                { "justification", n => { Justification = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Kind>(); } },
-                { "previousStatus", n => { PreviousStatus = n.GetStringValue(); } },
+                { "connectSrcCount", n => { ConnectSrcCount = n.GetDoubleValue(); } },
+                { "connectSrcNormalizationRulesCleared", n => { ConnectSrcNormalizationRulesCleared = n.GetBoolValue(); } },
+                { "connectSrcOriginCount", n => { ConnectSrcOriginCount = n.GetDoubleValue(); } },
+                { "connectSrcUserNormalizationRuleCount", n => { ConnectSrcUserNormalizationRuleCount = n.GetDoubleValue(); } },
+                { "deletedCount", n => { DeletedCount = n.GetDoubleValue(); } },
+                { "headerCount", n => { HeaderCount = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "scriptCount", n => { ScriptCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -114,12 +124,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251ApprovalScope>("approvalScope", ApprovalScope);
-            writer.WriteStringValue("justification", Justification);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Kind>("kind", Kind);
-            writer.WriteStringValue("previousStatus", PreviousStatus);
+            writer.WriteDoubleValue("connectSrcCount", ConnectSrcCount);
+            writer.WriteBoolValue("connectSrcNormalizationRulesCleared", ConnectSrcNormalizationRulesCleared);
+            writer.WriteDoubleValue("connectSrcOriginCount", ConnectSrcOriginCount);
+            writer.WriteDoubleValue("connectSrcUserNormalizationRuleCount", ConnectSrcUserNormalizationRuleCount);
+            writer.WriteDoubleValue("deletedCount", DeletedCount);
+            writer.WriteDoubleValue("headerCount", HeaderCount);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteDoubleValue("scriptCount", ScriptCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

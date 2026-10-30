@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
+            if (parseNode.GetChildNode("buildMachine") is null) { _explicitNullValueBuildMachine = default!; _explicitNullProperties?.Remove("buildMachine"); }
+            else if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The buildMachine property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfigBuildMachine? BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfigBuildMachine? BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; AdditionalData?.Remove("buildMachine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfigBuildMachine? _explicitNullValueBuildMachine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfigBuildMachine BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfigBuildMachine BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; AdditionalData?.Remove("buildMachine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfigBuildMachine _explicitNullValueBuildMachine = default!;
 #endif
         /// <summary>

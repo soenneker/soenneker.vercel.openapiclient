@@ -17,40 +17,54 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activateAt") is { } nullNodeActivateAt && nullNodeActivateAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivateAt = null;
-            if (parseNode.GetChildNode("activatedAt") is { } nullNodeActivatedAt && nullNodeActivatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivatedAt = null;
-            if (parseNode.GetChildNode("algorithm") is { } nullNodeAlgorithm && nullNodeAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithm = null;
-            if (parseNode.GetChildNode("certificatePem") is { } nullNodeCertificatePem && nullNodeCertificatePem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificatePem = null;
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("importKeyId") is { } nullNodeImportKeyId && nullNodeImportKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportKeyId = null;
-            if (parseNode.GetChildNode("issuerId") is { } nullNodeIssuerId && nullNodeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerId = null;
-            if (parseNode.GetChildNode("keyId") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
-            if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
-            if (parseNode.GetChildNode("publicKeyFingerprint") is { } nullNodePublicKeyFingerprint && nullNodePublicKeyFingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyFingerprint = null;
-            if (parseNode.GetChildNode("publicKeyPem") is { } nullNodePublicKeyPem && nullNodePublicKeyPem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyPem = null;
-            if (parseNode.GetChildNode("revokeAt") is { } nullNodeRevokeAt && nullNodeRevokeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevokeAt = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("activateAt") is null) { _explicitNullValueActivateAt = default!; _explicitNullProperties?.Remove("activateAt"); }
+            else if (parseNode.GetChildNode("activateAt") is { } nullNodeActivateAt && nullNodeActivateAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivateAt = null;
+            if (parseNode.GetChildNode("activatedAt") is null) { _explicitNullValueActivatedAt = default!; _explicitNullProperties?.Remove("activatedAt"); }
+            else if (parseNode.GetChildNode("activatedAt") is { } nullNodeActivatedAt && nullNodeActivatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivatedAt = null;
+            if (parseNode.GetChildNode("algorithm") is null) { _explicitNullValueAlgorithm = default!; _explicitNullProperties?.Remove("algorithm"); }
+            else if (parseNode.GetChildNode("algorithm") is { } nullNodeAlgorithm && nullNodeAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithm = null;
+            if (parseNode.GetChildNode("certificatePem") is null) { _explicitNullValueCertificatePem = default!; _explicitNullProperties?.Remove("certificatePem"); }
+            else if (parseNode.GetChildNode("certificatePem") is { } nullNodeCertificatePem && nullNodeCertificatePem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificatePem = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("importKeyId") is null) { _explicitNullValueImportKeyId = default!; _explicitNullProperties?.Remove("importKeyId"); }
+            else if (parseNode.GetChildNode("importKeyId") is { } nullNodeImportKeyId && nullNodeImportKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportKeyId = null;
+            if (parseNode.GetChildNode("issuerId") is null) { _explicitNullValueIssuerId = default!; _explicitNullProperties?.Remove("issuerId"); }
+            else if (parseNode.GetChildNode("issuerId") is { } nullNodeIssuerId && nullNodeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerId = null;
+            if (parseNode.GetChildNode("keyId") is null) { _explicitNullValueKeyId = default!; _explicitNullProperties?.Remove("keyId"); }
+            else if (parseNode.GetChildNode("keyId") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
+            if (parseNode.GetChildNode("publicKey") is null) { _explicitNullValuePublicKey = default!; _explicitNullProperties?.Remove("publicKey"); }
+            else if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("publicKeyFingerprint") is null) { _explicitNullValuePublicKeyFingerprint = default!; _explicitNullProperties?.Remove("publicKeyFingerprint"); }
+            else if (parseNode.GetChildNode("publicKeyFingerprint") is { } nullNodePublicKeyFingerprint && nullNodePublicKeyFingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyFingerprint = null;
+            if (parseNode.GetChildNode("publicKeyPem") is null) { _explicitNullValuePublicKeyPem = default!; _explicitNullProperties?.Remove("publicKeyPem"); }
+            else if (parseNode.GetChildNode("publicKeyPem") is { } nullNodePublicKeyPem && nullNodePublicKeyPem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyPem = null;
+            if (parseNode.GetChildNode("revokeAt") is null) { _explicitNullValueRevokeAt = default!; _explicitNullProperties?.Remove("revokeAt"); }
+            else if (parseNode.GetChildNode("revokeAt") is { } nullNodeRevokeAt && nullNodeRevokeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevokeAt = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>The activateAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivateAt { get => _explicitNullValueActivateAt; set { _explicitNullValueActivateAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activateAt"); else _explicitNullProperties?.Remove("activateAt"); } }
+        public string? ActivateAt { get => _explicitNullValueActivateAt; set { _explicitNullValueActivateAt = value; AdditionalData?.Remove("activateAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activateAt"); else _explicitNullProperties?.Remove("activateAt"); } }
         private string? _explicitNullValueActivateAt = default!;
 #nullable restore
 #else
-        public string ActivateAt { get => _explicitNullValueActivateAt; set { _explicitNullValueActivateAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activateAt"); else _explicitNullProperties?.Remove("activateAt"); } }
+        public string ActivateAt { get => _explicitNullValueActivateAt; set { _explicitNullValueActivateAt = value; AdditionalData?.Remove("activateAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activateAt"); else _explicitNullProperties?.Remove("activateAt"); } }
         private string _explicitNullValueActivateAt = default!;
 #endif
         /// <summary>When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivatedAt { get => _explicitNullValueActivatedAt; set { _explicitNullValueActivatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activatedAt"); else _explicitNullProperties?.Remove("activatedAt"); } }
+        public string? ActivatedAt { get => _explicitNullValueActivatedAt; set { _explicitNullValueActivatedAt = value; AdditionalData?.Remove("activatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activatedAt"); else _explicitNullProperties?.Remove("activatedAt"); } }
         private string? _explicitNullValueActivatedAt = default!;
 #nullable restore
 #else
-        public string ActivatedAt { get => _explicitNullValueActivatedAt; set { _explicitNullValueActivatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activatedAt"); else _explicitNullProperties?.Remove("activatedAt"); } }
+        public string ActivatedAt { get => _explicitNullValueActivatedAt; set { _explicitNullValueActivatedAt = value; AdditionalData?.Remove("activatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activatedAt"); else _explicitNullProperties?.Remove("activatedAt"); } }
         private string _explicitNullValueActivatedAt = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -58,114 +72,114 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The algorithm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
+        public string? Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; AdditionalData?.Remove("algorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
         private string? _explicitNullValueAlgorithm = default!;
 #nullable restore
 #else
-        public string Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
+        public string Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; AdditionalData?.Remove("algorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
         private string _explicitNullValueAlgorithm = default!;
 #endif
         /// <summary>The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificatePem { get => _explicitNullValueCertificatePem; set { _explicitNullValueCertificatePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificatePem"); else _explicitNullProperties?.Remove("certificatePem"); } }
+        public string? CertificatePem { get => _explicitNullValueCertificatePem; set { _explicitNullValueCertificatePem = value; AdditionalData?.Remove("certificatePem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificatePem"); else _explicitNullProperties?.Remove("certificatePem"); } }
         private string? _explicitNullValueCertificatePem = default!;
 #nullable restore
 #else
-        public string CertificatePem { get => _explicitNullValueCertificatePem; set { _explicitNullValueCertificatePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificatePem"); else _explicitNullProperties?.Remove("certificatePem"); } }
+        public string CertificatePem { get => _explicitNullValueCertificatePem; set { _explicitNullValueCertificatePem = value; AdditionalData?.Remove("certificatePem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificatePem"); else _explicitNullProperties?.Remove("certificatePem"); } }
         private string _explicitNullValueCertificatePem = default!;
 #endif
         /// <summary>The createdAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer&apos;s keys; omitted for generated keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
+        public string? ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; AdditionalData?.Remove("importKeyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
         private string? _explicitNullValueImportKeyId = default!;
 #nullable restore
 #else
-        public string ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
+        public string ImportKeyId { get => _explicitNullValueImportKeyId; set { _explicitNullValueImportKeyId = value; AdditionalData?.Remove("importKeyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importKeyId"); else _explicitNullProperties?.Remove("importKeyId"); } }
         private string _explicitNullValueImportKeyId = default!;
 #endif
         /// <summary>The issuerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
+        public string? IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
         private string? _explicitNullValueIssuerId = default!;
 #nullable restore
 #else
-        public string IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
+        public string IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
         private string _explicitNullValueIssuerId = default!;
 #endif
         /// <summary>The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyId"); else _explicitNullProperties?.Remove("keyId"); } }
+        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("keyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyId"); else _explicitNullProperties?.Remove("keyId"); } }
         private string? _explicitNullValueKeyId = default!;
 #nullable restore
 #else
-        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyId"); else _explicitNullProperties?.Remove("keyId"); } }
+        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("keyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyId"); else _explicitNullProperties?.Remove("keyId"); } }
         private string _explicitNullValueKeyId = default!;
 #endif
         /// <summary>The publicKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponsePublicKey? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponsePublicKey? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("publicKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponsePublicKey? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponsePublicKey PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponsePublicKey PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("publicKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponsePublicKey _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>The publicKeyFingerprint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyFingerprint { get => _explicitNullValuePublicKeyFingerprint; set { _explicitNullValuePublicKeyFingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyFingerprint"); else _explicitNullProperties?.Remove("publicKeyFingerprint"); } }
+        public string? PublicKeyFingerprint { get => _explicitNullValuePublicKeyFingerprint; set { _explicitNullValuePublicKeyFingerprint = value; AdditionalData?.Remove("publicKeyFingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyFingerprint"); else _explicitNullProperties?.Remove("publicKeyFingerprint"); } }
         private string? _explicitNullValuePublicKeyFingerprint = default!;
 #nullable restore
 #else
-        public string PublicKeyFingerprint { get => _explicitNullValuePublicKeyFingerprint; set { _explicitNullValuePublicKeyFingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyFingerprint"); else _explicitNullProperties?.Remove("publicKeyFingerprint"); } }
+        public string PublicKeyFingerprint { get => _explicitNullValuePublicKeyFingerprint; set { _explicitNullValuePublicKeyFingerprint = value; AdditionalData?.Remove("publicKeyFingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyFingerprint"); else _explicitNullProperties?.Remove("publicKeyFingerprint"); } }
         private string _explicitNullValuePublicKeyFingerprint = default!;
 #endif
         /// <summary>The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyPem { get => _explicitNullValuePublicKeyPem; set { _explicitNullValuePublicKeyPem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPem"); else _explicitNullProperties?.Remove("publicKeyPem"); } }
+        public string? PublicKeyPem { get => _explicitNullValuePublicKeyPem; set { _explicitNullValuePublicKeyPem = value; AdditionalData?.Remove("publicKeyPem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPem"); else _explicitNullProperties?.Remove("publicKeyPem"); } }
         private string? _explicitNullValuePublicKeyPem = default!;
 #nullable restore
 #else
-        public string PublicKeyPem { get => _explicitNullValuePublicKeyPem; set { _explicitNullValuePublicKeyPem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPem"); else _explicitNullProperties?.Remove("publicKeyPem"); } }
+        public string PublicKeyPem { get => _explicitNullValuePublicKeyPem; set { _explicitNullValuePublicKeyPem = value; AdditionalData?.Remove("publicKeyPem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPem"); else _explicitNullProperties?.Remove("publicKeyPem"); } }
         private string _explicitNullValuePublicKeyPem = default!;
 #endif
         /// <summary>The revokeAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RevokeAt { get => _explicitNullValueRevokeAt; set { _explicitNullValueRevokeAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revokeAt"); else _explicitNullProperties?.Remove("revokeAt"); } }
+        public string? RevokeAt { get => _explicitNullValueRevokeAt; set { _explicitNullValueRevokeAt = value; AdditionalData?.Remove("revokeAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revokeAt"); else _explicitNullProperties?.Remove("revokeAt"); } }
         private string? _explicitNullValueRevokeAt = default!;
 #nullable restore
 #else
-        public string RevokeAt { get => _explicitNullValueRevokeAt; set { _explicitNullValueRevokeAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revokeAt"); else _explicitNullProperties?.Remove("revokeAt"); } }
+        public string RevokeAt { get => _explicitNullValueRevokeAt; set { _explicitNullValueRevokeAt = value; AdditionalData?.Remove("revokeAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revokeAt"); else _explicitNullProperties?.Remove("revokeAt"); } }
         private string _explicitNullValueRevokeAt = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>The updatedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
@@ -205,7 +219,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "publicKeyFingerprint", n => { PublicKeyFingerprint = n.GetStringValue(); } },
                 { "publicKeyPem", n => { PublicKeyPem = n.GetStringValue(); } },
                 { "revokeAt", n => { RevokeAt = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponseStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKey200ResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }

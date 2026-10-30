@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deferredInvoiceTargetBalance") is { } nullNodeDeferredInvoiceTargetBalance && nullNodeDeferredInvoiceTargetBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeferredInvoiceTargetBalance = null;
-            if (parseNode.GetChildNode("maximumMonthlySpend") is { } nullNodeMaximumMonthlySpend && nullNodeMaximumMonthlySpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumMonthlySpend = null;
+            if (parseNode.GetChildNode("deferredInvoiceTargetBalance") is null) { _explicitNullValueDeferredInvoiceTargetBalance = default!; _explicitNullProperties?.Remove("deferredInvoiceTargetBalance"); }
+            else if (parseNode.GetChildNode("deferredInvoiceTargetBalance") is { } nullNodeDeferredInvoiceTargetBalance && nullNodeDeferredInvoiceTargetBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeferredInvoiceTargetBalance = null;
+            if (parseNode.GetChildNode("maximumMonthlySpend") is null) { _explicitNullValueMaximumMonthlySpend = default!; _explicitNullProperties?.Remove("maximumMonthlySpend"); }
+            else if (parseNode.GetChildNode("maximumMonthlySpend") is { } nullNodeMaximumMonthlySpend && nullNodeMaximumMonthlySpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumMonthlySpend = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The deferredInvoiceTargetBalance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeferredInvoiceTargetBalance { get => _explicitNullValueDeferredInvoiceTargetBalance; set { _explicitNullValueDeferredInvoiceTargetBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deferredInvoiceTargetBalance"); else _explicitNullProperties?.Remove("deferredInvoiceTargetBalance"); } }
+        public string? DeferredInvoiceTargetBalance { get => _explicitNullValueDeferredInvoiceTargetBalance; set { _explicitNullValueDeferredInvoiceTargetBalance = value; AdditionalData?.Remove("deferredInvoiceTargetBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deferredInvoiceTargetBalance"); else _explicitNullProperties?.Remove("deferredInvoiceTargetBalance"); } }
         private string? _explicitNullValueDeferredInvoiceTargetBalance = default!;
 #nullable restore
 #else
-        public string DeferredInvoiceTargetBalance { get => _explicitNullValueDeferredInvoiceTargetBalance; set { _explicitNullValueDeferredInvoiceTargetBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deferredInvoiceTargetBalance"); else _explicitNullProperties?.Remove("deferredInvoiceTargetBalance"); } }
+        public string DeferredInvoiceTargetBalance { get => _explicitNullValueDeferredInvoiceTargetBalance; set { _explicitNullValueDeferredInvoiceTargetBalance = value; AdditionalData?.Remove("deferredInvoiceTargetBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deferredInvoiceTargetBalance"); else _explicitNullProperties?.Remove("deferredInvoiceTargetBalance"); } }
         private string _explicitNullValueDeferredInvoiceTargetBalance = default!;
 #endif
         /// <summary>The maximumMonthlySpend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
+        public string? MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; AdditionalData?.Remove("maximumMonthlySpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
         private string? _explicitNullValueMaximumMonthlySpend = default!;
 #nullable restore
 #else
-        public string MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
+        public string MaximumMonthlySpend { get => _explicitNullValueMaximumMonthlySpend; set { _explicitNullValueMaximumMonthlySpend = value; AdditionalData?.Remove("maximumMonthlySpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumMonthlySpend"); else _explicitNullProperties?.Remove("maximumMonthlySpend"); } }
         private string _explicitNullValueMaximumMonthlySpend = default!;
 #endif
         /// <summary>

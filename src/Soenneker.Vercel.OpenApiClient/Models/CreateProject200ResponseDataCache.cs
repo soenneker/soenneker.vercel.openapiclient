@@ -17,21 +17,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("storageSizeBytes") is { } nullNodeStorageSizeBytes && nullNodeStorageSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageSizeBytes = null;
-            if (parseNode.GetChildNode("unlimited") is { } nullNodeUnlimited && nullNodeUnlimited.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unlimited = null;
-            if (parseNode.GetChildNode("userDisabled") is { } nullNodeUserDisabled && nullNodeUserDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDisabled = null;
+            if (parseNode.GetChildNode("storageSizeBytes") is null) { _explicitNullValueStorageSizeBytes = default!; _explicitNullProperties?.Remove("storageSizeBytes"); }
+            else if (parseNode.GetChildNode("storageSizeBytes") is { } nullNodeStorageSizeBytes && nullNodeStorageSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageSizeBytes = null;
+            if (parseNode.GetChildNode("unlimited") is null) { _explicitNullValueUnlimited = default!; _explicitNullProperties?.Remove("unlimited"); }
+            else if (parseNode.GetChildNode("unlimited") is { } nullNodeUnlimited && nullNodeUnlimited.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unlimited = null;
+            if (parseNode.GetChildNode("userDisabled") is null) { _explicitNullValueUserDisabled = default!; _explicitNullProperties?.Remove("userDisabled"); }
+            else if (parseNode.GetChildNode("userDisabled") is { } nullNodeUserDisabled && nullNodeUserDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDisabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The storageSizeBytes property</summary>
-        public double? StorageSizeBytes { get => _explicitNullValueStorageSizeBytes; set { _explicitNullValueStorageSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageSizeBytes"); else _explicitNullProperties?.Remove("storageSizeBytes"); } }
+        public double? StorageSizeBytes { get => _explicitNullValueStorageSizeBytes; set { _explicitNullValueStorageSizeBytes = value; AdditionalData?.Remove("storageSizeBytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageSizeBytes"); else _explicitNullProperties?.Remove("storageSizeBytes"); } }
         private double? _explicitNullValueStorageSizeBytes = default!;
         /// <summary>The unlimited property</summary>
-        public bool? Unlimited { get => _explicitNullValueUnlimited; set { _explicitNullValueUnlimited = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unlimited"); else _explicitNullProperties?.Remove("unlimited"); } }
+        public bool? Unlimited { get => _explicitNullValueUnlimited; set { _explicitNullValueUnlimited = value; AdditionalData?.Remove("unlimited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unlimited"); else _explicitNullProperties?.Remove("unlimited"); } }
         private bool? _explicitNullValueUnlimited = default!;
         /// <summary>The userDisabled property</summary>
-        public bool? UserDisabled { get => _explicitNullValueUserDisabled; set { _explicitNullValueUserDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userDisabled"); else _explicitNullProperties?.Remove("userDisabled"); } }
+        public bool? UserDisabled { get => _explicitNullValueUserDisabled; set { _explicitNullValueUserDisabled = value; AdditionalData?.Remove("userDisabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userDisabled"); else _explicitNullProperties?.Remove("userDisabled"); } }
         private bool? _explicitNullValueUserDisabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDataCache"/> and sets the default values.

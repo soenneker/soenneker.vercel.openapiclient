@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("edgeConfig") is { } nullNodeEdgeConfig && nullNodeEdgeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfig = null;
-            if (parseNode.GetChildNode("fromAccount") is { } nullNodeFromAccount && nullNodeFromAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromAccount = null;
-            if (parseNode.GetChildNode("toAccount") is { } nullNodeToAccount && nullNodeToAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToAccount = null;
+            if (parseNode.GetChildNode("edgeConfig") is null) { _explicitNullValueEdgeConfig = default!; _explicitNullProperties?.Remove("edgeConfig"); }
+            else if (parseNode.GetChildNode("edgeConfig") is { } nullNodeEdgeConfig && nullNodeEdgeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfig = null;
+            if (parseNode.GetChildNode("fromAccount") is null) { _explicitNullValueFromAccount = default!; _explicitNullProperties?.Remove("fromAccount"); }
+            else if (parseNode.GetChildNode("fromAccount") is { } nullNodeFromAccount && nullNodeFromAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromAccount = null;
+            if (parseNode.GetChildNode("toAccount") is null) { _explicitNullValueToAccount = default!; _explicitNullProperties?.Remove("toAccount"); }
+            else if (parseNode.GetChildNode("toAccount") is { } nullNodeToAccount && nullNodeToAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToAccount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The edgeConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166EdgeConfig? EdgeConfig { get => _explicitNullValueEdgeConfig; set { _explicitNullValueEdgeConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfig"); else _explicitNullProperties?.Remove("edgeConfig"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166EdgeConfig? EdgeConfig { get => _explicitNullValueEdgeConfig; set { _explicitNullValueEdgeConfig = value; AdditionalData?.Remove("edgeConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfig"); else _explicitNullProperties?.Remove("edgeConfig"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166EdgeConfig? _explicitNullValueEdgeConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166EdgeConfig EdgeConfig { get => _explicitNullValueEdgeConfig; set { _explicitNullValueEdgeConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfig"); else _explicitNullProperties?.Remove("edgeConfig"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166EdgeConfig EdgeConfig { get => _explicitNullValueEdgeConfig; set { _explicitNullValueEdgeConfig = value; AdditionalData?.Remove("edgeConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfig"); else _explicitNullProperties?.Remove("edgeConfig"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166EdgeConfig _explicitNullValueEdgeConfig = default!;
 #endif
         /// <summary>The fromAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166FromAccount? FromAccount { get => _explicitNullValueFromAccount; set { _explicitNullValueFromAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromAccount"); else _explicitNullProperties?.Remove("fromAccount"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166FromAccount? FromAccount { get => _explicitNullValueFromAccount; set { _explicitNullValueFromAccount = value; AdditionalData?.Remove("fromAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromAccount"); else _explicitNullProperties?.Remove("fromAccount"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166FromAccount? _explicitNullValueFromAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166FromAccount FromAccount { get => _explicitNullValueFromAccount; set { _explicitNullValueFromAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromAccount"); else _explicitNullProperties?.Remove("fromAccount"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166FromAccount FromAccount { get => _explicitNullValueFromAccount; set { _explicitNullValueFromAccount = value; AdditionalData?.Remove("fromAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromAccount"); else _explicitNullProperties?.Remove("fromAccount"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166FromAccount _explicitNullValueFromAccount = default!;
 #endif
         /// <summary>The toAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166ToAccount? ToAccount { get => _explicitNullValueToAccount; set { _explicitNullValueToAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toAccount"); else _explicitNullProperties?.Remove("toAccount"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166ToAccount? ToAccount { get => _explicitNullValueToAccount; set { _explicitNullValueToAccount = value; AdditionalData?.Remove("toAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toAccount"); else _explicitNullProperties?.Remove("toAccount"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166ToAccount? _explicitNullValueToAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166ToAccount ToAccount { get => _explicitNullValueToAccount; set { _explicitNullValueToAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toAccount"); else _explicitNullProperties?.Remove("toAccount"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166ToAccount ToAccount { get => _explicitNullValueToAccount; set { _explicitNullValueToAccount = value; AdditionalData?.Remove("toAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toAccount"); else _explicitNullProperties?.Remove("toAccount"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166ToAccount _explicitNullValueToAccount = default!;
 #endif
         /// <summary>

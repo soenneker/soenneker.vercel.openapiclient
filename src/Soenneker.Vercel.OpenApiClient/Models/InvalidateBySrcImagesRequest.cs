@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("srcImages") is { } nullNodeSrcImages && nullNodeSrcImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcImages = null;
+            if (parseNode.GetChildNode("srcImages") is null) { _explicitNullValueSrcImages = default!; _explicitNullProperties?.Remove("srcImages"); }
+            else if (parseNode.GetChildNode("srcImages") is { } nullNodeSrcImages && nullNodeSrcImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcImages = null;
         }
 
         /// <summary>The srcImages property</summary>

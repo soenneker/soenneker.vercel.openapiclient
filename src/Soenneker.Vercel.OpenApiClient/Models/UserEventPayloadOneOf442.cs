@@ -18,21 +18,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("remoteCaching") is { } nullNodeRemoteCaching && nullNodeRemoteCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCaching = null;
+            if (parseNode.GetChildNode("consent") is null) { _explicitNullValueConsent = default!; _explicitNullProperties?.Remove("consent"); }
+            else if (parseNode.GetChildNode("consent") is { } nullNodeConsent && nullNodeConsent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Consent = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents configuration for remote caching</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442RemoteCaching? RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442RemoteCaching? _explicitNullValueRemoteCaching = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442RemoteCaching RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442RemoteCaching _explicitNullValueRemoteCaching = default!;
-#endif
+        /// <summary>The consent property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442Consent? Consent { get => _explicitNullValueConsent; set { _explicitNullValueConsent = value; AdditionalData?.Remove("consent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent"); else _explicitNullProperties?.Remove("consent"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442Consent? _explicitNullValueConsent = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442"/> and sets the default values.
         /// </summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442RemoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442RemoteCaching.CreateFromDiscriminatorValue); } },
+                { "consent", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442Consent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConsent = default; _explicitNullProperties?.Remove("consent"); AdditionalData["consent"] = unknown; } else { Consent = parsed; AdditionalData.Remove("consent"); } } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442RemoteCaching>("remoteCaching", RemoteCaching);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442Consent>("consent", Consent);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

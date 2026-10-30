@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletedUid") is { } nullNodeDeletedUid && nullNodeDeletedUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedUid = null;
-            if (parseNode.GetChildNode("deletedUser") is { } nullNodeDeletedUser && nullNodeDeletedUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedUser = null;
-            if (parseNode.GetChildNode("emailDomain") is { } nullNodeEmailDomain && nullNodeEmailDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDomain = null;
+            if (parseNode.GetChildNode("deletedUid") is null) { _explicitNullValueDeletedUid = default!; _explicitNullProperties?.Remove("deletedUid"); }
+            else if (parseNode.GetChildNode("deletedUid") is { } nullNodeDeletedUid && nullNodeDeletedUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedUid = null;
+            if (parseNode.GetChildNode("deletedUser") is null) { _explicitNullValueDeletedUser = default!; _explicitNullProperties?.Remove("deletedUser"); }
+            else if (parseNode.GetChildNode("deletedUser") is { } nullNodeDeletedUser && nullNodeDeletedUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedUser = null;
+            if (parseNode.GetChildNode("emailDomain") is null) { _explicitNullValueEmailDomain = default!; _explicitNullProperties?.Remove("emailDomain"); }
+            else if (parseNode.GetChildNode("emailDomain") is { } nullNodeEmailDomain && nullNodeEmailDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDomain = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The deletedUid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedUid { get => _explicitNullValueDeletedUid; set { _explicitNullValueDeletedUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUid"); else _explicitNullProperties?.Remove("deletedUid"); } }
+        public string? DeletedUid { get => _explicitNullValueDeletedUid; set { _explicitNullValueDeletedUid = value; AdditionalData?.Remove("deletedUid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUid"); else _explicitNullProperties?.Remove("deletedUid"); } }
         private string? _explicitNullValueDeletedUid = default!;
 #nullable restore
 #else
-        public string DeletedUid { get => _explicitNullValueDeletedUid; set { _explicitNullValueDeletedUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUid"); else _explicitNullProperties?.Remove("deletedUid"); } }
+        public string DeletedUid { get => _explicitNullValueDeletedUid; set { _explicitNullValueDeletedUid = value; AdditionalData?.Remove("deletedUid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUid"); else _explicitNullProperties?.Remove("deletedUid"); } }
         private string _explicitNullValueDeletedUid = default!;
 #endif
         /// <summary>The deletedUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172DeletedUser? DeletedUser { get => _explicitNullValueDeletedUser; set { _explicitNullValueDeletedUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUser"); else _explicitNullProperties?.Remove("deletedUser"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172DeletedUser? DeletedUser { get => _explicitNullValueDeletedUser; set { _explicitNullValueDeletedUser = value; AdditionalData?.Remove("deletedUser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUser"); else _explicitNullProperties?.Remove("deletedUser"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172DeletedUser? _explicitNullValueDeletedUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172DeletedUser DeletedUser { get => _explicitNullValueDeletedUser; set { _explicitNullValueDeletedUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUser"); else _explicitNullProperties?.Remove("deletedUser"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172DeletedUser DeletedUser { get => _explicitNullValueDeletedUser; set { _explicitNullValueDeletedUser = value; AdditionalData?.Remove("deletedUser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUser"); else _explicitNullProperties?.Remove("deletedUser"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172DeletedUser _explicitNullValueDeletedUser = default!;
 #endif
         /// <summary>The emailDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
+        public string? EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; AdditionalData?.Remove("emailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
         private string? _explicitNullValueEmailDomain = default!;
 #nullable restore
 #else
-        public string EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
+        public string EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; AdditionalData?.Remove("emailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
         private string _explicitNullValueEmailDomain = default!;
 #endif
         /// <summary>

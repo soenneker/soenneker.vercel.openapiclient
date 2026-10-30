@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configPath") is { } nullNodeConfigPath && nullNodeConfigPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigPath = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("recommendationReasons") is { } nullNodeRecommendationReasons && nullNodeRecommendationReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecommendationReasons = null;
+            if (parseNode.GetChildNode("configPath") is null) { _explicitNullValueConfigPath = default!; _explicitNullProperties?.Remove("configPath"); }
+            else if (parseNode.GetChildNode("configPath") is { } nullNodeConfigPath && nullNodeConfigPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigPath = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("recommendationReasons") is null) { _explicitNullValueRecommendationReasons = default!; _explicitNullProperties?.Remove("recommendationReasons"); }
+            else if (parseNode.GetChildNode("recommendationReasons") is { } nullNodeRecommendationReasons && nullNodeRecommendationReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecommendationReasons = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The configPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigPath { get => _explicitNullValueConfigPath; set { _explicitNullValueConfigPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configPath"); else _explicitNullProperties?.Remove("configPath"); } }
+        public string? ConfigPath { get => _explicitNullValueConfigPath; set { _explicitNullValueConfigPath = value; AdditionalData?.Remove("configPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configPath"); else _explicitNullProperties?.Remove("configPath"); } }
         private string? _explicitNullValueConfigPath = default!;
 #nullable restore
 #else
-        public string ConfigPath { get => _explicitNullValueConfigPath; set { _explicitNullValueConfigPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configPath"); else _explicitNullProperties?.Remove("configPath"); } }
+        public string ConfigPath { get => _explicitNullValueConfigPath; set { _explicitNullValueConfigPath = value; AdditionalData?.Remove("configPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configPath"); else _explicitNullProperties?.Remove("configPath"); } }
         private string _explicitNullValueConfigPath = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The recommendationReasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RecommendationReasons { get => _explicitNullValueRecommendationReasons; set { _explicitNullValueRecommendationReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendationReasons"); else _explicitNullProperties?.Remove("recommendationReasons"); } }
+        public List<string>? RecommendationReasons { get => _explicitNullValueRecommendationReasons; set { _explicitNullValueRecommendationReasons = value; AdditionalData?.Remove("recommendationReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendationReasons"); else _explicitNullProperties?.Remove("recommendationReasons"); } }
         private List<string>? _explicitNullValueRecommendationReasons = default!;
 #nullable restore
 #else
-        public List<string> RecommendationReasons { get => _explicitNullValueRecommendationReasons; set { _explicitNullValueRecommendationReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendationReasons"); else _explicitNullProperties?.Remove("recommendationReasons"); } }
+        public List<string> RecommendationReasons { get => _explicitNullValueRecommendationReasons; set { _explicitNullValueRecommendationReasons = value; AdditionalData?.Remove("recommendationReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendationReasons"); else _explicitNullProperties?.Remove("recommendationReasons"); } }
         private List<string> _explicitNullValueRecommendationReasons = default!;
 #endif
         /// <summary>

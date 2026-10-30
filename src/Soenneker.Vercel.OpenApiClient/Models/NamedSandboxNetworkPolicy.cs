@@ -18,11 +18,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowedCIDRs") is { } nullNodeAllowedCIDRs && nullNodeAllowedCIDRs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCIDRs = null;
-            if (parseNode.GetChildNode("allowedDomains") is { } nullNodeAllowedDomains && nullNodeAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDomains = null;
-            if (parseNode.GetChildNode("deniedCIDRs") is { } nullNodeDeniedCIDRs && nullNodeDeniedCIDRs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeniedCIDRs = null;
-            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("s3Key") is { } nullNodeS3Key && nullNodeS3Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3Key = null;
+            if (parseNode.GetChildNode("allowedCIDRs") is null) { _explicitNullValueAllowedCIDRs = default!; _explicitNullProperties?.Remove("allowedCIDRs"); }
+            else if (parseNode.GetChildNode("allowedCIDRs") is { } nullNodeAllowedCIDRs && nullNodeAllowedCIDRs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCIDRs = null;
+            if (parseNode.GetChildNode("allowedDomains") is null) { _explicitNullValueAllowedDomains = default!; _explicitNullProperties?.Remove("allowedDomains"); }
+            else if (parseNode.GetChildNode("allowedDomains") is { } nullNodeAllowedDomains && nullNodeAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDomains = null;
+            if (parseNode.GetChildNode("deniedCIDRs") is null) { _explicitNullValueDeniedCIDRs = default!; _explicitNullProperties?.Remove("deniedCIDRs"); }
+            else if (parseNode.GetChildNode("deniedCIDRs") is { } nullNodeDeniedCIDRs && nullNodeDeniedCIDRs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeniedCIDRs = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("s3Key") is null) { _explicitNullValueS3Key = default!; _explicitNullProperties?.Remove("s3Key"); }
+            else if (parseNode.GetChildNode("s3Key") is { } nullNodeS3Key && nullNodeS3Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3Key = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The allowedCIDRs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedCIDRs { get => _explicitNullValueAllowedCIDRs; set { _explicitNullValueAllowedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCIDRs"); else _explicitNullProperties?.Remove("allowedCIDRs"); } }
+        public List<string>? AllowedCIDRs { get => _explicitNullValueAllowedCIDRs; set { _explicitNullValueAllowedCIDRs = value; AdditionalData?.Remove("allowedCIDRs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCIDRs"); else _explicitNullProperties?.Remove("allowedCIDRs"); } }
         private List<string>? _explicitNullValueAllowedCIDRs = default!;
 #nullable restore
 #else
-        public List<string> AllowedCIDRs { get => _explicitNullValueAllowedCIDRs; set { _explicitNullValueAllowedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCIDRs"); else _explicitNullProperties?.Remove("allowedCIDRs"); } }
+        public List<string> AllowedCIDRs { get => _explicitNullValueAllowedCIDRs; set { _explicitNullValueAllowedCIDRs = value; AdditionalData?.Remove("allowedCIDRs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCIDRs"); else _explicitNullProperties?.Remove("allowedCIDRs"); } }
         private List<string> _explicitNullValueAllowedCIDRs = default!;
 #endif
         /// <summary>The allowedDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        public List<string>? AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; AdditionalData?.Remove("allowedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
         private List<string>? _explicitNullValueAllowedDomains = default!;
 #nullable restore
 #else
-        public List<string> AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        public List<string> AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; AdditionalData?.Remove("allowedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
         private List<string> _explicitNullValueAllowedDomains = default!;
 #endif
         /// <summary>The deniedCIDRs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeniedCIDRs { get => _explicitNullValueDeniedCIDRs; set { _explicitNullValueDeniedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deniedCIDRs"); else _explicitNullProperties?.Remove("deniedCIDRs"); } }
+        public List<string>? DeniedCIDRs { get => _explicitNullValueDeniedCIDRs; set { _explicitNullValueDeniedCIDRs = value; AdditionalData?.Remove("deniedCIDRs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deniedCIDRs"); else _explicitNullProperties?.Remove("deniedCIDRs"); } }
         private List<string>? _explicitNullValueDeniedCIDRs = default!;
 #nullable restore
 #else
-        public List<string> DeniedCIDRs { get => _explicitNullValueDeniedCIDRs; set { _explicitNullValueDeniedCIDRs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deniedCIDRs"); else _explicitNullProperties?.Remove("deniedCIDRs"); } }
+        public List<string> DeniedCIDRs { get => _explicitNullValueDeniedCIDRs; set { _explicitNullValueDeniedCIDRs = value; AdditionalData?.Remove("deniedCIDRs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deniedCIDRs"); else _explicitNullProperties?.Remove("deniedCIDRs"); } }
         private List<string> _explicitNullValueDeniedCIDRs = default!;
 #endif
         /// <summary>The mode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode? _explicitNullValueMode = default!;
         /// <summary>The s3Key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3Key"); else _explicitNullProperties?.Remove("s3Key"); } }
+        public string? S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; AdditionalData?.Remove("s3Key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3Key"); else _explicitNullProperties?.Remove("s3Key"); } }
         private string? _explicitNullValueS3Key = default!;
 #nullable restore
 #else
-        public string S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3Key"); else _explicitNullProperties?.Remove("s3Key"); } }
+        public string S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; AdditionalData?.Remove("s3Key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3Key"); else _explicitNullProperties?.Remove("s3Key"); } }
         private string _explicitNullValueS3Key = default!;
 #endif
         /// <summary>
@@ -98,7 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowedCIDRs", n => { AllowedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deniedCIDRs", n => { DeniedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode>(); } },
+                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
                 { "s3Key", n => { S3Key = n.GetStringValue(); } },
             };
         }

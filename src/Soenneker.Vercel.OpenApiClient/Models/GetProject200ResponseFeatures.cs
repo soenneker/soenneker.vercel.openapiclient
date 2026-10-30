@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("webAnalytics") is { } nullNodeWebAnalytics && nullNodeWebAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalytics = null;
+            if (parseNode.GetChildNode("webAnalytics") is null) { _explicitNullValueWebAnalytics = default!; _explicitNullProperties?.Remove("webAnalytics"); }
+            else if (parseNode.GetChildNode("webAnalytics") is { } nullNodeWebAnalytics && nullNodeWebAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalytics = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The webAnalytics property</summary>
-        public bool? WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
+        public bool? WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; AdditionalData?.Remove("webAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
         private bool? _explicitNullValueWebAnalytics = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFeatures"/> and sets the default values.

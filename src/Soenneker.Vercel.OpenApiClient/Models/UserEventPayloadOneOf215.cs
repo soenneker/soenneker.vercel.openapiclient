@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("integrationName") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
-            if (parseNode.GetChildNode("logDrainUrl") is { } nullNodeLogDrainUrl && nullNodeLogDrainUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogDrainUrl = null;
+            if (parseNode.GetChildNode("integrationName") is null) { _explicitNullValueIntegrationName = default!; _explicitNullProperties?.Remove("integrationName"); }
+            else if (parseNode.GetChildNode("integrationName") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
+            if (parseNode.GetChildNode("logDrainUrl") is null) { _explicitNullValueLogDrainUrl = default!; _explicitNullProperties?.Remove("logDrainUrl"); }
+            else if (parseNode.GetChildNode("logDrainUrl") is { } nullNodeLogDrainUrl && nullNodeLogDrainUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogDrainUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The integrationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
         private string? _explicitNullValueIntegrationName = default!;
 #nullable restore
 #else
-        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
         private string _explicitNullValueIntegrationName = default!;
 #endif
         /// <summary>The logDrainUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogDrainUrl { get => _explicitNullValueLogDrainUrl; set { _explicitNullValueLogDrainUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrainUrl"); else _explicitNullProperties?.Remove("logDrainUrl"); } }
+        public string? LogDrainUrl { get => _explicitNullValueLogDrainUrl; set { _explicitNullValueLogDrainUrl = value; AdditionalData?.Remove("logDrainUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrainUrl"); else _explicitNullProperties?.Remove("logDrainUrl"); } }
         private string? _explicitNullValueLogDrainUrl = default!;
 #nullable restore
 #else
-        public string LogDrainUrl { get => _explicitNullValueLogDrainUrl; set { _explicitNullValueLogDrainUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrainUrl"); else _explicitNullProperties?.Remove("logDrainUrl"); } }
+        public string LogDrainUrl { get => _explicitNullValueLogDrainUrl; set { _explicitNullValueLogDrainUrl = value; AdditionalData?.Remove("logDrainUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrainUrl"); else _explicitNullProperties?.Remove("logDrainUrl"); } }
         private string _explicitNullValueLogDrainUrl = default!;
 #endif
         /// <summary>

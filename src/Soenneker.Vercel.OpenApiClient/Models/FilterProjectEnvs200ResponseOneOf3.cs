@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("envs") is { } nullNodeEnvs && nullNodeEnvs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Envs = null;
-            if (parseNode.GetChildNode("hiddenProductionEnvCount") is { } nullNodeHiddenProductionEnvCount && nullNodeHiddenProductionEnvCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiddenProductionEnvCount = null;
+            if (parseNode.GetChildNode("envs") is null) { _explicitNullValueEnvs = default!; _explicitNullProperties?.Remove("envs"); }
+            else if (parseNode.GetChildNode("envs") is { } nullNodeEnvs && nullNodeEnvs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Envs = null;
+            if (parseNode.GetChildNode("hiddenProductionEnvCount") is null) { _explicitNullValueHiddenProductionEnvCount = default!; _explicitNullProperties?.Remove("hiddenProductionEnvCount"); }
+            else if (parseNode.GetChildNode("hiddenProductionEnvCount") is { } nullNodeHiddenProductionEnvCount && nullNodeHiddenProductionEnvCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiddenProductionEnvCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The envs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3EnvsItem>? Envs { get => _explicitNullValueEnvs; set { _explicitNullValueEnvs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envs"); else _explicitNullProperties?.Remove("envs"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3EnvsItem>? Envs { get => _explicitNullValueEnvs; set { _explicitNullValueEnvs = value; AdditionalData?.Remove("envs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envs"); else _explicitNullProperties?.Remove("envs"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3EnvsItem>? _explicitNullValueEnvs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3EnvsItem> Envs { get => _explicitNullValueEnvs; set { _explicitNullValueEnvs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envs"); else _explicitNullProperties?.Remove("envs"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3EnvsItem> Envs { get => _explicitNullValueEnvs; set { _explicitNullValueEnvs = value; AdditionalData?.Remove("envs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envs"); else _explicitNullProperties?.Remove("envs"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3EnvsItem> _explicitNullValueEnvs = default!;
 #endif
         /// <summary>The hiddenProductionEnvCount property</summary>
-        public double? HiddenProductionEnvCount { get => _explicitNullValueHiddenProductionEnvCount; set { _explicitNullValueHiddenProductionEnvCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiddenProductionEnvCount"); else _explicitNullProperties?.Remove("hiddenProductionEnvCount"); } }
+        public double? HiddenProductionEnvCount { get => _explicitNullValueHiddenProductionEnvCount; set { _explicitNullValueHiddenProductionEnvCount = value; AdditionalData?.Remove("hiddenProductionEnvCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiddenProductionEnvCount"); else _explicitNullProperties?.Remove("hiddenProductionEnvCount"); } }
         private double? _explicitNullValueHiddenProductionEnvCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3"/> and sets the default values.

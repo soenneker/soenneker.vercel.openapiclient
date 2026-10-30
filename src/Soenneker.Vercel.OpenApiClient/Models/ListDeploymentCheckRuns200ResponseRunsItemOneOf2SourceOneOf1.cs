@@ -18,43 +18,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("invocationAttempt") is { } nullNodeInvocationAttempt && nullNodeInvocationAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationAttempt = null;
-            if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
-            if (parseNode.GetChildNode("jobDefinitionId") is { } nullNodeJobDefinitionId && nullNodeJobDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDefinitionId = null;
-            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
-            if (parseNode.GetChildNode("subKind") is { } nullNodeSubKind && nullNodeSubKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubKind = null;
+            if (parseNode.GetChildNode("invocationAttempt") is null) { _explicitNullValueInvocationAttempt = default!; _explicitNullProperties?.Remove("invocationAttempt"); }
+            else if (parseNode.GetChildNode("invocationAttempt") is { } nullNodeInvocationAttempt && nullNodeInvocationAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationAttempt = null;
+            if (parseNode.GetChildNode("invocationId") is null) { _explicitNullValueInvocationId = default!; _explicitNullProperties?.Remove("invocationId"); }
+            else if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
+            if (parseNode.GetChildNode("jobDefinitionId") is null) { _explicitNullValueJobDefinitionId = default!; _explicitNullProperties?.Remove("jobDefinitionId"); }
+            else if (parseNode.GetChildNode("jobDefinitionId") is { } nullNodeJobDefinitionId && nullNodeJobDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDefinitionId = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("subKind") is null) { _explicitNullValueSubKind = default!; _explicitNullProperties?.Remove("subKind"); }
+            else if (parseNode.GetChildNode("subKind") is { } nullNodeSubKind && nullNodeSubKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubKind = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The invocationAttempt property</summary>
-        public double? InvocationAttempt { get => _explicitNullValueInvocationAttempt; set { _explicitNullValueInvocationAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationAttempt"); else _explicitNullProperties?.Remove("invocationAttempt"); } }
+        public double? InvocationAttempt { get => _explicitNullValueInvocationAttempt; set { _explicitNullValueInvocationAttempt = value; AdditionalData?.Remove("invocationAttempt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationAttempt"); else _explicitNullProperties?.Remove("invocationAttempt"); } }
         private double? _explicitNullValueInvocationAttempt = default!;
         /// <summary>The invocationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        public string? InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; AdditionalData?.Remove("invocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
         private string? _explicitNullValueInvocationId = default!;
 #nullable restore
 #else
-        public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; AdditionalData?.Remove("invocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
         private string _explicitNullValueInvocationId = default!;
 #endif
         /// <summary>The jobDefinitionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
+        public string? JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; AdditionalData?.Remove("jobDefinitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
         private string? _explicitNullValueJobDefinitionId = default!;
 #nullable restore
 #else
-        public string JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
+        public string JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; AdditionalData?.Remove("jobDefinitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
         private string _explicitNullValueJobDefinitionId = default!;
 #endif
         /// <summary>The origin property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConfigOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConfigOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConfigOrigin? _explicitNullValueOrigin = default!;
         /// <summary>The subKind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSubKind? SubKind { get => _explicitNullValueSubKind; set { _explicitNullValueSubKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subKind"); else _explicitNullProperties?.Remove("subKind"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSubKind? SubKind { get => _explicitNullValueSubKind; set { _explicitNullValueSubKind = value; AdditionalData?.Remove("subKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subKind"); else _explicitNullProperties?.Remove("subKind"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSubKind? _explicitNullValueSubKind = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemOneOf2SourceOneOf1"/> and sets the default values.
@@ -84,8 +89,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "invocationAttempt", n => { InvocationAttempt = n.GetDoubleValue(); } },
                 { "invocationId", n => { InvocationId = n.GetStringValue(); } },
                 { "jobDefinitionId", n => { JobDefinitionId = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConfigOrigin>(); } },
-                { "subKind", n => { SubKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSubKind>(); } },
+                { "origin", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConfigOrigin>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrigin = default; _explicitNullProperties?.Remove("origin"); AdditionalData["origin"] = unknown; } else { Origin = parsed; AdditionalData.Remove("origin"); } } },
+                { "subKind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSubKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubKind = default; _explicitNullProperties?.Remove("subKind"); AdditionalData["subKind"] = unknown; } else { SubKind = parsed; AdditionalData.Remove("subKind"); } } },
             };
         }
         /// <summary>

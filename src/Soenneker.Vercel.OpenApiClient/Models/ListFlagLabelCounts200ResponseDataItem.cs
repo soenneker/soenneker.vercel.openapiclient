@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attributeKey") is { } nullNodeAttributeKey && nullNodeAttributeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeKey = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("entityKind") is { } nullNodeEntityKind && nullNodeEntityKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityKind = null;
+            if (parseNode.GetChildNode("attributeKey") is null) { _explicitNullValueAttributeKey = default!; _explicitNullProperties?.Remove("attributeKey"); }
+            else if (parseNode.GetChildNode("attributeKey") is { } nullNodeAttributeKey && nullNodeAttributeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeKey = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("entityKind") is null) { _explicitNullValueEntityKind = default!; _explicitNullProperties?.Remove("entityKind"); }
+            else if (parseNode.GetChildNode("entityKind") is { } nullNodeEntityKind && nullNodeEntityKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityKind = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The attributeKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttributeKey { get => _explicitNullValueAttributeKey; set { _explicitNullValueAttributeKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeKey"); else _explicitNullProperties?.Remove("attributeKey"); } }
+        public string? AttributeKey { get => _explicitNullValueAttributeKey; set { _explicitNullValueAttributeKey = value; AdditionalData?.Remove("attributeKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeKey"); else _explicitNullProperties?.Remove("attributeKey"); } }
         private string? _explicitNullValueAttributeKey = default!;
 #nullable restore
 #else
-        public string AttributeKey { get => _explicitNullValueAttributeKey; set { _explicitNullValueAttributeKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeKey"); else _explicitNullProperties?.Remove("attributeKey"); } }
+        public string AttributeKey { get => _explicitNullValueAttributeKey; set { _explicitNullValueAttributeKey = value; AdditionalData?.Remove("attributeKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeKey"); else _explicitNullProperties?.Remove("attributeKey"); } }
         private string _explicitNullValueAttributeKey = default!;
 #endif
         /// <summary>The count property</summary>
-        public double? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public double? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private double? _explicitNullValueCount = default!;
         /// <summary>The entityKind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityKind { get => _explicitNullValueEntityKind; set { _explicitNullValueEntityKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityKind"); else _explicitNullProperties?.Remove("entityKind"); } }
+        public string? EntityKind { get => _explicitNullValueEntityKind; set { _explicitNullValueEntityKind = value; AdditionalData?.Remove("entityKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityKind"); else _explicitNullProperties?.Remove("entityKind"); } }
         private string? _explicitNullValueEntityKind = default!;
 #nullable restore
 #else
-        public string EntityKind { get => _explicitNullValueEntityKind; set { _explicitNullValueEntityKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityKind"); else _explicitNullProperties?.Remove("entityKind"); } }
+        public string EntityKind { get => _explicitNullValueEntityKind; set { _explicitNullValueEntityKind = value; AdditionalData?.Remove("entityKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityKind"); else _explicitNullProperties?.Remove("entityKind"); } }
         private string _explicitNullValueEntityKind = default!;
 #endif
         /// <summary>

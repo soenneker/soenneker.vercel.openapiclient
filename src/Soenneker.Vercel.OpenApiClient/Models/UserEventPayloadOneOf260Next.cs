@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("passport") is { } nullNodePassport && nullNodePassport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passport = null;
+            if (parseNode.GetChildNode("passport") is null) { _explicitNullValuePassport = default!; _explicitNullProperties?.Remove("passport"); }
+            else if (parseNode.GetChildNode("passport") is { } nullNodePassport && nullNodePassport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passport = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The passport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260NextPassport? Passport { get => _explicitNullValuePassport; set { _explicitNullValuePassport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport"); else _explicitNullProperties?.Remove("passport"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260NextPassport? Passport { get => _explicitNullValuePassport; set { _explicitNullValuePassport = value; AdditionalData?.Remove("passport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport"); else _explicitNullProperties?.Remove("passport"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260NextPassport? _explicitNullValuePassport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260NextPassport Passport { get => _explicitNullValuePassport; set { _explicitNullValuePassport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport"); else _explicitNullProperties?.Remove("passport"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260NextPassport Passport { get => _explicitNullValuePassport; set { _explicitNullValuePassport = value; AdditionalData?.Remove("passport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport"); else _explicitNullProperties?.Remove("passport"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260NextPassport _explicitNullValuePassport = default!;
 #endif
         /// <summary>

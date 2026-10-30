@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
+            if (parseNode.GetChildNode("updates") is null) { _explicitNullValueUpdates = default!; _explicitNullProperties?.Remove("updates"); }
+            else if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
         }
 
         /// <summary>An object where each key is an environment variable ID (not the key name) and the value is the update to apply</summary>

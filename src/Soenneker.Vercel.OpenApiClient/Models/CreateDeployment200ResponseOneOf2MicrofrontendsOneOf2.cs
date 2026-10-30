@@ -17,11 +17,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defaultAppProjectName") is { } nullNodeDefaultAppProjectName && nullNodeDefaultAppProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAppProjectName = null;
-            if (parseNode.GetChildNode("defaultRoute") is { } nullNodeDefaultRoute && nullNodeDefaultRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRoute = null;
-            if (parseNode.GetChildNode("groupIds") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
-            if (parseNode.GetChildNode("isDefaultApp") is { } nullNodeIsDefaultApp && nullNodeIsDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefaultApp = null;
-            if (parseNode.GetChildNode("mfeConfigUploadState") is { } nullNodeMfeConfigUploadState && nullNodeMfeConfigUploadState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfeConfigUploadState = null;
+            if (parseNode.GetChildNode("defaultAppProjectName") is null) { _explicitNullValueDefaultAppProjectName = default!; _explicitNullProperties?.Remove("defaultAppProjectName"); }
+            else if (parseNode.GetChildNode("defaultAppProjectName") is { } nullNodeDefaultAppProjectName && nullNodeDefaultAppProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAppProjectName = null;
+            if (parseNode.GetChildNode("defaultRoute") is null) { _explicitNullValueDefaultRoute = default!; _explicitNullProperties?.Remove("defaultRoute"); }
+            else if (parseNode.GetChildNode("defaultRoute") is { } nullNodeDefaultRoute && nullNodeDefaultRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRoute = null;
+            if (parseNode.GetChildNode("groupIds") is null) { _explicitNullValueGroupIds = default!; _explicitNullProperties?.Remove("groupIds"); }
+            else if (parseNode.GetChildNode("groupIds") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
+            if (parseNode.GetChildNode("isDefaultApp") is null) { _explicitNullValueIsDefaultApp = default!; _explicitNullProperties?.Remove("isDefaultApp"); }
+            else if (parseNode.GetChildNode("isDefaultApp") is { } nullNodeIsDefaultApp && nullNodeIsDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefaultApp = null;
+            if (parseNode.GetChildNode("mfeConfigUploadState") is null) { _explicitNullValueMfeConfigUploadState = default!; _explicitNullProperties?.Remove("mfeConfigUploadState"); }
+            else if (parseNode.GetChildNode("mfeConfigUploadState") is { } nullNodeMfeConfigUploadState && nullNodeMfeConfigUploadState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfeConfigUploadState = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The project name of the default app of this deployment&apos;s microfrontends group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultAppProjectName { get => _explicitNullValueDefaultAppProjectName; set { _explicitNullValueDefaultAppProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAppProjectName"); else _explicitNullProperties?.Remove("defaultAppProjectName"); } }
+        public string? DefaultAppProjectName { get => _explicitNullValueDefaultAppProjectName; set { _explicitNullValueDefaultAppProjectName = value; AdditionalData?.Remove("defaultAppProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAppProjectName"); else _explicitNullProperties?.Remove("defaultAppProjectName"); } }
         private string? _explicitNullValueDefaultAppProjectName = default!;
 #nullable restore
 #else
-        public string DefaultAppProjectName { get => _explicitNullValueDefaultAppProjectName; set { _explicitNullValueDefaultAppProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAppProjectName"); else _explicitNullProperties?.Remove("defaultAppProjectName"); } }
+        public string DefaultAppProjectName { get => _explicitNullValueDefaultAppProjectName; set { _explicitNullValueDefaultAppProjectName = value; AdditionalData?.Remove("defaultAppProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultAppProjectName"); else _explicitNullProperties?.Remove("defaultAppProjectName"); } }
         private string _explicitNullValueDefaultAppProjectName = default!;
 #endif
         /// <summary>A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
+        public string? DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; AdditionalData?.Remove("defaultRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
         private string? _explicitNullValueDefaultRoute = default!;
 #nullable restore
 #else
-        public string DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
+        public string DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; AdditionalData?.Remove("defaultRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
         private string _explicitNullValueDefaultRoute = default!;
 #endif
         /// <summary>The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
+        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; AdditionalData?.Remove("groupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
         private List<string>? _explicitNullValueGroupIds = default!;
 #nullable restore
 #else
-        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
+        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; AdditionalData?.Remove("groupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupIds"); else _explicitNullProperties?.Remove("groupIds"); } }
         private List<string> _explicitNullValueGroupIds = default!;
 #endif
         /// <summary>The isDefaultApp property</summary>
-        public bool? IsDefaultApp { get => _explicitNullValueIsDefaultApp; set { _explicitNullValueIsDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDefaultApp"); else _explicitNullProperties?.Remove("isDefaultApp"); } }
+        public bool? IsDefaultApp { get => _explicitNullValueIsDefaultApp; set { _explicitNullValueIsDefaultApp = value; AdditionalData?.Remove("isDefaultApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDefaultApp"); else _explicitNullProperties?.Remove("isDefaultApp"); } }
         private bool? _explicitNullValueIsDefaultApp = default!;
         /// <summary>The result of the microfrontends config upload during deployment creation / build. Only set for default app deployments. The config upload is attempted during deployment create, and then again during the build. If the config is not in the root directory, or the deployment is prebuilt, the config cannot be uploaded during deployment create. The upload during deployment build finds the config even if it&apos;s not in the root directory, as it has access to all files. Uploading the config during create is ideal, as then all child deployments are guaranteed to have access to the default app deployment config even if the default app has not yet started building. If the config is not uploaded, the child app will show as building until the config has been uploaded during the default app build. - `success` - The config was uploaded successfully, either when the deployment was created or during the build. - `waiting_on_build` - The config could not be uploaded during deployment create, will be attempted again during the build. - `no_config` - No config was found. Only set once the build has not found the config in any of the deployment&apos;s files. - `undefined` - Legacy deployments, or there was an error uploading the config during deployment create.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2MicrofrontendsOneOf2MfeConfigUploadState? MfeConfigUploadState { get => _explicitNullValueMfeConfigUploadState; set { _explicitNullValueMfeConfigUploadState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfeConfigUploadState"); else _explicitNullProperties?.Remove("mfeConfigUploadState"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2MicrofrontendsOneOf2MfeConfigUploadState? MfeConfigUploadState { get => _explicitNullValueMfeConfigUploadState; set { _explicitNullValueMfeConfigUploadState = value; AdditionalData?.Remove("mfeConfigUploadState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfeConfigUploadState"); else _explicitNullProperties?.Remove("mfeConfigUploadState"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2MicrofrontendsOneOf2MfeConfigUploadState? _explicitNullValueMfeConfigUploadState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2MicrofrontendsOneOf2"/> and sets the default values.
@@ -91,7 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "defaultRoute", n => { DefaultRoute = n.GetStringValue(); } },
                 { "groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isDefaultApp", n => { IsDefaultApp = n.GetBoolValue(); } },
-                { "mfeConfigUploadState", n => { MfeConfigUploadState = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2MicrofrontendsOneOf2MfeConfigUploadState>(); } },
+                { "mfeConfigUploadState", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2MicrofrontendsOneOf2MfeConfigUploadState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMfeConfigUploadState = default; _explicitNullProperties?.Remove("mfeConfigUploadState"); AdditionalData["mfeConfigUploadState"] = unknown; } else { MfeConfigUploadState = parsed; AdditionalData.Remove("mfeConfigUploadState"); } } },
             };
         }
         /// <summary>

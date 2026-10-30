@@ -17,27 +17,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attackModeActiveUntil") is { } nullNodeAttackModeActiveUntil && nullNodeAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeActiveUntil = null;
-            if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("attackModeActiveUntil") is null) { _explicitNullValueAttackModeActiveUntil = default!; _explicitNullProperties?.Remove("attackModeActiveUntil"); }
+            else if (parseNode.GetChildNode("attackModeActiveUntil") is { } nullNodeAttackModeActiveUntil && nullNodeAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("attackModeEnabled") is null) { _explicitNullValueAttackModeEnabled = default!; _explicitNullProperties?.Remove("attackModeEnabled"); }
+            else if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attackModeActiveUntil property</summary>
-        public double? AttackModeActiveUntil { get => _explicitNullValueAttackModeActiveUntil; set { _explicitNullValueAttackModeActiveUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeActiveUntil"); else _explicitNullProperties?.Remove("attackModeActiveUntil"); } }
+        public double? AttackModeActiveUntil { get => _explicitNullValueAttackModeActiveUntil; set { _explicitNullValueAttackModeActiveUntil = value; AdditionalData?.Remove("attackModeActiveUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeActiveUntil"); else _explicitNullProperties?.Remove("attackModeActiveUntil"); } }
         private double? _explicitNullValueAttackModeActiveUntil = default!;
         /// <summary>The attackModeEnabled property</summary>
-        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
+        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; AdditionalData?.Remove("attackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
         private bool? _explicitNullValueAttackModeEnabled = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>

@@ -18,18 +18,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accessPolicy") is { } nullNodeAccessPolicy && nullNodeAccessPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessPolicy = null;
-            if (parseNode.GetChildNode("previousName") is { } nullNodePreviousName && nullNodePreviousName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousName = null;
+            if (parseNode.GetChildNode("accessPolicy") is null) { _explicitNullValueAccessPolicy = default!; _explicitNullProperties?.Remove("accessPolicy"); }
+            else if (parseNode.GetChildNode("accessPolicy") is { } nullNodeAccessPolicy && nullNodeAccessPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessPolicy = null;
+            if (parseNode.GetChildNode("previousName") is null) { _explicitNullValuePreviousName = default!; _explicitNullProperties?.Remove("previousName"); }
+            else if (parseNode.GetChildNode("previousName") is { } nullNodePreviousName && nullNodePreviousName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousName = null;
         }
 
         /// <summary>The accessPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24AccessPolicy? AccessPolicy { get => _explicitNullValueAccessPolicy; set { _explicitNullValueAccessPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessPolicy"); else _explicitNullProperties?.Remove("accessPolicy"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24AccessPolicy? AccessPolicy { get => _explicitNullValueAccessPolicy; set { _explicitNullValueAccessPolicy = value; AdditionalData?.Remove("accessPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessPolicy"); else _explicitNullProperties?.Remove("accessPolicy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24AccessPolicy? _explicitNullValueAccessPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24AccessPolicy AccessPolicy { get => _explicitNullValueAccessPolicy; set { _explicitNullValueAccessPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessPolicy"); else _explicitNullProperties?.Remove("accessPolicy"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24AccessPolicy AccessPolicy { get => _explicitNullValueAccessPolicy; set { _explicitNullValueAccessPolicy = value; AdditionalData?.Remove("accessPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessPolicy"); else _explicitNullProperties?.Remove("accessPolicy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24AccessPolicy _explicitNullValueAccessPolicy = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,11 +39,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The previousName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
+        public string? PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; AdditionalData?.Remove("previousName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
         private string? _explicitNullValuePreviousName = default!;
 #nullable restore
 #else
-        public string PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
+        public string PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; AdditionalData?.Remove("previousName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousName"); else _explicitNullProperties?.Remove("previousName"); } }
         private string _explicitNullValuePreviousName = default!;
 #endif
         /// <summary>

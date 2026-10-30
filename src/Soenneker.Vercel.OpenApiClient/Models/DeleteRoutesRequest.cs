@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("routeIds") is { } nullNodeRouteIds && nullNodeRouteIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouteIds = null;
+            if (parseNode.GetChildNode("routeIds") is null) { _explicitNullValueRouteIds = default!; _explicitNullProperties?.Remove("routeIds"); }
+            else if (parseNode.GetChildNode("routeIds") is { } nullNodeRouteIds && nullNodeRouteIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouteIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The IDs of the routes to delete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RouteIds { get => _explicitNullValueRouteIds; set { _explicitNullValueRouteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routeIds"); else _explicitNullProperties?.Remove("routeIds"); } }
+        public List<string>? RouteIds { get => _explicitNullValueRouteIds; set { _explicitNullValueRouteIds = value; AdditionalData?.Remove("routeIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routeIds"); else _explicitNullProperties?.Remove("routeIds"); } }
         private List<string>? _explicitNullValueRouteIds = default!;
 #nullable restore
 #else
-        public List<string> RouteIds { get => _explicitNullValueRouteIds; set { _explicitNullValueRouteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routeIds"); else _explicitNullProperties?.Remove("routeIds"); } }
+        public List<string> RouteIds { get => _explicitNullValueRouteIds; set { _explicitNullValueRouteIds = value; AdditionalData?.Remove("routeIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routeIds"); else _explicitNullProperties?.Remove("routeIds"); } }
         private List<string> _explicitNullValueRouteIds = default!;
 #endif
         /// <summary>

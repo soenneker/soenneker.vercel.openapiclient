@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customModelId") is { } nullNodeCustomModelId && nullNodeCustomModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomModelId = null;
-            if (parseNode.GetChildNode("gatewayModelSlug") is { } nullNodeGatewayModelSlug && nullNodeGatewayModelSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayModelSlug = null;
+            if (parseNode.GetChildNode("customModelId") is null) { _explicitNullValueCustomModelId = default!; _explicitNullProperties?.Remove("customModelId"); }
+            else if (parseNode.GetChildNode("customModelId") is { } nullNodeCustomModelId && nullNodeCustomModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomModelId = null;
+            if (parseNode.GetChildNode("gatewayModelSlug") is null) { _explicitNullValueGatewayModelSlug = default!; _explicitNullProperties?.Remove("gatewayModelSlug"); }
+            else if (parseNode.GetChildNode("gatewayModelSlug") is { } nullNodeGatewayModelSlug && nullNodeGatewayModelSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GatewayModelSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The customModelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomModelId { get => _explicitNullValueCustomModelId; set { _explicitNullValueCustomModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customModelId"); else _explicitNullProperties?.Remove("customModelId"); } }
+        public string? CustomModelId { get => _explicitNullValueCustomModelId; set { _explicitNullValueCustomModelId = value; AdditionalData?.Remove("customModelId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customModelId"); else _explicitNullProperties?.Remove("customModelId"); } }
         private string? _explicitNullValueCustomModelId = default!;
 #nullable restore
 #else
-        public string CustomModelId { get => _explicitNullValueCustomModelId; set { _explicitNullValueCustomModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customModelId"); else _explicitNullProperties?.Remove("customModelId"); } }
+        public string CustomModelId { get => _explicitNullValueCustomModelId; set { _explicitNullValueCustomModelId = value; AdditionalData?.Remove("customModelId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customModelId"); else _explicitNullProperties?.Remove("customModelId"); } }
         private string _explicitNullValueCustomModelId = default!;
 #endif
         /// <summary>The gatewayModelSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GatewayModelSlug { get => _explicitNullValueGatewayModelSlug; set { _explicitNullValueGatewayModelSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gatewayModelSlug"); else _explicitNullProperties?.Remove("gatewayModelSlug"); } }
+        public string? GatewayModelSlug { get => _explicitNullValueGatewayModelSlug; set { _explicitNullValueGatewayModelSlug = value; AdditionalData?.Remove("gatewayModelSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gatewayModelSlug"); else _explicitNullProperties?.Remove("gatewayModelSlug"); } }
         private string? _explicitNullValueGatewayModelSlug = default!;
 #nullable restore
 #else
-        public string GatewayModelSlug { get => _explicitNullValueGatewayModelSlug; set { _explicitNullValueGatewayModelSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gatewayModelSlug"); else _explicitNullProperties?.Remove("gatewayModelSlug"); } }
+        public string GatewayModelSlug { get => _explicitNullValueGatewayModelSlug; set { _explicitNullValueGatewayModelSlug = value; AdditionalData?.Remove("gatewayModelSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gatewayModelSlug"); else _explicitNullProperties?.Remove("gatewayModelSlug"); } }
         private string _explicitNullValueGatewayModelSlug = default!;
 #endif
         /// <summary>

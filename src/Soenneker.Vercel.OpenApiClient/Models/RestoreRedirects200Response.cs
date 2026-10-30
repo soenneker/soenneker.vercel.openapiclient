@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failedToRestore") is { } nullNodeFailedToRestore && nullNodeFailedToRestore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedToRestore = null;
-            if (parseNode.GetChildNode("restored") is { } nullNodeRestored && nullNodeRestored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restored = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("failedToRestore") is null) { _explicitNullValueFailedToRestore = default!; _explicitNullProperties?.Remove("failedToRestore"); }
+            else if (parseNode.GetChildNode("failedToRestore") is { } nullNodeFailedToRestore && nullNodeFailedToRestore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedToRestore = null;
+            if (parseNode.GetChildNode("restored") is null) { _explicitNullValueRestored = default!; _explicitNullProperties?.Remove("restored"); }
+            else if (parseNode.GetChildNode("restored") is { } nullNodeRestored && nullNodeRestored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restored = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The failedToRestore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FailedToRestore { get => _explicitNullValueFailedToRestore; set { _explicitNullValueFailedToRestore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedToRestore"); else _explicitNullProperties?.Remove("failedToRestore"); } }
+        public List<string>? FailedToRestore { get => _explicitNullValueFailedToRestore; set { _explicitNullValueFailedToRestore = value; AdditionalData?.Remove("failedToRestore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedToRestore"); else _explicitNullProperties?.Remove("failedToRestore"); } }
         private List<string>? _explicitNullValueFailedToRestore = default!;
 #nullable restore
 #else
-        public List<string> FailedToRestore { get => _explicitNullValueFailedToRestore; set { _explicitNullValueFailedToRestore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedToRestore"); else _explicitNullProperties?.Remove("failedToRestore"); } }
+        public List<string> FailedToRestore { get => _explicitNullValueFailedToRestore; set { _explicitNullValueFailedToRestore = value; AdditionalData?.Remove("failedToRestore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedToRestore"); else _explicitNullProperties?.Remove("failedToRestore"); } }
         private List<string> _explicitNullValueFailedToRestore = default!;
 #endif
         /// <summary>The restored property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Restored { get => _explicitNullValueRestored; set { _explicitNullValueRestored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored"); else _explicitNullProperties?.Remove("restored"); } }
+        public List<string>? Restored { get => _explicitNullValueRestored; set { _explicitNullValueRestored = value; AdditionalData?.Remove("restored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored"); else _explicitNullProperties?.Remove("restored"); } }
         private List<string>? _explicitNullValueRestored = default!;
 #nullable restore
 #else
-        public List<string> Restored { get => _explicitNullValueRestored; set { _explicitNullValueRestored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored"); else _explicitNullProperties?.Remove("restored"); } }
+        public List<string> Restored { get => _explicitNullValueRestored; set { _explicitNullValueRestored = value; AdditionalData?.Remove("restored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored"); else _explicitNullProperties?.Remove("restored"); } }
         private List<string> _explicitNullValueRestored = default!;
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200ResponseVersion? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200ResponseVersion? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200ResponseVersion? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200ResponseVersion Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200ResponseVersion Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200ResponseVersion _explicitNullValueVersion = default!;
 #endif
         /// <summary>

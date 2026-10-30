@@ -18,97 +18,117 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitbucketUsername") is { } nullNodeBitbucketUsername && nullNodeBitbucketUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketUsername = null;
-            if (parseNode.GetChildNode("githubUsername") is { } nullNodeGithubUsername && nullNodeGithubUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GithubUsername = null;
-            if (parseNode.GetChildNode("gitlabUsername") is { } nullNodeGitlabUsername && nullNodeGitlabUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitlabUsername = null;
-            if (parseNode.GetChildNode("gitUsername") is { } nullNodeGitUsername && nullNodeGitUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitUsername = null;
-            if (parseNode.GetChildNode("teamId") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
-            if (parseNode.GetChildNode("teamName") is { } nullNodeTeamName && nullNodeTeamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamName = null;
-            if (parseNode.GetChildNode("updatedUid") is { } nullNodeUpdatedUid && nullNodeUpdatedUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedUid = null;
-            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+            if (parseNode.GetChildNode("directoryType") is null) { _explicitNullValueDirectoryType = default!; _explicitNullProperties?.Remove("directoryType"); }
+            else if (parseNode.GetChildNode("directoryType") is { } nullNodeDirectoryType && nullNodeDirectoryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryType = null;
+            if (parseNode.GetChildNode("entitlements") is null) { _explicitNullValueEntitlements = default!; _explicitNullProperties?.Remove("entitlements"); }
+            else if (parseNode.GetChildNode("entitlements") is { } nullNodeEntitlements && nullNodeEntitlements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entitlements = null;
+            if (parseNode.GetChildNode("invitationRole") is null) { _explicitNullValueInvitationRole = default!; _explicitNullProperties?.Remove("invitationRole"); }
+            else if (parseNode.GetChildNode("invitationRole") is { } nullNodeInvitationRole && nullNodeInvitationRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitationRole = null;
+            if (parseNode.GetChildNode("invitedEmail") is null) { _explicitNullValueInvitedEmail = default!; _explicitNullProperties?.Remove("invitedEmail"); }
+            else if (parseNode.GetChildNode("invitedEmail") is { } nullNodeInvitedEmail && nullNodeInvitedEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedEmail = null;
+            if (parseNode.GetChildNode("invitedUid") is null) { _explicitNullValueInvitedUid = default!; _explicitNullProperties?.Remove("invitedUid"); }
+            else if (parseNode.GetChildNode("invitedUid") is { } nullNodeInvitedUid && nullNodeInvitedUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedUid = null;
+            if (parseNode.GetChildNode("invitedUser") is null) { _explicitNullValueInvitedUser = default!; _explicitNullProperties?.Remove("invitedUser"); }
+            else if (parseNode.GetChildNode("invitedUser") is { } nullNodeInvitedUser && nullNodeInvitedUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedUser = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("ssoType") is null) { _explicitNullValueSsoType = default!; _explicitNullProperties?.Remove("ssoType"); }
+            else if (parseNode.GetChildNode("ssoType") is { } nullNodeSsoType && nullNodeSsoType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoType = null;
+            if (parseNode.GetChildNode("teamSlug") is null) { _explicitNullValueTeamSlug = default!; _explicitNullProperties?.Remove("teamSlug"); }
+            else if (parseNode.GetChildNode("teamSlug") is { } nullNodeTeamSlug && nullNodeTeamSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bitbucketUsername property</summary>
+        /// <summary>The directoryType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketUsername { get => _explicitNullValueBitbucketUsername; set { _explicitNullValueBitbucketUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketUsername"); else _explicitNullProperties?.Remove("bitbucketUsername"); } }
-        private string? _explicitNullValueBitbucketUsername = default!;
+        public string? DirectoryType { get => _explicitNullValueDirectoryType; set { _explicitNullValueDirectoryType = value; AdditionalData?.Remove("directoryType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directoryType"); else _explicitNullProperties?.Remove("directoryType"); } }
+        private string? _explicitNullValueDirectoryType = default!;
 #nullable restore
 #else
-        public string BitbucketUsername { get => _explicitNullValueBitbucketUsername; set { _explicitNullValueBitbucketUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketUsername"); else _explicitNullProperties?.Remove("bitbucketUsername"); } }
-        private string _explicitNullValueBitbucketUsername = default!;
+        public string DirectoryType { get => _explicitNullValueDirectoryType; set { _explicitNullValueDirectoryType = value; AdditionalData?.Remove("directoryType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directoryType"); else _explicitNullProperties?.Remove("directoryType"); } }
+        private string _explicitNullValueDirectoryType = default!;
 #endif
-        /// <summary>The githubUsername property</summary>
+        /// <summary>The entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GithubUsername { get => _explicitNullValueGithubUsername; set { _explicitNullValueGithubUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubUsername"); else _explicitNullProperties?.Remove("githubUsername"); } }
-        private string? _explicitNullValueGithubUsername = default!;
+        public List<string>? Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; AdditionalData?.Remove("entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
+        private List<string>? _explicitNullValueEntitlements = default!;
 #nullable restore
 #else
-        public string GithubUsername { get => _explicitNullValueGithubUsername; set { _explicitNullValueGithubUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubUsername"); else _explicitNullProperties?.Remove("githubUsername"); } }
-        private string _explicitNullValueGithubUsername = default!;
+        public List<string> Entitlements { get => _explicitNullValueEntitlements; set { _explicitNullValueEntitlements = value; AdditionalData?.Remove("entitlements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlements"); else _explicitNullProperties?.Remove("entitlements"); } }
+        private List<string> _explicitNullValueEntitlements = default!;
 #endif
-        /// <summary>The gitlabUsername property</summary>
+        /// <summary>The invitationRole property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabUsername { get => _explicitNullValueGitlabUsername; set { _explicitNullValueGitlabUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabUsername"); else _explicitNullProperties?.Remove("gitlabUsername"); } }
-        private string? _explicitNullValueGitlabUsername = default!;
+        public string? InvitationRole { get => _explicitNullValueInvitationRole; set { _explicitNullValueInvitationRole = value; AdditionalData?.Remove("invitationRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitationRole"); else _explicitNullProperties?.Remove("invitationRole"); } }
+        private string? _explicitNullValueInvitationRole = default!;
 #nullable restore
 #else
-        public string GitlabUsername { get => _explicitNullValueGitlabUsername; set { _explicitNullValueGitlabUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabUsername"); else _explicitNullProperties?.Remove("gitlabUsername"); } }
-        private string _explicitNullValueGitlabUsername = default!;
+        public string InvitationRole { get => _explicitNullValueInvitationRole; set { _explicitNullValueInvitationRole = value; AdditionalData?.Remove("invitationRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitationRole"); else _explicitNullProperties?.Remove("invitationRole"); } }
+        private string _explicitNullValueInvitationRole = default!;
 #endif
-        /// <summary>The gitUsername property</summary>
+        /// <summary>The invitedEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitUsername { get => _explicitNullValueGitUsername; set { _explicitNullValueGitUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUsername"); else _explicitNullProperties?.Remove("gitUsername"); } }
-        private string? _explicitNullValueGitUsername = default!;
+        public string? InvitedEmail { get => _explicitNullValueInvitedEmail; set { _explicitNullValueInvitedEmail = value; AdditionalData?.Remove("invitedEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitedEmail"); else _explicitNullProperties?.Remove("invitedEmail"); } }
+        private string? _explicitNullValueInvitedEmail = default!;
 #nullable restore
 #else
-        public string GitUsername { get => _explicitNullValueGitUsername; set { _explicitNullValueGitUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitUsername"); else _explicitNullProperties?.Remove("gitUsername"); } }
-        private string _explicitNullValueGitUsername = default!;
+        public string InvitedEmail { get => _explicitNullValueInvitedEmail; set { _explicitNullValueInvitedEmail = value; AdditionalData?.Remove("invitedEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitedEmail"); else _explicitNullProperties?.Remove("invitedEmail"); } }
+        private string _explicitNullValueInvitedEmail = default!;
 #endif
-        /// <summary>The teamId property</summary>
+        /// <summary>The invitedUid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string? _explicitNullValueTeamId = default!;
+        public string? InvitedUid { get => _explicitNullValueInvitedUid; set { _explicitNullValueInvitedUid = value; AdditionalData?.Remove("invitedUid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitedUid"); else _explicitNullProperties?.Remove("invitedUid"); } }
+        private string? _explicitNullValueInvitedUid = default!;
 #nullable restore
 #else
-        public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string _explicitNullValueTeamId = default!;
+        public string InvitedUid { get => _explicitNullValueInvitedUid; set { _explicitNullValueInvitedUid = value; AdditionalData?.Remove("invitedUid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitedUid"); else _explicitNullProperties?.Remove("invitedUid"); } }
+        private string _explicitNullValueInvitedUid = default!;
 #endif
-        /// <summary>The teamName property</summary>
+        /// <summary>The invitedUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamName { get => _explicitNullValueTeamName; set { _explicitNullValueTeamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamName"); else _explicitNullProperties?.Remove("teamName"); } }
-        private string? _explicitNullValueTeamName = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421InvitedUser? InvitedUser { get => _explicitNullValueInvitedUser; set { _explicitNullValueInvitedUser = value; AdditionalData?.Remove("invitedUser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitedUser"); else _explicitNullProperties?.Remove("invitedUser"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421InvitedUser? _explicitNullValueInvitedUser = default!;
 #nullable restore
 #else
-        public string TeamName { get => _explicitNullValueTeamName; set { _explicitNullValueTeamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamName"); else _explicitNullProperties?.Remove("teamName"); } }
-        private string _explicitNullValueTeamName = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421InvitedUser InvitedUser { get => _explicitNullValueInvitedUser; set { _explicitNullValueInvitedUser = value; AdditionalData?.Remove("invitedUser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitedUser"); else _explicitNullProperties?.Remove("invitedUser"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421InvitedUser _explicitNullValueInvitedUser = default!;
 #endif
-        /// <summary>The updatedUid property</summary>
+        /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedUid { get => _explicitNullValueUpdatedUid; set { _explicitNullValueUpdatedUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedUid"); else _explicitNullProperties?.Remove("updatedUid"); } }
-        private string? _explicitNullValueUpdatedUid = default!;
+        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public string UpdatedUid { get => _explicitNullValueUpdatedUid; set { _explicitNullValueUpdatedUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedUid"); else _explicitNullProperties?.Remove("updatedUid"); } }
-        private string _explicitNullValueUpdatedUid = default!;
+        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string _explicitNullValueOrigin = default!;
 #endif
-        /// <summary>The username property</summary>
+        /// <summary>The ssoType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
-        private string? _explicitNullValueUsername = default!;
+        public string? SsoType { get => _explicitNullValueSsoType; set { _explicitNullValueSsoType = value; AdditionalData?.Remove("ssoType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoType"); else _explicitNullProperties?.Remove("ssoType"); } }
+        private string? _explicitNullValueSsoType = default!;
 #nullable restore
 #else
-        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
-        private string _explicitNullValueUsername = default!;
+        public string SsoType { get => _explicitNullValueSsoType; set { _explicitNullValueSsoType = value; AdditionalData?.Remove("ssoType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoType"); else _explicitNullProperties?.Remove("ssoType"); } }
+        private string _explicitNullValueSsoType = default!;
+#endif
+        /// <summary>The teamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamSlug { get => _explicitNullValueTeamSlug; set { _explicitNullValueTeamSlug = value; AdditionalData?.Remove("teamSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamSlug"); else _explicitNullProperties?.Remove("teamSlug"); } }
+        private string? _explicitNullValueTeamSlug = default!;
+#nullable restore
+#else
+        public string TeamSlug { get => _explicitNullValueTeamSlug; set { _explicitNullValueTeamSlug = value; AdditionalData?.Remove("teamSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamSlug"); else _explicitNullProperties?.Remove("teamSlug"); } }
+        private string _explicitNullValueTeamSlug = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421"/> and sets the default values.
@@ -135,14 +155,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bitbucketUsername", n => { BitbucketUsername = n.GetStringValue(); } },
-                { "gitUsername", n => { GitUsername = n.GetStringValue(); } },
-                { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
-                { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamName", n => { TeamName = n.GetStringValue(); } },
-                { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
+                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
+                { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "invitationRole", n => { InvitationRole = n.GetStringValue(); } },
+                { "invitedEmail", n => { InvitedEmail = n.GetStringValue(); } },
+                { "invitedUid", n => { InvitedUid = n.GetStringValue(); } },
+                { "invitedUser", n => { InvitedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421InvitedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421InvitedUser.CreateFromDiscriminatorValue); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "ssoType", n => { SsoType = n.GetStringValue(); } },
+                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -152,14 +173,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bitbucketUsername", BitbucketUsername);
-            writer.WriteStringValue("githubUsername", GithubUsername);
-            writer.WriteStringValue("gitlabUsername", GitlabUsername);
-            writer.WriteStringValue("gitUsername", GitUsername);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamName", TeamName);
-            writer.WriteStringValue("updatedUid", UpdatedUid);
-            writer.WriteStringValue("username", Username);
+            writer.WriteStringValue("directoryType", DirectoryType);
+            writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
+            writer.WriteStringValue("invitationRole", InvitationRole);
+            writer.WriteStringValue("invitedEmail", InvitedEmail);
+            writer.WriteStringValue("invitedUid", InvitedUid);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf421InvitedUser>("invitedUser", InvitedUser);
+            writer.WriteStringValue("origin", Origin);
+            writer.WriteStringValue("ssoType", SsoType);
+            writer.WriteStringValue("teamSlug", TeamSlug);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

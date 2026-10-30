@@ -88,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/config/{configVersion}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -107,7 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item.WithConfigVersionItemRequestBuilder.WithConfigVersionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/security/firewall/config/{configVersion}?projectId={projectId}{&slug*,teamId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/v1/security/firewall/config/{configVersion}?projectId={projectId}{&slug*,teamId*}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/config/{configVersion}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

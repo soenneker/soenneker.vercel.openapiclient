@@ -17,44 +17,51 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("limitAmount") is { } nullNodeLimitAmount && nullNodeLimitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitAmount = null;
-            if (parseNode.GetChildNode("refreshPeriod") is { } nullNodeRefreshPeriod && nullNodeRefreshPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshPeriod = null;
-            if (parseNode.GetChildNode("scopeType") is { } nullNodeScopeType && nullNodeScopeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeType = null;
-            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("alertThresholds") is null) { _explicitNullValueAlertThresholds = default!; _explicitNullProperties?.Remove("alertThresholds"); }
+            else if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("limitAmount") is null) { _explicitNullValueLimitAmount = default!; _explicitNullProperties?.Remove("limitAmount"); }
+            else if (parseNode.GetChildNode("limitAmount") is { } nullNodeLimitAmount && nullNodeLimitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitAmount = null;
+            if (parseNode.GetChildNode("refreshPeriod") is null) { _explicitNullValueRefreshPeriod = default!; _explicitNullProperties?.Remove("refreshPeriod"); }
+            else if (parseNode.GetChildNode("refreshPeriod") is { } nullNodeRefreshPeriod && nullNodeRefreshPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshPeriod = null;
+            if (parseNode.GetChildNode("scopeType") is null) { _explicitNullValueScopeType = default!; _explicitNullProperties?.Remove("scopeType"); }
+            else if (parseNode.GetChildNode("scopeType") is { } nullNodeScopeType && nullNodeScopeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeType = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>The active property</summary>
-        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alertThresholds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
+        public List<double?>? AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; AdditionalData?.Remove("alertThresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
         private List<double?>? _explicitNullValueAlertThresholds = default!;
 #nullable restore
 #else
-        public List<double?> AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
+        public List<double?> AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; AdditionalData?.Remove("alertThresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
         private List<double?> _explicitNullValueAlertThresholds = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private double? _explicitNullValueCreatedAt = default!;
         /// <summary>The limitAmount property</summary>
-        public double? LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
+        public double? LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; AdditionalData?.Remove("limitAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
         private double? _explicitNullValueLimitAmount = default!;
         /// <summary>The refreshPeriod property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultRefreshPeriod? RefreshPeriod { get => _explicitNullValueRefreshPeriod; set { _explicitNullValueRefreshPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshPeriod"); else _explicitNullProperties?.Remove("refreshPeriod"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultRefreshPeriod? RefreshPeriod { get => _explicitNullValueRefreshPeriod; set { _explicitNullValueRefreshPeriod = value; AdditionalData?.Remove("refreshPeriod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshPeriod"); else _explicitNullProperties?.Remove("refreshPeriod"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultRefreshPeriod? _explicitNullValueRefreshPeriod = default!;
         /// <summary>The scopeType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultScopeType? ScopeType { get => _explicitNullValueScopeType; set { _explicitNullValueScopeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeType"); else _explicitNullProperties?.Remove("scopeType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultScopeType? ScopeType { get => _explicitNullValueScopeType; set { _explicitNullValueScopeType = value; AdditionalData?.Remove("scopeType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeType"); else _explicitNullProperties?.Remove("scopeType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultScopeType? _explicitNullValueScopeType = default!;
         /// <summary>The updatedAt property</summary>
-        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private double? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefault"/> and sets the default values.
@@ -85,8 +92,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
-                { "refreshPeriod", n => { RefreshPeriod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultRefreshPeriod>(); } },
-                { "scopeType", n => { ScopeType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultScopeType>(); } },
+                { "refreshPeriod", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultRefreshPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRefreshPeriod = default; _explicitNullProperties?.Remove("refreshPeriod"); AdditionalData["refreshPeriod"] = unknown; } else { RefreshPeriod = parsed; AdditionalData.Remove("refreshPeriod"); } } },
+                { "scopeType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultScopeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScopeType = default; _explicitNullProperties?.Remove("scopeType"); AdditionalData["scopeType"] = unknown; } else { ScopeType = parsed; AdditionalData.Remove("scopeType"); } } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }

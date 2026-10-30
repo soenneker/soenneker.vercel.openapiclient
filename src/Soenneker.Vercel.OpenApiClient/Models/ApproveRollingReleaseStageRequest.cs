@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("canaryDeploymentId") is { } nullNodeCanaryDeploymentId && nullNodeCanaryDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanaryDeploymentId = null;
-            if (parseNode.GetChildNode("nextStageIndex") is { } nullNodeNextStageIndex && nullNodeNextStageIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextStageIndex = null;
+            if (parseNode.GetChildNode("canaryDeploymentId") is null) { _explicitNullValueCanaryDeploymentId = default!; _explicitNullProperties?.Remove("canaryDeploymentId"); }
+            else if (parseNode.GetChildNode("canaryDeploymentId") is { } nullNodeCanaryDeploymentId && nullNodeCanaryDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanaryDeploymentId = null;
+            if (parseNode.GetChildNode("nextStageIndex") is null) { _explicitNullValueNextStageIndex = default!; _explicitNullProperties?.Remove("nextStageIndex"); }
+            else if (parseNode.GetChildNode("nextStageIndex") is { } nullNodeNextStageIndex && nullNodeNextStageIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextStageIndex = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The id of the canary deployment to approve for the next stage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
+        public string? CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; AdditionalData?.Remove("canaryDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
         private string? _explicitNullValueCanaryDeploymentId = default!;
 #nullable restore
 #else
-        public string CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
+        public string CanaryDeploymentId { get => _explicitNullValueCanaryDeploymentId; set { _explicitNullValueCanaryDeploymentId = value; AdditionalData?.Remove("canaryDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryDeploymentId"); else _explicitNullProperties?.Remove("canaryDeploymentId"); } }
         private string _explicitNullValueCanaryDeploymentId = default!;
 #endif
         /// <summary>The index of the stage to transition to</summary>
-        public double? NextStageIndex { get => _explicitNullValueNextStageIndex; set { _explicitNullValueNextStageIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextStageIndex"); else _explicitNullProperties?.Remove("nextStageIndex"); } }
+        public double? NextStageIndex { get => _explicitNullValueNextStageIndex; set { _explicitNullValueNextStageIndex = value; AdditionalData?.Remove("nextStageIndex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextStageIndex"); else _explicitNullProperties?.Remove("nextStageIndex"); } }
         private double? _explicitNullValueNextStageIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ApproveRollingReleaseStageRequest"/> and sets the default values.

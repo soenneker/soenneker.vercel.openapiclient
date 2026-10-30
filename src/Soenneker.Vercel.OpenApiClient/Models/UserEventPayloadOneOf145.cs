@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customNameservers") is { } nullNodeCustomNameservers && nullNodeCustomNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomNameservers = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("prevCustomNameservers") is { } nullNodePrevCustomNameservers && nullNodePrevCustomNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevCustomNameservers = null;
+            if (parseNode.GetChildNode("customNameservers") is null) { _explicitNullValueCustomNameservers = default!; _explicitNullProperties?.Remove("customNameservers"); }
+            else if (parseNode.GetChildNode("customNameservers") is { } nullNodeCustomNameservers && nullNodeCustomNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomNameservers = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("prevCustomNameservers") is null) { _explicitNullValuePrevCustomNameservers = default!; _explicitNullProperties?.Remove("prevCustomNameservers"); }
+            else if (parseNode.GetChildNode("prevCustomNameservers") is { } nullNodePrevCustomNameservers && nullNodePrevCustomNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevCustomNameservers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The customNameservers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
+        public List<string>? CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; AdditionalData?.Remove("customNameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
         private List<string>? _explicitNullValueCustomNameservers = default!;
 #nullable restore
 #else
-        public List<string> CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
+        public List<string> CustomNameservers { get => _explicitNullValueCustomNameservers; set { _explicitNullValueCustomNameservers = value; AdditionalData?.Remove("customNameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNameservers"); else _explicitNullProperties?.Remove("customNameservers"); } }
         private List<string> _explicitNullValueCustomNameservers = default!;
 #endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>The prevCustomNameservers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PrevCustomNameservers { get => _explicitNullValuePrevCustomNameservers; set { _explicitNullValuePrevCustomNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevCustomNameservers"); else _explicitNullProperties?.Remove("prevCustomNameservers"); } }
+        public List<string>? PrevCustomNameservers { get => _explicitNullValuePrevCustomNameservers; set { _explicitNullValuePrevCustomNameservers = value; AdditionalData?.Remove("prevCustomNameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevCustomNameservers"); else _explicitNullProperties?.Remove("prevCustomNameservers"); } }
         private List<string>? _explicitNullValuePrevCustomNameservers = default!;
 #nullable restore
 #else
-        public List<string> PrevCustomNameservers { get => _explicitNullValuePrevCustomNameservers; set { _explicitNullValuePrevCustomNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevCustomNameservers"); else _explicitNullProperties?.Remove("prevCustomNameservers"); } }
+        public List<string> PrevCustomNameservers { get => _explicitNullValuePrevCustomNameservers; set { _explicitNullValuePrevCustomNameservers = value; AdditionalData?.Remove("prevCustomNameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevCustomNameservers"); else _explicitNullProperties?.Remove("prevCustomNameservers"); } }
         private List<string> _explicitNullValuePrevCustomNameservers = default!;
 #endif
         /// <summary>

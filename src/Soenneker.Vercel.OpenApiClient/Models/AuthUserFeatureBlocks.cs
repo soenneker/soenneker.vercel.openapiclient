@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("speedInsightsFree") is { } nullNodeSpeedInsightsFree && nullNodeSpeedInsightsFree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeedInsightsFree = null;
-            if (parseNode.GetChildNode("webAnalytics") is { } nullNodeWebAnalytics && nullNodeWebAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalytics = null;
+            if (parseNode.GetChildNode("speedInsightsFree") is null) { _explicitNullValueSpeedInsightsFree = default!; _explicitNullProperties?.Remove("speedInsightsFree"); }
+            else if (parseNode.GetChildNode("speedInsightsFree") is { } nullNodeSpeedInsightsFree && nullNodeSpeedInsightsFree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeedInsightsFree = null;
+            if (parseNode.GetChildNode("webAnalytics") is null) { _explicitNullValueWebAnalytics = default!; _explicitNullProperties?.Remove("webAnalytics"); }
+            else if (parseNode.GetChildNode("webAnalytics") is { } nullNodeWebAnalytics && nullNodeWebAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAnalytics = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree? SpeedInsightsFree { get => _explicitNullValueSpeedInsightsFree; set { _explicitNullValueSpeedInsightsFree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speedInsightsFree"); else _explicitNullProperties?.Remove("speedInsightsFree"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree? SpeedInsightsFree { get => _explicitNullValueSpeedInsightsFree; set { _explicitNullValueSpeedInsightsFree = value; AdditionalData?.Remove("speedInsightsFree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speedInsightsFree"); else _explicitNullProperties?.Remove("speedInsightsFree"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree? _explicitNullValueSpeedInsightsFree = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree SpeedInsightsFree { get => _explicitNullValueSpeedInsightsFree; set { _explicitNullValueSpeedInsightsFree = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speedInsightsFree"); else _explicitNullProperties?.Remove("speedInsightsFree"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree SpeedInsightsFree { get => _explicitNullValueSpeedInsightsFree; set { _explicitNullValueSpeedInsightsFree = value; AdditionalData?.Remove("speedInsightsFree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speedInsightsFree"); else _explicitNullProperties?.Remove("speedInsightsFree"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree _explicitNullValueSpeedInsightsFree = default!;
 #endif
         /// <summary>The webAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics? WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics? WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; AdditionalData?.Remove("webAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics? _explicitNullValueWebAnalytics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics WebAnalytics { get => _explicitNullValueWebAnalytics; set { _explicitNullValueWebAnalytics = value; AdditionalData?.Remove("webAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAnalytics"); else _explicitNullProperties?.Remove("webAnalytics"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics _explicitNullValueWebAnalytics = default!;
 #endif
         /// <summary>

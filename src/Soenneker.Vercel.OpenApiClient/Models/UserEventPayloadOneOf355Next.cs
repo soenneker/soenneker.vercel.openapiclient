@@ -17,21 +17,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("skewProtectionAllowedDomains") is { } nullNodeSkewProtectionAllowedDomains && nullNodeSkewProtectionAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionAllowedDomains = null;
+            if (parseNode.GetChildNode("skewProtectionMaxAge") is null) { _explicitNullValueSkewProtectionMaxAge = default!; _explicitNullProperties?.Remove("skewProtectionMaxAge"); }
+            else if (parseNode.GetChildNode("skewProtectionMaxAge") is { } nullNodeSkewProtectionMaxAge && nullNodeSkewProtectionMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionMaxAge = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The skewProtectionAllowedDomains property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? SkewProtectionAllowedDomains { get => _explicitNullValueSkewProtectionAllowedDomains; set { _explicitNullValueSkewProtectionAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionAllowedDomains"); else _explicitNullProperties?.Remove("skewProtectionAllowedDomains"); } }
-        private List<string>? _explicitNullValueSkewProtectionAllowedDomains = default!;
-#nullable restore
-#else
-        public List<string> SkewProtectionAllowedDomains { get => _explicitNullValueSkewProtectionAllowedDomains; set { _explicitNullValueSkewProtectionAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionAllowedDomains"); else _explicitNullProperties?.Remove("skewProtectionAllowedDomains"); } }
-        private List<string> _explicitNullValueSkewProtectionAllowedDomains = default!;
-#endif
+        /// <summary>The skewProtectionMaxAge property</summary>
+        public double? SkewProtectionMaxAge { get => _explicitNullValueSkewProtectionMaxAge; set { _explicitNullValueSkewProtectionMaxAge = value; AdditionalData?.Remove("skewProtectionMaxAge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionMaxAge"); else _explicitNullProperties?.Remove("skewProtectionMaxAge"); } }
+        private double? _explicitNullValueSkewProtectionMaxAge = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf355Next"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "skewProtectionAllowedDomains", n => { SkewProtectionAllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "skewProtectionMaxAge", n => { SkewProtectionMaxAge = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("skewProtectionAllowedDomains", SkewProtectionAllowedDomains);
+            writer.WriteDoubleValue("skewProtectionMaxAge", SkewProtectionMaxAge);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

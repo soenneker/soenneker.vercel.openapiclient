@@ -17,38 +17,42 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deploymentCreatedAt") is { } nullNodeDeploymentCreatedAt && nullNodeDeploymentCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentCreatedAt = null;
-            if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
-            if (parseNode.GetChildNode("eventAt") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
-            if (parseNode.GetChildNode("readyState") is { } nullNodeReadyState && nullNodeReadyState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyState = null;
+            if (parseNode.GetChildNode("deploymentCreatedAt") is null) { _explicitNullValueDeploymentCreatedAt = default!; _explicitNullProperties?.Remove("deploymentCreatedAt"); }
+            else if (parseNode.GetChildNode("deploymentCreatedAt") is { } nullNodeDeploymentCreatedAt && nullNodeDeploymentCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentCreatedAt = null;
+            if (parseNode.GetChildNode("deploymentId") is null) { _explicitNullValueDeploymentId = default!; _explicitNullProperties?.Remove("deploymentId"); }
+            else if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
+            if (parseNode.GetChildNode("eventAt") is null) { _explicitNullValueEventAt = default!; _explicitNullProperties?.Remove("eventAt"); }
+            else if (parseNode.GetChildNode("eventAt") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
+            if (parseNode.GetChildNode("readyState") is null) { _explicitNullValueReadyState = default!; _explicitNullProperties?.Remove("readyState"); }
+            else if (parseNode.GetChildNode("readyState") is { } nullNodeReadyState && nullNodeReadyState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyState = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deploymentCreatedAt property</summary>
-        public double? DeploymentCreatedAt { get => _explicitNullValueDeploymentCreatedAt; set { _explicitNullValueDeploymentCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCreatedAt"); else _explicitNullProperties?.Remove("deploymentCreatedAt"); } }
+        public double? DeploymentCreatedAt { get => _explicitNullValueDeploymentCreatedAt; set { _explicitNullValueDeploymentCreatedAt = value; AdditionalData?.Remove("deploymentCreatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentCreatedAt"); else _explicitNullProperties?.Remove("deploymentCreatedAt"); } }
         private double? _explicitNullValueDeploymentCreatedAt = default!;
         /// <summary>The deploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
         private string? _explicitNullValueDeploymentId = default!;
 #nullable restore
 #else
-        public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
         private string _explicitNullValueDeploymentId = default!;
 #endif
         /// <summary>The eventAt property</summary>
-        public double? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventAt"); else _explicitNullProperties?.Remove("eventAt"); } }
+        public double? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; AdditionalData?.Remove("eventAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventAt"); else _explicitNullProperties?.Remove("eventAt"); } }
         private double? _explicitNullValueEventAt = default!;
         /// <summary>The readyState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReadyState { get => _explicitNullValueReadyState; set { _explicitNullValueReadyState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyState"); else _explicitNullProperties?.Remove("readyState"); } }
+        public string? ReadyState { get => _explicitNullValueReadyState; set { _explicitNullValueReadyState = value; AdditionalData?.Remove("readyState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyState"); else _explicitNullProperties?.Remove("readyState"); } }
         private string? _explicitNullValueReadyState = default!;
 #nullable restore
 #else
-        public string ReadyState { get => _explicitNullValueReadyState; set { _explicitNullValueReadyState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyState"); else _explicitNullProperties?.Remove("readyState"); } }
+        public string ReadyState { get => _explicitNullValueReadyState; set { _explicitNullValueReadyState = value; AdditionalData?.Remove("readyState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyState"); else _explicitNullProperties?.Remove("readyState"); } }
         private string _explicitNullValueReadyState = default!;
 #endif
         /// <summary>

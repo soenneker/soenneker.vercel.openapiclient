@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
-            if (parseNode.GetChildNode("buildQueue") is { } nullNodeBuildQueue && nullNodeBuildQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildQueue = null;
-            if (parseNode.GetChildNode("elasticConcurrency") is { } nullNodeElasticConcurrency && nullNodeElasticConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElasticConcurrency = null;
+            if (parseNode.GetChildNode("buildMachine") is null) { _explicitNullValueBuildMachine = default!; _explicitNullProperties?.Remove("buildMachine"); }
+            else if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
+            if (parseNode.GetChildNode("buildQueue") is null) { _explicitNullValueBuildQueue = default!; _explicitNullProperties?.Remove("buildQueue"); }
+            else if (parseNode.GetChildNode("buildQueue") is { } nullNodeBuildQueue && nullNodeBuildQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildQueue = null;
+            if (parseNode.GetChildNode("elasticConcurrency") is null) { _explicitNullValueElasticConcurrency = default!; _explicitNullProperties?.Remove("elasticConcurrency"); }
+            else if (parseNode.GetChildNode("elasticConcurrency") is { } nullNodeElasticConcurrency && nullNodeElasticConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElasticConcurrency = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The buildMachine property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine? BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine? BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; AdditionalData?.Remove("buildMachine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine? _explicitNullValueBuildMachine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine BuildMachine { get => _explicitNullValueBuildMachine; set { _explicitNullValueBuildMachine = value; AdditionalData?.Remove("buildMachine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildMachine"); else _explicitNullProperties?.Remove("buildMachine"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine _explicitNullValueBuildMachine = default!;
 #endif
         /// <summary>Build resource configuration snapshot for this deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue? BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue? BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; AdditionalData?.Remove("buildQueue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue? _explicitNullValueBuildQueue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue BuildQueue { get => _explicitNullValueBuildQueue; set { _explicitNullValueBuildQueue = value; AdditionalData?.Remove("buildQueue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueue"); else _explicitNullProperties?.Remove("buildQueue"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue _explicitNullValueBuildQueue = default!;
 #endif
         /// <summary>When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigElasticConcurrency? ElasticConcurrency { get => _explicitNullValueElasticConcurrency; set { _explicitNullValueElasticConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elasticConcurrency"); else _explicitNullProperties?.Remove("elasticConcurrency"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigElasticConcurrency? ElasticConcurrency { get => _explicitNullValueElasticConcurrency; set { _explicitNullValueElasticConcurrency = value; AdditionalData?.Remove("elasticConcurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elasticConcurrency"); else _explicitNullProperties?.Remove("elasticConcurrency"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigElasticConcurrency? _explicitNullValueElasticConcurrency = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfig"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "buildMachine", n => { BuildMachine = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildMachine.CreateFromDiscriminatorValue); } },
                 { "buildQueue", n => { BuildQueue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigBuildQueue.CreateFromDiscriminatorValue); } },
-                { "elasticConcurrency", n => { ElasticConcurrency = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigElasticConcurrency>(); } },
+                { "elasticConcurrency", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ConfigResourceConfigElasticConcurrency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueElasticConcurrency = default; _explicitNullProperties?.Remove("elasticConcurrency"); AdditionalData["elasticConcurrency"] = unknown; } else { ElasticConcurrency = parsed; AdditionalData.Remove("elasticConcurrency"); } } },
             };
         }
         /// <summary>

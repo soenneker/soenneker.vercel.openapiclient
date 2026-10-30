@@ -17,14 +17,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aws") is { } nullNodeAws && nullNodeAws.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aws = null;
-            if (parseNode.GetChildNode("buildsEnabled") is { } nullNodeBuildsEnabled && nullNodeBuildsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildsEnabled = null;
-            if (parseNode.GetChildNode("connectConfigurationId") is { } nullNodeConnectConfigurationId && nullNodeConnectConfigurationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectConfigurationId = null;
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("dc") is { } nullNodeDc && nullNodeDc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dc = null;
-            if (parseNode.GetChildNode("envId") is { } nullNodeEnvId && nullNodeEnvId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvId = null;
-            if (parseNode.GetChildNode("passive") is { } nullNodePassive && nullNodePassive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passive = null;
-            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("aws") is null) { _explicitNullValueAws = default!; _explicitNullProperties?.Remove("aws"); }
+            else if (parseNode.GetChildNode("aws") is { } nullNodeAws && nullNodeAws.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aws = null;
+            if (parseNode.GetChildNode("buildsEnabled") is null) { _explicitNullValueBuildsEnabled = default!; _explicitNullProperties?.Remove("buildsEnabled"); }
+            else if (parseNode.GetChildNode("buildsEnabled") is { } nullNodeBuildsEnabled && nullNodeBuildsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildsEnabled = null;
+            if (parseNode.GetChildNode("connectConfigurationId") is null) { _explicitNullValueConnectConfigurationId = default!; _explicitNullProperties?.Remove("connectConfigurationId"); }
+            else if (parseNode.GetChildNode("connectConfigurationId") is { } nullNodeConnectConfigurationId && nullNodeConnectConfigurationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectConfigurationId = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("dc") is null) { _explicitNullValueDc = default!; _explicitNullProperties?.Remove("dc"); }
+            else if (parseNode.GetChildNode("dc") is { } nullNodeDc && nullNodeDc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dc = null;
+            if (parseNode.GetChildNode("envId") is null) { _explicitNullValueEnvId = default!; _explicitNullProperties?.Remove("envId"); }
+            else if (parseNode.GetChildNode("envId") is { } nullNodeEnvId && nullNodeEnvId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvId = null;
+            if (parseNode.GetChildNode("passive") is null) { _explicitNullValuePassive = default!; _explicitNullProperties?.Remove("passive"); }
+            else if (parseNode.GetChildNode("passive") is { } nullNodePassive && nullNodePassive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passive = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,54 +40,54 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The aws property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemAws? Aws { get => _explicitNullValueAws; set { _explicitNullValueAws = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aws"); else _explicitNullProperties?.Remove("aws"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemAws? Aws { get => _explicitNullValueAws; set { _explicitNullValueAws = value; AdditionalData?.Remove("aws"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aws"); else _explicitNullProperties?.Remove("aws"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemAws? _explicitNullValueAws = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemAws Aws { get => _explicitNullValueAws; set { _explicitNullValueAws = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aws"); else _explicitNullProperties?.Remove("aws"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemAws Aws { get => _explicitNullValueAws; set { _explicitNullValueAws = value; AdditionalData?.Remove("aws"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aws"); else _explicitNullProperties?.Remove("aws"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemAws _explicitNullValueAws = default!;
 #endif
         /// <summary>The buildsEnabled property</summary>
-        public bool? BuildsEnabled { get => _explicitNullValueBuildsEnabled; set { _explicitNullValueBuildsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildsEnabled"); else _explicitNullProperties?.Remove("buildsEnabled"); } }
+        public bool? BuildsEnabled { get => _explicitNullValueBuildsEnabled; set { _explicitNullValueBuildsEnabled = value; AdditionalData?.Remove("buildsEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildsEnabled"); else _explicitNullProperties?.Remove("buildsEnabled"); } }
         private bool? _explicitNullValueBuildsEnabled = default!;
         /// <summary>The connectConfigurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectConfigurationId { get => _explicitNullValueConnectConfigurationId; set { _explicitNullValueConnectConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationId"); else _explicitNullProperties?.Remove("connectConfigurationId"); } }
+        public string? ConnectConfigurationId { get => _explicitNullValueConnectConfigurationId; set { _explicitNullValueConnectConfigurationId = value; AdditionalData?.Remove("connectConfigurationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationId"); else _explicitNullProperties?.Remove("connectConfigurationId"); } }
         private string? _explicitNullValueConnectConfigurationId = default!;
 #nullable restore
 #else
-        public string ConnectConfigurationId { get => _explicitNullValueConnectConfigurationId; set { _explicitNullValueConnectConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationId"); else _explicitNullProperties?.Remove("connectConfigurationId"); } }
+        public string ConnectConfigurationId { get => _explicitNullValueConnectConfigurationId; set { _explicitNullValueConnectConfigurationId = value; AdditionalData?.Remove("connectConfigurationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectConfigurationId"); else _explicitNullProperties?.Remove("connectConfigurationId"); } }
         private string _explicitNullValueConnectConfigurationId = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private double? _explicitNullValueCreatedAt = default!;
         /// <summary>The dc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dc { get => _explicitNullValueDc; set { _explicitNullValueDc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dc"); else _explicitNullProperties?.Remove("dc"); } }
+        public string? Dc { get => _explicitNullValueDc; set { _explicitNullValueDc = value; AdditionalData?.Remove("dc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dc"); else _explicitNullProperties?.Remove("dc"); } }
         private string? _explicitNullValueDc = default!;
 #nullable restore
 #else
-        public string Dc { get => _explicitNullValueDc; set { _explicitNullValueDc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dc"); else _explicitNullProperties?.Remove("dc"); } }
+        public string Dc { get => _explicitNullValueDc; set { _explicitNullValueDc = value; AdditionalData?.Remove("dc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dc"); else _explicitNullProperties?.Remove("dc"); } }
         private string _explicitNullValueDc = default!;
 #endif
         /// <summary>The envId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemEnvId? EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemEnvId? EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; AdditionalData?.Remove("envId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemEnvId? _explicitNullValueEnvId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemEnvId EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemEnvId EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; AdditionalData?.Remove("envId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItemEnvId _explicitNullValueEnvId = default!;
 #endif
         /// <summary>The passive property</summary>
-        public bool? Passive { get => _explicitNullValuePassive; set { _explicitNullValuePassive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passive"); else _explicitNullProperties?.Remove("passive"); } }
+        public bool? Passive { get => _explicitNullValuePassive; set { _explicitNullValuePassive = value; AdditionalData?.Remove("passive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passive"); else _explicitNullProperties?.Remove("passive"); } }
         private bool? _explicitNullValuePassive = default!;
         /// <summary>The updatedAt property</summary>
-        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private double? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseConnectConfigurationsItem"/> and sets the default values.

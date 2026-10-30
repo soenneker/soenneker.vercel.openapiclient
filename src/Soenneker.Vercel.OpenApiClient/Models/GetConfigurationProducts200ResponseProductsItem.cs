@@ -17,12 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("metadataSchema") is { } nullNodeMetadataSchema && nullNodeMetadataSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataSchema = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("primaryProtocol") is { } nullNodePrimaryProtocol && nullNodePrimaryProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryProtocol = null;
-            if (parseNode.GetChildNode("protocols") is { } nullNodeProtocols && nullNodeProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocols = null;
-            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("metadataSchema") is null) { _explicitNullValueMetadataSchema = default!; _explicitNullProperties?.Remove("metadataSchema"); }
+            else if (parseNode.GetChildNode("metadataSchema") is { } nullNodeMetadataSchema && nullNodeMetadataSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataSchema = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("primaryProtocol") is null) { _explicitNullValuePrimaryProtocol = default!; _explicitNullProperties?.Remove("primaryProtocol"); }
+            else if (parseNode.GetChildNode("primaryProtocol") is { } nullNodePrimaryProtocol && nullNodePrimaryProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryProtocol = null;
+            if (parseNode.GetChildNode("protocols") is null) { _explicitNullValueProtocols = default!; _explicitNullProperties?.Remove("protocols"); }
+            else if (parseNode.GetChildNode("protocols") is { } nullNodeProtocols && nullNodeProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocols = null;
+            if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
+            else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,54 +36,54 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The metadataSchema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema? MetadataSchema { get => _explicitNullValueMetadataSchema; set { _explicitNullValueMetadataSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataSchema"); else _explicitNullProperties?.Remove("metadataSchema"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema? MetadataSchema { get => _explicitNullValueMetadataSchema; set { _explicitNullValueMetadataSchema = value; AdditionalData?.Remove("metadataSchema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataSchema"); else _explicitNullProperties?.Remove("metadataSchema"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema? _explicitNullValueMetadataSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema MetadataSchema { get => _explicitNullValueMetadataSchema; set { _explicitNullValueMetadataSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataSchema"); else _explicitNullProperties?.Remove("metadataSchema"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema MetadataSchema { get => _explicitNullValueMetadataSchema; set { _explicitNullValueMetadataSchema = value; AdditionalData?.Remove("metadataSchema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadataSchema"); else _explicitNullProperties?.Remove("metadataSchema"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema _explicitNullValueMetadataSchema = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The primaryProtocol property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemPrimaryProtocol? PrimaryProtocol { get => _explicitNullValuePrimaryProtocol; set { _explicitNullValuePrimaryProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryProtocol"); else _explicitNullProperties?.Remove("primaryProtocol"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemPrimaryProtocol? PrimaryProtocol { get => _explicitNullValuePrimaryProtocol; set { _explicitNullValuePrimaryProtocol = value; AdditionalData?.Remove("primaryProtocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryProtocol"); else _explicitNullProperties?.Remove("primaryProtocol"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemPrimaryProtocol? _explicitNullValuePrimaryProtocol = default!;
         /// <summary>The protocols property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols? Protocols { get => _explicitNullValueProtocols; set { _explicitNullValueProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocols"); else _explicitNullProperties?.Remove("protocols"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols? Protocols { get => _explicitNullValueProtocols; set { _explicitNullValueProtocols = value; AdditionalData?.Remove("protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocols"); else _explicitNullProperties?.Remove("protocols"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols? _explicitNullValueProtocols = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols Protocols { get => _explicitNullValueProtocols; set { _explicitNullValueProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocols"); else _explicitNullProperties?.Remove("protocols"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols Protocols { get => _explicitNullValueProtocols; set { _explicitNullValueProtocols = value; AdditionalData?.Remove("protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocols"); else _explicitNullProperties?.Remove("protocols"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols _explicitNullValueProtocols = default!;
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>
@@ -108,7 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadataSchema", n => { MetadataSchema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchema.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "primaryProtocol", n => { PrimaryProtocol = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemPrimaryProtocol>(); } },
+                { "primaryProtocol", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemPrimaryProtocol>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePrimaryProtocol = default; _explicitNullProperties?.Remove("primaryProtocol"); AdditionalData["primaryProtocol"] = unknown; } else { PrimaryProtocol = parsed; AdditionalData.Remove("primaryProtocol"); } } },
                 { "protocols", n => { Protocols = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocols.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
             };

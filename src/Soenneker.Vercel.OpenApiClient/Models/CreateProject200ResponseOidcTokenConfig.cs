@@ -17,17 +17,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("issuerMode") is { } nullNodeIssuerMode && nullNodeIssuerMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerMode = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("issuerMode") is null) { _explicitNullValueIssuerMode = default!; _explicitNullProperties?.Remove("issuerMode"); }
+            else if (parseNode.GetChildNode("issuerMode") is { } nullNodeIssuerMode && nullNodeIssuerMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not to generate OpenID Connect JSON Web Tokens.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>- team: `https://oidc.vercel.com/[team_slug]` - global: `https://oidc.vercel.com`</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseOidcTokenConfigIssuerMode? IssuerMode { get => _explicitNullValueIssuerMode; set { _explicitNullValueIssuerMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerMode"); else _explicitNullProperties?.Remove("issuerMode"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseOidcTokenConfigIssuerMode? IssuerMode { get => _explicitNullValueIssuerMode; set { _explicitNullValueIssuerMode = value; AdditionalData?.Remove("issuerMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerMode"); else _explicitNullProperties?.Remove("issuerMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseOidcTokenConfigIssuerMode? _explicitNullValueIssuerMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseOidcTokenConfig"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "issuerMode", n => { IssuerMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseOidcTokenConfigIssuerMode>(); } },
+                { "issuerMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseOidcTokenConfigIssuerMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIssuerMode = default; _explicitNullProperties?.Remove("issuerMode"); AdditionalData["issuerMode"] = unknown; } else { IssuerMode = parsed; AdditionalData.Remove("issuerMode"); } } },
             };
         }
         /// <summary>

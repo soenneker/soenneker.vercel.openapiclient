@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("traces") is { } nullNodeTraces && nullNodeTraces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Traces = null;
+            if (parseNode.GetChildNode("traces") is null) { _explicitNullValueTraces = default!; _explicitNullProperties?.Remove("traces"); }
+            else if (parseNode.GetChildNode("traces") is { } nullNodeTraces && nullNodeTraces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Traces = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The traces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
+        public string? Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; AdditionalData?.Remove("traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
         private string? _explicitNullValueTraces = default!;
 #nullable restore
 #else
-        public string Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
+        public string Traces { get => _explicitNullValueTraces; set { _explicitNullValueTraces = value; AdditionalData?.Remove("traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traces"); else _explicitNullProperties?.Remove("traces"); } }
         private string _explicitNullValueTraces = default!;
 #endif
         /// <summary>

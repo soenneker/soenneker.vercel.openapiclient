@@ -18,56 +18,56 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("oldPasswordProtection") is { } nullNodeOldPasswordProtection && nullNodeOldPasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPasswordProtection = null;
-            if (parseNode.GetChildNode("passwordChanged") is { } nullNodePasswordChanged && nullNodePasswordChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordChanged = null;
-            if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("oldOptionsAllowlist") is null) { _explicitNullValueOldOptionsAllowlist = default!; _explicitNullProperties?.Remove("oldOptionsAllowlist"); }
+            else if (parseNode.GetChildNode("oldOptionsAllowlist") is { } nullNodeOldOptionsAllowlist && nullNodeOldOptionsAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldOptionsAllowlist = null;
+            if (parseNode.GetChildNode("optionsAllowlist") is null) { _explicitNullValueOptionsAllowlist = default!; _explicitNullProperties?.Remove("optionsAllowlist"); }
+            else if (parseNode.GetChildNode("optionsAllowlist") is { } nullNodeOptionsAllowlist && nullNodeOptionsAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsAllowlist = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
+            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The oldPasswordProtection property</summary>
+        /// <summary>The oldOptionsAllowlist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldPasswordProtection? OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldPasswordProtection? _explicitNullValueOldPasswordProtection = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldOptionsAllowlist? OldOptionsAllowlist { get => _explicitNullValueOldOptionsAllowlist; set { _explicitNullValueOldOptionsAllowlist = value; AdditionalData?.Remove("oldOptionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldOptionsAllowlist"); else _explicitNullProperties?.Remove("oldOptionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldOptionsAllowlist? _explicitNullValueOldOptionsAllowlist = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldPasswordProtection OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldPasswordProtection _explicitNullValueOldPasswordProtection = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldOptionsAllowlist OldOptionsAllowlist { get => _explicitNullValueOldOptionsAllowlist; set { _explicitNullValueOldOptionsAllowlist = value; AdditionalData?.Remove("oldOptionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldOptionsAllowlist"); else _explicitNullProperties?.Remove("oldOptionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldOptionsAllowlist _explicitNullValueOldOptionsAllowlist = default!;
 #endif
-        /// <summary>The passwordChanged property</summary>
-        public bool? PasswordChanged { get => _explicitNullValuePasswordChanged; set { _explicitNullValuePasswordChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordChanged"); else _explicitNullProperties?.Remove("passwordChanged"); } }
-        private bool? _explicitNullValuePasswordChanged = default!;
-        /// <summary>The passwordProtection property</summary>
+        /// <summary>The optionsAllowlist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335PasswordProtection? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335PasswordProtection? _explicitNullValuePasswordProtection = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OptionsAllowlist? OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; AdditionalData?.Remove("optionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OptionsAllowlist? _explicitNullValueOptionsAllowlist = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335PasswordProtection PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335PasswordProtection _explicitNullValuePasswordProtection = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OptionsAllowlist OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; AdditionalData?.Remove("optionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OptionsAllowlist _explicitNullValueOptionsAllowlist = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string? _explicitNullValueProjectName = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
         /// <summary>
@@ -95,9 +95,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "oldPasswordProtection", n => { OldPasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldPasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldPasswordProtection.CreateFromDiscriminatorValue); } },
-                { "passwordChanged", n => { PasswordChanged = n.GetBoolValue(); } },
-                { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335PasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335PasswordProtection.CreateFromDiscriminatorValue); } },
+                { "oldOptionsAllowlist", n => { OldOptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldOptionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldOptionsAllowlist.CreateFromDiscriminatorValue); } },
+                { "optionsAllowlist", n => { OptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OptionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OptionsAllowlist.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -109,9 +108,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldPasswordProtection>("oldPasswordProtection", OldPasswordProtection);
-            writer.WriteBoolValue("passwordChanged", PasswordChanged);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335PasswordProtection>("passwordProtection", PasswordProtection);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OldOptionsAllowlist>("oldOptionsAllowlist", OldOptionsAllowlist);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335OptionsAllowlist>("optionsAllowlist", OptionsAllowlist);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

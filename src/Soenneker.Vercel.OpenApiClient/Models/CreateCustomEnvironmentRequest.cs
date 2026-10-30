@@ -17,10 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("branchMatcher") is { } nullNodeBranchMatcher && nullNodeBranchMatcher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchMatcher = null;
-            if (parseNode.GetChildNode("copyEnvVarsFrom") is { } nullNodeCopyEnvVarsFrom && nullNodeCopyEnvVarsFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CopyEnvVarsFrom = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("branchMatcher") is null) { _explicitNullValueBranchMatcher = default!; _explicitNullProperties?.Remove("branchMatcher"); }
+            else if (parseNode.GetChildNode("branchMatcher") is { } nullNodeBranchMatcher && nullNodeBranchMatcher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchMatcher = null;
+            if (parseNode.GetChildNode("copyEnvVarsFrom") is null) { _explicitNullValueCopyEnvVarsFrom = default!; _explicitNullProperties?.Remove("copyEnvVarsFrom"); }
+            else if (parseNode.GetChildNode("copyEnvVarsFrom") is { } nullNodeCopyEnvVarsFrom && nullNodeCopyEnvVarsFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CopyEnvVarsFrom = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
+            else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>How we want to determine a matching branch. This is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironmentRequestBranchMatcher? BranchMatcher { get => _explicitNullValueBranchMatcher; set { _explicitNullValueBranchMatcher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchMatcher"); else _explicitNullProperties?.Remove("branchMatcher"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironmentRequestBranchMatcher? BranchMatcher { get => _explicitNullValueBranchMatcher; set { _explicitNullValueBranchMatcher = value; AdditionalData?.Remove("branchMatcher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchMatcher"); else _explicitNullProperties?.Remove("branchMatcher"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironmentRequestBranchMatcher? _explicitNullValueBranchMatcher = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironmentRequestBranchMatcher BranchMatcher { get => _explicitNullValueBranchMatcher; set { _explicitNullValueBranchMatcher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchMatcher"); else _explicitNullProperties?.Remove("branchMatcher"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironmentRequestBranchMatcher BranchMatcher { get => _explicitNullValueBranchMatcher; set { _explicitNullValueBranchMatcher = value; AdditionalData?.Remove("branchMatcher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchMatcher"); else _explicitNullProperties?.Remove("branchMatcher"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateCustomEnvironmentRequestBranchMatcher _explicitNullValueBranchMatcher = default!;
 #endif
         /// <summary>Where to copy environment variables from. This is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CopyEnvVarsFrom { get => _explicitNullValueCopyEnvVarsFrom; set { _explicitNullValueCopyEnvVarsFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyEnvVarsFrom"); else _explicitNullProperties?.Remove("copyEnvVarsFrom"); } }
+        public string? CopyEnvVarsFrom { get => _explicitNullValueCopyEnvVarsFrom; set { _explicitNullValueCopyEnvVarsFrom = value; AdditionalData?.Remove("copyEnvVarsFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyEnvVarsFrom"); else _explicitNullProperties?.Remove("copyEnvVarsFrom"); } }
         private string? _explicitNullValueCopyEnvVarsFrom = default!;
 #nullable restore
 #else
-        public string CopyEnvVarsFrom { get => _explicitNullValueCopyEnvVarsFrom; set { _explicitNullValueCopyEnvVarsFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyEnvVarsFrom"); else _explicitNullProperties?.Remove("copyEnvVarsFrom"); } }
+        public string CopyEnvVarsFrom { get => _explicitNullValueCopyEnvVarsFrom; set { _explicitNullValueCopyEnvVarsFrom = value; AdditionalData?.Remove("copyEnvVarsFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyEnvVarsFrom"); else _explicitNullProperties?.Remove("copyEnvVarsFrom"); } }
         private string _explicitNullValueCopyEnvVarsFrom = default!;
 #endif
         /// <summary>Description of the custom environment. This is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The slug of the custom environment to create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>

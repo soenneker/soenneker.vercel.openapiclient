@@ -18,17 +18,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
-            if (parseNode.GetChildNode("subKind") is { } nullNodeSubKind && nullNodeSubKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubKind = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("subKind") is null) { _explicitNullValueSubKind = default!; _explicitNullProperties?.Remove("subKind"); }
+            else if (parseNode.GetChildNode("subKind") is { } nullNodeSubKind && nullNodeSubKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubKind = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The origin property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PlatformOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PlatformOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.PlatformOrigin? _explicitNullValueOrigin = default!;
         /// <summary>The subKind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSentinelSubKind? SubKind { get => _explicitNullValueSubKind; set { _explicitNullValueSubKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subKind"); else _explicitNullProperties?.Remove("subKind"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSentinelSubKind? SubKind { get => _explicitNullValueSubKind; set { _explicitNullValueSubKind = value; AdditionalData?.Remove("subKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subKind"); else _explicitNullProperties?.Remove("subKind"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSentinelSubKind? _explicitNullValueSubKind = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseOneOf2SourceOneOf2"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PlatformOrigin>(); } },
-                { "subKind", n => { SubKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSentinelSubKind>(); } },
+                { "origin", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PlatformOrigin>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrigin = default; _explicitNullProperties?.Remove("origin"); AdditionalData["origin"] = unknown; } else { Origin = parsed; AdditionalData.Remove("origin"); } } },
+                { "subKind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelCiSentinelSubKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubKind = default; _explicitNullProperties?.Remove("subKind"); AdditionalData["subKind"] = unknown; } else { SubKind = parsed; AdditionalData.Remove("subKind"); } } },
             };
         }
         /// <summary>

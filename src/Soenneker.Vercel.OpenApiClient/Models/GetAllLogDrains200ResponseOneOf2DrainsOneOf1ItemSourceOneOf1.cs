@@ -17,17 +17,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defaultFor") is { } nullNodeDefaultFor && nullNodeDefaultFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultFor = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("defaultFor") is null) { _explicitNullValueDefaultFor = default!; _explicitNullProperties?.Remove("defaultFor"); }
+            else if (parseNode.GetChildNode("defaultFor") is { } nullNodeDefaultFor && nullNodeDefaultFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultFor = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Informational marker for a system-owned default drain.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor? DefaultFor { get => _explicitNullValueDefaultFor; set { _explicitNullValueDefaultFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultFor"); else _explicitNullProperties?.Remove("defaultFor"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor? DefaultFor { get => _explicitNullValueDefaultFor; set { _explicitNullValueDefaultFor = value; AdditionalData?.Remove("defaultFor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultFor"); else _explicitNullProperties?.Remove("defaultFor"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor? _explicitNullValueDefaultFor = default!;
         /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.SelfServedKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SelfServedKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.SelfServedKind? _explicitNullValueKind = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf1ItemSourceOneOf1"/> and sets the default values.
@@ -54,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "defaultFor", n => { DefaultFor = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor>(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SelfServedKind>(); } },
+                { "defaultFor", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDefaultFor = default; _explicitNullProperties?.Remove("defaultFor"); AdditionalData["defaultFor"] = unknown; } else { DefaultFor = parsed; AdditionalData.Remove("defaultFor"); } } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SelfServedKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
             };
         }
         /// <summary>

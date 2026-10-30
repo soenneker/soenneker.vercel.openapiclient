@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
-            if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
+            if (parseNode.GetChildNode("passwordProtection") is null) { _explicitNullValuePasswordProtection = default!; _explicitNullProperties?.Remove("passwordProtection"); }
+            else if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
+            if (parseNode.GetChildNode("ssoProtection") is null) { _explicitNullValueSsoProtection = default!; _explicitNullProperties?.Remove("ssoProtection"); }
+            else if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The passwordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; AdditionalData?.Remove("passwordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection? _explicitNullValuePasswordProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; AdditionalData?.Remove("passwordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection _explicitNullValuePasswordProtection = default!;
 #endif
         /// <summary>The ssoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection? SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection? SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; AdditionalData?.Remove("ssoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection? _explicitNullValueSsoProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; AdditionalData?.Remove("ssoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection _explicitNullValueSsoProtection = default!;
 #endif
         /// <summary>

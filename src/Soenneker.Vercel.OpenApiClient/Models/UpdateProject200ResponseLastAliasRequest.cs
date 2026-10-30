@@ -17,12 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fromDeploymentId") is { } nullNodeFromDeploymentId && nullNodeFromDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromDeploymentId = null;
-            if (parseNode.GetChildNode("fromRollingReleaseId") is { } nullNodeFromRollingReleaseId && nullNodeFromRollingReleaseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromRollingReleaseId = null;
-            if (parseNode.GetChildNode("jobStatus") is { } nullNodeJobStatus && nullNodeJobStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobStatus = null;
-            if (parseNode.GetChildNode("requestedAt") is { } nullNodeRequestedAt && nullNodeRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAt = null;
-            if (parseNode.GetChildNode("toDeploymentId") is { } nullNodeToDeploymentId && nullNodeToDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToDeploymentId = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("fromDeploymentId") is null) { _explicitNullValueFromDeploymentId = default!; _explicitNullProperties?.Remove("fromDeploymentId"); }
+            else if (parseNode.GetChildNode("fromDeploymentId") is { } nullNodeFromDeploymentId && nullNodeFromDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromDeploymentId = null;
+            if (parseNode.GetChildNode("fromRollingReleaseId") is null) { _explicitNullValueFromRollingReleaseId = default!; _explicitNullProperties?.Remove("fromRollingReleaseId"); }
+            else if (parseNode.GetChildNode("fromRollingReleaseId") is { } nullNodeFromRollingReleaseId && nullNodeFromRollingReleaseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromRollingReleaseId = null;
+            if (parseNode.GetChildNode("jobStatus") is null) { _explicitNullValueJobStatus = default!; _explicitNullProperties?.Remove("jobStatus"); }
+            else if (parseNode.GetChildNode("jobStatus") is { } nullNodeJobStatus && nullNodeJobStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobStatus = null;
+            if (parseNode.GetChildNode("requestedAt") is null) { _explicitNullValueRequestedAt = default!; _explicitNullProperties?.Remove("requestedAt"); }
+            else if (parseNode.GetChildNode("requestedAt") is { } nullNodeRequestedAt && nullNodeRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAt = null;
+            if (parseNode.GetChildNode("toDeploymentId") is null) { _explicitNullValueToDeploymentId = default!; _explicitNullProperties?.Remove("toDeploymentId"); }
+            else if (parseNode.GetChildNode("toDeploymentId") is { } nullNodeToDeploymentId && nullNodeToDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToDeploymentId = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,41 +36,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The fromDeploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
+        public string? FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; AdditionalData?.Remove("fromDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
         private string? _explicitNullValueFromDeploymentId = default!;
 #nullable restore
 #else
-        public string FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
+        public string FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; AdditionalData?.Remove("fromDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
         private string _explicitNullValueFromDeploymentId = default!;
 #endif
         /// <summary>If rolling back from a rolling release, fromDeploymentId captures the &quot;base&quot; of that rolling release, and fromRollingReleaseId captures the &quot;target&quot; of that rolling release.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromRollingReleaseId { get => _explicitNullValueFromRollingReleaseId; set { _explicitNullValueFromRollingReleaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromRollingReleaseId"); else _explicitNullProperties?.Remove("fromRollingReleaseId"); } }
+        public string? FromRollingReleaseId { get => _explicitNullValueFromRollingReleaseId; set { _explicitNullValueFromRollingReleaseId = value; AdditionalData?.Remove("fromRollingReleaseId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromRollingReleaseId"); else _explicitNullProperties?.Remove("fromRollingReleaseId"); } }
         private string? _explicitNullValueFromRollingReleaseId = default!;
 #nullable restore
 #else
-        public string FromRollingReleaseId { get => _explicitNullValueFromRollingReleaseId; set { _explicitNullValueFromRollingReleaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromRollingReleaseId"); else _explicitNullProperties?.Remove("fromRollingReleaseId"); } }
+        public string FromRollingReleaseId { get => _explicitNullValueFromRollingReleaseId; set { _explicitNullValueFromRollingReleaseId = value; AdditionalData?.Remove("fromRollingReleaseId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromRollingReleaseId"); else _explicitNullProperties?.Remove("fromRollingReleaseId"); } }
         private string _explicitNullValueFromRollingReleaseId = default!;
 #endif
         /// <summary>The jobStatus property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestJobStatus? JobStatus { get => _explicitNullValueJobStatus; set { _explicitNullValueJobStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobStatus"); else _explicitNullProperties?.Remove("jobStatus"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestJobStatus? JobStatus { get => _explicitNullValueJobStatus; set { _explicitNullValueJobStatus = value; AdditionalData?.Remove("jobStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobStatus"); else _explicitNullProperties?.Remove("jobStatus"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestJobStatus? _explicitNullValueJobStatus = default!;
         /// <summary>The requestedAt property</summary>
-        public double? RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedAt"); else _explicitNullProperties?.Remove("requestedAt"); } }
+        public double? RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; AdditionalData?.Remove("requestedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedAt"); else _explicitNullProperties?.Remove("requestedAt"); } }
         private double? _explicitNullValueRequestedAt = default!;
         /// <summary>The toDeploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
+        public string? ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; AdditionalData?.Remove("toDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
         private string? _explicitNullValueToDeploymentId = default!;
 #nullable restore
 #else
-        public string ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
+        public string ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; AdditionalData?.Remove("toDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
         private string _explicitNullValueToDeploymentId = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequest"/> and sets the default values.
@@ -95,10 +101,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "fromDeploymentId", n => { FromDeploymentId = n.GetStringValue(); } },
                 { "fromRollingReleaseId", n => { FromRollingReleaseId = n.GetStringValue(); } },
-                { "jobStatus", n => { JobStatus = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestJobStatus>(); } },
+                { "jobStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestJobStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueJobStatus = default; _explicitNullProperties?.Remove("jobStatus"); AdditionalData["jobStatus"] = unknown; } else { JobStatus = parsed; AdditionalData.Remove("jobStatus"); } } },
                 { "requestedAt", n => { RequestedAt = n.GetDoubleValue(); } },
                 { "toDeploymentId", n => { ToDeploymentId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLastAliasRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

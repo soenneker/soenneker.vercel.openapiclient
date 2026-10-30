@@ -18,41 +18,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("originTeamId") is { } nullNodeOriginTeamId && nullNodeOriginTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginTeamId = null;
-            if (parseNode.GetChildNode("originTeamName") is { } nullNodeOriginTeamName && nullNodeOriginTeamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginTeamName = null;
-            if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
+            if (parseNode.GetChildNode("destinationTeamId") is null) { _explicitNullValueDestinationTeamId = default!; _explicitNullProperties?.Remove("destinationTeamId"); }
+            else if (parseNode.GetChildNode("destinationTeamId") is { } nullNodeDestinationTeamId && nullNodeDestinationTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationTeamId = null;
+            if (parseNode.GetChildNode("destinationTeamName") is null) { _explicitNullValueDestinationTeamName = default!; _explicitNullProperties?.Remove("destinationTeamName"); }
+            else if (parseNode.GetChildNode("destinationTeamName") is { } nullNodeDestinationTeamName && nullNodeDestinationTeamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationTeamName = null;
+            if (parseNode.GetChildNode("store") is null) { _explicitNullValueStore = default!; _explicitNullProperties?.Remove("store"); }
+            else if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The originTeamId property</summary>
+        /// <summary>The destinationTeamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginTeamId { get => _explicitNullValueOriginTeamId; set { _explicitNullValueOriginTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originTeamId"); else _explicitNullProperties?.Remove("originTeamId"); } }
-        private string? _explicitNullValueOriginTeamId = default!;
+        public string? DestinationTeamId { get => _explicitNullValueDestinationTeamId; set { _explicitNullValueDestinationTeamId = value; AdditionalData?.Remove("destinationTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamId"); else _explicitNullProperties?.Remove("destinationTeamId"); } }
+        private string? _explicitNullValueDestinationTeamId = default!;
 #nullable restore
 #else
-        public string OriginTeamId { get => _explicitNullValueOriginTeamId; set { _explicitNullValueOriginTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originTeamId"); else _explicitNullProperties?.Remove("originTeamId"); } }
-        private string _explicitNullValueOriginTeamId = default!;
+        public string DestinationTeamId { get => _explicitNullValueDestinationTeamId; set { _explicitNullValueDestinationTeamId = value; AdditionalData?.Remove("destinationTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamId"); else _explicitNullProperties?.Remove("destinationTeamId"); } }
+        private string _explicitNullValueDestinationTeamId = default!;
 #endif
-        /// <summary>The originTeamName property</summary>
+        /// <summary>The destinationTeamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginTeamName { get => _explicitNullValueOriginTeamName; set { _explicitNullValueOriginTeamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originTeamName"); else _explicitNullProperties?.Remove("originTeamName"); } }
-        private string? _explicitNullValueOriginTeamName = default!;
+        public string? DestinationTeamName { get => _explicitNullValueDestinationTeamName; set { _explicitNullValueDestinationTeamName = value; AdditionalData?.Remove("destinationTeamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamName"); else _explicitNullProperties?.Remove("destinationTeamName"); } }
+        private string? _explicitNullValueDestinationTeamName = default!;
 #nullable restore
 #else
-        public string OriginTeamName { get => _explicitNullValueOriginTeamName; set { _explicitNullValueOriginTeamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originTeamName"); else _explicitNullProperties?.Remove("originTeamName"); } }
-        private string _explicitNullValueOriginTeamName = default!;
+        public string DestinationTeamName { get => _explicitNullValueDestinationTeamName; set { _explicitNullValueDestinationTeamName = value; AdditionalData?.Remove("destinationTeamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamName"); else _explicitNullProperties?.Remove("destinationTeamName"); } }
+        private string _explicitNullValueDestinationTeamName = default!;
 #endif
         /// <summary>The store property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store? _explicitNullValueStore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store _explicitNullValueStore = default!;
 #endif
         /// <summary>
@@ -80,8 +83,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "originTeamId", n => { OriginTeamId = n.GetStringValue(); } },
-                { "originTeamName", n => { OriginTeamName = n.GetStringValue(); } },
+                { "destinationTeamId", n => { DestinationTeamId = n.GetStringValue(); } },
+                { "destinationTeamName", n => { DestinationTeamName = n.GetStringValue(); } },
                 { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store.CreateFromDiscriminatorValue); } },
             };
         }
@@ -92,8 +95,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("originTeamId", OriginTeamId);
-            writer.WriteStringValue("originTeamName", OriginTeamName);
+            writer.WriteStringValue("destinationTeamId", DestinationTeamId);
+            writer.WriteStringValue("destinationTeamName", DestinationTeamName);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Store>("store", Store);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

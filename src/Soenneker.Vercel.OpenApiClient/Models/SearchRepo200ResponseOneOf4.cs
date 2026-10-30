@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gitAccount") is { } nullNodeGitAccount && nullNodeGitAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitAccount = null;
-            if (parseNode.GetChildNode("repos") is { } nullNodeRepos && nullNodeRepos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repos = null;
+            if (parseNode.GetChildNode("gitAccount") is null) { _explicitNullValueGitAccount = default!; _explicitNullProperties?.Remove("gitAccount"); }
+            else if (parseNode.GetChildNode("gitAccount") is { } nullNodeGitAccount && nullNodeGitAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitAccount = null;
+            if (parseNode.GetChildNode("repos") is null) { _explicitNullValueRepos = default!; _explicitNullProperties?.Remove("repos"); }
+            else if (parseNode.GetChildNode("repos") is { } nullNodeRepos && nullNodeRepos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repos = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The gitAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount? GitAccount { get => _explicitNullValueGitAccount; set { _explicitNullValueGitAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitAccount"); else _explicitNullProperties?.Remove("gitAccount"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount? GitAccount { get => _explicitNullValueGitAccount; set { _explicitNullValueGitAccount = value; AdditionalData?.Remove("gitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitAccount"); else _explicitNullProperties?.Remove("gitAccount"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount? _explicitNullValueGitAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount GitAccount { get => _explicitNullValueGitAccount; set { _explicitNullValueGitAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitAccount"); else _explicitNullProperties?.Remove("gitAccount"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount GitAccount { get => _explicitNullValueGitAccount; set { _explicitNullValueGitAccount = value; AdditionalData?.Remove("gitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitAccount"); else _explicitNullProperties?.Remove("gitAccount"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount _explicitNullValueGitAccount = default!;
 #endif
         /// <summary>The repos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem>? Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem>? Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; AdditionalData?.Remove("repos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem>? _explicitNullValueRepos = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem> Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem> Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; AdditionalData?.Remove("repos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem> _explicitNullValueRepos = default!;
 #endif
         /// <summary>

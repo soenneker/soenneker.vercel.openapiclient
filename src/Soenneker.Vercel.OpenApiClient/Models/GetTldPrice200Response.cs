@@ -17,41 +17,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("purchasePrice") is { } nullNodePurchasePrice && nullNodePurchasePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchasePrice = null;
-            if (parseNode.GetChildNode("renewalPrice") is { } nullNodeRenewalPrice && nullNodeRenewalPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewalPrice = null;
-            if (parseNode.GetChildNode("transferPrice") is { } nullNodeTransferPrice && nullNodeTransferPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferPrice = null;
-            if (parseNode.GetChildNode("years") is { } nullNodeYears && nullNodeYears.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Years = null;
+            if (parseNode.GetChildNode("purchasePrice") is null) { _explicitNullValuePurchasePrice = default!; _explicitNullProperties?.Remove("purchasePrice"); }
+            else if (parseNode.GetChildNode("purchasePrice") is { } nullNodePurchasePrice && nullNodePurchasePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchasePrice = null;
+            if (parseNode.GetChildNode("renewalPrice") is null) { _explicitNullValueRenewalPrice = default!; _explicitNullProperties?.Remove("renewalPrice"); }
+            else if (parseNode.GetChildNode("renewalPrice") is { } nullNodeRenewalPrice && nullNodeRenewalPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewalPrice = null;
+            if (parseNode.GetChildNode("transferPrice") is null) { _explicitNullValueTransferPrice = default!; _explicitNullProperties?.Remove("transferPrice"); }
+            else if (parseNode.GetChildNode("transferPrice") is { } nullNodeTransferPrice && nullNodeTransferPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferPrice = null;
+            if (parseNode.GetChildNode("years") is null) { _explicitNullValueYears = default!; _explicitNullProperties?.Remove("years"); }
+            else if (parseNode.GetChildNode("years") is { } nullNodeYears && nullNodeYears.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Years = null;
         }
 
         /// <summary>The purchasePrice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponsePurchasePrice? PurchasePrice { get => _explicitNullValuePurchasePrice; set { _explicitNullValuePurchasePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchasePrice"); else _explicitNullProperties?.Remove("purchasePrice"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponsePurchasePrice? _explicitNullValuePurchasePrice = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice? PurchasePrice { get => _explicitNullValuePurchasePrice; set { _explicitNullValuePurchasePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchasePrice"); else _explicitNullProperties?.Remove("purchasePrice"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice? _explicitNullValuePurchasePrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponsePurchasePrice PurchasePrice { get => _explicitNullValuePurchasePrice; set { _explicitNullValuePurchasePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchasePrice"); else _explicitNullProperties?.Remove("purchasePrice"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponsePurchasePrice _explicitNullValuePurchasePrice = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice PurchasePrice { get => _explicitNullValuePurchasePrice; set { _explicitNullValuePurchasePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchasePrice"); else _explicitNullProperties?.Remove("purchasePrice"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice _explicitNullValuePurchasePrice = default!;
 #endif
         /// <summary>The renewalPrice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseRenewalPrice? RenewalPrice { get => _explicitNullValueRenewalPrice; set { _explicitNullValueRenewalPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewalPrice"); else _explicitNullProperties?.Remove("renewalPrice"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseRenewalPrice? _explicitNullValueRenewalPrice = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice? RenewalPrice { get => _explicitNullValueRenewalPrice; set { _explicitNullValueRenewalPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewalPrice"); else _explicitNullProperties?.Remove("renewalPrice"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice? _explicitNullValueRenewalPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseRenewalPrice RenewalPrice { get => _explicitNullValueRenewalPrice; set { _explicitNullValueRenewalPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewalPrice"); else _explicitNullProperties?.Remove("renewalPrice"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseRenewalPrice _explicitNullValueRenewalPrice = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice RenewalPrice { get => _explicitNullValueRenewalPrice; set { _explicitNullValueRenewalPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewalPrice"); else _explicitNullProperties?.Remove("renewalPrice"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice _explicitNullValueRenewalPrice = default!;
 #endif
         /// <summary>The transferPrice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseTransferPrice? TransferPrice { get => _explicitNullValueTransferPrice; set { _explicitNullValueTransferPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferPrice"); else _explicitNullProperties?.Remove("transferPrice"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseTransferPrice? _explicitNullValueTransferPrice = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice? TransferPrice { get => _explicitNullValueTransferPrice; set { _explicitNullValueTransferPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferPrice"); else _explicitNullProperties?.Remove("transferPrice"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice? _explicitNullValueTransferPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseTransferPrice TransferPrice { get => _explicitNullValueTransferPrice; set { _explicitNullValueTransferPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferPrice"); else _explicitNullProperties?.Remove("transferPrice"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseTransferPrice _explicitNullValueTransferPrice = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice TransferPrice { get => _explicitNullValueTransferPrice; set { _explicitNullValueTransferPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferPrice"); else _explicitNullProperties?.Remove("transferPrice"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice _explicitNullValueTransferPrice = default!;
 #endif
         /// <summary>The number of years the returned price is for.</summary>
         public double? Years { get => _explicitNullValueYears; set { _explicitNullValueYears = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("years"); else _explicitNullProperties?.Remove("years"); } }
@@ -74,9 +78,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "purchasePrice", n => { PurchasePrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponsePurchasePrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponsePurchasePrice.CreateFromDiscriminatorValue); } },
-                { "renewalPrice", n => { RenewalPrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseRenewalPrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseRenewalPrice.CreateFromDiscriminatorValue); } },
-                { "transferPrice", n => { TransferPrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseTransferPrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseTransferPrice.CreateFromDiscriminatorValue); } },
+                { "purchasePrice", n => { PurchasePrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice.CreateFromDiscriminatorValue); } },
+                { "renewalPrice", n => { RenewalPrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice.CreateFromDiscriminatorValue); } },
+                { "transferPrice", n => { TransferPrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice.CreateFromDiscriminatorValue); } },
                 { "years", n => { Years = n.GetDoubleValue(); } },
             };
         }
@@ -87,9 +91,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponsePurchasePrice>("purchasePrice", PurchasePrice);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseRenewalPrice>("renewalPrice", RenewalPrice);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTldPrice200ResponseTransferPrice>("transferPrice", TransferPrice);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>("purchasePrice", PurchasePrice);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>("renewalPrice", RenewalPrice);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>("transferPrice", TransferPrice);
             writer.WriteDoubleValue("years", Years);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

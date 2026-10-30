@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("securityGroupId") is { } nullNodeSecurityGroupId && nullNodeSecurityGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityGroupId = null;
-            if (parseNode.GetChildNode("subnetIds") is { } nullNodeSubnetIds && nullNodeSubnetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubnetIds = null;
+            if (parseNode.GetChildNode("securityGroupId") is null) { _explicitNullValueSecurityGroupId = default!; _explicitNullProperties?.Remove("securityGroupId"); }
+            else if (parseNode.GetChildNode("securityGroupId") is { } nullNodeSecurityGroupId && nullNodeSecurityGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityGroupId = null;
+            if (parseNode.GetChildNode("subnetIds") is null) { _explicitNullValueSubnetIds = default!; _explicitNullProperties?.Remove("subnetIds"); }
+            else if (parseNode.GetChildNode("subnetIds") is { } nullNodeSubnetIds && nullNodeSubnetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubnetIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The securityGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecurityGroupId { get => _explicitNullValueSecurityGroupId; set { _explicitNullValueSecurityGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityGroupId"); else _explicitNullProperties?.Remove("securityGroupId"); } }
+        public string? SecurityGroupId { get => _explicitNullValueSecurityGroupId; set { _explicitNullValueSecurityGroupId = value; AdditionalData?.Remove("securityGroupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityGroupId"); else _explicitNullProperties?.Remove("securityGroupId"); } }
         private string? _explicitNullValueSecurityGroupId = default!;
 #nullable restore
 #else
-        public string SecurityGroupId { get => _explicitNullValueSecurityGroupId; set { _explicitNullValueSecurityGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityGroupId"); else _explicitNullProperties?.Remove("securityGroupId"); } }
+        public string SecurityGroupId { get => _explicitNullValueSecurityGroupId; set { _explicitNullValueSecurityGroupId = value; AdditionalData?.Remove("securityGroupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityGroupId"); else _explicitNullProperties?.Remove("securityGroupId"); } }
         private string _explicitNullValueSecurityGroupId = default!;
 #endif
         /// <summary>The subnetIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SubnetIds { get => _explicitNullValueSubnetIds; set { _explicitNullValueSubnetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnetIds"); else _explicitNullProperties?.Remove("subnetIds"); } }
+        public List<string>? SubnetIds { get => _explicitNullValueSubnetIds; set { _explicitNullValueSubnetIds = value; AdditionalData?.Remove("subnetIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnetIds"); else _explicitNullProperties?.Remove("subnetIds"); } }
         private List<string>? _explicitNullValueSubnetIds = default!;
 #nullable restore
 #else
-        public List<string> SubnetIds { get => _explicitNullValueSubnetIds; set { _explicitNullValueSubnetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnetIds"); else _explicitNullProperties?.Remove("subnetIds"); } }
+        public List<string> SubnetIds { get => _explicitNullValueSubnetIds; set { _explicitNullValueSubnetIds = value; AdditionalData?.Remove("subnetIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnetIds"); else _explicitNullProperties?.Remove("subnetIds"); } }
         private List<string> _explicitNullValueSubnetIds = default!;
 #endif
         /// <summary>

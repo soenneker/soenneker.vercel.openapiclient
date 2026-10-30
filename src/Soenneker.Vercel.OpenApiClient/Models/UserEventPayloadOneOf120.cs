@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("oldSsoProtection") is { } nullNodeOldSsoProtection && nullNodeOldSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldSsoProtection = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
+            if (parseNode.GetChildNode("oldSsoProtection") is null) { _explicitNullValueOldSsoProtection = default!; _explicitNullProperties?.Remove("oldSsoProtection"); }
+            else if (parseNode.GetChildNode("oldSsoProtection") is { } nullNodeOldSsoProtection && nullNodeOldSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldSsoProtection = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("ssoProtection") is null) { _explicitNullValueSsoProtection = default!; _explicitNullProperties?.Remove("ssoProtection"); }
+            else if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The oldSsoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection? OldSsoProtection { get => _explicitNullValueOldSsoProtection; set { _explicitNullValueOldSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldSsoProtection"); else _explicitNullProperties?.Remove("oldSsoProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection? OldSsoProtection { get => _explicitNullValueOldSsoProtection; set { _explicitNullValueOldSsoProtection = value; AdditionalData?.Remove("oldSsoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldSsoProtection"); else _explicitNullProperties?.Remove("oldSsoProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection? _explicitNullValueOldSsoProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection OldSsoProtection { get => _explicitNullValueOldSsoProtection; set { _explicitNullValueOldSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldSsoProtection"); else _explicitNullProperties?.Remove("oldSsoProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection OldSsoProtection { get => _explicitNullValueOldSsoProtection; set { _explicitNullValueOldSsoProtection = value; AdditionalData?.Remove("oldSsoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldSsoProtection"); else _explicitNullProperties?.Remove("oldSsoProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection _explicitNullValueOldSsoProtection = default!;
 #endif
         /// <summary>The scope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120Scope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120Scope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120Scope? _explicitNullValueScope = default!;
         /// <summary>The ssoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection? SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection? SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; AdditionalData?.Remove("ssoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection? _explicitNullValueSsoProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; AdditionalData?.Remove("ssoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection _explicitNullValueSsoProtection = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "oldSsoProtection", n => { OldSsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120OldSsoProtection.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120Scope>(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120Scope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
                 { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120SsoProtection.CreateFromDiscriminatorValue); } },
             };
         }

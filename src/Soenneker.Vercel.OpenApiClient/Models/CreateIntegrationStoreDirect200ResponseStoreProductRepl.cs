@@ -17,27 +17,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("supportsReadOnlyMode") is { } nullNodeSupportsReadOnlyMode && nullNodeSupportsReadOnlyMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsReadOnlyMode = null;
-            if (parseNode.GetChildNode("welcomeMessage") is { } nullNodeWelcomeMessage && nullNodeWelcomeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WelcomeMessage = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("supportsReadOnlyMode") is null) { _explicitNullValueSupportsReadOnlyMode = default!; _explicitNullProperties?.Remove("supportsReadOnlyMode"); }
+            else if (parseNode.GetChildNode("supportsReadOnlyMode") is { } nullNodeSupportsReadOnlyMode && nullNodeSupportsReadOnlyMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsReadOnlyMode = null;
+            if (parseNode.GetChildNode("welcomeMessage") is null) { _explicitNullValueWelcomeMessage = default!; _explicitNullProperties?.Remove("welcomeMessage"); }
+            else if (parseNode.GetChildNode("welcomeMessage") is { } nullNodeWelcomeMessage && nullNodeWelcomeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WelcomeMessage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The supportsReadOnlyMode property</summary>
-        public bool? SupportsReadOnlyMode { get => _explicitNullValueSupportsReadOnlyMode; set { _explicitNullValueSupportsReadOnlyMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportsReadOnlyMode"); else _explicitNullProperties?.Remove("supportsReadOnlyMode"); } }
+        public bool? SupportsReadOnlyMode { get => _explicitNullValueSupportsReadOnlyMode; set { _explicitNullValueSupportsReadOnlyMode = value; AdditionalData?.Remove("supportsReadOnlyMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportsReadOnlyMode"); else _explicitNullProperties?.Remove("supportsReadOnlyMode"); } }
         private bool? _explicitNullValueSupportsReadOnlyMode = default!;
         /// <summary>The welcomeMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WelcomeMessage { get => _explicitNullValueWelcomeMessage; set { _explicitNullValueWelcomeMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("welcomeMessage"); else _explicitNullProperties?.Remove("welcomeMessage"); } }
+        public string? WelcomeMessage { get => _explicitNullValueWelcomeMessage; set { _explicitNullValueWelcomeMessage = value; AdditionalData?.Remove("welcomeMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("welcomeMessage"); else _explicitNullProperties?.Remove("welcomeMessage"); } }
         private string? _explicitNullValueWelcomeMessage = default!;
 #nullable restore
 #else
-        public string WelcomeMessage { get => _explicitNullValueWelcomeMessage; set { _explicitNullValueWelcomeMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("welcomeMessage"); else _explicitNullProperties?.Remove("welcomeMessage"); } }
+        public string WelcomeMessage { get => _explicitNullValueWelcomeMessage; set { _explicitNullValueWelcomeMessage = value; AdditionalData?.Remove("welcomeMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("welcomeMessage"); else _explicitNullProperties?.Remove("welcomeMessage"); } }
         private string _explicitNullValueWelcomeMessage = default!;
 #endif
         /// <summary>

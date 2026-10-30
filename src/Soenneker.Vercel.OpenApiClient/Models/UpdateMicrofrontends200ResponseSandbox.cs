@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failoverRegions") is { } nullNodeFailoverRegions && nullNodeFailoverRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailoverRegions = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("failoverRegions") is null) { _explicitNullValueFailoverRegions = default!; _explicitNullProperties?.Remove("failoverRegions"); }
+            else if (parseNode.GetChildNode("failoverRegions") is { } nullNodeFailoverRegions && nullNodeFailoverRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailoverRegions = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The failoverRegions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem?>? FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem?>? FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; AdditionalData?.Remove("failoverRegions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem?>? _explicitNullValueFailoverRegions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem?> FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem?> FailoverRegions { get => _explicitNullValueFailoverRegions; set { _explicitNullValueFailoverRegions = value; AdditionalData?.Remove("failoverRegions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failoverRegions"); else _explicitNullProperties?.Remove("failoverRegions"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem?> _explicitNullValueFailoverRegions = default!;
 #endif
         /// <summary>The region property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxRegion? _explicitNullValueRegion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandbox"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem>()?.AsList(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSandboxRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
             };
         }
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defaultApp") is { } nullNodeDefaultApp && nullNodeDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultApp = null;
-            if (parseNode.GetChildNode("groupName") is { } nullNodeGroupName && nullNodeGroupName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupName = null;
-            if (parseNode.GetChildNode("otherApplications") is { } nullNodeOtherApplications && nullNodeOtherApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherApplications = null;
+            if (parseNode.GetChildNode("defaultApp") is null) { _explicitNullValueDefaultApp = default!; _explicitNullProperties?.Remove("defaultApp"); }
+            else if (parseNode.GetChildNode("defaultApp") is { } nullNodeDefaultApp && nullNodeDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultApp = null;
+            if (parseNode.GetChildNode("groupName") is null) { _explicitNullValueGroupName = default!; _explicitNullProperties?.Remove("groupName"); }
+            else if (parseNode.GetChildNode("groupName") is { } nullNodeGroupName && nullNodeGroupName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupName = null;
+            if (parseNode.GetChildNode("otherApplications") is null) { _explicitNullValueOtherApplications = default!; _explicitNullProperties?.Remove("otherApplications"); }
+            else if (parseNode.GetChildNode("otherApplications") is { } nullNodeOtherApplications && nullNodeOtherApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherApplications = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The default app for the new microfrontend group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestDefaultApp? DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestDefaultApp? DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; AdditionalData?.Remove("defaultApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestDefaultApp? _explicitNullValueDefaultApp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestDefaultApp DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestDefaultApp DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; AdditionalData?.Remove("defaultApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestDefaultApp _explicitNullValueDefaultApp = default!;
 #endif
         /// <summary>The name of the microfrontends group that will be used to identify the group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupName"); else _explicitNullProperties?.Remove("groupName"); } }
+        public string? GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; AdditionalData?.Remove("groupName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupName"); else _explicitNullProperties?.Remove("groupName"); } }
         private string? _explicitNullValueGroupName = default!;
 #nullable restore
 #else
-        public string GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupName"); else _explicitNullProperties?.Remove("groupName"); } }
+        public string GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; AdditionalData?.Remove("groupName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupName"); else _explicitNullProperties?.Remove("groupName"); } }
         private string _explicitNullValueGroupName = default!;
 #endif
         /// <summary>The list of other applications that will be used in the new microfrontend group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestOtherApplicationsItem>? OtherApplications { get => _explicitNullValueOtherApplications; set { _explicitNullValueOtherApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherApplications"); else _explicitNullProperties?.Remove("otherApplications"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestOtherApplicationsItem>? OtherApplications { get => _explicitNullValueOtherApplications; set { _explicitNullValueOtherApplications = value; AdditionalData?.Remove("otherApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherApplications"); else _explicitNullProperties?.Remove("otherApplications"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestOtherApplicationsItem>? _explicitNullValueOtherApplications = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestOtherApplicationsItem> OtherApplications { get => _explicitNullValueOtherApplications; set { _explicitNullValueOtherApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherApplications"); else _explicitNullProperties?.Remove("otherApplications"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestOtherApplicationsItem> OtherApplications { get => _explicitNullValueOtherApplications; set { _explicitNullValueOtherApplications = value; AdditionalData?.Remove("otherApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherApplications"); else _explicitNullProperties?.Remove("otherApplications"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateMicrofrontendsGroupWithApplicationsRequestOtherApplicationsItem> _explicitNullValueOtherApplications = default!;
 #endif
         /// <summary>

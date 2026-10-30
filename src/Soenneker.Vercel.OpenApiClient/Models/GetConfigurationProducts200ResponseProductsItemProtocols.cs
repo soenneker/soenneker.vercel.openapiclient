@@ -17,18 +17,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ai") is { } nullNodeAi && nullNodeAi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ai = null;
-            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
-            if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
-            if (parseNode.GetChildNode("experimentation") is { } nullNodeExperimentation && nullNodeExperimentation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Experimentation = null;
-            if (parseNode.GetChildNode("logDrain") is { } nullNodeLogDrain && nullNodeLogDrain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogDrain = null;
-            if (parseNode.GetChildNode("messaging") is { } nullNodeMessaging && nullNodeMessaging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messaging = null;
-            if (parseNode.GetChildNode("observability") is { } nullNodeObservability && nullNodeObservability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Observability = null;
-            if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
-            if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
-            if (parseNode.GetChildNode("traceDrain") is { } nullNodeTraceDrain && nullNodeTraceDrain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceDrain = null;
-            if (parseNode.GetChildNode("video") is { } nullNodeVideo && nullNodeVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Video = null;
-            if (parseNode.GetChildNode("workflow") is { } nullNodeWorkflow && nullNodeWorkflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflow = null;
+            if (parseNode.GetChildNode("ai") is null) { _explicitNullValueAi = default!; _explicitNullProperties?.Remove("ai"); }
+            else if (parseNode.GetChildNode("ai") is { } nullNodeAi && nullNodeAi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ai = null;
+            if (parseNode.GetChildNode("authentication") is null) { _explicitNullValueAuthentication = default!; _explicitNullProperties?.Remove("authentication"); }
+            else if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("checks") is null) { _explicitNullValueChecks = default!; _explicitNullProperties?.Remove("checks"); }
+            else if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
+            if (parseNode.GetChildNode("experimentation") is null) { _explicitNullValueExperimentation = default!; _explicitNullProperties?.Remove("experimentation"); }
+            else if (parseNode.GetChildNode("experimentation") is { } nullNodeExperimentation && nullNodeExperimentation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Experimentation = null;
+            if (parseNode.GetChildNode("logDrain") is null) { _explicitNullValueLogDrain = default!; _explicitNullProperties?.Remove("logDrain"); }
+            else if (parseNode.GetChildNode("logDrain") is { } nullNodeLogDrain && nullNodeLogDrain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogDrain = null;
+            if (parseNode.GetChildNode("messaging") is null) { _explicitNullValueMessaging = default!; _explicitNullProperties?.Remove("messaging"); }
+            else if (parseNode.GetChildNode("messaging") is { } nullNodeMessaging && nullNodeMessaging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messaging = null;
+            if (parseNode.GetChildNode("observability") is null) { _explicitNullValueObservability = default!; _explicitNullProperties?.Remove("observability"); }
+            else if (parseNode.GetChildNode("observability") is { } nullNodeObservability && nullNodeObservability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Observability = null;
+            if (parseNode.GetChildNode("other") is null) { _explicitNullValueOther = default!; _explicitNullProperties?.Remove("other"); }
+            else if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+            if (parseNode.GetChildNode("traceDrain") is null) { _explicitNullValueTraceDrain = default!; _explicitNullProperties?.Remove("traceDrain"); }
+            else if (parseNode.GetChildNode("traceDrain") is { } nullNodeTraceDrain && nullNodeTraceDrain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceDrain = null;
+            if (parseNode.GetChildNode("video") is null) { _explicitNullValueVideo = default!; _explicitNullProperties?.Remove("video"); }
+            else if (parseNode.GetChildNode("video") is { } nullNodeVideo && nullNodeVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Video = null;
+            if (parseNode.GetChildNode("workflow") is null) { _explicitNullValueWorkflow = default!; _explicitNullProperties?.Remove("workflow"); }
+            else if (parseNode.GetChildNode("workflow") is { } nullNodeWorkflow && nullNodeWorkflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflow = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,121 +48,121 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The ai property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAi? Ai { get => _explicitNullValueAi; set { _explicitNullValueAi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai"); else _explicitNullProperties?.Remove("ai"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAi? Ai { get => _explicitNullValueAi; set { _explicitNullValueAi = value; AdditionalData?.Remove("ai"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai"); else _explicitNullProperties?.Remove("ai"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAi? _explicitNullValueAi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAi Ai { get => _explicitNullValueAi; set { _explicitNullValueAi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai"); else _explicitNullProperties?.Remove("ai"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAi Ai { get => _explicitNullValueAi; set { _explicitNullValueAi = value; AdditionalData?.Remove("ai"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai"); else _explicitNullProperties?.Remove("ai"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAi _explicitNullValueAi = default!;
 #endif
         /// <summary>The authentication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthentication? _explicitNullValueAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsAuthentication _explicitNullValueAuthentication = default!;
 #endif
         /// <summary>The checks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsChecks? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsChecks? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsChecks? _explicitNullValueChecks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsChecks Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsChecks Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsChecks _explicitNullValueChecks = default!;
 #endif
         /// <summary>The experimentation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsExperimentation? Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsExperimentation? Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; AdditionalData?.Remove("experimentation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsExperimentation? _explicitNullValueExperimentation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsExperimentation Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsExperimentation Experimentation { get => _explicitNullValueExperimentation; set { _explicitNullValueExperimentation = value; AdditionalData?.Remove("experimentation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentation"); else _explicitNullProperties?.Remove("experimentation"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsExperimentation _explicitNullValueExperimentation = default!;
 #endif
         /// <summary>The logDrain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsLogDrain? LogDrain { get => _explicitNullValueLogDrain; set { _explicitNullValueLogDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrain"); else _explicitNullProperties?.Remove("logDrain"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsLogDrain? LogDrain { get => _explicitNullValueLogDrain; set { _explicitNullValueLogDrain = value; AdditionalData?.Remove("logDrain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrain"); else _explicitNullProperties?.Remove("logDrain"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsLogDrain? _explicitNullValueLogDrain = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsLogDrain LogDrain { get => _explicitNullValueLogDrain; set { _explicitNullValueLogDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrain"); else _explicitNullProperties?.Remove("logDrain"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsLogDrain LogDrain { get => _explicitNullValueLogDrain; set { _explicitNullValueLogDrain = value; AdditionalData?.Remove("logDrain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logDrain"); else _explicitNullProperties?.Remove("logDrain"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsLogDrain _explicitNullValueLogDrain = default!;
 #endif
         /// <summary>The messaging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsMessaging? Messaging { get => _explicitNullValueMessaging; set { _explicitNullValueMessaging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messaging"); else _explicitNullProperties?.Remove("messaging"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsMessaging? Messaging { get => _explicitNullValueMessaging; set { _explicitNullValueMessaging = value; AdditionalData?.Remove("messaging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messaging"); else _explicitNullProperties?.Remove("messaging"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsMessaging? _explicitNullValueMessaging = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsMessaging Messaging { get => _explicitNullValueMessaging; set { _explicitNullValueMessaging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messaging"); else _explicitNullProperties?.Remove("messaging"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsMessaging Messaging { get => _explicitNullValueMessaging; set { _explicitNullValueMessaging = value; AdditionalData?.Remove("messaging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messaging"); else _explicitNullProperties?.Remove("messaging"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsMessaging _explicitNullValueMessaging = default!;
 #endif
         /// <summary>The observability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsObservability? Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsObservability? Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; AdditionalData?.Remove("observability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsObservability? _explicitNullValueObservability = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsObservability Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsObservability Observability { get => _explicitNullValueObservability; set { _explicitNullValueObservability = value; AdditionalData?.Remove("observability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observability"); else _explicitNullProperties?.Remove("observability"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsObservability _explicitNullValueObservability = default!;
 #endif
         /// <summary>The other property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsOther? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsOther? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; AdditionalData?.Remove("other"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsOther? _explicitNullValueOther = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsOther Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsOther Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; AdditionalData?.Remove("other"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsOther _explicitNullValueOther = default!;
 #endif
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorage? _explicitNullValueStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorage Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorage Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsStorage _explicitNullValueStorage = default!;
 #endif
         /// <summary>The traceDrain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsTraceDrain? TraceDrain { get => _explicitNullValueTraceDrain; set { _explicitNullValueTraceDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceDrain"); else _explicitNullProperties?.Remove("traceDrain"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsTraceDrain? TraceDrain { get => _explicitNullValueTraceDrain; set { _explicitNullValueTraceDrain = value; AdditionalData?.Remove("traceDrain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceDrain"); else _explicitNullProperties?.Remove("traceDrain"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsTraceDrain? _explicitNullValueTraceDrain = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsTraceDrain TraceDrain { get => _explicitNullValueTraceDrain; set { _explicitNullValueTraceDrain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceDrain"); else _explicitNullProperties?.Remove("traceDrain"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsTraceDrain TraceDrain { get => _explicitNullValueTraceDrain; set { _explicitNullValueTraceDrain = value; AdditionalData?.Remove("traceDrain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceDrain"); else _explicitNullProperties?.Remove("traceDrain"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsTraceDrain _explicitNullValueTraceDrain = default!;
 #endif
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsVideo? Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsVideo? Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; AdditionalData?.Remove("video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsVideo? _explicitNullValueVideo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsVideo Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsVideo Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; AdditionalData?.Remove("video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsVideo _explicitNullValueVideo = default!;
 #endif
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsWorkflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsWorkflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsWorkflow? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsWorkflow Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsWorkflow Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemProtocolsWorkflow _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>

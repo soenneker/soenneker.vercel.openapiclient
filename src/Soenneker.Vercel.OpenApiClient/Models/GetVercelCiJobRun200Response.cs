@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("jobRun") is { } nullNodeJobRun && nullNodeJobRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobRun = null;
+            if (parseNode.GetChildNode("jobRun") is null) { _explicitNullValueJobRun = default!; _explicitNullProperties?.Remove("jobRun"); }
+            else if (parseNode.GetChildNode("jobRun") is { } nullNodeJobRun && nullNodeJobRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobRun = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The jobRun property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiJobRun200ResponseJobRun? JobRun { get => _explicitNullValueJobRun; set { _explicitNullValueJobRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRun"); else _explicitNullProperties?.Remove("jobRun"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiJobRun200ResponseJobRun? JobRun { get => _explicitNullValueJobRun; set { _explicitNullValueJobRun = value; AdditionalData?.Remove("jobRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRun"); else _explicitNullProperties?.Remove("jobRun"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiJobRun200ResponseJobRun? _explicitNullValueJobRun = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiJobRun200ResponseJobRun JobRun { get => _explicitNullValueJobRun; set { _explicitNullValueJobRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRun"); else _explicitNullProperties?.Remove("jobRun"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiJobRun200ResponseJobRun JobRun { get => _explicitNullValueJobRun; set { _explicitNullValueJobRun = value; AdditionalData?.Remove("jobRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRun"); else _explicitNullProperties?.Remove("jobRun"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiJobRun200ResponseJobRun _explicitNullValueJobRun = default!;
 #endif
         /// <summary>

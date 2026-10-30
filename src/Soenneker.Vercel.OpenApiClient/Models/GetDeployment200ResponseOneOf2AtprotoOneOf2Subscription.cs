@@ -17,10 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("collections") is { } nullNodeCollections && nullNodeCollections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collections = null;
-            if (parseNode.GetChildNode("dids") is { } nullNodeDids && nullNodeDids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dids = null;
-            if (parseNode.GetChildNode("kinds") is { } nullNodeKinds && nullNodeKinds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kinds = null;
-            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("collections") is null) { _explicitNullValueCollections = default!; _explicitNullProperties?.Remove("collections"); }
+            else if (parseNode.GetChildNode("collections") is { } nullNodeCollections && nullNodeCollections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collections = null;
+            if (parseNode.GetChildNode("dids") is null) { _explicitNullValueDids = default!; _explicitNullProperties?.Remove("dids"); }
+            else if (parseNode.GetChildNode("dids") is { } nullNodeDids && nullNodeDids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dids = null;
+            if (parseNode.GetChildNode("kinds") is null) { _explicitNullValueKinds = default!; _explicitNullProperties?.Remove("kinds"); }
+            else if (parseNode.GetChildNode("kinds") is { } nullNodeKinds && nullNodeKinds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kinds = null;
+            if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
+            else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The collections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
+        public List<string>? Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; AdditionalData?.Remove("collections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
         private List<string>? _explicitNullValueCollections = default!;
 #nullable restore
 #else
-        public List<string> Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
+        public List<string> Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; AdditionalData?.Remove("collections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
         private List<string> _explicitNullValueCollections = default!;
 #endif
         /// <summary>The dids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Dids { get => _explicitNullValueDids; set { _explicitNullValueDids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dids"); else _explicitNullProperties?.Remove("dids"); } }
+        public List<string>? Dids { get => _explicitNullValueDids; set { _explicitNullValueDids = value; AdditionalData?.Remove("dids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dids"); else _explicitNullProperties?.Remove("dids"); } }
         private List<string>? _explicitNullValueDids = default!;
 #nullable restore
 #else
-        public List<string> Dids { get => _explicitNullValueDids; set { _explicitNullValueDids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dids"); else _explicitNullProperties?.Remove("dids"); } }
+        public List<string> Dids { get => _explicitNullValueDids; set { _explicitNullValueDids = value; AdditionalData?.Remove("dids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dids"); else _explicitNullProperties?.Remove("dids"); } }
         private List<string> _explicitNullValueDids = default!;
 #endif
         /// <summary>The kinds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AtprotoOneOf2SubscriptionKindsItem?>? Kinds { get => _explicitNullValueKinds; set { _explicitNullValueKinds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinds"); else _explicitNullProperties?.Remove("kinds"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AtprotoOneOf2SubscriptionKindsItem?>? Kinds { get => _explicitNullValueKinds; set { _explicitNullValueKinds = value; AdditionalData?.Remove("kinds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinds"); else _explicitNullProperties?.Remove("kinds"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AtprotoOneOf2SubscriptionKindsItem?>? _explicitNullValueKinds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AtprotoOneOf2SubscriptionKindsItem?> Kinds { get => _explicitNullValueKinds; set { _explicitNullValueKinds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinds"); else _explicitNullProperties?.Remove("kinds"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AtprotoOneOf2SubscriptionKindsItem?> Kinds { get => _explicitNullValueKinds; set { _explicitNullValueKinds = value; AdditionalData?.Remove("kinds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinds"); else _explicitNullProperties?.Remove("kinds"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2AtprotoOneOf2SubscriptionKindsItem?> _explicitNullValueKinds = default!;
 #endif
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
         /// <summary>

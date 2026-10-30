@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("revalidationDeadlineSeconds") is { } nullNodeRevalidationDeadlineSeconds && nullNodeRevalidationDeadlineSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevalidationDeadlineSeconds = null;
-            if (parseNode.GetChildNode("srcImages") is { } nullNodeSrcImages && nullNodeSrcImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcImages = null;
+            if (parseNode.GetChildNode("revalidationDeadlineSeconds") is null) { _explicitNullValueRevalidationDeadlineSeconds = default!; _explicitNullProperties?.Remove("revalidationDeadlineSeconds"); }
+            else if (parseNode.GetChildNode("revalidationDeadlineSeconds") is { } nullNodeRevalidationDeadlineSeconds && nullNodeRevalidationDeadlineSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevalidationDeadlineSeconds = null;
+            if (parseNode.GetChildNode("srcImages") is null) { _explicitNullValueSrcImages = default!; _explicitNullProperties?.Remove("srcImages"); }
+            else if (parseNode.GetChildNode("srcImages") is { } nullNodeSrcImages && nullNodeSrcImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SrcImages = null;
         }
 
         /// <summary>The revalidationDeadlineSeconds property</summary>

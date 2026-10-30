@@ -18,7 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("changedFields") is { } nullNodeChangedFields && nullNodeChangedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedFields = null;
+            if (parseNode.GetChildNode("changedFields") is null) { _explicitNullValueChangedFields = default!; _explicitNullProperties?.Remove("changedFields"); }
+            else if (parseNode.GetChildNode("changedFields") is { } nullNodeChangedFields && nullNodeChangedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedFields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The changedFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83ChangedFieldsItem?>? ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83ChangedFieldsItem?>? ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; AdditionalData?.Remove("changedFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83ChangedFieldsItem?>? _explicitNullValueChangedFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83ChangedFieldsItem?> ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83ChangedFieldsItem?> ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; AdditionalData?.Remove("changedFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83ChangedFieldsItem?> _explicitNullValueChangedFields = default!;
 #endif
         /// <summary>

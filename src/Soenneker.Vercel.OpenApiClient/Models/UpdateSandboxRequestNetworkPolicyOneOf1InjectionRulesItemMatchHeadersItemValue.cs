@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("exact") is { } nullNodeExact && nullNodeExact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exact = null;
-            if (parseNode.GetChildNode("startsWith") is { } nullNodeStartsWith && nullNodeStartsWith.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsWith = null;
+            if (parseNode.GetChildNode("exact") is null) { _explicitNullValueExact = default!; _explicitNullProperties?.Remove("exact"); }
+            else if (parseNode.GetChildNode("exact") is { } nullNodeExact && nullNodeExact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exact = null;
+            if (parseNode.GetChildNode("startsWith") is null) { _explicitNullValueStartsWith = default!; _explicitNullProperties?.Remove("startsWith"); }
+            else if (parseNode.GetChildNode("startsWith") is { } nullNodeStartsWith && nullNodeStartsWith.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsWith = null;
         }
 
         /// <summary>Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.</summary>

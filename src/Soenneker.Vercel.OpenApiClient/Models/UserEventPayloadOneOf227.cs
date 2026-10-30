@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alertId") is { } nullNodeAlertId && nullNodeAlertId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertId = null;
-            if (parseNode.GetChildNode("alertName") is { } nullNodeAlertName && nullNodeAlertName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertName = null;
+            if (parseNode.GetChildNode("alertId") is null) { _explicitNullValueAlertId = default!; _explicitNullProperties?.Remove("alertId"); }
+            else if (parseNode.GetChildNode("alertId") is { } nullNodeAlertId && nullNodeAlertId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertId = null;
+            if (parseNode.GetChildNode("alertName") is null) { _explicitNullValueAlertName = default!; _explicitNullProperties?.Remove("alertName"); }
+            else if (parseNode.GetChildNode("alertName") is { } nullNodeAlertName && nullNodeAlertName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The alertId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertId { get => _explicitNullValueAlertId; set { _explicitNullValueAlertId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertId"); else _explicitNullProperties?.Remove("alertId"); } }
+        public string? AlertId { get => _explicitNullValueAlertId; set { _explicitNullValueAlertId = value; AdditionalData?.Remove("alertId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertId"); else _explicitNullProperties?.Remove("alertId"); } }
         private string? _explicitNullValueAlertId = default!;
 #nullable restore
 #else
-        public string AlertId { get => _explicitNullValueAlertId; set { _explicitNullValueAlertId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertId"); else _explicitNullProperties?.Remove("alertId"); } }
+        public string AlertId { get => _explicitNullValueAlertId; set { _explicitNullValueAlertId = value; AdditionalData?.Remove("alertId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertId"); else _explicitNullProperties?.Remove("alertId"); } }
         private string _explicitNullValueAlertId = default!;
 #endif
         /// <summary>The alertName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertName { get => _explicitNullValueAlertName; set { _explicitNullValueAlertName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertName"); else _explicitNullProperties?.Remove("alertName"); } }
+        public string? AlertName { get => _explicitNullValueAlertName; set { _explicitNullValueAlertName = value; AdditionalData?.Remove("alertName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertName"); else _explicitNullProperties?.Remove("alertName"); } }
         private string? _explicitNullValueAlertName = default!;
 #nullable restore
 #else
-        public string AlertName { get => _explicitNullValueAlertName; set { _explicitNullValueAlertName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertName"); else _explicitNullProperties?.Remove("alertName"); } }
+        public string AlertName { get => _explicitNullValueAlertName; set { _explicitNullValueAlertName = value; AdditionalData?.Remove("alertName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertName"); else _explicitNullProperties?.Remove("alertName"); } }
         private string _explicitNullValueAlertName = default!;
 #endif
         /// <summary>

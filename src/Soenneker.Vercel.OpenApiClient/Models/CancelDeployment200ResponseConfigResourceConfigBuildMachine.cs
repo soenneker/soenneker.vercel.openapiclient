@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("purchaseType") is { } nullNodePurchaseType && nullNodePurchaseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseType = null;
+            if (parseNode.GetChildNode("purchaseType") is null) { _explicitNullValuePurchaseType = default!; _explicitNullProperties?.Remove("purchaseType"); }
+            else if (parseNode.GetChildNode("purchaseType") is { } nullNodePurchaseType && nullNodePurchaseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Machine type that was used for the build.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType? PurchaseType { get => _explicitNullValuePurchaseType; set { _explicitNullValuePurchaseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseType"); else _explicitNullProperties?.Remove("purchaseType"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType? PurchaseType { get => _explicitNullValuePurchaseType; set { _explicitNullValuePurchaseType = value; AdditionalData?.Remove("purchaseType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseType"); else _explicitNullProperties?.Remove("purchaseType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType? _explicitNullValuePurchaseType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachine"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "purchaseType", n => { PurchaseType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType>(); } },
+                { "purchaseType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePurchaseType = default; _explicitNullProperties?.Remove("purchaseType"); AdditionalData["purchaseType"] = unknown; } else { PurchaseType = parsed; AdditionalData.Remove("purchaseType"); } } },
             };
         }
         /// <summary>

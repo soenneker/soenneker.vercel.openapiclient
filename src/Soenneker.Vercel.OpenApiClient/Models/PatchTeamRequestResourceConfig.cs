@@ -18,7 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
+            if (parseNode.GetChildNode("buildMachine") is null) { _explicitNullValueBuildMachine = default!; _explicitNullProperties?.Remove("buildMachine"); }
+            else if (parseNode.GetChildNode("buildMachine") is { } nullNodeBuildMachine && nullNodeBuildMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildMachine = null;
         }
 
         /// <summary>Build machine configuration.</summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("drive") is { } nullNodeDrive && nullNodeDrive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Drive = null;
+            if (parseNode.GetChildNode("drive") is null) { _explicitNullValueDrive = default!; _explicitNullProperties?.Remove("drive"); }
+            else if (parseNode.GetChildNode("drive") is { } nullNodeDrive && nullNodeDrive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Drive = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>This object contains information related to a Vercel Sandbox Drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Drive? Drive { get => _explicitNullValueDrive; set { _explicitNullValueDrive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drive"); else _explicitNullProperties?.Remove("drive"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.Drive? Drive { get => _explicitNullValueDrive; set { _explicitNullValueDrive = value; AdditionalData?.Remove("drive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drive"); else _explicitNullProperties?.Remove("drive"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.Drive? _explicitNullValueDrive = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Drive Drive { get => _explicitNullValueDrive; set { _explicitNullValueDrive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drive"); else _explicitNullProperties?.Remove("drive"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.Drive Drive { get => _explicitNullValueDrive; set { _explicitNullValueDrive = value; AdditionalData?.Remove("drive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drive"); else _explicitNullProperties?.Remove("drive"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.Drive _explicitNullValueDrive = default!;
 #endif
         /// <summary>

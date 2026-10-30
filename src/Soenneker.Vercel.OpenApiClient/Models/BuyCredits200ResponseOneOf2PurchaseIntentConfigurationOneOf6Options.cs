@@ -17,13 +17,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lineItems") is { } nullNodeLineItems && nullNodeLineItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineItems = null;
-            if (parseNode.GetChildNode("orbCustomerId") is { } nullNodeOrbCustomerId && nullNodeOrbCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbCustomerId = null;
-            if (parseNode.GetChildNode("orbExternalCustomerId") is { } nullNodeOrbExternalCustomerId && nullNodeOrbExternalCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbExternalCustomerId = null;
-            if (parseNode.GetChildNode("orbExternalPlanId") is { } nullNodeOrbExternalPlanId && nullNodeOrbExternalPlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbExternalPlanId = null;
-            if (parseNode.GetChildNode("orbPendingSubscriptionChangeId") is { } nullNodeOrbPendingSubscriptionChangeId && nullNodeOrbPendingSubscriptionChangeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbPendingSubscriptionChangeId = null;
-            if (parseNode.GetChildNode("orbPlanId") is { } nullNodeOrbPlanId && nullNodeOrbPlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbPlanId = null;
-            if (parseNode.GetChildNode("orbSubscriptionId") is { } nullNodeOrbSubscriptionId && nullNodeOrbSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbSubscriptionId = null;
+            if (parseNode.GetChildNode("lineItems") is null) { _explicitNullValueLineItems = default!; _explicitNullProperties?.Remove("lineItems"); }
+            else if (parseNode.GetChildNode("lineItems") is { } nullNodeLineItems && nullNodeLineItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineItems = null;
+            if (parseNode.GetChildNode("orbCustomerId") is null) { _explicitNullValueOrbCustomerId = default!; _explicitNullProperties?.Remove("orbCustomerId"); }
+            else if (parseNode.GetChildNode("orbCustomerId") is { } nullNodeOrbCustomerId && nullNodeOrbCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbCustomerId = null;
+            if (parseNode.GetChildNode("orbExternalCustomerId") is null) { _explicitNullValueOrbExternalCustomerId = default!; _explicitNullProperties?.Remove("orbExternalCustomerId"); }
+            else if (parseNode.GetChildNode("orbExternalCustomerId") is { } nullNodeOrbExternalCustomerId && nullNodeOrbExternalCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbExternalCustomerId = null;
+            if (parseNode.GetChildNode("orbExternalPlanId") is null) { _explicitNullValueOrbExternalPlanId = default!; _explicitNullProperties?.Remove("orbExternalPlanId"); }
+            else if (parseNode.GetChildNode("orbExternalPlanId") is { } nullNodeOrbExternalPlanId && nullNodeOrbExternalPlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbExternalPlanId = null;
+            if (parseNode.GetChildNode("orbPendingSubscriptionChangeId") is null) { _explicitNullValueOrbPendingSubscriptionChangeId = default!; _explicitNullProperties?.Remove("orbPendingSubscriptionChangeId"); }
+            else if (parseNode.GetChildNode("orbPendingSubscriptionChangeId") is { } nullNodeOrbPendingSubscriptionChangeId && nullNodeOrbPendingSubscriptionChangeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbPendingSubscriptionChangeId = null;
+            if (parseNode.GetChildNode("orbPlanId") is null) { _explicitNullValueOrbPlanId = default!; _explicitNullProperties?.Remove("orbPlanId"); }
+            else if (parseNode.GetChildNode("orbPlanId") is { } nullNodeOrbPlanId && nullNodeOrbPlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbPlanId = null;
+            if (parseNode.GetChildNode("orbSubscriptionId") is null) { _explicitNullValueOrbSubscriptionId = default!; _explicitNullProperties?.Remove("orbSubscriptionId"); }
+            else if (parseNode.GetChildNode("orbSubscriptionId") is { } nullNodeOrbSubscriptionId && nullNodeOrbSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbSubscriptionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The line items that make up the Purchase Intent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6OptionsLineItemsItem>? LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineItems"); else _explicitNullProperties?.Remove("lineItems"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6OptionsLineItemsItem>? LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; AdditionalData?.Remove("lineItems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineItems"); else _explicitNullProperties?.Remove("lineItems"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6OptionsLineItemsItem>? _explicitNullValueLineItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6OptionsLineItemsItem> LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineItems"); else _explicitNullProperties?.Remove("lineItems"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6OptionsLineItemsItem> LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; AdditionalData?.Remove("lineItems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineItems"); else _explicitNullProperties?.Remove("lineItems"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6OptionsLineItemsItem> _explicitNullValueLineItems = default!;
 #endif
         /// <summary>The ID of the Orb customer to create</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbCustomerId { get => _explicitNullValueOrbCustomerId; set { _explicitNullValueOrbCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbCustomerId"); else _explicitNullProperties?.Remove("orbCustomerId"); } }
+        public string? OrbCustomerId { get => _explicitNullValueOrbCustomerId; set { _explicitNullValueOrbCustomerId = value; AdditionalData?.Remove("orbCustomerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbCustomerId"); else _explicitNullProperties?.Remove("orbCustomerId"); } }
         private string? _explicitNullValueOrbCustomerId = default!;
 #nullable restore
 #else
-        public string OrbCustomerId { get => _explicitNullValueOrbCustomerId; set { _explicitNullValueOrbCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbCustomerId"); else _explicitNullProperties?.Remove("orbCustomerId"); } }
+        public string OrbCustomerId { get => _explicitNullValueOrbCustomerId; set { _explicitNullValueOrbCustomerId = value; AdditionalData?.Remove("orbCustomerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbCustomerId"); else _explicitNullProperties?.Remove("orbCustomerId"); } }
         private string _explicitNullValueOrbCustomerId = default!;
 #endif
         /// <summary>The external ID of the Orb customer to create</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbExternalCustomerId { get => _explicitNullValueOrbExternalCustomerId; set { _explicitNullValueOrbExternalCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalCustomerId"); else _explicitNullProperties?.Remove("orbExternalCustomerId"); } }
+        public string? OrbExternalCustomerId { get => _explicitNullValueOrbExternalCustomerId; set { _explicitNullValueOrbExternalCustomerId = value; AdditionalData?.Remove("orbExternalCustomerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalCustomerId"); else _explicitNullProperties?.Remove("orbExternalCustomerId"); } }
         private string? _explicitNullValueOrbExternalCustomerId = default!;
 #nullable restore
 #else
-        public string OrbExternalCustomerId { get => _explicitNullValueOrbExternalCustomerId; set { _explicitNullValueOrbExternalCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalCustomerId"); else _explicitNullProperties?.Remove("orbExternalCustomerId"); } }
+        public string OrbExternalCustomerId { get => _explicitNullValueOrbExternalCustomerId; set { _explicitNullValueOrbExternalCustomerId = value; AdditionalData?.Remove("orbExternalCustomerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalCustomerId"); else _explicitNullProperties?.Remove("orbExternalCustomerId"); } }
         private string _explicitNullValueOrbExternalCustomerId = default!;
 #endif
         /// <summary>The external ID of the Orb plan to create</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbExternalPlanId { get => _explicitNullValueOrbExternalPlanId; set { _explicitNullValueOrbExternalPlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalPlanId"); else _explicitNullProperties?.Remove("orbExternalPlanId"); } }
+        public string? OrbExternalPlanId { get => _explicitNullValueOrbExternalPlanId; set { _explicitNullValueOrbExternalPlanId = value; AdditionalData?.Remove("orbExternalPlanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalPlanId"); else _explicitNullProperties?.Remove("orbExternalPlanId"); } }
         private string? _explicitNullValueOrbExternalPlanId = default!;
 #nullable restore
 #else
-        public string OrbExternalPlanId { get => _explicitNullValueOrbExternalPlanId; set { _explicitNullValueOrbExternalPlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalPlanId"); else _explicitNullProperties?.Remove("orbExternalPlanId"); } }
+        public string OrbExternalPlanId { get => _explicitNullValueOrbExternalPlanId; set { _explicitNullValueOrbExternalPlanId = value; AdditionalData?.Remove("orbExternalPlanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbExternalPlanId"); else _explicitNullProperties?.Remove("orbExternalPlanId"); } }
         private string _explicitNullValueOrbExternalPlanId = default!;
 #endif
         /// <summary>The ID of the pending subscription change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbPendingSubscriptionChangeId { get => _explicitNullValueOrbPendingSubscriptionChangeId; set { _explicitNullValueOrbPendingSubscriptionChangeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("orbPendingSubscriptionChangeId"); } }
+        public string? OrbPendingSubscriptionChangeId { get => _explicitNullValueOrbPendingSubscriptionChangeId; set { _explicitNullValueOrbPendingSubscriptionChangeId = value; AdditionalData?.Remove("orbPendingSubscriptionChangeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("orbPendingSubscriptionChangeId"); } }
         private string? _explicitNullValueOrbPendingSubscriptionChangeId = default!;
 #nullable restore
 #else
-        public string OrbPendingSubscriptionChangeId { get => _explicitNullValueOrbPendingSubscriptionChangeId; set { _explicitNullValueOrbPendingSubscriptionChangeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("orbPendingSubscriptionChangeId"); } }
+        public string OrbPendingSubscriptionChangeId { get => _explicitNullValueOrbPendingSubscriptionChangeId; set { _explicitNullValueOrbPendingSubscriptionChangeId = value; AdditionalData?.Remove("orbPendingSubscriptionChangeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPendingSubscriptionChangeId"); else _explicitNullProperties?.Remove("orbPendingSubscriptionChangeId"); } }
         private string _explicitNullValueOrbPendingSubscriptionChangeId = default!;
 #endif
         /// <summary>The ID of the Orb plan to create</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbPlanId { get => _explicitNullValueOrbPlanId; set { _explicitNullValueOrbPlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPlanId"); else _explicitNullProperties?.Remove("orbPlanId"); } }
+        public string? OrbPlanId { get => _explicitNullValueOrbPlanId; set { _explicitNullValueOrbPlanId = value; AdditionalData?.Remove("orbPlanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPlanId"); else _explicitNullProperties?.Remove("orbPlanId"); } }
         private string? _explicitNullValueOrbPlanId = default!;
 #nullable restore
 #else
-        public string OrbPlanId { get => _explicitNullValueOrbPlanId; set { _explicitNullValueOrbPlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPlanId"); else _explicitNullProperties?.Remove("orbPlanId"); } }
+        public string OrbPlanId { get => _explicitNullValueOrbPlanId; set { _explicitNullValueOrbPlanId = value; AdditionalData?.Remove("orbPlanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbPlanId"); else _explicitNullProperties?.Remove("orbPlanId"); } }
         private string _explicitNullValueOrbPlanId = default!;
 #endif
         /// <summary>The ID of the Orb subscription to create</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
+        public string? OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; AdditionalData?.Remove("orbSubscriptionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
         private string? _explicitNullValueOrbSubscriptionId = default!;
 #nullable restore
 #else
-        public string OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
+        public string OrbSubscriptionId { get => _explicitNullValueOrbSubscriptionId; set { _explicitNullValueOrbSubscriptionId = value; AdditionalData?.Remove("orbSubscriptionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orbSubscriptionId"); else _explicitNullProperties?.Remove("orbSubscriptionId"); } }
         private string _explicitNullValueOrbSubscriptionId = default!;
 #endif
         /// <summary>

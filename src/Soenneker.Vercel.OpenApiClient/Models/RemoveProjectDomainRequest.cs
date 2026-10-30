@@ -17,13 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("removeRedirects") is { } nullNodeRemoveRedirects && nullNodeRemoveRedirects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveRedirects = null;
+            if (parseNode.GetChildNode("removeRedirects") is null) { _explicitNullValueRemoveRedirects = default!; _explicitNullProperties?.Remove("removeRedirects"); }
+            else if (parseNode.GetChildNode("removeRedirects") is { } nullNodeRemoveRedirects && nullNodeRemoveRedirects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveRedirects = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to remove all domains from this project that redirect to the domain being removed.</summary>
-        public bool? RemoveRedirects { get => _explicitNullValueRemoveRedirects; set { _explicitNullValueRemoveRedirects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeRedirects"); else _explicitNullProperties?.Remove("removeRedirects"); } }
+        public bool? RemoveRedirects { get => _explicitNullValueRemoveRedirects; set { _explicitNullValueRemoveRedirects = value; AdditionalData?.Remove("removeRedirects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeRedirects"); else _explicitNullProperties?.Remove("removeRedirects"); } }
         private bool? _explicitNullValueRemoveRedirects = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RemoveProjectDomainRequest"/> and sets the default values.

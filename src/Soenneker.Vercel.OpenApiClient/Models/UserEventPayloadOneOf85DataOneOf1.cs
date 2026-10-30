@@ -17,17 +17,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("planSlug") is { } nullNodePlanSlug && nullNodePlanSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanSlug = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("planSlug") is null) { _explicitNullValuePlanSlug = default!; _explicitNullProperties?.Remove("planSlug"); }
+            else if (parseNode.GetChildNode("planSlug") is { } nullNodePlanSlug && nullNodePlanSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanSlug = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The planSlug property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1PlanSlug? PlanSlug { get => _explicitNullValuePlanSlug; set { _explicitNullValuePlanSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planSlug"); else _explicitNullProperties?.Remove("planSlug"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1PlanSlug? PlanSlug { get => _explicitNullValuePlanSlug; set { _explicitNullValuePlanSlug = value; AdditionalData?.Remove("planSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planSlug"); else _explicitNullProperties?.Remove("planSlug"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1PlanSlug? _explicitNullValuePlanSlug = default!;
         /// <summary>The reason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason? _explicitNullValueReason = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1"/> and sets the default values.
@@ -54,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "planSlug", n => { PlanSlug = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1PlanSlug>(); } },
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason>(); } },
+                { "planSlug", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1PlanSlug>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlanSlug = default; _explicitNullProperties?.Remove("planSlug"); AdditionalData["planSlug"] = unknown; } else { PlanSlug = parsed; AdditionalData.Remove("planSlug"); } } },
+                { "reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReason = default; _explicitNullProperties?.Remove("reason"); AdditionalData["reason"] = unknown; } else { Reason = parsed; AdditionalData.Remove("reason"); } } },
             };
         }
         /// <summary>

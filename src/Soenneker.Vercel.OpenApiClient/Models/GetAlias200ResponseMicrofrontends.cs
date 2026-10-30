@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("applications") is { } nullNodeApplications && nullNodeApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Applications = null;
-            if (parseNode.GetChildNode("defaultApp") is { } nullNodeDefaultApp && nullNodeDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultApp = null;
+            if (parseNode.GetChildNode("applications") is null) { _explicitNullValueApplications = default!; _explicitNullProperties?.Remove("applications"); }
+            else if (parseNode.GetChildNode("applications") is { } nullNodeApplications && nullNodeApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Applications = null;
+            if (parseNode.GetChildNode("defaultApp") is null) { _explicitNullValueDefaultApp = default!; _explicitNullProperties?.Remove("defaultApp"); }
+            else if (parseNode.GetChildNode("defaultApp") is { } nullNodeDefaultApp && nullNodeDefaultApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultApp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The applications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications? Applications { get => _explicitNullValueApplications; set { _explicitNullValueApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applications"); else _explicitNullProperties?.Remove("applications"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications? Applications { get => _explicitNullValueApplications; set { _explicitNullValueApplications = value; AdditionalData?.Remove("applications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applications"); else _explicitNullProperties?.Remove("applications"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications? _explicitNullValueApplications = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications Applications { get => _explicitNullValueApplications; set { _explicitNullValueApplications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applications"); else _explicitNullProperties?.Remove("applications"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications Applications { get => _explicitNullValueApplications; set { _explicitNullValueApplications = value; AdditionalData?.Remove("applications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applications"); else _explicitNullProperties?.Remove("applications"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsApplications _explicitNullValueApplications = default!;
 #endif
         /// <summary>The defaultApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp? DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp? DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; AdditionalData?.Remove("defaultApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp? _explicitNullValueDefaultApp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp DefaultApp { get => _explicitNullValueDefaultApp; set { _explicitNullValueDefaultApp = value; AdditionalData?.Remove("defaultApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApp"); else _explicitNullProperties?.Remove("defaultApp"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseMicrofrontendsDefaultApp _explicitNullValueDefaultApp = default!;
 #endif
         /// <summary>

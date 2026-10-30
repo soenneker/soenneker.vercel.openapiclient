@@ -17,27 +17,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("initialDelaySeconds") is { } nullNodeInitialDelaySeconds && nullNodeInitialDelaySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitialDelaySeconds = null;
-            if (parseNode.GetChildNode("retryAfterSeconds") is { } nullNodeRetryAfterSeconds && nullNodeRetryAfterSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryAfterSeconds = null;
-            if (parseNode.GetChildNode("topic") is { } nullNodeTopic && nullNodeTopic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topic = null;
+            if (parseNode.GetChildNode("initialDelaySeconds") is null) { _explicitNullValueInitialDelaySeconds = default!; _explicitNullProperties?.Remove("initialDelaySeconds"); }
+            else if (parseNode.GetChildNode("initialDelaySeconds") is { } nullNodeInitialDelaySeconds && nullNodeInitialDelaySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitialDelaySeconds = null;
+            if (parseNode.GetChildNode("retryAfterSeconds") is null) { _explicitNullValueRetryAfterSeconds = default!; _explicitNullProperties?.Remove("retryAfterSeconds"); }
+            else if (parseNode.GetChildNode("retryAfterSeconds") is { } nullNodeRetryAfterSeconds && nullNodeRetryAfterSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryAfterSeconds = null;
+            if (parseNode.GetChildNode("topic") is null) { _explicitNullValueTopic = default!; _explicitNullProperties?.Remove("topic"); }
+            else if (parseNode.GetChildNode("topic") is { } nullNodeTopic && nullNodeTopic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topic = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The initialDelaySeconds property</summary>
-        public double? InitialDelaySeconds { get => _explicitNullValueInitialDelaySeconds; set { _explicitNullValueInitialDelaySeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initialDelaySeconds"); else _explicitNullProperties?.Remove("initialDelaySeconds"); } }
+        public double? InitialDelaySeconds { get => _explicitNullValueInitialDelaySeconds; set { _explicitNullValueInitialDelaySeconds = value; AdditionalData?.Remove("initialDelaySeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initialDelaySeconds"); else _explicitNullProperties?.Remove("initialDelaySeconds"); } }
         private double? _explicitNullValueInitialDelaySeconds = default!;
         /// <summary>The retryAfterSeconds property</summary>
-        public double? RetryAfterSeconds { get => _explicitNullValueRetryAfterSeconds; set { _explicitNullValueRetryAfterSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retryAfterSeconds"); else _explicitNullProperties?.Remove("retryAfterSeconds"); } }
+        public double? RetryAfterSeconds { get => _explicitNullValueRetryAfterSeconds; set { _explicitNullValueRetryAfterSeconds = value; AdditionalData?.Remove("retryAfterSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retryAfterSeconds"); else _explicitNullProperties?.Remove("retryAfterSeconds"); } }
         private double? _explicitNullValueRetryAfterSeconds = default!;
         /// <summary>The topic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Topic { get => _explicitNullValueTopic; set { _explicitNullValueTopic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic"); else _explicitNullProperties?.Remove("topic"); } }
+        public string? Topic { get => _explicitNullValueTopic; set { _explicitNullValueTopic = value; AdditionalData?.Remove("topic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic"); else _explicitNullProperties?.Remove("topic"); } }
         private string? _explicitNullValueTopic = default!;
 #nullable restore
 #else
-        public string Topic { get => _explicitNullValueTopic; set { _explicitNullValueTopic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic"); else _explicitNullProperties?.Remove("topic"); } }
+        public string Topic { get => _explicitNullValueTopic; set { _explicitNullValueTopic = value; AdditionalData?.Remove("topic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic"); else _explicitNullProperties?.Remove("topic"); } }
         private string _explicitNullValueTopic = default!;
 #endif
         /// <summary>

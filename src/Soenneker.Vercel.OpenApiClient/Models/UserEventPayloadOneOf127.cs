@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("newTeam") is { } nullNodeNewTeam && nullNodeNewTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTeam = null;
-            if (parseNode.GetChildNode("oldTeam") is { } nullNodeOldTeam && nullNodeOldTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTeam = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("newTeam") is null) { _explicitNullValueNewTeam = default!; _explicitNullProperties?.Remove("newTeam"); }
+            else if (parseNode.GetChildNode("newTeam") is { } nullNodeNewTeam && nullNodeNewTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTeam = null;
+            if (parseNode.GetChildNode("oldTeam") is null) { _explicitNullValueOldTeam = default!; _explicitNullProperties?.Remove("oldTeam"); }
+            else if (parseNode.GetChildNode("oldTeam") is { } nullNodeOldTeam && nullNodeOldTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTeam = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The newTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127NewTeam? NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127NewTeam? NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; AdditionalData?.Remove("newTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127NewTeam? _explicitNullValueNewTeam = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127NewTeam NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127NewTeam NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; AdditionalData?.Remove("newTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127NewTeam _explicitNullValueNewTeam = default!;
 #endif
         /// <summary>The oldTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127OldTeam? OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127OldTeam? OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; AdditionalData?.Remove("oldTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127OldTeam? _explicitNullValueOldTeam = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127OldTeam OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127OldTeam OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; AdditionalData?.Remove("oldTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127OldTeam _explicitNullValueOldTeam = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

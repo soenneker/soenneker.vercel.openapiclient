@@ -17,97 +17,107 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("dependencyTaskDefinitionIds") is { } nullNodeDependencyTaskDefinitionIds && nullNodeDependencyTaskDefinitionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependencyTaskDefinitionIds = null;
-            if (parseNode.GetChildNode("invocationAttempt") is { } nullNodeInvocationAttempt && nullNodeInvocationAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationAttempt = null;
-            if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
-            if (parseNode.GetChildNode("jobDefinitionId") is { } nullNodeJobDefinitionId && nullNodeJobDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDefinitionId = null;
-            if (parseNode.GetChildNode("jobRunAttempt") is { } nullNodeJobRunAttempt && nullNodeJobRunAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobRunAttempt = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
-            if (parseNode.GetChildNode("packageDirectory") is { } nullNodePackageDirectory && nullNodePackageDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageDirectory = null;
-            if (parseNode.GetChildNode("taskDefinitionId") is { } nullNodeTaskDefinitionId && nullNodeTaskDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskDefinitionId = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("dependencyTaskDefinitionIds") is null) { _explicitNullValueDependencyTaskDefinitionIds = default!; _explicitNullProperties?.Remove("dependencyTaskDefinitionIds"); }
+            else if (parseNode.GetChildNode("dependencyTaskDefinitionIds") is { } nullNodeDependencyTaskDefinitionIds && nullNodeDependencyTaskDefinitionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependencyTaskDefinitionIds = null;
+            if (parseNode.GetChildNode("invocationAttempt") is null) { _explicitNullValueInvocationAttempt = default!; _explicitNullProperties?.Remove("invocationAttempt"); }
+            else if (parseNode.GetChildNode("invocationAttempt") is { } nullNodeInvocationAttempt && nullNodeInvocationAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationAttempt = null;
+            if (parseNode.GetChildNode("invocationId") is null) { _explicitNullValueInvocationId = default!; _explicitNullProperties?.Remove("invocationId"); }
+            else if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
+            if (parseNode.GetChildNode("jobDefinitionId") is null) { _explicitNullValueJobDefinitionId = default!; _explicitNullProperties?.Remove("jobDefinitionId"); }
+            else if (parseNode.GetChildNode("jobDefinitionId") is { } nullNodeJobDefinitionId && nullNodeJobDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDefinitionId = null;
+            if (parseNode.GetChildNode("jobRunAttempt") is null) { _explicitNullValueJobRunAttempt = default!; _explicitNullProperties?.Remove("jobRunAttempt"); }
+            else if (parseNode.GetChildNode("jobRunAttempt") is { } nullNodeJobRunAttempt && nullNodeJobRunAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobRunAttempt = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("operation") is null) { _explicitNullValueOperation = default!; _explicitNullProperties?.Remove("operation"); }
+            else if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
+            if (parseNode.GetChildNode("packageDirectory") is null) { _explicitNullValuePackageDirectory = default!; _explicitNullProperties?.Remove("packageDirectory"); }
+            else if (parseNode.GetChildNode("packageDirectory") is { } nullNodePackageDirectory && nullNodePackageDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageDirectory = null;
+            if (parseNode.GetChildNode("taskDefinitionId") is null) { _explicitNullValueTaskDefinitionId = default!; _explicitNullProperties?.Remove("taskDefinitionId"); }
+            else if (parseNode.GetChildNode("taskDefinitionId") is { } nullNodeTaskDefinitionId && nullNodeTaskDefinitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskDefinitionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
-        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private double? _explicitNullValueCreatedAt = default!;
         /// <summary>The dependencyTaskDefinitionIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DependencyTaskDefinitionIds { get => _explicitNullValueDependencyTaskDefinitionIds; set { _explicitNullValueDependencyTaskDefinitionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependencyTaskDefinitionIds"); else _explicitNullProperties?.Remove("dependencyTaskDefinitionIds"); } }
+        public List<string>? DependencyTaskDefinitionIds { get => _explicitNullValueDependencyTaskDefinitionIds; set { _explicitNullValueDependencyTaskDefinitionIds = value; AdditionalData?.Remove("dependencyTaskDefinitionIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependencyTaskDefinitionIds"); else _explicitNullProperties?.Remove("dependencyTaskDefinitionIds"); } }
         private List<string>? _explicitNullValueDependencyTaskDefinitionIds = default!;
 #nullable restore
 #else
-        public List<string> DependencyTaskDefinitionIds { get => _explicitNullValueDependencyTaskDefinitionIds; set { _explicitNullValueDependencyTaskDefinitionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependencyTaskDefinitionIds"); else _explicitNullProperties?.Remove("dependencyTaskDefinitionIds"); } }
+        public List<string> DependencyTaskDefinitionIds { get => _explicitNullValueDependencyTaskDefinitionIds; set { _explicitNullValueDependencyTaskDefinitionIds = value; AdditionalData?.Remove("dependencyTaskDefinitionIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependencyTaskDefinitionIds"); else _explicitNullProperties?.Remove("dependencyTaskDefinitionIds"); } }
         private List<string> _explicitNullValueDependencyTaskDefinitionIds = default!;
 #endif
         /// <summary>The invocationAttempt property</summary>
-        public double? InvocationAttempt { get => _explicitNullValueInvocationAttempt; set { _explicitNullValueInvocationAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationAttempt"); else _explicitNullProperties?.Remove("invocationAttempt"); } }
+        public double? InvocationAttempt { get => _explicitNullValueInvocationAttempt; set { _explicitNullValueInvocationAttempt = value; AdditionalData?.Remove("invocationAttempt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationAttempt"); else _explicitNullProperties?.Remove("invocationAttempt"); } }
         private double? _explicitNullValueInvocationAttempt = default!;
         /// <summary>The invocationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        public string? InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; AdditionalData?.Remove("invocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
         private string? _explicitNullValueInvocationId = default!;
 #nullable restore
 #else
-        public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
+        public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; AdditionalData?.Remove("invocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
         private string _explicitNullValueInvocationId = default!;
 #endif
         /// <summary>The jobDefinitionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
+        public string? JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; AdditionalData?.Remove("jobDefinitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
         private string? _explicitNullValueJobDefinitionId = default!;
 #nullable restore
 #else
-        public string JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
+        public string JobDefinitionId { get => _explicitNullValueJobDefinitionId; set { _explicitNullValueJobDefinitionId = value; AdditionalData?.Remove("jobDefinitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDefinitionId"); else _explicitNullProperties?.Remove("jobDefinitionId"); } }
         private string _explicitNullValueJobDefinitionId = default!;
 #endif
         /// <summary>The jobRunAttempt property</summary>
-        public double? JobRunAttempt { get => _explicitNullValueJobRunAttempt; set { _explicitNullValueJobRunAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRunAttempt"); else _explicitNullProperties?.Remove("jobRunAttempt"); } }
+        public double? JobRunAttempt { get => _explicitNullValueJobRunAttempt; set { _explicitNullValueJobRunAttempt = value; AdditionalData?.Remove("jobRunAttempt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRunAttempt"); else _explicitNullProperties?.Remove("jobRunAttempt"); } }
         private double? _explicitNullValueJobRunAttempt = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The operation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; AdditionalData?.Remove("operation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation? _explicitNullValueOperation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; AdditionalData?.Remove("operation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ListVercelCiTaskDefinitions200ResponseTaskDefinitionsItemOperation _explicitNullValueOperation = default!;
 #endif
         /// <summary>The packageDirectory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageDirectory { get => _explicitNullValuePackageDirectory; set { _explicitNullValuePackageDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageDirectory"); else _explicitNullProperties?.Remove("packageDirectory"); } }
+        public string? PackageDirectory { get => _explicitNullValuePackageDirectory; set { _explicitNullValuePackageDirectory = value; AdditionalData?.Remove("packageDirectory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageDirectory"); else _explicitNullProperties?.Remove("packageDirectory"); } }
         private string? _explicitNullValuePackageDirectory = default!;
 #nullable restore
 #else
-        public string PackageDirectory { get => _explicitNullValuePackageDirectory; set { _explicitNullValuePackageDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageDirectory"); else _explicitNullProperties?.Remove("packageDirectory"); } }
+        public string PackageDirectory { get => _explicitNullValuePackageDirectory; set { _explicitNullValuePackageDirectory = value; AdditionalData?.Remove("packageDirectory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageDirectory"); else _explicitNullProperties?.Remove("packageDirectory"); } }
         private string _explicitNullValuePackageDirectory = default!;
 #endif
         /// <summary>The taskDefinitionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaskDefinitionId { get => _explicitNullValueTaskDefinitionId; set { _explicitNullValueTaskDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitionId"); else _explicitNullProperties?.Remove("taskDefinitionId"); } }
+        public string? TaskDefinitionId { get => _explicitNullValueTaskDefinitionId; set { _explicitNullValueTaskDefinitionId = value; AdditionalData?.Remove("taskDefinitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitionId"); else _explicitNullProperties?.Remove("taskDefinitionId"); } }
         private string? _explicitNullValueTaskDefinitionId = default!;
 #nullable restore
 #else
-        public string TaskDefinitionId { get => _explicitNullValueTaskDefinitionId; set { _explicitNullValueTaskDefinitionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitionId"); else _explicitNullProperties?.Remove("taskDefinitionId"); } }
+        public string TaskDefinitionId { get => _explicitNullValueTaskDefinitionId; set { _explicitNullValueTaskDefinitionId = value; AdditionalData?.Remove("taskDefinitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskDefinitionId"); else _explicitNullProperties?.Remove("taskDefinitionId"); } }
         private string _explicitNullValueTaskDefinitionId = default!;
 #endif
         /// <summary>

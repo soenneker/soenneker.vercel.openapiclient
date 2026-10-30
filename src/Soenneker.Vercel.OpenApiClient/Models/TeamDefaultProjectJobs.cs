@@ -18,10 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("flag-definitions-present") is { } nullNodeFlagDefinitionsPresent && nullNodeFlagDefinitionsPresent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagDefinitionsPresent = null;
-            if (parseNode.GetChildNode("lint") is { } nullNodeLint && nullNodeLint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lint = null;
-            if (parseNode.GetChildNode("mfe-config-present") is { } nullNodeMfeConfigPresent && nullNodeMfeConfigPresent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfeConfigPresent = null;
-            if (parseNode.GetChildNode("typecheck") is { } nullNodeTypecheck && nullNodeTypecheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Typecheck = null;
+            if (parseNode.GetChildNode("flag-definitions-present") is null) { _explicitNullValueFlagDefinitionsPresent = default!; _explicitNullProperties?.Remove("flag-definitions-present"); }
+            else if (parseNode.GetChildNode("flag-definitions-present") is { } nullNodeFlagDefinitionsPresent && nullNodeFlagDefinitionsPresent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagDefinitionsPresent = null;
+            if (parseNode.GetChildNode("lint") is null) { _explicitNullValueLint = default!; _explicitNullProperties?.Remove("lint"); }
+            else if (parseNode.GetChildNode("lint") is { } nullNodeLint && nullNodeLint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lint = null;
+            if (parseNode.GetChildNode("mfe-config-present") is null) { _explicitNullValueMfeConfigPresent = default!; _explicitNullProperties?.Remove("mfe-config-present"); }
+            else if (parseNode.GetChildNode("mfe-config-present") is { } nullNodeMfeConfigPresent && nullNodeMfeConfigPresent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfeConfigPresent = null;
+            if (parseNode.GetChildNode("typecheck") is null) { _explicitNullValueTypecheck = default!; _explicitNullProperties?.Remove("typecheck"); }
+            else if (parseNode.GetChildNode("typecheck") is { } nullNodeTypecheck && nullNodeTypecheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Typecheck = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Default job configuration applied to new projects created in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent? FlagDefinitionsPresent { get => _explicitNullValueFlagDefinitionsPresent; set { _explicitNullValueFlagDefinitionsPresent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag-definitions-present"); else _explicitNullProperties?.Remove("flag-definitions-present"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent? FlagDefinitionsPresent { get => _explicitNullValueFlagDefinitionsPresent; set { _explicitNullValueFlagDefinitionsPresent = value; AdditionalData?.Remove("flag-definitions-present"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag-definitions-present"); else _explicitNullProperties?.Remove("flag-definitions-present"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent? _explicitNullValueFlagDefinitionsPresent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent FlagDefinitionsPresent { get => _explicitNullValueFlagDefinitionsPresent; set { _explicitNullValueFlagDefinitionsPresent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag-definitions-present"); else _explicitNullProperties?.Remove("flag-definitions-present"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent FlagDefinitionsPresent { get => _explicitNullValueFlagDefinitionsPresent; set { _explicitNullValueFlagDefinitionsPresent = value; AdditionalData?.Remove("flag-definitions-present"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag-definitions-present"); else _explicitNullProperties?.Remove("flag-definitions-present"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent _explicitNullValueFlagDefinitionsPresent = default!;
 #endif
         /// <summary>Default job configuration applied to new projects created in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint? Lint { get => _explicitNullValueLint; set { _explicitNullValueLint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint"); else _explicitNullProperties?.Remove("lint"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint? Lint { get => _explicitNullValueLint; set { _explicitNullValueLint = value; AdditionalData?.Remove("lint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint"); else _explicitNullProperties?.Remove("lint"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint? _explicitNullValueLint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint Lint { get => _explicitNullValueLint; set { _explicitNullValueLint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint"); else _explicitNullProperties?.Remove("lint"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint Lint { get => _explicitNullValueLint; set { _explicitNullValueLint = value; AdditionalData?.Remove("lint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint"); else _explicitNullProperties?.Remove("lint"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint _explicitNullValueLint = default!;
 #endif
         /// <summary>Default job configuration applied to new projects created in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent? MfeConfigPresent { get => _explicitNullValueMfeConfigPresent; set { _explicitNullValueMfeConfigPresent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfe-config-present"); else _explicitNullProperties?.Remove("mfe-config-present"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent? MfeConfigPresent { get => _explicitNullValueMfeConfigPresent; set { _explicitNullValueMfeConfigPresent = value; AdditionalData?.Remove("mfe-config-present"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfe-config-present"); else _explicitNullProperties?.Remove("mfe-config-present"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent? _explicitNullValueMfeConfigPresent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent MfeConfigPresent { get => _explicitNullValueMfeConfigPresent; set { _explicitNullValueMfeConfigPresent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfe-config-present"); else _explicitNullProperties?.Remove("mfe-config-present"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent MfeConfigPresent { get => _explicitNullValueMfeConfigPresent; set { _explicitNullValueMfeConfigPresent = value; AdditionalData?.Remove("mfe-config-present"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfe-config-present"); else _explicitNullProperties?.Remove("mfe-config-present"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent _explicitNullValueMfeConfigPresent = default!;
 #endif
         /// <summary>Default job configuration applied to new projects created in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck? Typecheck { get => _explicitNullValueTypecheck; set { _explicitNullValueTypecheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typecheck"); else _explicitNullProperties?.Remove("typecheck"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck? Typecheck { get => _explicitNullValueTypecheck; set { _explicitNullValueTypecheck = value; AdditionalData?.Remove("typecheck"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typecheck"); else _explicitNullProperties?.Remove("typecheck"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck? _explicitNullValueTypecheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck Typecheck { get => _explicitNullValueTypecheck; set { _explicitNullValueTypecheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typecheck"); else _explicitNullProperties?.Remove("typecheck"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck Typecheck { get => _explicitNullValueTypecheck; set { _explicitNullValueTypecheck = value; AdditionalData?.Remove("typecheck"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typecheck"); else _explicitNullProperties?.Remove("typecheck"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck _explicitNullValueTypecheck = default!;
 #endif
         /// <summary>

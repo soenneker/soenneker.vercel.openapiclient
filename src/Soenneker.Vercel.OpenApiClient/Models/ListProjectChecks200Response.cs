@@ -17,8 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("availableNativeChecks") is { } nullNodeAvailableNativeChecks && nullNodeAvailableNativeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableNativeChecks = null;
-            if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
+            if (parseNode.GetChildNode("availableNativeChecks") is null) { _explicitNullValueAvailableNativeChecks = default!; _explicitNullProperties?.Remove("availableNativeChecks"); }
+            else if (parseNode.GetChildNode("availableNativeChecks") is { } nullNodeAvailableNativeChecks && nullNodeAvailableNativeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableNativeChecks = null;
+            if (parseNode.GetChildNode("checks") is null) { _explicitNullValueChecks = default!; _explicitNullProperties?.Remove("checks"); }
+            else if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The availableNativeChecks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableNativeChecks { get => _explicitNullValueAvailableNativeChecks; set { _explicitNullValueAvailableNativeChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableNativeChecks"); else _explicitNullProperties?.Remove("availableNativeChecks"); } }
+        public List<string>? AvailableNativeChecks { get => _explicitNullValueAvailableNativeChecks; set { _explicitNullValueAvailableNativeChecks = value; AdditionalData?.Remove("availableNativeChecks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableNativeChecks"); else _explicitNullProperties?.Remove("availableNativeChecks"); } }
         private List<string>? _explicitNullValueAvailableNativeChecks = default!;
 #nullable restore
 #else
-        public List<string> AvailableNativeChecks { get => _explicitNullValueAvailableNativeChecks; set { _explicitNullValueAvailableNativeChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableNativeChecks"); else _explicitNullProperties?.Remove("availableNativeChecks"); } }
+        public List<string> AvailableNativeChecks { get => _explicitNullValueAvailableNativeChecks; set { _explicitNullValueAvailableNativeChecks = value; AdditionalData?.Remove("availableNativeChecks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableNativeChecks"); else _explicitNullProperties?.Remove("availableNativeChecks"); } }
         private List<string> _explicitNullValueAvailableNativeChecks = default!;
 #endif
         /// <summary>The checks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItem>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItem>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItem>? _explicitNullValueChecks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItem> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItem> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecks200ResponseChecksItem> _explicitNullValueChecks = default!;
 #endif
         /// <summary>

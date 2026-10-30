@@ -17,9 +17,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
-            if (parseNode.GetChildNode("scheduleNames") is { } nullNodeScheduleNames && nullNodeScheduleNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleNames = null;
-            if (parseNode.GetChildNode("sourceFile") is { } nullNodeSourceFile && nullNodeSourceFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFile = null;
+            if (parseNode.GetChildNode("entrypoint") is null) { _explicitNullValueEntrypoint = default!; _explicitNullProperties?.Remove("entrypoint"); }
+            else if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
+            if (parseNode.GetChildNode("scheduleNames") is null) { _explicitNullValueScheduleNames = default!; _explicitNullProperties?.Remove("scheduleNames"); }
+            else if (parseNode.GetChildNode("scheduleNames") is { } nullNodeScheduleNames && nullNodeScheduleNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleNames = null;
+            if (parseNode.GetChildNode("sourceFile") is null) { _explicitNullValueSourceFile = default!; _explicitNullProperties?.Remove("sourceFile"); }
+            else if (parseNode.GetChildNode("sourceFile") is { } nullNodeSourceFile && nullNodeSourceFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFile = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Runtime-specific entrypoint locator from `vercel.json`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        public string? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; AdditionalData?.Remove("entrypoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
         private string? _explicitNullValueEntrypoint = default!;
 #nullable restore
 #else
-        public string Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        public string Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; AdditionalData?.Remove("entrypoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
         private string _explicitNullValueEntrypoint = default!;
 #endif
         /// <summary>Names of the schedules that dispatch to this entrypoint, in config order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScheduleNames { get => _explicitNullValueScheduleNames; set { _explicitNullValueScheduleNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleNames"); else _explicitNullProperties?.Remove("scheduleNames"); } }
+        public List<string>? ScheduleNames { get => _explicitNullValueScheduleNames; set { _explicitNullValueScheduleNames = value; AdditionalData?.Remove("scheduleNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleNames"); else _explicitNullProperties?.Remove("scheduleNames"); } }
         private List<string>? _explicitNullValueScheduleNames = default!;
 #nullable restore
 #else
-        public List<string> ScheduleNames { get => _explicitNullValueScheduleNames; set { _explicitNullValueScheduleNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleNames"); else _explicitNullProperties?.Remove("scheduleNames"); } }
+        public List<string> ScheduleNames { get => _explicitNullValueScheduleNames; set { _explicitNullValueScheduleNames = value; AdditionalData?.Remove("scheduleNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleNames"); else _explicitNullProperties?.Remove("scheduleNames"); } }
         private List<string> _explicitNullValueScheduleNames = default!;
 #endif
         /// <summary>Project-relative source file that contains the entrypoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceFile"); else _explicitNullProperties?.Remove("sourceFile"); } }
+        public string? SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; AdditionalData?.Remove("sourceFile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceFile"); else _explicitNullProperties?.Remove("sourceFile"); } }
         private string? _explicitNullValueSourceFile = default!;
 #nullable restore
 #else
-        public string SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceFile"); else _explicitNullProperties?.Remove("sourceFile"); } }
+        public string SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; AdditionalData?.Remove("sourceFile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceFile"); else _explicitNullProperties?.Remove("sourceFile"); } }
         private string _explicitNullValueSourceFile = default!;
 #endif
         /// <summary>

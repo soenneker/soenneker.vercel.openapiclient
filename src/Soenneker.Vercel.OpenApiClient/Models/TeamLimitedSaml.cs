@@ -18,9 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connection") is { } nullNodeConnection && nullNodeConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connection = null;
-            if (parseNode.GetChildNode("directory") is { } nullNodeDirectory && nullNodeDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Directory = null;
-            if (parseNode.GetChildNode("enforced") is { } nullNodeEnforced && nullNodeEnforced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enforced = null;
+            if (parseNode.GetChildNode("connection") is null) { _explicitNullValueConnection = default!; _explicitNullProperties?.Remove("connection"); }
+            else if (parseNode.GetChildNode("connection") is { } nullNodeConnection && nullNodeConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connection = null;
+            if (parseNode.GetChildNode("directory") is null) { _explicitNullValueDirectory = default!; _explicitNullProperties?.Remove("directory"); }
+            else if (parseNode.GetChildNode("directory") is { } nullNodeDirectory && nullNodeDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Directory = null;
+            if (parseNode.GetChildNode("enforced") is null) { _explicitNullValueEnforced = default!; _explicitNullProperties?.Remove("enforced"); }
+            else if (parseNode.GetChildNode("enforced") is { } nullNodeEnforced && nullNodeEnforced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enforced = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Information for the SAML Single Sign-On configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlConnection? Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection"); else _explicitNullProperties?.Remove("connection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlConnection? Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; AdditionalData?.Remove("connection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection"); else _explicitNullProperties?.Remove("connection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlConnection? _explicitNullValueConnection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlConnection Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection"); else _explicitNullProperties?.Remove("connection"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlConnection Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; AdditionalData?.Remove("connection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection"); else _explicitNullProperties?.Remove("connection"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlConnection _explicitNullValueConnection = default!;
 #endif
         /// <summary>Information for the Directory Sync configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlDirectory? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlDirectory? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; AdditionalData?.Remove("directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlDirectory? _explicitNullValueDirectory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlDirectory Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlDirectory Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; AdditionalData?.Remove("directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSamlDirectory _explicitNullValueDirectory = default!;
 #endif
         /// <summary>When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team&apos;s SAML Single Sign-On provider.</summary>
-        public bool? Enforced { get => _explicitNullValueEnforced; set { _explicitNullValueEnforced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforced"); else _explicitNullProperties?.Remove("enforced"); } }
+        public bool? Enforced { get => _explicitNullValueEnforced; set { _explicitNullValueEnforced = value; AdditionalData?.Remove("enforced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforced"); else _explicitNullProperties?.Remove("enforced"); } }
         private bool? _explicitNullValueEnforced = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSaml"/> and sets the default values.
