@@ -61323,12 +61323,13 @@
           "findingId",
           "findingNumber",
           "occurredAt",
-          "projectId",
-          "projectName",
           "sessionId",
           "sessionKind",
           "severity",
           "surface",
+          "targetId",
+          "targetKind",
+          "targetName",
           "vulnerabilityClass"
         ],
         "type": "object",
@@ -61355,10 +61356,14 @@
             "nullable": true
           },
           "deploymentId": {
-            "type": "string"
+            "type": "string",
+            "description": "Null for a repository\u0027s findings and those of an undeployed commit.",
+            "nullable": true
           },
           "environment": {
-            "type": "string"
+            "type": "string",
+            "description": "Null for a repository\u0027s findings.",
+            "nullable": true
           },
           "findingId": {
             "type": "string"
@@ -61366,13 +61371,16 @@
           "findingNumber": {
             "type": "number"
           },
-          "projectId": {
-            "type": "string"
-          },
-          "projectName": {
-            "type": "string"
-          },
           "severity": {
+            "type": "string"
+          },
+          "targetId": {
+            "type": "string"
+          },
+          "targetKind": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf407TargetKind"
+          },
+          "targetName": {
             "type": "string"
           },
           "vulnerabilityClass": {
@@ -277726,6 +277734,28 @@
             {
               "value": "user",
               "name": "User"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf407TargetKind": {
+        "enum": [
+          "project",
+          "repository"
+        ],
+        "type": "string",
+        "description": "A repository\u0027s findings are in code no project runs.",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf407TargetKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "repository",
+              "name": "Repository"
             }
           ]
         }

@@ -32,10 +32,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("findingNumber") is { } nullNodeFindingNumber && nullNodeFindingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingNumber = null;
             if (parseNode.GetChildNode("occurredAt") is null) { _explicitNullValueOccurredAt = default!; _explicitNullProperties?.Remove("occurredAt"); }
             else if (parseNode.GetChildNode("occurredAt") is { } nullNodeOccurredAt && nullNodeOccurredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OccurredAt = null;
-            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
-            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
             if (parseNode.GetChildNode("sessionId") is null) { _explicitNullValueSessionId = default!; _explicitNullProperties?.Remove("sessionId"); }
             else if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
             if (parseNode.GetChildNode("sessionKind") is null) { _explicitNullValueSessionKind = default!; _explicitNullProperties?.Remove("sessionKind"); }
@@ -44,6 +40,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
             if (parseNode.GetChildNode("surface") is null) { _explicitNullValueSurface = default!; _explicitNullProperties?.Remove("surface"); }
             else if (parseNode.GetChildNode("surface") is { } nullNodeSurface && nullNodeSurface.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Surface = null;
+            if (parseNode.GetChildNode("targetId") is null) { _explicitNullValueTargetId = default!; _explicitNullProperties?.Remove("targetId"); }
+            else if (parseNode.GetChildNode("targetId") is { } nullNodeTargetId && nullNodeTargetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetId = null;
+            if (parseNode.GetChildNode("targetKind") is null) { _explicitNullValueTargetKind = default!; _explicitNullProperties?.Remove("targetKind"); }
+            else if (parseNode.GetChildNode("targetKind") is { } nullNodeTargetKind && nullNodeTargetKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetKind = null;
+            if (parseNode.GetChildNode("targetName") is null) { _explicitNullValueTargetName = default!; _explicitNullProperties?.Remove("targetName"); }
+            else if (parseNode.GetChildNode("targetName") is { } nullNodeTargetName && nullNodeTargetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetName = null;
             if (parseNode.GetChildNode("vulnerabilityClass") is null) { _explicitNullValueVulnerabilityClass = default!; _explicitNullProperties?.Remove("vulnerabilityClass"); }
             else if (parseNode.GetChildNode("vulnerabilityClass") is { } nullNodeVulnerabilityClass && nullNodeVulnerabilityClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VulnerabilityClass = null;
         }
@@ -60,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string BranchRef { get => _explicitNullValueBranchRef; set { _explicitNullValueBranchRef = value; AdditionalData?.Remove("branchRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchRef"); else _explicitNullProperties?.Remove("branchRef"); } }
         private string _explicitNullValueBranchRef = default!;
 #endif
-        /// <summary>The deploymentId property</summary>
+        /// <summary>Null for a repository&apos;s findings and those of an undeployed commit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
@@ -70,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
         private string _explicitNullValueDeploymentId = default!;
 #endif
-        /// <summary>The environment property</summary>
+        /// <summary>Null for a repository&apos;s findings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
@@ -106,26 +108,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The occurredAt property</summary>
         public double? OccurredAt { get => _explicitNullValueOccurredAt; set { _explicitNullValueOccurredAt = value; AdditionalData?.Remove("occurredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurredAt"); else _explicitNullProperties?.Remove("occurredAt"); } }
         private double? _explicitNullValueOccurredAt = default!;
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string? _explicitNullValueProjectId = default!;
-#nullable restore
-#else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string _explicitNullValueProjectId = default!;
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
-#nullable restore
-#else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
-#endif
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +147,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Surface { get => _explicitNullValueSurface; set { _explicitNullValueSurface = value; AdditionalData?.Remove("surface"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surface"); else _explicitNullProperties?.Remove("surface"); } }
         private string _explicitNullValueSurface = default!;
+#endif
+        /// <summary>The targetId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetId { get => _explicitNullValueTargetId; set { _explicitNullValueTargetId = value; AdditionalData?.Remove("targetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetId"); else _explicitNullProperties?.Remove("targetId"); } }
+        private string? _explicitNullValueTargetId = default!;
+#nullable restore
+#else
+        public string TargetId { get => _explicitNullValueTargetId; set { _explicitNullValueTargetId = value; AdditionalData?.Remove("targetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetId"); else _explicitNullProperties?.Remove("targetId"); } }
+        private string _explicitNullValueTargetId = default!;
+#endif
+        /// <summary>A repository&apos;s findings are in code no project runs.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407TargetKind? TargetKind { get => _explicitNullValueTargetKind; set { _explicitNullValueTargetKind = value; AdditionalData?.Remove("targetKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetKind"); else _explicitNullProperties?.Remove("targetKind"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407TargetKind? _explicitNullValueTargetKind = default!;
+        /// <summary>The targetName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetName { get => _explicitNullValueTargetName; set { _explicitNullValueTargetName = value; AdditionalData?.Remove("targetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetName"); else _explicitNullProperties?.Remove("targetName"); } }
+        private string? _explicitNullValueTargetName = default!;
+#nullable restore
+#else
+        public string TargetName { get => _explicitNullValueTargetName; set { _explicitNullValueTargetName = value; AdditionalData?.Remove("targetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetName"); else _explicitNullProperties?.Remove("targetName"); } }
+        private string _explicitNullValueTargetName = default!;
 #endif
         /// <summary>The vulnerabilityClass property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -208,12 +213,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "findingId", n => { FindingId = n.GetStringValue(); } },
                 { "findingNumber", n => { FindingNumber = n.GetDoubleValue(); } },
                 { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
                 { "severity", n => { Severity = n.GetStringValue(); } },
                 { "surface", n => { Surface = n.GetStringValue(); } },
+                { "targetId", n => { TargetId = n.GetStringValue(); } },
+                { "targetKind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407TargetKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTargetKind = default; _explicitNullProperties?.Remove("targetKind"); AdditionalData["targetKind"] = unknown; } else { TargetKind = parsed; AdditionalData.Remove("targetKind"); } } },
+                { "targetName", n => { TargetName = n.GetStringValue(); } },
                 { "vulnerabilityClass", n => { VulnerabilityClass = n.GetStringValue(); } },
             };
         }
@@ -231,12 +237,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("findingId", FindingId);
             writer.WriteDoubleValue("findingNumber", FindingNumber);
             writer.WriteDoubleValue("occurredAt", OccurredAt);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteStringValue("sessionKind", SessionKind);
             writer.WriteStringValue("severity", Severity);
             writer.WriteStringValue("surface", Surface);
+            writer.WriteStringValue("targetId", TargetId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407TargetKind>("targetKind", TargetKind);
+            writer.WriteStringValue("targetName", TargetName);
             writer.WriteStringValue("vulnerabilityClass", VulnerabilityClass);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
