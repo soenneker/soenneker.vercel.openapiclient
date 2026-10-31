@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9Branch"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateRecordRequest : IComposedTypeWrapper, IParsable
@@ -18,85 +18,85 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1? CreateRecordRequestAnyOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10Branch? CreateRecordRequestAnyOf10Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1 CreateRecordRequestAnyOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10Branch CreateRecordRequestAnyOf10Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10? CreateRecordRequestAnyOf10 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1Branch? CreateRecordRequestAnyOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10 CreateRecordRequestAnyOf10 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1Branch CreateRecordRequestAnyOf1Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2? CreateRecordRequestAnyOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2Branch? CreateRecordRequestAnyOf2Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2 CreateRecordRequestAnyOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2Branch CreateRecordRequestAnyOf2Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3? CreateRecordRequestAnyOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Branch? CreateRecordRequestAnyOf3Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3 CreateRecordRequestAnyOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Branch CreateRecordRequestAnyOf3Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4? CreateRecordRequestAnyOf4 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4Branch? CreateRecordRequestAnyOf4Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4 CreateRecordRequestAnyOf4 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4Branch CreateRecordRequestAnyOf4Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5? CreateRecordRequestAnyOf5 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5Branch? CreateRecordRequestAnyOf5Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5 CreateRecordRequestAnyOf5 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5Branch CreateRecordRequestAnyOf5Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6? CreateRecordRequestAnyOf6 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6Branch? CreateRecordRequestAnyOf6Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6 CreateRecordRequestAnyOf6 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6Branch CreateRecordRequestAnyOf6Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7? CreateRecordRequestAnyOf7 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Branch? CreateRecordRequestAnyOf7Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7 CreateRecordRequestAnyOf7 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Branch CreateRecordRequestAnyOf7Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8? CreateRecordRequestAnyOf8 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Branch? CreateRecordRequestAnyOf8Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8 CreateRecordRequestAnyOf8 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Branch CreateRecordRequestAnyOf8Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9? CreateRecordRequestAnyOf9 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9Branch? CreateRecordRequestAnyOf9Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9 CreateRecordRequestAnyOf9 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9Branch CreateRecordRequestAnyOf9Branch { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -108,11 +108,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequest();
-            if("A".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("HTTPS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("HTTPS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("A".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
@@ -171,18 +171,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if (matchesUnionBranch7) matchingUnionBranches++;
             if (matchesUnionBranch8) matchingUnionBranches++;
             if (matchesUnionBranch9) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.CreateRecordRequestAnyOf1 == null && result.CreateRecordRequestAnyOf10 == null && result.CreateRecordRequestAnyOf2 == null && result.CreateRecordRequestAnyOf3 == null && result.CreateRecordRequestAnyOf4 == null && result.CreateRecordRequestAnyOf5 == null && result.CreateRecordRequestAnyOf6 == null && result.CreateRecordRequestAnyOf7 == null && result.CreateRecordRequestAnyOf8 == null && result.CreateRecordRequestAnyOf9 == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch3 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch4 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch5 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch6 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch7 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf8 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch8 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf9 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch9 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf10 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10(), parseNode);
-            if (result.CreateRecordRequestAnyOf1 == null && result.CreateRecordRequestAnyOf10 == null && result.CreateRecordRequestAnyOf2 == null && result.CreateRecordRequestAnyOf3 == null && result.CreateRecordRequestAnyOf4 == null && result.CreateRecordRequestAnyOf5 == null && result.CreateRecordRequestAnyOf6 == null && result.CreateRecordRequestAnyOf7 == null && result.CreateRecordRequestAnyOf8 == null && result.CreateRecordRequestAnyOf9 == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.CreateRecordRequestAnyOf10Branch == null && result.CreateRecordRequestAnyOf1Branch == null && result.CreateRecordRequestAnyOf2Branch == null && result.CreateRecordRequestAnyOf3Branch == null && result.CreateRecordRequestAnyOf4Branch == null && result.CreateRecordRequestAnyOf5Branch == null && result.CreateRecordRequestAnyOf6Branch == null && result.CreateRecordRequestAnyOf7Branch == null && result.CreateRecordRequestAnyOf8Branch == null && result.CreateRecordRequestAnyOf9Branch == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf3Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch3 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf4Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch4 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf5Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch5 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf6Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch6 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf7Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch7 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf8Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch8 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf9Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch9 && matchingUnionBranches == 1) result.CreateRecordRequestAnyOf10Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10Branch(), parseNode);
+            if (result.CreateRecordRequestAnyOf10Branch == null && result.CreateRecordRequestAnyOf1Branch == null && result.CreateRecordRequestAnyOf2Branch == null && result.CreateRecordRequestAnyOf3Branch == null && result.CreateRecordRequestAnyOf4Branch == null && result.CreateRecordRequestAnyOf5Branch == null && result.CreateRecordRequestAnyOf6Branch == null && result.CreateRecordRequestAnyOf7Branch == null && result.CreateRecordRequestAnyOf8Branch == null && result.CreateRecordRequestAnyOf9Branch == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -193,45 +193,45 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(CreateRecordRequestAnyOf1 != null)
+            if(CreateRecordRequestAnyOf10Branch != null)
             {
-                return CreateRecordRequestAnyOf1.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf10Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf10 != null)
+            else if(CreateRecordRequestAnyOf1Branch != null)
             {
-                return CreateRecordRequestAnyOf10.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf1Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf2 != null)
+            else if(CreateRecordRequestAnyOf2Branch != null)
             {
-                return CreateRecordRequestAnyOf2.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf2Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf3 != null)
+            else if(CreateRecordRequestAnyOf3Branch != null)
             {
-                return CreateRecordRequestAnyOf3.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf3Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf4 != null)
+            else if(CreateRecordRequestAnyOf4Branch != null)
             {
-                return CreateRecordRequestAnyOf4.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf4Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf5 != null)
+            else if(CreateRecordRequestAnyOf5Branch != null)
             {
-                return CreateRecordRequestAnyOf5.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf5Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf6 != null)
+            else if(CreateRecordRequestAnyOf6Branch != null)
             {
-                return CreateRecordRequestAnyOf6.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf6Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf7 != null)
+            else if(CreateRecordRequestAnyOf7Branch != null)
             {
-                return CreateRecordRequestAnyOf7.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf7Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf8 != null)
+            else if(CreateRecordRequestAnyOf8Branch != null)
             {
-                return CreateRecordRequestAnyOf8.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf8Branch.GetFieldDeserializers();
             }
-            else if(CreateRecordRequestAnyOf9 != null)
+            else if(CreateRecordRequestAnyOf9Branch != null)
             {
-                return CreateRecordRequestAnyOf9.GetFieldDeserializers();
+                return CreateRecordRequestAnyOf9Branch.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -242,79 +242,79 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (CreateRecordRequestAnyOf1 == null && CreateRecordRequestAnyOf10 == null && CreateRecordRequestAnyOf2 == null && CreateRecordRequestAnyOf3 == null && CreateRecordRequestAnyOf4 == null && CreateRecordRequestAnyOf5 == null && CreateRecordRequestAnyOf6 == null && CreateRecordRequestAnyOf7 == null && CreateRecordRequestAnyOf8 == null && CreateRecordRequestAnyOf9 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CreateRecordRequestAnyOf10Branch == null && CreateRecordRequestAnyOf1Branch == null && CreateRecordRequestAnyOf2Branch == null && CreateRecordRequestAnyOf3Branch == null && CreateRecordRequestAnyOf4Branch == null && CreateRecordRequestAnyOf5Branch == null && CreateRecordRequestAnyOf6Branch == null && CreateRecordRequestAnyOf7Branch == null && CreateRecordRequestAnyOf8Branch == null && CreateRecordRequestAnyOf9Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (CreateRecordRequestAnyOf1 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf10 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf2 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf3 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf4 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf5 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf6 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf7 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf8 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf9 != null) selectedUnionBranches++;
-            if (CreateRecordRequestAnyOf1 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf1); return; }
-            if (CreateRecordRequestAnyOf10 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf10); return; }
-            if (CreateRecordRequestAnyOf2 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf2); return; }
-            if (CreateRecordRequestAnyOf3 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf3); return; }
-            if (CreateRecordRequestAnyOf4 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf4); return; }
-            if (CreateRecordRequestAnyOf5 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf5); return; }
-            if (CreateRecordRequestAnyOf6 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf6); return; }
-            if (CreateRecordRequestAnyOf7 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf7); return; }
-            if (CreateRecordRequestAnyOf8 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf8); return; }
-            if (CreateRecordRequestAnyOf9 != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf9); return; }
+            if (CreateRecordRequestAnyOf10Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf1Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf2Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf3Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf4Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf5Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf6Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf7Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf8Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf9Branch != null) selectedUnionBranches++;
+            if (CreateRecordRequestAnyOf10Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf10Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf10Branch); return; }
+            if (CreateRecordRequestAnyOf1Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf1Branch); return; }
+            if (CreateRecordRequestAnyOf2Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf2Branch); return; }
+            if (CreateRecordRequestAnyOf3Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf3Branch); return; }
+            if (CreateRecordRequestAnyOf4Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf4Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf4Branch); return; }
+            if (CreateRecordRequestAnyOf5Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf5Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf5Branch); return; }
+            if (CreateRecordRequestAnyOf6Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf6Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf6Branch); return; }
+            if (CreateRecordRequestAnyOf7Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf7Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf7Branch); return; }
+            if (CreateRecordRequestAnyOf8Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf8Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf8Branch); return; }
+            if (CreateRecordRequestAnyOf9Branch != null && selectedUnionBranches == 1) { if (CreateRecordRequestAnyOf9Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateRecordRequestAnyOf9Branch); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateRecordRequestAnyOf1 != null)
+            if(CreateRecordRequestAnyOf10Branch != null)
             {
-                if (CreateRecordRequestAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1>(null, CreateRecordRequestAnyOf1);
+                if (CreateRecordRequestAnyOf10Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10Branch>(null, CreateRecordRequestAnyOf10Branch);
             }
-            else if(CreateRecordRequestAnyOf10 != null)
+            else if(CreateRecordRequestAnyOf1Branch != null)
             {
-                if (CreateRecordRequestAnyOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10>(null, CreateRecordRequestAnyOf10);
+                if (CreateRecordRequestAnyOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1Branch>(null, CreateRecordRequestAnyOf1Branch);
             }
-            else if(CreateRecordRequestAnyOf2 != null)
+            else if(CreateRecordRequestAnyOf2Branch != null)
             {
-                if (CreateRecordRequestAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2>(null, CreateRecordRequestAnyOf2);
+                if (CreateRecordRequestAnyOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2Branch>(null, CreateRecordRequestAnyOf2Branch);
             }
-            else if(CreateRecordRequestAnyOf3 != null)
+            else if(CreateRecordRequestAnyOf3Branch != null)
             {
-                if (CreateRecordRequestAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3>(null, CreateRecordRequestAnyOf3);
+                if (CreateRecordRequestAnyOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Branch>(null, CreateRecordRequestAnyOf3Branch);
             }
-            else if(CreateRecordRequestAnyOf4 != null)
+            else if(CreateRecordRequestAnyOf4Branch != null)
             {
-                if (CreateRecordRequestAnyOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4>(null, CreateRecordRequestAnyOf4);
+                if (CreateRecordRequestAnyOf4Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4Branch>(null, CreateRecordRequestAnyOf4Branch);
             }
-            else if(CreateRecordRequestAnyOf5 != null)
+            else if(CreateRecordRequestAnyOf5Branch != null)
             {
-                if (CreateRecordRequestAnyOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5>(null, CreateRecordRequestAnyOf5);
+                if (CreateRecordRequestAnyOf5Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5Branch>(null, CreateRecordRequestAnyOf5Branch);
             }
-            else if(CreateRecordRequestAnyOf6 != null)
+            else if(CreateRecordRequestAnyOf6Branch != null)
             {
-                if (CreateRecordRequestAnyOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6>(null, CreateRecordRequestAnyOf6);
+                if (CreateRecordRequestAnyOf6Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6Branch>(null, CreateRecordRequestAnyOf6Branch);
             }
-            else if(CreateRecordRequestAnyOf7 != null)
+            else if(CreateRecordRequestAnyOf7Branch != null)
             {
-                if (CreateRecordRequestAnyOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7>(null, CreateRecordRequestAnyOf7);
+                if (CreateRecordRequestAnyOf7Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Branch>(null, CreateRecordRequestAnyOf7Branch);
             }
-            else if(CreateRecordRequestAnyOf8 != null)
+            else if(CreateRecordRequestAnyOf8Branch != null)
             {
-                if (CreateRecordRequestAnyOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8>(null, CreateRecordRequestAnyOf8);
+                if (CreateRecordRequestAnyOf8Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Branch>(null, CreateRecordRequestAnyOf8Branch);
             }
-            else if(CreateRecordRequestAnyOf9 != null)
+            else if(CreateRecordRequestAnyOf9Branch != null)
             {
-                if (CreateRecordRequestAnyOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9>(null, CreateRecordRequestAnyOf9);
+                if (CreateRecordRequestAnyOf9Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9Branch>(null, CreateRecordRequestAnyOf9Branch);
             }
         }
     }

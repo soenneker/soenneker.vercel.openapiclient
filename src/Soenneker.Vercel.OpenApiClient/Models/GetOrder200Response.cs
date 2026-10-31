@@ -40,12 +40,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2? _explicitNullValueError = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2 Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2 _explicitNullValueError = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseError _explicitNullValueError = default!;
 #endif
         /// <summary>A valid order ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domains", n => { Domains = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2>(global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseError>(global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseError.CreateFromDiscriminatorValue); } },
                 { "orderId", n => { OrderId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseStatus>(); } },
             };
@@ -92,7 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItem>("domains", Domains);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf2>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseError>("error", Error);
             writer.WriteStringValue("orderId", OrderId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseStatus>("status", Status);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

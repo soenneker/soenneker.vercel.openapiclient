@@ -49,12 +49,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2? _explicitNullValueError = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Error? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Error? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2 Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2 _explicitNullValueError = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Error Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Error _explicitNullValueError = default!;
 #endif
         /// <summary>The price property</summary>
         public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
@@ -88,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "autoRenew", n => { AutoRenew = n.GetBoolValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2>(global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Error>(global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Error.CreateFromDiscriminatorValue); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "purchaseType", n => { PurchaseType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TransferPurchaseType>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Status>(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autoRenew", AutoRenew);
             writer.WriteStringValue("domainName", DomainName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Error>("error", Error);
             writer.WriteDoubleValue("price", Price);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TransferPurchaseType>("purchaseType", PurchaseType);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Status>("status", Status);

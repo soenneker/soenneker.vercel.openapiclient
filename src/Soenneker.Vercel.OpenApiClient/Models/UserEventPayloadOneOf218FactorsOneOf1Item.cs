@@ -75,6 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ssoType", n => { SsoType = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
+
             };
         }
         /// <summary>

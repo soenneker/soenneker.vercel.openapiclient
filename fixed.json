@@ -1072,6 +1072,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAiGatewayByokCredential201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -1439,6 +1450,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAiGatewayByokCredential204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -1510,6 +1532,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -1767,6 +1800,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAiGatewayVirtualModelConfig204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -2114,6 +2158,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAiGatewayVirtualModelConfigBySlug204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -2256,6 +2311,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayRule"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -2479,6 +2545,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAiGatewayRule204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -3263,6 +3340,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "File successfully uploaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadArtifact202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -5846,6 +5934,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Network"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6149,6 +6248,17 @@
           },
           "503": {
             "description": "503 response"
+          },
+          "200": {
+            "description": "The PrivateLink endpoint was created and is being provisioned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrivateLinkEndpoint"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6395,6 +6505,17 @@
           },
           "503": {
             "description": "503 response"
+          },
+          "200": {
+            "description": "The PrivateLink endpoint is being deleted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletePrivateLinkEndpoint204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -7138,6 +7259,17 @@
           },
           "504": {
             "description": "504 response"
+          },
+          "200": {
+            "description": "The connector was created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectConnectorCreateResult"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -8799,6 +8931,17 @@
           },
           "500": {
             "description": "The instance controller did not accept the restart."
+          },
+          "200": {
+            "description": "The restart was accepted. The new user container starts asynchronously.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RestartProjectDaemonInstance202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -13811,6 +13954,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateEdgeConfig201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -14810,6 +14964,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateEdgeConfigToken201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -15145,6 +15310,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSharedEnvVariable201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -16192,6 +16368,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateFlag201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -17583,6 +17770,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateFlagSegment201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -20780,6 +20978,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateKmsIssuer201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -21338,6 +21547,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateKmsIssuerPolicy201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -22714,6 +22934,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -25228,6 +25459,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCustomEnvironment201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -26521,6 +26763,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "The environment variable was created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectEnv201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -27706,6 +27959,17 @@
           },
           "422": {
             "description": "422 response"
+          },
+          "200": {
+            "description": "The project has been transferred successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptProjectTransferRequest202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -29150,6 +29414,17 @@
           },
           "503": {
             "description": "503 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForkDrive201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -30104,19 +30379,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/RunSessionCommand200Response"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/x-ndjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponse"
                 }
               }
@@ -31160,6 +31429,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandboxesSessionsBySessionIdSnapshotV2201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -31460,6 +31740,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandboxesSessionsBySessionIdSnapshotV3201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -32077,6 +32368,17 @@
           },
           "500": {
             "description": "500 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteSecurityFirewallConfigByConfigVersion204Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": []
@@ -32804,6 +33106,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteConditionalBypass204Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -35264,6 +35577,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "Response indicating that the User deletion process has been initiated, and a confirmation email has been sent.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestDelete202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -35590,6 +35914,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteRepository202ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -35875,6 +36210,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveRepositoryPermission204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -36054,6 +36400,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClearRepositoryPermissions204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": [
@@ -36443,6 +36800,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteRepositoryImage202ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -36856,6 +37224,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": []
@@ -36949,6 +37328,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "204"
           }
         },
         "security": []
@@ -37048,6 +37438,17 @@
           },
           "413": {
             "description": "413 response"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": []
@@ -37160,6 +37561,17 @@
           },
           "413": {
             "description": "413 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": []
@@ -37264,6 +37676,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads202ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": []
@@ -37362,6 +37785,17 @@
           },
           "413": {
             "description": "413 response"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": []
@@ -37631,6 +38065,17 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference202ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": []
@@ -38423,6 +38868,17 @@
           },
           "503": {
             "description": "503 response"
+          },
+          "200": {
+            "description": "Task analysis was accepted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateVercelCiTaskAnalysis202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -38643,6 +39099,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Task configuration pull request created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateVercelCiTaskConfigurationPullRequest201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -79391,17 +79858,7 @@
             "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf2"
           },
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3OneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3OneOf2"
-              },
-              {
-                "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3OneOf3"
-              }
-            ]
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3"
           }
         ]
       },
@@ -79943,60 +80400,51 @@
         ]
       },
       "CreateRecordRequest": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/CreateRecordRequestType"
-          }
-        },
         "oneOf": [
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf1"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf1Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf2"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf2Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf3"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf3Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf4"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf4Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf5"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf5Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf6"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf6Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf7"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf7Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf8"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf8Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf9"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf9Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateRecordRequestAnyOf10"
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf10Branch"
           }
         ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "A": "#/components/schemas/CreateRecordRequestAnyOf1",
-            "AAAA": "#/components/schemas/CreateRecordRequestAnyOf2",
-            "ALIAS": "#/components/schemas/CreateRecordRequestAnyOf3",
-            "CAA": "#/components/schemas/CreateRecordRequestAnyOf4",
-            "CNAME": "#/components/schemas/CreateRecordRequestAnyOf5",
-            "MX": "#/components/schemas/CreateRecordRequestAnyOf6",
-            "SRV": "#/components/schemas/CreateRecordRequestAnyOf7",
-            "TXT": "#/components/schemas/CreateRecordRequestAnyOf8",
-            "NS": "#/components/schemas/CreateRecordRequestAnyOf9",
-            "HTTPS": "#/components/schemas/CreateRecordRequestAnyOf10"
+            "A": "#/components/schemas/CreateRecordRequestAnyOf1Branch",
+            "AAAA": "#/components/schemas/CreateRecordRequestAnyOf2Branch",
+            "ALIAS": "#/components/schemas/CreateRecordRequestAnyOf3Branch",
+            "CAA": "#/components/schemas/CreateRecordRequestAnyOf4Branch",
+            "CNAME": "#/components/schemas/CreateRecordRequestAnyOf5Branch",
+            "MX": "#/components/schemas/CreateRecordRequestAnyOf6Branch",
+            "SRV": "#/components/schemas/CreateRecordRequestAnyOf7Branch",
+            "TXT": "#/components/schemas/CreateRecordRequestAnyOf8Branch",
+            "NS": "#/components/schemas/CreateRecordRequestAnyOf9Branch",
+            "HTTPS": "#/components/schemas/CreateRecordRequestAnyOf10Branch"
           }
         }
       },
@@ -81102,22 +81550,14 @@
         }
       },
       "CreateOrTransferDomainRequest": {
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/CreateOrTransferDomainRequestOneOf1"
+            "$ref": "#/components/schemas/CreateOrTransferDomainRequestOneOf1Branch"
           },
           {
-            "$ref": "#/components/schemas/CreateOrTransferDomainRequestOneOf2"
+            "$ref": "#/components/schemas/CreateOrTransferDomainRequestOneOf2Branch"
           }
-        ],
-        "properties": {
-          "method": {
-            "type": "string",
-            "description": "The domain operation to perform. It can be either \u0060add\u0060 or \u0060move-in\u0060.",
-            "example": "add"
-          }
-        }
+        ]
       },
       "CreateOrTransferDomain200Response": {
         "required": [
@@ -85120,42 +85560,17 @@
         "additionalProperties": false
       },
       "AddOrganizationTeamRequest": {
-        "required": [
-          "mode"
-        ],
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/AddOrganizationTeamRequestOneOf1"
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestOneOf1Branch"
           },
           {
-            "$ref": "#/components/schemas/AddOrganizationTeamRequestOneOf2"
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestOneOf2Branch"
           },
           {
-            "$ref": "#/components/schemas/AddOrganizationTeamRequestOneOf3"
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestOneOf3Branch"
           }
-        ],
-        "properties": {
-          "mode": {
-            "$ref": "#/components/schemas/AddOrganizationTeamRequestMode"
-          },
-          "teamId": {
-            "type": "string",
-            "description": "The ID of an existing team to add to the organization (link mode)."
-          },
-          "slug": {
-            "type": "string",
-            "description": "The slug of an existing team to link, or the slug for a new team to create."
-          },
-          "name": {
-            "type": "string",
-            "description": "The display name for a new team. Required in create mode; rejected in link mode."
-          },
-          "billingPlan": {
-            "$ref": "#/components/schemas/AddOrganizationTeamRequestBillingPlan"
-          }
-        },
-        "additionalProperties": false
+        ]
       },
       "RemoveOrganizationTeam200Response": {
         "required": [
@@ -95454,17 +95869,7 @@
             "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf2"
           },
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3OneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3OneOf2"
-              },
-              {
-                "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3OneOf3"
-              }
-            ]
+            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3"
           }
         ]
       },
@@ -97578,37 +97983,7 @@
       "GetOrder200ResponseError": {
         "anyOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf1"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf2"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf3"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf4"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf5"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf6"
-              }
-            ],
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "payment-failed": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf1",
-                "tld-outage": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf2",
-                "price-mismatch": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf3",
-                "unexpected-error": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf4",
-                "claims-required": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf5",
-                "domain-mismatch": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf6"
-              }
-            }
+            "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1"
           },
           {
             "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf2"
@@ -97811,17 +98186,7 @@
       "CreateDrainRequestSource": {
         "oneOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf1OneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf1OneOf2"
-              },
-              {
-                "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf1OneOf3"
-              }
-            ]
+            "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf1"
           },
           {
             "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf2"
@@ -98091,17 +98456,7 @@
       "UpdateDrainRequestSource": {
         "oneOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf1OneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf1OneOf2"
-              },
-              {
-                "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf1OneOf3"
-              }
-            ]
+            "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf1"
           },
           {
             "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf2"
@@ -98339,37 +98694,20 @@
         ]
       },
       "PatchEdgeConfigItemsRequestItemsItem": {
-        "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemAnyOf1"
           },
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemAnyOf2"
           },
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemAnyOf3"
           },
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemAnyOf4"
           }
-        ],
-        "properties": {
-          "operation": {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1Operation"
-          },
-          "key": {
-            "maxLength": 256,
-            "pattern": "^[\\w-]\u002B$",
-            "type": "string"
-          },
-          "value": {},
-          "description": {
-            "maxLength": 512,
-            "type": "string",
-            "nullable": true
-          }
-        }
+        ]
       },
       "GetEdgeConfigBackup200ResponseOneOf1": {
         "required": [
@@ -99466,17 +99804,7 @@
       "ImportResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalProperties": {
         "anyOf": [
           {
-            "anyOf": [
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/components/schemas/ImportResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalPropertiesAnyOf1"
           },
           {
             "type": "array",
@@ -99509,17 +99837,7 @@
       "UpdateResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalProperties": {
         "anyOf": [
           {
-            "anyOf": [
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/components/schemas/ImportResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalPropertiesAnyOf1"
           },
           {
             "type": "array",
@@ -111946,37 +112264,20 @@
         "additionalProperties": false
       },
       "PatchEdgeConfigItemsRequestItemsItemOneOf1": {
-        "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1Branch"
           },
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2Branch"
           },
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3Branch"
           },
           {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4"
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4Branch"
           }
-        ],
-        "properties": {
-          "operation": {
-            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1Operation"
-          },
-          "key": {
-            "maxLength": 256,
-            "pattern": "^[\\w-]\u002B$",
-            "type": "string"
-          },
-          "value": {},
-          "description": {
-            "maxLength": 512,
-            "type": "string",
-            "nullable": true
-          }
-        }
+        ]
       },
       "CreateSharedEnvVariable201ResponseCreatedItemLastEditedByPrincipalOneOf1": {
         "required": [
@@ -132445,17 +132746,7 @@
       "UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItemClaimsAdditionalProperties": {
         "anyOf": [
           {
-            "anyOf": [
-              {
-                "type": "boolean"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/components/schemas/ImportResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalPropertiesAnyOf1"
           },
           {
             "type": "array",
@@ -136306,53 +136597,7 @@
       "GetOrder200ResponseDomainsItemAnyOf1Error": {
         "anyOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf1"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf2"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf3"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf4"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf5"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf6"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf7"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf8"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf9"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf10"
-              }
-            ],
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "unsupported-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf1",
-                "incorrect-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf2",
-                "client-transfer-prohibited": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf3",
-                "incorrect-auth-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf4",
-                "claims-notice-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf5",
-                "cannot-transfer-in-until": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf6",
-                "account-transfer-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf7",
-                "price-change": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf8",
-                "unavailable-legal": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf9",
-                "invalid-contact": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf10"
-              }
-            }
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1"
           },
           {
             "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf2"
@@ -136362,53 +136607,7 @@
       "GetOrder200ResponseDomainsItemAnyOf2Error": {
         "anyOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf2"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf3"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf4"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf5"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf6"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf7"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf8"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf9"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf10"
-              }
-            ],
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "unsupported-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1",
-                "incorrect-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf2",
-                "client-transfer-prohibited": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf3",
-                "incorrect-auth-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf4",
-                "claims-notice-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf5",
-                "cannot-transfer-in-until": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf6",
-                "account-transfer-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf7",
-                "price-change": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf8",
-                "unavailable-legal": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf9",
-                "invalid-contact": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf10"
-              }
-            }
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1"
           },
           {
             "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf2"
@@ -136418,53 +136617,7 @@
       "GetOrder200ResponseDomainsItemAnyOf3Error": {
         "anyOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf1"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf2"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf3"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf4"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf5"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf6"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf7"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf8"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf9"
-              },
-              {
-                "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf10"
-              }
-            ],
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "unsupported-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf1",
-                "incorrect-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf2",
-                "client-transfer-prohibited": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf3",
-                "incorrect-auth-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf4",
-                "claims-notice-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf5",
-                "cannot-transfer-in-until": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf6",
-                "account-transfer-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf7",
-                "price-change": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf8",
-                "unavailable-legal": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf9",
-                "invalid-contact": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf10"
-              }
-            }
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1"
           },
           {
             "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf2"
@@ -235776,7 +235929,7 @@
       "UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItemClaims": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/ImportResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalProperties"
+          "$ref": "#/components/schemas/UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItemClaimsAdditionalProperties"
         },
         "description": "Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. \u0060null\u0060 removes a claim. Reserved claims cannot be set; \u0060aud\u0060 and \u0060sub\u0060 can be overridden with a string but not removed."
       },
@@ -240359,7 +240512,7 @@
       "UpdateResourceRequestCustomClaimsClaimRulesItemClaims": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/ImportResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalProperties"
+          "$ref": "#/components/schemas/UpdateResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalProperties"
         },
         "description": "Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. \u0060null\u0060 removes a claim. Reserved claims cannot be set; \u0060aud\u0060 and \u0060sub\u0060 can be overridden with a string but not removed."
       },
@@ -258144,7 +258297,7 @@
       "ConnectConnectorType": {
         "enum": [
           "api-key",
-          "aws-alpha",
+          "aws-oidc",
           "custom",
           "discord",
           "github",
@@ -258172,8 +258325,8 @@
               "name": "ApiKey"
             },
             {
-              "value": "aws-alpha",
-              "name": "AwsAlpha"
+              "value": "aws-oidc",
+              "name": "AwsOidc"
             },
             {
               "value": "custom",
@@ -258364,7 +258517,7 @@
       "ConnectConnectorCreateResultType": {
         "enum": [
           "api-key",
-          "aws-alpha",
+          "aws-oidc",
           "custom",
           "discord",
           "github",
@@ -258392,8 +258545,8 @@
               "name": "ApiKey"
             },
             {
-              "value": "aws-alpha",
-              "name": "AwsAlpha"
+              "value": "aws-oidc",
+              "name": "AwsOidc"
             },
             {
               "value": "custom",
@@ -401880,6 +402033,1266 @@
               "name": "EventData"
             }
           ]
+        }
+      },
+      "GetDeploymentEvents200StreamJsonResponseOneOf3": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3OneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3OneOf2"
+          },
+          {
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3OneOf3"
+          }
+        ]
+      },
+      "CreateRecordRequestAnyOf1Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A subdomain name or an empty string for the root domain.",
+            "example": "subdomain"
+          },
+          "type": {
+            "enum": [
+              "A"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060A\u0060."
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "The record value must be a valid IPv4 address.",
+            "format": "ipv4",
+            "example": "192.0.2.42"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "value",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf2Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A subdomain name or an empty string for the root domain.",
+            "example": "subdomain"
+          },
+          "type": {
+            "enum": [
+              "AAAA"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060AAAA\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "AAAA",
+                  "name": "Aaaa"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "An AAAA record pointing to an IPv6 address.",
+            "format": "ipv6",
+            "example": "2001:DB8::42"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "value",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf3Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A subdomain name or an empty string for the root domain.",
+            "example": "subdomain"
+          },
+          "type": {
+            "enum": [
+              "ALIAS"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060ALIAS\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "ALIAS",
+                  "name": "Alias"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "An ALIAS virtual record pointing to a hostname resolved to an A record on server side.",
+            "example": "cname.vercel-dns.com"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "value",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf4Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A subdomain name or an empty string for the root domain.",
+            "example": "subdomain"
+          },
+          "type": {
+            "enum": [
+              "CAA"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060CAA\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "CAA",
+                  "name": "Caa"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "A CAA record to specify which Certificate Authorities (CAs) are allowed to issue certificates for the domain.",
+            "example": "0 issue \u0022letsencrypt.org\u0022"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "value",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf5Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A subdomain name or an empty string for the root domain.",
+            "example": "subdomain"
+          },
+          "type": {
+            "enum": [
+              "CNAME"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060CNAME\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "CNAME",
+                  "name": "Cname"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "A CNAME record mapping to another domain name.",
+            "example": "cname.vercel-dns.com"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf6Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A subdomain name or an empty string for the root domain.",
+            "example": "subdomain"
+          },
+          "type": {
+            "enum": [
+              "MX"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060MX\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "MX",
+                  "name": "Mx"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "An MX record specifying the mail server responsible for accepting messages on behalf of the domain name.",
+            "example": "10 mail.example.com."
+          },
+          "mxPriority": {
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "number",
+            "example": 10
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "value",
+          "name",
+          "mxPriority"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf7Branch": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "SRV"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060SRV\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "SRV",
+                  "name": "Srv"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "srv": {
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf7Srv"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "name",
+          "srv"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf8Branch": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "TXT"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060TXT\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "TXT",
+                  "name": "Txt"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "A TXT record containing arbitrary text.",
+            "example": "hello"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "value",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf9Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A subdomain name.",
+            "example": "subdomain"
+          },
+          "type": {
+            "enum": [
+              "NS"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060NS\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "NS",
+                  "name": "Ns"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "value": {
+            "type": "string",
+            "description": "An NS domain value.",
+            "example": "ns1.example.com"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateRecordRequestAnyOf10Branch": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "HTTPS"
+            ],
+            "type": "string",
+            "description": "Must be of type \u0060HTTPS\u0060.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "HTTPS",
+                  "name": "Https"
+                }
+              ]
+            }
+          },
+          "ttl": {
+            "maximum": 2147483647,
+            "minimum": 60,
+            "type": "number",
+            "description": "The TTL value. Must be a number between 60 and 2147483647. Default value is 60.",
+            "example": 60
+          },
+          "https": {
+            "$ref": "#/components/schemas/CreateRecordRequestAnyOf10Https"
+          },
+          "comment": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "A comment to add context on what this DNS record is for",
+            "example": "used to verify ownership of domain"
+          }
+        },
+        "required": [
+          "type",
+          "name",
+          "https"
+        ],
+        "additionalProperties": false
+      },
+      "CreateOrTransferDomainRequestOneOf1Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The domain name you want to add.",
+            "example": "example.com"
+          },
+          "cdnEnabled": {
+            "type": "boolean",
+            "description": "Whether the domain has the Vercel CDN enabled or not.",
+            "example": true
+          },
+          "zone": {
+            "type": "boolean",
+            "description": "Whether to create a DNS zone on Vercel. Set \u0060true\u0060 if using Vercel nameservers."
+          },
+          "method": {
+            "type": "string",
+            "description": "The domain operation to perform.",
+            "example": "add"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "CreateOrTransferDomainRequestOneOf2Branch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The domain name you want to add.",
+            "example": "example.com"
+          },
+          "method": {
+            "type": "string",
+            "description": "The domain operation to perform.",
+            "example": "move-in"
+          },
+          "token": {
+            "type": "string",
+            "description": "The move-in token from Move Requested email.",
+            "example": "fdhfr820ad#@FAdlj$$"
+          }
+        },
+        "required": [
+          "method",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "AddOrganizationTeamRequestOneOf1Branch": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "enum": [
+              "create"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Mode",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "create",
+                  "name": "Create"
+                }
+              ]
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "The display name for a new team. Required in create mode; rejected in link mode."
+          },
+          "teamId": {
+            "type": "string",
+            "description": "The ID of an existing team to add to the organization (link mode)."
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of an existing team to link, or the slug for a new team to create."
+          },
+          "billingPlan": {
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestBillingPlan"
+          }
+        },
+        "required": [
+          "mode",
+          "slug",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "AddOrganizationTeamRequestOneOf2Branch": {
+        "allOf": [
+          {
+            "required": [
+              "mode",
+              "teamId"
+            ],
+            "type": "object",
+            "not": {
+              "required": [
+                "name"
+              ]
+            },
+            "properties": {
+              "mode": {
+                "$ref": "#/components/schemas/LinkMode"
+              }
+            }
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestMode"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "The ID of an existing team to add to the organization (link mode)."
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of an existing team to link, or the slug for a new team to create."
+          },
+          "name": {
+            "type": "string",
+            "description": "The display name for a new team. Required in create mode; rejected in link mode."
+          },
+          "billingPlan": {
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestBillingPlan"
+          }
+        },
+        "required": [
+          "mode"
+        ],
+        "additionalProperties": false
+      },
+      "AddOrganizationTeamRequestOneOf3Branch": {
+        "allOf": [
+          {
+            "required": [
+              "mode",
+              "slug"
+            ],
+            "type": "object",
+            "not": {
+              "required": [
+                "name"
+              ]
+            },
+            "properties": {
+              "mode": {
+                "$ref": "#/components/schemas/LinkMode"
+              }
+            }
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestMode"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "The ID of an existing team to add to the organization (link mode)."
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of an existing team to link, or the slug for a new team to create."
+          },
+          "name": {
+            "type": "string",
+            "description": "The display name for a new team. Required in create mode; rejected in link mode."
+          },
+          "billingPlan": {
+            "$ref": "#/components/schemas/AddOrganizationTeamRequestBillingPlan"
+          }
+        },
+        "required": [
+          "mode"
+        ],
+        "additionalProperties": false
+      },
+      "GetDeploymentEvents200ResponseItemOneOf3": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3OneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3OneOf2"
+          },
+          {
+            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3OneOf3"
+          }
+        ]
+      },
+      "GetOrder200ResponseErrorAnyOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf4"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf5"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf6"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "payment-failed": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf1",
+            "tld-outage": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf2",
+            "price-mismatch": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf3",
+            "unexpected-error": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf4",
+            "claims-required": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf5",
+            "domain-mismatch": "#/components/schemas/GetOrder200ResponseErrorAnyOf1AnyOf6"
+          }
+        }
+      },
+      "CreateDrainRequestSourceOneOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf1OneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf1OneOf2"
+          },
+          {
+            "$ref": "#/components/schemas/CreateDrainRequestSourceOneOf1OneOf3"
+          }
+        ]
+      },
+      "UpdateDrainRequestSourceOneOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf1OneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf1OneOf2"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateDrainRequestSourceOneOf1OneOf3"
+          }
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemAnyOf1": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "create"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "create",
+                  "name": "Create"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key",
+          "value"
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemAnyOf2": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "update",
+              "upsert"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "update",
+                  "name": "Update"
+                },
+                {
+                  "value": "upsert",
+                  "name": "Upsert"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key",
+          "value"
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemAnyOf3": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "update",
+              "upsert"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "update",
+                  "name": "Update"
+                },
+                {
+                  "value": "upsert",
+                  "name": "Upsert"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key",
+          "description"
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemAnyOf4": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "delete"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "delete",
+                  "name": "Delete"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key"
+        ]
+      },
+      "ImportResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalPropertiesAnyOf1": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "UpdateResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalPropertiesAnyOf1": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1Branch": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "create"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "create",
+                  "name": "Create"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key",
+          "value"
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf2Branch": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "update",
+              "upsert"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "update",
+                  "name": "Update"
+                },
+                {
+                  "value": "upsert",
+                  "name": "Upsert"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key",
+          "value"
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf3Branch": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "update",
+              "upsert"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "update",
+                  "name": "Update"
+                },
+                {
+                  "value": "upsert",
+                  "name": "Upsert"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key",
+          "description"
+        ]
+      },
+      "PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf4Branch": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "enum": [
+              "delete"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Operation",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "delete",
+                  "name": "Delete"
+                }
+              ]
+            }
+          },
+          "key": {
+            "maxLength": 256,
+            "pattern": "^[\\w-]\u002B$",
+            "type": "string"
+          },
+          "value": {},
+          "description": {
+            "maxLength": 512,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "operation",
+          "key"
+        ]
+      },
+      "UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf2ClaimRulesItemClaimsAdditionalPropertiesAnyOf1": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf4"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf5"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf6"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf7"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf8"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf10"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "unsupported-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf1",
+            "incorrect-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf2",
+            "client-transfer-prohibited": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf3",
+            "incorrect-auth-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf4",
+            "claims-notice-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf5",
+            "cannot-transfer-in-until": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf6",
+            "account-transfer-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf7",
+            "price-change": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf8",
+            "unavailable-legal": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf9",
+            "invalid-contact": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf10"
+          }
+        }
+      },
+      "GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf4"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf5"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf6"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf7"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf8"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf10"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "unsupported-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1",
+            "incorrect-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf2",
+            "client-transfer-prohibited": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf3",
+            "incorrect-auth-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf4",
+            "claims-notice-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf5",
+            "cannot-transfer-in-until": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf6",
+            "account-transfer-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf7",
+            "price-change": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf8",
+            "unavailable-legal": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf9",
+            "invalid-contact": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf10"
+          }
+        }
+      },
+      "GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf4"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf5"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf6"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf7"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf8"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf10"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "unsupported-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf1",
+            "incorrect-language-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf2",
+            "client-transfer-prohibited": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf3",
+            "incorrect-auth-code": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf4",
+            "claims-notice-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf5",
+            "cannot-transfer-in-until": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf6",
+            "account-transfer-required": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf7",
+            "price-change": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf8",
+            "unavailable-legal": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf9",
+            "invalid-contact": "#/components/schemas/GetOrder200ResponseDomainsItemAnyOf3ErrorAnyOf1AnyOf10"
+          }
         }
       },
       "FlagJsonValueOneOf4": {

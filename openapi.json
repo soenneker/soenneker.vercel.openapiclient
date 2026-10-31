@@ -236157,7 +236157,7 @@
             "type": "string",
             "enum": [
               "api-key",
-              "aws-alpha",
+              "aws-oidc",
               "custom",
               "discord",
               "github",
@@ -236700,7 +236700,7 @@
             "type": "string",
             "enum": [
               "api-key",
-              "aws-alpha",
+              "aws-oidc",
               "custom",
               "discord",
               "github",

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3Branch"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AddOrganizationTeamRequest : IComposedTypeWrapper, IParsable
@@ -18,29 +18,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1? AddOrganizationTeamRequestOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Branch? AddOrganizationTeamRequestOneOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1 AddOrganizationTeamRequestOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Branch AddOrganizationTeamRequestOneOf1Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2? AddOrganizationTeamRequestOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2Branch? AddOrganizationTeamRequestOneOf2Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2 AddOrganizationTeamRequestOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2Branch AddOrganizationTeamRequestOneOf2Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3? AddOrganizationTeamRequestOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3Branch? AddOrganizationTeamRequestOneOf3Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3 AddOrganizationTeamRequestOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3Branch AddOrganizationTeamRequestOneOf3Branch { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,32 +52,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequest();
-            if("AddOrganizationTeamRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AddOrganizationTeamRequestOneOf1Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("AddOrganizationTeamRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AddOrganizationTeamRequestOneOf2Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("AddOrganizationTeamRequestOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AddOrganizationTeamRequestOneOf3Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("mode") && shapeMembers1.ContainsKey("slug") && shapeMembers1.ContainsKey("name") && (!shapeMembers1.ContainsKey("mode") || (((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "create".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("name") || (true)))))))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("mode") && shapeMembers1.ContainsKey("teamId") && (!shapeMembers1.ContainsKey("mode") || (((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "link".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)))))))) && !((unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject5 || (shapeObject5.GetValue() is var shapeMembers6 && (shapeMembers6.ContainsKey("name")))))))();
-            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("mode") && shapeMembers1.ContainsKey("slug") && (!shapeMembers1.ContainsKey("mode") || (((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "link".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)))))))) && !((unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject5 || (shapeObject5.GetValue() is var shapeMembers6 && (shapeMembers6.ContainsKey("name")))))))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("mode") && shapeMembers1.ContainsKey("slug") && shapeMembers1.ContainsKey("name") && (!shapeMembers1.ContainsKey("mode") || (((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "create".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("name") || (((shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("teamId") || (((shapeMembers1["teamId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("slug") || (((shapeMembers1["slug"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("billingPlan") || (((shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal11 && "enterprise".Equals(literal11.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal12 && "platform".Equals(literal12.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "mode" || key == "name" || key == "teamId" || key == "slug" || key == "billingPlan"))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("mode") && (!shapeMembers1.ContainsKey("mode") || (((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "create".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "link".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("teamId") || (((shapeMembers1["teamId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("slug") || (((shapeMembers1["slug"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || (((shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("billingPlan") || (((shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal12 && "enterprise".Equals(literal12.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal13 && "platform".Equals(literal13.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "mode" || key == "teamId" || key == "slug" || key == "name" || key == "billingPlan")))) && ((((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject16 || (shapeObject16.GetValue() is var shapeMembers17 && (shapeMembers17.ContainsKey("mode") && shapeMembers17.ContainsKey("teamId") && (!shapeMembers17.ContainsKey("mode") || (((shapeMembers17["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers17["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal18 && "link".Equals(literal18.GetValue(), global::System.StringComparison.Ordinal)))))))) && !((unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject21 || (shapeObject21.GetValue() is var shapeMembers22 && (shapeMembers22.ContainsKey("name")))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("mode") && (!shapeMembers1.ContainsKey("mode") || (((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "create".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "link".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("teamId") || (((shapeMembers1["teamId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("slug") || (((shapeMembers1["slug"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || (((shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("billingPlan") || (((shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal12 && "enterprise".Equals(literal12.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["billingPlan"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal13 && "platform".Equals(literal13.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "mode" || key == "teamId" || key == "slug" || key == "name" || key == "billingPlan")))) && ((((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject16 || (shapeObject16.GetValue() is var shapeMembers17 && (shapeMembers17.ContainsKey("mode") && shapeMembers17.ContainsKey("slug") && (!shapeMembers17.ContainsKey("mode") || (((shapeMembers17["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers17["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal18 && "link".Equals(literal18.GetValue(), global::System.StringComparison.Ordinal)))))))) && !((unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject21 || (shapeObject21.GetValue() is var shapeMembers22 && (shapeMembers22.ContainsKey("name")))))))))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
             if (matchesUnionBranch2) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.AddOrganizationTeamRequestOneOf1 == null && result.AddOrganizationTeamRequestOneOf2 == null && result.AddOrganizationTeamRequestOneOf3 == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.AddOrganizationTeamRequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.AddOrganizationTeamRequestOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.AddOrganizationTeamRequestOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3(), parseNode);
-            if (result.AddOrganizationTeamRequestOneOf1 == null && result.AddOrganizationTeamRequestOneOf2 == null && result.AddOrganizationTeamRequestOneOf3 == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.AddOrganizationTeamRequestOneOf1Branch == null && result.AddOrganizationTeamRequestOneOf2Branch == null && result.AddOrganizationTeamRequestOneOf3Branch == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.AddOrganizationTeamRequestOneOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.AddOrganizationTeamRequestOneOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.AddOrganizationTeamRequestOneOf3Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3Branch(), parseNode);
+            if (result.AddOrganizationTeamRequestOneOf1Branch == null && result.AddOrganizationTeamRequestOneOf2Branch == null && result.AddOrganizationTeamRequestOneOf3Branch == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -88,17 +88,17 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(AddOrganizationTeamRequestOneOf1 != null)
+            if(AddOrganizationTeamRequestOneOf1Branch != null)
             {
-                return AddOrganizationTeamRequestOneOf1.GetFieldDeserializers();
+                return AddOrganizationTeamRequestOneOf1Branch.GetFieldDeserializers();
             }
-            else if(AddOrganizationTeamRequestOneOf2 != null)
+            else if(AddOrganizationTeamRequestOneOf2Branch != null)
             {
-                return AddOrganizationTeamRequestOneOf2.GetFieldDeserializers();
+                return AddOrganizationTeamRequestOneOf2Branch.GetFieldDeserializers();
             }
-            else if(AddOrganizationTeamRequestOneOf3 != null)
+            else if(AddOrganizationTeamRequestOneOf3Branch != null)
             {
-                return AddOrganizationTeamRequestOneOf3.GetFieldDeserializers();
+                return AddOrganizationTeamRequestOneOf3Branch.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -109,30 +109,30 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (AddOrganizationTeamRequestOneOf1 == null && AddOrganizationTeamRequestOneOf2 == null && AddOrganizationTeamRequestOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AddOrganizationTeamRequestOneOf1Branch == null && AddOrganizationTeamRequestOneOf2Branch == null && AddOrganizationTeamRequestOneOf3Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (AddOrganizationTeamRequestOneOf1 != null) selectedUnionBranches++;
-            if (AddOrganizationTeamRequestOneOf2 != null) selectedUnionBranches++;
-            if (AddOrganizationTeamRequestOneOf3 != null) selectedUnionBranches++;
-            if (AddOrganizationTeamRequestOneOf1 != null && selectedUnionBranches == 1) { if (AddOrganizationTeamRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AddOrganizationTeamRequestOneOf1); return; }
-            if (AddOrganizationTeamRequestOneOf2 != null && selectedUnionBranches == 1) { if (AddOrganizationTeamRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AddOrganizationTeamRequestOneOf2); return; }
-            if (AddOrganizationTeamRequestOneOf3 != null && selectedUnionBranches == 1) { if (AddOrganizationTeamRequestOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AddOrganizationTeamRequestOneOf3); return; }
+            if (AddOrganizationTeamRequestOneOf1Branch != null) selectedUnionBranches++;
+            if (AddOrganizationTeamRequestOneOf2Branch != null) selectedUnionBranches++;
+            if (AddOrganizationTeamRequestOneOf3Branch != null) selectedUnionBranches++;
+            if (AddOrganizationTeamRequestOneOf1Branch != null && selectedUnionBranches == 1) { if (AddOrganizationTeamRequestOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AddOrganizationTeamRequestOneOf1Branch); return; }
+            if (AddOrganizationTeamRequestOneOf2Branch != null && selectedUnionBranches == 1) { if (AddOrganizationTeamRequestOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AddOrganizationTeamRequestOneOf2Branch); return; }
+            if (AddOrganizationTeamRequestOneOf3Branch != null && selectedUnionBranches == 1) { if (AddOrganizationTeamRequestOneOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AddOrganizationTeamRequestOneOf3Branch); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(AddOrganizationTeamRequestOneOf1 != null)
+            if(AddOrganizationTeamRequestOneOf1Branch != null)
             {
-                if (AddOrganizationTeamRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1>(null, AddOrganizationTeamRequestOneOf1);
+                if (AddOrganizationTeamRequestOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf1Branch>(null, AddOrganizationTeamRequestOneOf1Branch);
             }
-            else if(AddOrganizationTeamRequestOneOf2 != null)
+            else if(AddOrganizationTeamRequestOneOf2Branch != null)
             {
-                if (AddOrganizationTeamRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2>(null, AddOrganizationTeamRequestOneOf2);
+                if (AddOrganizationTeamRequestOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf2Branch>(null, AddOrganizationTeamRequestOneOf2Branch);
             }
-            else if(AddOrganizationTeamRequestOneOf3 != null)
+            else if(AddOrganizationTeamRequestOneOf3Branch != null)
             {
-                if (AddOrganizationTeamRequestOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3>(null, AddOrganizationTeamRequestOneOf3);
+                if (AddOrganizationTeamRequestOneOf3Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddOrganizationTeamRequestOneOf3Branch>(null, AddOrganizationTeamRequestOneOf3Branch);
             }
         }
     }

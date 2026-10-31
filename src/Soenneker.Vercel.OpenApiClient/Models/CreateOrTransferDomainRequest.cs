@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1Branch"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2Branch"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrTransferDomainRequest : IComposedTypeWrapper, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1? CreateOrTransferDomainRequestOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1Branch? CreateOrTransferDomainRequestOneOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1 CreateOrTransferDomainRequestOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1Branch CreateOrTransferDomainRequestOneOf1Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2? CreateOrTransferDomainRequestOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2Branch? CreateOrTransferDomainRequestOneOf2Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2 CreateOrTransferDomainRequestOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2Branch CreateOrTransferDomainRequestOneOf2Branch { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,11 +44,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequest();
-            if("CreateOrTransferDomainRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CreateOrTransferDomainRequestOneOf1Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("CreateOrTransferDomainRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CreateOrTransferDomainRequestOneOf2Branch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
@@ -59,10 +59,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.CreateOrTransferDomainRequestOneOf1 == null && result.CreateOrTransferDomainRequestOneOf2 == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CreateOrTransferDomainRequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CreateOrTransferDomainRequestOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2(), parseNode);
-            if (result.CreateOrTransferDomainRequestOneOf1 == null && result.CreateOrTransferDomainRequestOneOf2 == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.CreateOrTransferDomainRequestOneOf1Branch == null && result.CreateOrTransferDomainRequestOneOf2Branch == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CreateOrTransferDomainRequestOneOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CreateOrTransferDomainRequestOneOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2Branch(), parseNode);
+            if (result.CreateOrTransferDomainRequestOneOf1Branch == null && result.CreateOrTransferDomainRequestOneOf2Branch == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -73,13 +73,13 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(CreateOrTransferDomainRequestOneOf1 != null)
+            if(CreateOrTransferDomainRequestOneOf1Branch != null)
             {
-                return CreateOrTransferDomainRequestOneOf1.GetFieldDeserializers();
+                return CreateOrTransferDomainRequestOneOf1Branch.GetFieldDeserializers();
             }
-            else if(CreateOrTransferDomainRequestOneOf2 != null)
+            else if(CreateOrTransferDomainRequestOneOf2Branch != null)
             {
-                return CreateOrTransferDomainRequestOneOf2.GetFieldDeserializers();
+                return CreateOrTransferDomainRequestOneOf2Branch.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -90,23 +90,23 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (CreateOrTransferDomainRequestOneOf1 == null && CreateOrTransferDomainRequestOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CreateOrTransferDomainRequestOneOf1Branch == null && CreateOrTransferDomainRequestOneOf2Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (CreateOrTransferDomainRequestOneOf1 != null) selectedUnionBranches++;
-            if (CreateOrTransferDomainRequestOneOf2 != null) selectedUnionBranches++;
-            if (CreateOrTransferDomainRequestOneOf1 != null && selectedUnionBranches == 1) { if (CreateOrTransferDomainRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateOrTransferDomainRequestOneOf1); return; }
-            if (CreateOrTransferDomainRequestOneOf2 != null && selectedUnionBranches == 1) { if (CreateOrTransferDomainRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateOrTransferDomainRequestOneOf2); return; }
+            if (CreateOrTransferDomainRequestOneOf1Branch != null) selectedUnionBranches++;
+            if (CreateOrTransferDomainRequestOneOf2Branch != null) selectedUnionBranches++;
+            if (CreateOrTransferDomainRequestOneOf1Branch != null && selectedUnionBranches == 1) { if (CreateOrTransferDomainRequestOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateOrTransferDomainRequestOneOf1Branch); return; }
+            if (CreateOrTransferDomainRequestOneOf2Branch != null && selectedUnionBranches == 1) { if (CreateOrTransferDomainRequestOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateOrTransferDomainRequestOneOf2Branch); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateOrTransferDomainRequestOneOf1 != null)
+            if(CreateOrTransferDomainRequestOneOf1Branch != null)
             {
-                if (CreateOrTransferDomainRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1>(null, CreateOrTransferDomainRequestOneOf1);
+                if (CreateOrTransferDomainRequestOneOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf1Branch>(null, CreateOrTransferDomainRequestOneOf1Branch);
             }
-            else if(CreateOrTransferDomainRequestOneOf2 != null)
+            else if(CreateOrTransferDomainRequestOneOf2Branch != null)
             {
-                if (CreateOrTransferDomainRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2>(null, CreateOrTransferDomainRequestOneOf2);
+                if (CreateOrTransferDomainRequestOneOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateOrTransferDomainRequestOneOf2Branch>(null, CreateOrTransferDomainRequestOneOf2Branch);
             }
         }
     }
