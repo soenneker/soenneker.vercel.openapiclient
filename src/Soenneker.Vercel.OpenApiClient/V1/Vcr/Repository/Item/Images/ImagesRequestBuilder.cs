@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.ImagesRequestBuilder.ImagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/vcr/repository/{idOrName}/images", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

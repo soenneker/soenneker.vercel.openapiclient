@@ -98,7 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/projects/{idOrName}/feature-flags/flags", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -119,7 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/projects/{idOrName}/feature-flags/flags", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

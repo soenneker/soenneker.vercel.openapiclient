@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/projects/{idOrName}/rollback/{deploymentId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

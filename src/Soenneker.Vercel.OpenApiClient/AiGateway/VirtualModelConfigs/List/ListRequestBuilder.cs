@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/virtual-model-configs/list", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

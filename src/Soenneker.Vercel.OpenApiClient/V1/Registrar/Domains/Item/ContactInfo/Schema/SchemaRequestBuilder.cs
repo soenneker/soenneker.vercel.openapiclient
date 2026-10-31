@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactInfo.S
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactInfo.Schema.SchemaRequestBuilder.SchemaRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/registrar/domains/{domain}/contact-info/schema", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

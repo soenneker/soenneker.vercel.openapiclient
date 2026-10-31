@@ -102,7 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v8/artifacts/{hash}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -121,7 +121,7 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
         public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderHeadQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.HEAD, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v8/artifacts/{hash}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.HEAD, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -141,7 +141,7 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v8/artifacts/{hash}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetStreamContent(body, "application/octet-stream");

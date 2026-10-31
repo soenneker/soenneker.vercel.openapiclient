@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Avatar
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Avatar.AvatarRequestBuilder.AvatarRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/projects/{idOrName}/avatar", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -106,7 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Avatar
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/projects/{idOrName}/avatar", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetStreamContent(body, "application/octet-stream");

@@ -116,7 +116,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -135,7 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -154,7 +154,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item
         public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -173,7 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Blobs.Uploads.Item.WithUuItemRequestBuilder.WithUuItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}?digest={digest}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}?digest={digest}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

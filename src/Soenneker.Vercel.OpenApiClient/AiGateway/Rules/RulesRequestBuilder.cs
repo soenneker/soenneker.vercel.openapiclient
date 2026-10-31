@@ -118,7 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Rules.RulesRequestBuilder.RulesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/ai-gateway/rules?ruleId={ruleId}{&slug*,teamId*}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/rules?ruleId={ruleId}{&slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -137,7 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -156,7 +156,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
         public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Rules.RulesRequestBuilder.RulesRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -175,7 +175,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

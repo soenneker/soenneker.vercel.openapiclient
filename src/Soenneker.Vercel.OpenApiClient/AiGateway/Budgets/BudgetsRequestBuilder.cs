@@ -97,7 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.BudgetsRequestBuilder.BudgetsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/ai-gateway/budgets?scopeType={scopeType}{&projectId*,slug*,teamId*,userId*}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/budgets", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/budgets?scopeType={scopeType}{&projectId*,slug*,teamId*,userId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -118,7 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/ai-gateway/budgets", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

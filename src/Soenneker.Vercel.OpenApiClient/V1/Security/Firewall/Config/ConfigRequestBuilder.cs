@@ -124,7 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/config", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -145,7 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/config", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -167,7 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/config", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

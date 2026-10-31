@@ -122,7 +122,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder.RulesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/v1/security/firewall/bypass/rules?domain={domain}&projectId={projectId}{&slug*,teamId*}", RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/bypass/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/v1/security/firewall/bypass/rules?domain={domain}&projectId={projectId}{&slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -141,7 +141,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/bypass/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -162,7 +162,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/bypass/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -184,7 +184,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.vercel.com", "/v1/security/firewall/bypass/rules", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
