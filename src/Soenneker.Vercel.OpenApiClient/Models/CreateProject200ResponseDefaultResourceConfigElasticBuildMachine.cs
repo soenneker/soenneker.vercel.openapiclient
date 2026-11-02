@@ -51,10 +51,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("label")?.GetStringValue();
             return mappingValue switch
             {
-                "14cpu-28gb" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineCreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf3(),
-                "enhanced" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineCreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf2(),
-                "standard" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineCreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf1(),
-                "turbo" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineCreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf4(),
+                "14cpu-28gb" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf3Variant(),
+                "enhanced" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf2Variant(),
+                "standard" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf1Variant(),
+                "turbo" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachineOneOf4Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseDefaultResourceConfigElasticBuildMachine(),
             };
         }

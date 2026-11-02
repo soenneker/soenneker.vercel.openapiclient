@@ -51,9 +51,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
             return mappingValue switch
             {
-                "deployment" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionUpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionOneOf2(),
-                "invocation" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionUpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionOneOf1(),
-                "turborepo" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionUpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionOneOf3(),
+                "deployment" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionOneOf2Variant(),
+                "invocation" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionOneOf1Variant(),
+                "turborepo" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5SelectionOneOf3Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1SourceOneOf5Selection(),
             };
         }

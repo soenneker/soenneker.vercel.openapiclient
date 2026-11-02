@@ -51,10 +51,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("label")?.GetStringValue();
             return mappingValue switch
             {
-                "14cpu-28gb" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf3(),
-                "enhanced" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf2(),
-                "standard" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf1(),
-                "turbo" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf4(),
+                "14cpu-28gb" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf3Variant(),
+                "enhanced" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf2Variant(),
+                "standard" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf1Variant(),
+                "turbo" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineOneOf4Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachine(),
             };
         }

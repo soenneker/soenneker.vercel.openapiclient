@@ -51,16 +51,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "account-transfer-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf7(),
-                "cannot-transfer-in-until" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf6(),
-                "claims-notice-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf5(),
-                "client-transfer-prohibited" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf3(),
-                "incorrect-auth-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf4(),
-                "incorrect-language-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf2(),
-                "invalid-contact" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf10(),
-                "price-change" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf8(),
-                "unavailable-legal" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf9(),
-                "unsupported-language-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf1(),
+                "account-transfer-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf7Variant(),
+                "cannot-transfer-in-until" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf6Variant(),
+                "claims-notice-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf5Variant(),
+                "client-transfer-prohibited" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf3Variant(),
+                "incorrect-auth-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf4Variant(),
+                "incorrect-language-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf2Variant(),
+                "invalid-contact" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf10Variant(),
+                "price-change" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf8Variant(),
+                "unavailable-legal" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf9Variant(),
+                "unsupported-language-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1AnyOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1(),
             };
         }

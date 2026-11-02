@@ -51,10 +51,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "cookie" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemEditRoute200ResponseRouteRouteHasItemOneOf2(),
-                "header" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemEditRoute200ResponseRouteRouteHasItemOneOf2(),
-                "host" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemEditRoute200ResponseRouteRouteHasItemOneOf1(),
-                "query" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemEditRoute200ResponseRouteRouteHasItemOneOf2(),
+                "cookie" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemOneOf2Variant(),
+                "header" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemOneOf2Variant(),
+                "host" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemOneOf1Variant(),
+                "query" => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItemOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteHasItem(),
             };
         }

@@ -51,11 +51,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "app" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorGetProject200ResponseCreatorOneOf3(),
-                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorGetProject200ResponseCreatorOneOf4(),
-                "project" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorGetProject200ResponseCreatorOneOf2(),
-                "system" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorGetProject200ResponseCreatorOneOf5(),
-                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorGetProject200ResponseCreatorOneOf1(),
+                "app" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorOneOf3Variant(),
+                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorOneOf4Variant(),
+                "project" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorOneOf2Variant(),
+                "system" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorOneOf5Variant(),
+                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreatorOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreator(),
             };
         }

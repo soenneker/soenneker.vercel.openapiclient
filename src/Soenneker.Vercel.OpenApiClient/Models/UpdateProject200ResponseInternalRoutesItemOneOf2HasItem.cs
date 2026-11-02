@@ -51,8 +51,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "header" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItemUpdateProject200ResponseInternalRoutesItemOneOf2HasItemOneOf1(),
-                "host" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItemUpdateProject200ResponseInternalRoutesItemOneOf2HasItemOneOf2(),
+                "header" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItemOneOf1Variant(),
+                "host" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItemOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseInternalRoutesItemOneOf2HasItem(),
             };
         }

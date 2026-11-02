@@ -51,11 +51,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "clickhouse" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryCreateDrain200ResponseOneOf2DeliveryOneOf3(),
-                "http" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryCreateDrain200ResponseOneOf2DeliveryOneOf1(),
-                "internal" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryCreateDrain200ResponseOneOf2DeliveryOneOf5(),
-                "otlphttp" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryCreateDrain200ResponseOneOf2DeliveryOneOf2(),
-                "s3" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryCreateDrain200ResponseOneOf2DeliveryOneOf4(),
+                "clickhouse" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf3Variant(),
+                "http" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf1Variant(),
+                "internal" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf5Variant(),
+                "otlphttp" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf2Variant(),
+                "s3" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf4Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2Delivery(),
             };
         }

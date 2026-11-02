@@ -51,14 +51,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf5(),
-                "cursor-origin" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf8(),
-                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf1(),
-                "github-custom-host" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf3(),
-                "github-limited" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf2(),
-                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf4(),
-                "v0" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf7(),
-                "vercel" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkDeleteProjectAvatar200ResponseLinkOneOf6(),
+                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf5Variant(),
+                "cursor-origin" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf8Variant(),
+                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf1Variant(),
+                "github-custom-host" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf3Variant(),
+                "github-limited" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf2Variant(),
+                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf4Variant(),
+                "v0" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf7Variant(),
+                "vercel" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLinkOneOf6Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLink(),
             };
         }

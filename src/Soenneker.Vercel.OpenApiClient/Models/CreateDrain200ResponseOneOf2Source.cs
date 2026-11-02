@@ -51,8 +51,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
             return mappingValue switch
             {
-                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2SourceCreateDrain200ResponseOneOf2SourceOneOf2(),
-                "self-served" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2SourceCreateDrain200ResponseOneOf2SourceOneOf1(),
+                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2SourceOneOf2Variant(),
+                "self-served" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2SourceOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2Source(),
             };
         }

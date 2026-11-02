@@ -51,10 +51,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("label")?.GetStringValue();
             return mappingValue switch
             {
-                "14cpu-28gb" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineOneOf3(),
-                "enhanced" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineOneOf2(),
-                "standard" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineOneOf1(),
-                "turbo" => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineGetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachineOneOf4(),
+                "14cpu-28gb" => new global::Soenneker.Vercel.OpenApiClient.Models.Tagged14cpu28gbVariantF7A43DDC1AA4B16D(),
+                "enhanced" => new global::Soenneker.Vercel.OpenApiClient.Models.TaggedEnhancedVariantAFFC284E4C7122D9(),
+                "standard" => new global::Soenneker.Vercel.OpenApiClient.Models.TaggedStandardVariant11F21F7AFAB6D1F1(),
+                "turbo" => new global::Soenneker.Vercel.OpenApiClient.Models.TaggedTurboVariantB40867B107CF4B58(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachine(),
             };
         }

@@ -52,8 +52,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "project" => new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByConnectConnectorUpdatedByOneOf2(),
-                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByConnectConnectorUpdatedByOneOf1(),
+                "project" => new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf2Variant(),
+                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedByOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdatedBy(),
             };
         }

@@ -51,11 +51,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "app" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorGetProjects200ResponseOneOf2ProjectsItemCreatorOneOf3(),
-                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorGetProjects200ResponseOneOf2ProjectsItemCreatorOneOf4(),
-                "project" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorGetProjects200ResponseOneOf2ProjectsItemCreatorOneOf2(),
-                "system" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorGetProjects200ResponseOneOf2ProjectsItemCreatorOneOf5(),
-                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorGetProjects200ResponseOneOf2ProjectsItemCreatorOneOf1(),
+                "app" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorOneOf3Variant(),
+                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorOneOf4Variant(),
+                "project" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorOneOf2Variant(),
+                "system" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorOneOf5Variant(),
+                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreatorOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemCreator(),
             };
         }

@@ -51,14 +51,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf5(),
-                "cursor-origin" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf8(),
-                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf1(),
-                "github-custom-host" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf3(),
-                "github-limited" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf2(),
-                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf4(),
-                "v0" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf7(),
-                "vercel" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkUpdateProject200ResponseLinkOneOf6(),
+                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf5Variant(),
+                "cursor-origin" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf8Variant(),
+                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf1Variant(),
+                "github-custom-host" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf3Variant(),
+                "github-limited" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf2Variant(),
+                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf4Variant(),
+                "v0" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf7Variant(),
+                "vercel" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLinkOneOf6Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLink(),
             };
         }

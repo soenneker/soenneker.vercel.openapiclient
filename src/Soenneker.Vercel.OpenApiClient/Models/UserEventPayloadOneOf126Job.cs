@@ -51,16 +51,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "bitbucket-now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf2(),
-                "bitbucket-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf1(),
-                "cursor-origin-now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf10(),
-                "cursor-origin-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf9(),
-                "gitlab-now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf7(),
-                "gitlab-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf6(),
-                "now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf5(),
-                "pr" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf3(),
-                "push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf4(),
-                "vercel-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobUserEventPayloadOneOf126JobOneOf8(),
+                "bitbucket-now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf2Variant(),
+                "bitbucket-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf1Variant(),
+                "cursor-origin-now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf10Variant(),
+                "cursor-origin-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf9Variant(),
+                "gitlab-now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf7Variant(),
+                "gitlab-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf6Variant(),
+                "now-comment" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf5Variant(),
+                "pr" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf3Variant(),
+                "push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf4Variant(),
+                "vercel-push" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126JobOneOf8Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126Job(),
             };
         }

@@ -51,14 +51,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf5(),
-                "cursor-origin" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf8(),
-                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf1(),
-                "github-custom-host" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf3(),
-                "github-limited" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf2(),
-                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf4(),
-                "v0" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf7(),
-                "vercel" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkUpdateMicrofrontends200ResponseLinkOneOf6(),
+                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf5Variant(),
+                "cursor-origin" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf8Variant(),
+                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf1Variant(),
+                "github-custom-host" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf3Variant(),
+                "github-limited" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf2Variant(),
+                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf4Variant(),
+                "v0" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf7Variant(),
+                "vercel" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLinkOneOf6Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseLink(),
             };
         }

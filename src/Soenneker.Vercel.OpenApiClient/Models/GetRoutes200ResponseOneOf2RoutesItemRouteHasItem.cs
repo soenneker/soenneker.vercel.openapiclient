@@ -51,10 +51,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "cookie" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemGetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf2(),
-                "header" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemGetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf2(),
-                "host" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemGetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf1(),
-                "query" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemGetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf2(),
+                "cookie" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf2Variant(),
+                "header" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf2Variant(),
+                "host" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf1Variant(),
+                "query" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItemOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetRoutes200ResponseOneOf2RoutesItemRouteHasItem(),
             };
         }

@@ -51,11 +51,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "clickhouse" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryGetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf3(),
-                "http" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryGetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf1(),
-                "internal" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryGetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf5(),
-                "otlphttp" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryGetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2(),
-                "s3" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryGetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf4(),
+                "clickhouse" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf3Variant(),
+                "http" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf1Variant(),
+                "internal" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf5Variant(),
+                "otlphttp" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf2Variant(),
+                "s3" => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryOneOf4Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDelivery(),
             };
         }

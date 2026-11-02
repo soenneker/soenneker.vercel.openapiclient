@@ -51,13 +51,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "credit_topup" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationBuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf1(),
-                "domain_name" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationBuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf2(),
-                "orb_plan_change" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationBuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf3(),
-                "orb_price_interval" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationBuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf4(),
-                "orb_subscription" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationBuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf5(),
-                "orb_subscription_intent" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationBuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6(),
-                "subscription" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationBuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7(),
+                "credit_topup" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf1Variant(),
+                "domain_name" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf2Variant(),
+                "orb_plan_change" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf3Variant(),
+                "orb_price_interval" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf4Variant(),
+                "orb_subscription" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf5Variant(),
+                "orb_subscription_intent" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf6Variant(),
+                "subscription" => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfiguration(),
             };
         }

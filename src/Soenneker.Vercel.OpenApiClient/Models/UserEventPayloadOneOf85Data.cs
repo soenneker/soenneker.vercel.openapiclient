@@ -51,9 +51,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("planSlug")?.GetStringValue();
             return mappingValue switch
             {
-                "hobby" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataUserEventPayloadOneOf85DataOneOf2(),
-                "v0_business" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataUserEventPayloadOneOf85DataOneOf1(),
-                "v0_teams" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataUserEventPayloadOneOf85DataOneOf1(),
+                "hobby" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf2Variant(),
+                "v0_business" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1Variant(),
+                "v0_teams" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Data(),
             };
         }

@@ -51,8 +51,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "team" => new global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemAuthTokenScopesItemOneOf2(),
-                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemAuthTokenScopesItemOneOf1(),
+                "team" => new global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf2Variant(),
+                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItem(),
             };
         }

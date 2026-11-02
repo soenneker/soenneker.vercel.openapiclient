@@ -51,10 +51,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "request.headers" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemCreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf1(),
-                "request.path" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemCreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf2(),
-                "request.query" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemCreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf1(),
-                "response.headers" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemCreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf1(),
+                "request.headers" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf1Variant(),
+                "request.path" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf2Variant(),
+                "request.query" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf1Variant(),
+                "response.headers" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItem(),
             };
         }

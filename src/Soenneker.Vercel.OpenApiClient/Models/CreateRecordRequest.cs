@@ -51,16 +51,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "A" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf1Branch(),
-                "AAAA" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf2Branch(),
-                "ALIAS" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf3Branch(),
-                "CAA" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf4Branch(),
-                "CNAME" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf5Branch(),
-                "HTTPS" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf10Branch(),
-                "MX" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf6Branch(),
-                "NS" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf9Branch(),
-                "SRV" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf7Branch(),
-                "TXT" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestCreateRecordRequestAnyOf8Branch(),
+                "A" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf1BranchVariant(),
+                "AAAA" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf2BranchVariant(),
+                "ALIAS" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3BranchVariant(),
+                "CAA" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf4BranchVariant(),
+                "CNAME" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf5BranchVariant(),
+                "HTTPS" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10BranchVariant(),
+                "MX" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf6BranchVariant(),
+                "NS" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf9BranchVariant(),
+                "SRV" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7BranchVariant(),
+                "TXT" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8BranchVariant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequest(),
             };
         }

@@ -51,9 +51,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
             return mappingValue switch
             {
-                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemUpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1(),
-                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemUpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1(),
-                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemUpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf2(),
+                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1Variant(),
+                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1Variant(),
+                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseDeploymentPolicyGitSourcesItemSourcesItem(),
             };
         }

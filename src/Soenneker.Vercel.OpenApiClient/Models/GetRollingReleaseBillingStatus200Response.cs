@@ -51,10 +51,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("reason")?.GetStringValue();
             return mappingValue switch
             {
-                "available_slots" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseGetRollingReleaseBillingStatus200ResponseOneOf4(),
-                "no_available_slots" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseGetRollingReleaseBillingStatus200ResponseOneOf3(),
-                "plan_not_supported" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseGetRollingReleaseBillingStatus200ResponseOneOf1(),
-                "unlimited_slots" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseGetRollingReleaseBillingStatus200ResponseOneOf2(),
+                "available_slots" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf4Variant(),
+                "no_available_slots" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf3Variant(),
+                "plan_not_supported" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf1Variant(),
+                "unlimited_slots" => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200Response(),
             };
         }

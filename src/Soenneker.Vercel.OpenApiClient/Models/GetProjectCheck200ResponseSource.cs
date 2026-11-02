@@ -51,9 +51,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
             return mappingValue switch
             {
-                "git-provider" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200ResponseSourceGetProjectCheck200ResponseSourceOneOf3(),
-                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200ResponseSourceGetProjectCheck200ResponseSourceOneOf1(),
-                "webhook" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200ResponseSourceGetProjectCheck200ResponseSourceOneOf2(),
+                "git-provider" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200ResponseSourceOneOf3Variant(),
+                "integration" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200ResponseSourceOneOf1Variant(),
+                "webhook" => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200ResponseSourceOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200ResponseSource(),
             };
         }

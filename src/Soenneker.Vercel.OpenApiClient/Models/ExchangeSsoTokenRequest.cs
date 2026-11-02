@@ -51,8 +51,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("grant_type")?.GetStringValue();
             return mappingValue switch
             {
-                "authorization_code" => new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestExchangeSsoTokenRequestOneOf1(),
-                "refresh_token" => new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestExchangeSsoTokenRequestOneOf2(),
+                "authorization_code" => new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1Variant(),
+                "refresh_token" => new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequest(),
             };
         }

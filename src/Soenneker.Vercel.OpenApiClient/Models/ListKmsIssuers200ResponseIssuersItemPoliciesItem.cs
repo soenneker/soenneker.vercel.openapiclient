@@ -51,8 +51,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
             return mappingValue switch
             {
-                "connex-grant" => new global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200ResponseIssuersItemPoliciesItemListKmsIssuers200ResponseIssuersItemPoliciesItemOneOf2(),
-                "project-grant" => new global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200ResponseIssuersItemPoliciesItemListKmsIssuers200ResponseIssuersItemPoliciesItemOneOf1(),
+                "connex-grant" => new global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200ResponseIssuersItemPoliciesItemOneOf2Variant(),
+                "project-grant" => new global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200ResponseIssuersItemPoliciesItemOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.ListKmsIssuers200ResponseIssuersItemPoliciesItem(),
             };
         }

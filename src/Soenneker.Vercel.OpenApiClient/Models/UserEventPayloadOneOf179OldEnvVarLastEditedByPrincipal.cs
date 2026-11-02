@@ -51,8 +51,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "app" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVarLastEditedByPrincipalUserEventPayloadOneOf179OldEnvVarLastEditedByPrincipalOneOf2(),
-                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVarLastEditedByPrincipalUserEventPayloadOneOf179OldEnvVarLastEditedByPrincipalOneOf1(),
+                "app" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVarLastEditedByPrincipalOneOf2Variant(),
+                "user" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVarLastEditedByPrincipalOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179OldEnvVarLastEditedByPrincipal(),
             };
         }

@@ -51,9 +51,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("purchaseType")?.GetStringValue();
             return mappingValue switch
             {
-                "purchase" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemGetOrder200ResponseDomainsItemAnyOf1(),
-                "renewal" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemGetOrder200ResponseDomainsItemAnyOf2(),
-                "transfer" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemGetOrder200ResponseDomainsItemAnyOf3(),
+                "purchase" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf1Variant(),
+                "renewal" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2Variant(),
+                "transfer" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf3Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItem(),
             };
         }

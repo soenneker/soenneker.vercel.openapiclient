@@ -51,8 +51,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("schema")?.GetStringValue();
             return mappingValue switch
             {
-                "experimentalServices" => new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemCancelDeployment200ResponseServicesItemOneOf1(),
-                "experimentalServicesV2" => new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemCancelDeployment200ResponseServicesItemOneOf2(),
+                "experimentalServices" => new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf1Variant(),
+                "experimentalServicesV2" => new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem(),
             };
         }

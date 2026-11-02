@@ -51,9 +51,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
             return mappingValue switch
             {
-                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemDeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1(),
-                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemDeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1(),
-                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemDeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf2(),
+                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1Variant(),
+                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf1Variant(),
+                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItemOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseDeploymentPolicyGitSourcesItemSourcesItem(),
             };
         }

@@ -51,9 +51,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
             return mappingValue switch
             {
-                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemTeamDeploymentPolicyGitSourcesItemSourcesItemOneOf1(),
-                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemTeamDeploymentPolicyGitSourcesItemSourcesItemOneOf1(),
-                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemTeamDeploymentPolicyGitSourcesItemSourcesItemOneOf2(),
+                "bitbucket" => new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemOneOf1Variant(),
+                "github" => new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemOneOf1Variant(),
+                "gitlab" => new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemOneOf2Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItem(),
             };
         }

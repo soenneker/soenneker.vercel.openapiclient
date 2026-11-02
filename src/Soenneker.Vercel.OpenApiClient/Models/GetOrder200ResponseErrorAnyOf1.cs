@@ -51,12 +51,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "claims-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1GetOrder200ResponseErrorAnyOf1AnyOf5(),
-                "domain-mismatch" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1GetOrder200ResponseErrorAnyOf1AnyOf6(),
-                "payment-failed" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1GetOrder200ResponseErrorAnyOf1AnyOf1(),
-                "price-mismatch" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1GetOrder200ResponseErrorAnyOf1AnyOf3(),
-                "tld-outage" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1GetOrder200ResponseErrorAnyOf1AnyOf2(),
-                "unexpected-error" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1GetOrder200ResponseErrorAnyOf1AnyOf4(),
+                "claims-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1AnyOf5Variant(),
+                "domain-mismatch" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1AnyOf6Variant(),
+                "payment-failed" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1AnyOf1Variant(),
+                "price-mismatch" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1AnyOf3Variant(),
+                "tld-outage" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1AnyOf2Variant(),
+                "unexpected-error" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1AnyOf4Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseErrorAnyOf1(),
             };
         }
