@@ -42,7 +42,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf2 = filterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf2Value;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal0 && "development".Equals(literal0.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal1 && "development".Equals(literal1.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "preview".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "preview".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "production".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal)))) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1Item> filterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (((global::System.Func<bool?>)(() => { int remaining = 10000;
+bool IsNumber(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal;
+int StringLength(string text) { int count = 0; for (int i = 0; i < text.Length; i++, count++) if (char.IsHighSurrogate(text[i]) && i + 1 < text.Length && char.IsLowSurrogate(text[i + 1])) i++; return count; }
+bool? All(params bool?[] values) { bool? result = true; foreach (var item in values) result &= item; return result; }
+bool? Any(params bool?[] values) { bool? result = false; foreach (var item in values) result |= item; return result; }
+bool? One(params bool?[] values) { int matches = 0; bool unknown = false; foreach (var item in values) { if (item == true) matches++; if (item == null) unknown = true; } return matches > 1 ? false : unknown ? null : matches == 1; }
+decimal? Number(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) {
+    try { return node switch {
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger n => n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong n => n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat n => (decimal)n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble n => (decimal)n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal n => n.GetValue(), _ => null }; }
+    catch (global::System.OverflowException) { return null; }
+}
+bool? MatchSchema0(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
+if (result == false) return false;
+bool? enumMatch = false;
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "development".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "development".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "preview".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "preview".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "production".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+result &= ((global::System.Func<bool?>)(() => enumMatch))();
+if (result == false) return false;
+return result;
+}
+return MatchSchema0(item, 0); }))()) == true) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1Item> filterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1ItemValue)
             {
                 result.FilterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1Item = filterProjectEnvs200ResponseOneOf2EnvsItemTargetOneOf1ItemValue;
             }

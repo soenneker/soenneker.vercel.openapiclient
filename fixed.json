@@ -18579,7 +18579,8 @@
                 {
                   "type": "string"
                 }
-              ]
+              ],
+              "nullable": true
             }
           },
           {
@@ -44903,7 +44904,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "Pagination": {
         "required": [
@@ -45669,7 +45671,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GlobalConfigItem": {
         "required": [
@@ -47266,7 +47269,7 @@
             "example": "Our mission is to make cloud computing accessible to everyone."
           },
           "disableHardAutoBlocks": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponseAliasAssignedAt"
+            "$ref": "#/components/schemas/TeamDisableHardAutoBlocks"
           },
           "disableRepositoryDispatchEvents": {
             "$ref": "#/components/schemas/TeamDisableRepositoryDispatchEvents"
@@ -47629,7 +47632,8 @@
               {
                 "type": "string"
               }
-            ]
+            ],
+            "nullable": true
           },
           "importFlowGitNamespaceId": {
             "anyOf": [
@@ -47639,7 +47643,8 @@
               {
                 "type": "string"
               }
-            ]
+            ],
+            "nullable": true
           },
           "importFlowGitProvider": {
             "$ref": "#/components/schemas/AuthUserImportFlowGitProvider"
@@ -51201,7 +51206,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "SegmentDataRulesItemConditionsItemLhs": {
         "oneOf": [
@@ -64723,7 +64729,8 @@
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf336OldPasswordProtectionOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UserEventPayloadOneOf336PasswordProtection": {
         "oneOf": [
@@ -64733,7 +64740,8 @@
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf336PasswordProtectionOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UserEventPayloadOneOf357OldSsoProtection": {
         "oneOf": [
@@ -64743,7 +64751,8 @@
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf357OldSsoProtectionOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UserEventPayloadOneOf357SsoProtection": {
         "oneOf": [
@@ -64753,7 +64762,8 @@
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf357SsoProtectionOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UserEventPayloadOneOf378Name": {
         "oneOf": [
@@ -65426,7 +65436,9 @@
           "createdAt": {
             "type": "number"
           },
-          "customEnvId": {},
+          "customEnvId": {
+            "nullable": true
+          },
           "customHost": {
             "type": "string"
           },
@@ -65454,7 +65466,9 @@
           "prId": {
             "type": "number"
           },
-          "projectId": {},
+          "projectId": {
+            "nullable": true
+          },
           "provider": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf126JobOneOf5Provider"
           },
@@ -65980,7 +65994,9 @@
           "createdAt": {
             "type": "number"
           },
-          "customEnvId": {},
+          "customEnvId": {
+            "nullable": true
+          },
           "eventful": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf126JobOneOf10Eventful"
           },
@@ -66003,7 +66019,9 @@
           "prId": {
             "type": "number"
           },
-          "projectId": {},
+          "projectId": {
+            "nullable": true
+          },
           "provider": {
             "$ref": "#/components/schemas/CursorOriginProvider"
           },
@@ -67919,7 +67937,8 @@
               {
                 "type": "string"
               }
-            ]
+            ],
+            "nullable": true
           },
           "scopeId": {
             "type": "string"
@@ -78266,7 +78285,9 @@
           }
         }
       },
-      "DeleteAiGatewayByokCredential204Response": {},
+      "DeleteAiGatewayByokCredential204Response": {
+        "nullable": true
+      },
       "GetAiGatewayVirtualModelConfig200Response": {
         "oneOf": [
           {
@@ -78277,9 +78298,15 @@
           }
         ]
       },
-      "DeleteAiGatewayVirtualModelConfig204Response": {},
-      "DeleteAiGatewayVirtualModelConfigBySlug204Response": {},
-      "DeleteAiGatewayRule204Response": {},
+      "DeleteAiGatewayVirtualModelConfig204Response": {
+        "nullable": true
+      },
+      "DeleteAiGatewayVirtualModelConfigBySlug204Response": {
+        "nullable": true
+      },
+      "DeleteAiGatewayRule204Response": {
+        "nullable": true
+      },
       "UpsertAiGatewayBudgetRequest": {
         "required": [
           "scopeType",
@@ -79609,7 +79636,9 @@
           "$ref": "#/components/schemas/PrivateLinkEndpoint"
         }
       },
-      "DeletePrivateLinkEndpoint204Response": {},
+      "DeletePrivateLinkEndpoint204Response": {
+        "nullable": true
+      },
       "UpdatePrivateLinkEndpointRequest": {
         "type": "object",
         "properties": {
@@ -85880,7 +85909,8 @@
           {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjectTrace200Response": {
         "required": [
@@ -88993,7 +89023,9 @@
         ],
         "type": "object",
         "properties": {
-          "rollingRelease": {}
+          "rollingRelease": {
+            "nullable": true
+          }
         }
       },
       "UpdateRollingReleaseConfig200Response": {
@@ -92144,7 +92176,9 @@
         },
         "additionalProperties": false
       },
-      "DeleteRepository202Response": {},
+      "DeleteRepository202Response": {
+        "nullable": true
+      },
       "AddRepositoryPermissionRequest": {
         "type": "object",
         "properties": {
@@ -92185,8 +92219,12 @@
         },
         "additionalProperties": false
       },
-      "RemoveRepositoryPermission204Response": {},
-      "ClearRepositoryPermissions204Response": {},
+      "RemoveRepositoryPermission204Response": {
+        "nullable": true
+      },
+      "ClearRepositoryPermissions204Response": {
+        "nullable": true
+      },
       "ListRepositoryTags200Response": {
         "required": [
           "tags"
@@ -92204,19 +92242,39 @@
           }
         }
       },
-      "DeleteRepositoryImage202Response": {},
+      "DeleteRepositoryImage202Response": {
+        "nullable": true
+      },
       "GetRoot200Response": {
         "type": "object"
       },
-      "HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest200Response": {},
-      "GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204Response": {},
-      "DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204Response": {},
-      "UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202Response": {},
-      "ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201Response": {},
-      "CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads202Response": {},
-      "ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference201Response": {},
-      "HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference200Response": {},
-      "DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference202Response": {},
+      "HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest200Response": {
+        "nullable": true
+      },
+      "GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204Response": {
+        "nullable": true
+      },
+      "DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204Response": {
+        "nullable": true
+      },
+      "UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202Response": {
+        "nullable": true
+      },
+      "ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201Response": {
+        "nullable": true
+      },
+      "CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads202Response": {
+        "nullable": true
+      },
+      "ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference201Response": {
+        "nullable": true
+      },
+      "HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference200Response": {
+        "nullable": true
+      },
+      "DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference202Response": {
+        "nullable": true
+      },
       "GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response": {
         "required": [
           "name",
@@ -94276,10 +94334,18 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "DeleteAiGatewayByokCredential204ResponseSchema": {},
-      "DeleteAiGatewayVirtualModelConfig204ResponseSchema": {},
-      "DeleteAiGatewayVirtualModelConfigBySlug204ResponseSchema": {},
-      "DeleteAiGatewayRule204ResponseSchema": {},
+      "DeleteAiGatewayByokCredential204ResponseSchema": {
+        "nullable": true
+      },
+      "DeleteAiGatewayVirtualModelConfig204ResponseSchema": {
+        "nullable": true
+      },
+      "DeleteAiGatewayVirtualModelConfigBySlug204ResponseSchema": {
+        "nullable": true
+      },
+      "DeleteAiGatewayRule204ResponseSchema": {
+        "nullable": true
+      },
       "RecordEventsRequestRequestBody": {
         "type": "array",
         "items": {
@@ -94316,7 +94382,9 @@
           "$ref": "#/components/schemas/PrivateLinkEndpoint"
         }
       },
-      "DeletePrivateLinkEndpoint204ResponseSchema": {},
+      "DeletePrivateLinkEndpoint204ResponseSchema": {
+        "nullable": true
+      },
       "PutProjectDaemonInstancesRequestRequestBody": {
         "type": "object",
         "additionalProperties": {
@@ -94818,7 +94886,9 @@
           }
         }
       },
-      "DeleteRepository202ResponseSchema": {},
+      "DeleteRepository202ResponseSchema": {
+        "nullable": true
+      },
       "AddRepositoryPermission200Response": {
         "required": [
           "permission"
@@ -94830,8 +94900,12 @@
           }
         }
       },
-      "RemoveRepositoryPermission204ResponseSchema": {},
-      "ClearRepositoryPermissions204ResponseSchema": {},
+      "RemoveRepositoryPermission204ResponseSchema": {
+        "nullable": true
+      },
+      "ClearRepositoryPermissions204ResponseSchema": {
+        "nullable": true
+      },
       "GetRepositoryTag200Response": {
         "required": [
           "tag"
@@ -94854,19 +94928,39 @@
           }
         }
       },
-      "DeleteRepositoryImage202ResponseSchema": {},
+      "DeleteRepositoryImage202ResponseSchema": {
+        "nullable": true
+      },
       "GetRoot200ResponseSchema": {
         "type": "object"
       },
-      "HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest200ResponseSchema": {},
-      "GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204ResponseSchema": {},
-      "DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204ResponseSchema": {},
-      "UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema": {},
-      "ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema": {},
-      "CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads202ResponseSchema": {},
-      "ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference201ResponseSchema": {},
-      "HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference200ResponseSchema": {},
-      "DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference202ResponseSchema": {},
+      "HeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest200ResponseSchema": {
+        "nullable": true
+      },
+      "GetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204ResponseSchema": {
+        "nullable": true
+      },
+      "DeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid204ResponseSchema": {
+        "nullable": true
+      },
+      "UpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid202ResponseSchema": {
+        "nullable": true
+      },
+      "ReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid201ResponseSchema": {
+        "nullable": true
+      },
+      "CreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploads202ResponseSchema": {
+        "nullable": true
+      },
+      "ReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference201ResponseSchema": {
+        "nullable": true
+      },
+      "HeadByTeamSlugByProjectSlugByRepositoryNameManifestsByReference200ResponseSchema": {
+        "nullable": true
+      },
+      "DeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference202ResponseSchema": {
+        "nullable": true
+      },
       "ListAliases200Response": {
         "required": [
           "aliases",
@@ -94995,7 +95089,8 @@
           {
             "$ref": "#/components/schemas/ArtifactQuery200ResponseAdditionalPropertiesOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "BuyCredits200ResponseOneOf1": {
         "required": [
@@ -95098,7 +95193,9 @@
         ],
         "type": "object",
         "properties": {
-          "alias": {},
+          "alias": {
+            "nullable": true
+          },
           "version": {
             "$ref": "#/components/schemas/DeleteRedirects200ResponseOneOf2Version"
           }
@@ -95879,7 +95976,8 @@
           {
             "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetDeploymentEvents200StreamJsonResponseOneOf1": {
         "required": [
@@ -97225,7 +97323,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "CancelDeployment200ResponseAtproto": {
         "oneOf": [
@@ -97311,6 +97410,7 @@
             "$ref": "#/components/schemas/CancelDeployment200ResponseGitRepoOneOf5"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -99104,7 +99204,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateFlagRequestVariantsItemValue": {
         "anyOf": [
@@ -99293,7 +99394,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthrough": {
         "oneOf": [
@@ -99407,7 +99509,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "ListTeamFlagSettings200ResponseOneOf2": {
         "required": [
@@ -99776,7 +99879,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetIntegrationResource200ResponseMetadataAdditionalProperties": {
         "oneOf": [
@@ -100718,7 +100822,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -100846,7 +100951,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHint": {
         "oneOf": [
@@ -100902,6 +101008,7 @@
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -100970,7 +101077,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemLink": {
         "oneOf": [
@@ -101106,7 +101214,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemTrustedIps": {
         "oneOf": [
@@ -101116,7 +101225,8 @@
           {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -101445,7 +101555,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "CreateProject200ResponseConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -101573,7 +101684,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "CreateProject200ResponseEnvItemContentHint": {
         "oneOf": [
@@ -101629,6 +101741,7 @@
             "$ref": "#/components/schemas/CreateProject200ResponseEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -101697,7 +101810,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "CreateProject200ResponseLink": {
         "oneOf": [
@@ -101833,7 +101947,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "CreateProject200ResponseTrustedIps": {
         "oneOf": [
@@ -101843,7 +101958,8 @@
           {
             "$ref": "#/components/schemas/CreateProject200ResponseTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "CreateProject200ResponseTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -101887,7 +102003,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProject200ResponseConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -102015,7 +102132,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProject200ResponseEnvItemContentHint": {
         "oneOf": [
@@ -102071,6 +102189,7 @@
             "$ref": "#/components/schemas/GetProject200ResponseEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -102139,7 +102258,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProject200ResponseLink": {
         "oneOf": [
@@ -102275,7 +102395,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProject200ResponseTrustedIps": {
         "oneOf": [
@@ -102285,7 +102406,8 @@
           {
             "$ref": "#/components/schemas/GetProject200ResponseTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProject200ResponseTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -102457,7 +102579,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateProject200ResponseConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -102585,7 +102708,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateProject200ResponseEnvItemContentHint": {
         "oneOf": [
@@ -102641,6 +102765,7 @@
             "$ref": "#/components/schemas/UpdateProject200ResponseEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -102709,7 +102834,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateProject200ResponseLink": {
         "oneOf": [
@@ -102845,7 +102971,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateProject200ResponseTrustedIps": {
         "oneOf": [
@@ -102855,7 +102982,8 @@
           {
             "$ref": "#/components/schemas/UpdateProject200ResponseTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateProject200ResponseTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -102899,7 +103027,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UploadProjectAvatar200ResponseConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -103027,7 +103156,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UploadProjectAvatar200ResponseEnvItemContentHint": {
         "oneOf": [
@@ -103083,6 +103213,7 @@
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -103151,7 +103282,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UploadProjectAvatar200ResponseLink": {
         "oneOf": [
@@ -103287,7 +103419,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UploadProjectAvatar200ResponseTrustedIps": {
         "oneOf": [
@@ -103297,7 +103430,8 @@
           {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UploadProjectAvatar200ResponseTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -103341,7 +103475,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "DeleteProjectAvatar200ResponseConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -103469,7 +103604,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "DeleteProjectAvatar200ResponseEnvItemContentHint": {
         "oneOf": [
@@ -103525,6 +103661,7 @@
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -103593,7 +103730,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "DeleteProjectAvatar200ResponseLink": {
         "oneOf": [
@@ -103729,7 +103867,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "DeleteProjectAvatar200ResponseTrustedIps": {
         "oneOf": [
@@ -103739,7 +103878,8 @@
           {
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "DeleteProjectAvatar200ResponseTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -104511,6 +104651,7 @@
             "$ref": "#/components/schemas/EditProjectEnv200ResponseContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -104636,7 +104777,9 @@
         ],
         "type": "object",
         "properties": {
-          "rollingRelease": {}
+          "rollingRelease": {
+            "nullable": true
+          }
         }
       },
       "UpdateRollingReleaseConfig200ResponseOneOf2": {
@@ -104679,7 +104822,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateMicrofrontends200ResponseConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -104807,7 +104951,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateMicrofrontends200ResponseEnvItemContentHint": {
         "oneOf": [
@@ -104863,6 +105008,7 @@
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -104931,7 +105077,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateMicrofrontends200ResponseLink": {
         "oneOf": [
@@ -105067,7 +105214,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateMicrofrontends200ResponseTrustedIps": {
         "oneOf": [
@@ -105077,7 +105225,8 @@
           {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateMicrofrontends200ResponseTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -105818,8 +105967,18 @@
           }
         ]
       },
-      "PutFirewallConfigRequestRulesItemActionMitigateRateLimit": {},
-      "PutFirewallConfigRequestRulesItemActionMitigateRedirect": {},
+      "PutFirewallConfigRequestRulesItemActionMitigateRateLimit": {
+        "anyOf": [
+          {}
+        ],
+        "nullable": true
+      },
+      "PutFirewallConfigRequestRulesItemActionMitigateRedirect": {
+        "anyOf": [
+          {}
+        ],
+        "nullable": true
+      },
       "PutFirewallConfigRequestRulesItemActionMitigateLogHeaders": {
         "oneOf": [
           {
@@ -105928,7 +106087,9 @@
           "action": {
             "$ref": "#/components/schemas/FirewallEnabledAction"
           },
-          "id": {},
+          "id": {
+            "nullable": true
+          },
           "value": {
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf1Value"
           }
@@ -105947,7 +106108,9 @@
           "action": {
             "$ref": "#/components/schemas/RulesInsertAction"
           },
-          "id": {},
+          "id": {
+            "nullable": true
+          },
           "value": {
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf2Value"
           }
@@ -105989,7 +106152,9 @@
           "id": {
             "type": "string"
           },
-          "value": {}
+          "value": {
+            "nullable": true
+          }
         },
         "additionalProperties": false,
         "description": "Reorder a ruleset"
@@ -106045,8 +106210,12 @@
           "action": {
             "$ref": "#/components/schemas/CrsDisableAction"
           },
-          "id": {},
-          "value": {}
+          "id": {
+            "nullable": true
+          },
+          "value": {
+            "nullable": true
+          }
         },
         "additionalProperties": false,
         "description": "Remove a named condition"
@@ -106063,7 +106232,8 @@
             "$ref": "#/components/schemas/IpInsertAction"
           },
           "id": {
-            "maxLength": 180
+            "maxLength": 180,
+            "nullable": true
           },
           "value": {
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf8Value"
@@ -106106,7 +106276,9 @@
           "id": {
             "type": "string"
           },
-          "value": {}
+          "value": {
+            "nullable": true
+          }
         },
         "additionalProperties": false,
         "description": "Enable Firewall"
@@ -106499,7 +106671,9 @@
           "ok": {
             "$ref": "#/components/schemas/AddBypassIp200ResponseOneOf1Ok"
           },
-          "pagination": {},
+          "pagination": {
+            "nullable": true
+          },
           "result": {
             "type": "array",
             "items": {
@@ -107305,7 +107479,8 @@
           {
             "$ref": "#/components/schemas/ArtifactQuery200ResponseAdditionalPropertiesOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "ListSharedEnvVariable200ResponseDataItemLastEditedByPrincipal": {
         "oneOf": [
@@ -107384,7 +107559,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "ArtifactQuery200ResponseAdditionalPropertiesOneOf1": {
         "required": [
@@ -108746,7 +108922,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetDeployment200ResponseOneOf2Atproto": {
         "oneOf": [
@@ -108832,6 +109009,7 @@
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2GitRepoOneOf5"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -109368,7 +109546,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "CreateDeployment200ResponseOneOf2Atproto": {
         "oneOf": [
@@ -109454,6 +109633,7 @@
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2GitRepoOneOf5"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -111011,28 +111191,48 @@
         "description": "Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime."
       },
       "CreateRecordRequestAnyOf7SrvPriority": {
-        "maximum": 65535,
-        "minimum": 0,
-        "type": "number",
-        "example": 10
+        "anyOf": [
+          {
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "number",
+            "example": 10
+          }
+        ],
+        "nullable": true
       },
       "CreateRecordRequestAnyOf7SrvWeight": {
-        "maximum": 65535,
-        "minimum": 0,
-        "type": "number",
-        "example": 10
+        "anyOf": [
+          {
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "number",
+            "example": 10
+          }
+        ],
+        "nullable": true
       },
       "CreateRecordRequestAnyOf7SrvPort": {
-        "maximum": 65535,
-        "minimum": 0,
-        "type": "number",
-        "example": 5000
+        "anyOf": [
+          {
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "number",
+            "example": 5000
+          }
+        ],
+        "nullable": true
       },
       "CreateRecordRequestAnyOf10HttpsPriority": {
-        "maximum": 65535,
-        "minimum": 0,
-        "type": "number",
-        "example": 10
+        "anyOf": [
+          {
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "number",
+            "example": 10
+          }
+        ],
+        "nullable": true
       },
       "SearchDomains200ResponseResultsItemAnyOf1": {
         "required": [
@@ -117225,7 +117425,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf1ItemCreator": {
         "oneOf": [
@@ -117310,6 +117511,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf1ItemEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117368,7 +117570,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf1ItemLink": {
         "oneOf": [
@@ -117527,7 +117730,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf1ItemTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -117581,7 +117785,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf2ProjectsItemCreator": {
         "oneOf": [
@@ -117666,6 +117871,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117724,7 +117930,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf2ProjectsItemLink": {
         "oneOf": [
@@ -117883,7 +118090,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -117937,7 +118145,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf3ProjectsItemConnectConfigurationsItemEnvId": {
         "oneOf": [
@@ -118065,7 +118274,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf3ProjectsItemEnvItemContentHint": {
         "oneOf": [
@@ -118121,6 +118331,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemEnvItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -118189,7 +118400,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf3ProjectsItemLink": {
         "oneOf": [
@@ -118325,7 +118537,8 @@
             ],
             "type": "boolean"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf3ProjectsItemTrustedIps": {
         "oneOf": [
@@ -118335,7 +118548,8 @@
           {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemTrustedIpsOneOf2"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetProjects200ResponseOneOf3ProjectsItemTrustedSourcesOidcProvidersAdditionalPropertiesItemTo": {
         "oneOf": [
@@ -125460,6 +125674,7 @@
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseOneOf1ContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -125550,6 +125765,7 @@
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseOneOf2EnvsItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -125640,6 +125856,7 @@
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseOneOf3EnvsItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -125891,6 +126108,7 @@
             "$ref": "#/components/schemas/GetProjectEnv200ResponseOneOf1ContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -125981,6 +126199,7 @@
             "$ref": "#/components/schemas/GetProjectEnv200ResponseOneOf2ContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -126071,6 +126290,7 @@
             "$ref": "#/components/schemas/GetProjectEnv200ResponseOneOf3ContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -126161,6 +126381,7 @@
             "$ref": "#/components/schemas/RemoveProjectEnv200ResponseOneOf1ItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -126251,6 +126472,7 @@
             "$ref": "#/components/schemas/RemoveProjectEnv200ResponseOneOf2ContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -126341,6 +126563,7 @@
             "$ref": "#/components/schemas/RemoveProjectEnv200ResponseOneOf3ContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -128846,7 +129069,9 @@
           "valid": {
             "$ref": "#/components/schemas/GetSecurityFirewallConfig200ResponseActiveRulesItemOneOf1Valid"
           },
-          "validationErrors": {}
+          "validationErrors": {
+            "nullable": true
+          }
         }
       },
       "GetSecurityFirewallConfig200ResponseActiveRulesItemOneOf2": {
@@ -128948,7 +129173,9 @@
           "valid": {
             "$ref": "#/components/schemas/GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf1Valid"
           },
-          "validationErrors": {}
+          "validationErrors": {
+            "nullable": true
+          }
         }
       },
       "GetSecurityFirewallConfig200ResponseDraftRulesItemOneOf2": {
@@ -129050,7 +129277,9 @@
           "valid": {
             "$ref": "#/components/schemas/GetSecurityFirewallConfig200ResponseVersionsItemRulesItemOneOf1Valid"
           },
-          "validationErrors": {}
+          "validationErrors": {
+            "nullable": true
+          }
         }
       },
       "GetSecurityFirewallConfig200ResponseVersionsItemRulesItemOneOf2": {
@@ -129204,7 +129433,9 @@
           "valid": {
             "$ref": "#/components/schemas/PutFirewallConfig200ResponseActiveRulesItemOneOf1Valid"
           },
-          "validationErrors": {}
+          "validationErrors": {
+            "nullable": true
+          }
         }
       },
       "PutFirewallConfig200ResponseActiveRulesItemOneOf2": {
@@ -129568,7 +129799,9 @@
           "valid": {
             "$ref": "#/components/schemas/GetFirewallConfig200ResponseRulesItemOneOf1Valid"
           },
-          "validationErrors": {}
+          "validationErrors": {
+            "nullable": true
+          }
         }
       },
       "GetFirewallConfig200ResponseRulesItemOneOf2": {
@@ -129670,7 +129903,9 @@
           "valid": {
             "$ref": "#/components/schemas/CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf1Valid"
           },
-          "validationErrors": {}
+          "validationErrors": {
+            "nullable": true
+          }
         }
       },
       "CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2": {
@@ -132006,7 +132241,9 @@
           "options": {
             "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf1Options"
           },
-          "output": {},
+          "output": {
+            "nullable": true
+          },
           "type": {
             "$ref": "#/components/schemas/CreditTopupType"
           }
@@ -132024,7 +132261,9 @@
           "options": {
             "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf2Options"
           },
-          "output": {},
+          "output": {
+            "nullable": true
+          },
           "type": {
             "$ref": "#/components/schemas/DomainNameType"
           }
@@ -138853,6 +139092,7 @@
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -143250,6 +143490,7 @@
             "$ref": "#/components/schemas/CreateProject200ResponseCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -143318,6 +143559,7 @@
             "$ref": "#/components/schemas/GetProject200ResponseCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -143406,6 +143648,7 @@
             "$ref": "#/components/schemas/UpdateProject200ResponseCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -143474,6 +143717,7 @@
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -143542,6 +143786,7 @@
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -144456,6 +144701,7 @@
             "$ref": "#/components/schemas/CreateProjectEnv201ResponseCreatedOneOf1ContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -144546,6 +144792,7 @@
             "$ref": "#/components/schemas/CreateProjectEnv201ResponseCreatedOneOf2ItemContentHintOneOf17"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -146193,6 +146440,7 @@
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -146618,7 +146866,12 @@
           }
         ]
       },
-      "PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1Action": {},
+      "PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1Action": {
+        "anyOf": [
+          {}
+        ],
+        "nullable": true
+      },
       "PutFirewallConfigRequestRulesetsAnyOf1ItemConditionGroupItemConditionsItemValue": {
         "anyOf": [
           {
@@ -152610,6 +152863,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf1ItemCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -152644,6 +152898,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -152678,6 +152933,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemCreatorOneOf1ViaOneOf2"
           }
         ],
+        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -193231,7 +193487,9 @@
       "UpdateTeamMemberRequestJoinedFrom": {
         "type": "object",
         "properties": {
-          "ssoUserId": {}
+          "ssoUserId": {
+            "nullable": true
+          }
         },
         "additionalProperties": false
       },
@@ -200305,7 +200563,8 @@
               {
                 "type": "string"
               }
-            ]
+            ],
+            "nullable": true
           },
           "provider": {
             "$ref": "#/components/schemas/SearchRepo200ResponseOneOf4GitAccountProvider"
@@ -402993,7 +403252,8 @@
           {
             "type": "string"
           }
-        ]
+        ],
+        "nullable": true
       },
       "UpdateResourceRequestCustomClaimsClaimRulesItemClaimsAdditionalPropertiesAnyOf1": {
         "anyOf": [
@@ -403006,7 +403266,8 @@
           {
             "type": "string"
           }
-        ]
+        ],
+        "nullable": true
       },
       "PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1Branch": {
         "type": "object",
@@ -403176,7 +403437,8 @@
           {
             "type": "string"
           }
-        ]
+        ],
+        "nullable": true
       },
       "GetOrder200ResponseDomainsItemAnyOf1ErrorAnyOf1": {
         "oneOf": [
