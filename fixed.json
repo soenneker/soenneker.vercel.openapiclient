@@ -195345,7 +195345,7 @@
             "type": "string"
           },
           "labels": {
-            "maxItems": 256,
+            "maxItems": 1000,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/UpdateFlagSettingsRequestEntitiesItemAttributesItemLabelsItem"
