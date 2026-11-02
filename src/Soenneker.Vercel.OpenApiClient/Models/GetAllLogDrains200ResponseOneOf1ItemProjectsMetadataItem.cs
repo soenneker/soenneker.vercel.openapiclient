@@ -30,8 +30,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The framework property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework? _explicitNullValueFramework = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework _explicitNullValueFramework = default!;
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "framework", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFramework = default; _explicitNullProperties?.Remove("framework"); AdditionalData["framework"] = unknown; } else { Framework = parsed; AdditionalData.Remove("framework"); } } },
+                { "framework", n => { Framework = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latestDeployment", n => { LatestDeployment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -100,7 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework>("framework", Framework);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1ItemProjectsMetadataItemFramework>("framework", Framework);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("latestDeployment", LatestDeployment);
             writer.WriteStringValue("name", Name);

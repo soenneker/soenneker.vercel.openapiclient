@@ -34,8 +34,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The project role that will be added to this Access Group. &quot;null&quot; will remove this project level role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole? _explicitNullValueRole = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole _explicitNullValueRole = default!;
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole>(); } },
+                { "role", n => { Role = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole>(global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,7 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole>("role", Role);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateAccessGroupRequestProjectsItemRole>("role", Role);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

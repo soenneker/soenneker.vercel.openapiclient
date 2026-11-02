@@ -248,8 +248,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemEnvItem> _explicitNullValueEnv = default!;
 #endif
         /// <summary>The framework property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework? _explicitNullValueFramework = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework _explicitNullValueFramework = default!;
+#endif
         /// <summary>The gitComments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -577,7 +584,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
                 { "directoryListing", n => { DirectoryListing = n.GetBoolValue(); } },
                 { "env", n => { Env = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemEnvItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemEnvItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "framework", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFramework = default; _explicitNullProperties?.Remove("framework"); AdditionalData["framework"] = unknown; } else { Framework = parsed; AdditionalData.Remove("framework"); } } },
+                { "framework", n => { Framework = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework.CreateFromDiscriminatorValue); } },
                 { "gitComments", n => { GitComments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemGitComments>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemGitComments.CreateFromDiscriminatorValue); } },
                 { "gitForkProtection", n => { GitForkProtection = n.GetBoolValue(); } },
                 { "gitProviderOptions", n => { GitProviderOptions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemGitProviderOptions>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemGitProviderOptions.CreateFromDiscriminatorValue); } },
@@ -640,7 +647,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("devCommand", DevCommand);
             writer.WriteBoolValue("directoryListing", DirectoryListing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemEnvItem>("env", Env);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework>("framework", Framework);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemFramework>("framework", Framework);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemGitComments>("gitComments", GitComments);
             writer.WriteBoolValue("gitForkProtection", GitForkProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemGitProviderOptions>("gitProviderOptions", GitProviderOptions);

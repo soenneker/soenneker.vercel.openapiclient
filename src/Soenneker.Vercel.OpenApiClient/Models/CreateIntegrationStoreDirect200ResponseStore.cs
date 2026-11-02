@@ -108,8 +108,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueExternalResourceId = default!;
 #endif
         /// <summary>The externalResourceStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus? ExternalResourceStatus { get => _explicitNullValueExternalResourceStatus; set { _explicitNullValueExternalResourceStatus = value; AdditionalData?.Remove("externalResourceStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalResourceStatus"); else _explicitNullProperties?.Remove("externalResourceStatus"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus? _explicitNullValueExternalResourceStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus ExternalResourceStatus { get => _explicitNullValueExternalResourceStatus; set { _explicitNullValueExternalResourceStatus = value; AdditionalData?.Remove("externalResourceStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalResourceStatus"); else _explicitNullProperties?.Remove("externalResourceStatus"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus _explicitNullValueExternalResourceStatus = default!;
+#endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,8 +230,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? SecretsAppliedAt { get => _explicitNullValueSecretsAppliedAt; set { _explicitNullValueSecretsAppliedAt = value; AdditionalData?.Remove("secretsAppliedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretsAppliedAt"); else _explicitNullProperties?.Remove("secretsAppliedAt"); } }
         private double? _explicitNullValueSecretsAppliedAt = default!;
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>The deployment targets that this resource is available for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -272,7 +286,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities.CreateFromDiscriminatorValue); } },
                 { "directPartnerConsoleUrl", n => { DirectPartnerConsoleUrl = n.GetStringValue(); } },
                 { "externalResourceId", n => { ExternalResourceId = n.GetStringValue(); } },
-                { "externalResourceStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExternalResourceStatus = default; _explicitNullProperties?.Remove("externalResourceStatus"); AdditionalData["externalResourceStatus"] = unknown; } else { ExternalResourceStatus = parsed; AdditionalData.Remove("externalResourceStatus"); } } },
+                { "externalResourceStatus", n => { ExternalResourceStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreMetadata.CreateFromDiscriminatorValue); } },
                 { "notification", n => { Notification = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreNotification>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreNotification.CreateFromDiscriminatorValue); } },
                 { "ownership", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreOwnership>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOwnership = default; _explicitNullProperties?.Remove("ownership"); AdditionalData["ownership"] = unknown; } else { Ownership = parsed; AdditionalData.Remove("ownership"); } } },
@@ -287,7 +301,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "secretRotationRequestedReason", n => { SecretRotationRequestedReason = n.GetStringValue(); } },
                 { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "secretsAppliedAt", n => { SecretsAppliedAt = n.GetDoubleValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreTargetsItem>()?.AsList(); } },
                 { "totalConnectedProjects", n => { TotalConnectedProjects = n.GetDoubleValue(); } },
                 { "usageQuotaExceeded", n => { UsageQuotaExceeded = n.GetBoolValue(); } },
@@ -304,7 +318,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities>("capabilities", Capabilities);
             writer.WriteStringValue("directPartnerConsoleUrl", DirectPartnerConsoleUrl);
             writer.WriteStringValue("externalResourceId", ExternalResourceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus>("externalResourceStatus", ExternalResourceStatus);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus>("externalResourceStatus", ExternalResourceStatus);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreNotification>("notification", Notification);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreOwnership>("ownership", Ownership);
@@ -319,7 +333,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("secretRotationRequestedReason", SecretRotationRequestedReason);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem>("secrets", Secrets);
             writer.WriteDoubleValue("secretsAppliedAt", SecretsAppliedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreStatus>("status", Status);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreTargetsItem>("targets", Targets);
             writer.WriteDoubleValue("totalConnectedProjects", TotalConnectedProjects);
             writer.WriteBoolValue("usageQuotaExceeded", UsageQuotaExceeded);

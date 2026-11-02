@@ -111,8 +111,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? SizeInBytes { get => _explicitNullValueSizeInBytes; set { _explicitNullValueSizeInBytes = value; AdditionalData?.Remove("sizeInBytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizeInBytes"); else _explicitNullProperties?.Remove("sizeInBytes"); } }
         private double? _explicitNullValueSizeInBytes = default!;
         /// <summary>VHS-readiness status, or `null` for a multi-platform index.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>The tag name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,7 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "platform", n => { Platform = n.GetStringValue(); } },
                 { "pushedBy", n => { PushedBy = n.GetStringValue(); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetDoubleValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus>(global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus.CreateFromDiscriminatorValue); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
@@ -186,7 +193,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("platform", Platform);
             writer.WriteStringValue("pushedBy", PushedBy);
             writer.WriteDoubleValue("sizeInBytes", SizeInBytes);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrTagStatus>("status", Status);
             writer.WriteStringValue("tag", Tag);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

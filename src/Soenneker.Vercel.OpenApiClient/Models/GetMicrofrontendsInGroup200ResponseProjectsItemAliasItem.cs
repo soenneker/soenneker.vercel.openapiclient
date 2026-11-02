@@ -42,8 +42,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuredBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy? ConfiguredBy { get => _explicitNullValueConfiguredBy; set { _explicitNullValueConfiguredBy = value; AdditionalData?.Remove("configuredBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredBy"); else _explicitNullProperties?.Remove("configuredBy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy? _explicitNullValueConfiguredBy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy ConfiguredBy { get => _explicitNullValueConfiguredBy; set { _explicitNullValueConfiguredBy = value; AdditionalData?.Remove("configuredBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredBy"); else _explicitNullProperties?.Remove("configuredBy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy _explicitNullValueConfiguredBy = default!;
+#endif
         /// <summary>The configuredChangedAt property</summary>
         public double? ConfiguredChangedAt { get => _explicitNullValueConfiguredChangedAt; set { _explicitNullValueConfiguredChangedAt = value; AdditionalData?.Remove("configuredChangedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredChangedAt"); else _explicitNullProperties?.Remove("configuredChangedAt"); } }
         private double? _explicitNullValueConfiguredChangedAt = default!;
@@ -94,8 +101,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueRedirect = default!;
 #endif
         /// <summary>The redirectStatusCode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemRedirectStatusCode? RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemRedirectStatusCode? _explicitNullValueRedirectStatusCode = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode? RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode? _explicitNullValueRedirectStatusCode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode _explicitNullValueRedirectStatusCode = default!;
+#endif
         /// <summary>The target property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemTarget? _explicitNullValueTarget = default!;
@@ -124,7 +138,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuredBy", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfiguredBy = default; _explicitNullProperties?.Remove("configuredBy"); AdditionalData["configuredBy"] = unknown; } else { ConfiguredBy = parsed; AdditionalData.Remove("configuredBy"); } } },
+                { "configuredBy", n => { ConfiguredBy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy.CreateFromDiscriminatorValue); } },
                 { "configuredChangedAt", n => { ConfiguredChangedAt = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemDeployment>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemDeployment.CreateFromDiscriminatorValue); } },
@@ -132,7 +146,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "environment", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemEnvironment>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnvironment = default; _explicitNullProperties?.Remove("environment"); AdditionalData["environment"] = unknown; } else { Environment = parsed; AdditionalData.Remove("environment"); } } },
                 { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemRedirectStatusCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRedirectStatusCode = default; _explicitNullProperties?.Remove("redirectStatusCode"); AdditionalData["redirectStatusCode"] = unknown; } else { RedirectStatusCode = parsed; AdditionalData.Remove("redirectStatusCode"); } } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode>(global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode.CreateFromDiscriminatorValue); } },
                 { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
             };
         }
@@ -143,7 +157,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy>("configuredBy", ConfiguredBy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy>("configuredBy", ConfiguredBy);
             writer.WriteDoubleValue("configuredChangedAt", ConfiguredChangedAt);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemDeployment>("deployment", Deployment);
@@ -151,7 +165,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemEnvironment>("environment", Environment);
             writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemTarget>("target", Target);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

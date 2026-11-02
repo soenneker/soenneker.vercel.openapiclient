@@ -40,6 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Price
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.NotAuthorizedForScope">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
@@ -57,6 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Price
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Vercel.OpenApiClient.Models.NotAuthorizedForScope.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },

@@ -71,8 +71,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentSource? _explicitNullValueSource = default!;
         /// <summary>If defined, either `staging` if a staging alias in the format `&lt;project&gt;.&lt;team&gt;.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the &quot;preview&quot; deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget? _explicitNullValueTarget = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget _explicitNullValueTarget = default!;
+#endif
         /// <summary>A string with the unique URL of the deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "readyState", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentReadyState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReadyState = default; _explicitNullProperties?.Remove("readyState"); AdditionalData["readyState"] = unknown; } else { ReadyState = parsed; AdditionalData.Remove("readyState"); } } },
                 { "readyStateAt", n => { ReadyStateAt = n.GetDoubleValue(); } },
                 { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
-                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget>(global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -133,7 +140,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentReadyState>("readyState", ReadyState);
             writer.WriteDoubleValue("readyStateAt", ReadyStateAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentSource>("source", Source);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StartRollingRelease200ResponseRollingReleaseCanaryDeploymentTarget>("target", Target);
             writer.WriteStringValue("url", Url);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

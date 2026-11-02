@@ -84,8 +84,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueEnvVarPrefix = default!;
 #endif
         /// <summary>The framework property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework? _explicitNullValueFramework = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework _explicitNullValueFramework = default!;
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,7 +168,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "envVarPrefix", n => { EnvVarPrefix = n.GetStringValue(); } },
                 { "environmentVariables", n => { EnvironmentVariables = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "framework", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFramework = default; _explicitNullProperties?.Remove("framework"); AdditionalData["framework"] = unknown; } else { Framework = parsed; AdditionalData.Remove("framework"); } } },
+                { "framework", n => { Framework = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework>(global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latestDeployment", n => { LatestDeployment = n.GetStringValue(); } },
                 { "makeEnvVarsSensitive", n => { MakeEnvVarsSensitive = n.GetBoolValue(); } },
@@ -181,7 +188,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteCollectionOfPrimitiveValues<string>("environmentVariables", EnvironmentVariables);
             writer.WriteStringValue("envVarPrefix", EnvVarPrefix);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework>("framework", Framework);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework>("framework", Framework);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("latestDeployment", LatestDeployment);
             writer.WriteBoolValue("makeEnvVarsSensitive", MakeEnvVarsSensitive);

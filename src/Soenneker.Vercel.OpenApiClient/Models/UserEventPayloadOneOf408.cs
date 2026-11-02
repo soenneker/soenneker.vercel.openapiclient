@@ -29,11 +29,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The next property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next? _explicitNullValueNext = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next _explicitNullValueNext = default!;
+#endif
         /// <summary>The previous property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous? _explicitNullValuePrevious = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous _explicitNullValuePrevious = default!;
+#endif
         /// <summary>The teamSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,8 +83,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNext = default; _explicitNullProperties?.Remove("next"); AdditionalData["next"] = unknown; } else { Next = parsed; AdditionalData.Remove("next"); } } },
-                { "previous", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePrevious = default; _explicitNullProperties?.Remove("previous"); AdditionalData["previous"] = unknown; } else { Previous = parsed; AdditionalData.Remove("previous"); } } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous.CreateFromDiscriminatorValue); } },
                 { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
@@ -81,8 +95,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next>("next", Next);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous>("previous", Previous);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf408Previous>("previous", Previous);
             writer.WriteStringValue("teamSlug", TeamSlug);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -268,8 +268,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? DisableRepositoryDispatchEvents { get => _explicitNullValueDisableRepositoryDispatchEvents; set { _explicitNullValueDisableRepositoryDispatchEvents = value; AdditionalData?.Remove("disableRepositoryDispatchEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableRepositoryDispatchEvents"); else _explicitNullProperties?.Remove("disableRepositoryDispatchEvents"); } }
         private bool? _explicitNullValueDisableRepositoryDispatchEvents = default!;
         /// <summary>Require production secrets to use a different value than preview or development.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy? DisjunctiveProductionSecretPolicy { get => _explicitNullValueDisjunctiveProductionSecretPolicy; set { _explicitNullValueDisjunctiveProductionSecretPolicy = value; AdditionalData?.Remove("disjunctiveProductionSecretPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disjunctiveProductionSecretPolicy"); else _explicitNullProperties?.Remove("disjunctiveProductionSecretPolicy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy? _explicitNullValueDisjunctiveProductionSecretPolicy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy DisjunctiveProductionSecretPolicy { get => _explicitNullValueDisjunctiveProductionSecretPolicy; set { _explicitNullValueDisjunctiveProductionSecretPolicy = value; AdditionalData?.Remove("disjunctiveProductionSecretPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disjunctiveProductionSecretPolicy"); else _explicitNullProperties?.Remove("disjunctiveProductionSecretPolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy _explicitNullValueDisjunctiveProductionSecretPolicy = default!;
+#endif
         /// <summary>Controls who can request access to protected deployments.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode? DpAccessRequestsMode { get => _explicitNullValueDpAccessRequestsMode; set { _explicitNullValueDpAccessRequestsMode = value; AdditionalData?.Remove("dpAccessRequestsMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dpAccessRequestsMode"); else _explicitNullProperties?.Remove("dpAccessRequestsMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode? _explicitNullValueDpAccessRequestsMode = default!;
@@ -284,17 +291,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueEmailDomain = default!;
 #endif
         /// <summary>Whether toolbar is enabled on preview deployments</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback? EnablePreviewFeedback { get => _explicitNullValueEnablePreviewFeedback; set { _explicitNullValueEnablePreviewFeedback = value; AdditionalData?.Remove("enablePreviewFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePreviewFeedback"); else _explicitNullProperties?.Remove("enablePreviewFeedback"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback? _explicitNullValueEnablePreviewFeedback = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback EnablePreviewFeedback { get => _explicitNullValueEnablePreviewFeedback; set { _explicitNullValueEnablePreviewFeedback = value; AdditionalData?.Remove("enablePreviewFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePreviewFeedback"); else _explicitNullProperties?.Remove("enablePreviewFeedback"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback _explicitNullValueEnablePreviewFeedback = default!;
+#endif
         /// <summary>Whether toolbar is enabled on production deployments</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback? EnableProductionFeedback { get => _explicitNullValueEnableProductionFeedback; set { _explicitNullValueEnableProductionFeedback = value; AdditionalData?.Remove("enableProductionFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableProductionFeedback"); else _explicitNullProperties?.Remove("enableProductionFeedback"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback? _explicitNullValueEnableProductionFeedback = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback EnableProductionFeedback { get => _explicitNullValueEnableProductionFeedback; set { _explicitNullValueEnableProductionFeedback = value; AdditionalData?.Remove("enableProductionFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableProductionFeedback"); else _explicitNullProperties?.Remove("enableProductionFeedback"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback _explicitNullValueEnableProductionFeedback = default!;
+#endif
         /// <summary>Indicates if IP addresses should be accessible in observability (o11y) tooling</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses? HideIpAddresses { get => _explicitNullValueHideIpAddresses; set { _explicitNullValueHideIpAddresses = value; AdditionalData?.Remove("hideIpAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideIpAddresses"); else _explicitNullProperties?.Remove("hideIpAddresses"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses? _explicitNullValueHideIpAddresses = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses HideIpAddresses { get => _explicitNullValueHideIpAddresses; set { _explicitNullValueHideIpAddresses = value; AdditionalData?.Remove("hideIpAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideIpAddresses"); else _explicitNullProperties?.Remove("hideIpAddresses"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses _explicitNullValueHideIpAddresses = default!;
+#endif
         /// <summary>Indicates if IP addresses should be accessible in log drains</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains? HideIpAddressesInLogDrains { get => _explicitNullValueHideIpAddressesInLogDrains; set { _explicitNullValueHideIpAddressesInLogDrains = value; AdditionalData?.Remove("hideIpAddressesInLogDrains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideIpAddressesInLogDrains"); else _explicitNullProperties?.Remove("hideIpAddressesInLogDrains"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains? _explicitNullValueHideIpAddressesInLogDrains = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains HideIpAddressesInLogDrains { get => _explicitNullValueHideIpAddressesInLogDrains; set { _explicitNullValueHideIpAddressesInLogDrains = value; AdditionalData?.Remove("hideIpAddressesInLogDrains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideIpAddressesInLogDrains"); else _explicitNullProperties?.Remove("hideIpAddressesInLogDrains"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains _explicitNullValueHideIpAddressesInLogDrains = default!;
+#endif
         /// <summary>The Team&apos;s unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -431,8 +466,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml _explicitNullValueSaml = default!;
 #endif
         /// <summary>Sensitive environment variable policy for this team</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy? SensitiveEnvironmentVariablePolicy { get => _explicitNullValueSensitiveEnvironmentVariablePolicy; set { _explicitNullValueSensitiveEnvironmentVariablePolicy = value; AdditionalData?.Remove("sensitiveEnvironmentVariablePolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveEnvironmentVariablePolicy"); else _explicitNullProperties?.Remove("sensitiveEnvironmentVariablePolicy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy? _explicitNullValueSensitiveEnvironmentVariablePolicy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy SensitiveEnvironmentVariablePolicy { get => _explicitNullValueSensitiveEnvironmentVariablePolicy; set { _explicitNullValueSensitiveEnvironmentVariablePolicy = value; AdditionalData?.Remove("sensitiveEnvironmentVariablePolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveEnvironmentVariablePolicy"); else _explicitNullProperties?.Remove("sensitiveEnvironmentVariablePolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy _explicitNullValueSensitiveEnvironmentVariablePolicy = default!;
+#endif
         /// <summary>The Team&apos;s slug, which is unique across the Vercel platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -539,13 +581,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks.CreateFromDiscriminatorValue); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
-                { "disjunctiveProductionSecretPolicy", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisjunctiveProductionSecretPolicy = default; _explicitNullProperties?.Remove("disjunctiveProductionSecretPolicy"); AdditionalData["disjunctiveProductionSecretPolicy"] = unknown; } else { DisjunctiveProductionSecretPolicy = parsed; AdditionalData.Remove("disjunctiveProductionSecretPolicy"); } } },
+                { "disjunctiveProductionSecretPolicy", n => { DisjunctiveProductionSecretPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy.CreateFromDiscriminatorValue); } },
                 { "dpAccessRequestsMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDpAccessRequestsMode = default; _explicitNullProperties?.Remove("dpAccessRequestsMode"); AdditionalData["dpAccessRequestsMode"] = unknown; } else { DpAccessRequestsMode = parsed; AdditionalData.Remove("dpAccessRequestsMode"); } } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
-                { "enablePreviewFeedback", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnablePreviewFeedback = default; _explicitNullProperties?.Remove("enablePreviewFeedback"); AdditionalData["enablePreviewFeedback"] = unknown; } else { EnablePreviewFeedback = parsed; AdditionalData.Remove("enablePreviewFeedback"); } } },
-                { "enableProductionFeedback", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnableProductionFeedback = default; _explicitNullProperties?.Remove("enableProductionFeedback"); AdditionalData["enableProductionFeedback"] = unknown; } else { EnableProductionFeedback = parsed; AdditionalData.Remove("enableProductionFeedback"); } } },
-                { "hideIpAddresses", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHideIpAddresses = default; _explicitNullProperties?.Remove("hideIpAddresses"); AdditionalData["hideIpAddresses"] = unknown; } else { HideIpAddresses = parsed; AdditionalData.Remove("hideIpAddresses"); } } },
-                { "hideIpAddressesInLogDrains", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHideIpAddressesInLogDrains = default; _explicitNullProperties?.Remove("hideIpAddressesInLogDrains"); AdditionalData["hideIpAddressesInLogDrains"] = unknown; } else { HideIpAddressesInLogDrains = parsed; AdditionalData.Remove("hideIpAddressesInLogDrains"); } } },
+                { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback.CreateFromDiscriminatorValue); } },
+                { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback.CreateFromDiscriminatorValue); } },
+                { "hideIpAddresses", n => { HideIpAddresses = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses>(global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses.CreateFromDiscriminatorValue); } },
+                { "hideIpAddressesInLogDrains", n => { HideIpAddressesInLogDrains = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains>(global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integrationTokensInvalidatedAt", n => { IntegrationTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "inviteCode", n => { InviteCode = n.GetStringValue(); } },
@@ -563,7 +605,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
                 { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig.CreateFromDiscriminatorValue); } },
                 { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml.CreateFromDiscriminatorValue); } },
-                { "sensitiveEnvironmentVariablePolicy", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSensitiveEnvironmentVariablePolicy = default; _explicitNullProperties?.Remove("sensitiveEnvironmentVariablePolicy"); AdditionalData["sensitiveEnvironmentVariablePolicy"] = unknown; } else { SensitiveEnvironmentVariablePolicy = parsed; AdditionalData.Remove("sensitiveEnvironmentVariablePolicy"); } } },
+                { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "stagingPrefix", n => { StagingPrefix = n.GetStringValue(); } },
                 { "strictConnectors", n => { StrictConnectors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors.CreateFromDiscriminatorValue); } },
@@ -598,13 +640,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>("disjunctiveProductionSecretPolicy", DisjunctiveProductionSecretPolicy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>("disjunctiveProductionSecretPolicy", DisjunctiveProductionSecretPolicy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>("dpAccessRequestsMode", DpAccessRequestsMode);
             writer.WriteStringValue("emailDomain", EmailDomain);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses>("hideIpAddresses", HideIpAddresses);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains>("hideIpAddressesInLogDrains", HideIpAddressesInLogDrains);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses>("hideIpAddresses", HideIpAddresses);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains>("hideIpAddressesInLogDrains", HideIpAddressesInLogDrains);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("integrationTokensInvalidatedAt", IntegrationTokensInvalidatedAt);
             writer.WriteStringValue("inviteCode", InviteCode);
@@ -622,7 +664,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml>("saml", Saml);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors>("strictConnectors", StrictConnectors);

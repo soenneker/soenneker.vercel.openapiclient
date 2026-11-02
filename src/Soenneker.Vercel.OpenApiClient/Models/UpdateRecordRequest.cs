@@ -82,8 +82,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public int? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
         private int? _explicitNullValueTtl = default!;
         /// <summary>The type of the DNS record</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType _explicitNullValueType = default!;
+#endif
         /// <summary>The value of the DNS record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "srv", n => { Srv = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestSrv>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestSrv.CreateFromDiscriminatorValue); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -135,7 +142,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestSrv>("srv", Srv);
             writer.WriteIntValue("ttl", Ttl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRecordRequestType>("type", Type);
             writer.WriteStringValue("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

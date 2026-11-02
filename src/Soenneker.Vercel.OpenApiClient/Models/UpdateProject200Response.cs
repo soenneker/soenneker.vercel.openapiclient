@@ -455,11 +455,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? EnableExternalRewriteCaching { get => _explicitNullValueEnableExternalRewriteCaching; set { _explicitNullValueEnableExternalRewriteCaching = value; AdditionalData?.Remove("enableExternalRewriteCaching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableExternalRewriteCaching"); else _explicitNullProperties?.Remove("enableExternalRewriteCaching"); } }
         private bool? _explicitNullValueEnableExternalRewriteCaching = default!;
         /// <summary>The enablePreviewFeedback property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnablePreviewFeedback? EnablePreviewFeedback { get => _explicitNullValueEnablePreviewFeedback; set { _explicitNullValueEnablePreviewFeedback = value; AdditionalData?.Remove("enablePreviewFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePreviewFeedback"); else _explicitNullProperties?.Remove("enablePreviewFeedback"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnablePreviewFeedback? _explicitNullValueEnablePreviewFeedback = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? EnablePreviewFeedback { get => _explicitNullValueEnablePreviewFeedback; set { _explicitNullValueEnablePreviewFeedback = value; AdditionalData?.Remove("enablePreviewFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePreviewFeedback"); else _explicitNullProperties?.Remove("enablePreviewFeedback"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? _explicitNullValueEnablePreviewFeedback = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback EnablePreviewFeedback { get => _explicitNullValueEnablePreviewFeedback; set { _explicitNullValueEnablePreviewFeedback = value; AdditionalData?.Remove("enablePreviewFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePreviewFeedback"); else _explicitNullProperties?.Remove("enablePreviewFeedback"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback _explicitNullValueEnablePreviewFeedback = default!;
+#endif
         /// <summary>The enableProductionFeedback property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnableProductionFeedback? EnableProductionFeedback { get => _explicitNullValueEnableProductionFeedback; set { _explicitNullValueEnableProductionFeedback = value; AdditionalData?.Remove("enableProductionFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableProductionFeedback"); else _explicitNullProperties?.Remove("enableProductionFeedback"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnableProductionFeedback? _explicitNullValueEnableProductionFeedback = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? EnableProductionFeedback { get => _explicitNullValueEnableProductionFeedback; set { _explicitNullValueEnableProductionFeedback = value; AdditionalData?.Remove("enableProductionFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableProductionFeedback"); else _explicitNullProperties?.Remove("enableProductionFeedback"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? _explicitNullValueEnableProductionFeedback = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback EnableProductionFeedback { get => _explicitNullValueEnableProductionFeedback; set { _explicitNullValueEnableProductionFeedback = value; AdditionalData?.Remove("enableProductionFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableProductionFeedback"); else _explicitNullProperties?.Remove("enableProductionFeedback"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback _explicitNullValueEnableProductionFeedback = default!;
+#endif
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -491,8 +505,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFeatures _explicitNullValueFeatures = default!;
 #endif
         /// <summary>The framework property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework? _explicitNullValueFramework = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework _explicitNullValueFramework = default!;
+#endif
         /// <summary>The gitComments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1028,12 +1049,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "dismissedToasts", n => { DismissedToasts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseDismissedToastsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseDismissedToastsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enableAffectedProjectsDeployments", n => { EnableAffectedProjectsDeployments = n.GetBoolValue(); } },
                 { "enableExternalRewriteCaching", n => { EnableExternalRewriteCaching = n.GetBoolValue(); } },
-                { "enablePreviewFeedback", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnablePreviewFeedback>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnablePreviewFeedback = default; _explicitNullProperties?.Remove("enablePreviewFeedback"); AdditionalData["enablePreviewFeedback"] = unknown; } else { EnablePreviewFeedback = parsed; AdditionalData.Remove("enablePreviewFeedback"); } } },
-                { "enableProductionFeedback", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnableProductionFeedback>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnableProductionFeedback = default; _explicitNullProperties?.Remove("enableProductionFeedback"); AdditionalData["enableProductionFeedback"] = unknown; } else { EnableProductionFeedback = parsed; AdditionalData.Remove("enableProductionFeedback"); } } },
+                { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback.CreateFromDiscriminatorValue); } },
+                { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback.CreateFromDiscriminatorValue); } },
                 { "env", n => { Env = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnvItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnvItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseExpiration.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFeatures>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFeatures.CreateFromDiscriminatorValue); } },
-                { "framework", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFramework = default; _explicitNullProperties?.Remove("framework"); AdditionalData["framework"] = unknown; } else { Framework = parsed; AdditionalData.Remove("framework"); } } },
+                { "framework", n => { Framework = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework.CreateFromDiscriminatorValue); } },
                 { "gitComments", n => { GitComments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseGitComments>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseGitComments.CreateFromDiscriminatorValue); } },
                 { "gitForkProtection", n => { GitForkProtection = n.GetBoolValue(); } },
                 { "gitLFS", n => { GitLFS = n.GetBoolValue(); } },
@@ -1135,12 +1156,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseDismissedToastsItem>("dismissedToasts", DismissedToasts);
             writer.WriteBoolValue("enableAffectedProjectsDeployments", EnableAffectedProjectsDeployments);
             writer.WriteBoolValue("enableExternalRewriteCaching", EnableExternalRewriteCaching);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>("enableProductionFeedback", EnableProductionFeedback);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseEnvItem>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseExpiration>("expiration", Expiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFeatures>("features", Features);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework>("framework", Framework);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseFramework>("framework", Framework);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseGitComments>("gitComments", GitComments);
             writer.WriteBoolValue("gitForkProtection", GitForkProtection);
             writer.WriteBoolValue("gitLFS", GitLFS);

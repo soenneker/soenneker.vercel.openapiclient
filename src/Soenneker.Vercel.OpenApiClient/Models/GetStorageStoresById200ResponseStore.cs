@@ -52,8 +52,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItem> _explicitNullValueProjectsMetadata = default!;
 #endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>The totalConnectedProjects property</summary>
         public double? TotalConnectedProjects { get => _explicitNullValueTotalConnectedProjects; set { _explicitNullValueTotalConnectedProjects = value; AdditionalData?.Remove("totalConnectedProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalConnectedProjects"); else _explicitNullProperties?.Remove("totalConnectedProjects"); } }
         private double? _explicitNullValueTotalConnectedProjects = default!;
@@ -87,7 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectFilter", n => { ProjectFilter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectFilter>(global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectFilter.CreateFromDiscriminatorValue); } },
                 { "projectsMetadata", n => { ProjectsMetadata = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus>(global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus.CreateFromDiscriminatorValue); } },
                 { "totalConnectedProjects", n => { TotalConnectedProjects = n.GetDoubleValue(); } },
                 { "usageQuotaExceeded", n => { UsageQuotaExceeded = n.GetBoolValue(); } },
             };
@@ -101,7 +108,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectFilter>("projectFilter", ProjectFilter);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreProjectsMetadataItem>("projectsMetadata", ProjectsMetadata);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200ResponseStoreStatus>("status", Status);
             writer.WriteDoubleValue("totalConnectedProjects", TotalConnectedProjects);
             writer.WriteBoolValue("usageQuotaExceeded", UsageQuotaExceeded);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

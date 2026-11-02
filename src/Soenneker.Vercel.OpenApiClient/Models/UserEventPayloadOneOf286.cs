@@ -49,8 +49,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueProjectName = default!;
 #endif
         /// <summary>The widget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget? _explicitNullValueWidget = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget _explicitNullValueWidget = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286"/> and sets the default values.
         /// </summary>
@@ -78,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "widget", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWidget = default; _explicitNullProperties?.Remove("widget"); AdditionalData["widget"] = unknown; } else { Widget = parsed; AdditionalData.Remove("widget"); } } },
+                { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget>("widget", Widget);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286Widget>("widget", Widget);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -95,8 +95,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueDevCommand = default!;
 #endif
         /// <summary>The framework property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework? _explicitNullValueFramework = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework _explicitNullValueFramework = default!;
+#endif
         /// <summary>Since June &apos;23</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,7 +219,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "customerSupportCodeVisibility", n => { CustomerSupportCodeVisibility = n.GetBoolValue(); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
-                { "framework", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFramework = default; _explicitNullProperties?.Remove("framework"); AdditionalData["framework"] = unknown; } else { Framework = parsed; AdditionalData.Remove("framework"); } } },
+                { "framework", n => { Framework = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework.CreateFromDiscriminatorValue); } },
                 { "gitComments", n => { GitComments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsGitComments>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsGitComments.CreateFromDiscriminatorValue); } },
                 { "gitForkProtection", n => { GitForkProtection = n.GetBoolValue(); } },
                 { "gitLFS", n => { GitLFS = n.GetBoolValue(); } },
@@ -239,7 +246,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteBoolValue("customerSupportCodeVisibility", CustomerSupportCodeVisibility);
             writer.WriteStringValue("devCommand", DevCommand);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework>("framework", Framework);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsFramework>("framework", Framework);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemProjectSettingsGitComments>("gitComments", GitComments);
             writer.WriteBoolValue("gitForkProtection", GitForkProtection);
             writer.WriteBoolValue("gitLFS", GitLFS);

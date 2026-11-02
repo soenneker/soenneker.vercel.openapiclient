@@ -30,8 +30,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         }
 
         /// <summary>The action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction? _explicitNullValueAction = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction _explicitNullValueAction = default!;
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The algo property</summary>
@@ -80,7 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction>(global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction.CreateFromDiscriminatorValue); } },
                 { "algo", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAlgo>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlgo = default; _explicitNullProperties?.Remove("algo"); AdditionalData["algo"] = unknown; } else { Algo = parsed; AdditionalData.Remove("algo"); } } },
                 { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
@@ -94,7 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAction>("action", Action);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesetsOneOf1ItemActionMitigateRateLimitAlgo>("algo", Algo);
             writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteDoubleValue("limit", Limit);

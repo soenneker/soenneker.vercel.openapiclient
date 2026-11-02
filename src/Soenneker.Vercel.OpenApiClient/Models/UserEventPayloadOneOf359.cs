@@ -45,8 +45,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The oldTrustedIps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps? OldTrustedIps { get => _explicitNullValueOldTrustedIps; set { _explicitNullValueOldTrustedIps = value; AdditionalData?.Remove("oldTrustedIps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTrustedIps"); else _explicitNullProperties?.Remove("oldTrustedIps"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps? _explicitNullValueOldTrustedIps = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps OldTrustedIps { get => _explicitNullValueOldTrustedIps; set { _explicitNullValueOldTrustedIps = value; AdditionalData?.Remove("oldTrustedIps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTrustedIps"); else _explicitNullProperties?.Remove("oldTrustedIps"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps _explicitNullValueOldTrustedIps = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,8 +85,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private List<string> _explicitNullValueRemovedAddresses = default!;
 #endif
         /// <summary>The trustedIps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps? TrustedIps { get => _explicitNullValueTrustedIps; set { _explicitNullValueTrustedIps = value; AdditionalData?.Remove("trustedIps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedIps"); else _explicitNullProperties?.Remove("trustedIps"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps? _explicitNullValueTrustedIps = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps TrustedIps { get => _explicitNullValueTrustedIps; set { _explicitNullValueTrustedIps = value; AdditionalData?.Remove("trustedIps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedIps"); else _explicitNullProperties?.Remove("trustedIps"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps _explicitNullValueTrustedIps = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359"/> and sets the default values.
         /// </summary>
@@ -106,11 +120,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "addedAddresses", n => { AddedAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "oldTrustedIps", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOldTrustedIps = default; _explicitNullProperties?.Remove("oldTrustedIps"); AdditionalData["oldTrustedIps"] = unknown; } else { OldTrustedIps = parsed; AdditionalData.Remove("oldTrustedIps"); } } },
+                { "oldTrustedIps", n => { OldTrustedIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "removedAddresses", n => { RemovedAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "trustedIps", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrustedIps = default; _explicitNullProperties?.Remove("trustedIps"); AdditionalData["trustedIps"] = unknown; } else { TrustedIps = parsed; AdditionalData.Remove("trustedIps"); } } },
+                { "trustedIps", n => { TrustedIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -121,11 +135,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("addedAddresses", AddedAddresses);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps>("oldTrustedIps", OldTrustedIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359OldTrustedIps>("oldTrustedIps", OldTrustedIps);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteCollectionOfPrimitiveValues<string>("removedAddresses", RemovedAddresses);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps>("trustedIps", TrustedIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359TrustedIps>("trustedIps", TrustedIps);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

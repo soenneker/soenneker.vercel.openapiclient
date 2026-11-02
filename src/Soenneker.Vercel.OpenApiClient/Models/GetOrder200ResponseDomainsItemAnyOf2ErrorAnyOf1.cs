@@ -19,26 +19,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
             else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("details") is null) { _explicitNullValueDetails = default!; _explicitNullProperties?.Remove("details"); }
-            else if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string? _explicitNullValueCode = default!;
 #nullable restore
-        /// <summary>The details property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1Details? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1Details? _explicitNullValueDetails = default!;
-#nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1Details Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1Details _explicitNullValueDetails = default!;
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private string _explicitNullValueCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1"/> and sets the default values.
@@ -55,7 +48,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1(), parseNode);
+            var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
+            return mappingValue switch
+            {
+                "account-transfer-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf7(),
+                "cannot-transfer-in-until" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf6(),
+                "claims-notice-required" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf5(),
+                "client-transfer-prohibited" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf3(),
+                "incorrect-auth-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf4(),
+                "incorrect-language-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf2(),
+                "invalid-contact" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf10(),
+                "price-change" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf8(),
+                "unavailable-legal" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf9(),
+                "unsupported-language-code" => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1(),
+                _ => new global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +73,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1Details>(global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1Details.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +83,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrder200ResponseDomainsItemAnyOf2ErrorAnyOf1AnyOf1Details>("details", Details);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

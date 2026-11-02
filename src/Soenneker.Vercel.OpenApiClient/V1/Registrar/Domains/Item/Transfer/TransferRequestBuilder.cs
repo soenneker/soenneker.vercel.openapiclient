@@ -41,6 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.HttpApiDecodeError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDomainTransferIn403ResponseError">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.NotFound">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
@@ -58,6 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
             {
                 { "400", global::Soenneker.Vercel.OpenApiClient.Models.HttpApiDecodeError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Vercel.OpenApiClient.Models.GetDomainTransferIn403ResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Vercel.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
@@ -73,7 +75,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TransferInDomain400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TransferInDomain403ResponseError">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +93,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Vercel.OpenApiClient.Models.TransferInDomain400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Vercel.OpenApiClient.Models.TransferInDomain403ResponseError.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

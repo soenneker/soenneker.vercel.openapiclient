@@ -73,8 +73,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueDevCommand = default!;
 #endif
         /// <summary>The framework that is being used for this project. When `null` is used no framework is selected</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework? _explicitNullValueFramework = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework _explicitNullValueFramework = default!;
+#endif
         /// <summary>The install command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,7 +153,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
                 { "commandForIgnoringBuildStep", n => { CommandForIgnoringBuildStep = n.GetStringValue(); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
-                { "framework", n => { Framework = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework>(); } },
+                { "framework", n => { Framework = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework.CreateFromDiscriminatorValue); } },
                 { "installCommand", n => { InstallCommand = n.GetStringValue(); } },
                 { "nodeVersion", n => { NodeVersion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsNodeVersion>(); } },
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
@@ -166,7 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("buildCommand", BuildCommand);
             writer.WriteStringValue("commandForIgnoringBuildStep", CommandForIgnoringBuildStep);
             writer.WriteStringValue("devCommand", DevCommand);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework>("framework", Framework);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsFramework>("framework", Framework);
             writer.WriteStringValue("installCommand", InstallCommand);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestProjectSettingsNodeVersion>("nodeVersion", NodeVersion);
             writer.WriteStringValue("outputDirectory", OutputDirectory);

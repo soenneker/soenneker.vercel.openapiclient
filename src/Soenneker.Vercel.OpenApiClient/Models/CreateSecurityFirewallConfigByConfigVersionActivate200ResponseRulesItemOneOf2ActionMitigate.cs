@@ -47,8 +47,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bypassSystem property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateBypassSystem? BypassSystem { get => _explicitNullValueBypassSystem; set { _explicitNullValueBypassSystem = value; AdditionalData?.Remove("bypassSystem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassSystem"); else _explicitNullProperties?.Remove("bypassSystem"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateBypassSystem? _explicitNullValueBypassSystem = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? BypassSystem { get => _explicitNullValueBypassSystem; set { _explicitNullValueBypassSystem = value; AdditionalData?.Remove("bypassSystem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassSystem"); else _explicitNullProperties?.Remove("bypassSystem"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? _explicitNullValueBypassSystem = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback BypassSystem { get => _explicitNullValueBypassSystem; set { _explicitNullValueBypassSystem = value; AdditionalData?.Remove("bypassSystem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassSystem"); else _explicitNullProperties?.Remove("bypassSystem"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback _explicitNullValueBypassSystem = default!;
+#endif
         /// <summary>The logHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "actionDuration", n => { ActionDuration = n.GetStringValue(); } },
-                { "bypassSystem", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateBypassSystem>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBypassSystem = default; _explicitNullProperties?.Remove("bypassSystem"); AdditionalData["bypassSystem"] = unknown; } else { BypassSystem = parsed; AdditionalData.Remove("bypassSystem"); } } },
+                { "bypassSystem", n => { BypassSystem = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback.CreateFromDiscriminatorValue); } },
                 { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateLogHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateLogHeaders.CreateFromDiscriminatorValue); } },
                 { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateRateLimit>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateRateLimit.CreateFromDiscriminatorValue); } },
                 { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateRedirect>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateRedirect.CreateFromDiscriminatorValue); } },
@@ -121,7 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateAction>("action", Action);
             writer.WriteStringValue("actionDuration", ActionDuration);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateBypassSystem>("bypassSystem", BypassSystem);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>("bypassSystem", BypassSystem);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateLogHeaders>("logHeaders", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateRateLimit>("rateLimit", RateLimit);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemOneOf2ActionMitigateRedirect>("redirect", Redirect);

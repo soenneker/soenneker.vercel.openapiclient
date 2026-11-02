@@ -42,8 +42,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How we see the domain&apos;s configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain&apos;s A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy? ConfiguredBy { get => _explicitNullValueConfiguredBy; set { _explicitNullValueConfiguredBy = value; AdditionalData?.Remove("configuredBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredBy"); else _explicitNullProperties?.Remove("configuredBy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy? _explicitNullValueConfiguredBy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy ConfiguredBy { get => _explicitNullValueConfiguredBy; set { _explicitNullValueConfiguredBy = value; AdditionalData?.Remove("configuredBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuredBy"); else _explicitNullProperties?.Remove("configuredBy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy _explicitNullValueConfiguredBy = default!;
+#endif
         /// <summary>Whether or not the domain is configured AND we can automatically generate a TLS certificate.</summary>
         public bool? Misconfigured { get => _explicitNullValueMisconfigured; set { _explicitNullValueMisconfigured = value; AdditionalData?.Remove("misconfigured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misconfigured"); else _explicitNullProperties?.Remove("misconfigured"); } }
         private bool? _explicitNullValueMisconfigured = default!;
@@ -93,7 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "acceptedChallenges", n => { AcceptedChallenges = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem>()?.AsList(); } },
-                { "configuredBy", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfiguredBy = default; _explicitNullProperties?.Remove("configuredBy"); AdditionalData["configuredBy"] = unknown; } else { ConfiguredBy = parsed; AdditionalData.Remove("configuredBy"); } } },
+                { "configuredBy", n => { ConfiguredBy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy>(global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy.CreateFromDiscriminatorValue); } },
                 { "misconfigured", n => { Misconfigured = n.GetBoolValue(); } },
                 { "recommendedCNAME", n => { RecommendedCNAME = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recommendedIPv4", n => { RecommendedIPv4 = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -107,7 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseAcceptedChallengesItem>("acceptedChallenges", AcceptedChallenges);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy>("configuredBy", ConfiguredBy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy>("configuredBy", ConfiguredBy);
             writer.WriteBoolValue("misconfigured", Misconfigured);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedCnameItem>("recommendedCNAME", RecommendedCNAME);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseRecommendedIPv4Item>("recommendedIPv4", RecommendedIPv4);

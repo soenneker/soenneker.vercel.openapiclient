@@ -119,8 +119,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1ReadyState? ReadyState { get => _explicitNullValueReadyState; set { _explicitNullValueReadyState = value; AdditionalData?.Remove("readyState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyState"); else _explicitNullProperties?.Remove("readyState"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1ReadyState? _explicitNullValueReadyState = default!;
         /// <summary>If defined, either `staging` if a staging alias in the format `&lt;project&gt;.&lt;team&gt;.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the &quot;preview&quot; deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target? _explicitNullValueTarget = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target _explicitNullValueTarget = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1"/> and sets the default values.
         /// </summary>
@@ -155,7 +162,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "readyState", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1ReadyState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReadyState = default; _explicitNullProperties?.Remove("readyState"); AdditionalData["readyState"] = unknown; } else { ReadyState = parsed; AdditionalData.Remove("readyState"); } } },
-                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -174,7 +181,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1ReadyState>("readyState", ReadyState);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf1Target>("target", Target);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

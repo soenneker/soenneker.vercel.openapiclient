@@ -240,8 +240,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueInspectorUrl = default!;
 #endif
         /// <summary>Deployment can be used for instant rollback</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate? IsRollbackCandidate { get => _explicitNullValueIsRollbackCandidate; set { _explicitNullValueIsRollbackCandidate = value; AdditionalData?.Remove("isRollbackCandidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRollbackCandidate"); else _explicitNullProperties?.Remove("isRollbackCandidate"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate? _explicitNullValueIsRollbackCandidate = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate IsRollbackCandidate { get => _explicitNullValueIsRollbackCandidate; set { _explicitNullValueIsRollbackCandidate = value; AdditionalData?.Remove("isRollbackCandidate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRollbackCandidate"); else _explicitNullProperties?.Remove("isRollbackCandidate"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate _explicitNullValueIsRollbackCandidate = default!;
+#endif
         /// <summary>The manualProvisioning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -350,8 +357,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemState? _explicitNullValueState = default!;
         /// <summary>On which environment has the deployment been deployed to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget? _explicitNullValueTarget = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget _explicitNullValueTarget = default!;
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.LambdasType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.LambdasType? _explicitNullValueType = default!;
@@ -422,7 +436,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "expiration", n => { Expiration = n.GetDoubleValue(); } },
                 { "inspectorUrl", n => { InspectorUrl = n.GetStringValue(); } },
-                { "isRollbackCandidate", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIsRollbackCandidate = default; _explicitNullProperties?.Remove("isRollbackCandidate"); AdditionalData["isRollbackCandidate"] = unknown; } else { IsRollbackCandidate = parsed; AdditionalData.Remove("isRollbackCandidate"); } } },
+                { "isRollbackCandidate", n => { IsRollbackCandidate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate.CreateFromDiscriminatorValue); } },
                 { "manualProvisioning", n => { ManualProvisioning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -440,7 +454,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "softDeletedByRetention", n => { SoftDeletedByRetention = n.GetBoolValue(); } },
                 { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
                 { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
-                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "undeleted", n => { Undeleted = n.GetDoubleValue(); } },
@@ -473,7 +487,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteDoubleValue("expiration", Expiration);
             writer.WriteStringValue("inspectorUrl", InspectorUrl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate>("isRollbackCandidate", IsRollbackCandidate);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate>("isRollbackCandidate", IsRollbackCandidate);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning>("manualProvisioning", ManualProvisioning);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta>("meta", Meta);
             writer.WriteStringValue("name", Name);
@@ -491,7 +505,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("softDeletedByRetention", SoftDeletedByRetention);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemState>("state", State);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget>("target", Target);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteDoubleValue("undeleted", Undeleted);

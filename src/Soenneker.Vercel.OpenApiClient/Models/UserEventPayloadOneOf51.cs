@@ -41,8 +41,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The next_role property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole? NextRole { get => _explicitNullValueNextRole; set { _explicitNullValueNextRole = value; AdditionalData?.Remove("next_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_role"); else _explicitNullProperties?.Remove("next_role"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole? _explicitNullValueNextRole = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole NextRole { get => _explicitNullValueNextRole; set { _explicitNullValueNextRole = value; AdditionalData?.Remove("next_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_role"); else _explicitNullProperties?.Remove("next_role"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole _explicitNullValueNextRole = default!;
+#endif
         /// <summary>The previous_role property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole? PreviousRole { get => _explicitNullValuePreviousRole; set { _explicitNullValuePreviousRole = value; AdditionalData?.Remove("previous_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_role"); else _explicitNullProperties?.Remove("previous_role"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole? _explicitNullValuePreviousRole = default!;
@@ -82,7 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup.CreateFromDiscriminatorValue); } },
-                { "next_role", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNextRole = default; _explicitNullProperties?.Remove("next_role"); AdditionalData["next_role"] = unknown; } else { NextRole = parsed; AdditionalData.Remove("next_role"); } } },
+                { "next_role", n => { NextRole = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole.CreateFromDiscriminatorValue); } },
                 { "previous_role", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousRole = default; _explicitNullProperties?.Remove("previous_role"); AdditionalData["previous_role"] = unknown; } else { PreviousRole = parsed; AdditionalData.Remove("previous_role"); } } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project.CreateFromDiscriminatorValue); } },
             };
@@ -95,7 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51AccessGroup>("accessGroup", AccessGroup);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole>("next_role", NextRole);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51NextRole>("next_role", NextRole);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51PreviousRole>("previous_role", PreviousRole);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51Project>("project", Project);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

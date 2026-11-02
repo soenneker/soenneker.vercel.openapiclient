@@ -24,8 +24,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Machine type that was used for the build.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType? PurchaseType { get => _explicitNullValuePurchaseType; set { _explicitNullValuePurchaseType = value; AdditionalData?.Remove("purchaseType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseType"); else _explicitNullProperties?.Remove("purchaseType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType? _explicitNullValuePurchaseType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType PurchaseType { get => _explicitNullValuePurchaseType; set { _explicitNullValuePurchaseType = value; AdditionalData?.Remove("purchaseType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseType"); else _explicitNullProperties?.Remove("purchaseType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType _explicitNullValuePurchaseType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachine"/> and sets the default values.
         /// </summary>
@@ -51,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "purchaseType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePurchaseType = default; _explicitNullProperties?.Remove("purchaseType"); AdditionalData["purchaseType"] = unknown; } else { PurchaseType = parsed; AdditionalData.Remove("purchaseType"); } } },
+                { "purchaseType", n => { PurchaseType = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType>("purchaseType", PurchaseType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType>("purchaseType", PurchaseType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

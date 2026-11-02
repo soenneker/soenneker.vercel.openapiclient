@@ -119,8 +119,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseState? _explicitNullValueState = default!;
         /// <summary>When set to `PAUSED`, the rollout is frozen at the current percentage until continued.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate? Substate { get => _explicitNullValueSubstate; set { _explicitNullValueSubstate = value; AdditionalData?.Remove("substate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substate"); else _explicitNullProperties?.Remove("substate"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate? _explicitNullValueSubstate = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate Substate { get => _explicitNullValueSubstate; set { _explicitNullValueSubstate = value; AdditionalData?.Remove("substate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substate"); else _explicitNullProperties?.Remove("substate"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate _explicitNullValueSubstate = default!;
+#endif
         /// <summary>Unix timestamp in milliseconds when the rolling release was last updated</summary>
         public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private double? _explicitNullValueUpdatedAt = default!;
@@ -161,7 +168,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseStagesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseStagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
                 { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
-                { "substate", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubstate = default; _explicitNullProperties?.Remove("substate"); AdditionalData["substate"] = unknown; } else { Substate = parsed; AdditionalData.Remove("substate"); } } },
+                { "substate", n => { Substate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate>(global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -182,7 +189,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseStagesItem>("stages", Stages);
             writer.WriteDoubleValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseState>("state", State);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate>("substate", Substate);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CompleteRollingRelease200ResponseRollingReleaseSubstate>("substate", Substate);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -45,6 +45,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetTld200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.GetTld400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.NotAuthorizedForScope">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
@@ -61,6 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Vercel.OpenApiClient.Models.GetTld400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Vercel.OpenApiClient.Models.NotAuthorizedForScope.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },

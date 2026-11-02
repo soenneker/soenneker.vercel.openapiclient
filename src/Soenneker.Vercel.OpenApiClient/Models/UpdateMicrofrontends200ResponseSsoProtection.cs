@@ -28,11 +28,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The april2026SecurityIncidentMigrationAppliedFrom property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom? April2026SecurityIncidentMigrationAppliedFrom { get => _explicitNullValueApril2026SecurityIncidentMigrationAppliedFrom; set { _explicitNullValueApril2026SecurityIncidentMigrationAppliedFrom = value; AdditionalData?.Remove("april2026SecurityIncidentMigrationAppliedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("april2026SecurityIncidentMigrationAppliedFrom"); else _explicitNullProperties?.Remove("april2026SecurityIncidentMigrationAppliedFrom"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom? _explicitNullValueApril2026SecurityIncidentMigrationAppliedFrom = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom April2026SecurityIncidentMigrationAppliedFrom { get => _explicitNullValueApril2026SecurityIncidentMigrationAppliedFrom; set { _explicitNullValueApril2026SecurityIncidentMigrationAppliedFrom = value; AdditionalData?.Remove("april2026SecurityIncidentMigrationAppliedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("april2026SecurityIncidentMigrationAppliedFrom"); else _explicitNullProperties?.Remove("april2026SecurityIncidentMigrationAppliedFrom"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom _explicitNullValueApril2026SecurityIncidentMigrationAppliedFrom = default!;
+#endif
         /// <summary>The cve55182MigrationAppliedFrom property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom? Cve55182MigrationAppliedFrom { get => _explicitNullValueCve55182MigrationAppliedFrom; set { _explicitNullValueCve55182MigrationAppliedFrom = value; AdditionalData?.Remove("cve55182MigrationAppliedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cve55182MigrationAppliedFrom"); else _explicitNullProperties?.Remove("cve55182MigrationAppliedFrom"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom? _explicitNullValueCve55182MigrationAppliedFrom = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom Cve55182MigrationAppliedFrom { get => _explicitNullValueCve55182MigrationAppliedFrom; set { _explicitNullValueCve55182MigrationAppliedFrom = value; AdditionalData?.Remove("cve55182MigrationAppliedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cve55182MigrationAppliedFrom"); else _explicitNullProperties?.Remove("cve55182MigrationAppliedFrom"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom _explicitNullValueCve55182MigrationAppliedFrom = default!;
+#endif
         /// <summary>The deploymentType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionDeploymentType? DeploymentType { get => _explicitNullValueDeploymentType; set { _explicitNullValueDeploymentType = value; AdditionalData?.Remove("deploymentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentType"); else _explicitNullProperties?.Remove("deploymentType"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionDeploymentType? _explicitNullValueDeploymentType = default!;
@@ -63,8 +77,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "april2026SecurityIncidentMigrationAppliedFrom", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApril2026SecurityIncidentMigrationAppliedFrom = default; _explicitNullProperties?.Remove("april2026SecurityIncidentMigrationAppliedFrom"); AdditionalData["april2026SecurityIncidentMigrationAppliedFrom"] = unknown; } else { April2026SecurityIncidentMigrationAppliedFrom = parsed; AdditionalData.Remove("april2026SecurityIncidentMigrationAppliedFrom"); } } },
-                { "cve55182MigrationAppliedFrom", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCve55182MigrationAppliedFrom = default; _explicitNullProperties?.Remove("cve55182MigrationAppliedFrom"); AdditionalData["cve55182MigrationAppliedFrom"] = unknown; } else { Cve55182MigrationAppliedFrom = parsed; AdditionalData.Remove("cve55182MigrationAppliedFrom"); } } },
+                { "april2026SecurityIncidentMigrationAppliedFrom", n => { April2026SecurityIncidentMigrationAppliedFrom = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.CreateFromDiscriminatorValue); } },
+                { "cve55182MigrationAppliedFrom", n => { Cve55182MigrationAppliedFrom = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom.CreateFromDiscriminatorValue); } },
                 { "deploymentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionDeploymentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeploymentType = default; _explicitNullProperties?.Remove("deploymentType"); AdditionalData["deploymentType"] = unknown; } else { DeploymentType = parsed; AdditionalData.Remove("deploymentType"); } } },
             };
         }
@@ -75,8 +89,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom>("april2026SecurityIncidentMigrationAppliedFrom", April2026SecurityIncidentMigrationAppliedFrom);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom>("cve55182MigrationAppliedFrom", Cve55182MigrationAppliedFrom);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom>("april2026SecurityIncidentMigrationAppliedFrom", April2026SecurityIncidentMigrationAppliedFrom);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionCve55182MigrationAppliedFrom>("cve55182MigrationAppliedFrom", Cve55182MigrationAppliedFrom);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtectionDeploymentType>("deploymentType", DeploymentType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

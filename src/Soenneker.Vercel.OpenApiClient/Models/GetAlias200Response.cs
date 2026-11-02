@@ -139,8 +139,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueRedirect = default!;
 #endif
         /// <summary>Status code to be used on redirect</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode? RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode? _explicitNullValueRedirectStatusCode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode _explicitNullValueRedirectStatusCode = default!;
+#endif
         /// <summary>The unique identifier of the alias</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -190,7 +197,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "protectionBypass", n => { ProtectionBypass = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseProtectionBypass>(global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseProtectionBypass.CreateFromDiscriminatorValue); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRedirectStatusCode = default; _explicitNullProperties?.Remove("redirectStatusCode"); AdditionalData["redirectStatusCode"] = unknown; } else { RedirectStatusCode = parsed; AdditionalData.Remove("redirectStatusCode"); } } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode>(global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode.CreateFromDiscriminatorValue); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
@@ -213,7 +220,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseProtectionBypass>("protectionBypass", ProtectionBypass);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteStringValue("uid", Uid);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

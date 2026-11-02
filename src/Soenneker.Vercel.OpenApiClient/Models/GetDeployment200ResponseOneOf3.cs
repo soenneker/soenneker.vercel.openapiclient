@@ -466,8 +466,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Status? _explicitNullValueStatus = default!;
         /// <summary>If defined, either `staging` if a staging alias in the format `&lt;project&gt;.&lt;team&gt;.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the &quot;preview&quot; deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target? _explicitNullValueTarget = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target _explicitNullValueTarget = default!;
+#endif
         /// <summary>The team that owns the deployment if any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -595,7 +602,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "softDeletedByRetention", n => { SoftDeletedByRetention = n.GetBoolValue(); } },
                 { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Source>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Status>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
-                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Team>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Team.CreateFromDiscriminatorValue); } },
                 { "ttyBuildLogs", n => { TtyBuildLogs = n.GetBoolValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -663,7 +670,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("softDeletedByRetention", SoftDeletedByRetention);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Source>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Status>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Target>("target", Target);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3Team>("team", Team);
             writer.WriteBoolValue("ttyBuildLogs", TtyBuildLogs);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>("type", Type);

@@ -73398,6 +73398,349 @@
         ]
       }
     },
+    "/v1/projects/{projectIdOrName}/feature-flags/connections": {
+      "get": {
+        "description": "Lists the flags project connections of a project. By default these are the projects that may read this project's flags; with `role=consumer` these are the projects whose flags this project may read. Connections are within one team and apply across environments. Requires permission to list connections on the selected project.",
+        "operationId": "getFlagsProjectConnections",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "List flags project connections",
+        "tags": [
+          "feature-flags"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "properties": {
+                              "consumerProjectId": {
+                                "type": "string"
+                              },
+                              "consumerProjectName": {
+                                "type": "string"
+                              },
+                              "createdAt": {
+                                "type": "number"
+                              },
+                              "createdBy": {
+                                "type": "string"
+                              },
+                              "sourceProjectId": {
+                                "type": "string"
+                              },
+                              "sourceProjectName": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "consumerProjectId",
+                              "createdAt",
+                              "createdBy",
+                              "sourceProjectId"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectIdOrName",
+            "description": "The project id or name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The project id or name"
+            }
+          },
+          {
+            "name": "role",
+            "description": "List connections where this project is the source (default) or the consumer",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "source",
+                "consumer"
+              ],
+              "description": "List connections where this project is the source (default) or the consumer"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      },
+      "put": {
+        "description": "Connects a project in the same team to the flags of this project. The consumer project reads this project's flags with its own deployment identity by naming this project in the Flags SDK. Connections grant read and evaluate access across environments, with the consumer deployment's environment selecting the source environment. Requires connection management permission on the source project and read access to the consumer project.",
+        "operationId": "createFlagsProjectConnection",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Connect a project to the flags of this project",
+        "tags": [
+          "feature-flags"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "consumerProjectId": {
+                      "type": "string"
+                    },
+                    "consumerProjectName": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "number"
+                    },
+                    "createdBy": {
+                      "type": "string"
+                    },
+                    "sourceProjectId": {
+                      "type": "string"
+                    },
+                    "sourceProjectName": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "consumerProjectId",
+                    "consumerProjectName",
+                    "createdAt",
+                    "createdBy",
+                    "sourceProjectId",
+                    "sourceProjectName"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "503": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectIdOrName",
+            "description": "The project id or name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "description": "The project id or name",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "consumerProjectId"
+                ],
+                "properties": {
+                  "consumerProjectId": {
+                    "type": "string",
+                    "description": "The project in the same team that may read the flags of this project"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId}": {
+      "delete": {
+        "description": "Disconnects a project from the flags of this project. The consumer loses access without a redeploy. Requires connection management permission on the source project; access to the consumer project is not required.",
+        "operationId": "deleteFlagsProjectConnection",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Disconnect a project from the flags of this project",
+        "tags": [
+          "feature-flags"
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "503": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectIdOrName",
+            "description": "The project id or name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The project id or name"
+            }
+          },
+          {
+            "name": "consumerProjectId",
+            "description": "The connected consumer project id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The connected consumer project id"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      }
+    },
     "/v1/integrations/git-namespaces": {
       "get": {
         "description": "Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.",
@@ -92695,6 +93038,13 @@
                                 "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                               },
                               "schedule": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array",
+                                "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                              },
+                              "schedulePreview": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -117449,6 +117799,13 @@
                                     "type": "array",
                                     "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                                   },
+                                  "schedulePreview": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array",
+                                    "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                                  },
                                   "seawallConfig": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -125909,6 +126266,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "schedule": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "schedulePreview": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -134667,6 +135031,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "schedulePreview": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "seawallConfig": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -142681,6 +143052,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "schedule": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "schedulePreview": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -152082,6 +152460,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "schedulePreview": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "seawallConfig": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -160109,6 +160494,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "schedule": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "schedulePreview": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -181283,6 +181675,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "schedule": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "schedulePreview": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },

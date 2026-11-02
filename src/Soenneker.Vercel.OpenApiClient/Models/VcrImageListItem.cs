@@ -121,8 +121,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? SizeInBytes { get => _explicitNullValueSizeInBytes; set { _explicitNullValueSizeInBytes = value; AdditionalData?.Remove("sizeInBytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizeInBytes"); else _explicitNullProperties?.Remove("sizeInBytes"); } }
         private double? _explicitNullValueSizeInBytes = default!;
         /// <summary>VHS-readiness status, or `null` for a multi-platform index.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>Tags pointing at this image&apos;s manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,7 +174,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "pushedBy", n => { PushedBy = n.GetStringValue(); } },
                 { "repositoryId", n => { RepositoryId = n.GetStringValue(); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetDoubleValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus>(global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -187,7 +194,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("pushedBy", PushedBy);
             writer.WriteStringValue("repositoryId", RepositoryId);
             writer.WriteDoubleValue("sizeInBytes", SizeInBytes);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageListItemStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

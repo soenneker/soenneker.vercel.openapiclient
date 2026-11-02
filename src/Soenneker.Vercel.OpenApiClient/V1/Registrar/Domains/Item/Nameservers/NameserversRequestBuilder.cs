@@ -39,7 +39,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Nameservers
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDomainNameservers400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDomainNameservers403ResponseError">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
@@ -56,7 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Nameservers
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Vercel.OpenApiClient.Models.UpdateDomainNameservers400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Vercel.OpenApiClient.Models.UpdateDomainNameservers403ResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },

@@ -496,6 +496,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("samlConfig") is { } nullNodeSamlConfig && nullNodeSamlConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlConfig = null;
             if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
             else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("schedulePreview") is null) { _explicitNullValueSchedulePreview = default!; _explicitNullProperties?.Remove("schedulePreview"); }
+            else if (parseNode.GetChildNode("schedulePreview") is { } nullNodeSchedulePreview && nullNodeSchedulePreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchedulePreview = null;
             if (parseNode.GetChildNode("seawallConfig") is null) { _explicitNullValueSeawallConfig = default!; _explicitNullProperties?.Remove("seawallConfig"); }
             else if (parseNode.GetChildNode("seawallConfig") is { } nullNodeSeawallConfig && nullNodeSeawallConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeawallConfig = null;
             if (parseNode.GetChildNode("secret") is null) { _explicitNullValueSecret = default!; _explicitNullProperties?.Remove("secret"); }
@@ -3007,6 +3009,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SchedulePreview { get => _explicitNullValueSchedulePreview; set { _explicitNullValueSchedulePreview = value; AdditionalData?.Remove("schedulePreview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedulePreview"); else _explicitNullProperties?.Remove("schedulePreview"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSchedulePreview = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> SchedulePreview { get => _explicitNullValueSchedulePreview; set { _explicitNullValueSchedulePreview = value; AdditionalData?.Remove("schedulePreview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedulePreview"); else _explicitNullProperties?.Remove("schedulePreview"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueSchedulePreview = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? SeawallConfig { get => _explicitNullValueSeawallConfig; set { _explicitNullValueSeawallConfig = value; AdditionalData?.Remove("seawallConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seawallConfig"); else _explicitNullProperties?.Remove("seawallConfig"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueSeawallConfig = default!;
 #nullable restore
@@ -3838,6 +3850,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "repository", n => { Repository = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "samlConfig", n => { SamlConfig = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "schedule", n => { Schedule = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "schedulePreview", n => { SchedulePreview = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "seawallConfig", n => { SeawallConfig = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "secret", n => { Secret = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "securityConfig", n => { SecurityConfig = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -4143,6 +4156,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("repository", Repository);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("samlConfig", SamlConfig);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("schedule", Schedule);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("schedulePreview", SchedulePreview);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("seawallConfig", SeawallConfig);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("secret", Secret);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("securityConfig", SecurityConfig);

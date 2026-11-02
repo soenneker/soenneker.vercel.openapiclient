@@ -211,8 +211,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueImportFlowGitNamespaceId = default!;
 #endif
         /// <summary>The importFlowGitProvider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider? ImportFlowGitProvider { get => _explicitNullValueImportFlowGitProvider; set { _explicitNullValueImportFlowGitProvider = value; AdditionalData?.Remove("importFlowGitProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importFlowGitProvider"); else _explicitNullProperties?.Remove("importFlowGitProvider"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider? _explicitNullValueImportFlowGitProvider = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider ImportFlowGitProvider { get => _explicitNullValueImportFlowGitProvider; set { _explicitNullValueImportFlowGitProvider = value; AdditionalData?.Remove("importFlowGitProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("importFlowGitProvider"); else _explicitNullProperties?.Remove("importFlowGitProvider"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider _explicitNullValueImportFlowGitProvider = default!;
+#endif
         /// <summary>When `true`, the user must complete the EMU Update Account flow before they can use the dashboard.</summary>
         public bool? IsAccountUpdateRequired { get => _explicitNullValueIsAccountUpdateRequired; set { _explicitNullValueIsAccountUpdateRequired = value; AdditionalData?.Remove("isAccountUpdateRequired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAccountUpdateRequired"); else _explicitNullProperties?.Remove("isAccountUpdateRequired"); } }
         private bool? _explicitNullValueIsAccountUpdateRequired = default!;
@@ -332,7 +339,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "importFlowGitNamespace", n => { ImportFlowGitNamespace = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "importFlowGitNamespaceId", n => { ImportFlowGitNamespaceId = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
-                { "importFlowGitProvider", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueImportFlowGitProvider = default; _explicitNullProperties?.Remove("importFlowGitProvider"); AdditionalData["importFlowGitProvider"] = unknown; } else { ImportFlowGitProvider = parsed; AdditionalData.Remove("importFlowGitProvider"); } } },
+                { "importFlowGitProvider", n => { ImportFlowGitProvider = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider.CreateFromDiscriminatorValue); } },
                 { "isAccountUpdateRequired", n => { IsAccountUpdateRequired = n.GetBoolValue(); } },
                 { "isEnterpriseManaged", n => { IsEnterpriseManaged = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -367,7 +374,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("importFlowGitNamespace", ImportFlowGitNamespace);
             writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("importFlowGitNamespaceId", ImportFlowGitNamespaceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider>("importFlowGitProvider", ImportFlowGitProvider);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserImportFlowGitProvider>("importFlowGitProvider", ImportFlowGitProvider);
             writer.WriteBoolValue("isAccountUpdateRequired", IsAccountUpdateRequired);
             writer.WriteBoolValue("isEnterpriseManaged", IsEnterpriseManaged);
             writer.WriteStringValue("name", Name);

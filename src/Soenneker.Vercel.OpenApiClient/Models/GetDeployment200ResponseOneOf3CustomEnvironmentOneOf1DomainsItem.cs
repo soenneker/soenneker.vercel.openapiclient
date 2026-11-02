@@ -108,8 +108,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueRedirect = default!;
 #endif
         /// <summary>The redirectStatusCode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3CustomEnvironmentOneOf1DomainsItemRedirectStatusCode? RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3CustomEnvironmentOneOf1DomainsItemRedirectStatusCode? _explicitNullValueRedirectStatusCode = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode? RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode? _explicitNullValueRedirectStatusCode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode RedirectStatusCode { get => _explicitNullValueRedirectStatusCode; set { _explicitNullValueRedirectStatusCode = value; AdditionalData?.Remove("redirectStatusCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectStatusCode"); else _explicitNullProperties?.Remove("redirectStatusCode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode _explicitNullValueRedirectStatusCode = default!;
+#endif
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private double? _explicitNullValueUpdatedAt = default!;
@@ -158,7 +165,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3CustomEnvironmentOneOf1DomainsItemRedirectStatusCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRedirectStatusCode = default; _explicitNullProperties?.Remove("redirectStatusCode"); AdditionalData["redirectStatusCode"] = unknown; } else { RedirectStatusCode = parsed; AdditionalData.Remove("redirectStatusCode"); } } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode>(global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "verification", n => { Verification = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3CustomEnvironmentOneOf1DomainsItemVerificationItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3CustomEnvironmentOneOf1DomainsItemVerificationItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
@@ -178,7 +185,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3CustomEnvironmentOneOf1DomainsItemRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3CustomEnvironmentOneOf1DomainsItemVerificationItem>("verification", Verification);
             writer.WriteBoolValue("verified", Verified);

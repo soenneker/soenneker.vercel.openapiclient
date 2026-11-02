@@ -29,11 +29,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode? _explicitNullValueMode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode _explicitNullValueMode = default!;
+#endif
         /// <summary>The previousMode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode? PreviousMode { get => _explicitNullValuePreviousMode; set { _explicitNullValuePreviousMode = value; AdditionalData?.Remove("previousMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousMode"); else _explicitNullProperties?.Remove("previousMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode? _explicitNullValuePreviousMode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode PreviousMode { get => _explicitNullValuePreviousMode; set { _explicitNullValuePreviousMode = value; AdditionalData?.Remove("previousMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousMode"); else _explicitNullProperties?.Remove("previousMode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode _explicitNullValuePreviousMode = default!;
+#endif
         /// <summary>The scope property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope? _explicitNullValueScope = default!;
@@ -62,8 +76,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
-                { "previousMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousMode = default; _explicitNullProperties?.Remove("previousMode"); AdditionalData["previousMode"] = unknown; } else { PreviousMode = parsed; AdditionalData.Remove("previousMode"); } } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode.CreateFromDiscriminatorValue); } },
+                { "previousMode", n => { PreviousMode = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode.CreateFromDiscriminatorValue); } },
                 { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
             };
         }
@@ -74,8 +88,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode>("mode", Mode);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode>("previousMode", PreviousMode);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131Mode>("mode", Mode);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131PreviousMode>("previousMode", PreviousMode);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>("scope", Scope);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
