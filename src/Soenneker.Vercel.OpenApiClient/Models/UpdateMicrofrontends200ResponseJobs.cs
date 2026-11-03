@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("flag-definitions-present") is null) { _explicitNullValueFlagDefinitionsPresent = default!; _explicitNullProperties?.Remove("flag-definitions-present"); }
             else if (parseNode.GetChildNode("flag-definitions-present") is { } nullNodeFlagDefinitionsPresent && nullNodeFlagDefinitionsPresent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagDefinitionsPresent = null;
+            if (parseNode.GetChildNode("health-check") is null) { _explicitNullValueHealthCheck = default!; _explicitNullProperties?.Remove("health-check"); }
+            else if (parseNode.GetChildNode("health-check") is { } nullNodeHealthCheck && nullNodeHealthCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheck = null;
             if (parseNode.GetChildNode("lint") is null) { _explicitNullValueLint = default!; _explicitNullProperties?.Remove("lint"); }
             else if (parseNode.GetChildNode("lint") is { } nullNodeLint && nullNodeLint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lint = null;
             if (parseNode.GetChildNode("mfe-config-present") is null) { _explicitNullValueMfeConfigPresent = default!; _explicitNullProperties?.Remove("mfe-config-present"); }
@@ -38,6 +40,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent FlagDefinitionsPresent { get => _explicitNullValueFlagDefinitionsPresent; set { _explicitNullValueFlagDefinitionsPresent = value; AdditionalData?.Remove("flag-definitions-present"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag-definitions-present"); else _explicitNullProperties?.Remove("flag-definitions-present"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent _explicitNullValueFlagDefinitionsPresent = default!;
+#endif
+        /// <summary>The healthCheck property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsHealthCheck? HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health-check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health-check"); else _explicitNullProperties?.Remove("health-check"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsHealthCheck? _explicitNullValueHealthCheck = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsHealthCheck HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health-check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health-check"); else _explicitNullProperties?.Remove("health-check"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsHealthCheck _explicitNullValueHealthCheck = default!;
 #endif
         /// <summary>The lint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,6 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "flag-definitions-present", n => { FlagDefinitionsPresent = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent.CreateFromDiscriminatorValue); } },
+                { "health-check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsHealthCheck>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsHealthCheck.CreateFromDiscriminatorValue); } },
                 { "lint", n => { Lint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsLint>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsLint.CreateFromDiscriminatorValue); } },
                 { "mfe-config-present", n => { MfeConfigPresent = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsMfeConfigPresent>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsMfeConfigPresent.CreateFromDiscriminatorValue); } },
                 { "typecheck", n => { Typecheck = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsTypecheck>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsTypecheck.CreateFromDiscriminatorValue); } },
@@ -108,6 +121,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent>("flag-definitions-present", FlagDefinitionsPresent);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsHealthCheck>("health-check", HealthCheck);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsLint>("lint", Lint);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsMfeConfigPresent>("mfe-config-present", MfeConfigPresent);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseJobsTypecheck>("typecheck", Typecheck);

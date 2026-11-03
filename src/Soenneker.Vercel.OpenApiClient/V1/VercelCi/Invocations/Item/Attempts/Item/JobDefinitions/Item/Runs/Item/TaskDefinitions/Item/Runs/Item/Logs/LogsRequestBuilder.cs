@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.I
         {
         }
         /// <summary>
-        /// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
+        /// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiTaskRunLogs200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.I
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiTaskRunLogs200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiTaskRunLogs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
+        /// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.I
             return new global::Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.Item.JobDefinitions.Item.Runs.Item.TaskDefinitions.Item.Runs.Item.Logs.LogsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
+        /// Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogsRequestBuilderGetQueryParameters 

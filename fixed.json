@@ -40824,7 +40824,7 @@
           "vercel-ci"
         ],
         "summary": "Get log lines for the tasks of an invocation attempt",
-        "description": "Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example \u0060conclusion=failed\u0060 to fetch only the logs of failed tasks. With \u0060search\u0060, every matching task is searched at once and only tasks with matching lines are returned.",
+        "description": "Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example \u0060conclusion=failed\u0060 to fetch only the logs of failed tasks. With \u0060search\u0060, every matching task is searched at once and only tasks with matching lines are returned. Without \u0060search\u0060, a task restored from the remote cache returns the log of the run that produced the cache entry.",
         "operationId": "GetVercelCiTaskLogs",
         "parameters": [
           {
@@ -41291,7 +41291,7 @@
           "vercel-ci"
         ],
         "summary": "Get log lines for a specific task run attempt",
-        "description": "Get Task Run Logs With \u0060follow=1\u0060 the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.",
+        "description": "Get Task Run Logs With \u0060follow=1\u0060 the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.",
         "operationId": "GetVercelCiTaskRunLogs",
         "parameters": [
           {
@@ -64418,6 +64418,9 @@
           "flag-definitions-present": {
             "$ref": "#/components/schemas/TeamDefaultProjectJobsFlagDefinitionsPresent"
           },
+          "health-check": {
+            "$ref": "#/components/schemas/TeamDefaultProjectJobsHealthCheck"
+          },
           "lint": {
             "$ref": "#/components/schemas/TeamDefaultProjectJobsLint"
           },
@@ -70727,6 +70730,22 @@
         "nullable": true
       },
       "TeamDefaultProjectJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Default job configuration applied to new projects created in this team."
+          }
+        },
+        "description": "Default job configuration applied to new projects created in this team."
+      },
+      "TeamDefaultProjectJobsHealthCheck": {
         "required": [
           "targets"
         ],
@@ -152006,6 +152025,9 @@
           "flag-definitions-present": {
             "$ref": "#/components/schemas/CreateProject200ResponseJobsFlagDefinitionsPresent"
           },
+          "health-check": {
+            "$ref": "#/components/schemas/CreateProject200ResponseJobsHealthCheck"
+          },
           "lint": {
             "$ref": "#/components/schemas/CreateProject200ResponseJobsLint"
           },
@@ -155250,6 +155272,9 @@
         "properties": {
           "flag-definitions-present": {
             "$ref": "#/components/schemas/GetProject200ResponseJobsFlagDefinitionsPresent"
+          },
+          "health-check": {
+            "$ref": "#/components/schemas/GetProject200ResponseJobsHealthCheck"
           },
           "lint": {
             "$ref": "#/components/schemas/GetProject200ResponseJobsLint"
@@ -158822,6 +158847,9 @@
           "flag-definitions-present": {
             "$ref": "#/components/schemas/UpdateProject200ResponseJobsFlagDefinitionsPresent"
           },
+          "health-check": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseJobsHealthCheck"
+          },
           "lint": {
             "$ref": "#/components/schemas/UpdateProject200ResponseJobsLint"
           },
@@ -162046,6 +162074,9 @@
           "flag-definitions-present": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseJobsFlagDefinitionsPresent"
           },
+          "health-check": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseJobsHealthCheck"
+          },
           "lint": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseJobsLint"
           },
@@ -165269,6 +165300,9 @@
         "properties": {
           "flag-definitions-present": {
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseJobsFlagDefinitionsPresent"
+          },
+          "health-check": {
+            "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseJobsHealthCheck"
           },
           "lint": {
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseJobsLint"
@@ -169527,6 +169561,9 @@
         "properties": {
           "flag-definitions-present": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent"
+          },
+          "health-check": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseJobsHealthCheck"
           },
           "lint": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseJobsLint"
@@ -196588,6 +196625,9 @@
           "flag-definitions-present": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemJobsFlagDefinitionsPresent"
           },
+          "health-check": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemJobsHealthCheck"
+          },
           "lint": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemJobsLint"
           },
@@ -200327,6 +200367,20 @@
           }
         }
       },
+      "CreateProject200ResponseJobsHealthCheck": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "CreateProject200ResponseJobsLint": {
         "required": [
           "targets"
@@ -201236,6 +201290,20 @@
         "description": "The list of the installation resources connected to the project."
       },
       "GetProject200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetProject200ResponseJobsHealthCheck": {
         "required": [
           "targets"
         ],
@@ -202292,6 +202360,20 @@
           }
         }
       },
+      "UpdateProject200ResponseJobsHealthCheck": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "UpdateProject200ResponseJobsLint": {
         "required": [
           "targets"
@@ -203202,6 +203284,20 @@
           }
         }
       },
+      "UploadProjectAvatar200ResponseJobsHealthCheck": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "UploadProjectAvatar200ResponseJobsLint": {
         "required": [
           "targets"
@@ -204099,6 +204195,20 @@
         "description": "Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment."
       },
       "DeleteProjectAvatar200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "DeleteProjectAvatar200ResponseJobsHealthCheck": {
         "required": [
           "targets"
         ],
@@ -206285,6 +206395,20 @@
         "description": "Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment."
       },
       "UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UpdateMicrofrontends200ResponseJobsHealthCheck": {
         "required": [
           "targets"
         ],
@@ -213560,6 +213684,9 @@
         "properties": {
           "flag-definitions-present": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemJobsFlagDefinitionsPresent"
+          },
+          "health-check": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemJobsHealthCheck"
           },
           "lint": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemJobsLint"
@@ -222022,6 +222149,20 @@
           }
         }
       },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemJobsHealthCheck": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemJobsLint": {
         "required": [
           "targets"
@@ -229730,6 +229871,20 @@
         "description": "Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment."
       },
       "GetProjects200ResponseOneOf3ProjectsItemJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemJobsHealthCheck": {
         "required": [
           "targets"
         ],
@@ -256936,7 +257091,7 @@
           "validation"
         ],
         "type": "string",
-        "description": "Mirrors \u0060PushFailureStage\u0060 in \u0060@api/git-push-repo\u0060.",
+        "description": "Mirrors \u0060PushFailureStage\u0060 in \u0060api-git-providers\u0060.",
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf192FailureStage",
           "modelAsString": false,

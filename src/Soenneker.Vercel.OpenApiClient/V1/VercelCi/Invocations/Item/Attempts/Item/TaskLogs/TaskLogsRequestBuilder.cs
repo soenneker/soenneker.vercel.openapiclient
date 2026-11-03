@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.I
         {
         }
         /// <summary>
-        /// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
+        /// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned. Without `search`, a task restored from the remote cache returns the log of the run that produced the cache entry.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiTaskLogs200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.I
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiTaskLogs200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiTaskLogs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
+        /// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned. Without `search`, a task restored from the remote cache returns the log of the run that produced the cache entry.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.I
             return new global::Soenneker.Vercel.OpenApiClient.V1.VercelCi.Invocations.Item.Attempts.Item.TaskLogs.TaskLogsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
+        /// Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned. Without `search`, a task restored from the remote cache returns the log of the run that produced the cache entry.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TaskLogsRequestBuilderGetQueryParameters 

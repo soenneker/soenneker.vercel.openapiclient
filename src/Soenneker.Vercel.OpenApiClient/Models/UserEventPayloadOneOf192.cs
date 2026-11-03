@@ -98,7 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
         private string _explicitNullValueFailureCode = default!;
 #endif
-        /// <summary>Mirrors `PushFailureStage` in `@api/git-push-repo`.</summary>
+        /// <summary>Mirrors `PushFailureStage` in `api-git-providers`.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192FailureStage? FailureStage { get => _explicitNullValueFailureStage; set { _explicitNullValueFailureStage = value; AdditionalData?.Remove("failureStage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureStage"); else _explicitNullProperties?.Remove("failureStage"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192FailureStage? _explicitNullValueFailureStage = default!;
         /// <summary>Set only when an App installation token was minted (GitHub only).</summary>

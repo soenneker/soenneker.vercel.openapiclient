@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Mirrors `PushFailureStage` in `@api/git-push-repo`.</summary>
+    /// <summary>Mirrors `PushFailureStage` in `api-git-providers`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserEventPayloadOneOf192FailureStage
     {

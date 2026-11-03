@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("flag-definitions-present") is null) { _explicitNullValueFlagDefinitionsPresent = default!; _explicitNullProperties?.Remove("flag-definitions-present"); }
             else if (parseNode.GetChildNode("flag-definitions-present") is { } nullNodeFlagDefinitionsPresent && nullNodeFlagDefinitionsPresent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagDefinitionsPresent = null;
+            if (parseNode.GetChildNode("health-check") is null) { _explicitNullValueHealthCheck = default!; _explicitNullProperties?.Remove("health-check"); }
+            else if (parseNode.GetChildNode("health-check") is { } nullNodeHealthCheck && nullNodeHealthCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheck = null;
             if (parseNode.GetChildNode("lint") is null) { _explicitNullValueLint = default!; _explicitNullProperties?.Remove("lint"); }
             else if (parseNode.GetChildNode("lint") is { } nullNodeLint && nullNodeLint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lint = null;
             if (parseNode.GetChildNode("mfe-config-present") is null) { _explicitNullValueMfeConfigPresent = default!; _explicitNullProperties?.Remove("mfe-config-present"); }
@@ -39,6 +41,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent FlagDefinitionsPresent { get => _explicitNullValueFlagDefinitionsPresent; set { _explicitNullValueFlagDefinitionsPresent = value; AdditionalData?.Remove("flag-definitions-present"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag-definitions-present"); else _explicitNullProperties?.Remove("flag-definitions-present"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent _explicitNullValueFlagDefinitionsPresent = default!;
+#endif
+        /// <summary>Default job configuration applied to new projects created in this team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsHealthCheck? HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health-check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health-check"); else _explicitNullProperties?.Remove("health-check"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsHealthCheck? _explicitNullValueHealthCheck = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsHealthCheck HealthCheck { get => _explicitNullValueHealthCheck; set { _explicitNullValueHealthCheck = value; AdditionalData?.Remove("health-check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health-check"); else _explicitNullProperties?.Remove("health-check"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsHealthCheck _explicitNullValueHealthCheck = default!;
 #endif
         /// <summary>Default job configuration applied to new projects created in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,6 +108,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "flag-definitions-present", n => { FlagDefinitionsPresent = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent.CreateFromDiscriminatorValue); } },
+                { "health-check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsHealthCheck>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsHealthCheck.CreateFromDiscriminatorValue); } },
                 { "lint", n => { Lint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint.CreateFromDiscriminatorValue); } },
                 { "mfe-config-present", n => { MfeConfigPresent = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent.CreateFromDiscriminatorValue); } },
                 { "typecheck", n => { Typecheck = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck.CreateFromDiscriminatorValue); } },
@@ -109,6 +122,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent>("flag-definitions-present", FlagDefinitionsPresent);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsHealthCheck>("health-check", HealthCheck);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint>("lint", Lint);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent>("mfe-config-present", MfeConfigPresent);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck>("typecheck", Typecheck);

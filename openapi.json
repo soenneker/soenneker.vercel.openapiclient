@@ -90010,6 +90010,20 @@
                                 ],
                                 "type": "object"
                               },
+                              "health-check": {
+                                "properties": {
+                                  "targets": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  }
+                                },
+                                "required": [
+                                  "targets"
+                                ],
+                                "type": "object"
+                              },
                               "lint": {
                                 "properties": {
                                   "targets": {
@@ -114765,6 +114779,20 @@
                                     ],
                                     "type": "object"
                                   },
+                                  "health-check": {
+                                    "properties": {
+                                      "targets": {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      }
+                                    },
+                                    "required": [
+                                      "targets"
+                                    ],
+                                    "type": "object"
+                                  },
                                   "lint": {
                                     "properties": {
                                       "targets": {
@@ -123225,6 +123253,20 @@
                     "jobs": {
                       "properties": {
                         "flag-definitions-present": {
+                          "properties": {
+                            "targets": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "targets"
+                          ],
+                          "type": "object"
+                        },
+                        "health-check": {
                           "properties": {
                             "targets": {
                               "items": {
@@ -131997,6 +132039,20 @@
                           ],
                           "type": "object"
                         },
+                        "health-check": {
+                          "properties": {
+                            "targets": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "targets"
+                          ],
+                          "type": "object"
+                        },
                         "lint": {
                           "properties": {
                             "targets": {
@@ -140011,6 +140067,20 @@
                     "jobs": {
                       "properties": {
                         "flag-definitions-present": {
+                          "properties": {
+                            "targets": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "targets"
+                          ],
+                          "type": "object"
+                        },
+                        "health-check": {
                           "properties": {
                             "targets": {
                               "items": {
@@ -149426,6 +149496,20 @@
                           ],
                           "type": "object"
                         },
+                        "health-check": {
+                          "properties": {
+                            "targets": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "targets"
+                          ],
+                          "type": "object"
+                        },
                         "lint": {
                           "properties": {
                             "targets": {
@@ -157453,6 +157537,20 @@
                     "jobs": {
                       "properties": {
                         "flag-definitions-present": {
+                          "properties": {
+                            "targets": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "targets"
+                          ],
+                          "type": "object"
+                        },
+                        "health-check": {
                           "properties": {
                             "targets": {
                               "items": {
@@ -178634,6 +178732,20 @@
                     "jobs": {
                       "properties": {
                         "flag-definitions-present": {
+                          "properties": {
+                            "targets": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "targets"
+                          ],
+                          "type": "object"
+                        },
+                        "health-check": {
                           "properties": {
                             "targets": {
                               "items": {
@@ -227215,7 +227327,7 @@
     },
     "/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs": {
       "get": {
-        "description": "Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.",
+        "description": "Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned. Without `search`, a task restored from the remote cache returns the log of the run that produced the cache entry.",
         "operationId": "getVercelCiTaskLogs",
         "security": [
           {
@@ -228293,7 +228405,7 @@
     },
     "/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs": {
       "get": {
-        "description": "Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.",
+        "description": "Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration. A task run restored from the remote cache returns the log of the run that produced the cache entry, timestamped when the cached run completed.",
         "operationId": "getVercelCiTaskRunLogs",
         "security": [
           {
@@ -251329,7 +251441,7 @@
                       "unknown",
                       "validation"
                     ],
-                    "description": "Mirrors `PushFailureStage` in `@api/git-push-repo`."
+                    "description": "Mirrors `PushFailureStage` in `api-git-providers`."
                   },
                   "installationId": {
                     "nullable": true,
@@ -270139,6 +270251,22 @@
           "defaultProjectJobs": {
             "properties": {
               "flag-definitions-present": {
+                "properties": {
+                  "targets": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array",
+                    "description": "Default job configuration applied to new projects created in this team."
+                  }
+                },
+                "required": [
+                  "targets"
+                ],
+                "type": "object",
+                "description": "Default job configuration applied to new projects created in this team."
+              },
+              "health-check": {
                 "properties": {
                   "targets": {
                     "items": {
