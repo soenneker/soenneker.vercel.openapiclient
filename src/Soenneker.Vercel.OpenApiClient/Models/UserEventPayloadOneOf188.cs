@@ -18,10 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("consumerProjectId") is null) { _explicitNullValueConsumerProjectId = default!; _explicitNullProperties?.Remove("consumerProjectId"); }
-            else if (parseNode.GetChildNode("consumerProjectId") is { } nullNodeConsumerProjectId && nullNodeConsumerProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerProjectId = null;
-            if (parseNode.GetChildNode("consumerProjectName") is null) { _explicitNullValueConsumerProjectName = default!; _explicitNullProperties?.Remove("consumerProjectName"); }
-            else if (parseNode.GetChildNode("consumerProjectName") is { } nullNodeConsumerProjectName && nullNodeConsumerProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerProjectName = null;
+            if (parseNode.GetChildNode("newOwnerId") is null) { _explicitNullValueNewOwnerId = default!; _explicitNullProperties?.Remove("newOwnerId"); }
+            else if (parseNode.GetChildNode("newOwnerId") is { } nullNodeNewOwnerId && nullNodeNewOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewOwnerId = null;
+            if (parseNode.GetChildNode("previousOwnerId") is null) { _explicitNullValuePreviousOwnerId = default!; _explicitNullProperties?.Remove("previousOwnerId"); }
+            else if (parseNode.GetChildNode("previousOwnerId") is { } nullNodePreviousOwnerId && nullNodePreviousOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousOwnerId = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
@@ -30,25 +30,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The consumerProjectId property</summary>
+        /// <summary>The newOwnerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerProjectId { get => _explicitNullValueConsumerProjectId; set { _explicitNullValueConsumerProjectId = value; AdditionalData?.Remove("consumerProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectId"); else _explicitNullProperties?.Remove("consumerProjectId"); } }
-        private string? _explicitNullValueConsumerProjectId = default!;
+        public string? NewOwnerId { get => _explicitNullValueNewOwnerId; set { _explicitNullValueNewOwnerId = value; AdditionalData?.Remove("newOwnerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newOwnerId"); else _explicitNullProperties?.Remove("newOwnerId"); } }
+        private string? _explicitNullValueNewOwnerId = default!;
 #nullable restore
 #else
-        public string ConsumerProjectId { get => _explicitNullValueConsumerProjectId; set { _explicitNullValueConsumerProjectId = value; AdditionalData?.Remove("consumerProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectId"); else _explicitNullProperties?.Remove("consumerProjectId"); } }
-        private string _explicitNullValueConsumerProjectId = default!;
+        public string NewOwnerId { get => _explicitNullValueNewOwnerId; set { _explicitNullValueNewOwnerId = value; AdditionalData?.Remove("newOwnerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newOwnerId"); else _explicitNullProperties?.Remove("newOwnerId"); } }
+        private string _explicitNullValueNewOwnerId = default!;
 #endif
-        /// <summary>The consumerProjectName property</summary>
+        /// <summary>The previousOwnerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerProjectName { get => _explicitNullValueConsumerProjectName; set { _explicitNullValueConsumerProjectName = value; AdditionalData?.Remove("consumerProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectName"); else _explicitNullProperties?.Remove("consumerProjectName"); } }
-        private string? _explicitNullValueConsumerProjectName = default!;
+        public string? PreviousOwnerId { get => _explicitNullValuePreviousOwnerId; set { _explicitNullValuePreviousOwnerId = value; AdditionalData?.Remove("previousOwnerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousOwnerId"); else _explicitNullProperties?.Remove("previousOwnerId"); } }
+        private string? _explicitNullValuePreviousOwnerId = default!;
 #nullable restore
 #else
-        public string ConsumerProjectName { get => _explicitNullValueConsumerProjectName; set { _explicitNullValueConsumerProjectName = value; AdditionalData?.Remove("consumerProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectName"); else _explicitNullProperties?.Remove("consumerProjectName"); } }
-        private string _explicitNullValueConsumerProjectName = default!;
+        public string PreviousOwnerId { get => _explicitNullValuePreviousOwnerId; set { _explicitNullValuePreviousOwnerId = value; AdditionalData?.Remove("previousOwnerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousOwnerId"); else _explicitNullProperties?.Remove("previousOwnerId"); } }
+        private string _explicitNullValuePreviousOwnerId = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,8 +95,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consumerProjectId", n => { ConsumerProjectId = n.GetStringValue(); } },
-                { "consumerProjectName", n => { ConsumerProjectName = n.GetStringValue(); } },
+                { "newOwnerId", n => { NewOwnerId = n.GetStringValue(); } },
+                { "previousOwnerId", n => { PreviousOwnerId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -108,8 +108,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("consumerProjectId", ConsumerProjectId);
-            writer.WriteStringValue("consumerProjectName", ConsumerProjectName);
+            writer.WriteStringValue("newOwnerId", NewOwnerId);
+            writer.WriteStringValue("previousOwnerId", PreviousOwnerId);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

@@ -24,15 +24,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The planSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlanSlug { get => _explicitNullValuePlanSlug; set { _explicitNullValuePlanSlug = value; AdditionalData?.Remove("planSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planSlug"); else _explicitNullProperties?.Remove("planSlug"); } }
-        private string? _explicitNullValuePlanSlug = default!;
-#nullable restore
-#else
-        public string PlanSlug { get => _explicitNullValuePlanSlug; set { _explicitNullValuePlanSlug = value; AdditionalData?.Remove("planSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planSlug"); else _explicitNullProperties?.Remove("planSlug"); } }
-        private string _explicitNullValuePlanSlug = default!;
-#endif
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataPlanSlug? PlanSlug { get => _explicitNullValuePlanSlug; set { _explicitNullValuePlanSlug = value; AdditionalData?.Remove("planSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planSlug"); else _explicitNullProperties?.Remove("planSlug"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataPlanSlug? _explicitNullValuePlanSlug = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Data"/> and sets the default values.
         /// </summary>
@@ -48,14 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("planSlug")?.GetStringValue();
-            return mappingValue switch
-            {
-                "hobby" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf2Variant(),
-                "v0_business" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1Variant(),
-                "v0_teams" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataOneOf1Variant(),
-                _ => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Data(),
-            };
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "planSlug", n => { PlanSlug = n.GetStringValue(); } },
+                { "planSlug", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataPlanSlug>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlanSlug = default; _explicitNullProperties?.Remove("planSlug"); AdditionalData["planSlug"] = unknown; } else { PlanSlug = parsed; AdditionalData.Remove("planSlug"); } } },
             };
         }
         /// <summary>
@@ -75,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("planSlug", PlanSlug);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85DataPlanSlug>("planSlug", PlanSlug);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

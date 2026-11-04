@@ -394,6 +394,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("privateCloudAccount") is { } nullNodePrivateCloudAccount && nullNodePrivateCloudAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateCloudAccount = null;
             if (parseNode.GetChildNode("privateLinkEndpoint") is null) { _explicitNullValuePrivateLinkEndpoint = default!; _explicitNullProperties?.Remove("privateLinkEndpoint"); }
             else if (parseNode.GetChildNode("privateLinkEndpoint") is { } nullNodePrivateLinkEndpoint && nullNodePrivateLinkEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateLinkEndpoint = null;
+            if (parseNode.GetChildNode("privateNpmUsage") is null) { _explicitNullValuePrivateNpmUsage = default!; _explicitNullProperties?.Remove("privateNpmUsage"); }
+            else if (parseNode.GetChildNode("privateNpmUsage") is { } nullNodePrivateNpmUsage && nullNodePrivateNpmUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateNpmUsage = null;
             if (parseNode.GetChildNode("productionAliasProtectionBypass") is null) { _explicitNullValueProductionAliasProtectionBypass = default!; _explicitNullProperties?.Remove("productionAliasProtectionBypass"); }
             else if (parseNode.GetChildNode("productionAliasProtectionBypass") is { } nullNodeProductionAliasProtectionBypass && nullNodeProductionAliasProtectionBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductionAliasProtectionBypass = null;
             if (parseNode.GetChildNode("productionShareableLink") is null) { _explicitNullValueProductionShareableLink = default!; _explicitNullProperties?.Remove("productionShareableLink"); }
@@ -2499,6 +2501,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PrivateNpmUsage { get => _explicitNullValuePrivateNpmUsage; set { _explicitNullValuePrivateNpmUsage = value; AdditionalData?.Remove("privateNpmUsage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateNpmUsage"); else _explicitNullProperties?.Remove("privateNpmUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePrivateNpmUsage = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PrivateNpmUsage { get => _explicitNullValuePrivateNpmUsage; set { _explicitNullValuePrivateNpmUsage = value; AdditionalData?.Remove("privateNpmUsage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateNpmUsage"); else _explicitNullProperties?.Remove("privateNpmUsage"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePrivateNpmUsage = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProductionAliasProtectionBypass { get => _explicitNullValueProductionAliasProtectionBypass; set { _explicitNullValueProductionAliasProtectionBypass = value; AdditionalData?.Remove("productionAliasProtectionBypass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productionAliasProtectionBypass"); else _explicitNullProperties?.Remove("productionAliasProtectionBypass"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProductionAliasProtectionBypass = default!;
 #nullable restore
@@ -3799,6 +3811,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "privateCloudAccount", n => { PrivateCloudAccount = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "privateLinkEndpoint", n => { PrivateLinkEndpoint = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "privateNpmUsage", n => { PrivateNpmUsage = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "proTrialOnboarding", n => { ProTrialOnboarding = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "productionAliasProtectionBypass", n => { ProductionAliasProtectionBypass = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "productionShareableLink", n => { ProductionShareableLink = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -4105,6 +4118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("previewDeploymentSuffix", PreviewDeploymentSuffix);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("privateCloudAccount", PrivateCloudAccount);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("privateLinkEndpoint", PrivateLinkEndpoint);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("privateNpmUsage", PrivateNpmUsage);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("productionAliasProtectionBypass", ProductionAliasProtectionBypass);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("productionShareableLink", ProductionShareableLink);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("project", Project);

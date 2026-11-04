@@ -28,7 +28,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DefaultsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/defaults{?slug*,teamId*}", pathParameters)
+        public DefaultsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/defaults{?justification*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DefaultsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/defaults{?slug*,teamId*}", rawUrl)
+        public DefaultsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/defaults{?justification*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults.DefaultsRequestBuilder.DefaultsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/budgets/defaults?scopeType={scopeType}{&slug*,teamId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/budgets/defaults?scopeType={scopeType}{&justification*,slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -131,6 +131,16 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DefaultsRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains. Only recorded when scopeType is set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("justification")]
+            public string? Justification { get; set; }
+#nullable restore
+#else
+            [QueryParameter("justification")]
+            public string Justification { get; set; }
+#endif
             /// <summary>The budget default scope to delete.</summary>
             [QueryParameter("scopeType")]
             public global::Soenneker.Vercel.OpenApiClient.Models.ArchiveAiGatewayBudgetDefaultScopeTypeParameter? ScopeType { get; set; }

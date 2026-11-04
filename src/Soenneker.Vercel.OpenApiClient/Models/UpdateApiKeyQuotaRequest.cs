@@ -25,6 +25,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
             if (parseNode.GetChildNode("includeByokInQuota") is null) { _explicitNullValueIncludeByokInQuota = default!; _explicitNullProperties?.Remove("includeByokInQuota"); }
             else if (parseNode.GetChildNode("includeByokInQuota") is { } nullNodeIncludeByokInQuota && nullNodeIncludeByokInQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeByokInQuota = null;
+            if (parseNode.GetChildNode("justification") is null) { _explicitNullValueJustification = default!; _explicitNullProperties?.Remove("justification"); }
+            else if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
             if (parseNode.GetChildNode("limitAmount") is null) { _explicitNullValueLimitAmount = default!; _explicitNullProperties?.Remove("limitAmount"); }
             else if (parseNode.GetChildNode("limitAmount") is { } nullNodeLimitAmount && nullNodeLimitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitAmount = null;
             if (parseNode.GetChildNode("refreshPeriod") is null) { _explicitNullValueRefreshPeriod = default!; _explicitNullProperties?.Remove("refreshPeriod"); }
@@ -52,6 +54,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether BYOK (Bring Your Own Key) usage counts against the quota.</summary>
         public bool? IncludeByokInQuota { get => _explicitNullValueIncludeByokInQuota; set { _explicitNullValueIncludeByokInQuota = value; AdditionalData?.Remove("includeByokInQuota"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeByokInQuota"); else _explicitNullProperties?.Remove("includeByokInQuota"); } }
         private bool? _explicitNullValueIncludeByokInQuota = default!;
+        /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; AdditionalData?.Remove("justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string? _explicitNullValueJustification = default!;
+#nullable restore
+#else
+        public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; AdditionalData?.Remove("justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string _explicitNullValueJustification = default!;
+#endif
         /// <summary>The quota limit amount. Required if the quota does not yet exist.</summary>
         public double? LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; AdditionalData?.Remove("limitAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
         private double? _explicitNullValueLimitAmount = default!;
@@ -87,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "includeByokInQuota", n => { IncludeByokInQuota = n.GetBoolValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "refreshPeriod", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateApiKeyQuotaRequestRefreshPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRefreshPeriod = default; _explicitNullProperties?.Remove("refreshPeriod"); AdditionalData["refreshPeriod"] = unknown; } else { RefreshPeriod = parsed; AdditionalData.Remove("refreshPeriod"); } } },
             };
@@ -102,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("alertThresholds", AlertThresholds);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteBoolValue("includeByokInQuota", IncludeByokInQuota);
+            writer.WriteStringValue("justification", Justification);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateApiKeyQuotaRequestRefreshPeriod>("refreshPeriod", RefreshPeriod);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

@@ -24,10 +24,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("allowedDomains") is { } nullNodeAllowedDomains && nullNodeAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDomains = null;
             if (parseNode.GetChildNode("deniedCIDRs") is null) { _explicitNullValueDeniedCIDRs = default!; _explicitNullProperties?.Remove("deniedCIDRs"); }
             else if (parseNode.GetChildNode("deniedCIDRs") is { } nullNodeDeniedCIDRs && nullNodeDeniedCIDRs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeniedCIDRs = null;
+            if (parseNode.GetChildNode("forwardRules") is null) { _explicitNullValueForwardRules = default!; _explicitNullProperties?.Remove("forwardRules"); }
+            else if (parseNode.GetChildNode("forwardRules") is { } nullNodeForwardRules && nullNodeForwardRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForwardRules = null;
             if (parseNode.GetChildNode("injectionRules") is null) { _explicitNullValueInjectionRules = default!; _explicitNullProperties?.Remove("injectionRules"); }
             else if (parseNode.GetChildNode("injectionRules") is { } nullNodeInjectionRules && nullNodeInjectionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectionRules = null;
             if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
             else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("responseRules") is null) { _explicitNullValueResponseRules = default!; _explicitNullProperties?.Remove("responseRules"); }
+            else if (parseNode.GetChildNode("responseRules") is { } nullNodeResponseRules && nullNodeResponseRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseRules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,6 +66,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> DeniedCIDRs { get => _explicitNullValueDeniedCIDRs; set { _explicitNullValueDeniedCIDRs = value; AdditionalData?.Remove("deniedCIDRs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deniedCIDRs"); else _explicitNullProperties?.Remove("deniedCIDRs"); } }
         private List<string> _explicitNullValueDeniedCIDRs = default!;
 #endif
+        /// <summary>Rules that forward outgoing requests matching specific domains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxForwardRule>? ForwardRules { get => _explicitNullValueForwardRules; set { _explicitNullValueForwardRules = value; AdditionalData?.Remove("forwardRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwardRules"); else _explicitNullProperties?.Remove("forwardRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxForwardRule>? _explicitNullValueForwardRules = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxForwardRule> ForwardRules { get => _explicitNullValueForwardRules; set { _explicitNullValueForwardRules = value; AdditionalData?.Remove("forwardRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwardRules"); else _explicitNullProperties?.Remove("forwardRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxForwardRule> _explicitNullValueForwardRules = default!;
+#endif
         /// <summary>HTTP header injection rules for outgoing requests matching specific domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +89,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The network policy mode. - &apos;allow-all&apos;: All traffic is allowed. - &apos;deny-all&apos;: All traffic is blocked. - &apos;custom&apos;: Traffic is controlled by explicit allow/deny rules.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicyMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicyMode? _explicitNullValueMode = default!;
+        /// <summary>Rules that return custom responses for requests matching specific domains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxResponseRule>? ResponseRules { get => _explicitNullValueResponseRules; set { _explicitNullValueResponseRules = value; AdditionalData?.Remove("responseRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseRules"); else _explicitNullProperties?.Remove("responseRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxResponseRule>? _explicitNullValueResponseRules = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxResponseRule> ResponseRules { get => _explicitNullValueResponseRules; set { _explicitNullValueResponseRules = value; AdditionalData?.Remove("responseRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseRules"); else _explicitNullProperties?.Remove("responseRules"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxResponseRule> _explicitNullValueResponseRules = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy"/> and sets the default values.
         /// </summary>
@@ -103,8 +127,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowedCIDRs", n => { AllowedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deniedCIDRs", n => { DeniedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "forwardRules", n => { ForwardRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxForwardRule>(global::Soenneker.Vercel.OpenApiClient.Models.SandboxForwardRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "injectionRules", n => { InjectionRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule>(global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicyMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
+                { "responseRules", n => { ResponseRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxResponseRule>(global::Soenneker.Vercel.OpenApiClient.Models.SandboxResponseRule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -117,8 +143,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedCIDRs", AllowedCIDRs);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("deniedCIDRs", DeniedCIDRs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxForwardRule>("forwardRules", ForwardRules);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule>("injectionRules", InjectionRules);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicyMode>("mode", Mode);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxResponseRule>("responseRules", ResponseRules);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

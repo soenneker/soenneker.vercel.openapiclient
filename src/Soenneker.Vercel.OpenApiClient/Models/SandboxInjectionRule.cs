@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
             if (parseNode.GetChildNode("headerNames") is null) { _explicitNullValueHeaderNames = default!; _explicitNullProperties?.Remove("headerNames"); }
             else if (parseNode.GetChildNode("headerNames") is { } nullNodeHeaderNames && nullNodeHeaderNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderNames = null;
+            if (parseNode.GetChildNode("matchDimensions") is null) { _explicitNullValueMatchDimensions = default!; _explicitNullProperties?.Remove("matchDimensions"); }
+            else if (parseNode.GetChildNode("matchDimensions") is { } nullNodeMatchDimensions && nullNodeMatchDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchDimensions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,6 +47,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> HeaderNames { get => _explicitNullValueHeaderNames; set { _explicitNullValueHeaderNames = value; AdditionalData?.Remove("headerNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerNames"); else _explicitNullProperties?.Remove("headerNames"); } }
         private List<string> _explicitNullValueHeaderNames = default!;
+#endif
+        /// <summary>Request dimensions used to match this rule. Matcher values are omitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MatchDimensions { get => _explicitNullValueMatchDimensions; set { _explicitNullValueMatchDimensions = value; AdditionalData?.Remove("matchDimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchDimensions"); else _explicitNullProperties?.Remove("matchDimensions"); } }
+        private List<string>? _explicitNullValueMatchDimensions = default!;
+#nullable restore
+#else
+        public List<string> MatchDimensions { get => _explicitNullValueMatchDimensions; set { _explicitNullValueMatchDimensions = value; AdditionalData?.Remove("matchDimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchDimensions"); else _explicitNullProperties?.Remove("matchDimensions"); } }
+        private List<string> _explicitNullValueMatchDimensions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule"/> and sets the default values.
@@ -73,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "headerNames", n => { HeaderNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "matchDimensions", n => { MatchDimensions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfPrimitiveValues<string>("headerNames", HeaderNames);
+            writer.WriteCollectionOfPrimitiveValues<string>("matchDimensions", MatchDimensions);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

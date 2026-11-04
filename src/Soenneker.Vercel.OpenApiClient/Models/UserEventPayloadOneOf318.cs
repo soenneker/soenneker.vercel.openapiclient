@@ -18,8 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("consolidatedGitCommitStatus") is null) { _explicitNullValueConsolidatedGitCommitStatus = default!; _explicitNullProperties?.Remove("consolidatedGitCommitStatus"); }
-            else if (parseNode.GetChildNode("consolidatedGitCommitStatus") is { } nullNodeConsolidatedGitCommitStatus && nullNodeConsolidatedGitCommitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsolidatedGitCommitStatus = null;
+            if (parseNode.GetChildNode("gitCommitStatus") is null) { _explicitNullValueGitCommitStatus = default!; _explicitNullProperties?.Remove("gitCommitStatus"); }
+            else if (parseNode.GetChildNode("gitCommitStatus") is { } nullNodeGitCommitStatus && nullNodeGitCommitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitCommitStatus = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
@@ -28,16 +28,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The consolidatedGitCommitStatus property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318ConsolidatedGitCommitStatus? ConsolidatedGitCommitStatus { get => _explicitNullValueConsolidatedGitCommitStatus; set { _explicitNullValueConsolidatedGitCommitStatus = value; AdditionalData?.Remove("consolidatedGitCommitStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consolidatedGitCommitStatus"); else _explicitNullProperties?.Remove("consolidatedGitCommitStatus"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318ConsolidatedGitCommitStatus? _explicitNullValueConsolidatedGitCommitStatus = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318ConsolidatedGitCommitStatus ConsolidatedGitCommitStatus { get => _explicitNullValueConsolidatedGitCommitStatus; set { _explicitNullValueConsolidatedGitCommitStatus = value; AdditionalData?.Remove("consolidatedGitCommitStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consolidatedGitCommitStatus"); else _explicitNullProperties?.Remove("consolidatedGitCommitStatus"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318ConsolidatedGitCommitStatus _explicitNullValueConsolidatedGitCommitStatus = default!;
-#endif
+        /// <summary>The gitCommitStatus property</summary>
+        public bool? GitCommitStatus { get => _explicitNullValueGitCommitStatus; set { _explicitNullValueGitCommitStatus = value; AdditionalData?.Remove("gitCommitStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitCommitStatus"); else _explicitNullProperties?.Remove("gitCommitStatus"); } }
+        private bool? _explicitNullValueGitCommitStatus = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consolidatedGitCommitStatus", n => { ConsolidatedGitCommitStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318ConsolidatedGitCommitStatus>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318ConsolidatedGitCommitStatus.CreateFromDiscriminatorValue); } },
+                { "gitCommitStatus", n => { GitCommitStatus = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -95,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318ConsolidatedGitCommitStatus>("consolidatedGitCommitStatus", ConsolidatedGitCommitStatus);
+            writer.WriteBoolValue("gitCommitStatus", GitCommitStatus);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

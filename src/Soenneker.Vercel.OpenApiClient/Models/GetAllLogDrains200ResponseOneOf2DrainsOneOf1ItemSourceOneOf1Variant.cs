@@ -23,8 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         }
 
         /// <summary>Informational marker for a system-owned default drain.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor? DefaultFor { get => _explicitNullValueDefaultFor; set { _explicitNullValueDefaultFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultFor"); else _explicitNullProperties?.Remove("defaultFor"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor? _explicitNullValueDefaultFor = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf1ItemSourceOneOf1DefaultFor? DefaultFor { get => _explicitNullValueDefaultFor; set { _explicitNullValueDefaultFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultFor"); else _explicitNullProperties?.Remove("defaultFor"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf1ItemSourceOneOf1DefaultFor? _explicitNullValueDefaultFor = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultFor", n => { DefaultFor = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor>(); } },
+                { "defaultFor", n => { DefaultFor = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf1ItemSourceOneOf1DefaultFor>(); } },
             };
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EveTracingDefaultFor>("defaultFor", DefaultFor);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf1ItemSourceOneOf1DefaultFor>("defaultFor", DefaultFor);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

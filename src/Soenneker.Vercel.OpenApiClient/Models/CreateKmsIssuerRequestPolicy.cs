@@ -52,6 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return mappingValue switch
             {
                 "connex-grant" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf2Variant(),
+                "integration-tokens-grant" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf3Variant(),
                 "project-grant" => new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicyOneOf1Variant(),
                 _ => new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestPolicy(),
             };

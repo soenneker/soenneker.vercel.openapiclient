@@ -18,212 +18,84 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app") is null) { _explicitNullValueApp = default!; _explicitNullProperties?.Remove("app"); }
-            else if (parseNode.GetChildNode("app") is { } nullNodeApp && nullNodeApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) App = null;
-            if (parseNode.GetChildNode("appName") is null) { _explicitNullValueAppName = default!; _explicitNullProperties?.Remove("appName"); }
-            else if (parseNode.GetChildNode("appName") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
-            if (parseNode.GetChildNode("atTTL") is null) { _explicitNullValueAtTTL = default!; _explicitNullProperties?.Remove("atTTL"); }
-            else if (parseNode.GetChildNode("atTTL") is { } nullNodeAtTTL && nullNodeAtTTL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AtTTL = null;
-            if (parseNode.GetChildNode("authMethod") is null) { _explicitNullValueAuthMethod = default!; _explicitNullProperties?.Remove("authMethod"); }
-            else if (parseNode.GetChildNode("authMethod") is { } nullNodeAuthMethod && nullNodeAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMethod = null;
-            if (parseNode.GetChildNode("geolocation") is null) { _explicitNullValueGeolocation = default!; _explicitNullProperties?.Remove("geolocation"); }
-            else if (parseNode.GetChildNode("geolocation") is { } nullNodeGeolocation && nullNodeGeolocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocation = null;
-            if (parseNode.GetChildNode("grantType") is null) { _explicitNullValueGrantType = default!; _explicitNullProperties?.Remove("grantType"); }
-            else if (parseNode.GetChildNode("grantType") is { } nullNodeGrantType && nullNodeGrantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantType = null;
-            if (parseNode.GetChildNode("includesRefreshToken") is null) { _explicitNullValueIncludesRefreshToken = default!; _explicitNullProperties?.Remove("includesRefreshToken"); }
-            else if (parseNode.GetChildNode("includesRefreshToken") is { } nullNodeIncludesRefreshToken && nullNodeIncludesRefreshToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludesRefreshToken = null;
-            if (parseNode.GetChildNode("ip") is null) { _explicitNullValueIp = default!; _explicitNullProperties?.Remove("ip"); }
-            else if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
-            if (parseNode.GetChildNode("issuerUrl") is null) { _explicitNullValueIssuerUrl = default!; _explicitNullProperties?.Remove("issuerUrl"); }
-            else if (parseNode.GetChildNode("issuerUrl") is { } nullNodeIssuerUrl && nullNodeIssuerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerUrl = null;
-            if (parseNode.GetChildNode("oidcSubject") is null) { _explicitNullValueOidcSubject = default!; _explicitNullProperties?.Remove("oidcSubject"); }
-            else if (parseNode.GetChildNode("oidcSubject") is { } nullNodeOidcSubject && nullNodeOidcSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OidcSubject = null;
-            if (parseNode.GetChildNode("policyId") is null) { _explicitNullValuePolicyId = default!; _explicitNullProperties?.Remove("policyId"); }
-            else if (parseNode.GetChildNode("policyId") is { } nullNodePolicyId && nullNodePolicyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyId = null;
-            if (parseNode.GetChildNode("publicId") is null) { _explicitNullValuePublicId = default!; _explicitNullProperties?.Remove("publicId"); }
-            else if (parseNode.GetChildNode("publicId") is { } nullNodePublicId && nullNodePublicId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicId = null;
-            if (parseNode.GetChildNode("refreshTokenPrefix") is null) { _explicitNullValueRefreshTokenPrefix = default!; _explicitNullProperties?.Remove("refreshTokenPrefix"); }
-            else if (parseNode.GetChildNode("refreshTokenPrefix") is { } nullNodeRefreshTokenPrefix && nullNodeRefreshTokenPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshTokenPrefix = null;
-            if (parseNode.GetChildNode("refreshTokenPublicId") is null) { _explicitNullValueRefreshTokenPublicId = default!; _explicitNullProperties?.Remove("refreshTokenPublicId"); }
-            else if (parseNode.GetChildNode("refreshTokenPublicId") is { } nullNodeRefreshTokenPublicId && nullNodeRefreshTokenPublicId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshTokenPublicId = null;
-            if (parseNode.GetChildNode("refreshTokenSuffix") is null) { _explicitNullValueRefreshTokenSuffix = default!; _explicitNullProperties?.Remove("refreshTokenSuffix"); }
-            else if (parseNode.GetChildNode("refreshTokenSuffix") is { } nullNodeRefreshTokenSuffix && nullNodeRefreshTokenSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshTokenSuffix = null;
-            if (parseNode.GetChildNode("rtTTL") is null) { _explicitNullValueRtTTL = default!; _explicitNullProperties?.Remove("rtTTL"); }
-            else if (parseNode.GetChildNode("rtTTL") is { } nullNodeRtTTL && nullNodeRtTTL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtTTL = null;
-            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
-            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("sessionId") is null) { _explicitNullValueSessionId = default!; _explicitNullProperties?.Remove("sessionId"); }
-            else if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
-            if (parseNode.GetChildNode("tokenPrefix") is null) { _explicitNullValueTokenPrefix = default!; _explicitNullProperties?.Remove("tokenPrefix"); }
-            else if (parseNode.GetChildNode("tokenPrefix") is { } nullNodeTokenPrefix && nullNodeTokenPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenPrefix = null;
-            if (parseNode.GetChildNode("tokenSuffix") is null) { _explicitNullValueTokenSuffix = default!; _explicitNullProperties?.Remove("tokenSuffix"); }
-            else if (parseNode.GetChildNode("tokenSuffix") is { } nullNodeTokenSuffix && nullNodeTokenSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenSuffix = null;
-            if (parseNode.GetChildNode("userAgent") is null) { _explicitNullValueUserAgent = default!; _explicitNullProperties?.Remove("userAgent"); }
-            else if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
+            if (parseNode.GetChildNode("chatId") is null) { _explicitNullValueChatId = default!; _explicitNullProperties?.Remove("chatId"); }
+            else if (parseNode.GetChildNode("chatId") is { } nullNodeChatId && nullNodeChatId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatId = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("inputTokens") is null) { _explicitNullValueInputTokens = default!; _explicitNullProperties?.Remove("inputTokens"); }
+            else if (parseNode.GetChildNode("inputTokens") is { } nullNodeInputTokens && nullNodeInputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputTokens = null;
+            if (parseNode.GetChildNode("messageId") is null) { _explicitNullValueMessageId = default!; _explicitNullProperties?.Remove("messageId"); }
+            else if (parseNode.GetChildNode("messageId") is { } nullNodeMessageId && nullNodeMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageId = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("outputTokens") is null) { _explicitNullValueOutputTokens = default!; _explicitNullProperties?.Remove("outputTokens"); }
+            else if (parseNode.GetChildNode("outputTokens") is { } nullNodeOutputTokens && nullNodeOutputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputTokens = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("useCase") is null) { _explicitNullValueUseCase = default!; _explicitNullProperties?.Remove("useCase"); }
+            else if (parseNode.GetChildNode("useCase") is { } nullNodeUseCase && nullNodeUseCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCase = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>optional since entries prior to 2025-10-13 do not contain app information</summary>
+        /// <summary>The chatId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504App? App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; AdditionalData?.Remove("app"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504App? _explicitNullValueApp = default!;
+        public string? ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; AdditionalData?.Remove("chatId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
+        private string? _explicitNullValueChatId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504App App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; AdditionalData?.Remove("app"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504App _explicitNullValueApp = default!;
+        public string ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; AdditionalData?.Remove("chatId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
+        private string _explicitNullValueChatId = default!;
 #endif
-        /// <summary>the app&apos;s name at the time the event was published (it could have changed since then)</summary>
+        /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("appName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
-        private string? _explicitNullValueAppName = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504EventsItem>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504EventsItem>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("appName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
-        private string _explicitNullValueAppName = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504EventsItem> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504EventsItem> _explicitNullValueEvents = default!;
 #endif
-        /// <summary>access_token TTL</summary>
-        public double? AtTTL { get => _explicitNullValueAtTTL; set { _explicitNullValueAtTTL = value; AdditionalData?.Remove("atTTL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("atTTL"); else _explicitNullProperties?.Remove("atTTL"); } }
-        private double? _explicitNullValueAtTTL = default!;
-        /// <summary>The authMethod property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504AuthMethod? AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; AdditionalData?.Remove("authMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authMethod"); else _explicitNullProperties?.Remove("authMethod"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504AuthMethod? _explicitNullValueAuthMethod = default!;
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
+        /// <summary>The inputTokens property</summary>
+        public double? InputTokens { get => _explicitNullValueInputTokens; set { _explicitNullValueInputTokens = value; AdditionalData?.Remove("inputTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputTokens"); else _explicitNullProperties?.Remove("inputTokens"); } }
+        private double? _explicitNullValueInputTokens = default!;
+        /// <summary>The messageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504Geolocation? Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; AdditionalData?.Remove("geolocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504Geolocation? _explicitNullValueGeolocation = default!;
+        public string? MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; AdditionalData?.Remove("messageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageId"); else _explicitNullProperties?.Remove("messageId"); } }
+        private string? _explicitNullValueMessageId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504Geolocation Geolocation { get => _explicitNullValueGeolocation; set { _explicitNullValueGeolocation = value; AdditionalData?.Remove("geolocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocation"); else _explicitNullProperties?.Remove("geolocation"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504Geolocation _explicitNullValueGeolocation = default!;
+        public string MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; AdditionalData?.Remove("messageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageId"); else _explicitNullProperties?.Remove("messageId"); } }
+        private string _explicitNullValueMessageId = default!;
 #endif
-        /// <summary>The grantType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504GrantType? GrantType { get => _explicitNullValueGrantType; set { _explicitNullValueGrantType = value; AdditionalData?.Remove("grantType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantType"); else _explicitNullProperties?.Remove("grantType"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504GrantType? _explicitNullValueGrantType = default!;
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-        public bool? IncludesRefreshToken { get => _explicitNullValueIncludesRefreshToken; set { _explicitNullValueIncludesRefreshToken = value; AdditionalData?.Remove("includesRefreshToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includesRefreshToken"); else _explicitNullProperties?.Remove("includesRefreshToken"); } }
-        private bool? _explicitNullValueIncludesRefreshToken = default!;
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
+        /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
-        private string? _explicitNullValueIp = default!;
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
-        private string _explicitNullValueIp = default!;
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
-        /// <summary>OIDC issuer (`iss`) of the token that authenticated the request. Present for OIDC-authenticated flows: the token-exchange grant, or `client_credentials` with the `oidc_token` client-authentication method.</summary>
+        /// <summary>The outputTokens property</summary>
+        public double? OutputTokens { get => _explicitNullValueOutputTokens; set { _explicitNullValueOutputTokens = value; AdditionalData?.Remove("outputTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputTokens"); else _explicitNullProperties?.Remove("outputTokens"); } }
+        private double? _explicitNullValueOutputTokens = default!;
+        /// <summary>The timestamp property</summary>
+        public double? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private double? _explicitNullValueTimestamp = default!;
+        /// <summary>The useCase property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; AdditionalData?.Remove("issuerUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerUrl"); else _explicitNullProperties?.Remove("issuerUrl"); } }
-        private string? _explicitNullValueIssuerUrl = default!;
+        public string? UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; AdditionalData?.Remove("useCase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useCase"); else _explicitNullProperties?.Remove("useCase"); } }
+        private string? _explicitNullValueUseCase = default!;
 #nullable restore
 #else
-        public string IssuerUrl { get => _explicitNullValueIssuerUrl; set { _explicitNullValueIssuerUrl = value; AdditionalData?.Remove("issuerUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerUrl"); else _explicitNullProperties?.Remove("issuerUrl"); } }
-        private string _explicitNullValueIssuerUrl = default!;
-#endif
-        /// <summary>`sub` claim of the OIDC token. Present for OIDC-authenticated flows (see {@link issuerUrl}).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OidcSubject { get => _explicitNullValueOidcSubject; set { _explicitNullValueOidcSubject = value; AdditionalData?.Remove("oidcSubject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcSubject"); else _explicitNullProperties?.Remove("oidcSubject"); } }
-        private string? _explicitNullValueOidcSubject = default!;
-#nullable restore
-#else
-        public string OidcSubject { get => _explicitNullValueOidcSubject; set { _explicitNullValueOidcSubject = value; AdditionalData?.Remove("oidcSubject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidcSubject"); else _explicitNullProperties?.Remove("oidcSubject"); } }
-        private string _explicitNullValueOidcSubject = default!;
-#endif
-        /// <summary>ID of the OIDC-exchange policy that authorized a token-exchange grant. Absent for the `client_credentials` + `oidc_token` flow, which matches an app `oidcProviders` entry rather than a policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; AdditionalData?.Remove("policyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policyId"); else _explicitNullProperties?.Remove("policyId"); } }
-        private string? _explicitNullValuePolicyId = default!;
-#nullable restore
-#else
-        public string PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; AdditionalData?.Remove("policyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policyId"); else _explicitNullProperties?.Remove("policyId"); } }
-        private string _explicitNullValuePolicyId = default!;
-#endif
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PublicId { get => _explicitNullValuePublicId; set { _explicitNullValuePublicId = value; AdditionalData?.Remove("publicId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicId"); else _explicitNullProperties?.Remove("publicId"); } }
-        private string? _explicitNullValuePublicId = default!;
-#nullable restore
-#else
-        public string PublicId { get => _explicitNullValuePublicId; set { _explicitNullValuePublicId = value; AdditionalData?.Remove("publicId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicId"); else _explicitNullProperties?.Remove("publicId"); } }
-        private string _explicitNullValuePublicId = default!;
-#endif
-        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix? RefreshTokenPrefix { get => _explicitNullValueRefreshTokenPrefix; set { _explicitNullValueRefreshTokenPrefix = value; AdditionalData?.Remove("refreshTokenPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshTokenPrefix"); else _explicitNullProperties?.Remove("refreshTokenPrefix"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix? _explicitNullValueRefreshTokenPrefix = default!;
-        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RefreshTokenPublicId { get => _explicitNullValueRefreshTokenPublicId; set { _explicitNullValueRefreshTokenPublicId = value; AdditionalData?.Remove("refreshTokenPublicId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshTokenPublicId"); else _explicitNullProperties?.Remove("refreshTokenPublicId"); } }
-        private string? _explicitNullValueRefreshTokenPublicId = default!;
-#nullable restore
-#else
-        public string RefreshTokenPublicId { get => _explicitNullValueRefreshTokenPublicId; set { _explicitNullValueRefreshTokenPublicId = value; AdditionalData?.Remove("refreshTokenPublicId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshTokenPublicId"); else _explicitNullProperties?.Remove("refreshTokenPublicId"); } }
-        private string _explicitNullValueRefreshTokenPublicId = default!;
-#endif
-        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RefreshTokenSuffix { get => _explicitNullValueRefreshTokenSuffix; set { _explicitNullValueRefreshTokenSuffix = value; AdditionalData?.Remove("refreshTokenSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshTokenSuffix"); else _explicitNullProperties?.Remove("refreshTokenSuffix"); } }
-        private string? _explicitNullValueRefreshTokenSuffix = default!;
-#nullable restore
-#else
-        public string RefreshTokenSuffix { get => _explicitNullValueRefreshTokenSuffix; set { _explicitNullValueRefreshTokenSuffix = value; AdditionalData?.Remove("refreshTokenSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshTokenSuffix"); else _explicitNullProperties?.Remove("refreshTokenSuffix"); } }
-        private string _explicitNullValueRefreshTokenSuffix = default!;
-#endif
-        /// <summary>refresh_token TTL</summary>
-        public double? RtTTL { get => _explicitNullValueRtTTL; set { _explicitNullValueRtTTL = value; AdditionalData?.Remove("rtTTL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtTTL"); else _explicitNullProperties?.Remove("rtTTL"); } }
-        private double? _explicitNullValueRtTTL = default!;
-        /// <summary>The scope property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
-        private string? _explicitNullValueScope = default!;
-#nullable restore
-#else
-        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
-        private string _explicitNullValueScope = default!;
-#endif
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("sessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
-        private string? _explicitNullValueSessionId = default!;
-#nullable restore
-#else
-        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("sessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
-        private string _explicitNullValueSessionId = default!;
-#endif
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix? TokenPrefix { get => _explicitNullValueTokenPrefix; set { _explicitNullValueTokenPrefix = value; AdditionalData?.Remove("tokenPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenPrefix"); else _explicitNullProperties?.Remove("tokenPrefix"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix? _explicitNullValueTokenPrefix = default!;
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenSuffix { get => _explicitNullValueTokenSuffix; set { _explicitNullValueTokenSuffix = value; AdditionalData?.Remove("tokenSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenSuffix"); else _explicitNullProperties?.Remove("tokenSuffix"); } }
-        private string? _explicitNullValueTokenSuffix = default!;
-#nullable restore
-#else
-        public string TokenSuffix { get => _explicitNullValueTokenSuffix; set { _explicitNullValueTokenSuffix = value; AdditionalData?.Remove("tokenSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenSuffix"); else _explicitNullProperties?.Remove("tokenSuffix"); } }
-        private string _explicitNullValueTokenSuffix = default!;
-#endif
-        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
-        private string? _explicitNullValueUserAgent = default!;
-#nullable restore
-#else
-        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
-        private string _explicitNullValueUserAgent = default!;
+        public string UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; AdditionalData?.Remove("useCase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useCase"); else _explicitNullProperties?.Remove("useCase"); } }
+        private string _explicitNullValueUseCase = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504"/> and sets the default values.
@@ -250,27 +122,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app", n => { App = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504App>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504App.CreateFromDiscriminatorValue); } },
-                { "appName", n => { AppName = n.GetStringValue(); } },
-                { "atTTL", n => { AtTTL = n.GetDoubleValue(); } },
-                { "authMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504AuthMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthMethod = default; _explicitNullProperties?.Remove("authMethod"); AdditionalData["authMethod"] = unknown; } else { AuthMethod = parsed; AdditionalData.Remove("authMethod"); } } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504Geolocation.CreateFromDiscriminatorValue); } },
-                { "grantType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504GrantType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGrantType = default; _explicitNullProperties?.Remove("grantType"); AdditionalData["grantType"] = unknown; } else { GrantType = parsed; AdditionalData.Remove("grantType"); } } },
-                { "includesRefreshToken", n => { IncludesRefreshToken = n.GetBoolValue(); } },
-                { "ip", n => { Ip = n.GetStringValue(); } },
-                { "issuerUrl", n => { IssuerUrl = n.GetStringValue(); } },
-                { "oidcSubject", n => { OidcSubject = n.GetStringValue(); } },
-                { "policyId", n => { PolicyId = n.GetStringValue(); } },
-                { "publicId", n => { PublicId = n.GetStringValue(); } },
-                { "refreshTokenPrefix", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRefreshTokenPrefix = default; _explicitNullProperties?.Remove("refreshTokenPrefix"); AdditionalData["refreshTokenPrefix"] = unknown; } else { RefreshTokenPrefix = parsed; AdditionalData.Remove("refreshTokenPrefix"); } } },
-                { "refreshTokenPublicId", n => { RefreshTokenPublicId = n.GetStringValue(); } },
-                { "refreshTokenSuffix", n => { RefreshTokenSuffix = n.GetStringValue(); } },
-                { "rtTTL", n => { RtTTL = n.GetDoubleValue(); } },
-                { "scope", n => { Scope = n.GetStringValue(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "tokenPrefix", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTokenPrefix = default; _explicitNullProperties?.Remove("tokenPrefix"); AdditionalData["tokenPrefix"] = unknown; } else { TokenPrefix = parsed; AdditionalData.Remove("tokenPrefix"); } } },
-                { "tokenSuffix", n => { TokenSuffix = n.GetStringValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "chatId", n => { ChatId = n.GetStringValue(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504EventsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504EventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inputTokens", n => { InputTokens = n.GetDoubleValue(); } },
+                { "messageId", n => { MessageId = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "outputTokens", n => { OutputTokens = n.GetDoubleValue(); } },
+                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
+                { "useCase", n => { UseCase = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -280,27 +139,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504App>("app", App);
-            writer.WriteStringValue("appName", AppName);
-            writer.WriteDoubleValue("atTTL", AtTTL);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504AuthMethod>("authMethod", AuthMethod);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504Geolocation>("geolocation", Geolocation);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504GrantType>("grantType", GrantType);
-            writer.WriteBoolValue("includesRefreshToken", IncludesRefreshToken);
-            writer.WriteStringValue("ip", Ip);
-            writer.WriteStringValue("issuerUrl", IssuerUrl);
-            writer.WriteStringValue("oidcSubject", OidcSubject);
-            writer.WriteStringValue("policyId", PolicyId);
-            writer.WriteStringValue("publicId", PublicId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>("refreshTokenPrefix", RefreshTokenPrefix);
-            writer.WriteStringValue("refreshTokenPublicId", RefreshTokenPublicId);
-            writer.WriteStringValue("refreshTokenSuffix", RefreshTokenSuffix);
-            writer.WriteDoubleValue("rtTTL", RtTTL);
-            writer.WriteStringValue("scope", Scope);
-            writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>("tokenPrefix", TokenPrefix);
-            writer.WriteStringValue("tokenSuffix", TokenSuffix);
-            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteStringValue("chatId", ChatId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf504EventsItem>("events", Events);
+            writer.WriteDoubleValue("inputTokens", InputTokens);
+            writer.WriteStringValue("messageId", MessageId);
+            writer.WriteStringValue("model", Model);
+            writer.WriteDoubleValue("outputTokens", OutputTokens);
+            writer.WriteDoubleValue("timestamp", Timestamp);
+            writer.WriteStringValue("useCase", UseCase);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("enableProductionFeedback") is { } nullNodeEnableProductionFeedback && nullNodeEnableProductionFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableProductionFeedback = null;
             if (parseNode.GetChildNode("environmentVariables") is null) { _explicitNullValueEnvironmentVariables = default!; _explicitNullProperties?.Remove("environmentVariables"); }
             else if (parseNode.GetChildNode("environmentVariables") is { } nullNodeEnvironmentVariables && nullNodeEnvironmentVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentVariables = null;
+            if (parseNode.GetChildNode("expiration") is null) { _explicitNullValueExpiration = default!; _explicitNullProperties?.Remove("expiration"); }
+            else if (parseNode.GetChildNode("expiration") is { } nullNodeExpiration && nullNodeExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiration = null;
             if (parseNode.GetChildNode("framework") is null) { _explicitNullValueFramework = default!; _explicitNullProperties?.Remove("framework"); }
             else if (parseNode.GetChildNode("framework") is { } nullNodeFramework && nullNodeFramework.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Framework = null;
             if (parseNode.GetChildNode("gitRepository") is null) { _explicitNullValueGitRepository = default!; _explicitNullProperties?.Remove("gitRepository"); }
@@ -113,6 +115,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestEnvironmentVariablesItem> EnvironmentVariables { get => _explicitNullValueEnvironmentVariables; set { _explicitNullValueEnvironmentVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentVariables"); else _explicitNullProperties?.Remove("environmentVariables"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestEnvironmentVariablesItem> _explicitNullValueEnvironmentVariables = default!;
+#endif
+        /// <summary>Schedules the project for automatic deletion after the given timeframe.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestExpiration? Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestExpiration? _explicitNullValueExpiration = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestExpiration Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestExpiration _explicitNullValueExpiration = default!;
 #endif
         /// <summary>The framework that is being used for this project. When `null` is used no framework is selected</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestFramework? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
@@ -266,6 +278,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetBoolValue(); } },
                 { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetBoolValue(); } },
                 { "environmentVariables", n => { EnvironmentVariables = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestEnvironmentVariablesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestEnvironmentVariablesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestExpiration.CreateFromDiscriminatorValue); } },
                 { "framework", n => { Framework = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestFramework>(); } },
                 { "gitRepository", n => { GitRepository = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestGitRepository>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestGitRepository.CreateFromDiscriminatorValue); } },
                 { "installCommand", n => { InstallCommand = n.GetStringValue(); } },
@@ -298,6 +311,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("enablePreviewFeedback", EnablePreviewFeedback);
             writer.WriteBoolValue("enableProductionFeedback", EnableProductionFeedback);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestEnvironmentVariablesItem>("environmentVariables", EnvironmentVariables);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestExpiration>("expiration", Expiration);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestFramework>("framework", Framework);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestGitRepository>("gitRepository", GitRepository);
             writer.WriteStringValue("installCommand", InstallCommand);

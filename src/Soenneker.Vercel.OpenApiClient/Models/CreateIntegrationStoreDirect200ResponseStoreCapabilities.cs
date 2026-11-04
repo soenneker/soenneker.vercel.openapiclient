@@ -23,6 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("autoSensitive") is { } nullNodeAutoSensitive && nullNodeAutoSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoSensitive = null;
             if (parseNode.GetChildNode("billable") is null) { _explicitNullValueBillable = default!; _explicitNullProperties?.Remove("billable"); }
             else if (parseNode.GetChildNode("billable") is { } nullNodeBillable && nullNodeBillable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billable = null;
+            if (parseNode.GetChildNode("credentialTypesTransitions") is null) { _explicitNullValueCredentialTypesTransitions = default!; _explicitNullProperties?.Remove("credentialTypesTransitions"); }
+            else if (parseNode.GetChildNode("credentialTypesTransitions") is { } nullNodeCredentialTypesTransitions && nullNodeCredentialTypesTransitions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialTypesTransitions = null;
             if (parseNode.GetChildNode("mcp") is null) { _explicitNullValueMcp = default!; _explicitNullProperties?.Remove("mcp"); }
             else if (parseNode.GetChildNode("mcp") is { } nullNodeMcp && nullNodeMcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mcp = null;
             if (parseNode.GetChildNode("mcpReadonly") is null) { _explicitNullValueMcpReadonly = default!; _explicitNullProperties?.Remove("mcpReadonly"); }
@@ -52,6 +54,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The billable property</summary>
         public bool? Billable { get => _explicitNullValueBillable; set { _explicitNullValueBillable = value; AdditionalData?.Remove("billable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable"); else _explicitNullProperties?.Remove("billable"); } }
         private bool? _explicitNullValueBillable = default!;
+        /// <summary>The credentialTypesTransitions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CredentialTypesTransitions { get => _explicitNullValueCredentialTypesTransitions; set { _explicitNullValueCredentialTypesTransitions = value; AdditionalData?.Remove("credentialTypesTransitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypesTransitions"); else _explicitNullProperties?.Remove("credentialTypesTransitions"); } }
+        private UntypedNode? _explicitNullValueCredentialTypesTransitions = default!;
+#nullable restore
+#else
+        public UntypedNode CredentialTypesTransitions { get => _explicitNullValueCredentialTypesTransitions; set { _explicitNullValueCredentialTypesTransitions = value; AdditionalData?.Remove("credentialTypesTransitions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypesTransitions"); else _explicitNullProperties?.Remove("credentialTypesTransitions"); } }
+        private UntypedNode _explicitNullValueCredentialTypesTransitions = default!;
+#endif
         /// <summary>The mcp property</summary>
         public bool? Mcp { get => _explicitNullValueMcp; set { _explicitNullValueMcp = value; AdditionalData?.Remove("mcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp"); else _explicitNullProperties?.Remove("mcp"); } }
         private bool? _explicitNullValueMcp = default!;
@@ -111,6 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "agentTools", n => { AgentTools = n.GetBoolValue(); } },
                 { "autoSensitive", n => { AutoSensitive = n.GetBoolValue(); } },
                 { "billable", n => { Billable = n.GetBoolValue(); } },
+                { "credentialTypesTransitions", n => { CredentialTypesTransitions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "mcp", n => { Mcp = n.GetBoolValue(); } },
                 { "mcpReadonly", n => { McpReadonly = n.GetBoolValue(); } },
                 { "projects", n => { Projects = n.GetBoolValue(); } },
@@ -131,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("agentTools", AgentTools);
             writer.WriteBoolValue("autoSensitive", AutoSensitive);
             writer.WriteBoolValue("billable", Billable);
+            writer.WriteObjectValue<UntypedNode>("credentialTypesTransitions", CredentialTypesTransitions);
             writer.WriteBoolValue("mcp", Mcp);
             writer.WriteBoolValue("mcpReadonly", McpReadonly);
             writer.WriteBoolValue("projects", Projects);

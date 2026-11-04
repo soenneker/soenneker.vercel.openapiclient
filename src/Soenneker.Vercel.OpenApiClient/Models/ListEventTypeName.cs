@@ -35,6 +35,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AdminAgenticProvisioningAccountUnlinked,
         #pragma warning restore CS1591
+        [EnumMember(Value = "admin-observability-disabled")]
+        #pragma warning disable CS1591
+        AdminObservabilityDisabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "admin-plan-updated")]
         #pragma warning disable CS1591
         AdminPlanUpdated,
@@ -1543,6 +1547,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationSsoEnforced,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-sso-new-teams-update")]
+        #pragma warning disable CS1591
+        OrganizationSsoNewTeamsUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-team-add")]
         #pragma warning disable CS1591
         OrganizationTeamAdd,
@@ -1839,6 +1847,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectExpirationReached,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-expiration-removed")]
+        #pragma warning disable CS1591
+        ProjectExpirationRemoved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-expiration-scheduled")]
         #pragma warning disable CS1591
         ProjectExpirationScheduled,
@@ -2042,6 +2054,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-paused")]
         #pragma warning disable CS1591
         ProjectPaused,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-perimeters-updated")]
+        #pragma warning disable CS1591
+        ProjectPerimetersUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-preview-deployment-suffix")]
         #pragma warning disable CS1591
@@ -2923,6 +2939,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         VercelAgentSecurityFindingCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-agent-security-finding-dismissed")]
+        #pragma warning disable CS1591
+        VercelAgentSecurityFindingDismissed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-agent-security-finding-reopened")]
+        #pragma warning disable CS1591
+        VercelAgentSecurityFindingReopened,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-agent-security-finding-resolved")]
+        #pragma warning disable CS1591
+        VercelAgentSecurityFindingResolved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-session-created")]
         #pragma warning disable CS1591
         VercelAgentSessionCreated,
@@ -2982,6 +3010,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vulnerability-banner-dismissed")]
         #pragma warning disable CS1591
         VulnerabilityBannerDismissed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "web-analytics-summary-subscription-updated")]
+        #pragma warning disable CS1591
+        WebAnalyticsSummarySubscriptionUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "web-analytics-tier-updated")]
         #pragma warning disable CS1591

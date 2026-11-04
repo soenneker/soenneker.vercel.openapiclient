@@ -25,6 +25,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("connectedImportResource") is { } nullNodeConnectedImportResource && nullNodeConnectedImportResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedImportResource = null;
             if (parseNode.GetChildNode("connectedProvisioning") is null) { _explicitNullValueConnectedProvisioning = default!; _explicitNullProperties?.Remove("connectedProvisioning"); }
             else if (parseNode.GetChildNode("connectedProvisioning") is { } nullNodeConnectedProvisioning && nullNodeConnectedProvisioning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedProvisioning = null;
+            if (parseNode.GetChildNode("credentialTypesCreate") is null) { _explicitNullValueCredentialTypesCreate = default!; _explicitNullProperties?.Remove("credentialTypesCreate"); }
+            else if (parseNode.GetChildNode("credentialTypesCreate") is { } nullNodeCredentialTypesCreate && nullNodeCredentialTypesCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialTypesCreate = null;
             if (parseNode.GetChildNode("flexCommitEligible") is null) { _explicitNullValueFlexCommitEligible = default!; _explicitNullProperties?.Remove("flexCommitEligible"); }
             else if (parseNode.GetChildNode("flexCommitEligible") is { } nullNodeFlexCommitEligible && nullNodeFlexCommitEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlexCommitEligible = null;
             if (parseNode.GetChildNode("importResource") is null) { _explicitNullValueImportResource = default!; _explicitNullProperties?.Remove("importResource"); }
@@ -71,6 +73,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The connectedProvisioning property</summary>
         public bool? ConnectedProvisioning { get => _explicitNullValueConnectedProvisioning; set { _explicitNullValueConnectedProvisioning = value; AdditionalData?.Remove("connectedProvisioning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedProvisioning"); else _explicitNullProperties?.Remove("connectedProvisioning"); } }
         private bool? _explicitNullValueConnectedProvisioning = default!;
+        /// <summary>The credentialTypesCreate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CredentialTypesCreate { get => _explicitNullValueCredentialTypesCreate; set { _explicitNullValueCredentialTypesCreate = value; AdditionalData?.Remove("credentialTypesCreate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypesCreate"); else _explicitNullProperties?.Remove("credentialTypesCreate"); } }
+        private UntypedNode? _explicitNullValueCredentialTypesCreate = default!;
+#nullable restore
+#else
+        public UntypedNode CredentialTypesCreate { get => _explicitNullValueCredentialTypesCreate; set { _explicitNullValueCredentialTypesCreate = value; AdditionalData?.Remove("credentialTypesCreate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypesCreate"); else _explicitNullProperties?.Remove("credentialTypesCreate"); } }
+        private UntypedNode _explicitNullValueCredentialTypesCreate = default!;
+#endif
         /// <summary>The flexCommitEligible property</summary>
         public bool? FlexCommitEligible { get => _explicitNullValueFlexCommitEligible; set { _explicitNullValueFlexCommitEligible = value; AdditionalData?.Remove("flexCommitEligible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flexCommitEligible"); else _explicitNullProperties?.Remove("flexCommitEligible"); } }
         private bool? _explicitNullValueFlexCommitEligible = default!;
@@ -152,6 +164,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "checks", n => { Checks = n.GetBoolValue(); } },
                 { "connectedImportResource", n => { ConnectedImportResource = n.GetBoolValue(); } },
                 { "connectedProvisioning", n => { ConnectedProvisioning = n.GetBoolValue(); } },
+                { "credentialTypesCreate", n => { CredentialTypesCreate = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "flexCommitEligible", n => { FlexCommitEligible = n.GetBoolValue(); } },
                 { "importResource", n => { ImportResource = n.GetBoolValue(); } },
                 { "maxAllowedTeams", n => { MaxAllowedTeams = n.GetDoubleValue(); } },
@@ -180,6 +193,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("checks", Checks);
             writer.WriteBoolValue("connectedImportResource", ConnectedImportResource);
             writer.WriteBoolValue("connectedProvisioning", ConnectedProvisioning);
+            writer.WriteObjectValue<UntypedNode>("credentialTypesCreate", CredentialTypesCreate);
             writer.WriteBoolValue("flexCommitEligible", FlexCommitEligible);
             writer.WriteBoolValue("importResource", ImportResource);
             writer.WriteDoubleValue("maxAllowedTeams", MaxAllowedTeams);

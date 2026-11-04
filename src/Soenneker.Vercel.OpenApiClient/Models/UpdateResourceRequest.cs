@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("billingPlan") is null) { _explicitNullValueBillingPlan = default!; _explicitNullProperties?.Remove("billingPlan"); }
             else if (parseNode.GetChildNode("billingPlan") is { } nullNodeBillingPlan && nullNodeBillingPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPlan = null;
+            if (parseNode.GetChildNode("credentialTypes") is null) { _explicitNullValueCredentialTypes = default!; _explicitNullProperties?.Remove("credentialTypes"); }
+            else if (parseNode.GetChildNode("credentialTypes") is { } nullNodeCredentialTypes && nullNodeCredentialTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialTypes = null;
             if (parseNode.GetChildNode("customClaims") is null) { _explicitNullValueCustomClaims = default!; _explicitNullProperties?.Remove("customClaims"); }
             else if (parseNode.GetChildNode("customClaims") is { } nullNodeCustomClaims && nullNodeCustomClaims.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomClaims = null;
             if (parseNode.GetChildNode("extras") is null) { _explicitNullValueExtras = default!; _explicitNullProperties?.Remove("extras"); }
@@ -46,6 +48,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestBillingPlan BillingPlan { get => _explicitNullValueBillingPlan; set { _explicitNullValueBillingPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPlan"); else _explicitNullProperties?.Remove("billingPlan"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestBillingPlan _explicitNullValueBillingPlan = default!;
+#endif
+        /// <summary>The credential types the resource accepts: `static` for long-lived secrets, `oidc` for Vercel resource OIDC tokens. Can be set freely while the resource has none. After that, only to confirm a change Vercel requested with a secrets rotation, once it is complete. Without `static`, all long-lived secrets must be expired and removed, and no new ones minted or injected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCredentialTypesItem?>? CredentialTypes { get => _explicitNullValueCredentialTypes; set { _explicitNullValueCredentialTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypes"); else _explicitNullProperties?.Remove("credentialTypes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCredentialTypesItem?>? _explicitNullValueCredentialTypes = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCredentialTypesItem?> CredentialTypes { get => _explicitNullValueCredentialTypes; set { _explicitNullValueCredentialTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypes"); else _explicitNullProperties?.Remove("credentialTypes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCredentialTypesItem?> _explicitNullValueCredentialTypes = default!;
 #endif
         /// <summary>Custom claims embedded in the resource tokens Vercel mints for this resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billingPlan", n => { BillingPlan = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestBillingPlan>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestBillingPlan.CreateFromDiscriminatorValue); } },
+                { "credentialTypes", n => { CredentialTypes = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCredentialTypesItem>()?.AsList(); } },
                 { "customClaims", n => { CustomClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCustomClaims>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCustomClaims.CreateFromDiscriminatorValue); } },
                 { "extras", n => { Extras = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestExtras>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestExtras.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestMetadata.CreateFromDiscriminatorValue); } },
@@ -150,6 +163,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestBillingPlan>("billingPlan", BillingPlan);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCredentialTypesItem>("credentialTypes", CredentialTypes);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestCustomClaims>("customClaims", CustomClaims);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestExtras>("extras", Extras);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateResourceRequestMetadata>("metadata", Metadata);

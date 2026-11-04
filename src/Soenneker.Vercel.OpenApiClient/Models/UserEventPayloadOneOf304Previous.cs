@@ -17,21 +17,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("functionZeroConfigFailover") is null) { _explicitNullValueFunctionZeroConfigFailover = default!; _explicitNullProperties?.Remove("functionZeroConfigFailover"); }
-            else if (parseNode.GetChildNode("functionZeroConfigFailover") is { } nullNodeFunctionZeroConfigFailover && nullNodeFunctionZeroConfigFailover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionZeroConfigFailover = null;
+            if (parseNode.GetChildNode("functionDefaultMemoryType") is null) { _explicitNullValueFunctionDefaultMemoryType = default!; _explicitNullProperties?.Remove("functionDefaultMemoryType"); }
+            else if (parseNode.GetChildNode("functionDefaultMemoryType") is { } nullNodeFunctionDefaultMemoryType && nullNodeFunctionDefaultMemoryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDefaultMemoryType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The functionZeroConfigFailover property</summary>
+        /// <summary>The functionDefaultMemoryType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? FunctionZeroConfigFailover { get => _explicitNullValueFunctionZeroConfigFailover; set { _explicitNullValueFunctionZeroConfigFailover = value; AdditionalData?.Remove("functionZeroConfigFailover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionZeroConfigFailover"); else _explicitNullProperties?.Remove("functionZeroConfigFailover"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? _explicitNullValueFunctionZeroConfigFailover = default!;
+        public string? FunctionDefaultMemoryType { get => _explicitNullValueFunctionDefaultMemoryType; set { _explicitNullValueFunctionDefaultMemoryType = value; AdditionalData?.Remove("functionDefaultMemoryType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultMemoryType"); else _explicitNullProperties?.Remove("functionDefaultMemoryType"); } }
+        private string? _explicitNullValueFunctionDefaultMemoryType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback FunctionZeroConfigFailover { get => _explicitNullValueFunctionZeroConfigFailover; set { _explicitNullValueFunctionZeroConfigFailover = value; AdditionalData?.Remove("functionZeroConfigFailover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionZeroConfigFailover"); else _explicitNullProperties?.Remove("functionZeroConfigFailover"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback _explicitNullValueFunctionZeroConfigFailover = default!;
+        public string FunctionDefaultMemoryType { get => _explicitNullValueFunctionDefaultMemoryType; set { _explicitNullValueFunctionDefaultMemoryType = value; AdditionalData?.Remove("functionDefaultMemoryType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultMemoryType"); else _explicitNullProperties?.Remove("functionDefaultMemoryType"); } }
+        private string _explicitNullValueFunctionDefaultMemoryType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf304Previous"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback.CreateFromDiscriminatorValue); } },
+                { "functionDefaultMemoryType", n => { FunctionDefaultMemoryType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>("functionZeroConfigFailover", FunctionZeroConfigFailover);
+            writer.WriteStringValue("functionDefaultMemoryType", FunctionDefaultMemoryType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

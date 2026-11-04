@@ -21,6 +21,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("billingPlan") is { } nullNodeBillingPlan && nullNodeBillingPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPlan = null;
             if (parseNode.GetChildNode("capabilities") is null) { _explicitNullValueCapabilities = default!; _explicitNullProperties?.Remove("capabilities"); }
             else if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
+            if (parseNode.GetChildNode("credentialTypes") is null) { _explicitNullValueCredentialTypes = default!; _explicitNullProperties?.Remove("credentialTypes"); }
+            else if (parseNode.GetChildNode("credentialTypes") is { } nullNodeCredentialTypes && nullNodeCredentialTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialTypes = null;
+            if (parseNode.GetChildNode("credentialTypesTransition") is null) { _explicitNullValueCredentialTypesTransition = default!; _explicitNullProperties?.Remove("credentialTypesTransition"); }
+            else if (parseNode.GetChildNode("credentialTypesTransition") is { } nullNodeCredentialTypesTransition && nullNodeCredentialTypesTransition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialTypesTransition = null;
             if (parseNode.GetChildNode("directPartnerConsoleUrl") is null) { _explicitNullValueDirectPartnerConsoleUrl = default!; _explicitNullProperties?.Remove("directPartnerConsoleUrl"); }
             else if (parseNode.GetChildNode("directPartnerConsoleUrl") is { } nullNodeDirectPartnerConsoleUrl && nullNodeDirectPartnerConsoleUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectPartnerConsoleUrl = null;
             if (parseNode.GetChildNode("externalResourceId") is null) { _explicitNullValueExternalResourceId = default!; _explicitNullProperties?.Remove("externalResourceId"); }
@@ -86,6 +90,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities _explicitNullValueCapabilities = default!;
+#endif
+        /// <summary>The credential types the resource accepts: `static` for long-lived secrets, `oidc` for resource OIDC tokens.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesItem?>? CredentialTypes { get => _explicitNullValueCredentialTypes; set { _explicitNullValueCredentialTypes = value; AdditionalData?.Remove("credentialTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypes"); else _explicitNullProperties?.Remove("credentialTypes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesItem?>? _explicitNullValueCredentialTypes = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesItem?> CredentialTypes { get => _explicitNullValueCredentialTypes; set { _explicitNullValueCredentialTypes = value; AdditionalData?.Remove("credentialTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypes"); else _explicitNullProperties?.Remove("credentialTypes"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesItem?> _explicitNullValueCredentialTypes = default!;
+#endif
+        /// <summary>The latest requested change of `credentialTypes`, and when the provider completed it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesTransition? CredentialTypesTransition { get => _explicitNullValueCredentialTypesTransition; set { _explicitNullValueCredentialTypesTransition = value; AdditionalData?.Remove("credentialTypesTransition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypesTransition"); else _explicitNullProperties?.Remove("credentialTypesTransition"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesTransition? _explicitNullValueCredentialTypesTransition = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesTransition CredentialTypesTransition { get => _explicitNullValueCredentialTypesTransition; set { _explicitNullValueCredentialTypesTransition = value; AdditionalData?.Remove("credentialTypesTransition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentialTypesTransition"); else _explicitNullProperties?.Remove("credentialTypesTransition"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesTransition _explicitNullValueCredentialTypesTransition = default!;
 #endif
         /// <summary>The directPartnerConsoleUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -284,6 +308,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "billingPlan", n => { BillingPlan = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreBillingPlan>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreBillingPlan.CreateFromDiscriminatorValue); } },
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities.CreateFromDiscriminatorValue); } },
+                { "credentialTypes", n => { CredentialTypes = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesItem>()?.AsList(); } },
+                { "credentialTypesTransition", n => { CredentialTypesTransition = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesTransition>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesTransition.CreateFromDiscriminatorValue); } },
                 { "directPartnerConsoleUrl", n => { DirectPartnerConsoleUrl = n.GetStringValue(); } },
                 { "externalResourceId", n => { ExternalResourceId = n.GetStringValue(); } },
                 { "externalResourceStatus", n => { ExternalResourceStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus.CreateFromDiscriminatorValue); } },
@@ -316,6 +342,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreBillingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCapabilities>("capabilities", Capabilities);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesItem>("credentialTypes", CredentialTypes);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreCredentialTypesTransition>("credentialTypesTransition", CredentialTypesTransition);
             writer.WriteStringValue("directPartnerConsoleUrl", DirectPartnerConsoleUrl);
             writer.WriteStringValue("externalResourceId", ExternalResourceId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreExternalResourceStatus>("externalResourceStatus", ExternalResourceStatus);

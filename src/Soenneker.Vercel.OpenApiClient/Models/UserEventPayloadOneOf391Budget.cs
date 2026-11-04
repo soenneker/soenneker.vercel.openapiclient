@@ -100,7 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf391BudgetScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf391BudgetScope? _explicitNullValueScope = default!;
-        /// <summary>Project id when `scope` is `project`; product id when `scope` is `product`.</summary>
+        /// <summary>What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; AdditionalData?.Remove("scopeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }

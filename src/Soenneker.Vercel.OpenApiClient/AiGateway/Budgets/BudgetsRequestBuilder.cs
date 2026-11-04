@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BudgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?projectId*,slug*,teamId*,userId*}", pathParameters)
+        public BudgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?justification*,projectId*,slug*,teamId*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BudgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?projectId*,slug*,teamId*,userId*}", rawUrl)
+        public BudgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?justification*,projectId*,slug*,teamId*,userId*}", rawUrl)
         {
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.BudgetsRequestBuilder.BudgetsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/budgets?scopeType={scopeType}{&projectId*,slug*,teamId*,userId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/budgets?scopeType={scopeType}{&justification*,projectId*,slug*,teamId*,userId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -139,7 +139,17 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BudgetsRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Required when scopeType is &quot;project&quot;.</summary>
+            /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("justification")]
+            public string? Justification { get; set; }
+#nullable restore
+#else
+            [QueryParameter("justification")]
+            public string Justification { get; set; }
+#endif
+            /// <summary>Required when scopeType is \&quot;project\&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("projectId")]
@@ -172,7 +182,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-            /// <summary>Required when scopeType is &quot;user&quot;.</summary>
+            /// <summary>Required when scopeType is \&quot;user\&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("userId")]
