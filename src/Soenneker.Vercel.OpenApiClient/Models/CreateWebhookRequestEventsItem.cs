@@ -344,6 +344,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayAutoReloadLimitReached,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway.budget.updated")]
+        #pragma warning disable CS1591
+        AiGatewayBudgetUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "observability.anomaly")]
         #pragma warning disable CS1591
         ObservabilityAnomaly,

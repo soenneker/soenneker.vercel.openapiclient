@@ -26,6 +26,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("certificateFingerprints") is { } nullNodeCertificateFingerprints && nullNodeCertificateFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateFingerprints = null;
             if (parseNode.GetChildNode("connectionId") is null) { _explicitNullValueConnectionId = default!; _explicitNullProperties?.Remove("connectionId"); }
             else if (parseNode.GetChildNode("connectionId") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
+            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
+            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("previousCertificateFingerprints") is null) { _explicitNullValuePreviousCertificateFingerprints = default!; _explicitNullProperties?.Remove("previousCertificateFingerprints"); }
+            else if (parseNode.GetChildNode("previousCertificateFingerprints") is { } nullNodePreviousCertificateFingerprints && nullNodePreviousCertificateFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousCertificateFingerprints = null;
         }
 
         /// <summary>The actorName property</summary>
@@ -63,6 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connectionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionId"); else _explicitNullProperties?.Remove("connectionId"); } }
         private string _explicitNullValueConnectionId = default!;
 #endif
+        /// <summary>The created property</summary>
+        public bool? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private bool? _explicitNullValueCreated = default!;
+        /// <summary>The previousCertificateFingerprints property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PreviousCertificateFingerprints { get => _explicitNullValuePreviousCertificateFingerprints; set { _explicitNullValuePreviousCertificateFingerprints = value; AdditionalData?.Remove("previousCertificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCertificateFingerprints"); else _explicitNullProperties?.Remove("previousCertificateFingerprints"); } }
+        private List<string>? _explicitNullValuePreviousCertificateFingerprints = default!;
+#nullable restore
+#else
+        public List<string> PreviousCertificateFingerprints { get => _explicitNullValuePreviousCertificateFingerprints; set { _explicitNullValuePreviousCertificateFingerprints = value; AdditionalData?.Remove("previousCertificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCertificateFingerprints"); else _explicitNullProperties?.Remove("previousCertificateFingerprints"); } }
+        private List<string> _explicitNullValuePreviousCertificateFingerprints = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368"/> and sets the default values.
         /// </summary>
@@ -92,6 +109,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "actorType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActorType = default; _explicitNullProperties?.Remove("actorType"); AdditionalData["actorType"] = unknown; } else { ActorType = parsed; AdditionalData.Remove("actorType"); } } },
                 { "certificateFingerprints", n => { CertificateFingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
+                { "created", n => { Created = n.GetBoolValue(); } },
+                { "previousCertificateFingerprints", n => { PreviousCertificateFingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -105,6 +124,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
             writer.WriteCollectionOfPrimitiveValues<string>("certificateFingerprints", CertificateFingerprints);
             writer.WriteStringValue("connectionId", ConnectionId);
+            writer.WriteBoolValue("created", Created);
+            writer.WriteCollectionOfPrimitiveValues<string>("previousCertificateFingerprints", PreviousCertificateFingerprints);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

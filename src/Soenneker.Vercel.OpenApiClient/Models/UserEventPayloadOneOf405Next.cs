@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Mirrors the `security-review` setting value in `@api/api-settings`.
+    /// Automatic code review settings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf405Next : IAdditionalDataHolder, IParsable
@@ -20,30 +20,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("projectIds") is null) { _explicitNullValueProjectIds = default!; _explicitNullProperties?.Remove("projectIds"); }
-            else if (parseNode.GetChildNode("projectIds") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
-            if (parseNode.GetChildNode("projectScope") is null) { _explicitNullValueProjectScope = default!; _explicitNullProperties?.Remove("projectScope"); }
-            else if (parseNode.GetChildNode("projectScope") is { } nullNodeProjectScope && nullNodeProjectScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectScope = null;
+            if (parseNode.GetChildNode("includeDrafts") is null) { _explicitNullValueIncludeDrafts = default!; _explicitNullProperties?.Remove("includeDrafts"); }
+            else if (parseNode.GetChildNode("includeDrafts") is { } nullNodeIncludeDrafts && nullNodeIncludeDrafts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDrafts = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("selectedRepos") is null) { _explicitNullValueSelectedRepos = default!; _explicitNullProperties?.Remove("selectedRepos"); }
+            else if (parseNode.GetChildNode("selectedRepos") is { } nullNodeSelectedRepos && nullNodeSelectedRepos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedRepos = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
+        /// <summary>Whether automatic code reviews are enabled</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The projectIds property</summary>
+        /// <summary>Whether to include draft pull requests in automatic reviews</summary>
+        public bool? IncludeDrafts { get => _explicitNullValueIncludeDrafts; set { _explicitNullValueIncludeDrafts = value; AdditionalData?.Remove("includeDrafts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeDrafts"); else _explicitNullProperties?.Remove("includeDrafts"); } }
+        private bool? _explicitNullValueIncludeDrafts = default!;
+        /// <summary>Which repository visibilities get automatic reviews</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextScope? _explicitNullValueScope = default!;
+        /// <summary>GitHub repos to scope automatic reviews to. Format: &quot;owner/repo&quot; (lowercase). Only used when scope=&apos;selected_repos&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private List<string>? _explicitNullValueProjectIds = default!;
+        public List<string>? SelectedRepos { get => _explicitNullValueSelectedRepos; set { _explicitNullValueSelectedRepos = value; AdditionalData?.Remove("selectedRepos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectedRepos"); else _explicitNullProperties?.Remove("selectedRepos"); } }
+        private List<string>? _explicitNullValueSelectedRepos = default!;
 #nullable restore
 #else
-        public List<string> ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private List<string> _explicitNullValueProjectIds = default!;
+        public List<string> SelectedRepos { get => _explicitNullValueSelectedRepos; set { _explicitNullValueSelectedRepos = value; AdditionalData?.Remove("selectedRepos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectedRepos"); else _explicitNullProperties?.Remove("selectedRepos"); } }
+        private List<string> _explicitNullValueSelectedRepos = default!;
 #endif
-        /// <summary>The projectScope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextProjectScope? ProjectScope { get => _explicitNullValueProjectScope; set { _explicitNullValueProjectScope = value; AdditionalData?.Remove("projectScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectScope"); else _explicitNullProperties?.Remove("projectScope"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextProjectScope? _explicitNullValueProjectScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Next"/> and sets the default values.
         /// </summary>
@@ -70,8 +75,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "projectScope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextProjectScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProjectScope = default; _explicitNullProperties?.Remove("projectScope"); AdditionalData["projectScope"] = unknown; } else { ProjectScope = parsed; AdditionalData.Remove("projectScope"); } } },
+                { "includeDrafts", n => { IncludeDrafts = n.GetBoolValue(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
+                { "selectedRepos", n => { SelectedRepos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -82,8 +88,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextProjectScope>("projectScope", ProjectScope);
+            writer.WriteBoolValue("includeDrafts", IncludeDrafts);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405NextScope>("scope", Scope);
+            writer.WriteCollectionOfPrimitiveValues<string>("selectedRepos", SelectedRepos);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -18,8 +18,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("nextRule") is null) { _explicitNullValueNextRule = default!; _explicitNullProperties?.Remove("nextRule"); }
-            else if (parseNode.GetChildNode("nextRule") is { } nullNodeNextRule && nullNodeNextRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRule = null;
             if (parseNode.GetChildNode("previousRule") is null) { _explicitNullValuePreviousRule = default!; _explicitNullProperties?.Remove("previousRule"); }
             else if (parseNode.GetChildNode("previousRule") is { } nullNodePreviousRule && nullNodePreviousRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRule = null;
             if (parseNode.GetChildNode("team") is null) { _explicitNullValueTeam = default!; _explicitNullProperties?.Remove("team"); }
@@ -28,16 +26,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The nextRule property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170NextRule? NextRule { get => _explicitNullValueNextRule; set { _explicitNullValueNextRule = value; AdditionalData?.Remove("nextRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextRule"); else _explicitNullProperties?.Remove("nextRule"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170NextRule? _explicitNullValueNextRule = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170NextRule NextRule { get => _explicitNullValueNextRule; set { _explicitNullValueNextRule = value; AdditionalData?.Remove("nextRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextRule"); else _explicitNullProperties?.Remove("nextRule"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170NextRule _explicitNullValueNextRule = default!;
-#endif
         /// <summary>The previousRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +71,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nextRule", n => { NextRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170NextRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170NextRule.CreateFromDiscriminatorValue); } },
                 { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170PreviousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170PreviousRule.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Team.CreateFromDiscriminatorValue); } },
             };
@@ -95,7 +82,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170NextRule>("nextRule", NextRule);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170PreviousRule>("previousRule", PreviousRule);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Team>("team", Team);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

@@ -15,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayBalanceDepleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway.budget.updated")]
+        #pragma warning disable CS1591
+        AiGatewayBudgetUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alerts.triggered")]
         #pragma warning disable CS1591
         AlertsTriggered,

@@ -12,21 +12,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Disable,
         #pragma warning restore CS1591
-        [EnumMember(Value = "disable-commitment")]
-        #pragma warning disable CS1591
-        DisableCommitment,
-        #pragma warning restore CS1591
         [EnumMember(Value = "enable")]
         #pragma warning disable CS1591
         Enable,
         #pragma warning restore CS1591
-        [EnumMember(Value = "enable-commitment")]
+        [EnumMember(Value = "remove")]
         #pragma warning disable CS1591
-        EnableCommitment,
+        Remove,
         #pragma warning restore CS1591
-        [EnumMember(Value = "update")]
+        [EnumMember(Value = "set")]
         #pragma warning disable CS1591
-        Update,
+        Set,
         #pragma warning restore CS1591
     }
 }

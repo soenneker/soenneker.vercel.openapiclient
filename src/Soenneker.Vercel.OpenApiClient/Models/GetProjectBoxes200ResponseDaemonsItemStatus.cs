@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum GetProjectBoxes200ResponseDaemonsItemStatus
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "crash_looping")]
+        #pragma warning disable CS1591
+        CrashLooping,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ready")]
         #pragma warning disable CS1591
         Ready,

@@ -27,6 +27,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("lastCheckedAt") is { } nullNodeLastCheckedAt && nullNodeLastCheckedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCheckedAt = null;
             if (parseNode.GetChildNode("memoryMiB") is null) { _explicitNullValueMemoryMiB = default!; _explicitNullProperties?.Remove("memoryMiB"); }
             else if (parseNode.GetChildNode("memoryMiB") is { } nullNodeMemoryMiB && nullNodeMemoryMiB.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryMiB = null;
+            if (parseNode.GetChildNode("process") is null) { _explicitNullValueProcess = default!; _explicitNullProperties?.Remove("process"); }
+            else if (parseNode.GetChildNode("process") is { } nullNodeProcess && nullNodeProcess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Process = null;
             if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
             else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
             if (parseNode.GetChildNode("startedAt") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("startedAt"); }
@@ -73,6 +75,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The memoryMiB property</summary>
         public double? MemoryMiB { get => _explicitNullValueMemoryMiB; set { _explicitNullValueMemoryMiB = value; AdditionalData?.Remove("memoryMiB"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memoryMiB"); else _explicitNullProperties?.Remove("memoryMiB"); } }
         private double? _explicitNullValueMemoryMiB = default!;
+        /// <summary>Quick restarts of the user container in a row. Absent when there are none.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItemProcess? Process { get => _explicitNullValueProcess; set { _explicitNullValueProcess = value; AdditionalData?.Remove("process"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process"); else _explicitNullProperties?.Remove("process"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItemProcess? _explicitNullValueProcess = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItemProcess Process { get => _explicitNullValueProcess; set { _explicitNullValueProcess = value; AdditionalData?.Remove("process"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process"); else _explicitNullProperties?.Remove("process"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItemProcess _explicitNullValueProcess = default!;
+#endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "lastCheckedAt", n => { LastCheckedAt = n.GetStringValue(); } },
                 { "memoryMiB", n => { MemoryMiB = n.GetDoubleValue(); } },
+                { "process", n => { Process = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItemProcess>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItemProcess.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetStringValue(); } },
                 { "stoppedAt", n => { StoppedAt = n.GetStringValue(); } },
@@ -150,6 +163,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("image", Image);
             writer.WriteStringValue("lastCheckedAt", LastCheckedAt);
             writer.WriteDoubleValue("memoryMiB", MemoryMiB);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItemProcess>("process", Process);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("startedAt", StartedAt);
             writer.WriteStringValue("stoppedAt", StoppedAt);

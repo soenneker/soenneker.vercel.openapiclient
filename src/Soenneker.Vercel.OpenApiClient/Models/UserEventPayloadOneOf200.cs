@@ -18,6 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("billingPlanId") is null) { _explicitNullValueBillingPlanId = default!; _explicitNullProperties?.Remove("billingPlanId"); }
+            else if (parseNode.GetChildNode("billingPlanId") is { } nullNodeBillingPlanId && nullNodeBillingPlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPlanId = null;
+            if (parseNode.GetChildNode("billingPlanName") is null) { _explicitNullValueBillingPlanName = default!; _explicitNullProperties?.Remove("billingPlanName"); }
+            else if (parseNode.GetChildNode("billingPlanName") is { } nullNodeBillingPlanName && nullNodeBillingPlanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPlanName = null;
             if (parseNode.GetChildNode("configurationId") is null) { _explicitNullValueConfigurationId = default!; _explicitNullProperties?.Remove("configurationId"); }
             else if (parseNode.GetChildNode("configurationId") is { } nullNodeConfigurationId && nullNodeConfigurationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationId = null;
             if (parseNode.GetChildNode("integrationId") is null) { _explicitNullValueIntegrationId = default!; _explicitNullProperties?.Remove("integrationId"); }
@@ -28,12 +32,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("integrationSlug") is { } nullNodeIntegrationSlug && nullNodeIntegrationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationSlug = null;
             if (parseNode.GetChildNode("ownerId") is null) { _explicitNullValueOwnerId = default!; _explicitNullProperties?.Remove("ownerId"); }
             else if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
-            if (parseNode.GetChildNode("projectIds") is null) { _explicitNullValueProjectIds = default!; _explicitNullProperties?.Remove("projectIds"); }
-            else if (parseNode.GetChildNode("projectIds") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The billingPlanId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingPlanId { get => _explicitNullValueBillingPlanId; set { _explicitNullValueBillingPlanId = value; AdditionalData?.Remove("billingPlanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPlanId"); else _explicitNullProperties?.Remove("billingPlanId"); } }
+        private string? _explicitNullValueBillingPlanId = default!;
+#nullable restore
+#else
+        public string BillingPlanId { get => _explicitNullValueBillingPlanId; set { _explicitNullValueBillingPlanId = value; AdditionalData?.Remove("billingPlanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPlanId"); else _explicitNullProperties?.Remove("billingPlanId"); } }
+        private string _explicitNullValueBillingPlanId = default!;
+#endif
+        /// <summary>The billingPlanName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingPlanName { get => _explicitNullValueBillingPlanName; set { _explicitNullValueBillingPlanName = value; AdditionalData?.Remove("billingPlanName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPlanName"); else _explicitNullProperties?.Remove("billingPlanName"); } }
+        private string? _explicitNullValueBillingPlanName = default!;
+#nullable restore
+#else
+        public string BillingPlanName { get => _explicitNullValueBillingPlanName; set { _explicitNullValueBillingPlanName = value; AdditionalData?.Remove("billingPlanName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPlanName"); else _explicitNullProperties?.Remove("billingPlanName"); } }
+        private string _explicitNullValueBillingPlanName = default!;
+#endif
         /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,16 +106,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string _explicitNullValueOwnerId = default!;
 #endif
-        /// <summary>The projectIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200ProjectIds? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200ProjectIds? _explicitNullValueProjectIds = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200ProjectIds ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200ProjectIds _explicitNullValueProjectIds = default!;
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200"/> and sets the default values.
         /// </summary>
@@ -119,12 +131,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "billingPlanId", n => { BillingPlanId = n.GetStringValue(); } },
+                { "billingPlanName", n => { BillingPlanName = n.GetStringValue(); } },
                 { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "projectIds", n => { ProjectIds = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200ProjectIds>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200ProjectIds.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -134,12 +147,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("billingPlanId", BillingPlanId);
+            writer.WriteStringValue("billingPlanName", BillingPlanName);
             writer.WriteStringValue("configurationId", ConfigurationId);
             writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("integrationName", IntegrationName);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200ProjectIds>("projectIds", ProjectIds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

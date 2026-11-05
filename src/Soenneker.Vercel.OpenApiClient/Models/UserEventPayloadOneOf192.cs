@@ -18,70 +18,138 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fromDeploymentId") is null) { _explicitNullValueFromDeploymentId = default!; _explicitNullProperties?.Remove("fromDeploymentId"); }
-            else if (parseNode.GetChildNode("fromDeploymentId") is { } nullNodeFromDeploymentId && nullNodeFromDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromDeploymentId = null;
-            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
-            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
-            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("toDeploymentId") is null) { _explicitNullValueToDeploymentId = default!; _explicitNullProperties?.Remove("toDeploymentId"); }
-            else if (parseNode.GetChildNode("toDeploymentId") is { } nullNodeToDeploymentId && nullNodeToDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToDeploymentId = null;
+            if (parseNode.GetChildNode("actorAccountId") is null) { _explicitNullValueActorAccountId = default!; _explicitNullProperties?.Remove("actorAccountId"); }
+            else if (parseNode.GetChildNode("actorAccountId") is { } nullNodeActorAccountId && nullNodeActorAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorAccountId = null;
+            if (parseNode.GetChildNode("actorLogin") is null) { _explicitNullValueActorLogin = default!; _explicitNullProperties?.Remove("actorLogin"); }
+            else if (parseNode.GetChildNode("actorLogin") is { } nullNodeActorLogin && nullNodeActorLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorLogin = null;
+            if (parseNode.GetChildNode("destinationBranch") is null) { _explicitNullValueDestinationBranch = default!; _explicitNullProperties?.Remove("destinationBranch"); }
+            else if (parseNode.GetChildNode("destinationBranch") is { } nullNodeDestinationBranch && nullNodeDestinationBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationBranch = null;
+            if (parseNode.GetChildNode("destinationRepo") is null) { _explicitNullValueDestinationRepo = default!; _explicitNullProperties?.Remove("destinationRepo"); }
+            else if (parseNode.GetChildNode("destinationRepo") is { } nullNodeDestinationRepo && nullNodeDestinationRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationRepo = null;
+            if (parseNode.GetChildNode("failureCode") is null) { _explicitNullValueFailureCode = default!; _explicitNullProperties?.Remove("failureCode"); }
+            else if (parseNode.GetChildNode("failureCode") is { } nullNodeFailureCode && nullNodeFailureCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCode = null;
+            if (parseNode.GetChildNode("failureStage") is null) { _explicitNullValueFailureStage = default!; _explicitNullProperties?.Remove("failureStage"); }
+            else if (parseNode.GetChildNode("failureStage") is { } nullNodeFailureStage && nullNodeFailureStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureStage = null;
+            if (parseNode.GetChildNode("installationId") is null) { _explicitNullValueInstallationId = default!; _explicitNullProperties?.Remove("installationId"); }
+            else if (parseNode.GetChildNode("installationId") is { } nullNodeInstallationId && nullNodeInstallationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallationId = null;
+            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
+            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("resultCommitSha") is null) { _explicitNullValueResultCommitSha = default!; _explicitNullProperties?.Remove("resultCommitSha"); }
+            else if (parseNode.GetChildNode("resultCommitSha") is { } nullNodeResultCommitSha && nullNodeResultCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCommitSha = null;
+            if (parseNode.GetChildNode("sourceCommitSha") is null) { _explicitNullValueSourceCommitSha = default!; _explicitNullProperties?.Remove("sourceCommitSha"); }
+            else if (parseNode.GetChildNode("sourceCommitSha") is { } nullNodeSourceCommitSha && nullNodeSourceCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceCommitSha = null;
+            if (parseNode.GetChildNode("sourceRepo") is null) { _explicitNullValueSourceRepo = default!; _explicitNullProperties?.Remove("sourceRepo"); }
+            else if (parseNode.GetChildNode("sourceRepo") is { } nullNodeSourceRepo && nullNodeSourceRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceRepo = null;
+            if (parseNode.GetChildNode("usedAppToken") is null) { _explicitNullValueUsedAppToken = default!; _explicitNullProperties?.Remove("usedAppToken"); }
+            else if (parseNode.GetChildNode("usedAppToken") is { } nullNodeUsedAppToken && nullNodeUsedAppToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedAppToken = null;
         }
 
+        /// <summary>Stable account id on `provider`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorAccountId { get => _explicitNullValueActorAccountId; set { _explicitNullValueActorAccountId = value; AdditionalData?.Remove("actorAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorAccountId"); else _explicitNullProperties?.Remove("actorAccountId"); } }
+        private string? _explicitNullValueActorAccountId = default!;
+#nullable restore
+#else
+        public string ActorAccountId { get => _explicitNullValueActorAccountId; set { _explicitNullValueActorAccountId = value; AdditionalData?.Remove("actorAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorAccountId"); else _explicitNullProperties?.Remove("actorAccountId"); } }
+        private string _explicitNullValueActorAccountId = default!;
+#endif
+        /// <summary>Display name only. Logins are mutable; join on `actorAccountId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorLogin { get => _explicitNullValueActorLogin; set { _explicitNullValueActorLogin = value; AdditionalData?.Remove("actorLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorLogin"); else _explicitNullProperties?.Remove("actorLogin"); } }
+        private string? _explicitNullValueActorLogin = default!;
+#nullable restore
+#else
+        public string ActorLogin { get => _explicitNullValueActorLogin; set { _explicitNullValueActorLogin = value; AdditionalData?.Remove("actorLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorLogin"); else _explicitNullProperties?.Remove("actorLogin"); } }
+        private string _explicitNullValueActorLogin = default!;
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fromDeploymentId property</summary>
+        /// <summary>Branch actually pushed to, or the requested one if blocked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; AdditionalData?.Remove("fromDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
-        private string? _explicitNullValueFromDeploymentId = default!;
+        public string? DestinationBranch { get => _explicitNullValueDestinationBranch; set { _explicitNullValueDestinationBranch = value; AdditionalData?.Remove("destinationBranch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationBranch"); else _explicitNullProperties?.Remove("destinationBranch"); } }
+        private string? _explicitNullValueDestinationBranch = default!;
 #nullable restore
 #else
-        public string FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; AdditionalData?.Remove("fromDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
-        private string _explicitNullValueFromDeploymentId = default!;
+        public string DestinationBranch { get => _explicitNullValueDestinationBranch; set { _explicitNullValueDestinationBranch = value; AdditionalData?.Remove("destinationBranch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationBranch"); else _explicitNullProperties?.Remove("destinationBranch"); } }
+        private string _explicitNullValueDestinationBranch = default!;
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>&quot;owner/name&quot;, or the raw request value if blocked before it resolved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string? _explicitNullValueProjectId = default!;
+        public string? DestinationRepo { get => _explicitNullValueDestinationRepo; set { _explicitNullValueDestinationRepo = value; AdditionalData?.Remove("destinationRepo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationRepo"); else _explicitNullProperties?.Remove("destinationRepo"); } }
+        private string? _explicitNullValueDestinationRepo = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string _explicitNullValueProjectId = default!;
+        public string DestinationRepo { get => _explicitNullValueDestinationRepo; set { _explicitNullValueDestinationRepo = value; AdditionalData?.Remove("destinationRepo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationRepo"); else _explicitNullProperties?.Remove("destinationRepo"); } }
+        private string _explicitNullValueDestinationRepo = default!;
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>Sanitized code, never a raw error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
+        public string? FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
+        private string? _explicitNullValueFailureCode = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
+        public string FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
+        private string _explicitNullValueFailureCode = default!;
 #endif
-        /// <summary>The reason property</summary>
+        /// <summary>Mirrors `PushFailureStage` in `api-git-providers`.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192FailureStage? FailureStage { get => _explicitNullValueFailureStage; set { _explicitNullValueFailureStage = value; AdditionalData?.Remove("failureStage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureStage"); else _explicitNullProperties?.Remove("failureStage"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192FailureStage? _explicitNullValueFailureStage = default!;
+        /// <summary>Set only when an App installation token was minted (GitHub only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string? _explicitNullValueReason = default!;
+        public string? InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; AdditionalData?.Remove("installationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
+        private string? _explicitNullValueInstallationId = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string _explicitNullValueReason = default!;
+        public string InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; AdditionalData?.Remove("installationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
+        private string _explicitNullValueInstallationId = default!;
 #endif
-        /// <summary>The toDeploymentId property</summary>
+        /// <summary>The outcome property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Outcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Outcome? _explicitNullValueOutcome = default!;
+        /// <summary>The provider property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Provider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Provider? _explicitNullValueProvider = default!;
+        /// <summary>The resultCommitSha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; AdditionalData?.Remove("toDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
-        private string? _explicitNullValueToDeploymentId = default!;
+        public string? ResultCommitSha { get => _explicitNullValueResultCommitSha; set { _explicitNullValueResultCommitSha = value; AdditionalData?.Remove("resultCommitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCommitSha"); else _explicitNullProperties?.Remove("resultCommitSha"); } }
+        private string? _explicitNullValueResultCommitSha = default!;
 #nullable restore
 #else
-        public string ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; AdditionalData?.Remove("toDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
-        private string _explicitNullValueToDeploymentId = default!;
+        public string ResultCommitSha { get => _explicitNullValueResultCommitSha; set { _explicitNullValueResultCommitSha = value; AdditionalData?.Remove("resultCommitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCommitSha"); else _explicitNullProperties?.Remove("resultCommitSha"); } }
+        private string _explicitNullValueResultCommitSha = default!;
 #endif
+        /// <summary>The sourceCommitSha property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceCommitSha { get => _explicitNullValueSourceCommitSha; set { _explicitNullValueSourceCommitSha = value; AdditionalData?.Remove("sourceCommitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceCommitSha"); else _explicitNullProperties?.Remove("sourceCommitSha"); } }
+        private string? _explicitNullValueSourceCommitSha = default!;
+#nullable restore
+#else
+        public string SourceCommitSha { get => _explicitNullValueSourceCommitSha; set { _explicitNullValueSourceCommitSha = value; AdditionalData?.Remove("sourceCommitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceCommitSha"); else _explicitNullProperties?.Remove("sourceCommitSha"); } }
+        private string _explicitNullValueSourceCommitSha = default!;
+#endif
+        /// <summary>Source repository, &quot;owner/name&quot;. Null when the pushed content was generated in-request (push-files-to-repo) rather than copied from a repository.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceRepo { get => _explicitNullValueSourceRepo; set { _explicitNullValueSourceRepo = value; AdditionalData?.Remove("sourceRepo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceRepo"); else _explicitNullProperties?.Remove("sourceRepo"); } }
+        private string? _explicitNullValueSourceRepo = default!;
+#nullable restore
+#else
+        public string SourceRepo { get => _explicitNullValueSourceRepo; set { _explicitNullValueSourceRepo = value; AdditionalData?.Remove("sourceRepo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceRepo"); else _explicitNullProperties?.Remove("sourceRepo"); } }
+        private string _explicitNullValueSourceRepo = default!;
+#endif
+        /// <summary>The usedAppToken property</summary>
+        public bool? UsedAppToken { get => _explicitNullValueUsedAppToken; set { _explicitNullValueUsedAppToken = value; AdditionalData?.Remove("usedAppToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usedAppToken"); else _explicitNullProperties?.Remove("usedAppToken"); } }
+        private bool? _explicitNullValueUsedAppToken = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192"/> and sets the default values.
         /// </summary>
@@ -107,11 +175,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fromDeploymentId", n => { FromDeploymentId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "toDeploymentId", n => { ToDeploymentId = n.GetStringValue(); } },
+                { "actorAccountId", n => { ActorAccountId = n.GetStringValue(); } },
+                { "actorLogin", n => { ActorLogin = n.GetStringValue(); } },
+                { "destinationBranch", n => { DestinationBranch = n.GetStringValue(); } },
+                { "destinationRepo", n => { DestinationRepo = n.GetStringValue(); } },
+                { "failureCode", n => { FailureCode = n.GetStringValue(); } },
+                { "failureStage", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192FailureStage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFailureStage = default; _explicitNullProperties?.Remove("failureStage"); AdditionalData["failureStage"] = unknown; } else { FailureStage = parsed; AdditionalData.Remove("failureStage"); } } },
+                { "installationId", n => { InstallationId = n.GetStringValue(); } },
+                { "outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Outcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutcome = default; _explicitNullProperties?.Remove("outcome"); AdditionalData["outcome"] = unknown; } else { Outcome = parsed; AdditionalData.Remove("outcome"); } } },
+                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Provider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
+                { "resultCommitSha", n => { ResultCommitSha = n.GetStringValue(); } },
+                { "sourceCommitSha", n => { SourceCommitSha = n.GetStringValue(); } },
+                { "sourceRepo", n => { SourceRepo = n.GetStringValue(); } },
+                { "usedAppToken", n => { UsedAppToken = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -121,11 +197,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("fromDeploymentId", FromDeploymentId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("toDeploymentId", ToDeploymentId);
+            writer.WriteStringValue("actorAccountId", ActorAccountId);
+            writer.WriteStringValue("actorLogin", ActorLogin);
+            writer.WriteStringValue("destinationBranch", DestinationBranch);
+            writer.WriteStringValue("destinationRepo", DestinationRepo);
+            writer.WriteStringValue("failureCode", FailureCode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192FailureStage>("failureStage", FailureStage);
+            writer.WriteStringValue("installationId", InstallationId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Outcome>("outcome", Outcome);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192Provider>("provider", Provider);
+            writer.WriteStringValue("resultCommitSha", ResultCommitSha);
+            writer.WriteStringValue("sourceCommitSha", SourceCommitSha);
+            writer.WriteStringValue("sourceRepo", SourceRepo);
+            writer.WriteBoolValue("usedAppToken", UsedAppToken);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

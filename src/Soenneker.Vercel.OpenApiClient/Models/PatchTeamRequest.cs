@@ -137,7 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicy DeploymentPolicy { get => _explicitNullValueDeploymentPolicy; set { _explicitNullValueDeploymentPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentPolicy"); else _explicitNullProperties?.Remove("deploymentPolicy"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicy _explicitNullValueDeploymentPolicy = default!;
 #endif
-        /// <summary>A short text that describes the team.</summary>
+        /// <summary>A short text that describes the team. Set to an empty string to clear the description. Omit to keep the current description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }

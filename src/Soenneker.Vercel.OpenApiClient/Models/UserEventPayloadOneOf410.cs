@@ -24,8 +24,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("commitSha") is { } nullNodeCommitSha && nullNodeCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitSha = null;
             if (parseNode.GetChildNode("deploymentId") is null) { _explicitNullValueDeploymentId = default!; _explicitNullProperties?.Remove("deploymentId"); }
             else if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
-            if (parseNode.GetChildNode("dismissalReason") is null) { _explicitNullValueDismissalReason = default!; _explicitNullProperties?.Remove("dismissalReason"); }
-            else if (parseNode.GetChildNode("dismissalReason") is { } nullNodeDismissalReason && nullNodeDismissalReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DismissalReason = null;
             if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
             else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
             if (parseNode.GetChildNode("eventId") is null) { _explicitNullValueEventId = default!; _explicitNullProperties?.Remove("eventId"); }
@@ -90,9 +88,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
         private string _explicitNullValueDeploymentId = default!;
 #endif
-        /// <summary>The dismissalReason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410DismissalReason? DismissalReason { get => _explicitNullValueDismissalReason; set { _explicitNullValueDismissalReason = value; AdditionalData?.Remove("dismissalReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissalReason"); else _explicitNullProperties?.Remove("dismissalReason"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410DismissalReason? _explicitNullValueDismissalReason = default!;
         /// <summary>Null for a repository&apos;s findings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,7 +238,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "branchRef", n => { BranchRef = n.GetStringValue(); } },
                 { "commitSha", n => { CommitSha = n.GetStringValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "dismissalReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410DismissalReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDismissalReason = default; _explicitNullProperties?.Remove("dismissalReason"); AdditionalData["dismissalReason"] = unknown; } else { DismissalReason = parsed; AdditionalData.Remove("dismissalReason"); } } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "eventId", n => { EventId = n.GetStringValue(); } },
                 { "findingId", n => { FindingId = n.GetStringValue(); } },
@@ -271,7 +265,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("branchRef", BranchRef);
             writer.WriteStringValue("commitSha", CommitSha);
             writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410DismissalReason>("dismissalReason", DismissalReason);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("eventId", EventId);
             writer.WriteStringValue("findingId", FindingId);

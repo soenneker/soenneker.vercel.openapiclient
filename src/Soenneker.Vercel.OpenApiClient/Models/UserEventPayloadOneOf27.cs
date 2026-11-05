@@ -20,6 +20,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("apiKey") is null) { _explicitNullValueApiKey = default!; _explicitNullProperties?.Remove("apiKey"); }
             else if (parseNode.GetChildNode("apiKey") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("budget") is null) { _explicitNullValueBudget = default!; _explicitNullProperties?.Remove("budget"); }
+            else if (parseNode.GetChildNode("budget") is { } nullNodeBudget && nullNodeBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budget = null;
+            if (parseNode.GetChildNode("bypassAll") is null) { _explicitNullValueBypassAll = default!; _explicitNullProperties?.Remove("bypassAll"); }
+            else if (parseNode.GetChildNode("bypassAll") is { } nullNodeBypassAll && nullNodeBypassAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassAll = null;
+            if (parseNode.GetChildNode("zdrExemption") is null) { _explicitNullValueZdrExemption = default!; _explicitNullProperties?.Remove("zdrExemption"); }
+            else if (parseNode.GetChildNode("zdrExemption") is { } nullNodeZdrExemption && nullNodeZdrExemption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZdrExemption = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,6 +40,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27ApiKey ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("apiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27ApiKey _explicitNullValueApiKey = default!;
 #endif
+        /// <summary>Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Budget? Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; AdditionalData?.Remove("budget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Budget? _explicitNullValueBudget = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Budget Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; AdditionalData?.Remove("budget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Budget _explicitNullValueBudget = default!;
+#endif
+        /// <summary>True when the key was created to bypass all of the team&apos;s restrictions (the ZDR-only model restriction and the provider/model allowlist).</summary>
+        public bool? BypassAll { get => _explicitNullValueBypassAll; set { _explicitNullValueBypassAll = value; AdditionalData?.Remove("bypassAll"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassAll"); else _explicitNullProperties?.Remove("bypassAll"); } }
+        private bool? _explicitNullValueBypassAll = default!;
+        /// <summary>True when the key was created with a ZDR exemption.</summary>
+        public bool? ZdrExemption { get => _explicitNullValueZdrExemption; set { _explicitNullValueZdrExemption = value; AdditionalData?.Remove("zdrExemption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zdrExemption"); else _explicitNullProperties?.Remove("zdrExemption"); } }
+        private bool? _explicitNullValueZdrExemption = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27"/> and sets the default values.
         /// </summary>
@@ -60,6 +82,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apiKey", n => { ApiKey = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27ApiKey>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27ApiKey.CreateFromDiscriminatorValue); } },
+                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Budget.CreateFromDiscriminatorValue); } },
+                { "bypassAll", n => { BypassAll = n.GetBoolValue(); } },
+                { "zdrExemption", n => { ZdrExemption = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27ApiKey>("apiKey", ApiKey);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Budget>("budget", Budget);
+            writer.WriteBoolValue("bypassAll", BypassAll);
+            writer.WriteBoolValue("zdrExemption", ZdrExemption);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

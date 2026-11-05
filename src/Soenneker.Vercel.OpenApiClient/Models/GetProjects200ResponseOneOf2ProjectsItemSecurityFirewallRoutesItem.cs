@@ -29,6 +29,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("mitigate") is { } nullNodeMitigate && nullNodeMitigate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mitigate = null;
             if (parseNode.GetChildNode("response_has") is null) { _explicitNullValueResponseHas = default!; _explicitNullProperties?.Remove("response_has"); }
             else if (parseNode.GetChildNode("response_has") is { } nullNodeResponseHas && nullNodeResponseHas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseHas = null;
+            if (parseNode.GetChildNode("response_missing") is null) { _explicitNullValueResponseMissing = default!; _explicitNullProperties?.Remove("response_missing"); }
+            else if (parseNode.GetChildNode("response_missing") is { } nullNodeResponseMissing && nullNodeResponseMissing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseMissing = null;
             if (parseNode.GetChildNode("src") is null) { _explicitNullValueSrc = default!; _explicitNullProperties?.Remove("src"); }
             else if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
             if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
@@ -94,6 +96,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem> ResponseHas { get => _explicitNullValueResponseHas; set { _explicitNullValueResponseHas = value; AdditionalData?.Remove("response_has"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_has"); else _explicitNullProperties?.Remove("response_has"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem> _explicitNullValueResponseHas = default!;
 #endif
+        /// <summary>The response_missing property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseMissingItem>? ResponseMissing { get => _explicitNullValueResponseMissing; set { _explicitNullValueResponseMissing = value; AdditionalData?.Remove("response_missing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_missing"); else _explicitNullProperties?.Remove("response_missing"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseMissingItem>? _explicitNullValueResponseMissing = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseMissingItem> ResponseMissing { get => _explicitNullValueResponseMissing; set { _explicitNullValueResponseMissing = value; AdditionalData?.Remove("response_missing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_missing"); else _explicitNullProperties?.Remove("response_missing"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseMissingItem> _explicitNullValueResponseMissing = default!;
+#endif
         /// <summary>The src property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +163,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "missing", n => { Missing = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMissingItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMissingItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mitigate", n => { Mitigate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate.CreateFromDiscriminatorValue); } },
                 { "response_has", n => { ResponseHas = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "response_missing", n => { ResponseMissing = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseMissingItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseMissingItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "src", n => { Src = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
                 { "tierRequirement", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTierRequirement = default; _explicitNullProperties?.Remove("tierRequirement"); AdditionalData["tierRequirement"] = unknown; } else { TierRequirement = parsed; AdditionalData.Remove("tierRequirement"); } } },
@@ -170,6 +183,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMissingItem>("missing", Missing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>("mitigate", Mitigate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem>("response_has", ResponseHas);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseMissingItem>("response_missing", ResponseMissing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>("src", Src);
             writer.WriteDoubleValue("status", Status);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement>("tierRequirement", TierRequirement);

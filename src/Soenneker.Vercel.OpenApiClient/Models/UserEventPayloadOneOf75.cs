@@ -18,19 +18,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoExposeSystemEnvs") is null) { _explicitNullValueAutoExposeSystemEnvs = default!; _explicitNullProperties?.Remove("autoExposeSystemEnvs"); }
-            else if (parseNode.GetChildNode("autoExposeSystemEnvs") is { } nullNodeAutoExposeSystemEnvs && nullNodeAutoExposeSystemEnvs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoExposeSystemEnvs = null;
+            if (parseNode.GetChildNode("attackModeActiveUntil") is null) { _explicitNullValueAttackModeActiveUntil = default!; _explicitNullProperties?.Remove("attackModeActiveUntil"); }
+            else if (parseNode.GetChildNode("attackModeActiveUntil") is { } nullNodeAttackModeActiveUntil && nullNodeAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("attackModeEnabled") is null) { _explicitNullValueAttackModeEnabled = default!; _explicitNullProperties?.Remove("attackModeEnabled"); }
+            else if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
+            if (parseNode.GetChildNode("prevAttackModeActiveUntil") is null) { _explicitNullValuePrevAttackModeActiveUntil = default!; _explicitNullProperties?.Remove("prevAttackModeActiveUntil"); }
+            else if (parseNode.GetChildNode("prevAttackModeActiveUntil") is { } nullNodePrevAttackModeActiveUntil && nullNodePrevAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevAttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("prevAttackModeEnabled") is null) { _explicitNullValuePrevAttackModeEnabled = default!; _explicitNullProperties?.Remove("prevAttackModeEnabled"); }
+            else if (parseNode.GetChildNode("prevAttackModeEnabled") is { } nullNodePrevAttackModeEnabled && nullNodePrevAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevAttackModeEnabled = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoExposeSystemEnvs property</summary>
-        public bool? AutoExposeSystemEnvs { get => _explicitNullValueAutoExposeSystemEnvs; set { _explicitNullValueAutoExposeSystemEnvs = value; AdditionalData?.Remove("autoExposeSystemEnvs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoExposeSystemEnvs"); else _explicitNullProperties?.Remove("autoExposeSystemEnvs"); } }
-        private bool? _explicitNullValueAutoExposeSystemEnvs = default!;
+        /// <summary>The attackModeActiveUntil property</summary>
+        public double? AttackModeActiveUntil { get => _explicitNullValueAttackModeActiveUntil; set { _explicitNullValueAttackModeActiveUntil = value; AdditionalData?.Remove("attackModeActiveUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeActiveUntil"); else _explicitNullProperties?.Remove("attackModeActiveUntil"); } }
+        private double? _explicitNullValueAttackModeActiveUntil = default!;
+        /// <summary>The attackModeEnabled property</summary>
+        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; AdditionalData?.Remove("attackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
+        private bool? _explicitNullValueAttackModeEnabled = default!;
+        /// <summary>The prevAttackModeActiveUntil property</summary>
+        public double? PrevAttackModeActiveUntil { get => _explicitNullValuePrevAttackModeActiveUntil; set { _explicitNullValuePrevAttackModeActiveUntil = value; AdditionalData?.Remove("prevAttackModeActiveUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevAttackModeActiveUntil"); else _explicitNullProperties?.Remove("prevAttackModeActiveUntil"); } }
+        private double? _explicitNullValuePrevAttackModeActiveUntil = default!;
+        /// <summary>The prevAttackModeEnabled property</summary>
+        public bool? PrevAttackModeEnabled { get => _explicitNullValuePrevAttackModeEnabled; set { _explicitNullValuePrevAttackModeEnabled = value; AdditionalData?.Remove("prevAttackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevAttackModeEnabled"); else _explicitNullProperties?.Remove("prevAttackModeEnabled"); } }
+        private bool? _explicitNullValuePrevAttackModeEnabled = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,16 +53,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
-#nullable restore
-#else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf75"/> and sets the default values.
@@ -76,9 +79,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoExposeSystemEnvs", n => { AutoExposeSystemEnvs = n.GetBoolValue(); } },
+                { "attackModeActiveUntil", n => { AttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "attackModeEnabled", n => { AttackModeEnabled = n.GetBoolValue(); } },
+                { "prevAttackModeActiveUntil", n => { PrevAttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "prevAttackModeEnabled", n => { PrevAttackModeEnabled = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,9 +93,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("autoExposeSystemEnvs", AutoExposeSystemEnvs);
+            writer.WriteDoubleValue("attackModeActiveUntil", AttackModeActiveUntil);
+            writer.WriteBoolValue("attackModeEnabled", AttackModeEnabled);
+            writer.WriteDoubleValue("prevAttackModeActiveUntil", PrevAttackModeActiveUntil);
+            writer.WriteBoolValue("prevAttackModeEnabled", PrevAttackModeEnabled);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

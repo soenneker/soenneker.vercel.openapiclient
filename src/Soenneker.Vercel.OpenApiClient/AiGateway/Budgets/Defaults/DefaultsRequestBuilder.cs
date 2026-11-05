@@ -131,7 +131,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DefaultsRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains. Only recorded when scopeType is set.</summary>
+            /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook. Only recorded when scopeType is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("justification")]

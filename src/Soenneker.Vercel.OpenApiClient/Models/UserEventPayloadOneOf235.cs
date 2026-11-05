@@ -18,34 +18,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
-            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("enforcedTeamIds") is null) { _explicitNullValueEnforcedTeamIds = default!; _explicitNullProperties?.Remove("enforcedTeamIds"); }
-            else if (parseNode.GetChildNode("enforcedTeamIds") is { } nullNodeEnforcedTeamIds && nullNodeEnforcedTeamIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnforcedTeamIds = null;
+            if (parseNode.GetChildNode("copiedDomains") is null) { _explicitNullValueCopiedDomains = default!; _explicitNullProperties?.Remove("copiedDomains"); }
+            else if (parseNode.GetChildNode("copiedDomains") is { } nullNodeCopiedDomains && nullNodeCopiedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CopiedDomains = null;
+            if (parseNode.GetChildNode("enabledOrganizationEmu") is null) { _explicitNullValueEnabledOrganizationEmu = default!; _explicitNullProperties?.Remove("enabledOrganizationEmu"); }
+            else if (parseNode.GetChildNode("enabledOrganizationEmu") is { } nullNodeEnabledOrganizationEmu && nullNodeEnabledOrganizationEmu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledOrganizationEmu = null;
+            if (parseNode.GetChildNode("enabledTeamIds") is null) { _explicitNullValueEnabledTeamIds = default!; _explicitNullProperties?.Remove("enabledTeamIds"); }
+            else if (parseNode.GetChildNode("enabledTeamIds") is { } nullNodeEnabledTeamIds && nullNodeEnabledTeamIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledTeamIds = null;
             if (parseNode.GetChildNode("organizationId") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organizationId"); }
             else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
-            if (parseNode.GetChildNode("previousEnabled") is null) { _explicitNullValuePreviousEnabled = default!; _explicitNullProperties?.Remove("previousEnabled"); }
-            else if (parseNode.GetChildNode("previousEnabled") is { } nullNodePreviousEnabled && nullNodePreviousEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousEnabled = null;
-            if (parseNode.GetChildNode("trigger") is null) { _explicitNullValueTrigger = default!; _explicitNullProperties?.Remove("trigger"); }
-            else if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
-            if (parseNode.GetChildNode("unenforcedTeamIds") is null) { _explicitNullValueUnenforcedTeamIds = default!; _explicitNullProperties?.Remove("unenforcedTeamIds"); }
-            else if (parseNode.GetChildNode("unenforcedTeamIds") is { } nullNodeUnenforcedTeamIds && nullNodeUnenforcedTeamIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnenforcedTeamIds = null;
+            if (parseNode.GetChildNode("teamId") is null) { _explicitNullValueTeamId = default!; _explicitNullProperties?.Remove("teamId"); }
+            else if (parseNode.GetChildNode("teamId") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
+            if (parseNode.GetChildNode("teamSlug") is null) { _explicitNullValueTeamSlug = default!; _explicitNullProperties?.Remove("teamSlug"); }
+            else if (parseNode.GetChildNode("teamSlug") is { } nullNodeTeamSlug && nullNodeTeamSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
-        private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The enforcedTeamIds property</summary>
+        /// <summary>The copiedDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnforcedTeamIds { get => _explicitNullValueEnforcedTeamIds; set { _explicitNullValueEnforcedTeamIds = value; AdditionalData?.Remove("enforcedTeamIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforcedTeamIds"); else _explicitNullProperties?.Remove("enforcedTeamIds"); } }
-        private List<string>? _explicitNullValueEnforcedTeamIds = default!;
+        public List<string>? CopiedDomains { get => _explicitNullValueCopiedDomains; set { _explicitNullValueCopiedDomains = value; AdditionalData?.Remove("copiedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copiedDomains"); else _explicitNullProperties?.Remove("copiedDomains"); } }
+        private List<string>? _explicitNullValueCopiedDomains = default!;
 #nullable restore
 #else
-        public List<string> EnforcedTeamIds { get => _explicitNullValueEnforcedTeamIds; set { _explicitNullValueEnforcedTeamIds = value; AdditionalData?.Remove("enforcedTeamIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforcedTeamIds"); else _explicitNullProperties?.Remove("enforcedTeamIds"); } }
-        private List<string> _explicitNullValueEnforcedTeamIds = default!;
+        public List<string> CopiedDomains { get => _explicitNullValueCopiedDomains; set { _explicitNullValueCopiedDomains = value; AdditionalData?.Remove("copiedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copiedDomains"); else _explicitNullProperties?.Remove("copiedDomains"); } }
+        private List<string> _explicitNullValueCopiedDomains = default!;
+#endif
+        /// <summary>The enabledOrganizationEmu property</summary>
+        public bool? EnabledOrganizationEmu { get => _explicitNullValueEnabledOrganizationEmu; set { _explicitNullValueEnabledOrganizationEmu = value; AdditionalData?.Remove("enabledOrganizationEmu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledOrganizationEmu"); else _explicitNullProperties?.Remove("enabledOrganizationEmu"); } }
+        private bool? _explicitNullValueEnabledOrganizationEmu = default!;
+        /// <summary>The enabledTeamIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? EnabledTeamIds { get => _explicitNullValueEnabledTeamIds; set { _explicitNullValueEnabledTeamIds = value; AdditionalData?.Remove("enabledTeamIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledTeamIds"); else _explicitNullProperties?.Remove("enabledTeamIds"); } }
+        private List<string>? _explicitNullValueEnabledTeamIds = default!;
+#nullable restore
+#else
+        public List<string> EnabledTeamIds { get => _explicitNullValueEnabledTeamIds; set { _explicitNullValueEnabledTeamIds = value; AdditionalData?.Remove("enabledTeamIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledTeamIds"); else _explicitNullProperties?.Remove("enabledTeamIds"); } }
+        private List<string> _explicitNullValueEnabledTeamIds = default!;
 #endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,21 +67,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
         private string _explicitNullValueOrganizationId = default!;
 #endif
-        /// <summary>The previousEnabled property</summary>
-        public bool? PreviousEnabled { get => _explicitNullValuePreviousEnabled; set { _explicitNullValuePreviousEnabled = value; AdditionalData?.Remove("previousEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEnabled"); else _explicitNullProperties?.Remove("previousEnabled"); } }
-        private bool? _explicitNullValuePreviousEnabled = default!;
-        /// <summary>The trigger property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235Trigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235Trigger? _explicitNullValueTrigger = default!;
-        /// <summary>The unenforcedTeamIds property</summary>
+        /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UnenforcedTeamIds { get => _explicitNullValueUnenforcedTeamIds; set { _explicitNullValueUnenforcedTeamIds = value; AdditionalData?.Remove("unenforcedTeamIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unenforcedTeamIds"); else _explicitNullProperties?.Remove("unenforcedTeamIds"); } }
-        private List<string>? _explicitNullValueUnenforcedTeamIds = default!;
+        public string? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
+        private string? _explicitNullValueTeamId = default!;
 #nullable restore
 #else
-        public List<string> UnenforcedTeamIds { get => _explicitNullValueUnenforcedTeamIds; set { _explicitNullValueUnenforcedTeamIds = value; AdditionalData?.Remove("unenforcedTeamIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unenforcedTeamIds"); else _explicitNullProperties?.Remove("unenforcedTeamIds"); } }
-        private List<string> _explicitNullValueUnenforcedTeamIds = default!;
+        public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
+        private string _explicitNullValueTeamId = default!;
+#endif
+        /// <summary>The teamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamSlug { get => _explicitNullValueTeamSlug; set { _explicitNullValueTeamSlug = value; AdditionalData?.Remove("teamSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamSlug"); else _explicitNullProperties?.Remove("teamSlug"); } }
+        private string? _explicitNullValueTeamSlug = default!;
+#nullable restore
+#else
+        public string TeamSlug { get => _explicitNullValueTeamSlug; set { _explicitNullValueTeamSlug = value; AdditionalData?.Remove("teamSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamSlug"); else _explicitNullProperties?.Remove("teamSlug"); } }
+        private string _explicitNullValueTeamSlug = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235"/> and sets the default values.
@@ -98,12 +112,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "enforcedTeamIds", n => { EnforcedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "copiedDomains", n => { CopiedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "enabledOrganizationEmu", n => { EnabledOrganizationEmu = n.GetBoolValue(); } },
+                { "enabledTeamIds", n => { EnabledTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "previousEnabled", n => { PreviousEnabled = n.GetBoolValue(); } },
-                { "trigger", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235Trigger>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrigger = default; _explicitNullProperties?.Remove("trigger"); AdditionalData["trigger"] = unknown; } else { Trigger = parsed; AdditionalData.Remove("trigger"); } } },
-                { "unenforcedTeamIds", n => { UnenforcedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -113,12 +127,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfPrimitiveValues<string>("enforcedTeamIds", EnforcedTeamIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("copiedDomains", CopiedDomains);
+            writer.WriteBoolValue("enabledOrganizationEmu", EnabledOrganizationEmu);
+            writer.WriteCollectionOfPrimitiveValues<string>("enabledTeamIds", EnabledTeamIds);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteBoolValue("previousEnabled", PreviousEnabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235Trigger>("trigger", Trigger);
-            writer.WriteCollectionOfPrimitiveValues<string>("unenforcedTeamIds", UnenforcedTeamIds);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("teamSlug", TeamSlug);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

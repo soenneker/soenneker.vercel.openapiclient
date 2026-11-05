@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether BYOK usage counts toward this budget.</summary>
         public bool? IncludeByokInQuota { get => _explicitNullValueIncludeByokInQuota; set { _explicitNullValueIncludeByokInQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeByokInQuota"); else _explicitNullProperties?.Remove("includeByokInQuota"); } }
         private bool? _explicitNullValueIncludeByokInQuota = default!;
-        /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains.</summary>
+        /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }

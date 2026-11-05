@@ -1947,6 +1947,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectGitCredentialGrantUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-token-minted")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialTokenMinted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-git-fork-protection-updated")]
         #pragma warning disable CS1591
         ProjectGitForkProtectionUpdated,

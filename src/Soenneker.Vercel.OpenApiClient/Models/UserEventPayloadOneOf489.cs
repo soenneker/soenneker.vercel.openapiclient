@@ -26,6 +26,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("repositoryName") is { } nullNodeRepositoryName && nullNodeRepositoryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryName = null;
             if (parseNode.GetChildNode("sharedWithTeamId") is null) { _explicitNullValueSharedWithTeamId = default!; _explicitNullProperties?.Remove("sharedWithTeamId"); }
             else if (parseNode.GetChildNode("sharedWithTeamId") is { } nullNodeSharedWithTeamId && nullNodeSharedWithTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedWithTeamId = null;
+            if (parseNode.GetChildNode("sharedWithTeamSlug") is null) { _explicitNullValueSharedWithTeamSlug = default!; _explicitNullProperties?.Remove("sharedWithTeamSlug"); }
+            else if (parseNode.GetChildNode("sharedWithTeamSlug") is { } nullNodeSharedWithTeamSlug && nullNodeSharedWithTeamSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedWithTeamSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -70,6 +72,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string SharedWithTeamId { get => _explicitNullValueSharedWithTeamId; set { _explicitNullValueSharedWithTeamId = value; AdditionalData?.Remove("sharedWithTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedWithTeamId"); else _explicitNullProperties?.Remove("sharedWithTeamId"); } }
         private string _explicitNullValueSharedWithTeamId = default!;
 #endif
+        /// <summary>The sharedWithTeamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SharedWithTeamSlug { get => _explicitNullValueSharedWithTeamSlug; set { _explicitNullValueSharedWithTeamSlug = value; AdditionalData?.Remove("sharedWithTeamSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedWithTeamSlug"); else _explicitNullProperties?.Remove("sharedWithTeamSlug"); } }
+        private string? _explicitNullValueSharedWithTeamSlug = default!;
+#nullable restore
+#else
+        public string SharedWithTeamSlug { get => _explicitNullValueSharedWithTeamSlug; set { _explicitNullValueSharedWithTeamSlug = value; AdditionalData?.Remove("sharedWithTeamSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedWithTeamSlug"); else _explicitNullProperties?.Remove("sharedWithTeamSlug"); } }
+        private string _explicitNullValueSharedWithTeamSlug = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf489"/> and sets the default values.
         /// </summary>
@@ -99,6 +111,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
                 { "sharedWithTeamId", n => { SharedWithTeamId = n.GetStringValue(); } },
+                { "sharedWithTeamSlug", n => { SharedWithTeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("repositoryName", RepositoryName);
             writer.WriteStringValue("sharedWithTeamId", SharedWithTeamId);
+            writer.WriteStringValue("sharedWithTeamSlug", SharedWithTeamSlug);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
