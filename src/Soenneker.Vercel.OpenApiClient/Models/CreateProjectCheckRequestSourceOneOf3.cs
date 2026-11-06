@@ -27,7 +27,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The externalCheckName property</summary>
+        /// <summary>The Git provider check name or context to match, for example a GitHub Actions job name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalCheckName { get => _explicitNullValueExternalCheckName; set { _explicitNullValueExternalCheckName = value; AdditionalData?.Remove("externalCheckName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalCheckName"); else _explicitNullProperties?.Remove("externalCheckName"); } }
@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ExternalCheckName { get => _explicitNullValueExternalCheckName; set { _explicitNullValueExternalCheckName = value; AdditionalData?.Remove("externalCheckName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalCheckName"); else _explicitNullProperties?.Remove("externalCheckName"); } }
         private string _explicitNullValueExternalCheckName = default!;
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>Imports Git provider check results, such as GitHub check runs or commit statuses, as Deployment Checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }

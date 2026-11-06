@@ -18,21 +18,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("privateModel") is null) { _explicitNullValuePrivateModel = default!; _explicitNullProperties?.Remove("privateModel"); }
-            else if (parseNode.GetChildNode("privateModel") is { } nullNodePrivateModel && nullNodePrivateModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateModel = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("purchaseIntentId") is null) { _explicitNullValuePurchaseIntentId = default!; _explicitNullProperties?.Remove("purchaseIntentId"); }
+            else if (parseNode.GetChildNode("purchaseIntentId") is { } nullNodePurchaseIntentId && nullNodePurchaseIntentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseIntentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The privateModel property</summary>
+        /// <summary>The amount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39PrivateModel? PrivateModel { get => _explicitNullValuePrivateModel; set { _explicitNullValuePrivateModel = value; AdditionalData?.Remove("privateModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateModel"); else _explicitNullProperties?.Remove("privateModel"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39PrivateModel? _explicitNullValuePrivateModel = default!;
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39PrivateModel PrivateModel { get => _explicitNullValuePrivateModel; set { _explicitNullValuePrivateModel = value; AdditionalData?.Remove("privateModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateModel"); else _explicitNullProperties?.Remove("privateModel"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39PrivateModel _explicitNullValuePrivateModel = default!;
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string _explicitNullValueAmount = default!;
+#endif
+        /// <summary>The purchaseIntentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PurchaseIntentId { get => _explicitNullValuePurchaseIntentId; set { _explicitNullValuePurchaseIntentId = value; AdditionalData?.Remove("purchaseIntentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseIntentId"); else _explicitNullProperties?.Remove("purchaseIntentId"); } }
+        private string? _explicitNullValuePurchaseIntentId = default!;
+#nullable restore
+#else
+        public string PurchaseIntentId { get => _explicitNullValuePurchaseIntentId; set { _explicitNullValuePurchaseIntentId = value; AdditionalData?.Remove("purchaseIntentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseIntentId"); else _explicitNullProperties?.Remove("purchaseIntentId"); } }
+        private string _explicitNullValuePurchaseIntentId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39"/> and sets the default values.
@@ -59,7 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "privateModel", n => { PrivateModel = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39PrivateModel>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39PrivateModel.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetStringValue(); } },
+                { "purchaseIntentId", n => { PurchaseIntentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39PrivateModel>("privateModel", PrivateModel);
+            writer.WriteStringValue("amount", Amount);
+            writer.WriteStringValue("purchaseIntentId", PurchaseIntentId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

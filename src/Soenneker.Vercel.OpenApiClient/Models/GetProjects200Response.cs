@@ -4108,6 +4108,7 @@ if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj
 { result &= (fields.ContainsKey("keys")); if (result == false) return false; }
 { result &= (fields.ContainsKey("limit")); if (result == false) return false; }
 { result &= (fields.ContainsKey("window")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("action") ? (bool?)true : (bool?)null); if (result == false) return false; }
 { result &= (!fields.ContainsKey("algo") ? (bool?)true : (bool?)null); if (result == false) return false; }
 { result &= (!fields.ContainsKey("keys") ? (bool?)true : (bool?)null); if (result == false) return false; }
 { result &= (!fields.ContainsKey("limit") ? (bool?)true : (bool?)null); if (result == false) return false; }
@@ -13741,6 +13742,7 @@ if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj
 { result &= (fields.ContainsKey("keys")); if (result == false) return false; }
 { result &= (fields.ContainsKey("limit")); if (result == false) return false; }
 { result &= (fields.ContainsKey("window")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("action") ? (bool?)true : (bool?)null); if (result == false) return false; }
 { result &= (!fields.ContainsKey("algo") ? (bool?)true : (bool?)null); if (result == false) return false; }
 { result &= (!fields.ContainsKey("keys") ? (bool?)true : (bool?)null); if (result == false) return false; }
 { result &= (!fields.ContainsKey("limit") ? (bool?)true : (bool?)null); if (result == false) return false; }

@@ -119,6 +119,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AgenticProvisioningTeamCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-agent-usage-billing")]
+        #pragma warning disable CS1591
+        AiAgentUsageBilling,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-alert-investigation")]
         #pragma warning disable CS1591
         AiAlertInvestigation,
@@ -2278,6 +2282,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "scale-auto")]
         #pragma warning disable CS1591
         ScaleAuto,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "schedule-created")]
+        #pragma warning disable CS1591
+        ScheduleCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "schedule-deleted")]
+        #pragma warning disable CS1591
+        ScheduleDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "schedule-disabled")]
+        #pragma warning disable CS1591
+        ScheduleDisabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "schedule-enabled")]
+        #pragma warning disable CS1591
+        ScheduleEnabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "schedule-invoked")]
+        #pragma warning disable CS1591
+        ScheduleInvoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "schedule-updated")]
+        #pragma warning disable CS1591
+        ScheduleUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "secondary-email-added")]
         #pragma warning disable CS1591

@@ -18,51 +18,114 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
-            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
-            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
-            else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
-            if (parseNode.GetChildNode("trialCreditsIssuedAt") is null) { _explicitNullValueTrialCreditsIssuedAt = default!; _explicitNullProperties?.Remove("trialCreditsIssuedAt"); }
-            else if (parseNode.GetChildNode("trialCreditsIssuedAt") is { } nullNodeTrialCreditsIssuedAt && nullNodeTrialCreditsIssuedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrialCreditsIssuedAt = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("codeReviewEnabled") is null) { _explicitNullValueCodeReviewEnabled = default!; _explicitNullProperties?.Remove("codeReviewEnabled"); }
+            else if (parseNode.GetChildNode("codeReviewEnabled") is { } nullNodeCodeReviewEnabled && nullNodeCodeReviewEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeReviewEnabled = null;
+            if (parseNode.GetChildNode("codeReviewSelection") is null) { _explicitNullValueCodeReviewSelection = default!; _explicitNullProperties?.Remove("codeReviewSelection"); }
+            else if (parseNode.GetChildNode("codeReviewSelection") is { } nullNodeCodeReviewSelection && nullNodeCodeReviewSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeReviewSelection = null;
+            if (parseNode.GetChildNode("cumulativeBalance") is null) { _explicitNullValueCumulativeBalance = default!; _explicitNullProperties?.Remove("cumulativeBalance"); }
+            else if (parseNode.GetChildNode("cumulativeBalance") is { } nullNodeCumulativeBalance && nullNodeCumulativeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CumulativeBalance = null;
+            if (parseNode.GetChildNode("endpoint") is null) { _explicitNullValueEndpoint = default!; _explicitNullProperties?.Remove("endpoint"); }
+            else if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("ledgerId") is null) { _explicitNullValueLedgerId = default!; _explicitNullProperties?.Remove("ledgerId"); }
+            else if (parseNode.GetChildNode("ledgerId") is { } nullNodeLedgerId && nullNodeLedgerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LedgerId = null;
+            if (parseNode.GetChildNode("next") is null) { _explicitNullValueNext = default!; _explicitNullProperties?.Remove("next"); }
+            else if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("previous") is null) { _explicitNullValuePrevious = default!; _explicitNullProperties?.Remove("previous"); }
+            else if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
+            if (parseNode.GetChildNode("removedTopupIds") is null) { _explicitNullValueRemovedTopupIds = default!; _explicitNullProperties?.Remove("removedTopupIds"); }
+            else if (parseNode.GetChildNode("removedTopupIds") is { } nullNodeRemovedTopupIds && nullNodeRemovedTopupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedTopupIds = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("topupCleanupCompleted") is null) { _explicitNullValueTopupCleanupCompleted = default!; _explicitNullProperties?.Remove("topupCleanupCompleted"); }
+            else if (parseNode.GetChildNode("topupCleanupCompleted") is { } nullNodeTopupCleanupCompleted && nullNodeTopupCleanupCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopupCleanupCompleted = null;
         }
 
+        /// <summary>The action property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Action? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Action? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The codeReviewEnabled property</summary>
+        public bool? CodeReviewEnabled { get => _explicitNullValueCodeReviewEnabled; set { _explicitNullValueCodeReviewEnabled = value; AdditionalData?.Remove("codeReviewEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewEnabled"); else _explicitNullProperties?.Remove("codeReviewEnabled"); } }
+        private bool? _explicitNullValueCodeReviewEnabled = default!;
+        /// <summary>The codeReviewSelection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
-        private string? _explicitNullValueAmount = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407CodeReviewSelection? CodeReviewSelection { get => _explicitNullValueCodeReviewSelection; set { _explicitNullValueCodeReviewSelection = value; AdditionalData?.Remove("codeReviewSelection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewSelection"); else _explicitNullProperties?.Remove("codeReviewSelection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407CodeReviewSelection? _explicitNullValueCodeReviewSelection = default!;
 #nullable restore
 #else
-        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
-        private string _explicitNullValueAmount = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407CodeReviewSelection CodeReviewSelection { get => _explicitNullValueCodeReviewSelection; set { _explicitNullValueCodeReviewSelection = value; AdditionalData?.Remove("codeReviewSelection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewSelection"); else _explicitNullProperties?.Remove("codeReviewSelection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407CodeReviewSelection _explicitNullValueCodeReviewSelection = default!;
 #endif
-        /// <summary>The currency property</summary>
+        /// <summary>The cumulativeBalance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
-        private string? _explicitNullValueCurrency = default!;
+        public string? CumulativeBalance { get => _explicitNullValueCumulativeBalance; set { _explicitNullValueCumulativeBalance = value; AdditionalData?.Remove("cumulativeBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cumulativeBalance"); else _explicitNullProperties?.Remove("cumulativeBalance"); } }
+        private string? _explicitNullValueCumulativeBalance = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
-        private string _explicitNullValueCurrency = default!;
+        public string CumulativeBalance { get => _explicitNullValueCumulativeBalance; set { _explicitNullValueCumulativeBalance = value; AdditionalData?.Remove("cumulativeBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cumulativeBalance"); else _explicitNullProperties?.Remove("cumulativeBalance"); } }
+        private string _explicitNullValueCumulativeBalance = default!;
 #endif
-        /// <summary>The expiresAt property</summary>
+        /// <summary>The endpoint property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.V1VadeUsageBillingEndpoint? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.V1VadeUsageBillingEndpoint? _explicitNullValueEndpoint = default!;
+        /// <summary>The ledgerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
-        private string? _explicitNullValueExpiresAt = default!;
+        public string? LedgerId { get => _explicitNullValueLedgerId; set { _explicitNullValueLedgerId = value; AdditionalData?.Remove("ledgerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ledgerId"); else _explicitNullProperties?.Remove("ledgerId"); } }
+        private string? _explicitNullValueLedgerId = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
-        private string _explicitNullValueExpiresAt = default!;
+        public string LedgerId { get => _explicitNullValueLedgerId; set { _explicitNullValueLedgerId = value; AdditionalData?.Remove("ledgerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ledgerId"); else _explicitNullProperties?.Remove("ledgerId"); } }
+        private string _explicitNullValueLedgerId = default!;
 #endif
-        /// <summary>The trialCreditsIssuedAt property</summary>
-        public double? TrialCreditsIssuedAt { get => _explicitNullValueTrialCreditsIssuedAt; set { _explicitNullValueTrialCreditsIssuedAt = value; AdditionalData?.Remove("trialCreditsIssuedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trialCreditsIssuedAt"); else _explicitNullProperties?.Remove("trialCreditsIssuedAt"); } }
-        private double? _explicitNullValueTrialCreditsIssuedAt = default!;
+        /// <summary>The next property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Next? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Next? _explicitNullValueNext = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Next Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Next _explicitNullValueNext = default!;
+#endif
+        /// <summary>The previous property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Previous? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Previous? _explicitNullValuePrevious = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Previous Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Previous _explicitNullValuePrevious = default!;
+#endif
+        /// <summary>The removedTopupIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RemovedTopupIds { get => _explicitNullValueRemovedTopupIds; set { _explicitNullValueRemovedTopupIds = value; AdditionalData?.Remove("removedTopupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedTopupIds"); else _explicitNullProperties?.Remove("removedTopupIds"); } }
+        private List<string>? _explicitNullValueRemovedTopupIds = default!;
+#nullable restore
+#else
+        public List<string> RemovedTopupIds { get => _explicitNullValueRemovedTopupIds; set { _explicitNullValueRemovedTopupIds = value; AdditionalData?.Remove("removedTopupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedTopupIds"); else _explicitNullProperties?.Remove("removedTopupIds"); } }
+        private List<string> _explicitNullValueRemovedTopupIds = default!;
+#endif
+        /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
+#nullable restore
+#else
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
+#endif
+        /// <summary>The topupCleanupCompleted property</summary>
+        public bool? TopupCleanupCompleted { get => _explicitNullValueTopupCleanupCompleted; set { _explicitNullValueTopupCleanupCompleted = value; AdditionalData?.Remove("topupCleanupCompleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topupCleanupCompleted"); else _explicitNullProperties?.Remove("topupCleanupCompleted"); } }
+        private bool? _explicitNullValueTopupCleanupCompleted = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407"/> and sets the default values.
         /// </summary>
@@ -88,10 +151,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetStringValue(); } },
-                { "currency", n => { Currency = n.GetStringValue(); } },
-                { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
-                { "trialCreditsIssuedAt", n => { TrialCreditsIssuedAt = n.GetDoubleValue(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Action>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
+                { "codeReviewEnabled", n => { CodeReviewEnabled = n.GetBoolValue(); } },
+                { "codeReviewSelection", n => { CodeReviewSelection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407CodeReviewSelection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407CodeReviewSelection.CreateFromDiscriminatorValue); } },
+                { "cumulativeBalance", n => { CumulativeBalance = n.GetStringValue(); } },
+                { "endpoint", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V1VadeUsageBillingEndpoint>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEndpoint = default; _explicitNullProperties?.Remove("endpoint"); AdditionalData["endpoint"] = unknown; } else { Endpoint = parsed; AdditionalData.Remove("endpoint"); } } },
+                { "ledgerId", n => { LedgerId = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Previous.CreateFromDiscriminatorValue); } },
+                { "removedTopupIds", n => { RemovedTopupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "topupCleanupCompleted", n => { TopupCleanupCompleted = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -101,10 +171,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("amount", Amount);
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteStringValue("expiresAt", ExpiresAt);
-            writer.WriteDoubleValue("trialCreditsIssuedAt", TrialCreditsIssuedAt);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Action>("action", Action);
+            writer.WriteBoolValue("codeReviewEnabled", CodeReviewEnabled);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407CodeReviewSelection>("codeReviewSelection", CodeReviewSelection);
+            writer.WriteStringValue("cumulativeBalance", CumulativeBalance);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V1VadeUsageBillingEndpoint>("endpoint", Endpoint);
+            writer.WriteStringValue("ledgerId", LedgerId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf407Previous>("previous", Previous);
+            writer.WriteCollectionOfPrimitiveValues<string>("removedTopupIds", RemovedTopupIds);
+            writer.WriteStringValue("source", Source);
+            writer.WriteBoolValue("topupCleanupCompleted", TopupCleanupCompleted);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

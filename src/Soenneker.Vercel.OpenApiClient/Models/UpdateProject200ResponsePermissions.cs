@@ -198,6 +198,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("domainTransferIn") is { } nullNodeDomainTransferIn && nullNodeDomainTransferIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainTransferIn = null;
             if (parseNode.GetChildNode("drain") is null) { _explicitNullValueDrain = default!; _explicitNullProperties?.Remove("drain"); }
             else if (parseNode.GetChildNode("drain") is { } nullNodeDrain && nullNodeDrain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Drain = null;
+            if (parseNode.GetChildNode("drive") is null) { _explicitNullValueDrive = default!; _explicitNullProperties?.Remove("drive"); }
+            else if (parseNode.GetChildNode("drive") is { } nullNodeDrive && nullNodeDrive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Drive = null;
             if (parseNode.GetChildNode("edgeCacheNamespace") is null) { _explicitNullValueEdgeCacheNamespace = default!; _explicitNullProperties?.Remove("edgeCacheNamespace"); }
             else if (parseNode.GetChildNode("edgeCacheNamespace") is { } nullNodeEdgeCacheNamespace && nullNodeEdgeCacheNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeCacheNamespace = null;
             if (parseNode.GetChildNode("edgeConfig") is null) { _explicitNullValueEdgeConfig = default!; _explicitNullProperties?.Remove("edgeConfig"); }
@@ -1517,6 +1519,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Drain { get => _explicitNullValueDrain; set { _explicitNullValueDrain = value; AdditionalData?.Remove("drain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drain"); else _explicitNullProperties?.Remove("drain"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDrain = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Drive { get => _explicitNullValueDrive; set { _explicitNullValueDrive = value; AdditionalData?.Remove("drive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drive"); else _explicitNullProperties?.Remove("drive"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDrive = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Drive { get => _explicitNullValueDrive; set { _explicitNullValueDrive = value; AdditionalData?.Remove("drive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("drive"); else _explicitNullProperties?.Remove("drive"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDrive = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -3713,6 +3725,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "domainRecord", n => { DomainRecord = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "domainTransferIn", n => { DomainTransferIn = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "drain", n => { Drain = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "drive", n => { Drive = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "edgeCacheNamespace", n => { EdgeCacheNamespace = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "edgeConfig", n => { EdgeConfig = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "edgeConfigItem", n => { EdgeConfigItem = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -4020,6 +4033,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("domainRecord", DomainRecord);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("domainTransferIn", DomainTransferIn);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("drain", Drain);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("drive", Drive);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("edgeCacheNamespace", EdgeCacheNamespace);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("edgeConfig", EdgeConfig);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("edgeConfigItem", EdgeConfigItem);

@@ -20,8 +20,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("changedFields") is null) { _explicitNullValueChangedFields = default!; _explicitNullProperties?.Remove("changedFields"); }
             else if (parseNode.GetChildNode("changedFields") is { } nullNodeChangedFields && nullNodeChangedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedFields = null;
-            if (parseNode.GetChildNode("virtualModelConfig") is null) { _explicitNullValueVirtualModelConfig = default!; _explicitNullProperties?.Remove("virtualModelConfig"); }
-            else if (parseNode.GetChildNode("virtualModelConfig") is { } nullNodeVirtualModelConfig && nullNodeVirtualModelConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualModelConfig = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("previousRewriteModel") is null) { _explicitNullValuePreviousRewriteModel = default!; _explicitNullProperties?.Remove("previousRewriteModel"); }
+            else if (parseNode.GetChildNode("previousRewriteModel") is { } nullNodePreviousRewriteModel && nullNodePreviousRewriteModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRewriteModel = null;
+            if (parseNode.GetChildNode("rule") is null) { _explicitNullValueRule = default!; _explicitNullProperties?.Remove("rule"); }
+            else if (parseNode.GetChildNode("rule") is { } nullNodeRule && nullNodeRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,15 +40,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48ChangedFieldsItem?> ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; AdditionalData?.Remove("changedFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48ChangedFieldsItem?> _explicitNullValueChangedFields = default!;
 #endif
-        /// <summary>The virtualModelConfig property</summary>
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
+        /// <summary>The previousRewriteModel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48VirtualModelConfig? VirtualModelConfig { get => _explicitNullValueVirtualModelConfig; set { _explicitNullValueVirtualModelConfig = value; AdditionalData?.Remove("virtualModelConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtualModelConfig"); else _explicitNullProperties?.Remove("virtualModelConfig"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48VirtualModelConfig? _explicitNullValueVirtualModelConfig = default!;
+        public string? PreviousRewriteModel { get => _explicitNullValuePreviousRewriteModel; set { _explicitNullValuePreviousRewriteModel = value; AdditionalData?.Remove("previousRewriteModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousRewriteModel"); else _explicitNullProperties?.Remove("previousRewriteModel"); } }
+        private string? _explicitNullValuePreviousRewriteModel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48VirtualModelConfig VirtualModelConfig { get => _explicitNullValueVirtualModelConfig; set { _explicitNullValueVirtualModelConfig = value; AdditionalData?.Remove("virtualModelConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtualModelConfig"); else _explicitNullProperties?.Remove("virtualModelConfig"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48VirtualModelConfig _explicitNullValueVirtualModelConfig = default!;
+        public string PreviousRewriteModel { get => _explicitNullValuePreviousRewriteModel; set { _explicitNullValuePreviousRewriteModel = value; AdditionalData?.Remove("previousRewriteModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousRewriteModel"); else _explicitNullProperties?.Remove("previousRewriteModel"); } }
+        private string _explicitNullValuePreviousRewriteModel = default!;
+#endif
+        /// <summary>The rule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48Rule? Rule { get => _explicitNullValueRule; set { _explicitNullValueRule = value; AdditionalData?.Remove("rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule"); else _explicitNullProperties?.Remove("rule"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48Rule? _explicitNullValueRule = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48Rule Rule { get => _explicitNullValueRule; set { _explicitNullValueRule = value; AdditionalData?.Remove("rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule"); else _explicitNullProperties?.Remove("rule"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48Rule _explicitNullValueRule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48"/> and sets the default values.
@@ -72,7 +89,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "changedFields", n => { ChangedFields = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48ChangedFieldsItem>()?.AsList(); } },
-                { "virtualModelConfig", n => { VirtualModelConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48VirtualModelConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48VirtualModelConfig.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "previousRewriteModel", n => { PreviousRewriteModel = n.GetStringValue(); } },
+                { "rule", n => { Rule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48Rule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48Rule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,7 +102,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48ChangedFieldsItem>("changedFields", ChangedFields);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48VirtualModelConfig>("virtualModelConfig", VirtualModelConfig);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("previousRewriteModel", PreviousRewriteModel);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48Rule>("rule", Rule);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -24,6 +24,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("cause") is { } nullNodeCause && nullNodeCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cause = null;
             if (parseNode.GetChildNode("ownerId") is null) { _explicitNullValueOwnerId = default!; _explicitNullProperties?.Remove("ownerId"); }
             else if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
+            if (parseNode.GetChildNode("siftRoute") is null) { _explicitNullValueSiftRoute = default!; _explicitNullProperties?.Remove("siftRoute"); }
+            else if (parseNode.GetChildNode("siftRoute") is { } nullNodeSiftRoute && nullNodeSiftRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiftRoute = null;
             if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
             else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
         }
@@ -59,6 +61,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string _explicitNullValueOwnerId = default!;
+#endif
+        /// <summary>The siftRoute property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248SiftRoute? SiftRoute { get => _explicitNullValueSiftRoute; set { _explicitNullValueSiftRoute = value; AdditionalData?.Remove("siftRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("siftRoute"); else _explicitNullProperties?.Remove("siftRoute"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248SiftRoute? _explicitNullValueSiftRoute = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248SiftRoute SiftRoute { get => _explicitNullValueSiftRoute; set { _explicitNullValueSiftRoute = value; AdditionalData?.Remove("siftRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("siftRoute"); else _explicitNullProperties?.Remove("siftRoute"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248SiftRoute _explicitNullValueSiftRoute = default!;
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,6 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "blockReason", n => { BlockReason = n.GetStringValue(); } },
                 { "cause", n => { Cause = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "siftRoute", n => { SiftRoute = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248SiftRoute>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248SiftRoute.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
         }
@@ -111,6 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("blockReason", BlockReason);
             writer.WriteStringValue("cause", Cause);
             writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248SiftRoute>("siftRoute", SiftRoute);
             writer.WriteStringValue("source", Source);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

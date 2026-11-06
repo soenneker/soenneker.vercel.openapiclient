@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The blocks property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequestBlocks? Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequestBlocks? _explicitNullValueBlocks = default!;
-        /// <summary>The isRerequestable property</summary>
+        /// <summary>Whether check runs can be manually re-requested. Git provider checks cannot be re-requested.</summary>
         public bool? IsRerequestable { get => _explicitNullValueIsRerequestable; set { _explicitNullValueIsRerequestable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRerequestable"); else _explicitNullProperties?.Remove("isRerequestable"); } }
         private bool? _explicitNullValueIsRerequestable = default!;
         /// <summary>The name property</summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The requires property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequestRequires? Requires { get => _explicitNullValueRequires; set { _explicitNullValueRequires = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires"); else _explicitNullProperties?.Remove("requires"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequestRequires? _explicitNullValueRequires = default!;
-        /// <summary>The targets property</summary>
+        /// <summary>Deployment targets where this check applies. Valid values are &quot;production&quot;, &quot;preview&quot;, &quot;all&quot;, or a Custom Environment ID such as &quot;env_...&quot;. &quot;all&quot; cannot be combined with other targets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Targets { get => _explicitNullValueTargets; set { _explicitNullValueTargets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targets"); else _explicitNullProperties?.Remove("targets"); } }
