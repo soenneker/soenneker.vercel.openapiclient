@@ -18,68 +18,58 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("analyticsId") is null) { _explicitNullValueAnalyticsId = default!; _explicitNullProperties?.Remove("analyticsId"); }
-            else if (parseNode.GetChildNode("analyticsId") is { } nullNodeAnalyticsId && nullNodeAnalyticsId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsId = null;
-            if (parseNode.GetChildNode("previous") is null) { _explicitNullValuePrevious = default!; _explicitNullProperties?.Remove("previous"); }
-            else if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
-            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
-            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("sampleRatePercent") is null) { _explicitNullValueSampleRatePercent = default!; _explicitNullProperties?.Remove("sampleRatePercent"); }
-            else if (parseNode.GetChildNode("sampleRatePercent") is { } nullNodeSampleRatePercent && nullNodeSampleRatePercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleRatePercent = null;
-            if (parseNode.GetChildNode("spendLimitInDollars") is null) { _explicitNullValueSpendLimitInDollars = default!; _explicitNullProperties?.Remove("spendLimitInDollars"); }
-            else if (parseNode.GetChildNode("spendLimitInDollars") is { } nullNodeSpendLimitInDollars && nullNodeSpendLimitInDollars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendLimitInDollars = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("githubLogin") is null) { _explicitNullValueGithubLogin = default!; _explicitNullProperties?.Remove("githubLogin"); }
+            else if (parseNode.GetChildNode("githubLogin") is { } nullNodeGithubLogin && nullNodeGithubLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GithubLogin = null;
+            if (parseNode.GetChildNode("zeitAccount") is null) { _explicitNullValueZeitAccount = default!; _explicitNullProperties?.Remove("zeitAccount"); }
+            else if (parseNode.GetChildNode("zeitAccount") is { } nullNodeZeitAccount && nullNodeZeitAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeitAccount = null;
+            if (parseNode.GetChildNode("zeitAccountType") is null) { _explicitNullValueZeitAccountType = default!; _explicitNullProperties?.Remove("zeitAccountType"); }
+            else if (parseNode.GetChildNode("zeitAccountType") is { } nullNodeZeitAccountType && nullNodeZeitAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeitAccountType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The analyticsId property</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalyticsId { get => _explicitNullValueAnalyticsId; set { _explicitNullValueAnalyticsId = value; AdditionalData?.Remove("analyticsId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsId"); else _explicitNullProperties?.Remove("analyticsId"); } }
-        private string? _explicitNullValueAnalyticsId = default!;
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string AnalyticsId { get => _explicitNullValueAnalyticsId; set { _explicitNullValueAnalyticsId = value; AdditionalData?.Remove("analyticsId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsId"); else _explicitNullProperties?.Remove("analyticsId"); } }
-        private string _explicitNullValueAnalyticsId = default!;
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>The githubLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392Previous? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392Previous? _explicitNullValuePrevious = default!;
+        public string? GithubLogin { get => _explicitNullValueGithubLogin; set { _explicitNullValueGithubLogin = value; AdditionalData?.Remove("githubLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubLogin"); else _explicitNullProperties?.Remove("githubLogin"); } }
+        private string? _explicitNullValueGithubLogin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392Previous Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392Previous _explicitNullValuePrevious = default!;
+        public string GithubLogin { get => _explicitNullValueGithubLogin; set { _explicitNullValueGithubLogin = value; AdditionalData?.Remove("githubLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("githubLogin"); else _explicitNullProperties?.Remove("githubLogin"); } }
+        private string _explicitNullValueGithubLogin = default!;
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>The zeitAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string? _explicitNullValueProjectId = default!;
+        public string? ZeitAccount { get => _explicitNullValueZeitAccount; set { _explicitNullValueZeitAccount = value; AdditionalData?.Remove("zeitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccount"); else _explicitNullProperties?.Remove("zeitAccount"); } }
+        private string? _explicitNullValueZeitAccount = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string _explicitNullValueProjectId = default!;
+        public string ZeitAccount { get => _explicitNullValueZeitAccount; set { _explicitNullValueZeitAccount = value; AdditionalData?.Remove("zeitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccount"); else _explicitNullProperties?.Remove("zeitAccount"); } }
+        private string _explicitNullValueZeitAccount = default!;
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The zeitAccountType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
+        public string? ZeitAccountType { get => _explicitNullValueZeitAccountType; set { _explicitNullValueZeitAccountType = value; AdditionalData?.Remove("zeitAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccountType"); else _explicitNullProperties?.Remove("zeitAccountType"); } }
+        private string? _explicitNullValueZeitAccountType = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
+        public string ZeitAccountType { get => _explicitNullValueZeitAccountType; set { _explicitNullValueZeitAccountType = value; AdditionalData?.Remove("zeitAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccountType"); else _explicitNullProperties?.Remove("zeitAccountType"); } }
+        private string _explicitNullValueZeitAccountType = default!;
 #endif
-        /// <summary>The sampleRatePercent property</summary>
-        public double? SampleRatePercent { get => _explicitNullValueSampleRatePercent; set { _explicitNullValueSampleRatePercent = value; AdditionalData?.Remove("sampleRatePercent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRatePercent"); else _explicitNullProperties?.Remove("sampleRatePercent"); } }
-        private double? _explicitNullValueSampleRatePercent = default!;
-        /// <summary>The spendLimitInDollars property</summary>
-        public double? SpendLimitInDollars { get => _explicitNullValueSpendLimitInDollars; set { _explicitNullValueSpendLimitInDollars = value; AdditionalData?.Remove("spendLimitInDollars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spendLimitInDollars"); else _explicitNullProperties?.Remove("spendLimitInDollars"); } }
-        private double? _explicitNullValueSpendLimitInDollars = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392"/> and sets the default values.
         /// </summary>
@@ -105,12 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analyticsId", n => { AnalyticsId = n.GetStringValue(); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392Previous.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "sampleRatePercent", n => { SampleRatePercent = n.GetDoubleValue(); } },
-                { "spendLimitInDollars", n => { SpendLimitInDollars = n.GetDoubleValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "githubLogin", n => { GithubLogin = n.GetStringValue(); } },
+                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
+                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -120,12 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("analyticsId", AnalyticsId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392Previous>("previous", Previous);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteDoubleValue("sampleRatePercent", SampleRatePercent);
-            writer.WriteDoubleValue("spendLimitInDollars", SpendLimitInDollars);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("githubLogin", GithubLogin);
+            writer.WriteStringValue("zeitAccount", ZeitAccount);
+            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -20,8 +20,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
             else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("zone") is null) { _explicitNullValueZone = default!; _explicitNullProperties?.Remove("zone"); }
-            else if (parseNode.GetChildNode("zone") is { } nullNodeZone && nullNodeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zone = null;
+            if (parseNode.GetChildNode("echMode") is null) { _explicitNullValueEchMode = default!; _explicitNullProperties?.Remove("echMode"); }
+            else if (parseNode.GetChildNode("echMode") is { } nullNodeEchMode && nullNodeEchMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EchMode = null;
+            if (parseNode.GetChildNode("previousEchMode") is null) { _explicitNullValuePreviousEchMode = default!; _explicitNullProperties?.Remove("previousEchMode"); }
+            else if (parseNode.GetChildNode("previousEchMode") is { } nullNodePreviousEchMode && nullNodePreviousEchMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousEchMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,9 +38,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
-        /// <summary>The zone property</summary>
-        public bool? Zone { get => _explicitNullValueZone; set { _explicitNullValueZone = value; AdditionalData?.Remove("zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zone"); else _explicitNullProperties?.Remove("zone"); } }
-        private bool? _explicitNullValueZone = default!;
+        /// <summary>The echMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150EchMode? EchMode { get => _explicitNullValueEchMode; set { _explicitNullValueEchMode = value; AdditionalData?.Remove("echMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("echMode"); else _explicitNullProperties?.Remove("echMode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150EchMode? _explicitNullValueEchMode = default!;
+        /// <summary>The previousEchMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150PreviousEchMode? PreviousEchMode { get => _explicitNullValuePreviousEchMode; set { _explicitNullValuePreviousEchMode = value; AdditionalData?.Remove("previousEchMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEchMode"); else _explicitNullProperties?.Remove("previousEchMode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150PreviousEchMode? _explicitNullValuePreviousEchMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150"/> and sets the default values.
         /// </summary>
@@ -65,7 +70,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "zone", n => { Zone = n.GetBoolValue(); } },
+                { "echMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150EchMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEchMode = default; _explicitNullProperties?.Remove("echMode"); AdditionalData["echMode"] = unknown; } else { EchMode = parsed; AdditionalData.Remove("echMode"); } } },
+                { "previousEchMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150PreviousEchMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousEchMode = default; _explicitNullProperties?.Remove("previousEchMode"); AdditionalData["previousEchMode"] = unknown; } else { PreviousEchMode = parsed; AdditionalData.Remove("previousEchMode"); } } },
             };
         }
         /// <summary>
@@ -76,7 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
-            writer.WriteBoolValue("zone", Zone);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150EchMode>("echMode", EchMode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150PreviousEchMode>("previousEchMode", PreviousEchMode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

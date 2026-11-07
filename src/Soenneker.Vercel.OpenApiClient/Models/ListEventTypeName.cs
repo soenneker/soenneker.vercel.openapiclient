@@ -195,6 +195,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayGuardrailsUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-headquarters-updated")]
+        #pragma warning disable CS1591
+        AiGatewayHeadquartersUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-hipaa-compliance-toggled")]
         #pragma warning disable CS1591
         AiGatewayHipaaComplianceToggled,
@@ -1174,6 +1178,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "instant-rollback-created")]
         #pragma warning disable CS1591
         InstantRollbackCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "integration-access-token-settings-updated")]
+        #pragma warning disable CS1591
+        IntegrationAccessTokenSettingsUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "integration-configuration-credential-revoked")]
         #pragma warning disable CS1591

@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Mirrors the `security-review` setting value in `@api/api-settings`.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class UserEventPayloadOneOf409Previous : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -20,10 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("projectIds") is null) { _explicitNullValueProjectIds = default!; _explicitNullProperties?.Remove("projectIds"); }
-            else if (parseNode.GetChildNode("projectIds") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
-            if (parseNode.GetChildNode("projectScope") is null) { _explicitNullValueProjectScope = default!; _explicitNullProperties?.Remove("projectScope"); }
-            else if (parseNode.GetChildNode("projectScope") is { } nullNodeProjectScope && nullNodeProjectScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectScope = null;
+            if (parseNode.GetChildNode("maximumOverdraft") is null) { _explicitNullValueMaximumOverdraft = default!; _explicitNullProperties?.Remove("maximumOverdraft"); }
+            else if (parseNode.GetChildNode("maximumOverdraft") is { } nullNodeMaximumOverdraft && nullNodeMaximumOverdraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumOverdraft = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,19 +28,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The enabled property</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The projectIds property</summary>
+        /// <summary>The maximumOverdraft property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private List<string>? _explicitNullValueProjectIds = default!;
+        public string? MaximumOverdraft { get => _explicitNullValueMaximumOverdraft; set { _explicitNullValueMaximumOverdraft = value; AdditionalData?.Remove("maximumOverdraft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumOverdraft"); else _explicitNullProperties?.Remove("maximumOverdraft"); } }
+        private string? _explicitNullValueMaximumOverdraft = default!;
 #nullable restore
 #else
-        public List<string> ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private List<string> _explicitNullValueProjectIds = default!;
+        public string MaximumOverdraft { get => _explicitNullValueMaximumOverdraft; set { _explicitNullValueMaximumOverdraft = value; AdditionalData?.Remove("maximumOverdraft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumOverdraft"); else _explicitNullProperties?.Remove("maximumOverdraft"); } }
+        private string _explicitNullValueMaximumOverdraft = default!;
 #endif
-        /// <summary>The projectScope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf409PreviousProjectScope? ProjectScope { get => _explicitNullValueProjectScope; set { _explicitNullValueProjectScope = value; AdditionalData?.Remove("projectScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectScope"); else _explicitNullProperties?.Remove("projectScope"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf409PreviousProjectScope? _explicitNullValueProjectScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf409Previous"/> and sets the default values.
         /// </summary>
@@ -70,8 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "projectScope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf409PreviousProjectScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProjectScope = default; _explicitNullProperties?.Remove("projectScope"); AdditionalData["projectScope"] = unknown; } else { ProjectScope = parsed; AdditionalData.Remove("projectScope"); } } },
+                { "maximumOverdraft", n => { MaximumOverdraft = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf409PreviousProjectScope>("projectScope", ProjectScope);
+            writer.WriteStringValue("maximumOverdraft", MaximumOverdraft);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

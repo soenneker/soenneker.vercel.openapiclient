@@ -167612,6 +167612,9 @@
           },
           "410": {
             "description": ""
+          },
+          "429": {
+            "description": ""
           }
         },
         "parameters": [
@@ -167920,6 +167923,9 @@
           },
           "410": {
             "description": ""
+          },
+          "429": {
+            "description": ""
           }
         },
         "parameters": [
@@ -168126,6 +168132,9 @@
             "description": "The project is currently being transferred"
           },
           "410": {
+            "description": ""
+          },
+          "429": {
             "description": ""
           }
         },
@@ -246203,6 +246212,21 @@
               },
               {
                 "properties": {
+                  "countries": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "countries"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "retention": {
                     "properties": {
                       "ceilingDays": {
@@ -255178,6 +255202,37 @@
                   "integrationName",
                   "integrationSlug",
                   "previousSecretExpiresAt"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "accessTokenRotation": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "integrationId": {
+                    "type": "string"
+                  },
+                  "integrationName": {
+                    "type": "string"
+                  },
+                  "integrationSlug": {
+                    "type": "string"
+                  },
+                  "permanentTokensExpireAt": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "accessTokenRotation",
+                  "integrationId",
+                  "integrationName",
+                  "integrationSlug"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -268742,6 +268797,7 @@
               "ai-gateway-byok-model-mappings-updated",
               "ai-gateway-credits-purchased",
               "ai-gateway-guardrails-updated",
+              "ai-gateway-headquarters-updated",
               "ai-gateway-hipaa-compliance-toggled",
               "ai-gateway-inference-regions-updated",
               "ai-gateway-model-allowlist-models-updated",
@@ -268987,6 +269043,7 @@
               "global-config-transfer-out",
               "global-config-updated",
               "instant-rollback-created",
+              "integration-access-token-settings-updated",
               "integration-configuration-credential-revoked",
               "integration-configuration-credential-rotated",
               "integration-configuration-owner-changed",
@@ -269758,6 +269815,7 @@
               "ai-gateway-byok-model-mappings-updated",
               "ai-gateway-credits-purchased",
               "ai-gateway-guardrails-updated",
+              "ai-gateway-headquarters-updated",
               "ai-gateway-hipaa-compliance-toggled",
               "ai-gateway-inference-regions-updated",
               "ai-gateway-model-allowlist-models-updated",
@@ -270003,6 +270061,7 @@
               "global-config-transfer-out",
               "global-config-updated",
               "instant-rollback-created",
+              "integration-access-token-settings-updated",
               "integration-configuration-credential-revoked",
               "integration-configuration-credential-rotated",
               "integration-configuration-owner-changed",
@@ -270532,6 +270591,7 @@
                 "ai-gateway-byok-model-mappings-updated",
                 "ai-gateway-credits-purchased",
                 "ai-gateway-guardrails-updated",
+                "ai-gateway-headquarters-updated",
                 "ai-gateway-hipaa-compliance-toggled",
                 "ai-gateway-inference-regions-updated",
                 "ai-gateway-model-allowlist-models-updated",
@@ -270777,6 +270837,7 @@
                 "global-config-transfer-out",
                 "global-config-updated",
                 "instant-rollback-created",
+                "integration-access-token-settings-updated",
                 "integration-configuration-credential-revoked",
                 "integration-configuration-credential-rotated",
                 "integration-configuration-owner-changed",

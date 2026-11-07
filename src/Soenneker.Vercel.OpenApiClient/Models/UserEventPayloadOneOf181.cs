@@ -18,45 +18,81 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("newEnvVar") is null) { _explicitNullValueNewEnvVar = default!; _explicitNullProperties?.Remove("newEnvVar"); }
-            else if (parseNode.GetChildNode("newEnvVar") is { } nullNodeNewEnvVar && nullNodeNewEnvVar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewEnvVar = null;
-            if (parseNode.GetChildNode("oldEnvVar") is null) { _explicitNullValueOldEnvVar = default!; _explicitNullProperties?.Remove("oldEnvVar"); }
-            else if (parseNode.GetChildNode("oldEnvVar") is { } nullNodeOldEnvVar && nullNodeOldEnvVar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldEnvVar = null;
-            if (parseNode.GetChildNode("updateDiff") is null) { _explicitNullValueUpdateDiff = default!; _explicitNullProperties?.Remove("updateDiff"); }
-            else if (parseNode.GetChildNode("updateDiff") is { } nullNodeUpdateDiff && nullNodeUpdateDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateDiff = null;
+            if (parseNode.GetChildNode("envId") is null) { _explicitNullValueEnvId = default!; _explicitNullProperties?.Remove("envId"); }
+            else if (parseNode.GetChildNode("envId") is { } nullNodeEnvId && nullNodeEnvId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvId = null;
+            if (parseNode.GetChildNode("envKey") is null) { _explicitNullValueEnvKey = default!; _explicitNullProperties?.Remove("envKey"); }
+            else if (parseNode.GetChildNode("envKey") is { } nullNodeEnvKey && nullNodeEnvKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvKey = null;
+            if (parseNode.GetChildNode("organizationId") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organizationId"); }
+            else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("repository") is null) { _explicitNullValueRepository = default!; _explicitNullProperties?.Remove("repository"); }
+            else if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newEnvVar property</summary>
+        /// <summary>The envId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181NewEnvVar? NewEnvVar { get => _explicitNullValueNewEnvVar; set { _explicitNullValueNewEnvVar = value; AdditionalData?.Remove("newEnvVar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newEnvVar"); else _explicitNullProperties?.Remove("newEnvVar"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181NewEnvVar? _explicitNullValueNewEnvVar = default!;
+        public string? EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; AdditionalData?.Remove("envId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        private string? _explicitNullValueEnvId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181NewEnvVar NewEnvVar { get => _explicitNullValueNewEnvVar; set { _explicitNullValueNewEnvVar = value; AdditionalData?.Remove("newEnvVar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newEnvVar"); else _explicitNullProperties?.Remove("newEnvVar"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181NewEnvVar _explicitNullValueNewEnvVar = default!;
+        public string EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; AdditionalData?.Remove("envId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        private string _explicitNullValueEnvId = default!;
 #endif
-        /// <summary>The oldEnvVar property</summary>
+        /// <summary>The envKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181OldEnvVar? OldEnvVar { get => _explicitNullValueOldEnvVar; set { _explicitNullValueOldEnvVar = value; AdditionalData?.Remove("oldEnvVar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldEnvVar"); else _explicitNullProperties?.Remove("oldEnvVar"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181OldEnvVar? _explicitNullValueOldEnvVar = default!;
+        public string? EnvKey { get => _explicitNullValueEnvKey; set { _explicitNullValueEnvKey = value; AdditionalData?.Remove("envKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envKey"); else _explicitNullProperties?.Remove("envKey"); } }
+        private string? _explicitNullValueEnvKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181OldEnvVar OldEnvVar { get => _explicitNullValueOldEnvVar; set { _explicitNullValueOldEnvVar = value; AdditionalData?.Remove("oldEnvVar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldEnvVar"); else _explicitNullProperties?.Remove("oldEnvVar"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181OldEnvVar _explicitNullValueOldEnvVar = default!;
+        public string EnvKey { get => _explicitNullValueEnvKey; set { _explicitNullValueEnvKey = value; AdditionalData?.Remove("envKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envKey"); else _explicitNullProperties?.Remove("envKey"); } }
+        private string _explicitNullValueEnvKey = default!;
 #endif
-        /// <summary>The updateDiff property</summary>
+        /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181UpdateDiff? UpdateDiff { get => _explicitNullValueUpdateDiff; set { _explicitNullValueUpdateDiff = value; AdditionalData?.Remove("updateDiff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDiff"); else _explicitNullProperties?.Remove("updateDiff"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181UpdateDiff? _explicitNullValueUpdateDiff = default!;
+        public string? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
+        private string? _explicitNullValueOrganizationId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181UpdateDiff UpdateDiff { get => _explicitNullValueUpdateDiff; set { _explicitNullValueUpdateDiff = value; AdditionalData?.Remove("updateDiff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDiff"); else _explicitNullProperties?.Remove("updateDiff"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181UpdateDiff _explicitNullValueUpdateDiff = default!;
+        public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
+        private string _explicitNullValueOrganizationId = default!;
+#endif
+        /// <summary>The provider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string? _explicitNullValueProvider = default!;
+#nullable restore
+#else
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string _explicitNullValueProvider = default!;
+#endif
+        /// <summary>The repository property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string? _explicitNullValueRepository = default!;
+#nullable restore
+#else
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string _explicitNullValueRepository = default!;
+#endif
+        /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181TargetItem?>? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181TargetItem?>? _explicitNullValueTarget = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181TargetItem?> Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181TargetItem?> _explicitNullValueTarget = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181"/> and sets the default values.
@@ -83,9 +119,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newEnvVar", n => { NewEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181NewEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181NewEnvVar.CreateFromDiscriminatorValue); } },
-                { "oldEnvVar", n => { OldEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181OldEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181OldEnvVar.CreateFromDiscriminatorValue); } },
-                { "updateDiff", n => { UpdateDiff = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181UpdateDiff>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181UpdateDiff.CreateFromDiscriminatorValue); } },
+                { "envId", n => { EnvId = n.GetStringValue(); } },
+                { "envKey", n => { EnvKey = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
+                { "repository", n => { Repository = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181TargetItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -95,9 +134,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181NewEnvVar>("newEnvVar", NewEnvVar);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181OldEnvVar>("oldEnvVar", OldEnvVar);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181UpdateDiff>("updateDiff", UpdateDiff);
+            writer.WriteStringValue("envId", EnvId);
+            writer.WriteStringValue("envKey", EnvKey);
+            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("provider", Provider);
+            writer.WriteStringValue("repository", Repository);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181TargetItem>("target", Target);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

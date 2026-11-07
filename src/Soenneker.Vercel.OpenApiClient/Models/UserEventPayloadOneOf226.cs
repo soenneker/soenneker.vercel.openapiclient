@@ -18,75 +18,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enablePolyrepoBranchRouting") is null) { _explicitNullValueEnablePolyrepoBranchRouting = default!; _explicitNullProperties?.Remove("enablePolyrepoBranchRouting"); }
-            else if (parseNode.GetChildNode("enablePolyrepoBranchRouting") is { } nullNodeEnablePolyrepoBranchRouting && nullNodeEnablePolyrepoBranchRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePolyrepoBranchRouting = null;
-            if (parseNode.GetChildNode("fallbackEnvironment") is null) { _explicitNullValueFallbackEnvironment = default!; _explicitNullProperties?.Remove("fallbackEnvironment"); }
-            else if (parseNode.GetChildNode("fallbackEnvironment") is { } nullNodeFallbackEnvironment && nullNodeFallbackEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackEnvironment = null;
-            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
-            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
-            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("prev") is null) { _explicitNullValuePrev = default!; _explicitNullProperties?.Remove("prev"); }
-            else if (parseNode.GetChildNode("prev") is { } nullNodePrev && nullNodePrev.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prev = null;
-            if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
-            else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("allowedIntegrationCount") is null) { _explicitNullValueAllowedIntegrationCount = default!; _explicitNullProperties?.Remove("allowedIntegrationCount"); }
+            else if (parseNode.GetChildNode("allowedIntegrationCount") is { } nullNodeAllowedIntegrationCount && nullNodeAllowedIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationCount = null;
+            if (parseNode.GetChildNode("allowedIntegrationIds") is null) { _explicitNullValueAllowedIntegrationIds = default!; _explicitNullProperties?.Remove("allowedIntegrationIds"); }
+            else if (parseNode.GetChildNode("allowedIntegrationIds") is { } nullNodeAllowedIntegrationIds && nullNodeAllowedIntegrationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationIds = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("resourceOnlyIntegrationCount") is null) { _explicitNullValueResourceOnlyIntegrationCount = default!; _explicitNullProperties?.Remove("resourceOnlyIntegrationCount"); }
+            else if (parseNode.GetChildNode("resourceOnlyIntegrationCount") is { } nullNodeResourceOnlyIntegrationCount && nullNodeResourceOnlyIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceOnlyIntegrationCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enablePolyrepoBranchRouting property</summary>
-        public bool? EnablePolyrepoBranchRouting { get => _explicitNullValueEnablePolyrepoBranchRouting; set { _explicitNullValueEnablePolyrepoBranchRouting = value; AdditionalData?.Remove("enablePolyrepoBranchRouting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePolyrepoBranchRouting"); else _explicitNullProperties?.Remove("enablePolyrepoBranchRouting"); } }
-        private bool? _explicitNullValueEnablePolyrepoBranchRouting = default!;
-        /// <summary>The fallbackEnvironment property</summary>
+        /// <summary>The allowedIntegrationCount property</summary>
+        public double? AllowedIntegrationCount { get => _explicitNullValueAllowedIntegrationCount; set { _explicitNullValueAllowedIntegrationCount = value; AdditionalData?.Remove("allowedIntegrationCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationCount"); else _explicitNullProperties?.Remove("allowedIntegrationCount"); } }
+        private double? _explicitNullValueAllowedIntegrationCount = default!;
+        /// <summary>The allowedIntegrationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackEnvironment { get => _explicitNullValueFallbackEnvironment; set { _explicitNullValueFallbackEnvironment = value; AdditionalData?.Remove("fallbackEnvironment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackEnvironment"); else _explicitNullProperties?.Remove("fallbackEnvironment"); } }
-        private string? _explicitNullValueFallbackEnvironment = default!;
+        public List<string>? AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; AdditionalData?.Remove("allowedIntegrationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
+        private List<string>? _explicitNullValueAllowedIntegrationIds = default!;
 #nullable restore
 #else
-        public string FallbackEnvironment { get => _explicitNullValueFallbackEnvironment; set { _explicitNullValueFallbackEnvironment = value; AdditionalData?.Remove("fallbackEnvironment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackEnvironment"); else _explicitNullProperties?.Remove("fallbackEnvironment"); } }
-        private string _explicitNullValueFallbackEnvironment = default!;
+        public List<string> AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; AdditionalData?.Remove("allowedIntegrationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
+        private List<string> _explicitNullValueAllowedIntegrationIds = default!;
 #endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
-        private string? _explicitNullValueId = default!;
-#nullable restore
-#else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
-        private string _explicitNullValueId = default!;
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
-        private string? _explicitNullValueName = default!;
-#nullable restore
-#else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
-        private string _explicitNullValueName = default!;
-#endif
-        /// <summary>The prev property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226Prev? Prev { get => _explicitNullValuePrev; set { _explicitNullValuePrev = value; AdditionalData?.Remove("prev"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev"); else _explicitNullProperties?.Remove("prev"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226Prev? _explicitNullValuePrev = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226Prev Prev { get => _explicitNullValuePrev; set { _explicitNullValuePrev = value; AdditionalData?.Remove("prev"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev"); else _explicitNullProperties?.Remove("prev"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226Prev _explicitNullValuePrev = default!;
-#endif
-        /// <summary>The slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
-        private string? _explicitNullValueSlug = default!;
-#nullable restore
-#else
-        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
-        private string _explicitNullValueSlug = default!;
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
+        /// <summary>The resourceOnlyIntegrationCount property</summary>
+        public double? ResourceOnlyIntegrationCount { get => _explicitNullValueResourceOnlyIntegrationCount; set { _explicitNullValueResourceOnlyIntegrationCount = value; AdditionalData?.Remove("resourceOnlyIntegrationCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceOnlyIntegrationCount"); else _explicitNullProperties?.Remove("resourceOnlyIntegrationCount"); } }
+        private double? _explicitNullValueResourceOnlyIntegrationCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226"/> and sets the default values.
         /// </summary>
@@ -112,12 +74,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enablePolyrepoBranchRouting", n => { EnablePolyrepoBranchRouting = n.GetBoolValue(); } },
-                { "fallbackEnvironment", n => { FallbackEnvironment = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226Prev.CreateFromDiscriminatorValue); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "allowedIntegrationCount", n => { AllowedIntegrationCount = n.GetDoubleValue(); } },
+                { "allowedIntegrationIds", n => { AllowedIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "resourceOnlyIntegrationCount", n => { ResourceOnlyIntegrationCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -127,12 +87,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enablePolyrepoBranchRouting", EnablePolyrepoBranchRouting);
-            writer.WriteStringValue("fallbackEnvironment", FallbackEnvironment);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226Prev>("prev", Prev);
-            writer.WriteStringValue("slug", Slug);
+            writer.WriteDoubleValue("allowedIntegrationCount", AllowedIntegrationCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedIntegrationIds", AllowedIntegrationIds);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteDoubleValue("resourceOnlyIntegrationCount", ResourceOnlyIntegrationCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

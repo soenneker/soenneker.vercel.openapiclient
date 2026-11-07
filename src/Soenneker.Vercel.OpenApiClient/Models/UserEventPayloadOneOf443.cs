@@ -18,32 +18,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("convertedFromTrial") is null) { _explicitNullValueConvertedFromTrial = default!; _explicitNullProperties?.Remove("convertedFromTrial"); }
-            else if (parseNode.GetChildNode("convertedFromTrial") is { } nullNodeConvertedFromTrial && nullNodeConvertedFromTrial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedFromTrial = null;
-            if (parseNode.GetChildNode("invoiceId") is null) { _explicitNullValueInvoiceId = default!; _explicitNullProperties?.Remove("invoiceId"); }
-            else if (parseNode.GetChildNode("invoiceId") is { } nullNodeInvoiceId && nullNodeInvoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvoiceId = null;
-            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
-            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("nextConcurrentBuilds") is null) { _explicitNullValueNextConcurrentBuilds = default!; _explicitNullProperties?.Remove("nextConcurrentBuilds"); }
+            else if (parseNode.GetChildNode("nextConcurrentBuilds") is { } nullNodeNextConcurrentBuilds && nullNodeNextConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextConcurrentBuilds = null;
+            if (parseNode.GetChildNode("previousConcurrentBuilds") is null) { _explicitNullValuePreviousConcurrentBuilds = default!; _explicitNullProperties?.Remove("previousConcurrentBuilds"); }
+            else if (parseNode.GetChildNode("previousConcurrentBuilds") is { } nullNodePreviousConcurrentBuilds && nullNodePreviousConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousConcurrentBuilds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The convertedFromTrial property</summary>
-        public bool? ConvertedFromTrial { get => _explicitNullValueConvertedFromTrial; set { _explicitNullValueConvertedFromTrial = value; AdditionalData?.Remove("convertedFromTrial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convertedFromTrial"); else _explicitNullProperties?.Remove("convertedFromTrial"); } }
-        private bool? _explicitNullValueConvertedFromTrial = default!;
-        /// <summary>The invoiceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; AdditionalData?.Remove("invoiceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoiceId"); else _explicitNullProperties?.Remove("invoiceId"); } }
-        private string? _explicitNullValueInvoiceId = default!;
-#nullable restore
-#else
-        public string InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; AdditionalData?.Remove("invoiceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoiceId"); else _explicitNullProperties?.Remove("invoiceId"); } }
-        private string _explicitNullValueInvoiceId = default!;
-#endif
-        /// <summary>The plan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf443Plan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf443Plan? _explicitNullValuePlan = default!;
+        /// <summary>The nextConcurrentBuilds property</summary>
+        public double? NextConcurrentBuilds { get => _explicitNullValueNextConcurrentBuilds; set { _explicitNullValueNextConcurrentBuilds = value; AdditionalData?.Remove("nextConcurrentBuilds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextConcurrentBuilds"); else _explicitNullProperties?.Remove("nextConcurrentBuilds"); } }
+        private double? _explicitNullValueNextConcurrentBuilds = default!;
+        /// <summary>The previousConcurrentBuilds property</summary>
+        public double? PreviousConcurrentBuilds { get => _explicitNullValuePreviousConcurrentBuilds; set { _explicitNullValuePreviousConcurrentBuilds = value; AdditionalData?.Remove("previousConcurrentBuilds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousConcurrentBuilds"); else _explicitNullProperties?.Remove("previousConcurrentBuilds"); } }
+        private double? _explicitNullValuePreviousConcurrentBuilds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf443"/> and sets the default values.
         /// </summary>
@@ -69,9 +57,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "convertedFromTrial", n => { ConvertedFromTrial = n.GetBoolValue(); } },
-                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "plan", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf443Plan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlan = default; _explicitNullProperties?.Remove("plan"); AdditionalData["plan"] = unknown; } else { Plan = parsed; AdditionalData.Remove("plan"); } } },
+                { "nextConcurrentBuilds", n => { NextConcurrentBuilds = n.GetDoubleValue(); } },
+                { "previousConcurrentBuilds", n => { PreviousConcurrentBuilds = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -81,9 +68,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("convertedFromTrial", ConvertedFromTrial);
-            writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf443Plan>("plan", Plan);
+            writer.WriteDoubleValue("nextConcurrentBuilds", NextConcurrentBuilds);
+            writer.WriteDoubleValue("previousConcurrentBuilds", PreviousConcurrentBuilds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

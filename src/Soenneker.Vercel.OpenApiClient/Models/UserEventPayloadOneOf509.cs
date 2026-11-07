@@ -22,8 +22,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("chatId") is { } nullNodeChatId && nullNodeChatId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatId = null;
             if (parseNode.GetChildNode("chatTitle") is null) { _explicitNullValueChatTitle = default!; _explicitNullProperties?.Remove("chatTitle"); }
             else if (parseNode.GetChildNode("chatTitle") is { } nullNodeChatTitle && nullNodeChatTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatTitle = null;
-            if (parseNode.GetChildNode("messageId") is null) { _explicitNullValueMessageId = default!; _explicitNullProperties?.Remove("messageId"); }
-            else if (parseNode.GetChildNode("messageId") is { } nullNodeMessageId && nullNodeMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,16 +45,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ChatTitle { get => _explicitNullValueChatTitle; set { _explicitNullValueChatTitle = value; AdditionalData?.Remove("chatTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatTitle"); else _explicitNullProperties?.Remove("chatTitle"); } }
         private string _explicitNullValueChatTitle = default!;
-#endif
-        /// <summary>The messageId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; AdditionalData?.Remove("messageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageId"); else _explicitNullProperties?.Remove("messageId"); } }
-        private string? _explicitNullValueMessageId = default!;
-#nullable restore
-#else
-        public string MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; AdditionalData?.Remove("messageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageId"); else _explicitNullProperties?.Remove("messageId"); } }
-        private string _explicitNullValueMessageId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf509"/> and sets the default values.
@@ -85,7 +73,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "chatId", n => { ChatId = n.GetStringValue(); } },
                 { "chatTitle", n => { ChatTitle = n.GetStringValue(); } },
-                { "messageId", n => { MessageId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,7 +84,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("chatId", ChatId);
             writer.WriteStringValue("chatTitle", ChatTitle);
-            writer.WriteStringValue("messageId", MessageId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
