@@ -25,6 +25,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("nonSensitive") is null) { _explicitNullValueNonSensitive = default!; _explicitNullProperties?.Remove("nonSensitive"); }
             else if (parseNode.GetChildNode("nonSensitive") is { } nullNodeNonSensitive && nullNodeNonSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonSensitive = null;
+            if (parseNode.GetChildNode("tokenSetKey") is null) { _explicitNullValueTokenSetKey = default!; _explicitNullProperties?.Remove("tokenSetKey"); }
+            else if (parseNode.GetChildNode("tokenSetKey") is { } nullNodeTokenSetKey && nullNodeTokenSetKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenSetKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,6 +50,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The nonSensitive property</summary>
         public bool? NonSensitive { get => _explicitNullValueNonSensitive; set { _explicitNullValueNonSensitive = value; AdditionalData?.Remove("nonSensitive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonSensitive"); else _explicitNullProperties?.Remove("nonSensitive"); } }
         private bool? _explicitNullValueNonSensitive = default!;
+        /// <summary>The token set key `name` is built from; absent for env vars that are not in the token set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenSetKey { get => _explicitNullValueTokenSetKey; set { _explicitNullValueTokenSetKey = value; AdditionalData?.Remove("tokenSetKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenSetKey"); else _explicitNullProperties?.Remove("tokenSetKey"); } }
+        private string? _explicitNullValueTokenSetKey = default!;
+#nullable restore
+#else
+        public string TokenSetKey { get => _explicitNullValueTokenSetKey; set { _explicitNullValueTokenSetKey = value; AdditionalData?.Remove("tokenSetKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenSetKey"); else _explicitNullProperties?.Remove("tokenSetKey"); } }
+        private string _explicitNullValueTokenSetKey = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem"/> and sets the default values.
         /// </summary>
@@ -77,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "length", n => { Length = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nonSensitive", n => { NonSensitive = n.GetBoolValue(); } },
+                { "tokenSetKey", n => { TokenSetKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -90,6 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("length", Length);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("nonSensitive", NonSensitive);
+            writer.WriteStringValue("tokenSetKey", TokenSetKey);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

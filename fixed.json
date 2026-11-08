@@ -211981,6 +211981,10 @@
           },
           "nonSensitive": {
             "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreSecretsItemNonSensitive"
+          },
+          "tokenSetKey": {
+            "type": "string",
+            "description": "The token set key \u0060name\u0060 is built from; absent for env vars that are not in the token set."
           }
         }
       },
