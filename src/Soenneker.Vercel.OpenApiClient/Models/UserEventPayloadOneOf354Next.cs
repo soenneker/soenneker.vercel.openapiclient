@@ -17,15 +17,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("issuerMode") is null) { _explicitNullValueIssuerMode = default!; _explicitNullProperties?.Remove("issuerMode"); }
-            else if (parseNode.GetChildNode("issuerMode") is { } nullNodeIssuerMode && nullNodeIssuerMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerMode = null;
+            if (parseNode.GetChildNode("deploymentSources") is null) { _explicitNullValueDeploymentSources = default!; _explicitNullProperties?.Remove("deploymentSources"); }
+            else if (parseNode.GetChildNode("deploymentSources") is { } nullNodeDeploymentSources && nullNodeDeploymentSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentSources = null;
+            if (parseNode.GetChildNode("gitSources") is null) { _explicitNullValueGitSources = default!; _explicitNullProperties?.Remove("gitSources"); }
+            else if (parseNode.GetChildNode("gitSources") is { } nullNodeGitSources && nullNodeGitSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitSources = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The issuerMode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354NextIssuerMode? IssuerMode { get => _explicitNullValueIssuerMode; set { _explicitNullValueIssuerMode = value; AdditionalData?.Remove("issuerMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerMode"); else _explicitNullProperties?.Remove("issuerMode"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354NextIssuerMode? _explicitNullValueIssuerMode = default!;
+        /// <summary>The deploymentSources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? DeploymentSources { get => _explicitNullValueDeploymentSources; set { _explicitNullValueDeploymentSources = value; AdditionalData?.Remove("deploymentSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentSources"); else _explicitNullProperties?.Remove("deploymentSources"); } }
+        private UntypedNode? _explicitNullValueDeploymentSources = default!;
+#nullable restore
+#else
+        public UntypedNode DeploymentSources { get => _explicitNullValueDeploymentSources; set { _explicitNullValueDeploymentSources = value; AdditionalData?.Remove("deploymentSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentSources"); else _explicitNullProperties?.Remove("deploymentSources"); } }
+        private UntypedNode _explicitNullValueDeploymentSources = default!;
+#endif
+        /// <summary>The gitSources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? GitSources { get => _explicitNullValueGitSources; set { _explicitNullValueGitSources = value; AdditionalData?.Remove("gitSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSources"); else _explicitNullProperties?.Remove("gitSources"); } }
+        private UntypedNode? _explicitNullValueGitSources = default!;
+#nullable restore
+#else
+        public UntypedNode GitSources { get => _explicitNullValueGitSources; set { _explicitNullValueGitSources = value; AdditionalData?.Remove("gitSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitSources"); else _explicitNullProperties?.Remove("gitSources"); } }
+        private UntypedNode _explicitNullValueGitSources = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354Next"/> and sets the default values.
         /// </summary>
@@ -41,6 +60,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354Next CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
             return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354Next(), parseNode);
         }
         /// <summary>
@@ -51,7 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "issuerMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354NextIssuerMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIssuerMode = default; _explicitNullProperties?.Remove("issuerMode"); AdditionalData["issuerMode"] = unknown; } else { IssuerMode = parsed; AdditionalData.Remove("issuerMode"); } } },
+                { "deploymentSources", n => { DeploymentSources = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "gitSources", n => { GitSources = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +83,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354NextIssuerMode>("issuerMode", IssuerMode);
+            writer.WriteObjectValue<UntypedNode>("deploymentSources", DeploymentSources);
+            writer.WriteObjectValue<UntypedNode>("gitSources", GitSources);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

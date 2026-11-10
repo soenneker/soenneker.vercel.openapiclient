@@ -847,6 +847,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         DrainUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "drive-created")]
+        #pragma warning disable CS1591
+        DriveCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "drive-deleted")]
+        #pragma warning disable CS1591
+        DriveDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "drive-snapshot-created")]
+        #pragma warning disable CS1591
+        DriveSnapshotCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "drive-snapshot-deleted")]
+        #pragma warning disable CS1591
+        DriveSnapshotDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "edge-cache-dangerously-delete-by-src-images")]
         #pragma warning disable CS1591
         EdgeCacheDangerouslyDeleteBySrcImages,

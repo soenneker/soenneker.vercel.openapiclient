@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         NewValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "awaiting_approval")]
+        #pragma warning disable CS1591
+        AwaitingApproval,
+        #pragma warning restore CS1591
         [EnumMember(Value = "skipped")]
         #pragma warning disable CS1591
         Skipped,

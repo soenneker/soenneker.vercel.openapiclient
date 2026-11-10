@@ -18,6 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("edgeConfigBackupVersionId") is null) { _explicitNullValueEdgeConfigBackupVersionId = default!; _explicitNullProperties?.Remove("edgeConfigBackupVersionId"); }
+            else if (parseNode.GetChildNode("edgeConfigBackupVersionId") is { } nullNodeEdgeConfigBackupVersionId && nullNodeEdgeConfigBackupVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigBackupVersionId = null;
             if (parseNode.GetChildNode("edgeConfigDigest") is null) { _explicitNullValueEdgeConfigDigest = default!; _explicitNullProperties?.Remove("edgeConfigDigest"); }
             else if (parseNode.GetChildNode("edgeConfigDigest") is { } nullNodeEdgeConfigDigest && nullNodeEdgeConfigDigest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigDigest = null;
             if (parseNode.GetChildNode("edgeConfigId") is null) { _explicitNullValueEdgeConfigId = default!; _explicitNullProperties?.Remove("edgeConfigId"); }
@@ -28,6 +30,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The edgeConfigBackupVersionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigBackupVersionId { get => _explicitNullValueEdgeConfigBackupVersionId; set { _explicitNullValueEdgeConfigBackupVersionId = value; AdditionalData?.Remove("edgeConfigBackupVersionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigBackupVersionId"); else _explicitNullProperties?.Remove("edgeConfigBackupVersionId"); } }
+        private string? _explicitNullValueEdgeConfigBackupVersionId = default!;
+#nullable restore
+#else
+        public string EdgeConfigBackupVersionId { get => _explicitNullValueEdgeConfigBackupVersionId; set { _explicitNullValueEdgeConfigBackupVersionId = value; AdditionalData?.Remove("edgeConfigBackupVersionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigBackupVersionId"); else _explicitNullProperties?.Remove("edgeConfigBackupVersionId"); } }
+        private string _explicitNullValueEdgeConfigBackupVersionId = default!;
+#endif
         /// <summary>The edgeConfigDigest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "edgeConfigBackupVersionId", n => { EdgeConfigBackupVersionId = n.GetStringValue(); } },
                 { "edgeConfigDigest", n => { EdgeConfigDigest = n.GetStringValue(); } },
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
@@ -95,6 +108,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("edgeConfigBackupVersionId", EdgeConfigBackupVersionId);
             writer.WriteStringValue("edgeConfigDigest", EdgeConfigDigest);
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);

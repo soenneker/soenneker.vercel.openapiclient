@@ -22,8 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("publicSource") is null) { _explicitNullValuePublicSource = default!; _explicitNullProperties?.Remove("publicSource"); }
-            else if (parseNode.GetChildNode("publicSource") is { } nullNodePublicSource && nullNodePublicSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicSource = null;
+            if (parseNode.GetChildNode("protectedSourcemaps") is null) { _explicitNullValueProtectedSourcemaps = default!; _explicitNullProperties?.Remove("protectedSourcemaps"); }
+            else if (parseNode.GetChildNode("protectedSourcemaps") is { } nullNodeProtectedSourcemaps && nullNodeProtectedSourcemaps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectedSourcemaps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
-        /// <summary>The publicSource property</summary>
-        public bool? PublicSource { get => _explicitNullValuePublicSource; set { _explicitNullValuePublicSource = value; AdditionalData?.Remove("publicSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicSource"); else _explicitNullProperties?.Remove("publicSource"); } }
-        private bool? _explicitNullValuePublicSource = default!;
+        /// <summary>The protectedSourcemaps property</summary>
+        public bool? ProtectedSourcemaps { get => _explicitNullValueProtectedSourcemaps; set { _explicitNullValueProtectedSourcemaps = value; AdditionalData?.Remove("protectedSourcemaps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protectedSourcemaps"); else _explicitNullProperties?.Remove("protectedSourcemaps"); } }
+        private bool? _explicitNullValueProtectedSourcemaps = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359"/> and sets the default values.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "publicSource", n => { PublicSource = n.GetBoolValue(); } },
+                { "protectedSourcemaps", n => { ProtectedSourcemaps = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("publicSource", PublicSource);
+            writer.WriteBoolValue("protectedSourcemaps", ProtectedSourcemaps);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -38,8 +38,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         }
 
         /// <summary>The compression property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.NoneCompression? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.NoneCompression? _explicitNullValueCompression = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Compression? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Compression? _explicitNullValueCompression = default!;
         /// <summary>The encoding property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Encoding? Encoding { get => _explicitNullValueEncoding; set { _explicitNullValueEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoding"); else _explicitNullProperties?.Remove("encoding"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Encoding? _explicitNullValueEncoding = default!;
@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "compression", n => { Compression = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NoneCompression>(); } },
+                { "compression", n => { Compression = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Compression>(); } },
                 { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Encoding>(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>(); } },
@@ -128,7 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NoneCompression>("compression", Compression);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Compression>("compression", Compression);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryOneOf3Encoding>("encoding", Encoding);
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>("fileStructure", FileStructure);

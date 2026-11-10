@@ -113,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.Summary
 #endif
             #pragma warning disable CS1591
             [QueryParameter("endTimestamp")]
-            public double? EndTimestamp { get; set; }
+            public int? EndTimestamp { get; set; }
             #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,7 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.Summary
 #endif
             #pragma warning disable CS1591
             [QueryParameter("startTimestamp")]
-            public double? StartTimestamp { get; set; }
+            public int? StartTimestamp { get; set; }
             #pragma warning restore CS1591
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

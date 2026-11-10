@@ -50,8 +50,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("deploymentStorageRollout") is { } nullNodeDeploymentStorageRollout && nullNodeDeploymentStorageRollout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentStorageRollout = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("disableHardAutoBlocks") is null) { _explicitNullValueDisableHardAutoBlocks = default!; _explicitNullProperties?.Remove("disableHardAutoBlocks"); }
-            else if (parseNode.GetChildNode("disableHardAutoBlocks") is { } nullNodeDisableHardAutoBlocks && nullNodeDisableHardAutoBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableHardAutoBlocks = null;
             if (parseNode.GetChildNode("disableRepositoryDispatchEvents") is null) { _explicitNullValueDisableRepositoryDispatchEvents = default!; _explicitNullProperties?.Remove("disableRepositoryDispatchEvents"); }
             else if (parseNode.GetChildNode("disableRepositoryDispatchEvents") is { } nullNodeDisableRepositoryDispatchEvents && nullNodeDisableRepositoryDispatchEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableRepositoryDispatchEvents = null;
             if (parseNode.GetChildNode("disjunctiveProductionSecretPolicy") is null) { _explicitNullValueDisjunctiveProductionSecretPolicy = default!; _explicitNullProperties?.Remove("disjunctiveProductionSecretPolicy"); }
@@ -253,16 +251,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
-#endif
-        /// <summary>The disableHardAutoBlocks property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks? DisableHardAutoBlocks { get => _explicitNullValueDisableHardAutoBlocks; set { _explicitNullValueDisableHardAutoBlocks = value; AdditionalData?.Remove("disableHardAutoBlocks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableHardAutoBlocks"); else _explicitNullProperties?.Remove("disableHardAutoBlocks"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks? _explicitNullValueDisableHardAutoBlocks = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks DisableHardAutoBlocks { get => _explicitNullValueDisableHardAutoBlocks; set { _explicitNullValueDisableHardAutoBlocks = value; AdditionalData?.Remove("disableHardAutoBlocks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableHardAutoBlocks"); else _explicitNullProperties?.Remove("disableHardAutoBlocks"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks _explicitNullValueDisableHardAutoBlocks = default!;
 #endif
         /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.</summary>
         public bool? DisableRepositoryDispatchEvents { get => _explicitNullValueDisableRepositoryDispatchEvents; set { _explicitNullValueDisableRepositoryDispatchEvents = value; AdditionalData?.Remove("disableRepositoryDispatchEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableRepositoryDispatchEvents"); else _explicitNullProperties?.Remove("disableRepositoryDispatchEvents"); } }
@@ -579,7 +567,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "deploymentStorageRollout", n => { DeploymentStorageRollout = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks.CreateFromDiscriminatorValue); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
                 { "disjunctiveProductionSecretPolicy", n => { DisjunctiveProductionSecretPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy.CreateFromDiscriminatorValue); } },
                 { "dpAccessRequestsMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDpAccessRequestsMode = default; _explicitNullProperties?.Remove("dpAccessRequestsMode"); AdditionalData["dpAccessRequestsMode"] = unknown; } else { DpAccessRequestsMode = parsed; AdditionalData.Remove("dpAccessRequestsMode"); } } },
@@ -638,7 +625,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout>("deploymentStorageRollout", DeploymentStorageRollout);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>("disjunctiveProductionSecretPolicy", DisjunctiveProductionSecretPolicy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>("dpAccessRequestsMode", DpAccessRequestsMode);
