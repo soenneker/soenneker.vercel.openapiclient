@@ -19,6 +19,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
     public partial class WithNameOrItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fork property</summary>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.Fork.ForkRequestBuilder Fork
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.Fork.ForkRequestBuilder(PathParameters, RequestAdapter);
@@ -45,6 +46,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteDrive200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDrive200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder.WithNameOrItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,6 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrive200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDrive200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder.WithNameOrItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetOrCreateDriveSuccessResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.GetOrCreateDriveRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder.WithNameOrItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,6 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder.WithNameOrItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
@@ -119,6 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder.WithNameOrItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -139,6 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.GetOrCreateDriveRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder.WithNameOrItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
@@ -160,6 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder(rawUrl, RequestAdapter);

@@ -25,6 +25,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("awsRegion") is { } nullNodeAwsRegion && nullNodeAwsRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsRegion = null;
             if (parseNode.GetChildNode("cidr") is null) { _explicitNullValueCidr = default!; _explicitNullProperties?.Remove("cidr"); }
             else if (parseNode.GetChildNode("cidr") is { } nullNodeCidr && nullNodeCidr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidr = null;
+            if (parseNode.GetChildNode("connectionTesting") is null) { _explicitNullValueConnectionTesting = default!; _explicitNullProperties?.Remove("connectionTesting"); }
+            else if (parseNode.GetChildNode("connectionTesting") is { } nullNodeConnectionTesting && nullNodeConnectionTesting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionTesting = null;
             if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
             else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("egressIpAddresses") is null) { _explicitNullValueEgressIpAddresses = default!; _explicitNullProperties?.Remove("egressIpAddresses"); }
@@ -91,6 +93,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Cidr { get => _explicitNullValueCidr; set { _explicitNullValueCidr = value; AdditionalData?.Remove("cidr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidr"); else _explicitNullProperties?.Remove("cidr"); } }
         private string _explicitNullValueCidr = default!;
 #endif
+        /// <summary>Whether both dedicated connection test sources are provisioned and ready. Feature flag access and management permission are checked on submission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkConnectionTesting? ConnectionTesting { get => _explicitNullValueConnectionTesting; set { _explicitNullValueConnectionTesting = value; AdditionalData?.Remove("connectionTesting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionTesting"); else _explicitNullProperties?.Remove("connectionTesting"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkConnectionTesting? _explicitNullValueConnectionTesting = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkConnectionTesting ConnectionTesting { get => _explicitNullValueConnectionTesting; set { _explicitNullValueConnectionTesting = value; AdditionalData?.Remove("connectionTesting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionTesting"); else _explicitNullProperties?.Remove("connectionTesting"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkConnectionTesting _explicitNullValueConnectionTesting = default!;
+#endif
         /// <summary>The date at which the Network was created, represented as a UNIX timestamp since EPOCH.</summary>
         public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private double? _explicitNullValueCreatedAt = default!;
@@ -104,7 +116,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> EgressIpAddresses { get => _explicitNullValueEgressIpAddresses; set { _explicitNullValueEgressIpAddresses = value; AdditionalData?.Remove("egressIpAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egressIpAddresses"); else _explicitNullProperties?.Remove("egressIpAddresses"); } }
         private List<string> _explicitNullValueEgressIpAddresses = default!;
 #endif
-        /// <summary>Metadata about any AWS Route53 Hosted Zones associated with the Network.</summary>
+        /// <summary>Metadata about customer-managed AWS Route53 Hosted Zones associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones? HostedZones { get => _explicitNullValueHostedZones; set { _explicitNullValueHostedZones = value; AdditionalData?.Remove("hostedZones"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostedZones"); else _explicitNullProperties?.Remove("hostedZones"); } }
@@ -216,6 +228,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "awsAvailabilityZoneIds", n => { AwsAvailabilityZoneIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "awsRegion", n => { AwsRegion = n.GetStringValue(); } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
+                { "connectionTesting", n => { ConnectionTesting = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkConnectionTesting>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkConnectionTesting.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "egressIpAddresses", n => { EgressIpAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hostedZones", n => { HostedZones = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones.CreateFromDiscriminatorValue); } },
@@ -240,6 +253,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("awsAvailabilityZoneIds", AwsAvailabilityZoneIds);
             writer.WriteStringValue("awsRegion", AwsRegion);
             writer.WriteStringValue("cidr", Cidr);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkConnectionTesting>("connectionTesting", ConnectionTesting);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("egressIpAddresses", EgressIpAddresses);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>("hostedZones", HostedZones);

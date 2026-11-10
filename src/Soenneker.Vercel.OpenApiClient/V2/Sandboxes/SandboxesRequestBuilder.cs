@@ -22,6 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
     public partial class SandboxesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The drives property</summary>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder Drives
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);

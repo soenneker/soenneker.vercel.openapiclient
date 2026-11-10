@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Metadata about any AWS Route53 Hosted Zones associated with the Network.
+    /// Metadata about customer-managed AWS Route53 Hosted Zones associated with the Network.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NetworkHostedZones : IAdditionalDataHolder, IParsable
@@ -24,7 +24,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of AWS Route53 Hosted Zones associated with the Network.</summary>
+        /// <summary>The number of customer-managed AWS Route53 Hosted Zones associated with the Network.</summary>
         public double? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private double? _explicitNullValueCount = default!;
         /// <summary>

@@ -26,6 +26,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
             if (parseNode.GetChildNode("fileStructure") is null) { _explicitNullValueFileStructure = default!; _explicitNullProperties?.Remove("fileStructure"); }
             else if (parseNode.GetChildNode("fileStructure") is { } nullNodeFileStructure && nullNodeFileStructure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileStructure = null;
+            if (parseNode.GetChildNode("kmsKeyId") is null) { _explicitNullValueKmsKeyId = default!; _explicitNullProperties?.Remove("kmsKeyId"); }
+            else if (parseNode.GetChildNode("kmsKeyId") is { } nullNodeKmsKeyId && nullNodeKmsKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KmsKeyId = null;
             if (parseNode.GetChildNode("objectAcl") is null) { _explicitNullValueObjectAcl = default!; _explicitNullProperties?.Remove("objectAcl"); }
             else if (parseNode.GetChildNode("objectAcl") is { } nullNodeObjectAcl && nullNodeObjectAcl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectAcl = null;
             if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
@@ -55,6 +57,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The fileStructure property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure? FileStructure { get => _explicitNullValueFileStructure; set { _explicitNullValueFileStructure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileStructure"); else _explicitNullProperties?.Remove("fileStructure"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure? _explicitNullValueFileStructure = default!;
+        /// <summary>The kmsKeyId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? KmsKeyId { get => _explicitNullValueKmsKeyId; set { _explicitNullValueKmsKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kmsKeyId"); else _explicitNullProperties?.Remove("kmsKeyId"); } }
+        private string? _explicitNullValueKmsKeyId = default!;
+#nullable restore
+#else
+        public string KmsKeyId { get => _explicitNullValueKmsKeyId; set { _explicitNullValueKmsKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kmsKeyId"); else _explicitNullProperties?.Remove("kmsKeyId"); } }
+        private string _explicitNullValueKmsKeyId = default!;
+#endif
         /// <summary>The objectAcl property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf4ObjectAcl? ObjectAcl { get => _explicitNullValueObjectAcl; set { _explicitNullValueObjectAcl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectAcl"); else _explicitNullProperties?.Remove("objectAcl"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf4ObjectAcl? _explicitNullValueObjectAcl = default!;
@@ -103,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf4Encoding>(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>(); } },
+                { "kmsKeyId", n => { KmsKeyId = n.GetStringValue(); } },
                 { "objectAcl", n => { ObjectAcl = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf4ObjectAcl>(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "roleArn", n => { RoleArn = n.GetStringValue(); } },
@@ -121,6 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf4Encoding>("encoding", Encoding);
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>("fileStructure", FileStructure);
+            writer.WriteStringValue("kmsKeyId", KmsKeyId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseOneOf2DeliveryOneOf4ObjectAcl>("objectAcl", ObjectAcl);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("roleArn", RoleArn);

@@ -178,6 +178,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("deploymentRollback") is { } nullNodeDeploymentRollback && nullNodeDeploymentRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentRollback = null;
             if (parseNode.GetChildNode("deploymentV0") is null) { _explicitNullValueDeploymentV0 = default!; _explicitNullProperties?.Remove("deploymentV0"); }
             else if (parseNode.GetChildNode("deploymentV0") is { } nullNodeDeploymentV0 && nullNodeDeploymentV0.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentV0 = null;
+            if (parseNode.GetChildNode("desktopDevice") is null) { _explicitNullValueDesktopDevice = default!; _explicitNullProperties?.Remove("desktopDevice"); }
+            else if (parseNode.GetChildNode("desktopDevice") is { } nullNodeDesktopDevice && nullNodeDesktopDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesktopDevice = null;
             if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
             else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
             if (parseNode.GetChildNode("domainAcceptDelegation") is null) { _explicitNullValueDomainAcceptDelegation = default!; _explicitNullProperties?.Remove("domainAcceptDelegation"); }
@@ -1419,6 +1421,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DeploymentV0 { get => _explicitNullValueDeploymentV0; set { _explicitNullValueDeploymentV0 = value; AdditionalData?.Remove("deploymentV0"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentV0"); else _explicitNullProperties?.Remove("deploymentV0"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDeploymentV0 = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? DesktopDevice { get => _explicitNullValueDesktopDevice; set { _explicitNullValueDesktopDevice = value; AdditionalData?.Remove("desktopDevice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopDevice"); else _explicitNullProperties?.Remove("desktopDevice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueDesktopDevice = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> DesktopDevice { get => _explicitNullValueDesktopDevice; set { _explicitNullValueDesktopDevice = value; AdditionalData?.Remove("desktopDevice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopDevice"); else _explicitNullProperties?.Remove("desktopDevice"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueDesktopDevice = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -3715,6 +3727,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deploymentProtectionException", n => { DeploymentProtectionException = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "deploymentRollback", n => { DeploymentRollback = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "deploymentV0", n => { DeploymentV0 = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "desktopDevice", n => { DesktopDevice = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "domain", n => { Domain = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "domainAcceptDelegation", n => { DomainAcceptDelegation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "domainAuthCodes", n => { DomainAuthCodes = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -4023,6 +4036,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("deploymentProtectionException", DeploymentProtectionException);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("deploymentRollback", DeploymentRollback);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("deploymentV0", DeploymentV0);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("desktopDevice", DesktopDevice);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("domain", Domain);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("domainAcceptDelegation", DomainAcceptDelegation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("domainAuthCodes", DomainAuthCodes);

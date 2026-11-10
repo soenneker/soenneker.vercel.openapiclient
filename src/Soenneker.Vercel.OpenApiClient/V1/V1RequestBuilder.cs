@@ -10,6 +10,7 @@ using Soenneker.Vercel.OpenApiClient.V1.Connect;
 using Soenneker.Vercel.OpenApiClient.V1.Deployments;
 using Soenneker.Vercel.OpenApiClient.V1.Domains;
 using Soenneker.Vercel.OpenApiClient.V1.Drains;
+using Soenneker.Vercel.OpenApiClient.V1.Drives;
 using Soenneker.Vercel.OpenApiClient.V1.EdgeCache;
 using Soenneker.Vercel.OpenApiClient.V1.Env;
 using Soenneker.Vercel.OpenApiClient.V1.Events;
@@ -83,6 +84,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.Drains.DrainsRequestBuilder Drains
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Drains.DrainsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The drives property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Drives.DrivesRequestBuilder Drives
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The edgeCache property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.EdgeCache.EdgeCacheRequestBuilder EdgeCache

@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Request
         {
         }
         /// <summary>
-        /// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+        /// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time. Organization-directory access must be granted through the directory administrator.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RequestAccessToTeam200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Request
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RequestAccessToTeam200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RequestAccessToTeam200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.
+        /// Request access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time. Organization-directory access must be granted through the directory administrator.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

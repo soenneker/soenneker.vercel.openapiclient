@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf410Action
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "disable")]
-        #pragma warning disable CS1591
-        Disable,
-        #pragma warning restore CS1591
         [EnumMember(Value = "enable")]
         #pragma warning disable CS1591
         Enable,

@@ -21,6 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v2.sandboxes.drives.item collection</summary>
         /// <param name="position">The drive name or ID.</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameOrItemRequestBuilder this[string position]
         {
             get
@@ -52,6 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListDrives200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListDrives200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder.DrivesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,6 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder.DrivesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -88,6 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder(rawUrl, RequestAdapter);

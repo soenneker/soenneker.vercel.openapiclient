@@ -2291,6 +2291,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         SandboxDriveSnapshotDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-npm-credentials-configured")]
+        #pragma warning disable CS1591
+        SandboxNpmCredentialsConfigured,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-signed-commit-identity-configured")]
         #pragma warning disable CS1591
         SandboxSignedCommitIdentityConfigured,

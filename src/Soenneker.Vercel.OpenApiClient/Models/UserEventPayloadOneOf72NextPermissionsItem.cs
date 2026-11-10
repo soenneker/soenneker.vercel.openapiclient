@@ -76,6 +76,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonDeployment,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:desktop-device")]
+        #pragma warning disable CS1591
+        ReadWriteColonDesktopDevice,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:domain")]
         #pragma warning disable CS1591
         ReadWriteColonDomain,
