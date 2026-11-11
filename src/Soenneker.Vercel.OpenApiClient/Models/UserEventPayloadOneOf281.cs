@@ -18,8 +18,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("previousEndpoint") is null) { _explicitNullValuePreviousEndpoint = default!; _explicitNullProperties?.Remove("previousEndpoint"); }
-            else if (parseNode.GetChildNode("previousEndpoint") is { } nullNodePreviousEndpoint && nullNodePreviousEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousEndpoint = null;
             if (parseNode.GetChildNode("privateLinkEndpoint") is null) { _explicitNullValuePrivateLinkEndpoint = default!; _explicitNullProperties?.Remove("privateLinkEndpoint"); }
             else if (parseNode.GetChildNode("privateLinkEndpoint") is { } nullNodePrivateLinkEndpoint && nullNodePrivateLinkEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateLinkEndpoint = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
@@ -32,16 +30,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previousEndpoint property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PreviousEndpoint? PreviousEndpoint { get => _explicitNullValuePreviousEndpoint; set { _explicitNullValuePreviousEndpoint = value; AdditionalData?.Remove("previousEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEndpoint"); else _explicitNullProperties?.Remove("previousEndpoint"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PreviousEndpoint? _explicitNullValuePreviousEndpoint = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PreviousEndpoint PreviousEndpoint { get => _explicitNullValuePreviousEndpoint; set { _explicitNullValuePreviousEndpoint = value; AdditionalData?.Remove("previousEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEndpoint"); else _explicitNullProperties?.Remove("previousEndpoint"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PreviousEndpoint _explicitNullValuePreviousEndpoint = default!;
-#endif
         /// <summary>The privateLinkEndpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +88,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "previousEndpoint", n => { PreviousEndpoint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PreviousEndpoint>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PreviousEndpoint.CreateFromDiscriminatorValue); } },
                 { "privateLinkEndpoint", n => { PrivateLinkEndpoint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PrivateLinkEndpoint>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PrivateLinkEndpoint.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
@@ -114,7 +101,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PreviousEndpoint>("previousEndpoint", PreviousEndpoint);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PrivateLinkEndpoint>("privateLinkEndpoint", PrivateLinkEndpoint);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);

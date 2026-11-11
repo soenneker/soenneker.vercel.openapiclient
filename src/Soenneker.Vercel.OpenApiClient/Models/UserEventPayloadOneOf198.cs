@@ -18,29 +18,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fromDeploymentId") is null) { _explicitNullValueFromDeploymentId = default!; _explicitNullProperties?.Remove("fromDeploymentId"); }
-            else if (parseNode.GetChildNode("fromDeploymentId") is { } nullNodeFromDeploymentId && nullNodeFromDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromDeploymentId = null;
+            if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
+            else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("expiresIn") is null) { _explicitNullValueExpiresIn = default!; _explicitNullProperties?.Remove("expiresIn"); }
+            else if (parseNode.GetChildNode("expiresIn") is { } nullNodeExpiresIn && nullNodeExpiresIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresIn = null;
+            if (parseNode.GetChildNode("flags") is null) { _explicitNullValueFlags = default!; _explicitNullProperties?.Remove("flags"); }
+            else if (parseNode.GetChildNode("flags") is { } nullNodeFlags && nullNodeFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flags = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectIds") is null) { _explicitNullValueProjectIds = default!; _explicitNullProperties?.Remove("projectIds"); }
+            else if (parseNode.GetChildNode("projectIds") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
-            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("toDeploymentId") is null) { _explicitNullValueToDeploymentId = default!; _explicitNullProperties?.Remove("toDeploymentId"); }
-            else if (parseNode.GetChildNode("toDeploymentId") is { } nullNodeToDeploymentId && nullNodeToDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToDeploymentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fromDeploymentId property</summary>
+        /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; AdditionalData?.Remove("fromDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
-        private string? _explicitNullValueFromDeploymentId = default!;
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public string FromDeploymentId { get => _explicitNullValueFromDeploymentId; set { _explicitNullValueFromDeploymentId = value; AdditionalData?.Remove("fromDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromDeploymentId"); else _explicitNullProperties?.Remove("fromDeploymentId"); } }
-        private string _explicitNullValueFromDeploymentId = default!;
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string _explicitNullValueEnvironment = default!;
+#endif
+        /// <summary>Seconds until the overrides expire.</summary>
+        public double? ExpiresIn { get => _explicitNullValueExpiresIn; set { _explicitNullValueExpiresIn = value; AdditionalData?.Remove("expiresIn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresIn"); else _explicitNullProperties?.Remove("expiresIn"); } }
+        private double? _explicitNullValueExpiresIn = default!;
+        /// <summary>The keys of the overridden flags, never their values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
+        private List<string>? _explicitNullValueFlags = default!;
+#nullable restore
+#else
+        public List<string> Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
+        private List<string> _explicitNullValueFlags = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,6 +67,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
+        /// <summary>The projects that accept the overrides: a whole microfrontends group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
+        private List<string>? _explicitNullValueProjectIds = default!;
+#nullable restore
+#else
+        public List<string> ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
+        private List<string> _explicitNullValueProjectIds = default!;
+#endif
         /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,26 +86,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
-#endif
-        /// <summary>The reason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string? _explicitNullValueReason = default!;
-#nullable restore
-#else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string _explicitNullValueReason = default!;
-#endif
-        /// <summary>The toDeploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; AdditionalData?.Remove("toDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
-        private string? _explicitNullValueToDeploymentId = default!;
-#nullable restore
-#else
-        public string ToDeploymentId { get => _explicitNullValueToDeploymentId; set { _explicitNullValueToDeploymentId = value; AdditionalData?.Remove("toDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toDeploymentId"); else _explicitNullProperties?.Remove("toDeploymentId"); } }
-        private string _explicitNullValueToDeploymentId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198"/> and sets the default values.
@@ -107,11 +112,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fromDeploymentId", n => { FromDeploymentId = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "expiresIn", n => { ExpiresIn = n.GetDoubleValue(); } },
+                { "flags", n => { Flags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "toDeploymentId", n => { ToDeploymentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -121,11 +127,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("fromDeploymentId", FromDeploymentId);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteDoubleValue("expiresIn", ExpiresIn);
+            writer.WriteCollectionOfPrimitiveValues<string>("flags", Flags);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("toDeploymentId", ToDeploymentId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

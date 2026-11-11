@@ -18,21 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("privateProvider") is null) { _explicitNullValuePrivateProvider = default!; _explicitNullProperties?.Remove("privateProvider"); }
-            else if (parseNode.GetChildNode("privateProvider") is { } nullNodePrivateProvider && nullNodePrivateProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateProvider = null;
+            if (parseNode.GetChildNode("privateModel") is null) { _explicitNullValuePrivateModel = default!; _explicitNullProperties?.Remove("privateModel"); }
+            else if (parseNode.GetChildNode("privateModel") is { } nullNodePrivateModel && nullNodePrivateModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateModel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The privateProvider property</summary>
+        /// <summary>The privateModel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateProvider? PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; AdditionalData?.Remove("privateProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateProvider? _explicitNullValuePrivateProvider = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateModel? PrivateModel { get => _explicitNullValuePrivateModel; set { _explicitNullValuePrivateModel = value; AdditionalData?.Remove("privateModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateModel"); else _explicitNullProperties?.Remove("privateModel"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateModel? _explicitNullValuePrivateModel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateProvider PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; AdditionalData?.Remove("privateProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateProvider _explicitNullValuePrivateProvider = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateModel PrivateModel { get => _explicitNullValuePrivateModel; set { _explicitNullValuePrivateModel = value; AdditionalData?.Remove("privateModel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateModel"); else _explicitNullProperties?.Remove("privateModel"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateModel _explicitNullValuePrivateModel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "privateProvider", n => { PrivateProvider = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateProvider>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateProvider.CreateFromDiscriminatorValue); } },
+                { "privateModel", n => { PrivateModel = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateModel>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateProvider>("privateProvider", PrivateProvider);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43PrivateModel>("privateModel", PrivateModel);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

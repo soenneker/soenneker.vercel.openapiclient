@@ -18,58 +18,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowedMethods") is null) { _explicitNullValueAllowedMethods = default!; _explicitNullProperties?.Remove("allowedMethods"); }
-            else if (parseNode.GetChildNode("allowedMethods") is { } nullNodeAllowedMethods && nullNodeAllowedMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedMethods = null;
-            if (parseNode.GetChildNode("firstFactor") is null) { _explicitNullValueFirstFactor = default!; _explicitNullProperties?.Remove("firstFactor"); }
-            else if (parseNode.GetChildNode("firstFactor") is { } nullNodeFirstFactor && nullNodeFirstFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstFactor = null;
-            if (parseNode.GetChildNode("flowId") is null) { _explicitNullValueFlowId = default!; _explicitNullProperties?.Remove("flowId"); }
-            else if (parseNode.GetChildNode("flowId") is { } nullNodeFlowId && nullNodeFlowId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowId = null;
-            if (parseNode.GetChildNode("loginSessionId") is null) { _explicitNullValueLoginSessionId = default!; _explicitNullProperties?.Remove("loginSessionId"); }
-            else if (parseNode.GetChildNode("loginSessionId") is { } nullNodeLoginSessionId && nullNodeLoginSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginSessionId = null;
+            if (parseNode.GetChildNode("actorId") is null) { _explicitNullValueActorId = default!; _explicitNullProperties?.Remove("actorId"); }
+            else if (parseNode.GetChildNode("actorId") is { } nullNodeActorId && nullNodeActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorId = null;
+            if (parseNode.GetChildNode("actorType") is null) { _explicitNullValueActorType = default!; _explicitNullProperties?.Remove("actorType"); }
+            else if (parseNode.GetChildNode("actorType") is { } nullNodeActorType && nullNodeActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorType = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
         }
 
+        /// <summary>The actorId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; AdditionalData?.Remove("actorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorId"); else _explicitNullProperties?.Remove("actorId"); } }
+        private string? _explicitNullValueActorId = default!;
+#nullable restore
+#else
+        public string ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; AdditionalData?.Remove("actorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorId"); else _explicitNullProperties?.Remove("actorId"); } }
+        private string _explicitNullValueActorId = default!;
+#endif
+        /// <summary>The actorType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get => _explicitNullValueActorType; set { _explicitNullValueActorType = value; AdditionalData?.Remove("actorType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorType"); else _explicitNullProperties?.Remove("actorType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? _explicitNullValueActorType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowedMethods property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf480AllowedMethodsItem?>? AllowedMethods { get => _explicitNullValueAllowedMethods; set { _explicitNullValueAllowedMethods = value; AdditionalData?.Remove("allowedMethods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedMethods"); else _explicitNullProperties?.Remove("allowedMethods"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf480AllowedMethodsItem?>? _explicitNullValueAllowedMethods = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf480AllowedMethodsItem?> AllowedMethods { get => _explicitNullValueAllowedMethods; set { _explicitNullValueAllowedMethods = value; AdditionalData?.Remove("allowedMethods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedMethods"); else _explicitNullProperties?.Remove("allowedMethods"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf480AllowedMethodsItem?> _explicitNullValueAllowedMethods = default!;
-#endif
-        /// <summary>The firstFactor property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FirstFactor { get => _explicitNullValueFirstFactor; set { _explicitNullValueFirstFactor = value; AdditionalData?.Remove("firstFactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstFactor"); else _explicitNullProperties?.Remove("firstFactor"); } }
-        private string? _explicitNullValueFirstFactor = default!;
-#nullable restore
-#else
-        public string FirstFactor { get => _explicitNullValueFirstFactor; set { _explicitNullValueFirstFactor = value; AdditionalData?.Remove("firstFactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstFactor"); else _explicitNullProperties?.Remove("firstFactor"); } }
-        private string _explicitNullValueFirstFactor = default!;
-#endif
-        /// <summary>The flowId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FlowId { get => _explicitNullValueFlowId; set { _explicitNullValueFlowId = value; AdditionalData?.Remove("flowId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowId"); else _explicitNullProperties?.Remove("flowId"); } }
-        private string? _explicitNullValueFlowId = default!;
-#nullable restore
-#else
-        public string FlowId { get => _explicitNullValueFlowId; set { _explicitNullValueFlowId = value; AdditionalData?.Remove("flowId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowId"); else _explicitNullProperties?.Remove("flowId"); } }
-        private string _explicitNullValueFlowId = default!;
-#endif
-        /// <summary>The loginSessionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LoginSessionId { get => _explicitNullValueLoginSessionId; set { _explicitNullValueLoginSessionId = value; AdditionalData?.Remove("loginSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginSessionId"); else _explicitNullProperties?.Remove("loginSessionId"); } }
-        private string? _explicitNullValueLoginSessionId = default!;
-#nullable restore
-#else
-        public string LoginSessionId { get => _explicitNullValueLoginSessionId; set { _explicitNullValueLoginSessionId = value; AdditionalData?.Remove("loginSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginSessionId"); else _explicitNullProperties?.Remove("loginSessionId"); } }
-        private string _explicitNullValueLoginSessionId = default!;
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf480"/> and sets the default values.
         /// </summary>
@@ -95,10 +69,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowedMethods", n => { AllowedMethods = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf480AllowedMethodsItem>()?.AsList(); } },
-                { "firstFactor", n => { FirstFactor = n.GetStringValue(); } },
-                { "flowId", n => { FlowId = n.GetStringValue(); } },
-                { "loginSessionId", n => { LoginSessionId = n.GetStringValue(); } },
+                { "actorId", n => { ActorId = n.GetStringValue(); } },
+                { "actorType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActorType = default; _explicitNullProperties?.Remove("actorType"); AdditionalData["actorType"] = unknown; } else { ActorType = parsed; AdditionalData.Remove("actorType"); } } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -108,10 +81,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf480AllowedMethodsItem>("allowedMethods", AllowedMethods);
-            writer.WriteStringValue("firstFactor", FirstFactor);
-            writer.WriteStringValue("flowId", FlowId);
-            writer.WriteStringValue("loginSessionId", LoginSessionId);
+            writer.WriteStringValue("actorId", ActorId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
+            writer.WriteBoolValue("enabled", Enabled);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

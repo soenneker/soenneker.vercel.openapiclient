@@ -18,37 +18,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("prevProjectAnalytics") is null) { _explicitNullValuePrevProjectAnalytics = default!; _explicitNullProperties?.Remove("prevProjectAnalytics"); }
-            else if (parseNode.GetChildNode("prevProjectAnalytics") is { } nullNodePrevProjectAnalytics && nullNodePrevProjectAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevProjectAnalytics = null;
-            if (parseNode.GetChildNode("projectAnalytics") is null) { _explicitNullValueProjectAnalytics = default!; _explicitNullProperties?.Remove("projectAnalytics"); }
-            else if (parseNode.GetChildNode("projectAnalytics") is { } nullNodeProjectAnalytics && nullNodeProjectAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectAnalytics = null;
+            if (parseNode.GetChildNode("previousEndpoint") is null) { _explicitNullValuePreviousEndpoint = default!; _explicitNullProperties?.Remove("previousEndpoint"); }
+            else if (parseNode.GetChildNode("previousEndpoint") is { } nullNodePreviousEndpoint && nullNodePreviousEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousEndpoint = null;
+            if (parseNode.GetChildNode("privateLinkEndpoint") is null) { _explicitNullValuePrivateLinkEndpoint = default!; _explicitNullProperties?.Remove("privateLinkEndpoint"); }
+            else if (parseNode.GetChildNode("privateLinkEndpoint") is { } nullNodePrivateLinkEndpoint && nullNodePrivateLinkEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateLinkEndpoint = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The prevProjectAnalytics property</summary>
+        /// <summary>The previousEndpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrevProjectAnalytics? PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrevProjectAnalytics? _explicitNullValuePrevProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PreviousEndpoint? PreviousEndpoint { get => _explicitNullValuePreviousEndpoint; set { _explicitNullValuePreviousEndpoint = value; AdditionalData?.Remove("previousEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEndpoint"); else _explicitNullProperties?.Remove("previousEndpoint"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PreviousEndpoint? _explicitNullValuePreviousEndpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrevProjectAnalytics PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrevProjectAnalytics _explicitNullValuePrevProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PreviousEndpoint PreviousEndpoint { get => _explicitNullValuePreviousEndpoint; set { _explicitNullValuePreviousEndpoint = value; AdditionalData?.Remove("previousEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEndpoint"); else _explicitNullProperties?.Remove("previousEndpoint"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PreviousEndpoint _explicitNullValuePreviousEndpoint = default!;
 #endif
-        /// <summary>The projectAnalytics property</summary>
+        /// <summary>The privateLinkEndpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284ProjectAnalytics? ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284ProjectAnalytics? _explicitNullValueProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrivateLinkEndpoint? PrivateLinkEndpoint { get => _explicitNullValuePrivateLinkEndpoint; set { _explicitNullValuePrivateLinkEndpoint = value; AdditionalData?.Remove("privateLinkEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateLinkEndpoint"); else _explicitNullProperties?.Remove("privateLinkEndpoint"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrivateLinkEndpoint? _explicitNullValuePrivateLinkEndpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284ProjectAnalytics ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284ProjectAnalytics _explicitNullValueProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrivateLinkEndpoint PrivateLinkEndpoint { get => _explicitNullValuePrivateLinkEndpoint; set { _explicitNullValuePrivateLinkEndpoint = value; AdditionalData?.Remove("privateLinkEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateLinkEndpoint"); else _explicitNullProperties?.Remove("privateLinkEndpoint"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrivateLinkEndpoint _explicitNullValuePrivateLinkEndpoint = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,6 +72,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
+        /// <summary>The scope property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ProjectScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ProjectScope? _explicitNullValueScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284"/> and sets the default values.
         /// </summary>
@@ -95,10 +100,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prevProjectAnalytics", n => { PrevProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrevProjectAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrevProjectAnalytics.CreateFromDiscriminatorValue); } },
-                { "projectAnalytics", n => { ProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284ProjectAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284ProjectAnalytics.CreateFromDiscriminatorValue); } },
+                { "previousEndpoint", n => { PreviousEndpoint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PreviousEndpoint>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PreviousEndpoint.CreateFromDiscriminatorValue); } },
+                { "privateLinkEndpoint", n => { PrivateLinkEndpoint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrivateLinkEndpoint>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrivateLinkEndpoint.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ProjectScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
             };
         }
         /// <summary>
@@ -108,10 +114,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrevProjectAnalytics>("prevProjectAnalytics", PrevProjectAnalytics);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284ProjectAnalytics>("projectAnalytics", ProjectAnalytics);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PreviousEndpoint>("previousEndpoint", PreviousEndpoint);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284PrivateLinkEndpoint>("privateLinkEndpoint", PrivateLinkEndpoint);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ProjectScope>("scope", Scope);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

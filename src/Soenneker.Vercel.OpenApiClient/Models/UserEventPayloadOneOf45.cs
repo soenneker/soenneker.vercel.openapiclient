@@ -18,21 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("regions") is null) { _explicitNullValueRegions = default!; _explicitNullProperties?.Remove("regions"); }
-            else if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
+            if (parseNode.GetChildNode("privateProvider") is null) { _explicitNullValuePrivateProvider = default!; _explicitNullProperties?.Remove("privateProvider"); }
+            else if (parseNode.GetChildNode("privateProvider") is { } nullNodePrivateProvider && nullNodePrivateProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateProvider = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The regions property</summary>
+        /// <summary>The privateProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
-        private List<string>? _explicitNullValueRegions = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45PrivateProvider? PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; AdditionalData?.Remove("privateProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45PrivateProvider? _explicitNullValuePrivateProvider = default!;
 #nullable restore
 #else
-        public List<string> Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
-        private List<string> _explicitNullValueRegions = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45PrivateProvider PrivateProvider { get => _explicitNullValuePrivateProvider; set { _explicitNullValuePrivateProvider = value; AdditionalData?.Remove("privateProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateProvider"); else _explicitNullProperties?.Remove("privateProvider"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45PrivateProvider _explicitNullValuePrivateProvider = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "regions", n => { Regions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "privateProvider", n => { PrivateProvider = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45PrivateProvider>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45PrivateProvider.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("regions", Regions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45PrivateProvider>("privateProvider", PrivateProvider);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

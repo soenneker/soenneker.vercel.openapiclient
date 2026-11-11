@@ -18,33 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acceptanceId") is null) { _explicitNullValueAcceptanceId = default!; _explicitNullProperties?.Remove("acceptanceId"); }
-            else if (parseNode.GetChildNode("acceptanceId") is { } nullNodeAcceptanceId && nullNodeAcceptanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptanceId = null;
-            if (parseNode.GetChildNode("termsVersion") is null) { _explicitNullValueTermsVersion = default!; _explicitNullProperties?.Remove("termsVersion"); }
-            else if (parseNode.GetChildNode("termsVersion") is { } nullNodeTermsVersion && nullNodeTermsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsVersion = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
-        /// <summary>The acceptanceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AcceptanceId { get => _explicitNullValueAcceptanceId; set { _explicitNullValueAcceptanceId = value; AdditionalData?.Remove("acceptanceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptanceId"); else _explicitNullProperties?.Remove("acceptanceId"); } }
-        private string? _explicitNullValueAcceptanceId = default!;
-#nullable restore
-#else
-        public string AcceptanceId { get => _explicitNullValueAcceptanceId; set { _explicitNullValueAcceptanceId = value; AdditionalData?.Remove("acceptanceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptanceId"); else _explicitNullProperties?.Remove("acceptanceId"); } }
-        private string _explicitNullValueAcceptanceId = default!;
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The termsVersion property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsVersion { get => _explicitNullValueTermsVersion; set { _explicitNullValueTermsVersion = value; AdditionalData?.Remove("termsVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsVersion"); else _explicitNullProperties?.Remove("termsVersion"); } }
-        private string? _explicitNullValueTermsVersion = default!;
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string TermsVersion { get => _explicitNullValueTermsVersion; set { _explicitNullValueTermsVersion = value; AdditionalData?.Remove("termsVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsVersion"); else _explicitNullProperties?.Remove("termsVersion"); } }
-        private string _explicitNullValueTermsVersion = default!;
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf451"/> and sets the default values.
@@ -71,8 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "acceptanceId", n => { AcceptanceId = n.GetStringValue(); } },
-                { "termsVersion", n => { TermsVersion = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("acceptanceId", AcceptanceId);
-            writer.WriteStringValue("termsVersion", TermsVersion);
+            writer.WriteStringValue("name", Name);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

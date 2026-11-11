@@ -18,23 +18,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
-            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("connectionType") is null) { _explicitNullValueConnectionType = default!; _explicitNullProperties?.Remove("connectionType"); }
+            else if (parseNode.GetChildNode("connectionType") is { } nullNodeConnectionType && nullNodeConnectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionType = null;
             if (parseNode.GetChildNode("organizationId") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organizationId"); }
             else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
-            if (parseNode.GetChildNode("previousMode") is null) { _explicitNullValuePreviousMode = default!; _explicitNullProperties?.Remove("previousMode"); }
-            else if (parseNode.GetChildNode("previousMode") is { } nullNodePreviousMode && nullNodePreviousMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousMode = null;
-            if (parseNode.GetChildNode("teamId") is null) { _explicitNullValueTeamId = default!; _explicitNullProperties?.Remove("teamId"); }
-            else if (parseNode.GetChildNode("teamId") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
-            if (parseNode.GetChildNode("teamName") is null) { _explicitNullValueTeamName = default!; _explicitNullProperties?.Remove("teamName"); }
-            else if (parseNode.GetChildNode("teamName") is { } nullNodeTeamName && nullNodeTeamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamName = null;
+            if (parseNode.GetChildNode("organizationSlug") is null) { _explicitNullValueOrganizationSlug = default!; _explicitNullProperties?.Remove("organizationSlug"); }
+            else if (parseNode.GetChildNode("organizationSlug") is { } nullNodeOrganizationSlug && nullNodeOrganizationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The mode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Mode? _explicitNullValueMode = default!;
+        /// <summary>The connectionType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectionType { get => _explicitNullValueConnectionType; set { _explicitNullValueConnectionType = value; AdditionalData?.Remove("connectionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionType"); else _explicitNullProperties?.Remove("connectionType"); } }
+        private string? _explicitNullValueConnectionType = default!;
+#nullable restore
+#else
+        public string ConnectionType { get => _explicitNullValueConnectionType; set { _explicitNullValueConnectionType = value; AdditionalData?.Remove("connectionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionType"); else _explicitNullProperties?.Remove("connectionType"); } }
+        private string _explicitNullValueConnectionType = default!;
+#endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,28 +48,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
         private string _explicitNullValueOrganizationId = default!;
 #endif
-        /// <summary>The previousMode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251PreviousMode? PreviousMode { get => _explicitNullValuePreviousMode; set { _explicitNullValuePreviousMode = value; AdditionalData?.Remove("previousMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousMode"); else _explicitNullProperties?.Remove("previousMode"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251PreviousMode? _explicitNullValuePreviousMode = default!;
-        /// <summary>The teamId property</summary>
+        /// <summary>The organizationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string? _explicitNullValueTeamId = default!;
+        public string? OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; AdditionalData?.Remove("organizationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
+        private string? _explicitNullValueOrganizationSlug = default!;
 #nullable restore
 #else
-        public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string _explicitNullValueTeamId = default!;
-#endif
-        /// <summary>The teamName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamName { get => _explicitNullValueTeamName; set { _explicitNullValueTeamName = value; AdditionalData?.Remove("teamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamName"); else _explicitNullProperties?.Remove("teamName"); } }
-        private string? _explicitNullValueTeamName = default!;
-#nullable restore
-#else
-        public string TeamName { get => _explicitNullValueTeamName; set { _explicitNullValueTeamName = value; AdditionalData?.Remove("teamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamName"); else _explicitNullProperties?.Remove("teamName"); } }
-        private string _explicitNullValueTeamName = default!;
+        public string OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; AdditionalData?.Remove("organizationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
+        private string _explicitNullValueOrganizationSlug = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251"/> and sets the default values.
@@ -93,11 +83,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Mode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
+                { "connectionType", n => { ConnectionType = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "previousMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251PreviousMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousMode = default; _explicitNullProperties?.Remove("previousMode"); AdditionalData["previousMode"] = unknown; } else { PreviousMode = parsed; AdditionalData.Remove("previousMode"); } } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamName", n => { TeamName = n.GetStringValue(); } },
+                { "organizationSlug", n => { OrganizationSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,11 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251Mode>("mode", Mode);
+            writer.WriteStringValue("connectionType", ConnectionType);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251PreviousMode>("previousMode", PreviousMode);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamName", TeamName);
+            writer.WriteStringValue("organizationSlug", OrganizationSlug);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

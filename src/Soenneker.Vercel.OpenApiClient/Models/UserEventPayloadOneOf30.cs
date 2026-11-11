@@ -18,21 +18,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("apiKey") is null) { _explicitNullValueApiKey = default!; _explicitNullProperties?.Remove("apiKey"); }
-            else if (parseNode.GetChildNode("apiKey") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("accessPolicy") is null) { _explicitNullValueAccessPolicy = default!; _explicitNullProperties?.Remove("accessPolicy"); }
+            else if (parseNode.GetChildNode("accessPolicy") is { } nullNodeAccessPolicy && nullNodeAccessPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessPolicy = null;
+            if (parseNode.GetChildNode("member") is null) { _explicitNullValueMember = default!; _explicitNullProperties?.Remove("member"); }
+            else if (parseNode.GetChildNode("member") is { } nullNodeMember && nullNodeMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Member = null;
         }
 
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The apiKey property</summary>
+        /// <summary>The accessPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30ApiKey? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("apiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30ApiKey? _explicitNullValueApiKey = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30AccessPolicy? AccessPolicy { get => _explicitNullValueAccessPolicy; set { _explicitNullValueAccessPolicy = value; AdditionalData?.Remove("accessPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessPolicy"); else _explicitNullProperties?.Remove("accessPolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30AccessPolicy? _explicitNullValueAccessPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30ApiKey ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("apiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30ApiKey _explicitNullValueApiKey = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30AccessPolicy AccessPolicy { get => _explicitNullValueAccessPolicy; set { _explicitNullValueAccessPolicy = value; AdditionalData?.Remove("accessPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessPolicy"); else _explicitNullProperties?.Remove("accessPolicy"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30AccessPolicy _explicitNullValueAccessPolicy = default!;
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The member property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30Member? Member { get => _explicitNullValueMember; set { _explicitNullValueMember = value; AdditionalData?.Remove("member"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member"); else _explicitNullProperties?.Remove("member"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30Member? _explicitNullValueMember = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30Member Member { get => _explicitNullValueMember; set { _explicitNullValueMember = value; AdditionalData?.Remove("member"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member"); else _explicitNullProperties?.Remove("member"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30Member _explicitNullValueMember = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30"/> and sets the default values.
@@ -59,7 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "apiKey", n => { ApiKey = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30ApiKey>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30ApiKey.CreateFromDiscriminatorValue); } },
+                { "accessPolicy", n => { AccessPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30AccessPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30AccessPolicy.CreateFromDiscriminatorValue); } },
+                { "member", n => { Member = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30Member>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30Member.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30ApiKey>("apiKey", ApiKey);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30AccessPolicy>("accessPolicy", AccessPolicy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30Member>("member", Member);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

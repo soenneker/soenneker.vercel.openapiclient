@@ -372,8 +372,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("optionsAllowlist") is { } nullNodeOptionsAllowlist && nullNodeOptionsAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsAllowlist = null;
             if (parseNode.GetChildNode("organization") is null) { _explicitNullValueOrganization = default!; _explicitNullProperties?.Remove("organization"); }
             else if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("organizationAdmin") is null) { _explicitNullValueOrganizationAdmin = default!; _explicitNullProperties?.Remove("organizationAdmin"); }
+            else if (parseNode.GetChildNode("organizationAdmin") is { } nullNodeOrganizationAdmin && nullNodeOrganizationAdmin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationAdmin = null;
             if (parseNode.GetChildNode("organizationDomain") is null) { _explicitNullValueOrganizationDomain = default!; _explicitNullProperties?.Remove("organizationDomain"); }
             else if (parseNode.GetChildNode("organizationDomain") is { } nullNodeOrganizationDomain && nullNodeOrganizationDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationDomain = null;
+            if (parseNode.GetChildNode("organizationMember") is null) { _explicitNullValueOrganizationMember = default!; _explicitNullProperties?.Remove("organizationMember"); }
+            else if (parseNode.GetChildNode("organizationMember") is { } nullNodeOrganizationMember && nullNodeOrganizationMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationMember = null;
             if (parseNode.GetChildNode("organizationTeam") is null) { _explicitNullValueOrganizationTeam = default!; _explicitNullProperties?.Remove("organizationTeam"); }
             else if (parseNode.GetChildNode("organizationTeam") is { } nullNodeOrganizationTeam && nullNodeOrganizationTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationTeam = null;
             if (parseNode.GetChildNode("ownEvent") is null) { _explicitNullValueOwnEvent = default!; _explicitNullProperties?.Remove("ownEvent"); }
@@ -2395,12 +2399,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OrganizationAdmin { get => _explicitNullValueOrganizationAdmin; set { _explicitNullValueOrganizationAdmin = value; AdditionalData?.Remove("organizationAdmin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationAdmin"); else _explicitNullProperties?.Remove("organizationAdmin"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOrganizationAdmin = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OrganizationAdmin { get => _explicitNullValueOrganizationAdmin; set { _explicitNullValueOrganizationAdmin = value; AdditionalData?.Remove("organizationAdmin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationAdmin"); else _explicitNullProperties?.Remove("organizationAdmin"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOrganizationAdmin = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OrganizationDomain { get => _explicitNullValueOrganizationDomain; set { _explicitNullValueOrganizationDomain = value; AdditionalData?.Remove("organizationDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationDomain"); else _explicitNullProperties?.Remove("organizationDomain"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOrganizationDomain = default!;
 #nullable restore
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OrganizationDomain { get => _explicitNullValueOrganizationDomain; set { _explicitNullValueOrganizationDomain = value; AdditionalData?.Remove("organizationDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationDomain"); else _explicitNullProperties?.Remove("organizationDomain"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOrganizationDomain = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? OrganizationMember { get => _explicitNullValueOrganizationMember; set { _explicitNullValueOrganizationMember = value; AdditionalData?.Remove("organizationMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationMember"); else _explicitNullProperties?.Remove("organizationMember"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueOrganizationMember = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> OrganizationMember { get => _explicitNullValueOrganizationMember; set { _explicitNullValueOrganizationMember = value; AdditionalData?.Remove("organizationMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationMember"); else _explicitNullProperties?.Remove("organizationMember"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueOrganizationMember = default!;
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -3824,7 +3848,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "openTelemetryEndpoint", n => { OpenTelemetryEndpoint = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "optionsAllowlist", n => { OptionsAllowlist = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "organization", n => { Organization = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "organizationAdmin", n => { OrganizationAdmin = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "organizationDomain", n => { OrganizationDomain = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "organizationMember", n => { OrganizationMember = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "organizationTeam", n => { OrganizationTeam = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "ownEvent", n => { OwnEvent = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "pageIntegrity", n => { PageIntegrity = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -4133,7 +4159,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("openTelemetryEndpoint", OpenTelemetryEndpoint);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("optionsAllowlist", OptionsAllowlist);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("organization", Organization);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("organizationAdmin", OrganizationAdmin);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("organizationDomain", OrganizationDomain);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("organizationMember", OrganizationMember);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("organizationTeam", OrganizationTeam);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("ownEvent", OwnEvent);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("pageIntegrity", PageIntegrity);

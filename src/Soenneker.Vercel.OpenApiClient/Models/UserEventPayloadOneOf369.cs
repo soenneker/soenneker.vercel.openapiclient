@@ -18,47 +18,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("addedProjects") is null) { _explicitNullValueAddedProjects = default!; _explicitNullProperties?.Remove("addedProjects"); }
-            else if (parseNode.GetChildNode("addedProjects") is { } nullNodeAddedProjects && nullNodeAddedProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedProjects = null;
-            if (parseNode.GetChildNode("addedProviders") is null) { _explicitNullValueAddedProviders = default!; _explicitNullProperties?.Remove("addedProviders"); }
-            else if (parseNode.GetChildNode("addedProviders") is { } nullNodeAddedProviders && nullNodeAddedProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedProviders = null;
-            if (parseNode.GetChildNode("enableVercelCiSameRepository") is null) { _explicitNullValueEnableVercelCiSameRepository = default!; _explicitNullProperties?.Remove("enableVercelCiSameRepository"); }
-            else if (parseNode.GetChildNode("enableVercelCiSameRepository") is { } nullNodeEnableVercelCiSameRepository && nullNodeEnableVercelCiSameRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableVercelCiSameRepository = null;
+            if (parseNode.GetChildNode("oldSsoProtection") is null) { _explicitNullValueOldSsoProtection = default!; _explicitNullProperties?.Remove("oldSsoProtection"); }
+            else if (parseNode.GetChildNode("oldSsoProtection") is { } nullNodeOldSsoProtection && nullNodeOldSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldSsoProtection = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("removedProjects") is null) { _explicitNullValueRemovedProjects = default!; _explicitNullProperties?.Remove("removedProjects"); }
-            else if (parseNode.GetChildNode("removedProjects") is { } nullNodeRemovedProjects && nullNodeRemovedProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedProjects = null;
-            if (parseNode.GetChildNode("removedProviders") is null) { _explicitNullValueRemovedProviders = default!; _explicitNullProperties?.Remove("removedProviders"); }
-            else if (parseNode.GetChildNode("removedProviders") is { } nullNodeRemovedProviders && nullNodeRemovedProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedProviders = null;
+            if (parseNode.GetChildNode("ssoProtection") is null) { _explicitNullValueSsoProtection = default!; _explicitNullProperties?.Remove("ssoProtection"); }
+            else if (parseNode.GetChildNode("ssoProtection") is { } nullNodeSsoProtection && nullNodeSsoProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoProtection = null;
         }
 
-        /// <summary>The addedProjects property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369AddedProjectsItem>? AddedProjects { get => _explicitNullValueAddedProjects; set { _explicitNullValueAddedProjects = value; AdditionalData?.Remove("addedProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedProjects"); else _explicitNullProperties?.Remove("addedProjects"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369AddedProjectsItem>? _explicitNullValueAddedProjects = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369AddedProjectsItem> AddedProjects { get => _explicitNullValueAddedProjects; set { _explicitNullValueAddedProjects = value; AdditionalData?.Remove("addedProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedProjects"); else _explicitNullProperties?.Remove("addedProjects"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369AddedProjectsItem> _explicitNullValueAddedProjects = default!;
-#endif
-        /// <summary>The addedProviders property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AddedProviders { get => _explicitNullValueAddedProviders; set { _explicitNullValueAddedProviders = value; AdditionalData?.Remove("addedProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedProviders"); else _explicitNullProperties?.Remove("addedProviders"); } }
-        private List<string>? _explicitNullValueAddedProviders = default!;
-#nullable restore
-#else
-        public List<string> AddedProviders { get => _explicitNullValueAddedProviders; set { _explicitNullValueAddedProviders = value; AdditionalData?.Remove("addedProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addedProviders"); else _explicitNullProperties?.Remove("addedProviders"); } }
-        private List<string> _explicitNullValueAddedProviders = default!;
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enableVercelCiSameRepository property</summary>
-        public bool? EnableVercelCiSameRepository { get => _explicitNullValueEnableVercelCiSameRepository; set { _explicitNullValueEnableVercelCiSameRepository = value; AdditionalData?.Remove("enableVercelCiSameRepository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableVercelCiSameRepository"); else _explicitNullProperties?.Remove("enableVercelCiSameRepository"); } }
-        private bool? _explicitNullValueEnableVercelCiSameRepository = default!;
+        /// <summary>The oldSsoProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369OldSsoProtection? OldSsoProtection { get => _explicitNullValueOldSsoProtection; set { _explicitNullValueOldSsoProtection = value; AdditionalData?.Remove("oldSsoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldSsoProtection"); else _explicitNullProperties?.Remove("oldSsoProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369OldSsoProtection? _explicitNullValueOldSsoProtection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369OldSsoProtection OldSsoProtection { get => _explicitNullValueOldSsoProtection; set { _explicitNullValueOldSsoProtection = value; AdditionalData?.Remove("oldSsoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldSsoProtection"); else _explicitNullProperties?.Remove("oldSsoProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369OldSsoProtection _explicitNullValueOldSsoProtection = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,25 +60,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
-        /// <summary>The removedProjects property</summary>
+        /// <summary>The ssoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369RemovedProjectsItem>? RemovedProjects { get => _explicitNullValueRemovedProjects; set { _explicitNullValueRemovedProjects = value; AdditionalData?.Remove("removedProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedProjects"); else _explicitNullProperties?.Remove("removedProjects"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369RemovedProjectsItem>? _explicitNullValueRemovedProjects = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369SsoProtection? SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; AdditionalData?.Remove("ssoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369SsoProtection? _explicitNullValueSsoProtection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369RemovedProjectsItem> RemovedProjects { get => _explicitNullValueRemovedProjects; set { _explicitNullValueRemovedProjects = value; AdditionalData?.Remove("removedProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedProjects"); else _explicitNullProperties?.Remove("removedProjects"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369RemovedProjectsItem> _explicitNullValueRemovedProjects = default!;
-#endif
-        /// <summary>The removedProviders property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? RemovedProviders { get => _explicitNullValueRemovedProviders; set { _explicitNullValueRemovedProviders = value; AdditionalData?.Remove("removedProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedProviders"); else _explicitNullProperties?.Remove("removedProviders"); } }
-        private List<string>? _explicitNullValueRemovedProviders = default!;
-#nullable restore
-#else
-        public List<string> RemovedProviders { get => _explicitNullValueRemovedProviders; set { _explicitNullValueRemovedProviders = value; AdditionalData?.Remove("removedProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedProviders"); else _explicitNullProperties?.Remove("removedProviders"); } }
-        private List<string> _explicitNullValueRemovedProviders = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369SsoProtection SsoProtection { get => _explicitNullValueSsoProtection; set { _explicitNullValueSsoProtection = value; AdditionalData?.Remove("ssoProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoProtection"); else _explicitNullProperties?.Remove("ssoProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369SsoProtection _explicitNullValueSsoProtection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369"/> and sets the default values.
@@ -124,13 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addedProjects", n => { AddedProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369AddedProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369AddedProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "addedProviders", n => { AddedProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "enableVercelCiSameRepository", n => { EnableVercelCiSameRepository = n.GetBoolValue(); } },
+                { "oldSsoProtection", n => { OldSsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369OldSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369OldSsoProtection.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "removedProjects", n => { RemovedProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369RemovedProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369RemovedProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "removedProviders", n => { RemovedProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369SsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369SsoProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,13 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369AddedProjectsItem>("addedProjects", AddedProjects);
-            writer.WriteCollectionOfPrimitiveValues<string>("addedProviders", AddedProviders);
-            writer.WriteBoolValue("enableVercelCiSameRepository", EnableVercelCiSameRepository);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369OldSsoProtection>("oldSsoProtection", OldSsoProtection);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369RemovedProjectsItem>("removedProjects", RemovedProjects);
-            writer.WriteCollectionOfPrimitiveValues<string>("removedProviders", RemovedProviders);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369SsoProtection>("ssoProtection", SsoProtection);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

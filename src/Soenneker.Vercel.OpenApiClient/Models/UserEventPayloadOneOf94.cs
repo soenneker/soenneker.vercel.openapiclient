@@ -18,50 +18,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cn") is null) { _explicitNullValueCn = default!; _explicitNullProperties?.Remove("cn"); }
-            else if (parseNode.GetChildNode("cn") is { } nullNodeCn && nullNodeCn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cn = null;
-            if (parseNode.GetChildNode("cns") is null) { _explicitNullValueCns = default!; _explicitNullProperties?.Remove("cns"); }
-            else if (parseNode.GetChildNode("cns") is { } nullNodeCns && nullNodeCns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cns = null;
-            if (parseNode.GetChildNode("custom") is null) { _explicitNullValueCustom = default!; _explicitNullProperties?.Remove("custom"); }
-            else if (parseNode.GetChildNode("custom") is { } nullNodeCustom && nullNodeCustom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Custom = null;
-            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
-            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("bulkRedirectsLimit") is null) { _explicitNullValueBulkRedirectsLimit = default!; _explicitNullProperties?.Remove("bulkRedirectsLimit"); }
+            else if (parseNode.GetChildNode("bulkRedirectsLimit") is { } nullNodeBulkRedirectsLimit && nullNodeBulkRedirectsLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BulkRedirectsLimit = null;
+            if (parseNode.GetChildNode("prevBulkRedirectsLimit") is null) { _explicitNullValuePrevBulkRedirectsLimit = default!; _explicitNullProperties?.Remove("prevBulkRedirectsLimit"); }
+            else if (parseNode.GetChildNode("prevBulkRedirectsLimit") is { } nullNodePrevBulkRedirectsLimit && nullNodePrevBulkRedirectsLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevBulkRedirectsLimit = null;
+            if (parseNode.GetChildNode("project") is null) { _explicitNullValueProject = default!; _explicitNullProperties?.Remove("project"); }
+            else if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cn property</summary>
+        /// <summary>The bulkRedirectsLimit property</summary>
+        public double? BulkRedirectsLimit { get => _explicitNullValueBulkRedirectsLimit; set { _explicitNullValueBulkRedirectsLimit = value; AdditionalData?.Remove("bulkRedirectsLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulkRedirectsLimit"); else _explicitNullProperties?.Remove("bulkRedirectsLimit"); } }
+        private double? _explicitNullValueBulkRedirectsLimit = default!;
+        /// <summary>The prevBulkRedirectsLimit property</summary>
+        public double? PrevBulkRedirectsLimit { get => _explicitNullValuePrevBulkRedirectsLimit; set { _explicitNullValuePrevBulkRedirectsLimit = value; AdditionalData?.Remove("prevBulkRedirectsLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevBulkRedirectsLimit"); else _explicitNullProperties?.Remove("prevBulkRedirectsLimit"); } }
+        private double? _explicitNullValuePrevBulkRedirectsLimit = default!;
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; AdditionalData?.Remove("cn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
-        private string? _explicitNullValueCn = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public string Cn { get => _explicitNullValueCn; set { _explicitNullValueCn = value; AdditionalData?.Remove("cn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cn"); else _explicitNullProperties?.Remove("cn"); } }
-        private string _explicitNullValueCn = default!;
-#endif
-        /// <summary>The cns property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Cns { get => _explicitNullValueCns; set { _explicitNullValueCns = value; AdditionalData?.Remove("cns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cns"); else _explicitNullProperties?.Remove("cns"); } }
-        private List<string>? _explicitNullValueCns = default!;
-#nullable restore
-#else
-        public List<string> Cns { get => _explicitNullValueCns; set { _explicitNullValueCns = value; AdditionalData?.Remove("cns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cns"); else _explicitNullProperties?.Remove("cns"); } }
-        private List<string> _explicitNullValueCns = default!;
-#endif
-        /// <summary>The custom property</summary>
-        public bool? Custom { get => _explicitNullValueCustom; set { _explicitNullValueCustom = value; AdditionalData?.Remove("custom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom"); else _explicitNullProperties?.Remove("custom"); } }
-        private bool? _explicitNullValueCustom = default!;
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
-        private string? _explicitNullValueId = default!;
-#nullable restore
-#else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
-        private string _explicitNullValueId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project _explicitNullValueProject = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94"/> and sets the default values.
@@ -88,10 +69,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cn", n => { Cn = n.GetStringValue(); } },
-                { "cns", n => { Cns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "custom", n => { Custom = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "bulkRedirectsLimit", n => { BulkRedirectsLimit = n.GetDoubleValue(); } },
+                { "prevBulkRedirectsLimit", n => { PrevBulkRedirectsLimit = n.GetDoubleValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,10 +81,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("cn", Cn);
-            writer.WriteCollectionOfPrimitiveValues<string>("cns", Cns);
-            writer.WriteBoolValue("custom", Custom);
-            writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("bulkRedirectsLimit", BulkRedirectsLimit);
+            writer.WriteDoubleValue("prevBulkRedirectsLimit", PrevBulkRedirectsLimit);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project>("project", Project);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

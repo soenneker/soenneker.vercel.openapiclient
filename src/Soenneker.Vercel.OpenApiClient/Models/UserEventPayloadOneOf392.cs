@@ -18,81 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitbucketEmail") is null) { _explicitNullValueBitbucketEmail = default!; _explicitNullProperties?.Remove("bitbucketEmail"); }
-            else if (parseNode.GetChildNode("bitbucketEmail") is { } nullNodeBitbucketEmail && nullNodeBitbucketEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketEmail = null;
-            if (parseNode.GetChildNode("bitbucketLogin") is null) { _explicitNullValueBitbucketLogin = default!; _explicitNullProperties?.Remove("bitbucketLogin"); }
-            else if (parseNode.GetChildNode("bitbucketLogin") is { } nullNodeBitbucketLogin && nullNodeBitbucketLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketLogin = null;
-            if (parseNode.GetChildNode("bitbucketName") is null) { _explicitNullValueBitbucketName = default!; _explicitNullProperties?.Remove("bitbucketName"); }
-            else if (parseNode.GetChildNode("bitbucketName") is { } nullNodeBitbucketName && nullNodeBitbucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketName = null;
-            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
-            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("zeitAccount") is null) { _explicitNullValueZeitAccount = default!; _explicitNullProperties?.Remove("zeitAccount"); }
-            else if (parseNode.GetChildNode("zeitAccount") is { } nullNodeZeitAccount && nullNodeZeitAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeitAccount = null;
-            if (parseNode.GetChildNode("zeitAccountType") is null) { _explicitNullValueZeitAccountType = default!; _explicitNullProperties?.Remove("zeitAccountType"); }
-            else if (parseNode.GetChildNode("zeitAccountType") is { } nullNodeZeitAccountType && nullNodeZeitAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeitAccountType = null;
+            if (parseNode.GetChildNode("bio") is null) { _explicitNullValueBio = default!; _explicitNullProperties?.Remove("bio"); }
+            else if (parseNode.GetChildNode("bio") is { } nullNodeBio && nullNodeBio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bio = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bitbucketEmail property</summary>
+        /// <summary>The bio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketEmail { get => _explicitNullValueBitbucketEmail; set { _explicitNullValueBitbucketEmail = value; AdditionalData?.Remove("bitbucketEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketEmail"); else _explicitNullProperties?.Remove("bitbucketEmail"); } }
-        private string? _explicitNullValueBitbucketEmail = default!;
+        public string? Bio { get => _explicitNullValueBio; set { _explicitNullValueBio = value; AdditionalData?.Remove("bio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bio"); else _explicitNullProperties?.Remove("bio"); } }
+        private string? _explicitNullValueBio = default!;
 #nullable restore
 #else
-        public string BitbucketEmail { get => _explicitNullValueBitbucketEmail; set { _explicitNullValueBitbucketEmail = value; AdditionalData?.Remove("bitbucketEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketEmail"); else _explicitNullProperties?.Remove("bitbucketEmail"); } }
-        private string _explicitNullValueBitbucketEmail = default!;
-#endif
-        /// <summary>The bitbucketLogin property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
-        private string? _explicitNullValueBitbucketLogin = default!;
-#nullable restore
-#else
-        public string BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
-        private string _explicitNullValueBitbucketLogin = default!;
-#endif
-        /// <summary>The bitbucketName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BitbucketName { get => _explicitNullValueBitbucketName; set { _explicitNullValueBitbucketName = value; AdditionalData?.Remove("bitbucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketName"); else _explicitNullProperties?.Remove("bitbucketName"); } }
-        private string? _explicitNullValueBitbucketName = default!;
-#nullable restore
-#else
-        public string BitbucketName { get => _explicitNullValueBitbucketName; set { _explicitNullValueBitbucketName = value; AdditionalData?.Remove("bitbucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketName"); else _explicitNullProperties?.Remove("bitbucketName"); } }
-        private string _explicitNullValueBitbucketName = default!;
-#endif
-        /// <summary>The email property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
-        private string? _explicitNullValueEmail = default!;
-#nullable restore
-#else
-        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
-        private string _explicitNullValueEmail = default!;
-#endif
-        /// <summary>The zeitAccount property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccount { get => _explicitNullValueZeitAccount; set { _explicitNullValueZeitAccount = value; AdditionalData?.Remove("zeitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccount"); else _explicitNullProperties?.Remove("zeitAccount"); } }
-        private string? _explicitNullValueZeitAccount = default!;
-#nullable restore
-#else
-        public string ZeitAccount { get => _explicitNullValueZeitAccount; set { _explicitNullValueZeitAccount = value; AdditionalData?.Remove("zeitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccount"); else _explicitNullProperties?.Remove("zeitAccount"); } }
-        private string _explicitNullValueZeitAccount = default!;
-#endif
-        /// <summary>The zeitAccountType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccountType { get => _explicitNullValueZeitAccountType; set { _explicitNullValueZeitAccountType = value; AdditionalData?.Remove("zeitAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccountType"); else _explicitNullProperties?.Remove("zeitAccountType"); } }
-        private string? _explicitNullValueZeitAccountType = default!;
-#nullable restore
-#else
-        public string ZeitAccountType { get => _explicitNullValueZeitAccountType; set { _explicitNullValueZeitAccountType = value; AdditionalData?.Remove("zeitAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccountType"); else _explicitNullProperties?.Remove("zeitAccountType"); } }
-        private string _explicitNullValueZeitAccountType = default!;
+        public string Bio { get => _explicitNullValueBio; set { _explicitNullValueBio = value; AdditionalData?.Remove("bio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bio"); else _explicitNullProperties?.Remove("bio"); } }
+        private string _explicitNullValueBio = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf392"/> and sets the default values.
@@ -119,12 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
-                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
-                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
-                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
+                { "bio", n => { Bio = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -134,12 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
-            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
-            writer.WriteStringValue("bitbucketName", BitbucketName);
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("zeitAccount", ZeitAccount);
-            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
+            writer.WriteStringValue("bio", Bio);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

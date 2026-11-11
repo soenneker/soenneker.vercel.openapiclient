@@ -24,6 +24,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("managedTeams") is { } nullNodeManagedTeams && nullNodeManagedTeams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagedTeams = null;
             if (parseNode.GetChildNode("organization") is null) { _explicitNullValueOrganization = default!; _explicitNullProperties?.Remove("organization"); }
             else if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("orphanSsoTeam") is null) { _explicitNullValueOrphanSsoTeam = default!; _explicitNullProperties?.Remove("orphanSsoTeam"); }
+            else if (parseNode.GetChildNode("orphanSsoTeam") is { } nullNodeOrphanSsoTeam && nullNodeOrphanSsoTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrphanSsoTeam = null;
             if (parseNode.GetChildNode("verifiedEmuDomains") is null) { _explicitNullValueVerifiedEmuDomains = default!; _explicitNullProperties?.Remove("verifiedEmuDomains"); }
             else if (parseNode.GetChildNode("verifiedEmuDomains") is { } nullNodeVerifiedEmuDomains && nullNodeVerifiedEmuDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedEmuDomains = null;
         }
@@ -52,6 +54,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization _explicitNullValueOrganization = default!;
+#endif
+        /// <summary>Orphans only: the team whose Directory Sync invite SSO sign-in redeems for a managed account once Update Account is complete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrphanSsoTeam? OrphanSsoTeam { get => _explicitNullValueOrphanSsoTeam; set { _explicitNullValueOrphanSsoTeam = value; AdditionalData?.Remove("orphanSsoTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orphanSsoTeam"); else _explicitNullProperties?.Remove("orphanSsoTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrphanSsoTeam? _explicitNullValueOrphanSsoTeam = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrphanSsoTeam OrphanSsoTeam { get => _explicitNullValueOrphanSsoTeam; set { _explicitNullValueOrphanSsoTeam = value; AdditionalData?.Remove("orphanSsoTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orphanSsoTeam"); else _explicitNullProperties?.Remove("orphanSsoTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrphanSsoTeam _explicitNullValueOrphanSsoTeam = default!;
 #endif
         /// <summary>The verifiedEmuDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,6 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "canOptOut", n => { CanOptOut = n.GetBoolValue(); } },
                 { "managedTeams", n => { ManagedTeams = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization.CreateFromDiscriminatorValue); } },
+                { "orphanSsoTeam", n => { OrphanSsoTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrphanSsoTeam>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrphanSsoTeam.CreateFromDiscriminatorValue); } },
                 { "verifiedEmuDomains", n => { VerifiedEmuDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -104,6 +117,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("canOptOut", CanOptOut);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>("managedTeams", ManagedTeams);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization>("organization", Organization);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrphanSsoTeam>("orphanSsoTeam", OrphanSsoTeam);
             writer.WriteCollectionOfPrimitiveValues<string>("verifiedEmuDomains", VerifiedEmuDomains);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -17,38 +17,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gitProvider") is null) { _explicitNullValueGitProvider = default!; _explicitNullProperties?.Remove("gitProvider"); }
-            else if (parseNode.GetChildNode("gitProvider") is { } nullNodeGitProvider && nullNodeGitProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitProvider = null;
-            if (parseNode.GetChildNode("gitRepoId") is null) { _explicitNullValueGitRepoId = default!; _explicitNullProperties?.Remove("gitRepoId"); }
-            else if (parseNode.GetChildNode("gitRepoId") is { } nullNodeGitRepoId && nullNodeGitRepoId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitRepoId = null;
-            if (parseNode.GetChildNode("gitRepositoryName") is null) { _explicitNullValueGitRepositoryName = default!; _explicitNullProperties?.Remove("gitRepositoryName"); }
-            else if (parseNode.GetChildNode("gitRepositoryName") is { } nullNodeGitRepositoryName && nullNodeGitRepositoryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitRepositoryName = null;
+            if (parseNode.GetChildNode("functionZeroConfigFailover") is null) { _explicitNullValueFunctionZeroConfigFailover = default!; _explicitNullProperties?.Remove("functionZeroConfigFailover"); }
+            else if (parseNode.GetChildNode("functionZeroConfigFailover") is { } nullNodeFunctionZeroConfigFailover && nullNodeFunctionZeroConfigFailover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionZeroConfigFailover = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitProvider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316PreviousGitProvider? GitProvider { get => _explicitNullValueGitProvider; set { _explicitNullValueGitProvider = value; AdditionalData?.Remove("gitProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProvider"); else _explicitNullProperties?.Remove("gitProvider"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316PreviousGitProvider? _explicitNullValueGitProvider = default!;
-        /// <summary>The gitRepoId property</summary>
+        /// <summary>The functionZeroConfigFailover property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitRepoId { get => _explicitNullValueGitRepoId; set { _explicitNullValueGitRepoId = value; AdditionalData?.Remove("gitRepoId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepoId"); else _explicitNullProperties?.Remove("gitRepoId"); } }
-        private string? _explicitNullValueGitRepoId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? FunctionZeroConfigFailover { get => _explicitNullValueFunctionZeroConfigFailover; set { _explicitNullValueFunctionZeroConfigFailover = value; AdditionalData?.Remove("functionZeroConfigFailover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionZeroConfigFailover"); else _explicitNullProperties?.Remove("functionZeroConfigFailover"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? _explicitNullValueFunctionZeroConfigFailover = default!;
 #nullable restore
 #else
-        public string GitRepoId { get => _explicitNullValueGitRepoId; set { _explicitNullValueGitRepoId = value; AdditionalData?.Remove("gitRepoId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepoId"); else _explicitNullProperties?.Remove("gitRepoId"); } }
-        private string _explicitNullValueGitRepoId = default!;
-#endif
-        /// <summary>The gitRepositoryName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitRepositoryName { get => _explicitNullValueGitRepositoryName; set { _explicitNullValueGitRepositoryName = value; AdditionalData?.Remove("gitRepositoryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepositoryName"); else _explicitNullProperties?.Remove("gitRepositoryName"); } }
-        private string? _explicitNullValueGitRepositoryName = default!;
-#nullable restore
-#else
-        public string GitRepositoryName { get => _explicitNullValueGitRepositoryName; set { _explicitNullValueGitRepositoryName = value; AdditionalData?.Remove("gitRepositoryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitRepositoryName"); else _explicitNullProperties?.Remove("gitRepositoryName"); } }
-        private string _explicitNullValueGitRepositoryName = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback FunctionZeroConfigFailover { get => _explicitNullValueFunctionZeroConfigFailover; set { _explicitNullValueFunctionZeroConfigFailover = value; AdditionalData?.Remove("functionZeroConfigFailover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionZeroConfigFailover"); else _explicitNullProperties?.Remove("functionZeroConfigFailover"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback _explicitNullValueFunctionZeroConfigFailover = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316Previous"/> and sets the default values.
@@ -75,9 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitProvider", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316PreviousGitProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGitProvider = default; _explicitNullProperties?.Remove("gitProvider"); AdditionalData["gitProvider"] = unknown; } else { GitProvider = parsed; AdditionalData.Remove("gitProvider"); } } },
-                { "gitRepoId", n => { GitRepoId = n.GetStringValue(); } },
-                { "gitRepositoryName", n => { GitRepositoryName = n.GetStringValue(); } },
+                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,9 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316PreviousGitProvider>("gitProvider", GitProvider);
-            writer.WriteStringValue("gitRepoId", GitRepoId);
-            writer.WriteStringValue("gitRepositoryName", GitRepositoryName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>("functionZeroConfigFailover", FunctionZeroConfigFailover);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

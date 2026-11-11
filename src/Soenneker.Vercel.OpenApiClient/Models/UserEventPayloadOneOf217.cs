@@ -18,46 +18,56 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("issuerId") is null) { _explicitNullValueIssuerId = default!; _explicitNullProperties?.Remove("issuerId"); }
-            else if (parseNode.GetChildNode("issuerId") is { } nullNodeIssuerId && nullNodeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerId = null;
-            if (parseNode.GetChildNode("issuerName") is null) { _explicitNullValueIssuerName = default!; _explicitNullProperties?.Remove("issuerName"); }
-            else if (parseNode.GetChildNode("issuerName") is { } nullNodeIssuerName && nullNodeIssuerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerName = null;
-            if (parseNode.GetChildNode("keyId") is null) { _explicitNullValueKeyId = default!; _explicitNullProperties?.Remove("keyId"); }
-            else if (parseNode.GetChildNode("keyId") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
+            if (parseNode.GetChildNode("accessTokenRotation") is null) { _explicitNullValueAccessTokenRotation = default!; _explicitNullProperties?.Remove("accessTokenRotation"); }
+            else if (parseNode.GetChildNode("accessTokenRotation") is { } nullNodeAccessTokenRotation && nullNodeAccessTokenRotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokenRotation = null;
+            if (parseNode.GetChildNode("integrationId") is null) { _explicitNullValueIntegrationId = default!; _explicitNullProperties?.Remove("integrationId"); }
+            else if (parseNode.GetChildNode("integrationId") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
+            if (parseNode.GetChildNode("integrationName") is null) { _explicitNullValueIntegrationName = default!; _explicitNullProperties?.Remove("integrationName"); }
+            else if (parseNode.GetChildNode("integrationName") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
+            if (parseNode.GetChildNode("integrationSlug") is null) { _explicitNullValueIntegrationSlug = default!; _explicitNullProperties?.Remove("integrationSlug"); }
+            else if (parseNode.GetChildNode("integrationSlug") is { } nullNodeIntegrationSlug && nullNodeIntegrationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationSlug = null;
+            if (parseNode.GetChildNode("permanentTokensExpireAt") is null) { _explicitNullValuePermanentTokensExpireAt = default!; _explicitNullProperties?.Remove("permanentTokensExpireAt"); }
+            else if (parseNode.GetChildNode("permanentTokensExpireAt") is { } nullNodePermanentTokensExpireAt && nullNodePermanentTokensExpireAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermanentTokensExpireAt = null;
         }
 
+        /// <summary>The accessTokenRotation property</summary>
+        public bool? AccessTokenRotation { get => _explicitNullValueAccessTokenRotation; set { _explicitNullValueAccessTokenRotation = value; AdditionalData?.Remove("accessTokenRotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessTokenRotation"); else _explicitNullProperties?.Remove("accessTokenRotation"); } }
+        private bool? _explicitNullValueAccessTokenRotation = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The issuerId property</summary>
+        /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
-        private string? _explicitNullValueIssuerId = default!;
+        public string? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integrationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationId"); else _explicitNullProperties?.Remove("integrationId"); } }
+        private string? _explicitNullValueIntegrationId = default!;
 #nullable restore
 #else
-        public string IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
-        private string _explicitNullValueIssuerId = default!;
+        public string IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integrationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationId"); else _explicitNullProperties?.Remove("integrationId"); } }
+        private string _explicitNullValueIntegrationId = default!;
 #endif
-        /// <summary>The issuerName property</summary>
+        /// <summary>The integrationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerName { get => _explicitNullValueIssuerName; set { _explicitNullValueIssuerName = value; AdditionalData?.Remove("issuerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerName"); else _explicitNullProperties?.Remove("issuerName"); } }
-        private string? _explicitNullValueIssuerName = default!;
+        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        private string? _explicitNullValueIntegrationName = default!;
 #nullable restore
 #else
-        public string IssuerName { get => _explicitNullValueIssuerName; set { _explicitNullValueIssuerName = value; AdditionalData?.Remove("issuerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerName"); else _explicitNullProperties?.Remove("issuerName"); } }
-        private string _explicitNullValueIssuerName = default!;
+        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        private string _explicitNullValueIntegrationName = default!;
 #endif
-        /// <summary>The keyId property</summary>
+        /// <summary>The integrationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("keyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyId"); else _explicitNullProperties?.Remove("keyId"); } }
-        private string? _explicitNullValueKeyId = default!;
+        public string? IntegrationSlug { get => _explicitNullValueIntegrationSlug; set { _explicitNullValueIntegrationSlug = value; AdditionalData?.Remove("integrationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationSlug"); else _explicitNullProperties?.Remove("integrationSlug"); } }
+        private string? _explicitNullValueIntegrationSlug = default!;
 #nullable restore
 #else
-        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("keyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyId"); else _explicitNullProperties?.Remove("keyId"); } }
-        private string _explicitNullValueKeyId = default!;
+        public string IntegrationSlug { get => _explicitNullValueIntegrationSlug; set { _explicitNullValueIntegrationSlug = value; AdditionalData?.Remove("integrationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationSlug"); else _explicitNullProperties?.Remove("integrationSlug"); } }
+        private string _explicitNullValueIntegrationSlug = default!;
 #endif
+        /// <summary>The permanentTokensExpireAt property</summary>
+        public double? PermanentTokensExpireAt { get => _explicitNullValuePermanentTokensExpireAt; set { _explicitNullValuePermanentTokensExpireAt = value; AdditionalData?.Remove("permanentTokensExpireAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanentTokensExpireAt"); else _explicitNullProperties?.Remove("permanentTokensExpireAt"); } }
+        private double? _explicitNullValuePermanentTokensExpireAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf217"/> and sets the default values.
         /// </summary>
@@ -83,9 +93,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "issuerId", n => { IssuerId = n.GetStringValue(); } },
-                { "issuerName", n => { IssuerName = n.GetStringValue(); } },
-                { "keyId", n => { KeyId = n.GetStringValue(); } },
+                { "accessTokenRotation", n => { AccessTokenRotation = n.GetBoolValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
+                { "permanentTokensExpireAt", n => { PermanentTokensExpireAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -95,9 +107,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("issuerId", IssuerId);
-            writer.WriteStringValue("issuerName", IssuerName);
-            writer.WriteStringValue("keyId", KeyId);
+            writer.WriteBoolValue("accessTokenRotation", AccessTokenRotation);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("integrationSlug", IntegrationSlug);
+            writer.WriteDoubleValue("permanentTokensExpireAt", PermanentTokensExpireAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

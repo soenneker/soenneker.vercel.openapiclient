@@ -18,24 +18,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domainId") is null) { _explicitNullValueDomainId = default!; _explicitNullProperties?.Remove("domainId"); }
-            else if (parseNode.GetChildNode("domainId") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("newTeam") is null) { _explicitNullValueNewTeam = default!; _explicitNullProperties?.Remove("newTeam"); }
+            else if (parseNode.GetChildNode("newTeam") is { } nullNodeNewTeam && nullNodeNewTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTeam = null;
+            if (parseNode.GetChildNode("oldTeam") is null) { _explicitNullValueOldTeam = default!; _explicitNullProperties?.Remove("oldTeam"); }
+            else if (parseNode.GetChildNode("oldTeam") is { } nullNodeOldTeam && nullNodeOldTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldTeam = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domainId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; AdditionalData?.Remove("domainId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainId"); else _explicitNullProperties?.Remove("domainId"); } }
-        private string? _explicitNullValueDomainId = default!;
-#nullable restore
-#else
-        public string DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; AdditionalData?.Remove("domainId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainId"); else _explicitNullProperties?.Remove("domainId"); } }
-        private string _explicitNullValueDomainId = default!;
-#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +37,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
+#endif
+        /// <summary>The newTeam property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146NewTeam? NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; AdditionalData?.Remove("newTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146NewTeam? _explicitNullValueNewTeam = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146NewTeam NewTeam { get => _explicitNullValueNewTeam; set { _explicitNullValueNewTeam = value; AdditionalData?.Remove("newTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTeam"); else _explicitNullProperties?.Remove("newTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146NewTeam _explicitNullValueNewTeam = default!;
+#endif
+        /// <summary>The oldTeam property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146OldTeam? OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; AdditionalData?.Remove("oldTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146OldTeam? _explicitNullValueOldTeam = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146OldTeam OldTeam { get => _explicitNullValueOldTeam; set { _explicitNullValueOldTeam = value; AdditionalData?.Remove("oldTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldTeam"); else _explicitNullProperties?.Remove("oldTeam"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146OldTeam _explicitNullValueOldTeam = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146"/> and sets the default values.
@@ -71,8 +83,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domainId", n => { DomainId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "newTeam", n => { NewTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146NewTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146NewTeam.CreateFromDiscriminatorValue); } },
+                { "oldTeam", n => { OldTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146OldTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146OldTeam.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,8 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domainId", DomainId);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146NewTeam>("newTeam", NewTeam);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146OldTeam>("oldTeam", OldTeam);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

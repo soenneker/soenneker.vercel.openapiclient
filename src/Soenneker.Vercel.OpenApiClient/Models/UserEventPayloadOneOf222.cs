@@ -18,27 +18,58 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("login") is null) { _explicitNullValueLogin = default!; _explicitNullProperties?.Remove("login"); }
-            else if (parseNode.GetChildNode("login") is { } nullNodeLogin && nullNodeLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Login = null;
-            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
-            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("issuerId") is null) { _explicitNullValueIssuerId = default!; _explicitNullProperties?.Remove("issuerId"); }
+            else if (parseNode.GetChildNode("issuerId") is { } nullNodeIssuerId && nullNodeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerId = null;
+            if (parseNode.GetChildNode("issuerName") is null) { _explicitNullValueIssuerName = default!; _explicitNullProperties?.Remove("issuerName"); }
+            else if (parseNode.GetChildNode("issuerName") is { } nullNodeIssuerName && nullNodeIssuerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerName = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("policyKey") is null) { _explicitNullValuePolicyKey = default!; _explicitNullProperties?.Remove("policyKey"); }
+            else if (parseNode.GetChildNode("policyKey") is { } nullNodePolicyKey && nullNodePolicyKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The login property</summary>
+        /// <summary>The issuerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Login { get => _explicitNullValueLogin; set { _explicitNullValueLogin = value; AdditionalData?.Remove("login"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login"); else _explicitNullProperties?.Remove("login"); } }
-        private string? _explicitNullValueLogin = default!;
+        public string? IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
+        private string? _explicitNullValueIssuerId = default!;
 #nullable restore
 #else
-        public string Login { get => _explicitNullValueLogin; set { _explicitNullValueLogin = value; AdditionalData?.Remove("login"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login"); else _explicitNullProperties?.Remove("login"); } }
-        private string _explicitNullValueLogin = default!;
+        public string IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
+        private string _explicitNullValueIssuerId = default!;
 #endif
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222Provider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222Provider? _explicitNullValueProvider = default!;
+        /// <summary>The issuerName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IssuerName { get => _explicitNullValueIssuerName; set { _explicitNullValueIssuerName = value; AdditionalData?.Remove("issuerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerName"); else _explicitNullProperties?.Remove("issuerName"); } }
+        private string? _explicitNullValueIssuerName = default!;
+#nullable restore
+#else
+        public string IssuerName { get => _explicitNullValueIssuerName; set { _explicitNullValueIssuerName = value; AdditionalData?.Remove("issuerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerName"); else _explicitNullProperties?.Remove("issuerName"); } }
+        private string _explicitNullValueIssuerName = default!;
+#endif
+        /// <summary>The kind property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string? _explicitNullValueKind = default!;
+#nullable restore
+#else
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string _explicitNullValueKind = default!;
+#endif
+        /// <summary>The policyKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyKey { get => _explicitNullValuePolicyKey; set { _explicitNullValuePolicyKey = value; AdditionalData?.Remove("policyKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policyKey"); else _explicitNullProperties?.Remove("policyKey"); } }
+        private string? _explicitNullValuePolicyKey = default!;
+#nullable restore
+#else
+        public string PolicyKey { get => _explicitNullValuePolicyKey; set { _explicitNullValuePolicyKey = value; AdditionalData?.Remove("policyKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policyKey"); else _explicitNullProperties?.Remove("policyKey"); } }
+        private string _explicitNullValuePolicyKey = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222"/> and sets the default values.
         /// </summary>
@@ -64,8 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "login", n => { Login = n.GetStringValue(); } },
-                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222Provider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
+                { "issuerId", n => { IssuerId = n.GetStringValue(); } },
+                { "issuerName", n => { IssuerName = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetStringValue(); } },
+                { "policyKey", n => { PolicyKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,8 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("login", Login);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222Provider>("provider", Provider);
+            writer.WriteStringValue("issuerId", IssuerId);
+            writer.WriteStringValue("issuerName", IssuerName);
+            writer.WriteStringValue("kind", Kind);
+            writer.WriteStringValue("policyKey", PolicyKey);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

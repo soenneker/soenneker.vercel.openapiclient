@@ -18,34 +18,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bitbucketAccountId") is null) { _explicitNullValueBitbucketAccountId = default!; _explicitNullProperties?.Remove("bitbucketAccountId"); }
-            else if (parseNode.GetChildNode("bitbucketAccountId") is { } nullNodeBitbucketAccountId && nullNodeBitbucketAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketAccountId = null;
-            if (parseNode.GetChildNode("bitbucketLogin") is null) { _explicitNullValueBitbucketLogin = default!; _explicitNullProperties?.Remove("bitbucketLogin"); }
-            else if (parseNode.GetChildNode("bitbucketLogin") is { } nullNodeBitbucketLogin && nullNodeBitbucketLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketLogin = null;
+            if (parseNode.GetChildNode("gitlabLogin") is null) { _explicitNullValueGitlabLogin = default!; _explicitNullProperties?.Remove("gitlabLogin"); }
+            else if (parseNode.GetChildNode("gitlabLogin") is { } nullNodeGitlabLogin && nullNodeGitlabLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitlabLogin = null;
+            if (parseNode.GetChildNode("gitlabUserId") is null) { _explicitNullValueGitlabUserId = default!; _explicitNullProperties?.Remove("gitlabUserId"); }
+            else if (parseNode.GetChildNode("gitlabUserId") is { } nullNodeGitlabUserId && nullNodeGitlabUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitlabUserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bitbucketAccountId property</summary>
+        /// <summary>The gitlabLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketAccountId { get => _explicitNullValueBitbucketAccountId; set { _explicitNullValueBitbucketAccountId = value; AdditionalData?.Remove("bitbucketAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketAccountId"); else _explicitNullProperties?.Remove("bitbucketAccountId"); } }
-        private string? _explicitNullValueBitbucketAccountId = default!;
+        public string? GitlabLogin { get => _explicitNullValueGitlabLogin; set { _explicitNullValueGitlabLogin = value; AdditionalData?.Remove("gitlabLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabLogin"); else _explicitNullProperties?.Remove("gitlabLogin"); } }
+        private string? _explicitNullValueGitlabLogin = default!;
 #nullable restore
 #else
-        public string BitbucketAccountId { get => _explicitNullValueBitbucketAccountId; set { _explicitNullValueBitbucketAccountId = value; AdditionalData?.Remove("bitbucketAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketAccountId"); else _explicitNullProperties?.Remove("bitbucketAccountId"); } }
-        private string _explicitNullValueBitbucketAccountId = default!;
+        public string GitlabLogin { get => _explicitNullValueGitlabLogin; set { _explicitNullValueGitlabLogin = value; AdditionalData?.Remove("gitlabLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabLogin"); else _explicitNullProperties?.Remove("gitlabLogin"); } }
+        private string _explicitNullValueGitlabLogin = default!;
 #endif
-        /// <summary>The bitbucketLogin property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
-        private string? _explicitNullValueBitbucketLogin = default!;
-#nullable restore
-#else
-        public string BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
-        private string _explicitNullValueBitbucketLogin = default!;
-#endif
+        /// <summary>The gitlabUserId property</summary>
+        public double? GitlabUserId { get => _explicitNullValueGitlabUserId; set { _explicitNullValueGitlabUserId = value; AdditionalData?.Remove("gitlabUserId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlabUserId"); else _explicitNullProperties?.Remove("gitlabUserId"); } }
+        private double? _explicitNullValueGitlabUserId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf115"/> and sets the default values.
         /// </summary>
@@ -71,8 +64,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bitbucketAccountId", n => { BitbucketAccountId = n.GetStringValue(); } },
-                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
+                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
+                { "gitlabUserId", n => { GitlabUserId = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +75,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bitbucketAccountId", BitbucketAccountId);
-            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
+            writer.WriteStringValue("gitlabLogin", GitlabLogin);
+            writer.WriteDoubleValue("gitlabUserId", GitlabUserId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

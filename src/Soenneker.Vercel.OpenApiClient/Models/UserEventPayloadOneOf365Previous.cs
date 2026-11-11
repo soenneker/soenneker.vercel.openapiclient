@@ -17,21 +17,57 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("skewProtectionAllowedDomains") is null) { _explicitNullValueSkewProtectionAllowedDomains = default!; _explicitNullProperties?.Remove("skewProtectionAllowedDomains"); }
-            else if (parseNode.GetChildNode("skewProtectionAllowedDomains") is { } nullNodeSkewProtectionAllowedDomains && nullNodeSkewProtectionAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewProtectionAllowedDomains = null;
+            if (parseNode.GetChildNode("expiration") is null) { _explicitNullValueExpiration = default!; _explicitNullProperties?.Remove("expiration"); }
+            else if (parseNode.GetChildNode("expiration") is { } nullNodeExpiration && nullNodeExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiration = null;
+            if (parseNode.GetChildNode("expirationCanceled") is null) { _explicitNullValueExpirationCanceled = default!; _explicitNullProperties?.Remove("expirationCanceled"); }
+            else if (parseNode.GetChildNode("expirationCanceled") is { } nullNodeExpirationCanceled && nullNodeExpirationCanceled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationCanceled = null;
+            if (parseNode.GetChildNode("expirationErrored") is null) { _explicitNullValueExpirationErrored = default!; _explicitNullProperties?.Remove("expirationErrored"); }
+            else if (parseNode.GetChildNode("expirationErrored") is { } nullNodeExpirationErrored && nullNodeExpirationErrored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationErrored = null;
+            if (parseNode.GetChildNode("expirationProduction") is null) { _explicitNullValueExpirationProduction = default!; _explicitNullProperties?.Remove("expirationProduction"); }
+            else if (parseNode.GetChildNode("expirationProduction") is { } nullNodeExpirationProduction && nullNodeExpirationProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationProduction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The skewProtectionAllowedDomains property</summary>
+        /// <summary>The expiration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SkewProtectionAllowedDomains { get => _explicitNullValueSkewProtectionAllowedDomains; set { _explicitNullValueSkewProtectionAllowedDomains = value; AdditionalData?.Remove("skewProtectionAllowedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionAllowedDomains"); else _explicitNullProperties?.Remove("skewProtectionAllowedDomains"); } }
-        private List<string>? _explicitNullValueSkewProtectionAllowedDomains = default!;
+        public string? Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; AdditionalData?.Remove("expiration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        private string? _explicitNullValueExpiration = default!;
 #nullable restore
 #else
-        public List<string> SkewProtectionAllowedDomains { get => _explicitNullValueSkewProtectionAllowedDomains; set { _explicitNullValueSkewProtectionAllowedDomains = value; AdditionalData?.Remove("skewProtectionAllowedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skewProtectionAllowedDomains"); else _explicitNullProperties?.Remove("skewProtectionAllowedDomains"); } }
-        private List<string> _explicitNullValueSkewProtectionAllowedDomains = default!;
+        public string Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; AdditionalData?.Remove("expiration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        private string _explicitNullValueExpiration = default!;
+#endif
+        /// <summary>The expirationCanceled property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpirationCanceled { get => _explicitNullValueExpirationCanceled; set { _explicitNullValueExpirationCanceled = value; AdditionalData?.Remove("expirationCanceled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationCanceled"); else _explicitNullProperties?.Remove("expirationCanceled"); } }
+        private string? _explicitNullValueExpirationCanceled = default!;
+#nullable restore
+#else
+        public string ExpirationCanceled { get => _explicitNullValueExpirationCanceled; set { _explicitNullValueExpirationCanceled = value; AdditionalData?.Remove("expirationCanceled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationCanceled"); else _explicitNullProperties?.Remove("expirationCanceled"); } }
+        private string _explicitNullValueExpirationCanceled = default!;
+#endif
+        /// <summary>The expirationErrored property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpirationErrored { get => _explicitNullValueExpirationErrored; set { _explicitNullValueExpirationErrored = value; AdditionalData?.Remove("expirationErrored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationErrored"); else _explicitNullProperties?.Remove("expirationErrored"); } }
+        private string? _explicitNullValueExpirationErrored = default!;
+#nullable restore
+#else
+        public string ExpirationErrored { get => _explicitNullValueExpirationErrored; set { _explicitNullValueExpirationErrored = value; AdditionalData?.Remove("expirationErrored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationErrored"); else _explicitNullProperties?.Remove("expirationErrored"); } }
+        private string _explicitNullValueExpirationErrored = default!;
+#endif
+        /// <summary>The expirationProduction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpirationProduction { get => _explicitNullValueExpirationProduction; set { _explicitNullValueExpirationProduction = value; AdditionalData?.Remove("expirationProduction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationProduction"); else _explicitNullProperties?.Remove("expirationProduction"); } }
+        private string? _explicitNullValueExpirationProduction = default!;
+#nullable restore
+#else
+        public string ExpirationProduction { get => _explicitNullValueExpirationProduction; set { _explicitNullValueExpirationProduction = value; AdditionalData?.Remove("expirationProduction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationProduction"); else _explicitNullProperties?.Remove("expirationProduction"); } }
+        private string _explicitNullValueExpirationProduction = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365Previous"/> and sets the default values.
@@ -58,7 +94,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "skewProtectionAllowedDomains", n => { SkewProtectionAllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "expiration", n => { Expiration = n.GetStringValue(); } },
+                { "expirationCanceled", n => { ExpirationCanceled = n.GetStringValue(); } },
+                { "expirationErrored", n => { ExpirationErrored = n.GetStringValue(); } },
+                { "expirationProduction", n => { ExpirationProduction = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +107,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("skewProtectionAllowedDomains", SkewProtectionAllowedDomains);
+            writer.WriteStringValue("expiration", Expiration);
+            writer.WriteStringValue("expirationCanceled", ExpirationCanceled);
+            writer.WriteStringValue("expirationErrored", ExpirationErrored);
+            writer.WriteStringValue("expirationProduction", ExpirationProduction);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

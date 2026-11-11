@@ -18,34 +18,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("group") is null) { _explicitNullValueGroup = default!; _explicitNullProperties?.Remove("group"); }
-            else if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
-            if (parseNode.GetChildNode("project") is null) { _explicitNullValueProject = default!; _explicitNullProperties?.Remove("project"); }
-            else if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("allowedIntegrationCount") is null) { _explicitNullValueAllowedIntegrationCount = default!; _explicitNullProperties?.Remove("allowedIntegrationCount"); }
+            else if (parseNode.GetChildNode("allowedIntegrationCount") is { } nullNodeAllowedIntegrationCount && nullNodeAllowedIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationCount = null;
+            if (parseNode.GetChildNode("allowedIntegrationIds") is null) { _explicitNullValueAllowedIntegrationIds = default!; _explicitNullProperties?.Remove("allowedIntegrationIds"); }
+            else if (parseNode.GetChildNode("allowedIntegrationIds") is { } nullNodeAllowedIntegrationIds && nullNodeAllowedIntegrationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIntegrationIds = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("resourceOnlyIntegrationCount") is null) { _explicitNullValueResourceOnlyIntegrationCount = default!; _explicitNullProperties?.Remove("resourceOnlyIntegrationCount"); }
+            else if (parseNode.GetChildNode("resourceOnlyIntegrationCount") is { } nullNodeResourceOnlyIntegrationCount && nullNodeResourceOnlyIntegrationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceOnlyIntegrationCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The group property</summary>
+        /// <summary>The allowedIntegrationCount property</summary>
+        public double? AllowedIntegrationCount { get => _explicitNullValueAllowedIntegrationCount; set { _explicitNullValueAllowedIntegrationCount = value; AdditionalData?.Remove("allowedIntegrationCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationCount"); else _explicitNullProperties?.Remove("allowedIntegrationCount"); } }
+        private double? _explicitNullValueAllowedIntegrationCount = default!;
+        /// <summary>The allowedIntegrationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Group? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Group? _explicitNullValueGroup = default!;
+        public List<string>? AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; AdditionalData?.Remove("allowedIntegrationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
+        private List<string>? _explicitNullValueAllowedIntegrationIds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Group Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Group _explicitNullValueGroup = default!;
+        public List<string> AllowedIntegrationIds { get => _explicitNullValueAllowedIntegrationIds; set { _explicitNullValueAllowedIntegrationIds = value; AdditionalData?.Remove("allowedIntegrationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIntegrationIds"); else _explicitNullProperties?.Remove("allowedIntegrationIds"); } }
+        private List<string> _explicitNullValueAllowedIntegrationIds = default!;
 #endif
-        /// <summary>The project property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Project? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Project? _explicitNullValueProject = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Project Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Project _explicitNullValueProject = default!;
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
+        /// <summary>The resourceOnlyIntegrationCount property</summary>
+        public double? ResourceOnlyIntegrationCount { get => _explicitNullValueResourceOnlyIntegrationCount; set { _explicitNullValueResourceOnlyIntegrationCount = value; AdditionalData?.Remove("resourceOnlyIntegrationCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceOnlyIntegrationCount"); else _explicitNullProperties?.Remove("resourceOnlyIntegrationCount"); } }
+        private double? _explicitNullValueResourceOnlyIntegrationCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231"/> and sets the default values.
         /// </summary>
@@ -71,8 +74,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Group>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Group.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Project.CreateFromDiscriminatorValue); } },
+                { "allowedIntegrationCount", n => { AllowedIntegrationCount = n.GetDoubleValue(); } },
+                { "allowedIntegrationIds", n => { AllowedIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "resourceOnlyIntegrationCount", n => { ResourceOnlyIntegrationCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +87,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Group>("group", Group);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231Project>("project", Project);
+            writer.WriteDoubleValue("allowedIntegrationCount", AllowedIntegrationCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedIntegrationIds", AllowedIntegrationIds);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteDoubleValue("resourceOnlyIntegrationCount", ResourceOnlyIntegrationCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

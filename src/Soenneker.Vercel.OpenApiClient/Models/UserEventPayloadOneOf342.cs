@@ -18,12 +18,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destinationAccountName") is null) { _explicitNullValueDestinationAccountName = default!; _explicitNullProperties?.Remove("destinationAccountName"); }
-            else if (parseNode.GetChildNode("destinationAccountName") is { } nullNodeDestinationAccountName && nullNodeDestinationAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAccountName = null;
             if (parseNode.GetChildNode("newProjectId") is null) { _explicitNullValueNewProjectId = default!; _explicitNullProperties?.Remove("newProjectId"); }
             else if (parseNode.GetChildNode("newProjectId") is { } nullNodeNewProjectId && nullNodeNewProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewProjectId = null;
             if (parseNode.GetChildNode("newProjectName") is null) { _explicitNullValueNewProjectName = default!; _explicitNullProperties?.Remove("newProjectName"); }
             else if (parseNode.GetChildNode("newProjectName") is { } nullNodeNewProjectName && nullNodeNewProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewProjectName = null;
+            if (parseNode.GetChildNode("originAccountName") is null) { _explicitNullValueOriginAccountName = default!; _explicitNullProperties?.Remove("originAccountName"); }
+            else if (parseNode.GetChildNode("originAccountName") is { } nullNodeOriginAccountName && nullNodeOriginAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginAccountName = null;
             if (parseNode.GetChildNode("previousProjectId") is null) { _explicitNullValuePreviousProjectId = default!; _explicitNullProperties?.Remove("previousProjectId"); }
             else if (parseNode.GetChildNode("previousProjectId") is { } nullNodePreviousProjectId && nullNodePreviousProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousProjectId = null;
             if (parseNode.GetChildNode("previousProjectName") is null) { _explicitNullValuePreviousProjectName = default!; _explicitNullProperties?.Remove("previousProjectName"); }
@@ -34,16 +34,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destinationAccountName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DestinationAccountName { get => _explicitNullValueDestinationAccountName; set { _explicitNullValueDestinationAccountName = value; AdditionalData?.Remove("destinationAccountName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountName"); else _explicitNullProperties?.Remove("destinationAccountName"); } }
-        private string? _explicitNullValueDestinationAccountName = default!;
-#nullable restore
-#else
-        public string DestinationAccountName { get => _explicitNullValueDestinationAccountName; set { _explicitNullValueDestinationAccountName = value; AdditionalData?.Remove("destinationAccountName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountName"); else _explicitNullProperties?.Remove("destinationAccountName"); } }
-        private string _explicitNullValueDestinationAccountName = default!;
-#endif
         /// <summary>The newProjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +53,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string NewProjectName { get => _explicitNullValueNewProjectName; set { _explicitNullValueNewProjectName = value; AdditionalData?.Remove("newProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newProjectName"); else _explicitNullProperties?.Remove("newProjectName"); } }
         private string _explicitNullValueNewProjectName = default!;
+#endif
+        /// <summary>The originAccountName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginAccountName { get => _explicitNullValueOriginAccountName; set { _explicitNullValueOriginAccountName = value; AdditionalData?.Remove("originAccountName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originAccountName"); else _explicitNullProperties?.Remove("originAccountName"); } }
+        private string? _explicitNullValueOriginAccountName = default!;
+#nullable restore
+#else
+        public string OriginAccountName { get => _explicitNullValueOriginAccountName; set { _explicitNullValueOriginAccountName = value; AdditionalData?.Remove("originAccountName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originAccountName"); else _explicitNullProperties?.Remove("originAccountName"); } }
+        private string _explicitNullValueOriginAccountName = default!;
 #endif
         /// <summary>The previousProjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,9 +119,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destinationAccountName", n => { DestinationAccountName = n.GetStringValue(); } },
                 { "newProjectId", n => { NewProjectId = n.GetStringValue(); } },
                 { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
+                { "originAccountName", n => { OriginAccountName = n.GetStringValue(); } },
                 { "previousProjectId", n => { PreviousProjectId = n.GetStringValue(); } },
                 { "previousProjectName", n => { PreviousProjectName = n.GetStringValue(); } },
                 { "transferId", n => { TransferId = n.GetStringValue(); } },
@@ -134,9 +134,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destinationAccountName", DestinationAccountName);
             writer.WriteStringValue("newProjectId", NewProjectId);
             writer.WriteStringValue("newProjectName", NewProjectName);
+            writer.WriteStringValue("originAccountName", OriginAccountName);
             writer.WriteStringValue("previousProjectId", PreviousProjectId);
             writer.WriteStringValue("previousProjectName", PreviousProjectName);
             writer.WriteStringValue("transferId", TransferId);

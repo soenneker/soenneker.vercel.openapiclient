@@ -271,6 +271,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayScopeBudgetUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-system-credential-fallback-opt-out-toggled")]
+        #pragma warning disable CS1591
+        AiGatewaySystemCredentialFallbackOptOutToggled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-transcripts-default-disabled")]
         #pragma warning disable CS1591
         AiGatewayTranscriptsDefaultDisabled,
@@ -1107,6 +1111,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FlagsExplorerSubscription,
         #pragma warning restore CS1591
+        [EnumMember(Value = "flags-overrides-signed")]
+        #pragma warning disable CS1591
+        FlagsOverridesSigned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "flags-sdk-key")]
         #pragma warning disable CS1591
         FlagsSdkKey,
@@ -1371,6 +1379,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         MessageboardCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-grant-created")]
+        #pragma warning disable CS1591
+        MessageboardGrantCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-grant-revoked")]
+        #pragma warning disable CS1591
+        MessageboardGrantRevoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-grant-updated")]
+        #pragma warning disable CS1591
+        MessageboardGrantUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-private-channel-created")]
         #pragma warning disable CS1591
         MessageboardPrivateChannelCreated,
@@ -1383,6 +1403,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         MessageboardPrivateCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-grant-created")]
+        #pragma warning disable CS1591
+        MessageboardPrivateGrantCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-grant-revoked")]
+        #pragma warning disable CS1591
+        MessageboardPrivateGrantRevoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-grant-updated")]
+        #pragma warning disable CS1591
+        MessageboardPrivateGrantUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-private-project-granted")]
         #pragma warning disable CS1591
         MessageboardPrivateProjectGranted,
@@ -1394,6 +1426,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "messageboard-project-channel-created")]
         #pragma warning disable CS1591
         MessageboardProjectChannelCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-project-created")]
+        #pragma warning disable CS1591
+        MessageboardProjectCreated,
         #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-project-granted")]
         #pragma warning disable CS1591

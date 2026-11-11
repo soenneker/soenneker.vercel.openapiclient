@@ -18,16 +18,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("enableExternalRewriteCaching") is null) { _explicitNullValueEnableExternalRewriteCaching = default!; _explicitNullProperties?.Remove("enableExternalRewriteCaching"); }
+            else if (parseNode.GetChildNode("enableExternalRewriteCaching") is { } nullNodeEnableExternalRewriteCaching && nullNodeEnableExternalRewriteCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableExternalRewriteCaching = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("sourceFilesOutsideRootDirectory") is null) { _explicitNullValueSourceFilesOutsideRootDirectory = default!; _explicitNullProperties?.Remove("sourceFilesOutsideRootDirectory"); }
-            else if (parseNode.GetChildNode("sourceFilesOutsideRootDirectory") is { } nullNodeSourceFilesOutsideRootDirectory && nullNodeSourceFilesOutsideRootDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFilesOutsideRootDirectory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The enableExternalRewriteCaching property</summary>
+        public bool? EnableExternalRewriteCaching { get => _explicitNullValueEnableExternalRewriteCaching; set { _explicitNullValueEnableExternalRewriteCaching = value; AdditionalData?.Remove("enableExternalRewriteCaching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableExternalRewriteCaching"); else _explicitNullProperties?.Remove("enableExternalRewriteCaching"); } }
+        private bool? _explicitNullValueEnableExternalRewriteCaching = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,9 +51,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
-        /// <summary>The sourceFilesOutsideRootDirectory property</summary>
-        public bool? SourceFilesOutsideRootDirectory { get => _explicitNullValueSourceFilesOutsideRootDirectory; set { _explicitNullValueSourceFilesOutsideRootDirectory = value; AdditionalData?.Remove("sourceFilesOutsideRootDirectory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceFilesOutsideRootDirectory"); else _explicitNullProperties?.Remove("sourceFilesOutsideRootDirectory"); } }
-        private bool? _explicitNullValueSourceFilesOutsideRootDirectory = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293"/> and sets the default values.
         /// </summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enableExternalRewriteCaching", n => { EnableExternalRewriteCaching = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "sourceFilesOutsideRootDirectory", n => { SourceFilesOutsideRootDirectory = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -88,9 +88,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enableExternalRewriteCaching", EnableExternalRewriteCaching);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("sourceFilesOutsideRootDirectory", SourceFilesOutsideRootDirectory);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

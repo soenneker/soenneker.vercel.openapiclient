@@ -18,21 +18,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("newTargetPercentage") is null) { _explicitNullValueNewTargetPercentage = default!; _explicitNullProperties?.Remove("newTargetPercentage"); }
-            else if (parseNode.GetChildNode("newTargetPercentage") is { } nullNodeNewTargetPercentage && nullNodeNewTargetPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTargetPercentage = null;
+            if (parseNode.GetChildNode("consent") is null) { _explicitNullValueConsent = default!; _explicitNullProperties?.Remove("consent"); }
+            else if (parseNode.GetChildNode("consent") is { } nullNodeConsent && nullNodeConsent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Consent = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("targetDeploymentId") is null) { _explicitNullValueTargetDeploymentId = default!; _explicitNullProperties?.Remove("targetDeploymentId"); }
-            else if (parseNode.GetChildNode("targetDeploymentId") is { } nullNodeTargetDeploymentId && nullNodeTargetDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetDeploymentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newTargetPercentage property</summary>
-        public double? NewTargetPercentage { get => _explicitNullValueNewTargetPercentage; set { _explicitNullValueNewTargetPercentage = value; AdditionalData?.Remove("newTargetPercentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newTargetPercentage"); else _explicitNullProperties?.Remove("newTargetPercentage"); } }
-        private double? _explicitNullValueNewTargetPercentage = default!;
+        /// <summary>The consent property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352Consent? Consent { get => _explicitNullValueConsent; set { _explicitNullValueConsent = value; AdditionalData?.Remove("consent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent"); else _explicitNullProperties?.Remove("consent"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352Consent? _explicitNullValueConsent = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,16 +50,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
-#endif
-        /// <summary>The targetDeploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetDeploymentId { get => _explicitNullValueTargetDeploymentId; set { _explicitNullValueTargetDeploymentId = value; AdditionalData?.Remove("targetDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetDeploymentId"); else _explicitNullProperties?.Remove("targetDeploymentId"); } }
-        private string? _explicitNullValueTargetDeploymentId = default!;
-#nullable restore
-#else
-        public string TargetDeploymentId { get => _explicitNullValueTargetDeploymentId; set { _explicitNullValueTargetDeploymentId = value; AdditionalData?.Remove("targetDeploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetDeploymentId"); else _explicitNullProperties?.Remove("targetDeploymentId"); } }
-        private string _explicitNullValueTargetDeploymentId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352"/> and sets the default values.
@@ -88,10 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newTargetPercentage", n => { NewTargetPercentage = n.GetDoubleValue(); } },
+                { "consent", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352Consent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConsent = default; _explicitNullProperties?.Remove("consent"); AdditionalData["consent"] = unknown; } else { Consent = parsed; AdditionalData.Remove("consent"); } } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "targetDeploymentId", n => { TargetDeploymentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -101,10 +88,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("newTargetPercentage", NewTargetPercentage);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352Consent>("consent", Consent);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("targetDeploymentId", TargetDeploymentId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -18,69 +18,57 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
-            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("newProjectId") is null) { _explicitNullValueNewProjectId = default!; _explicitNullProperties?.Remove("newProjectId"); }
-            else if (parseNode.GetChildNode("newProjectId") is { } nullNodeNewProjectId && nullNodeNewProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewProjectId = null;
-            if (parseNode.GetChildNode("newProjectName") is null) { _explicitNullValueNewProjectName = default!; _explicitNullProperties?.Remove("newProjectName"); }
-            else if (parseNode.GetChildNode("newProjectName") is { } nullNodeNewProjectName && nullNodeNewProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewProjectName = null;
-            if (parseNode.GetChildNode("oldProjectId") is null) { _explicitNullValueOldProjectId = default!; _explicitNullProperties?.Remove("oldProjectId"); }
-            else if (parseNode.GetChildNode("oldProjectId") is { } nullNodeOldProjectId && nullNodeOldProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldProjectId = null;
-            if (parseNode.GetChildNode("oldProjectName") is null) { _explicitNullValueOldProjectName = default!; _explicitNullProperties?.Remove("oldProjectName"); }
-            else if (parseNode.GetChildNode("oldProjectName") is { } nullNodeOldProjectName && nullNodeOldProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldProjectName = null;
+            if (parseNode.GetChildNode("next") is null) { _explicitNullValueNext = default!; _explicitNullProperties?.Remove("next"); }
+            else if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("previous") is null) { _explicitNullValuePrevious = default!; _explicitNullProperties?.Remove("previous"); }
+            else if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
+            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
-        private string? _explicitNullValueDomain = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
-        private string _explicitNullValueDomain = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next _explicitNullValueNext = default!;
 #endif
-        /// <summary>The newProjectId property</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewProjectId { get => _explicitNullValueNewProjectId; set { _explicitNullValueNewProjectId = value; AdditionalData?.Remove("newProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newProjectId"); else _explicitNullProperties?.Remove("newProjectId"); } }
-        private string? _explicitNullValueNewProjectId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous? _explicitNullValuePrevious = default!;
 #nullable restore
 #else
-        public string NewProjectId { get => _explicitNullValueNewProjectId; set { _explicitNullValueNewProjectId = value; AdditionalData?.Remove("newProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newProjectId"); else _explicitNullProperties?.Remove("newProjectId"); } }
-        private string _explicitNullValueNewProjectId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous _explicitNullValuePrevious = default!;
 #endif
-        /// <summary>The newProjectName property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewProjectName { get => _explicitNullValueNewProjectName; set { _explicitNullValueNewProjectName = value; AdditionalData?.Remove("newProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newProjectName"); else _explicitNullProperties?.Remove("newProjectName"); } }
-        private string? _explicitNullValueNewProjectName = default!;
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string NewProjectName { get => _explicitNullValueNewProjectName; set { _explicitNullValueNewProjectName = value; AdditionalData?.Remove("newProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newProjectName"); else _explicitNullProperties?.Remove("newProjectName"); } }
-        private string _explicitNullValueNewProjectName = default!;
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The oldProjectId property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldProjectId { get => _explicitNullValueOldProjectId; set { _explicitNullValueOldProjectId = value; AdditionalData?.Remove("oldProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldProjectId"); else _explicitNullProperties?.Remove("oldProjectId"); } }
-        private string? _explicitNullValueOldProjectId = default!;
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string? _explicitNullValueProjectName = default!;
 #nullable restore
 #else
-        public string OldProjectId { get => _explicitNullValueOldProjectId; set { _explicitNullValueOldProjectId = value; AdditionalData?.Remove("oldProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldProjectId"); else _explicitNullProperties?.Remove("oldProjectId"); } }
-        private string _explicitNullValueOldProjectId = default!;
-#endif
-        /// <summary>The oldProjectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OldProjectName { get => _explicitNullValueOldProjectName; set { _explicitNullValueOldProjectName = value; AdditionalData?.Remove("oldProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldProjectName"); else _explicitNullProperties?.Remove("oldProjectName"); } }
-        private string? _explicitNullValueOldProjectName = default!;
-#nullable restore
-#else
-        public string OldProjectName { get => _explicitNullValueOldProjectName; set { _explicitNullValueOldProjectName = value; AdditionalData?.Remove("oldProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldProjectName"); else _explicitNullProperties?.Remove("oldProjectName"); } }
-        private string _explicitNullValueOldProjectName = default!;
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string _explicitNullValueProjectName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331"/> and sets the default values.
@@ -107,11 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "newProjectId", n => { NewProjectId = n.GetStringValue(); } },
-                { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
-                { "oldProjectId", n => { OldProjectId = n.GetStringValue(); } },
-                { "oldProjectName", n => { OldProjectName = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -121,11 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("newProjectId", NewProjectId);
-            writer.WriteStringValue("newProjectName", NewProjectName);
-            writer.WriteStringValue("oldProjectId", OldProjectId);
-            writer.WriteStringValue("oldProjectName", OldProjectName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous>("previous", Previous);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

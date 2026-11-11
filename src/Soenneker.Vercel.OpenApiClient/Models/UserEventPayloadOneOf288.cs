@@ -18,8 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("avatarDarkMode") is null) { _explicitNullValueAvatarDarkMode = default!; _explicitNullProperties?.Remove("avatarDarkMode"); }
-            else if (parseNode.GetChildNode("avatarDarkMode") is { } nullNodeAvatarDarkMode && nullNodeAvatarDarkMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarDarkMode = null;
+            if (parseNode.GetChildNode("prevProjectAnalytics") is null) { _explicitNullValuePrevProjectAnalytics = default!; _explicitNullProperties?.Remove("prevProjectAnalytics"); }
+            else if (parseNode.GetChildNode("prevProjectAnalytics") is { } nullNodePrevProjectAnalytics && nullNodePrevProjectAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevProjectAnalytics = null;
+            if (parseNode.GetChildNode("projectAnalytics") is null) { _explicitNullValueProjectAnalytics = default!; _explicitNullProperties?.Remove("projectAnalytics"); }
+            else if (parseNode.GetChildNode("projectAnalytics") is { } nullNodeProjectAnalytics && nullNodeProjectAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectAnalytics = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
@@ -28,15 +30,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatarDarkMode property</summary>
+        /// <summary>The prevProjectAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvatarDarkMode { get => _explicitNullValueAvatarDarkMode; set { _explicitNullValueAvatarDarkMode = value; AdditionalData?.Remove("avatarDarkMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarDarkMode"); else _explicitNullProperties?.Remove("avatarDarkMode"); } }
-        private string? _explicitNullValueAvatarDarkMode = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288PrevProjectAnalyticsProperty? PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288PrevProjectAnalyticsProperty? _explicitNullValuePrevProjectAnalytics = default!;
 #nullable restore
 #else
-        public string AvatarDarkMode { get => _explicitNullValueAvatarDarkMode; set { _explicitNullValueAvatarDarkMode = value; AdditionalData?.Remove("avatarDarkMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarDarkMode"); else _explicitNullProperties?.Remove("avatarDarkMode"); } }
-        private string _explicitNullValueAvatarDarkMode = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288PrevProjectAnalyticsProperty PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288PrevProjectAnalyticsProperty _explicitNullValuePrevProjectAnalytics = default!;
+#endif
+        /// <summary>The projectAnalytics property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288ProjectAnalyticsProperty? ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288ProjectAnalyticsProperty? _explicitNullValueProjectAnalytics = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288ProjectAnalyticsProperty ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288ProjectAnalyticsProperty _explicitNullValueProjectAnalytics = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +95,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatarDarkMode", n => { AvatarDarkMode = n.GetStringValue(); } },
+                { "prevProjectAnalytics", n => { PrevProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288PrevProjectAnalyticsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288PrevProjectAnalyticsProperty.CreateFromDiscriminatorValue); } },
+                { "projectAnalytics", n => { ProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288ProjectAnalyticsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288ProjectAnalyticsProperty.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -95,7 +108,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("avatarDarkMode", AvatarDarkMode);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288PrevProjectAnalyticsProperty>("prevProjectAnalytics", PrevProjectAnalytics);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288ProjectAnalyticsProperty>("projectAnalytics", ProjectAnalytics);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

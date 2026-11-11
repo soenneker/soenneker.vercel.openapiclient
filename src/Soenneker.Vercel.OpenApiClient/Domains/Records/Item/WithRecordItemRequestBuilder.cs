@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Domains.Records.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRecordItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/records/{recordId}", pathParameters)
+        public WithRecordItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/records/{recordId}{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.Domains.Records.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRecordItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/records/{recordId}", rawUrl)
+        public WithRecordItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/records/{recordId}{?slug*,teamId*}", rawUrl)
         {
         }
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDomainsRecordsByRecordId200Response"/></returns>
@@ -38,11 +38,11 @@ namespace Soenneker.Vercel.OpenApiClient.Domains.Records.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainsRecordsByRecordId200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainsRecordsByRecordId200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder.WithRecordItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainsRecordsByRecordId200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainsRecordsByRecordId200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder.WithRecordItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -52,11 +52,11 @@ namespace Soenneker.Vercel.OpenApiClient.Domains.Records.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder.WithRecordItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder.WithRecordItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -72,6 +72,32 @@ namespace Soenneker.Vercel.OpenApiClient.Domains.Records.Item
         public global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        #pragma warning disable CS1591
+        public partial class WithRecordItemRequestBuilderGetQueryParameters 
+        #pragma warning restore CS1591
+        {
+            /// <summary>The Team slug to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("slug")]
+            public string? Slug { get; set; }
+#nullable restore
+#else
+            [QueryParameter("slug")]
+            public string Slug { get; set; }
+#endif
+            /// <summary>The Team identifier to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("teamId")]
+            public string? TeamId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("teamId")]
+            public string TeamId { get; set; }
+#endif
         }
     }
 }

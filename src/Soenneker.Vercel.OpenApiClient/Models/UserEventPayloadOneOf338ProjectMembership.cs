@@ -19,8 +19,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
             else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("previousRole") is null) { _explicitNullValuePreviousRole = default!; _explicitNullProperties?.Remove("previousRole"); }
-            else if (parseNode.GetChildNode("previousRole") is { } nullNodePreviousRole && nullNodePreviousRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRole = null;
             if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
             else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
             if (parseNode.GetChildNode("uid") is null) { _explicitNullValueUid = default!; _explicitNullProperties?.Remove("uid"); }
@@ -34,9 +32,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private double? _explicitNullValueCreatedAt = default!;
-        /// <summary>The previousRole property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipPreviousRole? PreviousRole { get => _explicitNullValuePreviousRole; set { _explicitNullValuePreviousRole = value; AdditionalData?.Remove("previousRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousRole"); else _explicitNullProperties?.Remove("previousRole"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipPreviousRole? _explicitNullValuePreviousRole = default!;
         /// <summary>The role property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipRole? _explicitNullValueRole = default!;
@@ -75,6 +70,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembership CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
             return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembership(), parseNode);
         }
         /// <summary>
@@ -86,7 +83,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "previousRole", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipPreviousRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousRole = default; _explicitNullProperties?.Remove("previousRole"); AdditionalData["previousRole"] = unknown; } else { PreviousRole = parsed; AdditionalData.Remove("previousRole"); } } },
                 { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -100,7 +96,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipPreviousRole>("previousRole", PreviousRole);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338ProjectMembershipRole>("role", Role);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("username", Username);

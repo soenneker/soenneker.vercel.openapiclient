@@ -17,28 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("environmentIds") is null) { _explicitNullValueEnvironmentIds = default!; _explicitNullProperties?.Remove("environmentIds"); }
-            else if (parseNode.GetChildNode("environmentIds") is { } nullNodeEnvironmentIds && nullNodeEnvironmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentIds = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("privateDnsNames") is null) { _explicitNullValuePrivateDnsNames = default!; _explicitNullProperties?.Remove("privateDnsNames"); }
-            else if (parseNode.GetChildNode("privateDnsNames") is { } nullNodePrivateDnsNames && nullNodePrivateDnsNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateDnsNames = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The environmentIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? EnvironmentIds { get => _explicitNullValueEnvironmentIds; set { _explicitNullValueEnvironmentIds = value; AdditionalData?.Remove("environmentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentIds"); else _explicitNullProperties?.Remove("environmentIds"); } }
-        private List<string>? _explicitNullValueEnvironmentIds = default!;
-#nullable restore
-#else
-        public List<string> EnvironmentIds { get => _explicitNullValueEnvironmentIds; set { _explicitNullValueEnvironmentIds = value; AdditionalData?.Remove("environmentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentIds"); else _explicitNullProperties?.Remove("environmentIds"); } }
-        private List<string> _explicitNullValueEnvironmentIds = default!;
-#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,16 +44,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
-#endif
-        /// <summary>The privateDnsNames property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PrivateDnsNames { get => _explicitNullValuePrivateDnsNames; set { _explicitNullValuePrivateDnsNames = value; AdditionalData?.Remove("privateDnsNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateDnsNames"); else _explicitNullProperties?.Remove("privateDnsNames"); } }
-        private List<string>? _explicitNullValuePrivateDnsNames = default!;
-#nullable restore
-#else
-        public List<string> PrivateDnsNames { get => _explicitNullValuePrivateDnsNames; set { _explicitNullValuePrivateDnsNames = value; AdditionalData?.Remove("privateDnsNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateDnsNames"); else _explicitNullProperties?.Remove("privateDnsNames"); } }
-        private List<string> _explicitNullValuePrivateDnsNames = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281PrivateLinkEndpoint"/> and sets the default values.
@@ -94,10 +70,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "environmentIds", n => { EnvironmentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "privateDnsNames", n => { PrivateDnsNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -107,10 +81,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("environmentIds", EnvironmentIds);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("privateDnsNames", PrivateDnsNames);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

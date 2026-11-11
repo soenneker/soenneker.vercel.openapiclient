@@ -17,22 +17,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("functionZeroConfigFailover") is null) { _explicitNullValueFunctionZeroConfigFailover = default!; _explicitNullProperties?.Remove("functionZeroConfigFailover"); }
-            else if (parseNode.GetChildNode("functionZeroConfigFailover") is { } nullNodeFunctionZeroConfigFailover && nullNodeFunctionZeroConfigFailover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionZeroConfigFailover = null;
+            if (parseNode.GetChildNode("functionDefaultTimeout") is null) { _explicitNullValueFunctionDefaultTimeout = default!; _explicitNullProperties?.Remove("functionDefaultTimeout"); }
+            else if (parseNode.GetChildNode("functionDefaultTimeout") is { } nullNodeFunctionDefaultTimeout && nullNodeFunctionDefaultTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDefaultTimeout = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The functionZeroConfigFailover property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? FunctionZeroConfigFailover { get => _explicitNullValueFunctionZeroConfigFailover; set { _explicitNullValueFunctionZeroConfigFailover = value; AdditionalData?.Remove("functionZeroConfigFailover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionZeroConfigFailover"); else _explicitNullProperties?.Remove("functionZeroConfigFailover"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback? _explicitNullValueFunctionZeroConfigFailover = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback FunctionZeroConfigFailover { get => _explicitNullValueFunctionZeroConfigFailover; set { _explicitNullValueFunctionZeroConfigFailover = value; AdditionalData?.Remove("functionZeroConfigFailover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionZeroConfigFailover"); else _explicitNullProperties?.Remove("functionZeroConfigFailover"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback _explicitNullValueFunctionZeroConfigFailover = default!;
-#endif
+        /// <summary>The functionDefaultTimeout property</summary>
+        public double? FunctionDefaultTimeout { get => _explicitNullValueFunctionDefaultTimeout; set { _explicitNullValueFunctionDefaultTimeout = value; AdditionalData?.Remove("functionDefaultTimeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functionDefaultTimeout"); else _explicitNullProperties?.Remove("functionDefaultTimeout"); } }
+        private double? _explicitNullValueFunctionDefaultTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313Previous"/> and sets the default values.
         /// </summary>
@@ -58,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback.CreateFromDiscriminatorValue); } },
+                { "functionDefaultTimeout", n => { FunctionDefaultTimeout = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseEnablePreviewFeedback>("functionZeroConfigFailover", FunctionZeroConfigFailover);
+            writer.WriteDoubleValue("functionDefaultTimeout", FunctionDefaultTimeout);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

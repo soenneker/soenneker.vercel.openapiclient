@@ -20,8 +20,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("boardId") is null) { _explicitNullValueBoardId = default!; _explicitNullProperties?.Remove("boardId"); }
             else if (parseNode.GetChildNode("boardId") is { } nullNodeBoardId && nullNodeBoardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardId = null;
-            if (parseNode.GetChildNode("channelId") is null) { _explicitNullValueChannelId = default!; _explicitNullProperties?.Remove("channelId"); }
-            else if (parseNode.GetChildNode("channelId") is { } nullNodeChannelId && nullNodeChannelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChannelId = null;
             if (parseNode.GetChildNode("operationId") is null) { _explicitNullValueOperationId = default!; _explicitNullProperties?.Remove("operationId"); }
             else if (parseNode.GetChildNode("operationId") is { } nullNodeOperationId && nullNodeOperationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationId = null;
         }
@@ -37,16 +35,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string BoardId { get => _explicitNullValueBoardId; set { _explicitNullValueBoardId = value; AdditionalData?.Remove("boardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardId"); else _explicitNullProperties?.Remove("boardId"); } }
         private string _explicitNullValueBoardId = default!;
-#endif
-        /// <summary>The channelId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChannelId { get => _explicitNullValueChannelId; set { _explicitNullValueChannelId = value; AdditionalData?.Remove("channelId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channelId"); else _explicitNullProperties?.Remove("channelId"); } }
-        private string? _explicitNullValueChannelId = default!;
-#nullable restore
-#else
-        public string ChannelId { get => _explicitNullValueChannelId; set { _explicitNullValueChannelId = value; AdditionalData?.Remove("channelId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channelId"); else _explicitNullProperties?.Remove("channelId"); } }
-        private string _explicitNullValueChannelId = default!;
 #endif
         /// <summary>The operationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +72,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "boardId", n => { BoardId = n.GetStringValue(); } },
-                { "channelId", n => { ChannelId = n.GetStringValue(); } },
                 { "operationId", n => { OperationId = n.GetStringValue(); } },
             };
         }
@@ -96,7 +83,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("boardId", BoardId);
-            writer.WriteStringValue("channelId", ChannelId);
             writer.WriteStringValue("operationId", OperationId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

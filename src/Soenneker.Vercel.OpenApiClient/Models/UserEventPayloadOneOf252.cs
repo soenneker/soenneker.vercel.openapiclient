@@ -18,70 +18,44 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blockReason") is null) { _explicitNullValueBlockReason = default!; _explicitNullProperties?.Remove("blockReason"); }
-            else if (parseNode.GetChildNode("blockReason") is { } nullNodeBlockReason && nullNodeBlockReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockReason = null;
-            if (parseNode.GetChildNode("cause") is null) { _explicitNullValueCause = default!; _explicitNullProperties?.Remove("cause"); }
-            else if (parseNode.GetChildNode("cause") is { } nullNodeCause && nullNodeCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cause = null;
-            if (parseNode.GetChildNode("ownerId") is null) { _explicitNullValueOwnerId = default!; _explicitNullProperties?.Remove("ownerId"); }
-            else if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
-            if (parseNode.GetChildNode("siftRoute") is null) { _explicitNullValueSiftRoute = default!; _explicitNullProperties?.Remove("siftRoute"); }
-            else if (parseNode.GetChildNode("siftRoute") is { } nullNodeSiftRoute && nullNodeSiftRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiftRoute = null;
-            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
-            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("enforced") is null) { _explicitNullValueEnforced = default!; _explicitNullProperties?.Remove("enforced"); }
+            else if (parseNode.GetChildNode("enforced") is { } nullNodeEnforced && nullNodeEnforced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enforced = null;
+            if (parseNode.GetChildNode("organizationId") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organizationId"); }
+            else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
+            if (parseNode.GetChildNode("organizationSlug") is null) { _explicitNullValueOrganizationSlug = default!; _explicitNullProperties?.Remove("organizationSlug"); }
+            else if (parseNode.GetChildNode("organizationSlug") is { } nullNodeOrganizationSlug && nullNodeOrganizationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationSlug = null;
+            if (parseNode.GetChildNode("previousEnforced") is null) { _explicitNullValuePreviousEnforced = default!; _explicitNullProperties?.Remove("previousEnforced"); }
+            else if (parseNode.GetChildNode("previousEnforced") is { } nullNodePreviousEnforced && nullNodePreviousEnforced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousEnforced = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blockReason property</summary>
+        /// <summary>The enforced property</summary>
+        public bool? Enforced { get => _explicitNullValueEnforced; set { _explicitNullValueEnforced = value; AdditionalData?.Remove("enforced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforced"); else _explicitNullProperties?.Remove("enforced"); } }
+        private bool? _explicitNullValueEnforced = default!;
+        /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockReason { get => _explicitNullValueBlockReason; set { _explicitNullValueBlockReason = value; AdditionalData?.Remove("blockReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockReason"); else _explicitNullProperties?.Remove("blockReason"); } }
-        private string? _explicitNullValueBlockReason = default!;
+        public string? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
+        private string? _explicitNullValueOrganizationId = default!;
 #nullable restore
 #else
-        public string BlockReason { get => _explicitNullValueBlockReason; set { _explicitNullValueBlockReason = value; AdditionalData?.Remove("blockReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockReason"); else _explicitNullProperties?.Remove("blockReason"); } }
-        private string _explicitNullValueBlockReason = default!;
+        public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
+        private string _explicitNullValueOrganizationId = default!;
 #endif
-        /// <summary>The cause property</summary>
+        /// <summary>The organizationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; AdditionalData?.Remove("cause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
-        private string? _explicitNullValueCause = default!;
+        public string? OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; AdditionalData?.Remove("organizationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
+        private string? _explicitNullValueOrganizationSlug = default!;
 #nullable restore
 #else
-        public string Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; AdditionalData?.Remove("cause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
-        private string _explicitNullValueCause = default!;
+        public string OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; AdditionalData?.Remove("organizationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
+        private string _explicitNullValueOrganizationSlug = default!;
 #endif
-        /// <summary>The ownerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
-        private string? _explicitNullValueOwnerId = default!;
-#nullable restore
-#else
-        public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
-        private string _explicitNullValueOwnerId = default!;
-#endif
-        /// <summary>The siftRoute property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252SiftRoute? SiftRoute { get => _explicitNullValueSiftRoute; set { _explicitNullValueSiftRoute = value; AdditionalData?.Remove("siftRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("siftRoute"); else _explicitNullProperties?.Remove("siftRoute"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252SiftRoute? _explicitNullValueSiftRoute = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252SiftRoute SiftRoute { get => _explicitNullValueSiftRoute; set { _explicitNullValueSiftRoute = value; AdditionalData?.Remove("siftRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("siftRoute"); else _explicitNullProperties?.Remove("siftRoute"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252SiftRoute _explicitNullValueSiftRoute = default!;
-#endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
-        private string? _explicitNullValueSource = default!;
-#nullable restore
-#else
-        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
-        private string _explicitNullValueSource = default!;
-#endif
+        /// <summary>The previousEnforced property</summary>
+        public bool? PreviousEnforced { get => _explicitNullValuePreviousEnforced; set { _explicitNullValuePreviousEnforced = value; AdditionalData?.Remove("previousEnforced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEnforced"); else _explicitNullProperties?.Remove("previousEnforced"); } }
+        private bool? _explicitNullValuePreviousEnforced = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252"/> and sets the default values.
         /// </summary>
@@ -107,11 +81,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blockReason", n => { BlockReason = n.GetStringValue(); } },
-                { "cause", n => { Cause = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "siftRoute", n => { SiftRoute = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252SiftRoute>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252SiftRoute.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetStringValue(); } },
+                { "enforced", n => { Enforced = n.GetBoolValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "organizationSlug", n => { OrganizationSlug = n.GetStringValue(); } },
+                { "previousEnforced", n => { PreviousEnforced = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -121,11 +94,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("blockReason", BlockReason);
-            writer.WriteStringValue("cause", Cause);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252SiftRoute>("siftRoute", SiftRoute);
-            writer.WriteStringValue("source", Source);
+            writer.WriteBoolValue("enforced", Enforced);
+            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("organizationSlug", OrganizationSlug);
+            writer.WriteBoolValue("previousEnforced", PreviousEnforced);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

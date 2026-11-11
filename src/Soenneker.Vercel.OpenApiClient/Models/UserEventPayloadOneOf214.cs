@@ -18,23 +18,46 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accessTokenRotation") is null) { _explicitNullValueAccessTokenRotation = default!; _explicitNullProperties?.Remove("accessTokenRotation"); }
-            else if (parseNode.GetChildNode("accessTokenRotation") is { } nullNodeAccessTokenRotation && nullNodeAccessTokenRotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokenRotation = null;
+            if (parseNode.GetChildNode("configurationId") is null) { _explicitNullValueConfigurationId = default!; _explicitNullProperties?.Remove("configurationId"); }
+            else if (parseNode.GetChildNode("configurationId") is { } nullNodeConfigurationId && nullNodeConfigurationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationId = null;
+            if (parseNode.GetChildNode("errorCode") is null) { _explicitNullValueErrorCode = default!; _explicitNullProperties?.Remove("errorCode"); }
+            else if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
             if (parseNode.GetChildNode("integrationId") is null) { _explicitNullValueIntegrationId = default!; _explicitNullProperties?.Remove("integrationId"); }
             else if (parseNode.GetChildNode("integrationId") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
-            if (parseNode.GetChildNode("integrationName") is null) { _explicitNullValueIntegrationName = default!; _explicitNullProperties?.Remove("integrationName"); }
-            else if (parseNode.GetChildNode("integrationName") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
+            if (parseNode.GetChildNode("integrationProductSlug") is null) { _explicitNullValueIntegrationProductSlug = default!; _explicitNullProperties?.Remove("integrationProductSlug"); }
+            else if (parseNode.GetChildNode("integrationProductSlug") is { } nullNodeIntegrationProductSlug && nullNodeIntegrationProductSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationProductSlug = null;
             if (parseNode.GetChildNode("integrationSlug") is null) { _explicitNullValueIntegrationSlug = default!; _explicitNullProperties?.Remove("integrationSlug"); }
             else if (parseNode.GetChildNode("integrationSlug") is { } nullNodeIntegrationSlug && nullNodeIntegrationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationSlug = null;
-            if (parseNode.GetChildNode("permanentTokensExpireAt") is null) { _explicitNullValuePermanentTokensExpireAt = default!; _explicitNullProperties?.Remove("permanentTokensExpireAt"); }
-            else if (parseNode.GetChildNode("permanentTokensExpireAt") is { } nullNodePermanentTokensExpireAt && nullNodePermanentTokensExpireAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermanentTokensExpireAt = null;
+            if (parseNode.GetChildNode("keys") is null) { _explicitNullValueKeys = default!; _explicitNullProperties?.Remove("keys"); }
+            else if (parseNode.GetChildNode("keys") is { } nullNodeKeys && nullNodeKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keys = null;
+            if (parseNode.GetChildNode("requestKind") is null) { _explicitNullValueRequestKind = default!; _explicitNullProperties?.Remove("requestKind"); }
+            else if (parseNode.GetChildNode("requestKind") is { } nullNodeRequestKind && nullNodeRequestKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestKind = null;
+            if (parseNode.GetChildNode("resourceId") is null) { _explicitNullValueResourceId = default!; _explicitNullProperties?.Remove("resourceId"); }
+            else if (parseNode.GetChildNode("resourceId") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
         }
 
-        /// <summary>The accessTokenRotation property</summary>
-        public bool? AccessTokenRotation { get => _explicitNullValueAccessTokenRotation; set { _explicitNullValueAccessTokenRotation = value; AdditionalData?.Remove("accessTokenRotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessTokenRotation"); else _explicitNullProperties?.Remove("accessTokenRotation"); } }
-        private bool? _explicitNullValueAccessTokenRotation = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The configurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConfigurationId { get => _explicitNullValueConfigurationId; set { _explicitNullValueConfigurationId = value; AdditionalData?.Remove("configurationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationId"); else _explicitNullProperties?.Remove("configurationId"); } }
+        private string? _explicitNullValueConfigurationId = default!;
+#nullable restore
+#else
+        public string ConfigurationId { get => _explicitNullValueConfigurationId; set { _explicitNullValueConfigurationId = value; AdditionalData?.Remove("configurationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationId"); else _explicitNullProperties?.Remove("configurationId"); } }
+        private string _explicitNullValueConfigurationId = default!;
+#endif
+        /// <summary>The errorCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("errorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        private string? _explicitNullValueErrorCode = default!;
+#nullable restore
+#else
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("errorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        private string _explicitNullValueErrorCode = default!;
+#endif
         /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,15 +68,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integrationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationId"); else _explicitNullProperties?.Remove("integrationId"); } }
         private string _explicitNullValueIntegrationId = default!;
 #endif
-        /// <summary>The integrationName property</summary>
+        /// <summary>The integrationProductSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
-        private string? _explicitNullValueIntegrationName = default!;
+        public string? IntegrationProductSlug { get => _explicitNullValueIntegrationProductSlug; set { _explicitNullValueIntegrationProductSlug = value; AdditionalData?.Remove("integrationProductSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationProductSlug"); else _explicitNullProperties?.Remove("integrationProductSlug"); } }
+        private string? _explicitNullValueIntegrationProductSlug = default!;
 #nullable restore
 #else
-        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
-        private string _explicitNullValueIntegrationName = default!;
+        public string IntegrationProductSlug { get => _explicitNullValueIntegrationProductSlug; set { _explicitNullValueIntegrationProductSlug = value; AdditionalData?.Remove("integrationProductSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationProductSlug"); else _explicitNullProperties?.Remove("integrationProductSlug"); } }
+        private string _explicitNullValueIntegrationProductSlug = default!;
 #endif
         /// <summary>The integrationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,9 +88,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string IntegrationSlug { get => _explicitNullValueIntegrationSlug; set { _explicitNullValueIntegrationSlug = value; AdditionalData?.Remove("integrationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationSlug"); else _explicitNullProperties?.Remove("integrationSlug"); } }
         private string _explicitNullValueIntegrationSlug = default!;
 #endif
-        /// <summary>The permanentTokensExpireAt property</summary>
-        public double? PermanentTokensExpireAt { get => _explicitNullValuePermanentTokensExpireAt; set { _explicitNullValuePermanentTokensExpireAt = value; AdditionalData?.Remove("permanentTokensExpireAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanentTokensExpireAt"); else _explicitNullProperties?.Remove("permanentTokensExpireAt"); } }
-        private double? _explicitNullValuePermanentTokensExpireAt = default!;
+        /// <summary>The keys property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Keys { get => _explicitNullValueKeys; set { _explicitNullValueKeys = value; AdditionalData?.Remove("keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys"); else _explicitNullProperties?.Remove("keys"); } }
+        private List<string>? _explicitNullValueKeys = default!;
+#nullable restore
+#else
+        public List<string> Keys { get => _explicitNullValueKeys; set { _explicitNullValueKeys = value; AdditionalData?.Remove("keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keys"); else _explicitNullProperties?.Remove("keys"); } }
+        private List<string> _explicitNullValueKeys = default!;
+#endif
+        /// <summary>The requestKind property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetKeysMetadataRequestKind? RequestKind { get => _explicitNullValueRequestKind; set { _explicitNullValueRequestKind = value; AdditionalData?.Remove("requestKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestKind"); else _explicitNullProperties?.Remove("requestKind"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetKeysMetadataRequestKind? _explicitNullValueRequestKind = default!;
+        /// <summary>The resourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        private string? _explicitNullValueResourceId = default!;
+#nullable restore
+#else
+        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        private string _explicitNullValueResourceId = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf214"/> and sets the default values.
         /// </summary>
@@ -93,11 +136,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessTokenRotation", n => { AccessTokenRotation = n.GetBoolValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "integrationProductSlug", n => { IntegrationProductSlug = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "permanentTokensExpireAt", n => { PermanentTokensExpireAt = n.GetDoubleValue(); } },
+                { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "requestKind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKeysMetadataRequestKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequestKind = default; _explicitNullProperties?.Remove("requestKind"); AdditionalData["requestKind"] = unknown; } else { RequestKind = parsed; AdditionalData.Remove("requestKind"); } } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,11 +153,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("accessTokenRotation", AccessTokenRotation);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("integrationProductSlug", IntegrationProductSlug);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteDoubleValue("permanentTokensExpireAt", PermanentTokensExpireAt);
+            writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKeysMetadataRequestKind>("requestKind", RequestKind);
+            writer.WriteStringValue("resourceId", ResourceId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

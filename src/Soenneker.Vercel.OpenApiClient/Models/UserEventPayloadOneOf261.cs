@@ -18,16 +18,48 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("headerName") is null) { _explicitNullValueHeaderName = default!; _explicitNullProperties?.Remove("headerName"); }
+            else if (parseNode.GetChildNode("headerName") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
+            if (parseNode.GetChildNode("justification") is null) { _explicitNullValueJustification = default!; _explicitNullProperties?.Remove("justification"); }
+            else if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
+            if (parseNode.GetChildNode("previousStatus") is null) { _explicitNullValuePreviousStatus = default!; _explicitNullProperties?.Remove("previousStatus"); }
+            else if (parseNode.GetChildNode("previousStatus") is { } nullNodePreviousStatus && nullNodePreviousStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousStatus = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("resourceUrl") is null) { _explicitNullValueResourceUrl = default!; _explicitNullProperties?.Remove("resourceUrl"); }
-            else if (parseNode.GetChildNode("resourceUrl") is { } nullNodeResourceUrl && nullNodeResourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceUrl = null;
-            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
-            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The headerName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("headerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerName"); else _explicitNullProperties?.Remove("headerName"); } }
+        private string? _explicitNullValueHeaderName = default!;
+#nullable restore
+#else
+        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("headerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerName"); else _explicitNullProperties?.Remove("headerName"); } }
+        private string _explicitNullValueHeaderName = default!;
+#endif
+        /// <summary>The justification property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; AdditionalData?.Remove("justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string? _explicitNullValueJustification = default!;
+#nullable restore
+#else
+        public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; AdditionalData?.Remove("justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        private string _explicitNullValueJustification = default!;
+#endif
+        /// <summary>The previousStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousStatus { get => _explicitNullValuePreviousStatus; set { _explicitNullValuePreviousStatus = value; AdditionalData?.Remove("previousStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousStatus"); else _explicitNullProperties?.Remove("previousStatus"); } }
+        private string? _explicitNullValuePreviousStatus = default!;
+#nullable restore
+#else
+        public string PreviousStatus { get => _explicitNullValuePreviousStatus; set { _explicitNullValuePreviousStatus = value; AdditionalData?.Remove("previousStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousStatus"); else _explicitNullProperties?.Remove("previousStatus"); } }
+        private string _explicitNullValuePreviousStatus = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,19 +70,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The resourceUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceUrl { get => _explicitNullValueResourceUrl; set { _explicitNullValueResourceUrl = value; AdditionalData?.Remove("resourceUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceUrl"); else _explicitNullProperties?.Remove("resourceUrl"); } }
-        private string? _explicitNullValueResourceUrl = default!;
-#nullable restore
-#else
-        public string ResourceUrl { get => _explicitNullValueResourceUrl; set { _explicitNullValueResourceUrl = value; AdditionalData?.Remove("resourceUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceUrl"); else _explicitNullProperties?.Remove("resourceUrl"); } }
-        private string _explicitNullValueResourceUrl = default!;
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ScriptType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.ScriptType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf261"/> and sets the default values.
         /// </summary>
@@ -76,9 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "headerName", n => { HeaderName = n.GetStringValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "previousStatus", n => { PreviousStatus = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "resourceUrl", n => { ResourceUrl = n.GetStringValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ScriptType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -88,9 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("headerName", HeaderName);
+            writer.WriteStringValue("justification", Justification);
+            writer.WriteStringValue("previousStatus", PreviousStatus);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("resourceUrl", ResourceUrl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ScriptType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

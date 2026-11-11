@@ -18,33 +18,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("previousRule") is null) { _explicitNullValuePreviousRule = default!; _explicitNullProperties?.Remove("previousRule"); }
-            else if (parseNode.GetChildNode("previousRule") is { } nullNodePreviousRule && nullNodePreviousRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRule = null;
-            if (parseNode.GetChildNode("team") is null) { _explicitNullValueTeam = default!; _explicitNullProperties?.Remove("team"); }
-            else if (parseNode.GetChildNode("team") is { } nullNodeTeam && nullNodeTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Team = null;
+            if (parseNode.GetChildNode("edgeConfigId") is null) { _explicitNullValueEdgeConfigId = default!; _explicitNullProperties?.Remove("edgeConfigId"); }
+            else if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
+            if (parseNode.GetChildNode("edgeConfigSlug") is null) { _explicitNullValueEdgeConfigSlug = default!; _explicitNullProperties?.Remove("edgeConfigSlug"); }
+            else if (parseNode.GetChildNode("edgeConfigSlug") is { } nullNodeEdgeConfigSlug && nullNodeEdgeConfigSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSlug = null;
+            if (parseNode.GetChildNode("edgeConfigTokenIds") is null) { _explicitNullValueEdgeConfigTokenIds = default!; _explicitNullProperties?.Remove("edgeConfigTokenIds"); }
+            else if (parseNode.GetChildNode("edgeConfigTokenIds") is { } nullNodeEdgeConfigTokenIds && nullNodeEdgeConfigTokenIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigTokenIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previousRule property</summary>
+        /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175PreviousRule? PreviousRule { get => _explicitNullValuePreviousRule; set { _explicitNullValuePreviousRule = value; AdditionalData?.Remove("previousRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousRule"); else _explicitNullProperties?.Remove("previousRule"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175PreviousRule? _explicitNullValuePreviousRule = default!;
+        public string? EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        private string? _explicitNullValueEdgeConfigId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175PreviousRule PreviousRule { get => _explicitNullValuePreviousRule; set { _explicitNullValuePreviousRule = value; AdditionalData?.Remove("previousRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousRule"); else _explicitNullProperties?.Remove("previousRule"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175PreviousRule _explicitNullValuePreviousRule = default!;
+        public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
+        private string _explicitNullValueEdgeConfigId = default!;
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>The edgeConfigSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175Team? Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175Team? _explicitNullValueTeam = default!;
+        public string? EdgeConfigSlug { get => _explicitNullValueEdgeConfigSlug; set { _explicitNullValueEdgeConfigSlug = value; AdditionalData?.Remove("edgeConfigSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSlug"); else _explicitNullProperties?.Remove("edgeConfigSlug"); } }
+        private string? _explicitNullValueEdgeConfigSlug = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175Team Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175Team _explicitNullValueTeam = default!;
+        public string EdgeConfigSlug { get => _explicitNullValueEdgeConfigSlug; set { _explicitNullValueEdgeConfigSlug = value; AdditionalData?.Remove("edgeConfigSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSlug"); else _explicitNullProperties?.Remove("edgeConfigSlug"); } }
+        private string _explicitNullValueEdgeConfigSlug = default!;
+#endif
+        /// <summary>ids of deleted tokens</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? EdgeConfigTokenIds { get => _explicitNullValueEdgeConfigTokenIds; set { _explicitNullValueEdgeConfigTokenIds = value; AdditionalData?.Remove("edgeConfigTokenIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenIds"); else _explicitNullProperties?.Remove("edgeConfigTokenIds"); } }
+        private List<string>? _explicitNullValueEdgeConfigTokenIds = default!;
+#nullable restore
+#else
+        public List<string> EdgeConfigTokenIds { get => _explicitNullValueEdgeConfigTokenIds; set { _explicitNullValueEdgeConfigTokenIds = value; AdditionalData?.Remove("edgeConfigTokenIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenIds"); else _explicitNullProperties?.Remove("edgeConfigTokenIds"); } }
+        private List<string> _explicitNullValueEdgeConfigTokenIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175"/> and sets the default values.
@@ -71,8 +83,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175PreviousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175PreviousRule.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175Team.CreateFromDiscriminatorValue); } },
+                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
+                { "edgeConfigTokenIds", n => { EdgeConfigTokenIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -82,8 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175PreviousRule>("previousRule", PreviousRule);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175Team>("team", Team);
+            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
+            writer.WriteCollectionOfPrimitiveValues<string>("edgeConfigTokenIds", EdgeConfigTokenIds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -18,21 +18,41 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("avatar") is null) { _explicitNullValueAvatar = default!; _explicitNullProperties?.Remove("avatar"); }
-            else if (parseNode.GetChildNode("avatar") is { } nullNodeAvatar && nullNodeAvatar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avatar = null;
+            if (parseNode.GetChildNode("attackModeActiveUntil") is null) { _explicitNullValueAttackModeActiveUntil = default!; _explicitNullProperties?.Remove("attackModeActiveUntil"); }
+            else if (parseNode.GetChildNode("attackModeActiveUntil") is { } nullNodeAttackModeActiveUntil && nullNodeAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("attackModeEnabled") is null) { _explicitNullValueAttackModeEnabled = default!; _explicitNullProperties?.Remove("attackModeEnabled"); }
+            else if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
+            if (parseNode.GetChildNode("prevAttackModeActiveUntil") is null) { _explicitNullValuePrevAttackModeActiveUntil = default!; _explicitNullProperties?.Remove("prevAttackModeActiveUntil"); }
+            else if (parseNode.GetChildNode("prevAttackModeActiveUntil") is { } nullNodePrevAttackModeActiveUntil && nullNodePrevAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevAttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("prevAttackModeEnabled") is null) { _explicitNullValuePrevAttackModeEnabled = default!; _explicitNullProperties?.Remove("prevAttackModeEnabled"); }
+            else if (parseNode.GetChildNode("prevAttackModeEnabled") is { } nullNodePrevAttackModeEnabled && nullNodePrevAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevAttackModeEnabled = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatar property</summary>
+        /// <summary>The attackModeActiveUntil property</summary>
+        public double? AttackModeActiveUntil { get => _explicitNullValueAttackModeActiveUntil; set { _explicitNullValueAttackModeActiveUntil = value; AdditionalData?.Remove("attackModeActiveUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeActiveUntil"); else _explicitNullProperties?.Remove("attackModeActiveUntil"); } }
+        private double? _explicitNullValueAttackModeActiveUntil = default!;
+        /// <summary>The attackModeEnabled property</summary>
+        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; AdditionalData?.Remove("attackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
+        private bool? _explicitNullValueAttackModeEnabled = default!;
+        /// <summary>The prevAttackModeActiveUntil property</summary>
+        public double? PrevAttackModeActiveUntil { get => _explicitNullValuePrevAttackModeActiveUntil; set { _explicitNullValuePrevAttackModeActiveUntil = value; AdditionalData?.Remove("prevAttackModeActiveUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevAttackModeActiveUntil"); else _explicitNullProperties?.Remove("prevAttackModeActiveUntil"); } }
+        private double? _explicitNullValuePrevAttackModeActiveUntil = default!;
+        /// <summary>The prevAttackModeEnabled property</summary>
+        public bool? PrevAttackModeEnabled { get => _explicitNullValuePrevAttackModeEnabled; set { _explicitNullValuePrevAttackModeEnabled = value; AdditionalData?.Remove("prevAttackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevAttackModeEnabled"); else _explicitNullProperties?.Remove("prevAttackModeEnabled"); } }
+        private bool? _explicitNullValuePrevAttackModeEnabled = default!;
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
-        private string? _explicitNullValueAvatar = default!;
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
-        private string _explicitNullValueAvatar = default!;
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf80"/> and sets the default values.
@@ -59,7 +79,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatar", n => { Avatar = n.GetStringValue(); } },
+                { "attackModeActiveUntil", n => { AttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "attackModeEnabled", n => { AttackModeEnabled = n.GetBoolValue(); } },
+                { "prevAttackModeActiveUntil", n => { PrevAttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "prevAttackModeEnabled", n => { PrevAttackModeEnabled = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +93,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("avatar", Avatar);
+            writer.WriteDoubleValue("attackModeActiveUntil", AttackModeActiveUntil);
+            writer.WriteBoolValue("attackModeEnabled", AttackModeEnabled);
+            writer.WriteDoubleValue("prevAttackModeActiveUntil", PrevAttackModeActiveUntil);
+            writer.WriteBoolValue("prevAttackModeEnabled", PrevAttackModeEnabled);
+            writer.WriteStringValue("projectId", ProjectId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

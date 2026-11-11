@@ -18,74 +18,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountRequestId") is null) { _explicitNullValueAccountRequestId = default!; _explicitNullProperties?.Remove("accountRequestId"); }
-            else if (parseNode.GetChildNode("accountRequestId") is { } nullNodeAccountRequestId && nullNodeAccountRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountRequestId = null;
-            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
-            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
-            if (parseNode.GetChildNode("providerAccount") is null) { _explicitNullValueProviderAccount = default!; _explicitNullProperties?.Remove("providerAccount"); }
-            else if (parseNode.GetChildNode("providerAccount") is { } nullNodeProviderAccount && nullNodeProviderAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderAccount = null;
-            if (parseNode.GetChildNode("stripeAccount") is null) { _explicitNullValueStripeAccount = default!; _explicitNullProperties?.Remove("stripeAccount"); }
-            else if (parseNode.GetChildNode("stripeAccount") is { } nullNodeStripeAccount && nullNodeStripeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StripeAccount = null;
-            if (parseNode.GetChildNode("stripeOrganisation") is null) { _explicitNullValueStripeOrganisation = default!; _explicitNullProperties?.Remove("stripeOrganisation"); }
-            else if (parseNode.GetChildNode("stripeOrganisation") is { } nullNodeStripeOrganisation && nullNodeStripeOrganisation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StripeOrganisation = null;
-            if (parseNode.GetChildNode("teamId") is null) { _explicitNullValueTeamId = default!; _explicitNullProperties?.Remove("teamId"); }
-            else if (parseNode.GetChildNode("teamId") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
+            if (parseNode.GetChildNode("boardId") is null) { _explicitNullValueBoardId = default!; _explicitNullProperties?.Remove("boardId"); }
+            else if (parseNode.GetChildNode("boardId") is { } nullNodeBoardId && nullNodeBoardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardId = null;
+            if (parseNode.GetChildNode("operationId") is null) { _explicitNullValueOperationId = default!; _explicitNullProperties?.Remove("operationId"); }
+            else if (parseNode.GetChildNode("operationId") is { } nullNodeOperationId && nullNodeOperationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationId = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
         }
 
-        /// <summary>The accountRequestId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountRequestId { get => _explicitNullValueAccountRequestId; set { _explicitNullValueAccountRequestId = value; AdditionalData?.Remove("accountRequestId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountRequestId"); else _explicitNullProperties?.Remove("accountRequestId"); } }
-        private string? _explicitNullValueAccountRequestId = default!;
-#nullable restore
-#else
-        public string AccountRequestId { get => _explicitNullValueAccountRequestId; set { _explicitNullValueAccountRequestId = value; AdditionalData?.Remove("accountRequestId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountRequestId"); else _explicitNullProperties?.Remove("accountRequestId"); } }
-        private string _explicitNullValueAccountRequestId = default!;
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Present on new events only. Equivalent to &quot;stripe&quot; when absent.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19Provider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19Provider? _explicitNullValueProvider = default!;
-        /// <summary>Present on new events only. Equivalent to `stripeAccount` when absent.</summary>
+        /// <summary>The boardId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderAccount { get => _explicitNullValueProviderAccount; set { _explicitNullValueProviderAccount = value; AdditionalData?.Remove("providerAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerAccount"); else _explicitNullProperties?.Remove("providerAccount"); } }
-        private string? _explicitNullValueProviderAccount = default!;
+        public string? BoardId { get => _explicitNullValueBoardId; set { _explicitNullValueBoardId = value; AdditionalData?.Remove("boardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardId"); else _explicitNullProperties?.Remove("boardId"); } }
+        private string? _explicitNullValueBoardId = default!;
 #nullable restore
 #else
-        public string ProviderAccount { get => _explicitNullValueProviderAccount; set { _explicitNullValueProviderAccount = value; AdditionalData?.Remove("providerAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerAccount"); else _explicitNullProperties?.Remove("providerAccount"); } }
-        private string _explicitNullValueProviderAccount = default!;
+        public string BoardId { get => _explicitNullValueBoardId; set { _explicitNullValueBoardId = value; AdditionalData?.Remove("boardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardId"); else _explicitNullProperties?.Remove("boardId"); } }
+        private string _explicitNullValueBoardId = default!;
 #endif
-        /// <summary>Present when `provider` is &quot;stripe&quot;. Equivalent to `providerAccount`.</summary>
+        /// <summary>The operationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StripeAccount { get => _explicitNullValueStripeAccount; set { _explicitNullValueStripeAccount = value; AdditionalData?.Remove("stripeAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripeAccount"); else _explicitNullProperties?.Remove("stripeAccount"); } }
-        private string? _explicitNullValueStripeAccount = default!;
+        public string? OperationId { get => _explicitNullValueOperationId; set { _explicitNullValueOperationId = value; AdditionalData?.Remove("operationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operationId"); else _explicitNullProperties?.Remove("operationId"); } }
+        private string? _explicitNullValueOperationId = default!;
 #nullable restore
 #else
-        public string StripeAccount { get => _explicitNullValueStripeAccount; set { _explicitNullValueStripeAccount = value; AdditionalData?.Remove("stripeAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripeAccount"); else _explicitNullProperties?.Remove("stripeAccount"); } }
-        private string _explicitNullValueStripeAccount = default!;
+        public string OperationId { get => _explicitNullValueOperationId; set { _explicitNullValueOperationId = value; AdditionalData?.Remove("operationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operationId"); else _explicitNullProperties?.Remove("operationId"); } }
+        private string _explicitNullValueOperationId = default!;
 #endif
-        /// <summary>Present when `provider` is &quot;stripe&quot;.</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StripeOrganisation { get => _explicitNullValueStripeOrganisation; set { _explicitNullValueStripeOrganisation = value; AdditionalData?.Remove("stripeOrganisation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripeOrganisation"); else _explicitNullProperties?.Remove("stripeOrganisation"); } }
-        private string? _explicitNullValueStripeOrganisation = default!;
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string StripeOrganisation { get => _explicitNullValueStripeOrganisation; set { _explicitNullValueStripeOrganisation = value; AdditionalData?.Remove("stripeOrganisation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stripeOrganisation"); else _explicitNullProperties?.Remove("stripeOrganisation"); } }
-        private string _explicitNullValueStripeOrganisation = default!;
-#endif
-        /// <summary>The teamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string? _explicitNullValueTeamId = default!;
-#nullable restore
-#else
-        public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string _explicitNullValueTeamId = default!;
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19"/> and sets the default values.
@@ -112,12 +83,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountRequestId", n => { AccountRequestId = n.GetStringValue(); } },
-                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19Provider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
-                { "providerAccount", n => { ProviderAccount = n.GetStringValue(); } },
-                { "stripeAccount", n => { StripeAccount = n.GetStringValue(); } },
-                { "stripeOrganisation", n => { StripeOrganisation = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "boardId", n => { BoardId = n.GetStringValue(); } },
+                { "operationId", n => { OperationId = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -127,12 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("accountRequestId", AccountRequestId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19Provider>("provider", Provider);
-            writer.WriteStringValue("providerAccount", ProviderAccount);
-            writer.WriteStringValue("stripeAccount", StripeAccount);
-            writer.WriteStringValue("stripeOrganisation", StripeOrganisation);
-            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("boardId", BoardId);
+            writer.WriteStringValue("operationId", OperationId);
+            writer.WriteStringValue("projectId", ProjectId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

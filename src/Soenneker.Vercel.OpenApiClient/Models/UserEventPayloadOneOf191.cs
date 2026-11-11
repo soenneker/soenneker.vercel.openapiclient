@@ -18,45 +18,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
-            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("ruleGroups") is null) { _explicitNullValueRuleGroups = default!; _explicitNullProperties?.Remove("ruleGroups"); }
-            else if (parseNode.GetChildNode("ruleGroups") is { } nullNodeRuleGroups && nullNodeRuleGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleGroups = null;
-            if (parseNode.GetChildNode("rulesetName") is null) { _explicitNullValueRulesetName = default!; _explicitNullProperties?.Remove("rulesetName"); }
-            else if (parseNode.GetChildNode("rulesetName") is { } nullNodeRulesetName && nullNodeRulesetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetName = null;
+            if (parseNode.GetChildNode("configChangeCount") is null) { _explicitNullValueConfigChangeCount = default!; _explicitNullProperties?.Remove("configChangeCount"); }
+            else if (parseNode.GetChildNode("configChangeCount") is { } nullNodeConfigChangeCount && nullNodeConfigChangeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChangeCount = null;
+            if (parseNode.GetChildNode("configChanges") is null) { _explicitNullValueConfigChanges = default!; _explicitNullProperties?.Remove("configChanges"); }
+            else if (parseNode.GetChildNode("configChanges") is { } nullNodeConfigChanges && nullNodeConfigChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChanges = null;
+            if (parseNode.GetChildNode("configVersion") is null) { _explicitNullValueConfigVersion = default!; _explicitNullProperties?.Remove("configVersion"); }
+            else if (parseNode.GetChildNode("configVersion") is { } nullNodeConfigVersion && nullNodeConfigVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The configChangeCount property</summary>
+        public double? ConfigChangeCount { get => _explicitNullValueConfigChangeCount; set { _explicitNullValueConfigChangeCount = value; AdditionalData?.Remove("configChangeCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChangeCount"); else _explicitNullProperties?.Remove("configChangeCount"); } }
+        private double? _explicitNullValueConfigChangeCount = default!;
+        /// <summary>The configChanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string? _explicitNullValueProjectId = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191ConfigChangesItemProperty>? ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; AdditionalData?.Remove("configChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191ConfigChangesItemProperty>? _explicitNullValueConfigChanges = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string _explicitNullValueProjectId = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191ConfigChangesItemProperty> ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; AdditionalData?.Remove("configChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191ConfigChangesItemProperty> _explicitNullValueConfigChanges = default!;
 #endif
-        /// <summary>The ruleGroups property</summary>
+        /// <summary>The configVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191RuleGroupsProperty? RuleGroups { get => _explicitNullValueRuleGroups; set { _explicitNullValueRuleGroups = value; AdditionalData?.Remove("ruleGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleGroups"); else _explicitNullProperties?.Remove("ruleGroups"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191RuleGroupsProperty? _explicitNullValueRuleGroups = default!;
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? ConfigVersion { get => _explicitNullValueConfigVersion; set { _explicitNullValueConfigVersion = value; AdditionalData?.Remove("configVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configVersion"); else _explicitNullProperties?.Remove("configVersion"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueConfigVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191RuleGroupsProperty RuleGroups { get => _explicitNullValueRuleGroups; set { _explicitNullValueRuleGroups = value; AdditionalData?.Remove("ruleGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleGroups"); else _explicitNullProperties?.Remove("ruleGroups"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191RuleGroupsProperty _explicitNullValueRuleGroups = default!;
-#endif
-        /// <summary>The rulesetName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RulesetName { get => _explicitNullValueRulesetName; set { _explicitNullValueRulesetName = value; AdditionalData?.Remove("rulesetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesetName"); else _explicitNullProperties?.Remove("rulesetName"); } }
-        private string? _explicitNullValueRulesetName = default!;
-#nullable restore
-#else
-        public string RulesetName { get => _explicitNullValueRulesetName; set { _explicitNullValueRulesetName = value; AdditionalData?.Remove("rulesetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rulesetName"); else _explicitNullProperties?.Remove("rulesetName"); } }
-        private string _explicitNullValueRulesetName = default!;
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode ConfigVersion { get => _explicitNullValueConfigVersion; set { _explicitNullValueConfigVersion = value; AdditionalData?.Remove("configVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configVersion"); else _explicitNullProperties?.Remove("configVersion"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueConfigVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191"/> and sets the default values.
@@ -83,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "ruleGroups", n => { RuleGroups = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191RuleGroupsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191RuleGroupsProperty.CreateFromDiscriminatorValue); } },
-                { "rulesetName", n => { RulesetName = n.GetStringValue(); } },
+                { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
+                { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configVersion", n => { ConfigVersion = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -95,11 +88,80 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191RuleGroupsProperty>("ruleGroups", RuleGroups);
-            writer.WriteStringValue("rulesetName", RulesetName);
+            writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191ConfigChangesItemProperty>("configChanges", ConfigChanges);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("configVersion", ConfigVersion);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEventPayloadOneOf191_configVersion : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="double"/></summary>
+            public double? Double { get; set; }
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191.UserEventPayloadOneOf191_configVersion"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191.UserEventPayloadOneOf191_configVersion CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191.UserEventPayloadOneOf191_configVersion();
+
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191.UserEventPayloadOneOf191_configVersion();
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
+                {
+                    result.Double = doubleValue;
+                }
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Double == null && String == null) { writer.WriteNullValue(null); return; }
+
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(Double != null)
+                {
+                    writer.WriteDoubleValue(null, Double);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }
