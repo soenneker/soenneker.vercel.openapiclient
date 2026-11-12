@@ -37,6 +37,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("isEnterpriseManaged") is { } nullNodeIsEnterpriseManaged && nullNodeIsEnterpriseManaged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEnterpriseManaged = null;
             if (parseNode.GetChildNode("joinedFrom") is null) { _explicitNullValueJoinedFrom = default!; _explicitNullProperties?.Remove("joinedFrom"); }
             else if (parseNode.GetChildNode("joinedFrom") is { } nullNodeJoinedFrom && nullNodeJoinedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JoinedFrom = null;
+            if (parseNode.GetChildNode("membershipSource") is null) { _explicitNullValueMembershipSource = default!; _explicitNullProperties?.Remove("membershipSource"); }
+            else if (parseNode.GetChildNode("membershipSource") is { } nullNodeMembershipSource && nullNodeMembershipSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MembershipSource = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("projects") is null) { _explicitNullValueProjects = default!; _explicitNullProperties?.Remove("projects"); }
@@ -123,6 +125,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemJoinedFrom JoinedFrom { get => _explicitNullValueJoinedFrom; set { _explicitNullValueJoinedFrom = value; AdditionalData?.Remove("joinedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("joinedFrom"); else _explicitNullProperties?.Remove("joinedFrom"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemJoinedFrom _explicitNullValueJoinedFrom = default!;
 #endif
+        /// <summary>The source controlling this member&apos;s team access and roles. Individual permissions may have a different source. This does not replace authorization checks.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemMembershipSource? MembershipSource { get => _explicitNullValueMembershipSource; set { _explicitNullValueMembershipSource = value; AdditionalData?.Remove("membershipSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("membershipSource"); else _explicitNullProperties?.Remove("membershipSource"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemMembershipSource? _explicitNullValueMembershipSource = default!;
         /// <summary>The name of this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,6 +206,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "gitlab", n => { Gitlab = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemGitlab>(global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemGitlab.CreateFromDiscriminatorValue); } },
                 { "isEnterpriseManaged", n => { IsEnterpriseManaged = n.GetBoolValue(); } },
                 { "joinedFrom", n => { JoinedFrom = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemJoinedFrom>(global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemJoinedFrom.CreateFromDiscriminatorValue); } },
+                { "membershipSource", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemMembershipSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMembershipSource = default; _explicitNullProperties?.Remove("membershipSource"); AdditionalData["membershipSource"] = unknown; } else { MembershipSource = parsed; AdditionalData.Remove("membershipSource"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
@@ -225,6 +231,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemGitlab>("gitlab", Gitlab);
             writer.WriteBoolValue("isEnterpriseManaged", IsEnterpriseManaged);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemJoinedFrom>("joinedFrom", JoinedFrom);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemMembershipSource>("membershipSource", MembershipSource);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemProjectsItem>("projects", Projects);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200ResponseMembersItemRole>("role", Role);

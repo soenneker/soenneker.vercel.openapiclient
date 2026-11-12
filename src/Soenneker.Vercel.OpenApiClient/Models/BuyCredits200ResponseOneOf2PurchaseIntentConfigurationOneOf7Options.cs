@@ -8,87 +8,32 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Purchase configuration specific options
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options : IAdditionalDataHolder, IParsable
-    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
-        // Track explicitly assigned nulls separately from absent properties.
-        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+    public partial class BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
-        {
-            if (parseNode.GetChildNode("fromPlan") is null) { _explicitNullValueFromPlan = default!; _explicitNullProperties?.Remove("fromPlan"); }
-            else if (parseNode.GetChildNode("fromPlan") is { } nullNodeFromPlan && nullNodeFromPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromPlan = null;
-            if (parseNode.GetChildNode("planId") is null) { _explicitNullValuePlanId = default!; _explicitNullProperties?.Remove("planId"); }
-            else if (parseNode.GetChildNode("planId") is { } nullNodePlanId && nullNodePlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanId = null;
-            if (parseNode.GetChildNode("planItemPrices") is null) { _explicitNullValuePlanItemPrices = default!; _explicitNullProperties?.Remove("planItemPrices"); }
-            else if (parseNode.GetChildNode("planItemPrices") is { } nullNodePlanItemPrices && nullNodePlanItemPrices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanItemPrices = null;
-            if (parseNode.GetChildNode("planItemQuantities") is null) { _explicitNullValuePlanItemQuantities = default!; _explicitNullProperties?.Remove("planItemQuantities"); }
-            else if (parseNode.GetChildNode("planItemQuantities") is { } nullNodePlanItemQuantities && nullNodePlanItemQuantities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanItemQuantities = null;
-            if (parseNode.GetChildNode("rateVariantKey") is null) { _explicitNullValueRateVariantKey = default!; _explicitNullProperties?.Remove("rateVariantKey"); }
-            else if (parseNode.GetChildNode("rateVariantKey") is { } nullNodeRateVariantKey && nullNodeRateVariantKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateVariantKey = null;
-        }
-
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current plan being replaced by this purchase</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan? FromPlan { get => _explicitNullValueFromPlan; set { _explicitNullValueFromPlan = value; AdditionalData?.Remove("fromPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromPlan"); else _explicitNullProperties?.Remove("fromPlan"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan? _explicitNullValueFromPlan = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1? BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan FromPlan { get => _explicitNullValueFromPlan; set { _explicitNullValueFromPlan = value; AdditionalData?.Remove("fromPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fromPlan"); else _explicitNullProperties?.Remove("fromPlan"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan _explicitNullValueFromPlan = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 { get; set; }
 #endif
-        /// <summary>The ID of the plan to subscribe to</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; AdditionalData?.Remove("planId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
-        private string? _explicitNullValuePlanId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2? BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 { get; set; }
 #nullable restore
 #else
-        public string PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; AdditionalData?.Remove("planId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
-        private string _explicitNullValuePlanId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 { get; set; }
 #endif
-        /// <summary>The plan item prices to set for the subscription, independent of quantities</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem>? PlanItemPrices { get => _explicitNullValuePlanItemPrices; set { _explicitNullValuePlanItemPrices = value; AdditionalData?.Remove("planItemPrices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemPrices"); else _explicitNullProperties?.Remove("planItemPrices"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem>? _explicitNullValuePlanItemPrices = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem> PlanItemPrices { get => _explicitNullValuePlanItemPrices; set { _explicitNullValuePlanItemPrices = value; AdditionalData?.Remove("planItemPrices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemPrices"); else _explicitNullProperties?.Remove("planItemPrices"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem> _explicitNullValuePlanItemPrices = default!;
-#endif
-        /// <summary>The plan item quantities to set for the subscription</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem>? PlanItemQuantities { get => _explicitNullValuePlanItemQuantities; set { _explicitNullValuePlanItemQuantities = value; AdditionalData?.Remove("planItemQuantities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemQuantities"); else _explicitNullProperties?.Remove("planItemQuantities"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem>? _explicitNullValuePlanItemQuantities = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem> PlanItemQuantities { get => _explicitNullValuePlanItemQuantities; set { _explicitNullValuePlanItemQuantities = value; AdditionalData?.Remove("planItemQuantities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemQuantities"); else _explicitNullProperties?.Remove("planItemQuantities"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem> _explicitNullValuePlanItemQuantities = default!;
-#endif
-        /// <summary>The rate variant key to apply to the subscription</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RateVariantKey { get => _explicitNullValueRateVariantKey; set { _explicitNullValueRateVariantKey = value; AdditionalData?.Remove("rateVariantKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateVariantKey"); else _explicitNullProperties?.Remove("rateVariantKey"); } }
-        private string? _explicitNullValueRateVariantKey = default!;
-#nullable restore
-#else
-        public string RateVariantKey { get => _explicitNullValueRateVariantKey; set { _explicitNullValueRateVariantKey = value; AdditionalData?.Remove("rateVariantKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateVariantKey"); else _explicitNullProperties?.Remove("rateVariantKey"); } }
-        private string _explicitNullValueRateVariantKey = default!;
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options"/> and sets the default values.
-        /// </summary>
-        public BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -97,7 +42,449 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options(), parseNode);
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options();
+            if("BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? ((global::System.Func<bool?[]>)(() => { int remaining = 10000;
+
+bool? MatchSchema0(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("planId")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("fromPlan") ? (bool?)true : MatchSchema2(fields["fromPlan"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planId") ? (bool?)true : MatchSchema3(fields["planId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemPrices") ? (bool?)true : MatchSchema4(fields["planItemPrices"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemQuantities") ? (bool?)true : MatchSchema5(fields["planItemQuantities"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("rateVariantKey") ? (bool?)true : MatchSchema6(fields["rateVariantKey"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("transition") ? (bool?)true : MatchSchema7(fields["transition"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema1(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("fromPlan")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("planId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("transition")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("fromPlan") ? (bool?)true : MatchSchema8(fields["fromPlan"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planId") ? (bool?)true : MatchSchema9(fields["planId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemQuantities") ? (bool?)true : MatchSchema10(fields["planItemQuantities"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("transition") ? (bool?)true : MatchSchema11(fields["transition"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema2(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("currentCycleEndDate")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("orbSubscriptionId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("planId")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("additionalSubscriptions") ? (bool?)true : MatchSchema12(fields["additionalSubscriptions"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("currentCycleEndDate") ? (bool?)true : MatchSchema13(fields["currentCycleEndDate"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("orbSubscriptionId") ? (bool?)true : MatchSchema14(fields["orbSubscriptionId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planId") ? (bool?)true : MatchSchema15(fields["planId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemPrices") ? (bool?)true : MatchSchema16(fields["planItemPrices"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemQuantities") ? (bool?)true : MatchSchema17(fields["planItemQuantities"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("rateVariantKey") ? (bool?)true : MatchSchema18(fields["rateVariantKey"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema3(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema4(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema19(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema5(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema20(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema6(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema7(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("type")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("type") ? (bool?)true : MatchSchema21(fields["type"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema8(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("orbSubscriptionId")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("orbSubscriptionId") ? (bool?)true : MatchSchema22(fields["orbSubscriptionId"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema9(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema10(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema23(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema11(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("type")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("type") ? (bool?)true : MatchSchema24(fields["type"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema12(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema25(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema13(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema14(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema15(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema16(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema26(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema17(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema27(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema18(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema19(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("planItemId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("price")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemId") ? (bool?)true : MatchSchema28(fields["planItemId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("price") ? (bool?)true : MatchSchema29(fields["price"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema20(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("planItemId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("quantity")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemId") ? (bool?)true : MatchSchema30(fields["planItemId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("quantity") ? (bool?)true : MatchSchema31(fields["quantity"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("resourceIds") ? (bool?)true : MatchSchema32(fields["resourceIds"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema21(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+bool? enumMatch = false;
+{ enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "restart_cycle".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
+{ result &= (enumMatch); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema22(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema23(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("planItemId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("quantity")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemId") ? (bool?)true : MatchSchema33(fields["planItemId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("quantity") ? (bool?)true : MatchSchema34(fields["quantity"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema24(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+bool? enumMatch = false;
+{ enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "preserve_source_cycle".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
+{ result &= (enumMatch); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema25(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("currentCycleEndDate")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("orbSubscriptionId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("planId")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("currentCycleEndDate") ? (bool?)true : MatchSchema35(fields["currentCycleEndDate"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("orbSubscriptionId") ? (bool?)true : MatchSchema36(fields["orbSubscriptionId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planId") ? (bool?)true : MatchSchema37(fields["planId"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema26(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("planItemId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("price")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemId") ? (bool?)true : MatchSchema38(fields["planItemId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("price") ? (bool?)true : MatchSchema39(fields["price"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema27(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("planItemId")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("quantity")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("planItemId") ? (bool?)true : MatchSchema40(fields["planItemId"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("quantity") ? (bool?)true : MatchSchema41(fields["quantity"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("resourceIds") ? (bool?)true : MatchSchema42(fields["resourceIds"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema28(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema29(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("model")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("unitAmount")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("model") ? (bool?)true : MatchSchema43(fields["model"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("unitAmount") ? (bool?)true : MatchSchema44(fields["unitAmount"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema30(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema31(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema32(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema45(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema33(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema34(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema35(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema36(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema37(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema38(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema39(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("model")); if (result == false) return false; }
+{ result &= (fields.ContainsKey("unitAmount")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("model") ? (bool?)true : MatchSchema43(fields["model"], depth + 1)); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("unitAmount") ? (bool?)true : MatchSchema46(fields["unitAmount"], depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema40(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema41(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema42(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray itemsArray) foreach (var item in itemsArray.GetValue()) {
+{ result &= (MatchSchema47(item, depth + 1)); if (result == false) return false; }
+}
+return result;
+}
+bool? MatchSchema43(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+bool? enumMatch = false;
+{ enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "unit".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
+{ result &= (enumMatch); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema44(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema45(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema46(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+bool? MatchSchema47(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+return result;
+}
+var matches = new bool?[2];
+remaining = 10000; matches[0] = MatchSchema0(unionPayload, 0);
+remaining = 10000; matches[1] = MatchSchema1(unionPayload, 0);
+return matches; }))() : null;
+            bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
+            bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0 != false) matchingUnionBranches++;
+            if (matchesUnionBranch1 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 == null && result.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2(), parseNode);
+            if (result.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 == null && result.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,14 +492,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 != null)
             {
-                { "fromPlan", n => { FromPlan = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan.CreateFromDiscriminatorValue); } },
-                { "planId", n => { PlanId = n.GetStringValue(); } },
-                { "planItemPrices", n => { PlanItemPrices = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "planItemQuantities", n => { PlanItemQuantities = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rateVariantKey", n => { RateVariantKey = n.GetStringValue(); } },
-            };
+                return BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1.GetFieldDeserializers();
+            }
+            else if(BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 != null)
+            {
+                return BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -120,14 +510,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 == null && BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 != null) selectedUnionBranches++;
+            if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 != null) selectedUnionBranches++;
+            if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 != null && selectedUnionBranches == 1) { if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1); return; }
+            if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 != null && selectedUnionBranches == 1) { if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan>("fromPlan", FromPlan);
-            writer.WriteStringValue("planId", PlanId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem>("planItemPrices", PlanItemPrices);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem>("planItemQuantities", PlanItemQuantities);
-            writer.WriteStringValue("rateVariantKey", RateVariantKey);
-            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
-            writer.WriteAdditionalData(AdditionalData);
+            if(BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 != null)
+            {
+                if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1>(null, BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1);
+            }
+            else if(BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 != null)
+            {
+                if (BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2>(null, BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2);
+            }
         }
     }
 }

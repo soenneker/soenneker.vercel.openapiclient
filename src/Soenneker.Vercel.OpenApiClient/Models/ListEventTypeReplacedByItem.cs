@@ -207,6 +207,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayInferenceRegionsUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-member-budget-changes")]
+        #pragma warning disable CS1591
+        AiGatewayMemberBudgetChanges,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-model-allowlist-models-updated")]
         #pragma warning disable CS1591
         AiGatewayModelAllowlistModelsUpdated,

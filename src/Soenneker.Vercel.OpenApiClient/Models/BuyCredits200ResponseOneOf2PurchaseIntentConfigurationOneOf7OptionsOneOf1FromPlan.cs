@@ -11,7 +11,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// The current plan being replaced by this purchase
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan : IAdditionalDataHolder, IParsable
+    public partial class BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -39,12 +39,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Additional source subscriptions replaced by this purchase</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem>? AdditionalSubscriptions { get => _explicitNullValueAdditionalSubscriptions; set { _explicitNullValueAdditionalSubscriptions = value; AdditionalData?.Remove("additionalSubscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSubscriptions"); else _explicitNullProperties?.Remove("additionalSubscriptions"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem>? _explicitNullValueAdditionalSubscriptions = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem>? AdditionalSubscriptions { get => _explicitNullValueAdditionalSubscriptions; set { _explicitNullValueAdditionalSubscriptions = value; AdditionalData?.Remove("additionalSubscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSubscriptions"); else _explicitNullProperties?.Remove("additionalSubscriptions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem>? _explicitNullValueAdditionalSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem> AdditionalSubscriptions { get => _explicitNullValueAdditionalSubscriptions; set { _explicitNullValueAdditionalSubscriptions = value; AdditionalData?.Remove("additionalSubscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSubscriptions"); else _explicitNullProperties?.Remove("additionalSubscriptions"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem> _explicitNullValueAdditionalSubscriptions = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem> AdditionalSubscriptions { get => _explicitNullValueAdditionalSubscriptions; set { _explicitNullValueAdditionalSubscriptions = value; AdditionalData?.Remove("additionalSubscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSubscriptions"); else _explicitNullProperties?.Remove("additionalSubscriptions"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem> _explicitNullValueAdditionalSubscriptions = default!;
 #endif
         /// <summary>The end of the current plan billing cycle</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,22 +79,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The current plan item price overrides</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem>? PlanItemPrices { get => _explicitNullValuePlanItemPrices; set { _explicitNullValuePlanItemPrices = value; AdditionalData?.Remove("planItemPrices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemPrices"); else _explicitNullProperties?.Remove("planItemPrices"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem>? _explicitNullValuePlanItemPrices = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem>? PlanItemPrices { get => _explicitNullValuePlanItemPrices; set { _explicitNullValuePlanItemPrices = value; AdditionalData?.Remove("planItemPrices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemPrices"); else _explicitNullProperties?.Remove("planItemPrices"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem>? _explicitNullValuePlanItemPrices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem> PlanItemPrices { get => _explicitNullValuePlanItemPrices; set { _explicitNullValuePlanItemPrices = value; AdditionalData?.Remove("planItemPrices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemPrices"); else _explicitNullProperties?.Remove("planItemPrices"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem> _explicitNullValuePlanItemPrices = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem> PlanItemPrices { get => _explicitNullValuePlanItemPrices; set { _explicitNullValuePlanItemPrices = value; AdditionalData?.Remove("planItemPrices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemPrices"); else _explicitNullProperties?.Remove("planItemPrices"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem> _explicitNullValuePlanItemPrices = default!;
 #endif
         /// <summary>The current plan item quantities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem>? PlanItemQuantities { get => _explicitNullValuePlanItemQuantities; set { _explicitNullValuePlanItemQuantities = value; AdditionalData?.Remove("planItemQuantities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemQuantities"); else _explicitNullProperties?.Remove("planItemQuantities"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem>? _explicitNullValuePlanItemQuantities = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem>? PlanItemQuantities { get => _explicitNullValuePlanItemQuantities; set { _explicitNullValuePlanItemQuantities = value; AdditionalData?.Remove("planItemQuantities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemQuantities"); else _explicitNullProperties?.Remove("planItemQuantities"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem>? _explicitNullValuePlanItemQuantities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem> PlanItemQuantities { get => _explicitNullValuePlanItemQuantities; set { _explicitNullValuePlanItemQuantities = value; AdditionalData?.Remove("planItemQuantities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemQuantities"); else _explicitNullProperties?.Remove("planItemQuantities"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem> _explicitNullValuePlanItemQuantities = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem> PlanItemQuantities { get => _explicitNullValuePlanItemQuantities; set { _explicitNullValuePlanItemQuantities = value; AdditionalData?.Remove("planItemQuantities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planItemQuantities"); else _explicitNullProperties?.Remove("planItemQuantities"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem> _explicitNullValuePlanItemQuantities = default!;
 #endif
         /// <summary>The rate variant currently assigned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,21 +107,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueRateVariantKey = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan"/> and sets the default values.
         /// </summary>
-        public BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan()
+        public BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,12 +131,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalSubscriptions", n => { AdditionalSubscriptions = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "additionalSubscriptions", n => { AdditionalSubscriptions = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "currentCycleEndDate", n => { CurrentCycleEndDate = n.GetStringValue(); } },
                 { "orbSubscriptionId", n => { OrbSubscriptionId = n.GetStringValue(); } },
                 { "planId", n => { PlanId = n.GetStringValue(); } },
-                { "planItemPrices", n => { PlanItemPrices = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "planItemQuantities", n => { PlanItemQuantities = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "planItemPrices", n => { PlanItemPrices = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "planItemQuantities", n => { PlanItemQuantities = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rateVariantKey", n => { RateVariantKey = n.GetStringValue(); } },
             };
         }
@@ -147,12 +147,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem>("additionalSubscriptions", AdditionalSubscriptions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem>("additionalSubscriptions", AdditionalSubscriptions);
             writer.WriteStringValue("currentCycleEndDate", CurrentCycleEndDate);
             writer.WriteStringValue("orbSubscriptionId", OrbSubscriptionId);
             writer.WriteStringValue("planId", PlanId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem>("planItemPrices", PlanItemPrices);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem>("planItemQuantities", PlanItemQuantities);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem>("planItemPrices", PlanItemPrices);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem>("planItemQuantities", PlanItemQuantities);
             writer.WriteStringValue("rateVariantKey", RateVariantKey);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

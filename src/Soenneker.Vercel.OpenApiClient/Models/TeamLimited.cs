@@ -22,6 +22,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("avatar") is { } nullNodeAvatar && nullNodeAvatar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avatar = null;
             if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
             else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("directorySyncSource") is null) { _explicitNullValueDirectorySyncSource = default!; _explicitNullProperties?.Remove("directorySyncSource"); }
+            else if (parseNode.GetChildNode("directorySyncSource") is { } nullNodeDirectorySyncSource && nullNodeDirectorySyncSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectorySyncSource = null;
+            if (parseNode.GetChildNode("directorySyncType") is null) { _explicitNullValueDirectorySyncType = default!; _explicitNullProperties?.Remove("directorySyncType"); }
+            else if (parseNode.GetChildNode("directorySyncType") is { } nullNodeDirectorySyncType && nullNodeDirectorySyncType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectorySyncType = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("limited") is null) { _explicitNullValueLimited = default!; _explicitNullProperties?.Remove("limited"); }
@@ -57,6 +61,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>UNIX timestamp (in milliseconds) when the Team was created.</summary>
         public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private double? _explicitNullValueCreatedAt = default!;
+        /// <summary>Directory Sync source, using existing local connection and organization authority rules.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedDirectorySyncSource? DirectorySyncSource { get => _explicitNullValueDirectorySyncSource; set { _explicitNullValueDirectorySyncSource = value; AdditionalData?.Remove("directorySyncSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directorySyncSource"); else _explicitNullProperties?.Remove("directorySyncSource"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedDirectorySyncSource? _explicitNullValueDirectorySyncSource = default!;
+        /// <summary>Provider type of the directory selected by directorySyncSource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DirectorySyncType { get => _explicitNullValueDirectorySyncType; set { _explicitNullValueDirectorySyncType = value; AdditionalData?.Remove("directorySyncType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directorySyncType"); else _explicitNullProperties?.Remove("directorySyncType"); } }
+        private string? _explicitNullValueDirectorySyncType = default!;
+#nullable restore
+#else
+        public string DirectorySyncType { get => _explicitNullValueDirectorySyncType; set { _explicitNullValueDirectorySyncType = value; AdditionalData?.Remove("directorySyncType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directorySyncType"); else _explicitNullProperties?.Remove("directorySyncType"); } }
+        private string _explicitNullValueDirectorySyncType = default!;
+#endif
         /// <summary>The Team&apos;s unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,6 +184,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "directorySyncSource", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedDirectorySyncSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirectorySyncSource = default; _explicitNullProperties?.Remove("directorySyncSource"); AdditionalData["directorySyncSource"] = unknown; } else { DirectorySyncSource = parsed; AdditionalData.Remove("directorySyncSource"); } } },
+                { "directorySyncType", n => { DirectorySyncType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "limited", n => { Limited = n.GetBoolValue(); } },
                 { "limitedBy", n => { LimitedBy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem>()?.AsList(); } },
@@ -187,6 +206,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedDirectorySyncSource>("directorySyncSource", DirectorySyncSource);
+            writer.WriteStringValue("directorySyncType", DirectorySyncType);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("limited", Limited);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem>("limitedBy", LimitedBy);

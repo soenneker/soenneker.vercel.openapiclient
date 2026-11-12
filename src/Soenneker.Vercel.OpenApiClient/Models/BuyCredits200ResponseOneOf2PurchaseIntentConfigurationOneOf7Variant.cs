@@ -25,7 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("output") is { } nullNodeOutput && nullNodeOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Output = null;
         }
 
-        /// <summary>Purchase configuration specific options</summary>
+        /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.
+    /// Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): `failing` when more than 5 deliveries failed and they are at least 1% of all finished deliveries, `healthy` otherwise, and `unknown` when no delivery finished in the window.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDrains200ResponseDrainsOneOf2ItemDeliveryStats : IAdditionalDataHolder, IParsable
@@ -30,10 +30,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>All delivery attempts in the window.</summary>
+        /// <summary>Finished deliveries in the window: delivered plus finally failed.</summary>
         public double? Attempts { get => _explicitNullValueAttempts; set { _explicitNullValueAttempts = value; AdditionalData?.Remove("attempts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempts"); else _explicitNullProperties?.Remove("attempts"); } }
         private double? _explicitNullValueAttempts = default!;
-        /// <summary>Delivery attempts that did not succeed in the window.</summary>
+        /// <summary>Deliveries that finally failed in the window, after any automatic retries.</summary>
         public double? Failures { get => _explicitNullValueFailures; set { _explicitNullValueFailures = value; AdditionalData?.Remove("failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failures"); else _explicitNullProperties?.Remove("failures"); } }
         private double? _explicitNullValueFailures = default!;
         /// <summary>The state property</summary>

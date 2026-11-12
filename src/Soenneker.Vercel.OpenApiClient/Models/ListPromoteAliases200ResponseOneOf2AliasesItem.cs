@@ -27,7 +27,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias property</summary>
+        /// <summary>The alias hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
         private string _explicitNullValueAlias = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The alias ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -47,16 +47,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string? _explicitNullValueStatus = default!;
-#nullable restore
-#else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string _explicitNullValueStatus = default!;
-#endif
+        /// <summary>Whether the alias has been mapped to the deployment targeted by the last request. `pending` is also returned when the project has no request of the requested type, so it does not by itself indicate a running job.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2AliasesItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2AliasesItemStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2AliasesItem"/> and sets the default values.
         /// </summary>
@@ -84,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2AliasesItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -96,7 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListPromoteAliases200ResponseOneOf2AliasesItemStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

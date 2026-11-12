@@ -29353,7 +29353,7 @@
         ],
         "responses": {
           "200": {
-            "description": "200 response",
+            "description": "The aliases related to the last request of this type and whether each one has been mapped to the requested deployment.",
             "content": {
               "application/json": {
                 "schema": {
@@ -35182,7 +35182,7 @@
           "teams"
         ],
         "summary": "Update a Team Member",
-        "description": "Update the membership of a Team Member on the Team specified by \u0060teamId\u0060, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an \u0060OWNER\u0060 of the Team. An update that would leave the Team\u0027s organization without an organization admin is refused.",
+        "description": "Update the membership of a Team Member on the Team specified by \u0060teamId\u0060, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization\u0027s identity provider. Unsupported changes return \u0060organization_directory_managed\u0060; supported local assignments remain editable. The authenticated user must be an \u0060OWNER\u0060 of the Team. An update that would leave the Team\u0027s organization without an organization admin is refused.",
         "operationId": "UpdateTeamMember",
         "parameters": [
           {
@@ -35264,7 +35264,7 @@
           "teams"
         ],
         "summary": "Remove a Team Member",
-        "description": "Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user\u0027s primary or verified secondary emails. Removing or leaving is refused when it would leave the Team\u0027s organization without an organization admin.",
+        "description": "Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Organization-directory-managed access must be removed through the organization\u0027s identity provider; local removal returns \u0060organization_directory_managed\u0060. Directory Sync members can be removed when their directory email is absent or does not match the user\u0027s primary or verified secondary emails. Removing or leaving is refused when it would leave the Team\u0027s organization without an organization admin.",
         "operationId": "RemoveTeamMember",
         "parameters": [
           {
@@ -48091,6 +48091,7 @@
           "creatorId",
           "defaultDeploymentProtection",
           "description",
+          "directorySyncSource",
           "id",
           "limited",
           "name",
@@ -48159,6 +48160,13 @@
             "description": "A short description of the Team.",
             "nullable": true,
             "example": "Our mission is to make cloud computing accessible to everyone."
+          },
+          "directorySyncSource": {
+            "$ref": "#/components/schemas/TeamDirectorySyncSource"
+          },
+          "directorySyncType": {
+            "type": "string",
+            "description": "Provider type of the directory selected by directorySyncSource."
           },
           "disableRepositoryDispatchEvents": {
             "$ref": "#/components/schemas/TeamDisableRepositoryDispatchEvents"
@@ -48293,6 +48301,7 @@
         "required": [
           "avatar",
           "createdAt",
+          "directorySyncSource",
           "id",
           "limited",
           "limitedBy",
@@ -48311,6 +48320,13 @@
             "type": "number",
             "description": "UNIX timestamp (in milliseconds) when the Team was created.",
             "example": 1630748523395
+          },
+          "directorySyncSource": {
+            "$ref": "#/components/schemas/TeamLimitedDirectorySyncSource"
+          },
+          "directorySyncType": {
+            "type": "string",
+            "description": "Provider type of the directory selected by directorySyncSource."
           },
           "id": {
             "type": "string",
@@ -52492,12 +52508,12 @@
       },
       "UserEventPayloadOneOf37": {
         "required": [
-          "credential"
+          "enabled"
         ],
         "type": "object",
         "properties": {
-          "credential": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf37Credential"
+          "enabled": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf37Enabled"
           }
         },
         "description": "The payload of the event, if requested."
@@ -52508,9 +52524,6 @@
         ],
         "type": "object",
         "properties": {
-          "changes": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf38Changes"
-          },
           "credential": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf38Credential"
           }
@@ -52518,6 +52531,21 @@
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf39": {
+        "required": [
+          "credential"
+        ],
+        "type": "object",
+        "properties": {
+          "changes": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf39Changes"
+          },
+          "credential": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf39Credential"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf40": {
         "required": [
           "added",
           "changed",
@@ -52539,25 +52567,13 @@
             }
           },
           "credential": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf39Credential"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf40Credential"
           },
           "removed": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf40": {
-        "required": [
-          "enabled"
-        ],
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf40Enabled"
           }
         },
         "description": "The payload of the event, if requested."
@@ -67017,42 +67033,6 @@
         "description": "Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from \u0060@api/pubsub-types\u0060) because \u0060@api/pubsub-types\u0060 already depends on \u0060@api/events\u0060; importing it here would create a circular dependency. Must stay structurally aligned with \u0060APIKeyBudget\u0060 in \u0060@api/pubsub-types/event-payloads/api-keys\u0060.",
         "nullable": true
       },
-      "UserEventPayloadOneOf37Credential": {
-        "required": [
-          "id",
-          "name",
-          "providerSlug"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "providerSlug": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf38Changes": {
-        "type": "object",
-        "properties": {
-          "active": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf38ChangesActive"
-          },
-          "keyReplaced": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf38ChangesKeyReplaced"
-          },
-          "previousName": {
-            "type": "string"
-          },
-          "zeroDataRetention": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf38ChangesZeroDataRetention"
-          }
-        }
-      },
       "UserEventPayloadOneOf38Credential": {
         "required": [
           "id",
@@ -67072,7 +67052,43 @@
           }
         }
       },
+      "UserEventPayloadOneOf39Changes": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf39ChangesActive"
+          },
+          "keyReplaced": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf39ChangesKeyReplaced"
+          },
+          "previousName": {
+            "type": "string"
+          },
+          "zeroDataRetention": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf39ChangesZeroDataRetention"
+          }
+        }
+      },
       "UserEventPayloadOneOf39Credential": {
+        "required": [
+          "id",
+          "name",
+          "providerSlug"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "providerSlug": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf40Credential": {
         "required": [
           "id",
           "name",
@@ -81413,9 +81429,6 @@
           },
           {
             "$ref": "#/components/schemas/GetConfiguration200ResponseOneOf2"
-          },
-          {
-            "$ref": "#/components/schemas/GetConfiguration200ResponseOneOf3"
           }
         ]
       },
@@ -97574,124 +97587,6 @@
           }
         },
         "description": "The configuration with the provided id"
-      },
-      "GetConfiguration200ResponseOneOf3": {
-        "type": "object",
-        "properties": {
-          "acceptedPoliciesInheritedFromInstallationId": {
-            "type": "string",
-            "description": "Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth."
-          },
-          "completedAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was installed successfully",
-            "example": 1558531915505
-          },
-          "createdAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was created",
-            "example": 1558531915505
-          },
-          "customerDeleteRequestedAt": {
-            "type": "number",
-            "description": "Record when the customer initited deletion, independent of whether \u0060deleteRequestedAt\u0060 gets set.",
-            "nullable": true
-          },
-          "deletedAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was deleted.",
-            "nullable": true,
-            "example": 1558531915505
-          },
-          "deleteRequestedAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.",
-            "nullable": true,
-            "example": 1558531915505
-          },
-          "disabledAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is \u0027transferred\u0027, meaning the associated user is changed to one with access to the team.",
-            "example": 1558531915505
-          },
-          "disabledReason": {
-            "$ref": "#/components/schemas/GetConfiguration200ResponseOneOf3DisabledReason"
-          },
-          "externalId": {
-            "type": "string",
-            "description": "An external identifier defined by the integration vendor."
-          },
-          "id": {
-            "type": "string",
-            "description": "The unique identifier of the configuration",
-            "example": "icfg_3bwCLgxL8qt5kjRLcv2Dit7F"
-          },
-          "installationType": {
-            "$ref": "#/components/schemas/GetConfiguration200ResponseOneOf3InstallationType"
-          },
-          "integrationId": {
-            "type": "string",
-            "description": "The unique identifier of the app the configuration was created for",
-            "example": "oac_xzpVzcUOgcB1nrVlirtKhbWV"
-          },
-          "ownerId": {
-            "type": "string",
-            "description": "The user or team ID that owns the configuration",
-            "example": "kr1PsOIzqEL5Xg6M4VZcZosf"
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.",
-            "example": [
-              "prj_xQxbutw1HpL6HLYPAzt5h75m8NjO"
-            ]
-          },
-          "scopes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The resources that are allowed to be accessed by the configuration.",
-            "example": [
-              "read:project",
-              "read-write:log-drain"
-            ]
-          },
-          "slug": {
-            "type": "string",
-            "description": "The slug of the integration the configuration is created for.",
-            "example": "slack"
-          },
-          "source": {
-            "$ref": "#/components/schemas/GetConfiguration200ResponseOneOf3Source"
-          },
-          "status": {
-            "$ref": "#/components/schemas/GetConfiguration200ResponseOneOf3Status"
-          },
-          "teamId": {
-            "type": "string",
-            "description": "When the configuration was created for a team, this will show the ID of the team.",
-            "nullable": true,
-            "example": "team_nLlpyC6RE1qxydlFKbrxDlud"
-          },
-          "type": {
-            "$ref": "#/components/schemas/IntegrationConfigurationType"
-          },
-          "updatedAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was updated.",
-            "example": 1558531915505
-          },
-          "userId": {
-            "type": "string",
-            "description": "The ID of the user that created the configuration.",
-            "example": "kr1PsOIzqEL5Xg6M4VZcZosf"
-          }
-        },
-        "description": "A configuration represents information about a single installation of an integration within an individual or team account"
       },
       "GetConfigurationProducts200ResponseProductsItemMetadataSchemaPropertiesAdditionalProperties": {
         "oneOf": [
@@ -135412,6 +135307,16 @@
           }
         ]
       },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2"
+          }
+        ]
+      },
       "ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf1": {
         "required": [
           "integrationConfigurationId",
@@ -141011,6 +140916,71 @@
           }
         },
         "description": "The prices to add to the subscription"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1": {
+        "required": [
+          "planId"
+        ],
+        "type": "object",
+        "properties": {
+          "fromPlan": {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan"
+          },
+          "planId": {
+            "type": "string",
+            "description": "The ID of the plan to subscribe to"
+          },
+          "planItemPrices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1PlanItemPricesItem"
+            },
+            "description": "The plan item prices to set for the subscription, independent of quantities"
+          },
+          "planItemQuantities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1PlanItemQuantitiesItem"
+            },
+            "description": "The plan item quantities to set for the subscription"
+          },
+          "rateVariantKey": {
+            "type": "string",
+            "description": "The rate variant key to apply to the subscription"
+          },
+          "transition": {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1Transition"
+          }
+        },
+        "description": "Restart-cycle purchase options"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2": {
+        "required": [
+          "fromPlan",
+          "planId",
+          "transition"
+        ],
+        "type": "object",
+        "properties": {
+          "fromPlan": {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2FromPlan"
+          },
+          "planId": {
+            "type": "string",
+            "description": "The destination plan"
+          },
+          "planItemQuantities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2PlanItemQuantitiesItem"
+            },
+            "description": "Destination-only licensed quantities; shared quantities come from Copper"
+          },
+          "transition": {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2Transition"
+          }
+        },
+        "description": "Restart-cycle purchase options"
       },
       "ListCheckRuns200ResponseRunsItemOneOf1SourceOneOf5Selection": {
         "discriminator": {
@@ -150762,11 +150732,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/GetDrain200ResponseDeliveryStatsState"
@@ -150775,7 +150745,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "GetDrain200ResponseFilterV2": {
         "required": [
@@ -155445,6 +155415,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "aiGatewayBudgetOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "aiGatewayByokCredentials": {
             "type": "array",
             "items": {
@@ -158723,6 +158700,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "aiGatewayBudget": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "aiGatewayBudgetOwnedBySelf": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -162339,6 +162323,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "aiGatewayBudgetOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "aiGatewayByokCredentials": {
             "type": "array",
             "items": {
@@ -165602,6 +165593,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "aiGatewayBudgetOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "aiGatewayByokCredentials": {
             "type": "array",
             "items": {
@@ -168859,6 +168857,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "aiGatewayBudget": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "aiGatewayBudgetOwnedBySelf": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -173162,6 +173167,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "aiGatewayBudgetOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "aiGatewayByokCredentials": {
             "type": "array",
             "items": {
@@ -177209,6 +177221,7 @@
           "confirmed",
           "createdAt",
           "email",
+          "membershipSource",
           "role",
           "uid",
           "username"
@@ -177252,6 +177265,9 @@
           },
           "joinedFrom": {
             "$ref": "#/components/schemas/GetTeamMembers200ResponseMembersItemJoinedFrom"
+          },
+          "membershipSource": {
+            "$ref": "#/components/schemas/GetTeamMembers200ResponseMembersItemMembershipSource"
           },
           "name": {
             "type": "string",
@@ -184008,11 +184024,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/CreateDrain200ResponseOneOf1DeliveryStatsState"
@@ -184021,7 +184037,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "CreateDrain200ResponseOneOf1FilterV2": {
         "required": [
@@ -184096,11 +184112,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/CreateDrain200ResponseOneOf2DeliveryStatsState"
@@ -184109,7 +184125,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "CreateDrain200ResponseOneOf2FilterV2": {
         "required": [
@@ -184184,11 +184200,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/UpdateDrain200ResponseOneOf1DeliveryStatsState"
@@ -184197,7 +184213,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "UpdateDrain200ResponseOneOf1FilterV2": {
         "required": [
@@ -184272,11 +184288,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/UpdateDrain200ResponseOneOf2DeliveryStatsState"
@@ -184285,7 +184301,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "UpdateDrain200ResponseOneOf2FilterV2": {
         "required": [
@@ -186564,13 +186580,15 @@
         "type": "object",
         "properties": {
           "alias": {
-            "type": "string"
+            "type": "string",
+            "description": "The alias hostname."
           },
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The alias ID."
           },
           "status": {
-            "type": "string"
+            "$ref": "#/components/schemas/ListPromoteAliases200ResponseOneOf2AliasesItemStatus"
           }
         }
       },
@@ -194142,40 +194160,6 @@
           }
         }
       },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Options": {
-        "required": [
-          "planId"
-        ],
-        "type": "object",
-        "properties": {
-          "fromPlan": {
-            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan"
-          },
-          "planId": {
-            "type": "string",
-            "description": "The ID of the plan to subscribe to"
-          },
-          "planItemPrices": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem"
-            },
-            "description": "The plan item prices to set for the subscription, independent of quantities"
-          },
-          "planItemQuantities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem"
-            },
-            "description": "The plan item quantities to set for the subscription"
-          },
-          "rateVariantKey": {
-            "type": "string",
-            "description": "The rate variant key to apply to the subscription"
-          }
-        },
-        "description": "Purchase configuration specific options"
-      },
       "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7Output": {
         "type": "object",
         "properties": {
@@ -197728,6 +197712,147 @@
         },
         "additionalProperties": false
       },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlan": {
+        "required": [
+          "currentCycleEndDate",
+          "orbSubscriptionId",
+          "planId"
+        ],
+        "type": "object",
+        "properties": {
+          "additionalSubscriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem"
+            },
+            "description": "Additional source subscriptions replaced by this purchase"
+          },
+          "currentCycleEndDate": {
+            "type": "string",
+            "description": "The end of the current plan billing cycle"
+          },
+          "orbSubscriptionId": {
+            "type": "string",
+            "description": "The Orb subscription ID currently active for the owner on the source plan"
+          },
+          "planId": {
+            "type": "string",
+            "description": "The ID of the plan currently assigned"
+          },
+          "planItemPrices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem"
+            },
+            "description": "The current plan item price overrides"
+          },
+          "planItemQuantities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem"
+            },
+            "description": "The current plan item quantities"
+          },
+          "rateVariantKey": {
+            "type": "string",
+            "description": "The rate variant currently assigned"
+          }
+        },
+        "description": "The current plan being replaced by this purchase"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1PlanItemPricesItem": {
+        "required": [
+          "planItemId",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "planItemId": {
+            "type": "string",
+            "description": "The ID of the plan item to set the price for"
+          },
+          "price": {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1PlanItemPricesItemPrice"
+          }
+        },
+        "description": "The plan item prices to set for the subscription, independent of quantities"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1PlanItemQuantitiesItem": {
+        "required": [
+          "planItemId",
+          "quantity"
+        ],
+        "type": "object",
+        "properties": {
+          "planItemId": {
+            "type": "string",
+            "description": "The ID of the plan item to set the quantity for"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "The nonnegative integer quantity for the plan item"
+          },
+          "resourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The resource IDs to associate with the plan item quantity"
+          }
+        },
+        "description": "The plan item quantities to set for the subscription"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1Transition": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RestartCycleType"
+          }
+        },
+        "description": "Replacement billing-cycle policy. Defaults to restart_cycle."
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2FromPlan": {
+        "required": [
+          "orbSubscriptionId"
+        ],
+        "type": "object",
+        "properties": {
+          "orbSubscriptionId": {
+            "type": "string",
+            "description": "The owned active source subscription recorded by Copper"
+          }
+        }
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2PlanItemQuantitiesItem": {
+        "required": [
+          "planItemId",
+          "quantity"
+        ],
+        "type": "object",
+        "properties": {
+          "planItemId": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          }
+        },
+        "description": "Destination-only licensed quantities; shared quantities come from Copper"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf2Transition": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PreserveSourceCycleType"
+          }
+        }
+      },
       "GetDeployment200ResponseOneOf2RoutesItemOneOf1TransformsItemOneOf1Target": {
         "required": [
           "key"
@@ -200980,6 +201105,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "aiGatewayBudget": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "aiGatewayBudgetOwnedBySelf": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -218117,6 +218249,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "aiGatewayBudgetOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "aiGatewayByokCredentials": {
             "type": "array",
             "items": {
@@ -221619,11 +221758,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/GetDrains200ResponseDrainsOneOf1ItemDeliveryStatsState"
@@ -221632,7 +221771,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "GetDrains200ResponseDrainsOneOf1ItemFilterV2": {
         "required": [
@@ -221707,11 +221846,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/GetDrains200ResponseDrainsOneOf2ItemDeliveryStatsState"
@@ -221720,7 +221859,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "GetDrains200ResponseDrainsOneOf2ItemFilterV2": {
         "required": [
@@ -222919,96 +223058,6 @@
           }
         },
         "description": "The line items that make up the Purchase Intent."
-      },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlan": {
-        "required": [
-          "currentCycleEndDate",
-          "orbSubscriptionId",
-          "planId"
-        ],
-        "type": "object",
-        "properties": {
-          "additionalSubscriptions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem"
-            },
-            "description": "Additional source subscriptions replaced by this purchase"
-          },
-          "currentCycleEndDate": {
-            "type": "string",
-            "description": "The end of the current plan billing cycle"
-          },
-          "orbSubscriptionId": {
-            "type": "string",
-            "description": "The Orb subscription ID currently active for the owner on the source plan"
-          },
-          "planId": {
-            "type": "string",
-            "description": "The ID of the plan currently assigned"
-          },
-          "planItemPrices": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem"
-            },
-            "description": "The current plan item price overrides"
-          },
-          "planItemQuantities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem"
-            },
-            "description": "The current plan item quantities"
-          },
-          "rateVariantKey": {
-            "type": "string",
-            "description": "The rate variant currently assigned"
-          }
-        },
-        "description": "The current plan being replaced by this purchase"
-      },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItem": {
-        "required": [
-          "planItemId",
-          "price"
-        ],
-        "type": "object",
-        "properties": {
-          "planItemId": {
-            "type": "string",
-            "description": "The ID of the plan item to set the price for"
-          },
-          "price": {
-            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItemPrice"
-          }
-        },
-        "description": "The plan item prices to set for the subscription, independent of quantities"
-      },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemQuantitiesItem": {
-        "required": [
-          "planItemId",
-          "quantity"
-        ],
-        "type": "object",
-        "properties": {
-          "planItemId": {
-            "type": "string",
-            "description": "The ID of the plan item to set the quantity for"
-          },
-          "quantity": {
-            "type": "number",
-            "description": "The nonnegative integer quantity for the plan item"
-          },
-          "resourceIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The resource IDs to associate with the plan item quantity"
-          }
-        },
-        "description": "The plan item quantities to set for the subscription"
       },
       "BuyCredits200ResponseOneOf3OrbSubscriptionIntentConfigurationOneOf1OutputChangedResourcesItem": {
         "required": [
@@ -224349,11 +224398,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/GetAllLogDrains200ResponseOneOf2DrainsOneOf1ItemDeliveryStatsState"
@@ -224362,7 +224411,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "GetAllLogDrains200ResponseOneOf2DrainsOneOf1ItemFilterV2": {
         "required": [
@@ -224437,11 +224486,11 @@
         "properties": {
           "attempts": {
             "type": "number",
-            "description": "All delivery attempts in the window."
+            "description": "Finished deliveries in the window: delivered plus finally failed."
           },
           "failures": {
             "type": "number",
-            "description": "Delivery attempts that did not succeed in the window."
+            "description": "Deliveries that finally failed in the window, after any automatic retries."
           },
           "state": {
             "$ref": "#/components/schemas/GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryStatsState"
@@ -224450,7 +224499,7 @@
             "$ref": "#/components/schemas/Value24HWindow"
           }
         },
-        "description": "Delivery health of a drain over the last 24 hours: \u0060failing\u0060 when more than 5 delivery attempts and at least 1% of all attempts did not succeed, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when there were no attempts or the stats could not be loaded."
+        "description": "Delivery health of a drain over the last 24 hours, counted on finished deliveries (a delivery saved by an automatic retry counts once, as delivered): \u0060failing\u0060 when more than 5 deliveries failed and they are at least 1% of all finished deliveries, \u0060healthy\u0060 otherwise, and \u0060unknown\u0060 when no delivery finished in the window."
       },
       "GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemFilterV2": {
         "required": [
@@ -224472,6 +224521,88 @@
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanAdditionalSubscriptionsItem": {
+        "required": [
+          "currentCycleEndDate",
+          "orbSubscriptionId",
+          "planId"
+        ],
+        "type": "object",
+        "properties": {
+          "currentCycleEndDate": {
+            "type": "string",
+            "description": "The end of the additional source subscription billing cycle"
+          },
+          "orbSubscriptionId": {
+            "type": "string",
+            "description": "The additional source Orb subscription ID"
+          },
+          "planId": {
+            "type": "string",
+            "description": "The ID of the plan assigned to the additional source subscription"
+          }
+        },
+        "description": "Additional source subscriptions replaced by this purchase"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItem": {
+        "required": [
+          "planItemId",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "planItemId": {
+            "type": "string",
+            "description": "The ID of the plan item to set the price for"
+          },
+          "price": {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItemPrice"
+          }
+        },
+        "description": "The current plan item price overrides"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemQuantitiesItem": {
+        "required": [
+          "planItemId",
+          "quantity"
+        ],
+        "type": "object",
+        "properties": {
+          "planItemId": {
+            "type": "string",
+            "description": "The ID of the current plan item to set the quantity for"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "The nonnegative integer quantity for the current plan item"
+          },
+          "resourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The resource IDs associated with the current plan item quantity"
+          }
+        },
+        "description": "The current plan item quantities"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1PlanItemPricesItemPrice": {
+        "required": [
+          "model",
+          "unitAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/UnitModel"
+          },
+          "unitAmount": {
+            "type": "string",
+            "description": "The non-negative per-unit USD amount, with at most two decimal places"
+          }
+        },
+        "description": "The absolute price that replaces the plan item price, after any rate variant"
       },
       "GetDeployment200ResponseOneOf2ServicesItemOneOf2RoutesItemOneOf1LocaleRedirect": {
         "type": "object",
@@ -236401,88 +236532,6 @@
         },
         "description": "Optional metadata for the line item"
       },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanAdditionalSubscriptionsItem": {
-        "required": [
-          "currentCycleEndDate",
-          "orbSubscriptionId",
-          "planId"
-        ],
-        "type": "object",
-        "properties": {
-          "currentCycleEndDate": {
-            "type": "string",
-            "description": "The end of the additional source subscription billing cycle"
-          },
-          "orbSubscriptionId": {
-            "type": "string",
-            "description": "The additional source Orb subscription ID"
-          },
-          "planId": {
-            "type": "string",
-            "description": "The ID of the plan assigned to the additional source subscription"
-          }
-        },
-        "description": "Additional source subscriptions replaced by this purchase"
-      },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItem": {
-        "required": [
-          "planItemId",
-          "price"
-        ],
-        "type": "object",
-        "properties": {
-          "planItemId": {
-            "type": "string",
-            "description": "The ID of the plan item to set the price for"
-          },
-          "price": {
-            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItemPrice"
-          }
-        },
-        "description": "The current plan item price overrides"
-      },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemQuantitiesItem": {
-        "required": [
-          "planItemId",
-          "quantity"
-        ],
-        "type": "object",
-        "properties": {
-          "planItemId": {
-            "type": "string",
-            "description": "The ID of the current plan item to set the quantity for"
-          },
-          "quantity": {
-            "type": "number",
-            "description": "The nonnegative integer quantity for the current plan item"
-          },
-          "resourceIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The resource IDs associated with the current plan item quantity"
-          }
-        },
-        "description": "The current plan item quantities"
-      },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsPlanItemPricesItemPrice": {
-        "required": [
-          "model",
-          "unitAmount"
-        ],
-        "type": "object",
-        "properties": {
-          "model": {
-            "$ref": "#/components/schemas/UnitModel"
-          },
-          "unitAmount": {
-            "type": "string",
-            "description": "The non-negative per-unit USD amount, with at most two decimal places"
-          }
-        },
-        "description": "The absolute price that replaces the plan item price, after any rate variant"
-      },
       "GetDeployment200ResponseOneOf2FlagsOneOf1DefinitionsAdditionalPropertiesOptionsItem": {
         "required": [
           "value"
@@ -237146,6 +237195,23 @@
       },
       "GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemSchemasTrace": {
         "type": "object"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsOneOf1FromPlanPlanItemPricesItemPrice": {
+        "required": [
+          "model",
+          "unitAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/UnitModel"
+          },
+          "unitAmount": {
+            "type": "string",
+            "description": "The non-negative per-unit USD amount, with at most two decimal places"
+          }
+        },
+        "description": "The absolute price that replaces the plan item price, after any rate variant"
       },
       "GetAllChecks200ResponseChecksItemOutputMetricsCls": {
         "required": [
@@ -241369,23 +241435,6 @@
         },
         "nullable": true
       },
-      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf7OptionsFromPlanPlanItemPricesItemPrice": {
-        "required": [
-          "model",
-          "unitAmount"
-        ],
-        "type": "object",
-        "properties": {
-          "model": {
-            "$ref": "#/components/schemas/UnitModel"
-          },
-          "unitAmount": {
-            "type": "string",
-            "description": "The non-negative per-unit USD amount, with at most two decimal places"
-          }
-        },
-        "description": "The absolute price that replaces the plan item price, after any rate variant"
-      },
       "GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigDaemonBindingsItem": {
         "required": [
           "env",
@@ -244875,6 +244924,7 @@
           "ai-gateway-headquarters-updated",
           "ai-gateway-hipaa-compliance-toggled",
           "ai-gateway-inference-regions-updated",
+          "ai-gateway-member-budget-changes",
           "ai-gateway-model-allowlist-models-updated",
           "ai-gateway-model-allowlist-toggled",
           "ai-gateway-model-catalog-alert-settings-updated",
@@ -245814,6 +245864,10 @@
             {
               "value": "ai-gateway-inference-regions-updated",
               "name": "AiGatewayInferenceRegionsUpdated"
+            },
+            {
+              "value": "ai-gateway-member-budget-changes",
+              "name": "AiGatewayMemberBudgetChanges"
             },
             {
               "value": "ai-gateway-model-allowlist-models-updated",
@@ -248934,6 +248988,7 @@
           "ai-gateway-headquarters-updated",
           "ai-gateway-hipaa-compliance-toggled",
           "ai-gateway-inference-regions-updated",
+          "ai-gateway-member-budget-changes",
           "ai-gateway-model-allowlist-models-updated",
           "ai-gateway-model-allowlist-toggled",
           "ai-gateway-model-catalog-alert-settings-updated",
@@ -249873,6 +249928,10 @@
             {
               "value": "ai-gateway-inference-regions-updated",
               "name": "AiGatewayInferenceRegionsUpdated"
+            },
+            {
+              "value": "ai-gateway-member-budget-changes",
+              "name": "AiGatewayMemberBudgetChanges"
             },
             {
               "value": "ai-gateway-model-allowlist-models-updated",
@@ -252857,6 +252916,7 @@
           "ai-gateway-headquarters-updated",
           "ai-gateway-hipaa-compliance-toggled",
           "ai-gateway-inference-regions-updated",
+          "ai-gateway-member-budget-changes",
           "ai-gateway-model-allowlist-models-updated",
           "ai-gateway-model-allowlist-toggled",
           "ai-gateway-model-catalog-alert-settings-updated",
@@ -253795,6 +253855,10 @@
             {
               "value": "ai-gateway-inference-regions-updated",
               "name": "AiGatewayInferenceRegionsUpdated"
+            },
+            {
+              "value": "ai-gateway-member-budget-changes",
+              "name": "AiGatewayMemberBudgetChanges"
             },
             {
               "value": "ai-gateway-model-allowlist-models-updated",
@@ -257604,6 +257668,33 @@
           ]
         }
       },
+      "TeamDirectorySyncSource": {
+        "enum": [
+          "none",
+          "organization",
+          "team"
+        ],
+        "type": "string",
+        "description": "Directory Sync source, using existing local connection and organization authority rules.",
+        "x-ms-enum": {
+          "name": "TeamDirectorySyncSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "organization",
+              "name": "Organization"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            }
+          ]
+        }
+      },
       "TeamDisableRepositoryDispatchEvents": {
         "enum": [
           false,
@@ -257864,6 +257955,33 @@
             "$ref": "#/components/schemas/OpenApiNullValue"
           }
         ]
+      },
+      "TeamLimitedDirectorySyncSource": {
+        "enum": [
+          "none",
+          "organization",
+          "team"
+        ],
+        "type": "string",
+        "description": "Directory Sync source, using existing local connection and organization authority rules.",
+        "x-ms-enum": {
+          "name": "TeamLimitedDirectorySyncSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "organization",
+              "name": "Organization"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            }
+          ]
+        }
       },
       "TeamLimitedLimited": {
         "enum": [
@@ -259590,7 +259708,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf40Enabled": {
+      "UserEventPayloadOneOf37Enabled": {
         "enum": [
           false,
           true
@@ -270530,21 +270648,21 @@
           ]
         }
       },
-      "UserEventPayloadOneOf38ChangesActive": {
+      "UserEventPayloadOneOf39ChangesActive": {
         "enum": [
           false,
           true
         ],
         "type": "boolean"
       },
-      "UserEventPayloadOneOf38ChangesKeyReplaced": {
+      "UserEventPayloadOneOf39ChangesKeyReplaced": {
         "enum": [
           false,
           true
         ],
         "type": "boolean"
       },
-      "UserEventPayloadOneOf38ChangesZeroDataRetention": {
+      "UserEventPayloadOneOf39ChangesZeroDataRetention": {
         "enum": [
           false,
           true
@@ -273558,6 +273676,7 @@
       "UserEventPayloadOneOf415NextProjectScope": {
         "enum": [
           "all",
+          "none",
           "selected"
         ],
         "type": "string",
@@ -273570,6 +273689,10 @@
               "name": "All"
             },
             {
+              "value": "none",
+              "name": "None"
+            },
+            {
               "value": "selected",
               "name": "Selected"
             }
@@ -273579,6 +273702,7 @@
       "UserEventPayloadOneOf415NextRepositoryScope": {
         "enum": [
           "all",
+          "none",
           "selected"
         ],
         "type": "string",
@@ -273589,6 +273713,10 @@
             {
               "value": "all",
               "name": "All"
+            },
+            {
+              "value": "none",
+              "name": "None"
             },
             {
               "value": "selected",
@@ -273607,6 +273735,7 @@
       "UserEventPayloadOneOf415PreviousProjectScope": {
         "enum": [
           "all",
+          "none",
           "selected"
         ],
         "type": "string",
@@ -273619,6 +273748,10 @@
               "name": "All"
             },
             {
+              "value": "none",
+              "name": "None"
+            },
+            {
               "value": "selected",
               "name": "Selected"
             }
@@ -273628,6 +273761,7 @@
       "UserEventPayloadOneOf415PreviousRepositoryScope": {
         "enum": [
           "all",
+          "none",
           "selected"
         ],
         "type": "string",
@@ -273638,6 +273772,10 @@
             {
               "value": "all",
               "name": "All"
+            },
+            {
+              "value": "none",
+              "name": "None"
             },
             {
               "value": "selected",
@@ -292804,184 +292942,6 @@
         "description": "The configuration status. Optional. If not defined, assume \u0027ready\u0027.",
         "x-ms-enum": {
           "name": "GetConfiguration200ResponseOneOf2Status",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "error",
-              "name": "Error"
-            },
-            {
-              "value": "onboarding",
-              "name": "Onboarding"
-            },
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "ready",
-              "name": "Ready"
-            },
-            {
-              "value": "resumed",
-              "name": "Resumed"
-            },
-            {
-              "value": "suspended",
-              "name": "Suspended"
-            },
-            {
-              "value": "uninstalled",
-              "name": "Uninstalled"
-            }
-          ]
-        }
-      },
-      "GetConfiguration200ResponseOneOf3DisabledReason": {
-        "enum": [
-          "account-plan-downgrade",
-          "disabled-by-admin",
-          "disabled-by-owner",
-          "feature-not-available",
-          "original-owner-left-the-team",
-          "original-owner-role-downgraded"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "GetConfiguration200ResponseOneOf3DisabledReason",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "account-plan-downgrade",
-              "name": "AccountPlanDowngrade"
-            },
-            {
-              "value": "disabled-by-admin",
-              "name": "DisabledByAdmin"
-            },
-            {
-              "value": "disabled-by-owner",
-              "name": "DisabledByOwner"
-            },
-            {
-              "value": "feature-not-available",
-              "name": "FeatureNotAvailable"
-            },
-            {
-              "value": "original-owner-left-the-team",
-              "name": "OriginalOwnerLeftTheTeam"
-            },
-            {
-              "value": "original-owner-role-downgraded",
-              "name": "OriginalOwnerRoleDowngraded"
-            }
-          ]
-        }
-      },
-      "GetConfiguration200ResponseOneOf3InstallationType": {
-        "enum": [
-          "external",
-          "marketplace"
-        ],
-        "type": "string",
-        "description": "Defines the installation type. - \u0027external\u0027 integrations are installed via the existing integrations flow - \u0027marketplace\u0027 integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume \u0027external\u0027",
-        "x-ms-enum": {
-          "name": "GetConfiguration200ResponseOneOf3InstallationType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "external",
-              "name": "External"
-            },
-            {
-              "value": "marketplace",
-              "name": "Marketplace"
-            }
-          ]
-        }
-      },
-      "GetConfiguration200ResponseOneOf3Source": {
-        "enum": [
-          "backoffice",
-          "cli",
-          "deploy-button",
-          "external",
-          "import-recommended-integrations",
-          "marketplace",
-          "oauth",
-          "organization",
-          "project-overview-recommended-integrations",
-          "resource-claims",
-          "v0"
-        ],
-        "type": "string",
-        "description": "Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.",
-        "example": "marketplace",
-        "x-ms-enum": {
-          "name": "GetConfiguration200ResponseOneOf3Source",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "backoffice",
-              "name": "Backoffice"
-            },
-            {
-              "value": "cli",
-              "name": "Cli"
-            },
-            {
-              "value": "deploy-button",
-              "name": "DeployButton"
-            },
-            {
-              "value": "external",
-              "name": "External"
-            },
-            {
-              "value": "import-recommended-integrations",
-              "name": "ImportRecommendedIntegrations"
-            },
-            {
-              "value": "marketplace",
-              "name": "Marketplace"
-            },
-            {
-              "value": "oauth",
-              "name": "OAuth"
-            },
-            {
-              "value": "organization",
-              "name": "Organization"
-            },
-            {
-              "value": "project-overview-recommended-integrations",
-              "name": "ProjectOverviewRecommendedIntegrations"
-            },
-            {
-              "value": "resource-claims",
-              "name": "ResourceClaims"
-            },
-            {
-              "value": "v0",
-              "name": "V0"
-            }
-          ]
-        }
-      },
-      "GetConfiguration200ResponseOneOf3Status": {
-        "enum": [
-          "error",
-          "onboarding",
-          "pending",
-          "ready",
-          "resumed",
-          "suspended",
-          "uninstalled"
-        ],
-        "type": "string",
-        "description": "The configuration status. Optional. If not defined, assume \u0027ready\u0027.",
-        "x-ms-enum": {
-          "name": "GetConfiguration200ResponseOneOf3Status",
           "modelAsString": false,
           "values": [
             {
@@ -331978,6 +331938,33 @@
         "type": "boolean",
         "description": "Indicates whether the user is managed by an enterprise."
       },
+      "GetTeamMembers200ResponseMembersItemMembershipSource": {
+        "enum": [
+          "direct",
+          "organization-directory",
+          "team-directory"
+        ],
+        "type": "string",
+        "description": "The source controlling this member\u0027s team access and roles. Individual permissions may have a different source. This does not replace authorization checks.",
+        "x-ms-enum": {
+          "name": "GetTeamMembers200ResponseMembersItemMembershipSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "direct",
+              "name": "Direct"
+            },
+            {
+              "value": "organization-directory",
+              "name": "OrganizationDirectory"
+            },
+            {
+              "value": "team-directory",
+              "name": "TeamDirectory"
+            }
+          ]
+        }
+      },
       "GetTeamMembers200ResponseMembersItemRole": {
         "enum": [
           "BILLING",
@@ -338265,6 +338252,33 @@
           ]
         }
       },
+      "ListPromoteAliases200ResponseOneOf2AliasesItemStatus": {
+        "enum": [
+          "completed",
+          "failed",
+          "pending"
+        ],
+        "type": "string",
+        "description": "Whether the alias has been mapped to the deployment targeted by the last request. \u0060pending\u0060 is also returned when the project has no request of the requested type, so it does not by itself indicate a running job.",
+        "x-ms-enum": {
+          "name": "ListPromoteAliases200ResponseOneOf2AliasesItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            }
+          ]
+        }
+      },
       "SandboxStreamClosedCode": {
         "enum": [
           "sandbox_stream_closed"
@@ -341787,6 +341801,38 @@
             {
               "value": "v0",
               "name": "V0"
+            }
+          ]
+        }
+      },
+      "RestartCycleType": {
+        "enum": [
+          "restart_cycle"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "RestartCycleType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "restart_cycle",
+              "name": "RestartCycle"
+            }
+          ]
+        }
+      },
+      "PreserveSourceCycleType": {
+        "enum": [
+          "preserve_source_cycle"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "PreserveSourceCycleType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "preserve_source_cycle",
+              "name": "PreserveSourceCycle"
             }
           ]
         }
@@ -365525,6 +365571,22 @@
           ]
         }
       },
+      "UnitModel": {
+        "enum": [
+          "unit"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "UnitModel",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unit",
+              "name": "Unit"
+            }
+          ]
+        }
+      },
       "WebVitalsSource": {
         "enum": [
           "web-vitals"
@@ -379384,22 +379446,6 @@
           ]
         }
       },
-      "UnitModel": {
-        "enum": [
-          "unit"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "UnitModel",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "unit",
-              "name": "Unit"
-            }
-          ]
-        }
-      },
       "GetDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigProjectSettingsAutoExposeSystemEnvs": {
         "enum": [
           false,
@@ -386605,6 +386651,7 @@
       "ListVercelCiInvocationsStatusParameterItem": {
         "enum": [
           "new",
+          "awaiting_admission",
           "awaiting_approval",
           "skipped",
           "bootstrapping",
@@ -386626,6 +386673,10 @@
             {
               "value": "new",
               "name": "NewValue"
+            },
+            {
+              "value": "awaiting_admission",
+              "name": "AwaitingAdmission"
             },
             {
               "value": "awaiting_approval",

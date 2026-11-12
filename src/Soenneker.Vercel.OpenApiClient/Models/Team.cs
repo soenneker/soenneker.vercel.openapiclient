@@ -50,6 +50,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("deploymentStorageRollout") is { } nullNodeDeploymentStorageRollout && nullNodeDeploymentStorageRollout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentStorageRollout = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("directorySyncSource") is null) { _explicitNullValueDirectorySyncSource = default!; _explicitNullProperties?.Remove("directorySyncSource"); }
+            else if (parseNode.GetChildNode("directorySyncSource") is { } nullNodeDirectorySyncSource && nullNodeDirectorySyncSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectorySyncSource = null;
+            if (parseNode.GetChildNode("directorySyncType") is null) { _explicitNullValueDirectorySyncType = default!; _explicitNullProperties?.Remove("directorySyncType"); }
+            else if (parseNode.GetChildNode("directorySyncType") is { } nullNodeDirectorySyncType && nullNodeDirectorySyncType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectorySyncType = null;
             if (parseNode.GetChildNode("disableRepositoryDispatchEvents") is null) { _explicitNullValueDisableRepositoryDispatchEvents = default!; _explicitNullProperties?.Remove("disableRepositoryDispatchEvents"); }
             else if (parseNode.GetChildNode("disableRepositoryDispatchEvents") is { } nullNodeDisableRepositoryDispatchEvents && nullNodeDisableRepositoryDispatchEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableRepositoryDispatchEvents = null;
             if (parseNode.GetChildNode("disjunctiveProductionSecretPolicy") is null) { _explicitNullValueDisjunctiveProductionSecretPolicy = default!; _explicitNullProperties?.Remove("disjunctiveProductionSecretPolicy"); }
@@ -251,6 +255,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
+#endif
+        /// <summary>Directory Sync source, using existing local connection and organization authority rules.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDirectorySyncSource? DirectorySyncSource { get => _explicitNullValueDirectorySyncSource; set { _explicitNullValueDirectorySyncSource = value; AdditionalData?.Remove("directorySyncSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directorySyncSource"); else _explicitNullProperties?.Remove("directorySyncSource"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.TeamDirectorySyncSource? _explicitNullValueDirectorySyncSource = default!;
+        /// <summary>Provider type of the directory selected by directorySyncSource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DirectorySyncType { get => _explicitNullValueDirectorySyncType; set { _explicitNullValueDirectorySyncType = value; AdditionalData?.Remove("directorySyncType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directorySyncType"); else _explicitNullProperties?.Remove("directorySyncType"); } }
+        private string? _explicitNullValueDirectorySyncType = default!;
+#nullable restore
+#else
+        public string DirectorySyncType { get => _explicitNullValueDirectorySyncType; set { _explicitNullValueDirectorySyncType = value; AdditionalData?.Remove("directorySyncType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directorySyncType"); else _explicitNullProperties?.Remove("directorySyncType"); } }
+        private string _explicitNullValueDirectorySyncType = default!;
 #endif
         /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.</summary>
         public bool? DisableRepositoryDispatchEvents { get => _explicitNullValueDisableRepositoryDispatchEvents; set { _explicitNullValueDisableRepositoryDispatchEvents = value; AdditionalData?.Remove("disableRepositoryDispatchEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableRepositoryDispatchEvents"); else _explicitNullProperties?.Remove("disableRepositoryDispatchEvents"); } }
@@ -567,6 +584,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "deploymentStorageRollout", n => { DeploymentStorageRollout = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "directorySyncSource", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDirectorySyncSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirectorySyncSource = default; _explicitNullProperties?.Remove("directorySyncSource"); AdditionalData["directorySyncSource"] = unknown; } else { DirectorySyncSource = parsed; AdditionalData.Remove("directorySyncSource"); } } },
+                { "directorySyncType", n => { DirectorySyncType = n.GetStringValue(); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
                 { "disjunctiveProductionSecretPolicy", n => { DisjunctiveProductionSecretPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy.CreateFromDiscriminatorValue); } },
                 { "dpAccessRequestsMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDpAccessRequestsMode = default; _explicitNullProperties?.Remove("dpAccessRequestsMode"); AdditionalData["dpAccessRequestsMode"] = unknown; } else { DpAccessRequestsMode = parsed; AdditionalData.Remove("dpAccessRequestsMode"); } } },
@@ -625,6 +644,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout>("deploymentStorageRollout", DeploymentStorageRollout);
             writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDirectorySyncSource>("directorySyncSource", DirectorySyncSource);
+            writer.WriteStringValue("directorySyncType", DirectorySyncType);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>("disjunctiveProductionSecretPolicy", DisjunctiveProductionSecretPolicy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>("dpAccessRequestsMode", DpAccessRequestsMode);

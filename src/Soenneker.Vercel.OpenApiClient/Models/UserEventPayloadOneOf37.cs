@@ -18,22 +18,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("credential") is null) { _explicitNullValueCredential = default!; _explicitNullProperties?.Remove("credential"); }
-            else if (parseNode.GetChildNode("credential") is { } nullNodeCredential && nullNodeCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credential = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The credential property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37Credential? Credential { get => _explicitNullValueCredential; set { _explicitNullValueCredential = value; AdditionalData?.Remove("credential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential"); else _explicitNullProperties?.Remove("credential"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37Credential? _explicitNullValueCredential = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37Credential Credential { get => _explicitNullValueCredential; set { _explicitNullValueCredential = value; AdditionalData?.Remove("credential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential"); else _explicitNullProperties?.Remove("credential"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37Credential _explicitNullValueCredential = default!;
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37"/> and sets the default values.
         /// </summary>
@@ -59,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credential", n => { Credential = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37Credential>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37Credential.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37Credential>("credential", Credential);
+            writer.WriteBoolValue("enabled", Enabled);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

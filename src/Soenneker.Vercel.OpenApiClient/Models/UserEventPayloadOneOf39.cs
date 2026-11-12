@@ -18,37 +18,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("added") is null) { _explicitNullValueAdded = default!; _explicitNullProperties?.Remove("added"); }
-            else if (parseNode.GetChildNode("added") is { } nullNodeAdded && nullNodeAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Added = null;
-            if (parseNode.GetChildNode("changed") is null) { _explicitNullValueChanged = default!; _explicitNullProperties?.Remove("changed"); }
-            else if (parseNode.GetChildNode("changed") is { } nullNodeChanged && nullNodeChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Changed = null;
+            if (parseNode.GetChildNode("changes") is null) { _explicitNullValueChanges = default!; _explicitNullProperties?.Remove("changes"); }
+            else if (parseNode.GetChildNode("changes") is { } nullNodeChanges && nullNodeChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Changes = null;
             if (parseNode.GetChildNode("credential") is null) { _explicitNullValueCredential = default!; _explicitNullProperties?.Remove("credential"); }
             else if (parseNode.GetChildNode("credential") is { } nullNodeCredential && nullNodeCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credential = null;
-            if (parseNode.GetChildNode("removed") is null) { _explicitNullValueRemoved = default!; _explicitNullProperties?.Remove("removed"); }
-            else if (parseNode.GetChildNode("removed") is { } nullNodeRemoved && nullNodeRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Removed = null;
         }
 
-        /// <summary>The added property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; AdditionalData?.Remove("added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
-        private List<string>? _explicitNullValueAdded = default!;
-#nullable restore
-#else
-        public List<string> Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; AdditionalData?.Remove("added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
-        private List<string> _explicitNullValueAdded = default!;
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The changed property</summary>
+        /// <summary>The changes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Changed { get => _explicitNullValueChanged; set { _explicitNullValueChanged = value; AdditionalData?.Remove("changed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed"); else _explicitNullProperties?.Remove("changed"); } }
-        private List<string>? _explicitNullValueChanged = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Changes? Changes { get => _explicitNullValueChanges; set { _explicitNullValueChanges = value; AdditionalData?.Remove("changes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changes"); else _explicitNullProperties?.Remove("changes"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Changes? _explicitNullValueChanges = default!;
 #nullable restore
 #else
-        public List<string> Changed { get => _explicitNullValueChanged; set { _explicitNullValueChanged = value; AdditionalData?.Remove("changed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed"); else _explicitNullProperties?.Remove("changed"); } }
-        private List<string> _explicitNullValueChanged = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Changes Changes { get => _explicitNullValueChanges; set { _explicitNullValueChanges = value; AdditionalData?.Remove("changes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changes"); else _explicitNullProperties?.Remove("changes"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Changes _explicitNullValueChanges = default!;
 #endif
         /// <summary>The credential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,16 +45,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Credential Credential { get => _explicitNullValueCredential; set { _explicitNullValueCredential = value; AdditionalData?.Remove("credential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential"); else _explicitNullProperties?.Remove("credential"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Credential _explicitNullValueCredential = default!;
-#endif
-        /// <summary>The removed property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; AdditionalData?.Remove("removed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
-        private List<string>? _explicitNullValueRemoved = default!;
-#nullable restore
-#else
-        public List<string> Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; AdditionalData?.Remove("removed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
-        private List<string> _explicitNullValueRemoved = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39"/> and sets the default values.
@@ -95,10 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "added", n => { Added = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "changed", n => { Changed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "changes", n => { Changes = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Changes>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Changes.CreateFromDiscriminatorValue); } },
                 { "credential", n => { Credential = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Credential>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Credential.CreateFromDiscriminatorValue); } },
-                { "removed", n => { Removed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -108,10 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("added", Added);
-            writer.WriteCollectionOfPrimitiveValues<string>("changed", Changed);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Changes>("changes", Changes);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39Credential>("credential", Credential);
-            writer.WriteCollectionOfPrimitiveValues<string>("removed", Removed);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
