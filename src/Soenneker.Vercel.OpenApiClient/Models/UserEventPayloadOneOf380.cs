@@ -26,10 +26,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("connectionId") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
             if (parseNode.GetChildNode("keyId") is null) { _explicitNullValueKeyId = default!; _explicitNullProperties?.Remove("keyId"); }
             else if (parseNode.GetChildNode("keyId") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
-            if (parseNode.GetChildNode("signingEnabled") is null) { _explicitNullValueSigningEnabled = default!; _explicitNullProperties?.Remove("signingEnabled"); }
-            else if (parseNode.GetChildNode("signingEnabled") is { } nullNodeSigningEnabled && nullNodeSigningEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningEnabled = null;
-            if (parseNode.GetChildNode("signingKeyId") is null) { _explicitNullValueSigningKeyId = default!; _explicitNullProperties?.Remove("signingKeyId"); }
-            else if (parseNode.GetChildNode("signingKeyId") is { } nullNodeSigningKeyId && nullNodeSigningKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningKeyId = null;
         }
 
         /// <summary>The actorName property</summary>
@@ -67,19 +63,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("keyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyId"); else _explicitNullProperties?.Remove("keyId"); } }
         private string _explicitNullValueKeyId = default!;
 #endif
-        /// <summary>The signingEnabled property</summary>
-        public bool? SigningEnabled { get => _explicitNullValueSigningEnabled; set { _explicitNullValueSigningEnabled = value; AdditionalData?.Remove("signingEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signingEnabled"); else _explicitNullProperties?.Remove("signingEnabled"); } }
-        private bool? _explicitNullValueSigningEnabled = default!;
-        /// <summary>The signingKeyId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SigningKeyId { get => _explicitNullValueSigningKeyId; set { _explicitNullValueSigningKeyId = value; AdditionalData?.Remove("signingKeyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signingKeyId"); else _explicitNullProperties?.Remove("signingKeyId"); } }
-        private string? _explicitNullValueSigningKeyId = default!;
-#nullable restore
-#else
-        public string SigningKeyId { get => _explicitNullValueSigningKeyId; set { _explicitNullValueSigningKeyId = value; AdditionalData?.Remove("signingKeyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signingKeyId"); else _explicitNullProperties?.Remove("signingKeyId"); } }
-        private string _explicitNullValueSigningKeyId = default!;
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf380"/> and sets the default values.
         /// </summary>
@@ -109,8 +92,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "actorType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActorType = default; _explicitNullProperties?.Remove("actorType"); AdditionalData["actorType"] = unknown; } else { ActorType = parsed; AdditionalData.Remove("actorType"); } } },
                 { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
                 { "keyId", n => { KeyId = n.GetStringValue(); } },
-                { "signingEnabled", n => { SigningEnabled = n.GetBoolValue(); } },
-                { "signingKeyId", n => { SigningKeyId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -124,8 +105,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
             writer.WriteStringValue("connectionId", ConnectionId);
             writer.WriteStringValue("keyId", KeyId);
-            writer.WriteBoolValue("signingEnabled", SigningEnabled);
-            writer.WriteStringValue("signingKeyId", SigningKeyId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

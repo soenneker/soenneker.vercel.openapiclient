@@ -24,6 +24,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("failures") is { } nullNodeFailures && nullNodeFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Failures = null;
             if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
             else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("totalFailedDeliveries") is null) { _explicitNullValueTotalFailedDeliveries = default!; _explicitNullProperties?.Remove("totalFailedDeliveries"); }
+            else if (parseNode.GetChildNode("totalFailedDeliveries") is { } nullNodeTotalFailedDeliveries && nullNodeTotalFailedDeliveries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalFailedDeliveries = null;
+            if (parseNode.GetChildNode("totalRetriedDeliveries") is null) { _explicitNullValueTotalRetriedDeliveries = default!; _explicitNullProperties?.Remove("totalRetriedDeliveries"); }
+            else if (parseNode.GetChildNode("totalRetriedDeliveries") is { } nullNodeTotalRetriedDeliveries && nullNodeTotalRetriedDeliveries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRetriedDeliveries = null;
+            if (parseNode.GetChildNode("totalSuccessfulDeliveries") is null) { _explicitNullValueTotalSuccessfulDeliveries = default!; _explicitNullProperties?.Remove("totalSuccessfulDeliveries"); }
+            else if (parseNode.GetChildNode("totalSuccessfulDeliveries") is { } nullNodeTotalSuccessfulDeliveries && nullNodeTotalSuccessfulDeliveries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSuccessfulDeliveries = null;
             if (parseNode.GetChildNode("window") is null) { _explicitNullValueWindow = default!; _explicitNullProperties?.Remove("window"); }
             else if (parseNode.GetChildNode("window") is { } nullNodeWindow && nullNodeWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Window = null;
         }
@@ -33,12 +39,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Finished deliveries in the window: delivered plus finally failed.</summary>
         public double? Attempts { get => _explicitNullValueAttempts; set { _explicitNullValueAttempts = value; AdditionalData?.Remove("attempts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempts"); else _explicitNullProperties?.Remove("attempts"); } }
         private double? _explicitNullValueAttempts = default!;
-        /// <summary>Deliveries that finally failed in the window, after any automatic retries.</summary>
+        /// <summary>Deliveries that finally failed in the window.</summary>
         public double? Failures { get => _explicitNullValueFailures; set { _explicitNullValueFailures = value; AdditionalData?.Remove("failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failures"); else _explicitNullProperties?.Remove("failures"); } }
         private double? _explicitNullValueFailures = default!;
         /// <summary>The state property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2DeliveryStatsState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2DeliveryStatsState? _explicitNullValueState = default!;
+        /// <summary>Deliveries that finally failed in the window, after any automatic retries.</summary>
+        public double? TotalFailedDeliveries { get => _explicitNullValueTotalFailedDeliveries; set { _explicitNullValueTotalFailedDeliveries = value; AdditionalData?.Remove("totalFailedDeliveries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalFailedDeliveries"); else _explicitNullProperties?.Remove("totalFailedDeliveries"); } }
+        private double? _explicitNullValueTotalFailedDeliveries = default!;
+        /// <summary>Deliveries whose first try failed and were scheduled for an automatic retry in the window, whatever their final outcome.</summary>
+        public double? TotalRetriedDeliveries { get => _explicitNullValueTotalRetriedDeliveries; set { _explicitNullValueTotalRetriedDeliveries = value; AdditionalData?.Remove("totalRetriedDeliveries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalRetriedDeliveries"); else _explicitNullProperties?.Remove("totalRetriedDeliveries"); } }
+        private double? _explicitNullValueTotalRetriedDeliveries = default!;
+        /// <summary>Deliveries delivered in the window, on the first try or after automatic retries.</summary>
+        public double? TotalSuccessfulDeliveries { get => _explicitNullValueTotalSuccessfulDeliveries; set { _explicitNullValueTotalSuccessfulDeliveries = value; AdditionalData?.Remove("totalSuccessfulDeliveries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalSuccessfulDeliveries"); else _explicitNullProperties?.Remove("totalSuccessfulDeliveries"); } }
+        private double? _explicitNullValueTotalSuccessfulDeliveries = default!;
         /// <summary>The window property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.Value24HWindow? Window { get => _explicitNullValueWindow; set { _explicitNullValueWindow = value; AdditionalData?.Remove("window"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window"); else _explicitNullProperties?.Remove("window"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.Value24HWindow? _explicitNullValueWindow = default!;
@@ -70,6 +85,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "attempts", n => { Attempts = n.GetDoubleValue(); } },
                 { "failures", n => { Failures = n.GetDoubleValue(); } },
                 { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2DeliveryStatsState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
+                { "totalFailedDeliveries", n => { TotalFailedDeliveries = n.GetDoubleValue(); } },
+                { "totalRetriedDeliveries", n => { TotalRetriedDeliveries = n.GetDoubleValue(); } },
+                { "totalSuccessfulDeliveries", n => { TotalSuccessfulDeliveries = n.GetDoubleValue(); } },
                 { "window", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Value24HWindow>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWindow = default; _explicitNullProperties?.Remove("window"); AdditionalData["window"] = unknown; } else { Window = parsed; AdditionalData.Remove("window"); } } },
             };
         }
@@ -83,6 +101,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("attempts", Attempts);
             writer.WriteDoubleValue("failures", Failures);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf2DeliveryStatsState>("state", State);
+            writer.WriteDoubleValue("totalFailedDeliveries", TotalFailedDeliveries);
+            writer.WriteDoubleValue("totalRetriedDeliveries", TotalRetriedDeliveries);
+            writer.WriteDoubleValue("totalSuccessfulDeliveries", TotalSuccessfulDeliveries);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Value24HWindow>("window", Window);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

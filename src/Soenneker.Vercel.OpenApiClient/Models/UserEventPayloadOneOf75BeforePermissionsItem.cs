@@ -68,6 +68,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonConnect,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:connect-any-user-token")]
+        #pragma warning disable CS1591
+        ReadWriteColonConnectAnyUserToken,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:connect-app-token")]
+        #pragma warning disable CS1591
+        ReadWriteColonConnectAppToken,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:deployment")]
         #pragma warning disable CS1591
         ReadWriteColonDeployment,
@@ -327,6 +335,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "use:private-npm")]
         #pragma warning disable CS1591
         UseColonPrivateNpm,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "use:project-flags-overrides-non-production")]
+        #pragma warning disable CS1591
+        UseColonProjectFlagsOverridesNonProduction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "use:project-flags-overrides-production")]
+        #pragma warning disable CS1591
+        UseColonProjectFlagsOverridesProduction,
         #pragma warning restore CS1591
     }
 }

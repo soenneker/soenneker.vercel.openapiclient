@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams
         {
         }
         /// <summary>
-        /// List up to 100 teams in an organization, each enriched with the team&apos;s slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// List up to 100 teams in an organization, each enriched with the team&apos;s slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships and organization Directory Sync grants, while excluding suppressed memberships and email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListOrganizationTeams200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeam>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeam.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List up to 100 teams in an organization, each enriched with the team&apos;s slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// List up to 100 teams in an organization, each enriched with the team&apos;s slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships and organization Directory Sync grants, while excluding suppressed memberships and email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams
             return new global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams.TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List up to 100 teams in an organization, each enriched with the team&apos;s slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// List up to 100 teams in an organization, each enriched with the team&apos;s slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships and organization Directory Sync grants, while excluding suppressed memberships and email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsRequestBuilderGetQueryParameters 
@@ -150,7 +150,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>When true, includes each team&apos;s member count in the response.</summary>
+            /// <summary>When true, includes each team&apos;s member count, including organization Directory Sync members. Counting Directory Sync members can add latency.</summary>
             [QueryParameter("includeMemberCount")]
             public bool? IncludeMemberCount { get; set; }
         }

@@ -446,6 +446,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("projectEvent") is { } nullNodeProjectEvent && nullNodeProjectEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectEvent = null;
             if (parseNode.GetChildNode("projectFlags") is null) { _explicitNullValueProjectFlags = default!; _explicitNullProperties?.Remove("projectFlags"); }
             else if (parseNode.GetChildNode("projectFlags") is { } nullNodeProjectFlags && nullNodeProjectFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFlags = null;
+            if (parseNode.GetChildNode("projectFlagsOverride") is null) { _explicitNullValueProjectFlagsOverride = default!; _explicitNullProperties?.Remove("projectFlagsOverride"); }
+            else if (parseNode.GetChildNode("projectFlagsOverride") is { } nullNodeProjectFlagsOverride && nullNodeProjectFlagsOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFlagsOverride = null;
+            if (parseNode.GetChildNode("projectFlagsOverrideProduction") is null) { _explicitNullValueProjectFlagsOverrideProduction = default!; _explicitNullProperties?.Remove("projectFlagsOverrideProduction"); }
+            else if (parseNode.GetChildNode("projectFlagsOverrideProduction") is { } nullNodeProjectFlagsOverrideProduction && nullNodeProjectFlagsOverrideProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFlagsOverrideProduction = null;
             if (parseNode.GetChildNode("projectFlagsProduction") is null) { _explicitNullValueProjectFlagsProduction = default!; _explicitNullProperties?.Remove("projectFlagsProduction"); }
             else if (parseNode.GetChildNode("projectFlagsProduction") is { } nullNodeProjectFlagsProduction && nullNodeProjectFlagsProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectFlagsProduction = null;
             if (parseNode.GetChildNode("projectFlagsSdkKey") is null) { _explicitNullValueProjectFlagsSdkKey = default!; _explicitNullProperties?.Remove("projectFlagsSdkKey"); }
@@ -2771,6 +2775,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlagsOverride { get => _explicitNullValueProjectFlagsOverride; set { _explicitNullValueProjectFlagsOverride = value; AdditionalData?.Remove("projectFlagsOverride"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsOverride"); else _explicitNullProperties?.Remove("projectFlagsOverride"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectFlagsOverride = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlagsOverride { get => _explicitNullValueProjectFlagsOverride; set { _explicitNullValueProjectFlagsOverride = value; AdditionalData?.Remove("projectFlagsOverride"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsOverride"); else _explicitNullProperties?.Remove("projectFlagsOverride"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectFlagsOverride = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlagsOverrideProduction { get => _explicitNullValueProjectFlagsOverrideProduction; set { _explicitNullValueProjectFlagsOverrideProduction = value; AdditionalData?.Remove("projectFlagsOverrideProduction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsOverrideProduction"); else _explicitNullProperties?.Remove("projectFlagsOverrideProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectFlagsOverrideProduction = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectFlagsOverrideProduction { get => _explicitNullValueProjectFlagsOverrideProduction; set { _explicitNullValueProjectFlagsOverrideProduction = value; AdditionalData?.Remove("projectFlagsOverrideProduction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsOverrideProduction"); else _explicitNullProperties?.Remove("projectFlagsOverrideProduction"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValueProjectFlagsOverrideProduction = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectFlagsProduction { get => _explicitNullValueProjectFlagsProduction; set { _explicitNullValueProjectFlagsProduction = value; AdditionalData?.Remove("projectFlagsProduction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectFlagsProduction"); else _explicitNullProperties?.Remove("projectFlagsProduction"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValueProjectFlagsProduction = default!;
 #nullable restore
@@ -3898,6 +3922,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectEnvVarsUnownedByIntegration", n => { ProjectEnvVarsUnownedByIntegration = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectEvent", n => { ProjectEvent = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectFlags", n => { ProjectFlags = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "projectFlagsOverride", n => { ProjectFlagsOverride = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "projectFlagsOverrideProduction", n => { ProjectFlagsOverrideProduction = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectFlagsProduction", n => { ProjectFlagsProduction = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectFlagsSdkKey", n => { ProjectFlagsSdkKey = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectFromV0", n => { ProjectFromV0 = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -4209,6 +4235,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectEnvVarsUnownedByIntegration", ProjectEnvVarsUnownedByIntegration);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectEvent", ProjectEvent);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectFlags", ProjectFlags);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectFlagsOverride", ProjectFlagsOverride);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectFlagsOverrideProduction", ProjectFlagsOverrideProduction);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectFlagsProduction", ProjectFlagsProduction);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectFlagsSdkKey", ProjectFlagsSdkKey);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectFromV0", ProjectFromV0);

@@ -20,8 +20,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("entitlement") is null) { _explicitNullValueEntitlement = default!; _explicitNullProperties?.Remove("entitlement"); }
             else if (parseNode.GetChildNode("entitlement") is { } nullNodeEntitlement && nullNodeEntitlement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entitlement = null;
-            if (parseNode.GetChildNode("previousCanceledAt") is null) { _explicitNullValuePreviousCanceledAt = default!; _explicitNullProperties?.Remove("previousCanceledAt"); }
-            else if (parseNode.GetChildNode("previousCanceledAt") is { } nullNodePreviousCanceledAt && nullNodePreviousCanceledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousCanceledAt = null;
             if (parseNode.GetChildNode("user") is null) { _explicitNullValueUser = default!; _explicitNullProperties?.Remove("user"); }
             else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
         }
@@ -37,16 +35,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Entitlement { get => _explicitNullValueEntitlement; set { _explicitNullValueEntitlement = value; AdditionalData?.Remove("entitlement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlement"); else _explicitNullProperties?.Remove("entitlement"); } }
         private string _explicitNullValueEntitlement = default!;
-#endif
-        /// <summary>The previousCanceledAt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousCanceledAt { get => _explicitNullValuePreviousCanceledAt; set { _explicitNullValuePreviousCanceledAt = value; AdditionalData?.Remove("previousCanceledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCanceledAt"); else _explicitNullProperties?.Remove("previousCanceledAt"); } }
-        private string? _explicitNullValuePreviousCanceledAt = default!;
-#nullable restore
-#else
-        public string PreviousCanceledAt { get => _explicitNullValuePreviousCanceledAt; set { _explicitNullValuePreviousCanceledAt = value; AdditionalData?.Remove("previousCanceledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCanceledAt"); else _explicitNullProperties?.Remove("previousCanceledAt"); } }
-        private string _explicitNullValuePreviousCanceledAt = default!;
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +72,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entitlement", n => { Entitlement = n.GetStringValue(); } },
-                { "previousCanceledAt", n => { PreviousCanceledAt = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf439User>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf439User.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,7 +83,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("entitlement", Entitlement);
-            writer.WriteStringValue("previousCanceledAt", PreviousCanceledAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf439User>("user", User);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConnectorItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/authorize/{connector}", pathParameters)
+        public WithConnectorItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/authorize/{connector}{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/authorize/{connector}", rawUrl)
+        public WithConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/authorize/{connector}{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item.WithConnectorItemRequestBuilder.WithConnectorItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequest200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item.WithConnectorItemRequestBuilder.WithConnectorItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item.WithConnectorItemRequestBuilder.WithConnectorItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorAuthorizationRequestRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item.WithConnectorItemRequestBuilder.WithConnectorItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -83,6 +83,33 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item.WithConnectorItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.Item.WithConnectorItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithConnectorItemRequestBuilderPostQueryParameters 
+        {
+            /// <summary>The Team slug to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("slug")]
+            public string? Slug { get; set; }
+#nullable restore
+#else
+            [QueryParameter("slug")]
+            public string Slug { get; set; }
+#endif
+            /// <summary>The Team identifier to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("teamId")]
+            public string? TeamId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("teamId")]
+            public string TeamId { get; set; }
+#endif
         }
     }
 }

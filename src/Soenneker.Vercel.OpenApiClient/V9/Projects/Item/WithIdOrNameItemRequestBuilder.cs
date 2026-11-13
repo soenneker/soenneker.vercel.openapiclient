@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIdOrNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v9/projects/{idOrName}{?slug*,teamId*}", pathParameters)
+        public WithIdOrNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v9/projects/{idOrName}{?rollbackInfo*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIdOrNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v9/projects/{idOrName}{?slug*,teamId*}", rawUrl)
+        public WithIdOrNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v9/projects/{idOrName}{?rollbackInfo*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -207,6 +207,9 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithIdOrNameItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>Include the status of the last promote or rollback request in `lastAliasRequest` (and its legacy mirror `lastRollbackTarget`). When omitted or `false`, both fields are always `null` regardless of project state.</summary>
+            [QueryParameter("rollbackInfo")]
+            public bool? RollbackInfo { get; set; }
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -39,6 +39,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("peeringConnections") is null) { _explicitNullValuePeeringConnections = default!; _explicitNullProperties?.Remove("peeringConnections"); }
             else if (parseNode.GetChildNode("peeringConnections") is { } nullNodePeeringConnections && nullNodePeeringConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeeringConnections = null;
+            if (parseNode.GetChildNode("privateLinks") is null) { _explicitNullValuePrivateLinks = default!; _explicitNullProperties?.Remove("privateLinks"); }
+            else if (parseNode.GetChildNode("privateLinks") is { } nullNodePrivateLinks && nullNodePrivateLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateLinks = null;
             if (parseNode.GetChildNode("projects") is null) { _explicitNullValueProjects = default!; _explicitNullProperties?.Remove("projects"); }
             else if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
             if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
@@ -156,6 +158,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections PeeringConnections { get => _explicitNullValuePeeringConnections; set { _explicitNullValuePeeringConnections = value; AdditionalData?.Remove("peeringConnections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("peeringConnections"); else _explicitNullProperties?.Remove("peeringConnections"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections _explicitNullValuePeeringConnections = default!;
 #endif
+        /// <summary>The number of PrivateLink endpoints on the Network, when listing networks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPrivateLinks? PrivateLinks { get => _explicitNullValuePrivateLinks; set { _explicitNullValuePrivateLinks = value; AdditionalData?.Remove("privateLinks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateLinks"); else _explicitNullProperties?.Remove("privateLinks"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkPrivateLinks? _explicitNullValuePrivateLinks = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPrivateLinks PrivateLinks { get => _explicitNullValuePrivateLinks; set { _explicitNullValuePrivateLinks = value; AdditionalData?.Remove("privateLinks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateLinks"); else _explicitNullProperties?.Remove("privateLinks"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.NetworkPrivateLinks _explicitNullValuePrivateLinks = default!;
+#endif
         /// <summary>Metadata about any projects associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,6 +247,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "peeringConnections", n => { PeeringConnections = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections.CreateFromDiscriminatorValue); } },
+                { "privateLinks", n => { PrivateLinks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPrivateLinks>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkPrivateLinks.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
@@ -260,6 +273,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections>("peeringConnections", PeeringConnections);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPrivateLinks>("privateLinks", PrivateLinks);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects>("projects", Projects);
             writer.WriteStringValue("region", Region);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus>("status", Status);

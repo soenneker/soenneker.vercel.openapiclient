@@ -596,7 +596,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseJobs Jobs { get => _explicitNullValueJobs; set { _explicitNullValueJobs = value; AdditionalData?.Remove("jobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobs"); else _explicitNullProperties?.Remove("jobs"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseJobs _explicitNullValueJobs = default!;
 #endif
-        /// <summary>The lastAliasRequest property</summary>
+        /// <summary>The last promote or rollback request for the project and its job status. Only populated by `GET /v9/projects/{idOrName}` when called with `rollbackInfo=true`; `null` in every other response, even if a request exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLastAliasRequest? LastAliasRequest { get => _explicitNullValueLastAliasRequest; set { _explicitNullValueLastAliasRequest = value; AdditionalData?.Remove("lastAliasRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastAliasRequest"); else _explicitNullProperties?.Remove("lastAliasRequest"); } }
@@ -606,7 +606,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLastAliasRequest LastAliasRequest { get => _explicitNullValueLastAliasRequest; set { _explicitNullValueLastAliasRequest = value; AdditionalData?.Remove("lastAliasRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastAliasRequest"); else _explicitNullProperties?.Remove("lastAliasRequest"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLastAliasRequest _explicitNullValueLastAliasRequest = default!;
 #endif
-        /// <summary>The lastRollbackTarget property</summary>
+        /// <summary>Legacy mirror of `lastAliasRequest` without `type`, kept for CLI compatibility. Only populated by `GET /v9/projects/{idOrName}` when called with `rollbackInfo=true`; `null` in every other response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectAvatar200ResponseLastRollbackTarget? LastRollbackTarget { get => _explicitNullValueLastRollbackTarget; set { _explicitNullValueLastRollbackTarget = value; AdditionalData?.Remove("lastRollbackTarget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastRollbackTarget"); else _explicitNullProperties?.Remove("lastRollbackTarget"); } }

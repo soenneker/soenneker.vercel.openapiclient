@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("customEnvironmentId") is { } nullNodeCustomEnvironmentId && nullNodeCustomEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEnvironmentId = null;
             if (parseNode.GetChildNode("customEnvironmentSlug") is null) { _explicitNullValueCustomEnvironmentSlug = default!; _explicitNullProperties?.Remove("customEnvironmentSlug"); }
             else if (parseNode.GetChildNode("customEnvironmentSlug") is { } nullNodeCustomEnvironmentSlug && nullNodeCustomEnvironmentSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEnvironmentSlug = null;
+            if (parseNode.GetChildNode("enableSchedulesByDefault") is null) { _explicitNullValueEnableSchedulesByDefault = default!; _explicitNullProperties?.Remove("enableSchedulesByDefault"); }
+            else if (parseNode.GetChildNode("enableSchedulesByDefault") is { } nullNodeEnableSchedulesByDefault && nullNodeEnableSchedulesByDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableSchedulesByDefault = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
@@ -50,6 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string CustomEnvironmentSlug { get => _explicitNullValueCustomEnvironmentSlug; set { _explicitNullValueCustomEnvironmentSlug = value; AdditionalData?.Remove("customEnvironmentSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customEnvironmentSlug"); else _explicitNullProperties?.Remove("customEnvironmentSlug"); } }
         private string _explicitNullValueCustomEnvironmentSlug = default!;
 #endif
+        /// <summary>The enableSchedulesByDefault property</summary>
+        public bool? EnableSchedulesByDefault { get => _explicitNullValueEnableSchedulesByDefault; set { _explicitNullValueEnableSchedulesByDefault = value; AdditionalData?.Remove("enableSchedulesByDefault"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableSchedulesByDefault"); else _explicitNullProperties?.Remove("enableSchedulesByDefault"); } }
+        private bool? _explicitNullValueEnableSchedulesByDefault = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "customEnvironmentId", n => { CustomEnvironmentId = n.GetStringValue(); } },
                 { "customEnvironmentSlug", n => { CustomEnvironmentSlug = n.GetStringValue(); } },
+                { "enableSchedulesByDefault", n => { EnableSchedulesByDefault = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -110,6 +116,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customEnvironmentId", CustomEnvironmentId);
             writer.WriteStringValue("customEnvironmentSlug", CustomEnvironmentSlug);
+            writer.WriteBoolValue("enableSchedulesByDefault", EnableSchedulesByDefault);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

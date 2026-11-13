@@ -1571,6 +1571,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-domain-verification-created")]
+        #pragma warning disable CS1591
+        OrganizationDomainVerificationCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-domain-verification-deleted")]
+        #pragma warning disable CS1591
+        OrganizationDomainVerificationDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-domain-verification-verified")]
+        #pragma warning disable CS1591
+        OrganizationDomainVerificationVerified,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-dsync-delete")]
         #pragma warning disable CS1591
         OrganizationDsyncDelete,
@@ -2891,6 +2903,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UserEmuToggled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-landing-page-updated")]
+        #pragma warning disable CS1591
+        UserLandingPageUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user-mfa-challenge-failed")]
         #pragma warning disable CS1591
         UserMfaChallengeFailed,
@@ -2994,6 +3010,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "v0-migration-subscription-completed")]
         #pragma warning disable CS1591
         V0MigrationSubscriptionCompleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "v0-shared-pool-credit-limit-default-updated")]
+        #pragma warning disable CS1591
+        V0SharedPoolCreditLimitDefaultUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "v0-shared-pool-credit-limit-updated")]
+        #pragma warning disable CS1591
+        V0SharedPoolCreditLimitUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "vcr-image-deleted")]
         #pragma warning disable CS1591

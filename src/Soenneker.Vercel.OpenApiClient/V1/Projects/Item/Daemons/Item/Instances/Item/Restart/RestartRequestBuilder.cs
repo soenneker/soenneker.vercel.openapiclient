@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RestartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart{?slug*,teamId*}", pathParameters)
+        public RestartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart{?customEnvironmentId*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RestartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart{?slug*,teamId*}", rawUrl)
+        public RestartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart{?customEnvironmentId*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
+        /// Force restart a running daemon instance in production, or in a custom environment when `customEnvironmentId` is given. The new container starts asynchronously after the restart is accepted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RestartProjectDaemonInstance202Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RestartProjectDaemonInstance202Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RestartProjectDaemonInstance202Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
+        /// Force restart a running daemon instance in production, or in a custom environment when `customEnvironmentId` is given. The new container starts asynchronously after the restart is accepted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,11 +80,21 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances.Item.Restart.RestartRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
+        /// Force restart a running daemon instance in production, or in a custom environment when `customEnvironmentId` is given. The new container starts asynchronously after the restart is accepted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RestartRequestBuilderPostQueryParameters 
         {
+            /// <summary>The ID of the custom environment of the instance. Production instances are restarted when omitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("customEnvironmentId")]
+            public string? CustomEnvironmentId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("customEnvironmentId")]
+            public string CustomEnvironmentId { get; set; }
+#endif
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

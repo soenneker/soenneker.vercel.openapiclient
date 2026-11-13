@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether the organization&apos;s Directory Sync manages the team&apos;s memberships.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamListItemDsyncMode? DsyncMode { get => _explicitNullValueDsyncMode; set { _explicitNullValueDsyncMode = value; AdditionalData?.Remove("dsyncMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsyncMode"); else _explicitNullProperties?.Remove("dsyncMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamListItemDsyncMode? _explicitNullValueDsyncMode = default!;
-        /// <summary>Present only when the request sets `includeMemberCount=true`. Number of members on the Team, including pending memberships. Excludes email invitations that do not have a membership record.</summary>
+        /// <summary>Present only when the request sets `includeMemberCount=true`. Number of members on the Team, including pending memberships and organization Directory Sync grants. Excludes suppressed memberships and email invitations that do not have a membership record.</summary>
         public double? MemberCount { get => _explicitNullValueMemberCount; set { _explicitNullValueMemberCount = value; AdditionalData?.Remove("memberCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberCount"); else _explicitNullProperties?.Remove("memberCount"); } }
         private double? _explicitNullValueMemberCount = default!;
         /// <summary>The Team&apos;s display name, or `null` if none has been set.</summary>

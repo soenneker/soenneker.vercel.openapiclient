@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Automatic code review settings
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class UserEventPayloadOneOf414Previous : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -20,34 +19,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("includeDrafts") is null) { _explicitNullValueIncludeDrafts = default!; _explicitNullProperties?.Remove("includeDrafts"); }
-            else if (parseNode.GetChildNode("includeDrafts") is { } nullNodeIncludeDrafts && nullNodeIncludeDrafts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDrafts = null;
-            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
-            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("selectedRepos") is null) { _explicitNullValueSelectedRepos = default!; _explicitNullProperties?.Remove("selectedRepos"); }
-            else if (parseNode.GetChildNode("selectedRepos") is { } nullNodeSelectedRepos && nullNodeSelectedRepos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedRepos = null;
+            if (parseNode.GetChildNode("maximumOverdraft") is null) { _explicitNullValueMaximumOverdraft = default!; _explicitNullProperties?.Remove("maximumOverdraft"); }
+            else if (parseNode.GetChildNode("maximumOverdraft") is { } nullNodeMaximumOverdraft && nullNodeMaximumOverdraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumOverdraft = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether automatic code reviews are enabled</summary>
+        /// <summary>The enabled property</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>Whether to include draft pull requests in automatic reviews</summary>
-        public bool? IncludeDrafts { get => _explicitNullValueIncludeDrafts; set { _explicitNullValueIncludeDrafts = value; AdditionalData?.Remove("includeDrafts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeDrafts"); else _explicitNullProperties?.Remove("includeDrafts"); } }
-        private bool? _explicitNullValueIncludeDrafts = default!;
-        /// <summary>Which repository visibilities get automatic reviews</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf414PreviousScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf414PreviousScope? _explicitNullValueScope = default!;
-        /// <summary>GitHub repos to scope automatic reviews to. Format: &quot;owner/repo&quot; (lowercase). Only used when scope=&apos;selected_repos&apos;.</summary>
+        /// <summary>The maximumOverdraft property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SelectedRepos { get => _explicitNullValueSelectedRepos; set { _explicitNullValueSelectedRepos = value; AdditionalData?.Remove("selectedRepos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectedRepos"); else _explicitNullProperties?.Remove("selectedRepos"); } }
-        private List<string>? _explicitNullValueSelectedRepos = default!;
+        public string? MaximumOverdraft { get => _explicitNullValueMaximumOverdraft; set { _explicitNullValueMaximumOverdraft = value; AdditionalData?.Remove("maximumOverdraft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumOverdraft"); else _explicitNullProperties?.Remove("maximumOverdraft"); } }
+        private string? _explicitNullValueMaximumOverdraft = default!;
 #nullable restore
 #else
-        public List<string> SelectedRepos { get => _explicitNullValueSelectedRepos; set { _explicitNullValueSelectedRepos = value; AdditionalData?.Remove("selectedRepos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectedRepos"); else _explicitNullProperties?.Remove("selectedRepos"); } }
-        private List<string> _explicitNullValueSelectedRepos = default!;
+        public string MaximumOverdraft { get => _explicitNullValueMaximumOverdraft; set { _explicitNullValueMaximumOverdraft = value; AdditionalData?.Remove("maximumOverdraft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumOverdraft"); else _explicitNullProperties?.Remove("maximumOverdraft"); } }
+        private string _explicitNullValueMaximumOverdraft = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf414Previous"/> and sets the default values.
@@ -75,9 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "includeDrafts", n => { IncludeDrafts = n.GetBoolValue(); } },
-                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf414PreviousScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
-                { "selectedRepos", n => { SelectedRepos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "maximumOverdraft", n => { MaximumOverdraft = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,9 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteBoolValue("includeDrafts", IncludeDrafts);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf414PreviousScope>("scope", Scope);
-            writer.WriteCollectionOfPrimitiveValues<string>("selectedRepos", SelectedRepos);
+            writer.WriteStringValue("maximumOverdraft", MaximumOverdraft);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
