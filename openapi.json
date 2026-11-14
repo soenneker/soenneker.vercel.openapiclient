@@ -262516,6 +262516,19 @@
               },
               {
                 "properties": {
+                  "budgetId": {
+                    "type": "string",
+                    "description": "The budget that paused the project, for `BUDGET_REACHED`. Absent on older events."
+                  },
+                  "budgetScope": {
+                    "type": "string",
+                    "enum": [
+                      "organization",
+                      "product",
+                      "project",
+                      "team"
+                    ]
+                  },
                   "projectId": {
                     "type": "string"
                   },

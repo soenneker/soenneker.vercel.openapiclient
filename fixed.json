@@ -59929,6 +59929,13 @@
         ],
         "type": "object",
         "properties": {
+          "budgetId": {
+            "type": "string",
+            "description": "The budget that paused the project, for \u0060BUDGET_REACHED\u0060. Absent on older events."
+          },
+          "budgetScope": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf352BudgetScope"
+          },
           "projectId": {
             "type": "string"
           },
@@ -264130,6 +264137,37 @@
           true
         ],
         "type": "boolean"
+      },
+      "UserEventPayloadOneOf352BudgetScope": {
+        "enum": [
+          "organization",
+          "product",
+          "project",
+          "team"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf352BudgetScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "organization",
+              "name": "Organization"
+            },
+            {
+              "value": "product",
+              "name": "Product"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            }
+          ]
+        }
       },
       "UserEventPayloadOneOf352ReasonCode": {
         "enum": [
