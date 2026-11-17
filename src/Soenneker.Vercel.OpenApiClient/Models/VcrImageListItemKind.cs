@@ -7,6 +7,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VcrImageListItemKind
     {
+        [EnumMember(Value = "artifact")]
+        #pragma warning disable CS1591
+        Artifact,
+        #pragma warning restore CS1591
         [EnumMember(Value = "attestation")]
         #pragma warning disable CS1591
         Attestation,

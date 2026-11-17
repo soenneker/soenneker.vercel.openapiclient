@@ -18,39 +18,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cadence") is null) { _explicitNullValueCadence = default!; _explicitNullProperties?.Remove("cadence"); }
-            else if (parseNode.GetChildNode("cadence") is { } nullNodeCadence && nullNodeCadence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cadence = null;
-            if (parseNode.GetChildNode("projectIds") is null) { _explicitNullValueProjectIds = default!; _explicitNullProperties?.Remove("projectIds"); }
-            else if (parseNode.GetChildNode("projectIds") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
-            if (parseNode.GetChildNode("team") is null) { _explicitNullValueTeam = default!; _explicitNullProperties?.Remove("team"); }
-            else if (parseNode.GetChildNode("team") is { } nullNodeTeam && nullNodeTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Team = null;
+            if (parseNode.GetChildNode("nextProjectCount") is null) { _explicitNullValueNextProjectCount = default!; _explicitNullProperties?.Remove("nextProjectCount"); }
+            else if (parseNode.GetChildNode("nextProjectCount") is { } nullNodeNextProjectCount && nullNodeNextProjectCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextProjectCount = null;
+            if (parseNode.GetChildNode("previousProjectCount") is null) { _explicitNullValuePreviousProjectCount = default!; _explicitNullProperties?.Remove("previousProjectCount"); }
+            else if (parseNode.GetChildNode("previousProjectCount") is { } nullNodePreviousProjectCount && nullNodePreviousProjectCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousProjectCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cadence property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Cadence? Cadence { get => _explicitNullValueCadence; set { _explicitNullValueCadence = value; AdditionalData?.Remove("cadence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadence"); else _explicitNullProperties?.Remove("cadence"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Cadence? _explicitNullValueCadence = default!;
-        /// <summary>The projectIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private List<string>? _explicitNullValueProjectIds = default!;
-#nullable restore
-#else
-        public List<string> ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("projectIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectIds"); else _explicitNullProperties?.Remove("projectIds"); } }
-        private List<string> _explicitNullValueProjectIds = default!;
-#endif
-        /// <summary>The team property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Team? Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Team? _explicitNullValueTeam = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Team Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Team _explicitNullValueTeam = default!;
-#endif
+        /// <summary>The nextProjectCount property</summary>
+        public double? NextProjectCount { get => _explicitNullValueNextProjectCount; set { _explicitNullValueNextProjectCount = value; AdditionalData?.Remove("nextProjectCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextProjectCount"); else _explicitNullProperties?.Remove("nextProjectCount"); } }
+        private double? _explicitNullValueNextProjectCount = default!;
+        /// <summary>The previousProjectCount property</summary>
+        public double? PreviousProjectCount { get => _explicitNullValuePreviousProjectCount; set { _explicitNullValuePreviousProjectCount = value; AdditionalData?.Remove("previousProjectCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousProjectCount"); else _explicitNullProperties?.Remove("previousProjectCount"); } }
+        private double? _explicitNullValuePreviousProjectCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517"/> and sets the default values.
         /// </summary>
@@ -76,9 +57,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cadence", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Cadence>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCadence = default; _explicitNullProperties?.Remove("cadence"); AdditionalData["cadence"] = unknown; } else { Cadence = parsed; AdditionalData.Remove("cadence"); } } },
-                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Team.CreateFromDiscriminatorValue); } },
+                { "nextProjectCount", n => { NextProjectCount = n.GetDoubleValue(); } },
+                { "previousProjectCount", n => { PreviousProjectCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -88,9 +68,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Cadence>("cadence", Cadence);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf517Team>("team", Team);
+            writer.WriteDoubleValue("nextProjectCount", NextProjectCount);
+            writer.WriteDoubleValue("previousProjectCount", PreviousProjectCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

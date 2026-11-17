@@ -18,92 +18,198 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("by") is null) { _explicitNullValueBy = default!; _explicitNullProperties?.Remove("by"); }
-            else if (parseNode.GetChildNode("by") is { } nullNodeBy && nullNodeBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) By = null;
-            if (parseNode.GetChildNode("byUid") is null) { _explicitNullValueByUid = default!; _explicitNullProperties?.Remove("byUid"); }
-            else if (parseNode.GetChildNode("byUid") is { } nullNodeByUid && nullNodeByUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByUid = null;
-            if (parseNode.GetChildNode("reasons") is null) { _explicitNullValueReasons = default!; _explicitNullProperties?.Remove("reasons"); }
-            else if (parseNode.GetChildNode("reasons") is { } nullNodeReasons && nullNodeReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reasons = null;
-            if (parseNode.GetChildNode("removedMemberCount") is null) { _explicitNullValueRemovedMemberCount = default!; _explicitNullProperties?.Remove("removedMemberCount"); }
-            else if (parseNode.GetChildNode("removedMemberCount") is { } nullNodeRemovedMemberCount && nullNodeRemovedMemberCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedMemberCount = null;
-            if (parseNode.GetChildNode("removedUsers") is null) { _explicitNullValueRemovedUsers = default!; _explicitNullProperties?.Remove("removedUsers"); }
-            else if (parseNode.GetChildNode("removedUsers") is { } nullNodeRemovedUsers && nullNodeRemovedUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedUsers = null;
-            if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
-            else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
-            if (parseNode.GetChildNode("teamId") is null) { _explicitNullValueTeamId = default!; _explicitNullProperties?.Remove("teamId"); }
-            else if (parseNode.GetChildNode("teamId") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
-            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
-            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("branchRef") is null) { _explicitNullValueBranchRef = default!; _explicitNullProperties?.Remove("branchRef"); }
+            else if (parseNode.GetChildNode("branchRef") is { } nullNodeBranchRef && nullNodeBranchRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchRef = null;
+            if (parseNode.GetChildNode("commitSha") is null) { _explicitNullValueCommitSha = default!; _explicitNullProperties?.Remove("commitSha"); }
+            else if (parseNode.GetChildNode("commitSha") is { } nullNodeCommitSha && nullNodeCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitSha = null;
+            if (parseNode.GetChildNode("deploymentId") is null) { _explicitNullValueDeploymentId = default!; _explicitNullProperties?.Remove("deploymentId"); }
+            else if (parseNode.GetChildNode("deploymentId") is { } nullNodeDeploymentId && nullNodeDeploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentId = null;
+            if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
+            else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("eventId") is null) { _explicitNullValueEventId = default!; _explicitNullProperties?.Remove("eventId"); }
+            else if (parseNode.GetChildNode("eventId") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("findingId") is null) { _explicitNullValueFindingId = default!; _explicitNullProperties?.Remove("findingId"); }
+            else if (parseNode.GetChildNode("findingId") is { } nullNodeFindingId && nullNodeFindingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingId = null;
+            if (parseNode.GetChildNode("findingNumber") is null) { _explicitNullValueFindingNumber = default!; _explicitNullProperties?.Remove("findingNumber"); }
+            else if (parseNode.GetChildNode("findingNumber") is { } nullNodeFindingNumber && nullNodeFindingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindingNumber = null;
+            if (parseNode.GetChildNode("occurredAt") is null) { _explicitNullValueOccurredAt = default!; _explicitNullProperties?.Remove("occurredAt"); }
+            else if (parseNode.GetChildNode("occurredAt") is { } nullNodeOccurredAt && nullNodeOccurredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OccurredAt = null;
+            if (parseNode.GetChildNode("pullRequestNumber") is null) { _explicitNullValuePullRequestNumber = default!; _explicitNullProperties?.Remove("pullRequestNumber"); }
+            else if (parseNode.GetChildNode("pullRequestNumber") is { } nullNodePullRequestNumber && nullNodePullRequestNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestNumber = null;
+            if (parseNode.GetChildNode("repository") is null) { _explicitNullValueRepository = default!; _explicitNullProperties?.Remove("repository"); }
+            else if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("sessionId") is null) { _explicitNullValueSessionId = default!; _explicitNullProperties?.Remove("sessionId"); }
+            else if (parseNode.GetChildNode("sessionId") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
+            if (parseNode.GetChildNode("sessionKind") is null) { _explicitNullValueSessionKind = default!; _explicitNullProperties?.Remove("sessionKind"); }
+            else if (parseNode.GetChildNode("sessionKind") is { } nullNodeSessionKind && nullNodeSessionKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionKind = null;
+            if (parseNode.GetChildNode("severity") is null) { _explicitNullValueSeverity = default!; _explicitNullProperties?.Remove("severity"); }
+            else if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
+            if (parseNode.GetChildNode("surface") is null) { _explicitNullValueSurface = default!; _explicitNullProperties?.Remove("surface"); }
+            else if (parseNode.GetChildNode("surface") is { } nullNodeSurface && nullNodeSurface.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Surface = null;
+            if (parseNode.GetChildNode("targetId") is null) { _explicitNullValueTargetId = default!; _explicitNullProperties?.Remove("targetId"); }
+            else if (parseNode.GetChildNode("targetId") is { } nullNodeTargetId && nullNodeTargetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetId = null;
+            if (parseNode.GetChildNode("targetKind") is null) { _explicitNullValueTargetKind = default!; _explicitNullProperties?.Remove("targetKind"); }
+            else if (parseNode.GetChildNode("targetKind") is { } nullNodeTargetKind && nullNodeTargetKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetKind = null;
+            if (parseNode.GetChildNode("targetName") is null) { _explicitNullValueTargetName = default!; _explicitNullProperties?.Remove("targetName"); }
+            else if (parseNode.GetChildNode("targetName") is { } nullNodeTargetName && nullNodeTargetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetName = null;
+            if (parseNode.GetChildNode("vulnerabilityClass") is null) { _explicitNullValueVulnerabilityClass = default!; _explicitNullProperties?.Remove("vulnerabilityClass"); }
+            else if (parseNode.GetChildNode("vulnerabilityClass") is { } nullNodeVulnerabilityClass && nullNodeVulnerabilityClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VulnerabilityClass = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The by property</summary>
+        /// <summary>The branchRef property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? By { get => _explicitNullValueBy; set { _explicitNullValueBy = value; AdditionalData?.Remove("by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by"); else _explicitNullProperties?.Remove("by"); } }
-        private string? _explicitNullValueBy = default!;
+        public string? BranchRef { get => _explicitNullValueBranchRef; set { _explicitNullValueBranchRef = value; AdditionalData?.Remove("branchRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchRef"); else _explicitNullProperties?.Remove("branchRef"); } }
+        private string? _explicitNullValueBranchRef = default!;
 #nullable restore
 #else
-        public string By { get => _explicitNullValueBy; set { _explicitNullValueBy = value; AdditionalData?.Remove("by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by"); else _explicitNullProperties?.Remove("by"); } }
-        private string _explicitNullValueBy = default!;
+        public string BranchRef { get => _explicitNullValueBranchRef; set { _explicitNullValueBranchRef = value; AdditionalData?.Remove("branchRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchRef"); else _explicitNullProperties?.Remove("branchRef"); } }
+        private string _explicitNullValueBranchRef = default!;
 #endif
-        /// <summary>The byUid property</summary>
+        /// <summary>The commitSha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ByUid { get => _explicitNullValueByUid; set { _explicitNullValueByUid = value; AdditionalData?.Remove("byUid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byUid"); else _explicitNullProperties?.Remove("byUid"); } }
-        private string? _explicitNullValueByUid = default!;
+        public string? CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; AdditionalData?.Remove("commitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
+        private string? _explicitNullValueCommitSha = default!;
 #nullable restore
 #else
-        public string ByUid { get => _explicitNullValueByUid; set { _explicitNullValueByUid = value; AdditionalData?.Remove("byUid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byUid"); else _explicitNullProperties?.Remove("byUid"); } }
-        private string _explicitNullValueByUid = default!;
+        public string CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; AdditionalData?.Remove("commitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
+        private string _explicitNullValueCommitSha = default!;
 #endif
-        /// <summary>The reasons property</summary>
+        /// <summary>Null for a repository&apos;s findings and those of an undeployed commit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430ReasonsItem>? Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; AdditionalData?.Remove("reasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430ReasonsItem>? _explicitNullValueReasons = default!;
+        public string? DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        private string? _explicitNullValueDeploymentId = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430ReasonsItem> Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; AdditionalData?.Remove("reasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430ReasonsItem> _explicitNullValueReasons = default!;
+        public string DeploymentId { get => _explicitNullValueDeploymentId; set { _explicitNullValueDeploymentId = value; AdditionalData?.Remove("deploymentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentId"); else _explicitNullProperties?.Remove("deploymentId"); } }
+        private string _explicitNullValueDeploymentId = default!;
 #endif
-        /// <summary>The removedMemberCount property</summary>
-        public double? RemovedMemberCount { get => _explicitNullValueRemovedMemberCount; set { _explicitNullValueRemovedMemberCount = value; AdditionalData?.Remove("removedMemberCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedMemberCount"); else _explicitNullProperties?.Remove("removedMemberCount"); } }
-        private double? _explicitNullValueRemovedMemberCount = default!;
-        /// <summary>The removedUsers property</summary>
+        /// <summary>Null for a repository&apos;s findings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430RemovedUsersProperty? RemovedUsers { get => _explicitNullValueRemovedUsers; set { _explicitNullValueRemovedUsers = value; AdditionalData?.Remove("removedUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedUsers"); else _explicitNullProperties?.Remove("removedUsers"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430RemovedUsersProperty? _explicitNullValueRemovedUsers = default!;
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430RemovedUsersProperty RemovedUsers { get => _explicitNullValueRemovedUsers; set { _explicitNullValueRemovedUsers = value; AdditionalData?.Remove("removedUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removedUsers"); else _explicitNullProperties?.Remove("removedUsers"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430RemovedUsersProperty _explicitNullValueRemovedUsers = default!;
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string _explicitNullValueEnvironment = default!;
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>The eventId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
-        private string? _explicitNullValueSlug = default!;
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("eventId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventId"); else _explicitNullProperties?.Remove("eventId"); } }
+        private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
-        private string _explicitNullValueSlug = default!;
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("eventId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventId"); else _explicitNullProperties?.Remove("eventId"); } }
+        private string _explicitNullValueEventId = default!;
 #endif
-        /// <summary>The teamId property</summary>
+        /// <summary>The findingId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string? _explicitNullValueTeamId = default!;
+        public string? FindingId { get => _explicitNullValueFindingId; set { _explicitNullValueFindingId = value; AdditionalData?.Remove("findingId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("findingId"); else _explicitNullProperties?.Remove("findingId"); } }
+        private string? _explicitNullValueFindingId = default!;
 #nullable restore
 #else
-        public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
-        private string _explicitNullValueTeamId = default!;
+        public string FindingId { get => _explicitNullValueFindingId; set { _explicitNullValueFindingId = value; AdditionalData?.Remove("findingId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("findingId"); else _explicitNullProperties?.Remove("findingId"); } }
+        private string _explicitNullValueFindingId = default!;
 #endif
-        /// <summary>The timestamp property</summary>
-        public double? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
-        private double? _explicitNullValueTimestamp = default!;
+        /// <summary>The findingNumber property</summary>
+        public double? FindingNumber { get => _explicitNullValueFindingNumber; set { _explicitNullValueFindingNumber = value; AdditionalData?.Remove("findingNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("findingNumber"); else _explicitNullProperties?.Remove("findingNumber"); } }
+        private double? _explicitNullValueFindingNumber = default!;
+        /// <summary>The occurredAt property</summary>
+        public double? OccurredAt { get => _explicitNullValueOccurredAt; set { _explicitNullValueOccurredAt = value; AdditionalData?.Remove("occurredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurredAt"); else _explicitNullProperties?.Remove("occurredAt"); } }
+        private double? _explicitNullValueOccurredAt = default!;
+        /// <summary>The pullRequestNumber property</summary>
+        public double? PullRequestNumber { get => _explicitNullValuePullRequestNumber; set { _explicitNullValuePullRequestNumber = value; AdditionalData?.Remove("pullRequestNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequestNumber"); else _explicitNullProperties?.Remove("pullRequestNumber"); } }
+        private double? _explicitNullValuePullRequestNumber = default!;
+        /// <summary>The GitHub repository, such as `acme/app`, commit, and pull request the event&apos;s review read: the one that found the finding, or for a resolution, the one that fixed it. Null for uploaded files; absent from events recorded before they were sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string? _explicitNullValueRepository = default!;
+#nullable restore
+#else
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string _explicitNullValueRepository = default!;
+#endif
+        /// <summary>The sessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("sessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        private string? _explicitNullValueSessionId = default!;
+#nullable restore
+#else
+        public string SessionId { get => _explicitNullValueSessionId; set { _explicitNullValueSessionId = value; AdditionalData?.Remove("sessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionId"); else _explicitNullProperties?.Remove("sessionId"); } }
+        private string _explicitNullValueSessionId = default!;
+#endif
+        /// <summary>Currently emitted session kinds: chat, investigation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionKind { get => _explicitNullValueSessionKind; set { _explicitNullValueSessionKind = value; AdditionalData?.Remove("sessionKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionKind"); else _explicitNullProperties?.Remove("sessionKind"); } }
+        private string? _explicitNullValueSessionKind = default!;
+#nullable restore
+#else
+        public string SessionKind { get => _explicitNullValueSessionKind; set { _explicitNullValueSessionKind = value; AdditionalData?.Remove("sessionKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionKind"); else _explicitNullProperties?.Remove("sessionKind"); } }
+        private string _explicitNullValueSessionKind = default!;
+#endif
+        /// <summary>The severity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; AdditionalData?.Remove("severity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
+        private string? _explicitNullValueSeverity = default!;
+#nullable restore
+#else
+        public string Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; AdditionalData?.Remove("severity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
+        private string _explicitNullValueSeverity = default!;
+#endif
+        /// <summary>Currently emitted surfaces: dashboard, internal, slack, automation, github.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Surface { get => _explicitNullValueSurface; set { _explicitNullValueSurface = value; AdditionalData?.Remove("surface"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surface"); else _explicitNullProperties?.Remove("surface"); } }
+        private string? _explicitNullValueSurface = default!;
+#nullable restore
+#else
+        public string Surface { get => _explicitNullValueSurface; set { _explicitNullValueSurface = value; AdditionalData?.Remove("surface"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surface"); else _explicitNullProperties?.Remove("surface"); } }
+        private string _explicitNullValueSurface = default!;
+#endif
+        /// <summary>The targetId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetId { get => _explicitNullValueTargetId; set { _explicitNullValueTargetId = value; AdditionalData?.Remove("targetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetId"); else _explicitNullProperties?.Remove("targetId"); } }
+        private string? _explicitNullValueTargetId = default!;
+#nullable restore
+#else
+        public string TargetId { get => _explicitNullValueTargetId; set { _explicitNullValueTargetId = value; AdditionalData?.Remove("targetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetId"); else _explicitNullProperties?.Remove("targetId"); } }
+        private string _explicitNullValueTargetId = default!;
+#endif
+        /// <summary>A repository&apos;s findings are in code no project runs.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430TargetKind? TargetKind { get => _explicitNullValueTargetKind; set { _explicitNullValueTargetKind = value; AdditionalData?.Remove("targetKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetKind"); else _explicitNullProperties?.Remove("targetKind"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430TargetKind? _explicitNullValueTargetKind = default!;
+        /// <summary>The targetName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetName { get => _explicitNullValueTargetName; set { _explicitNullValueTargetName = value; AdditionalData?.Remove("targetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetName"); else _explicitNullProperties?.Remove("targetName"); } }
+        private string? _explicitNullValueTargetName = default!;
+#nullable restore
+#else
+        public string TargetName { get => _explicitNullValueTargetName; set { _explicitNullValueTargetName = value; AdditionalData?.Remove("targetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetName"); else _explicitNullProperties?.Remove("targetName"); } }
+        private string _explicitNullValueTargetName = default!;
+#endif
+        /// <summary>The vulnerabilityClass property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VulnerabilityClass { get => _explicitNullValueVulnerabilityClass; set { _explicitNullValueVulnerabilityClass = value; AdditionalData?.Remove("vulnerabilityClass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vulnerabilityClass"); else _explicitNullProperties?.Remove("vulnerabilityClass"); } }
+        private string? _explicitNullValueVulnerabilityClass = default!;
+#nullable restore
+#else
+        public string VulnerabilityClass { get => _explicitNullValueVulnerabilityClass; set { _explicitNullValueVulnerabilityClass = value; AdditionalData?.Remove("vulnerabilityClass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vulnerabilityClass"); else _explicitNullProperties?.Remove("vulnerabilityClass"); } }
+        private string _explicitNullValueVulnerabilityClass = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430"/> and sets the default values.
         /// </summary>
@@ -129,14 +235,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "by", n => { By = n.GetStringValue(); } },
-                { "byUid", n => { ByUid = n.GetStringValue(); } },
-                { "reasons", n => { Reasons = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430ReasonsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430ReasonsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "removedMemberCount", n => { RemovedMemberCount = n.GetDoubleValue(); } },
-                { "removedUsers", n => { RemovedUsers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430RemovedUsersProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430RemovedUsersProperty.CreateFromDiscriminatorValue); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
+                { "branchRef", n => { BranchRef = n.GetStringValue(); } },
+                { "commitSha", n => { CommitSha = n.GetStringValue(); } },
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "eventId", n => { EventId = n.GetStringValue(); } },
+                { "findingId", n => { FindingId = n.GetStringValue(); } },
+                { "findingNumber", n => { FindingNumber = n.GetDoubleValue(); } },
+                { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
+                { "pullRequestNumber", n => { PullRequestNumber = n.GetDoubleValue(); } },
+                { "repository", n => { Repository = n.GetStringValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
+                { "severity", n => { Severity = n.GetStringValue(); } },
+                { "surface", n => { Surface = n.GetStringValue(); } },
+                { "targetId", n => { TargetId = n.GetStringValue(); } },
+                { "targetKind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430TargetKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTargetKind = default; _explicitNullProperties?.Remove("targetKind"); AdditionalData["targetKind"] = unknown; } else { TargetKind = parsed; AdditionalData.Remove("targetKind"); } } },
+                { "targetName", n => { TargetName = n.GetStringValue(); } },
+                { "vulnerabilityClass", n => { VulnerabilityClass = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -146,14 +262,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("by", By);
-            writer.WriteStringValue("byUid", ByUid);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430ReasonsItem>("reasons", Reasons);
-            writer.WriteDoubleValue("removedMemberCount", RemovedMemberCount);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430RemovedUsersProperty>("removedUsers", RemovedUsers);
-            writer.WriteStringValue("slug", Slug);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteDoubleValue("timestamp", Timestamp);
+            writer.WriteStringValue("branchRef", BranchRef);
+            writer.WriteStringValue("commitSha", CommitSha);
+            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteStringValue("eventId", EventId);
+            writer.WriteStringValue("findingId", FindingId);
+            writer.WriteDoubleValue("findingNumber", FindingNumber);
+            writer.WriteDoubleValue("occurredAt", OccurredAt);
+            writer.WriteDoubleValue("pullRequestNumber", PullRequestNumber);
+            writer.WriteStringValue("repository", Repository);
+            writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteStringValue("sessionKind", SessionKind);
+            writer.WriteStringValue("severity", Severity);
+            writer.WriteStringValue("surface", Surface);
+            writer.WriteStringValue("targetId", TargetId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430TargetKind>("targetKind", TargetKind);
+            writer.WriteStringValue("targetName", TargetName);
+            writer.WriteStringValue("vulnerabilityClass", VulnerabilityClass);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

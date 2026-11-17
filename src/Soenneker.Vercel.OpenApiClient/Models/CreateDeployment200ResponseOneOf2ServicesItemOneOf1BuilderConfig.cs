@@ -63,8 +63,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("projectSettings") is { } nullNodeProjectSettings && nullNodeProjectSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSettings = null;
             if (parseNode.GetChildNode("rust") is null) { _explicitNullValueRust = default!; _explicitNullProperties?.Remove("rust"); }
             else if (parseNode.GetChildNode("rust") is { } nullNodeRust && nullNodeRust.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rust = null;
-            if (parseNode.GetChildNode("scheduleFunction") is null) { _explicitNullValueScheduleFunction = default!; _explicitNullProperties?.Remove("scheduleFunction"); }
-            else if (parseNode.GetChildNode("scheduleFunction") is { } nullNodeScheduleFunction && nullNodeScheduleFunction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleFunction = null;
+            if (parseNode.GetChildNode("schedulesEntrypoint") is null) { _explicitNullValueSchedulesEntrypoint = default!; _explicitNullProperties?.Remove("schedulesEntrypoint"); }
+            else if (parseNode.GetChildNode("schedulesEntrypoint") is { } nullNodeSchedulesEntrypoint && nullNodeSchedulesEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchedulesEntrypoint = null;
+            if (parseNode.GetChildNode("schedulesModule") is null) { _explicitNullValueSchedulesModule = default!; _explicitNullProperties?.Remove("schedulesModule"); }
+            else if (parseNode.GetChildNode("schedulesModule") is { } nullNodeSchedulesModule && nullNodeSchedulesModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchedulesModule = null;
             if (parseNode.GetChildNode("serviceName") is null) { _explicitNullValueServiceName = default!; _explicitNullProperties?.Remove("serviceName"); }
             else if (parseNode.GetChildNode("serviceName") is { } nullNodeServiceName && nullNodeServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceName = null;
             if (parseNode.GetChildNode("zeroConfig") is null) { _explicitNullValueZeroConfig = default!; _explicitNullProperties?.Remove("zeroConfig"); }
@@ -268,15 +270,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Rust { get => _explicitNullValueRust; set { _explicitNullValueRust = value; AdditionalData?.Remove("rust"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rust"); else _explicitNullProperties?.Remove("rust"); } }
         private string _explicitNullValueRust = default!;
 #endif
-        /// <summary>Set when this build produces a function for schedule entrypoints.</summary>
+        /// <summary>Set when this build serves a JavaScript or TypeScript schedule: the entrypoint&apos;s default export runs each firing, and its `export const config` sets the schedule.</summary>
+        public bool? SchedulesEntrypoint { get => _explicitNullValueSchedulesEntrypoint; set { _explicitNullValueSchedulesEntrypoint = value; AdditionalData?.Remove("schedulesEntrypoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedulesEntrypoint"); else _explicitNullProperties?.Remove("schedulesEntrypoint"); } }
+        private bool? _explicitNullValueSchedulesEntrypoint = default!;
+        /// <summary>Set when this build serves a Python schedule&apos;s module: the `@schedule` handlers that importing `module` registers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigScheduleFunction? ScheduleFunction { get => _explicitNullValueScheduleFunction; set { _explicitNullValueScheduleFunction = value; AdditionalData?.Remove("scheduleFunction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleFunction"); else _explicitNullProperties?.Remove("scheduleFunction"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigScheduleFunction? _explicitNullValueScheduleFunction = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigSchedulesModule? SchedulesModule { get => _explicitNullValueSchedulesModule; set { _explicitNullValueSchedulesModule = value; AdditionalData?.Remove("schedulesModule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedulesModule"); else _explicitNullProperties?.Remove("schedulesModule"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigSchedulesModule? _explicitNullValueSchedulesModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigScheduleFunction ScheduleFunction { get => _explicitNullValueScheduleFunction; set { _explicitNullValueScheduleFunction = value; AdditionalData?.Remove("scheduleFunction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleFunction"); else _explicitNullProperties?.Remove("scheduleFunction"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigScheduleFunction _explicitNullValueScheduleFunction = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigSchedulesModule SchedulesModule { get => _explicitNullValueSchedulesModule; set { _explicitNullValueSchedulesModule = value; AdditionalData?.Remove("schedulesModule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedulesModule"); else _explicitNullProperties?.Remove("schedulesModule"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigSchedulesModule _explicitNullValueSchedulesModule = default!;
 #endif
         /// <summary>Owning service name; scopes per-function config such as the v2beta consumer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -339,7 +344,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "projectSettings", n => { ProjectSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigProjectSettings>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigProjectSettings.CreateFromDiscriminatorValue); } },
                 { "rust", n => { Rust = n.GetStringValue(); } },
-                { "scheduleFunction", n => { ScheduleFunction = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigScheduleFunction>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigScheduleFunction.CreateFromDiscriminatorValue); } },
+                { "schedulesEntrypoint", n => { SchedulesEntrypoint = n.GetBoolValue(); } },
+                { "schedulesModule", n => { SchedulesModule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigSchedulesModule>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigSchedulesModule.CreateFromDiscriminatorValue); } },
                 { "serviceName", n => { ServiceName = n.GetStringValue(); } },
                 { "zeroConfig", n => { ZeroConfig = n.GetBoolValue(); } },
             };
@@ -374,7 +380,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigProjectSettings>("projectSettings", ProjectSettings);
             writer.WriteStringValue("rust", Rust);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigScheduleFunction>("scheduleFunction", ScheduleFunction);
+            writer.WriteBoolValue("schedulesEntrypoint", SchedulesEntrypoint);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf1BuilderConfigSchedulesModule>("schedulesModule", SchedulesModule);
             writer.WriteStringValue("serviceName", ServiceName);
             writer.WriteBoolValue("zeroConfig", ZeroConfig);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

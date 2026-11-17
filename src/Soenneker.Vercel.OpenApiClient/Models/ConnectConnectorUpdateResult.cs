@@ -26,6 +26,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("reinstallNeeded") is { } nullNodeReinstallNeeded && nullNodeReinstallNeeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReinstallNeeded = null;
             if (parseNode.GetChildNode("serviceSync") is null) { _explicitNullValueServiceSync = default!; _explicitNullProperties?.Remove("serviceSync"); }
             else if (parseNode.GetChildNode("serviceSync") is { } nullNodeServiceSync && nullNodeServiceSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceSync = null;
+            if (parseNode.GetChildNode("uninstallNeeded") is null) { _explicitNullValueUninstallNeeded = default!; _explicitNullProperties?.Remove("uninstallNeeded"); }
+            else if (parseNode.GetChildNode("uninstallNeeded") is { } nullNodeUninstallNeeded && nullNodeUninstallNeeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UninstallNeeded = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -63,6 +65,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync ServiceSync { get => _explicitNullValueServiceSync; set { _explicitNullValueServiceSync = value; AdditionalData?.Remove("serviceSync"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceSync"); else _explicitNullProperties?.Remove("serviceSync"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync _explicitNullValueServiceSync = default!;
 #endif
+        /// <summary>When true, scopes were removed. The provider keeps scopes it already granted, so remove the app from the provider workspace and install it again before the removal takes effect. Reinstalling alone does not remove scopes.</summary>
+        public bool? UninstallNeeded { get => _explicitNullValueUninstallNeeded; set { _explicitNullValueUninstallNeeded = value; AdditionalData?.Remove("uninstallNeeded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uninstallNeeded"); else _explicitNullProperties?.Remove("uninstallNeeded"); } }
+        private bool? _explicitNullValueUninstallNeeded = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateResult"/> and sets the default values.
         /// </summary>
@@ -92,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "reconsentNeeded", n => { ReconsentNeeded = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent.CreateFromDiscriminatorValue); } },
                 { "reinstallNeeded", n => { ReinstallNeeded = n.GetBoolValue(); } },
                 { "serviceSync", n => { ServiceSync = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync.CreateFromDiscriminatorValue); } },
+                { "uninstallNeeded", n => { UninstallNeeded = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -105,6 +111,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectReconsent>("reconsentNeeded", ReconsentNeeded);
             writer.WriteBoolValue("reinstallNeeded", ReinstallNeeded);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectServiceSync>("serviceSync", ServiceSync);
+            writer.WriteBoolValue("uninstallNeeded", UninstallNeeded);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

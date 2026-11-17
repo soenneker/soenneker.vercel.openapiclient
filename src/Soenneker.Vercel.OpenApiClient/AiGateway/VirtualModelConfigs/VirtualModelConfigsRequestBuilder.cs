@@ -92,36 +92,40 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs
         /// Update a virtual model config
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPatchRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a virtual model config (VMC)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
@@ -166,38 +170,44 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs
         /// Update a virtual model config
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
         /// Create a virtual model config (VMC)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateAiGatewayVirtualModelConfigRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

@@ -18,15 +18,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
-            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("inviteCode") is null) { _explicitNullValueInviteCode = default!; _explicitNullProperties?.Remove("inviteCode"); }
+            else if (parseNode.GetChildNode("inviteCode") is { } nullNodeInviteCode && nullNodeInviteCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InviteCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf463Enabled? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf463Enabled? _explicitNullValueEnabled = default!;
+        /// <summary>The inviteCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InviteCode { get => _explicitNullValueInviteCode; set { _explicitNullValueInviteCode = value; AdditionalData?.Remove("inviteCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteCode"); else _explicitNullProperties?.Remove("inviteCode"); } }
+        private string? _explicitNullValueInviteCode = default!;
+#nullable restore
+#else
+        public string InviteCode { get => _explicitNullValueInviteCode; set { _explicitNullValueInviteCode = value; AdditionalData?.Remove("inviteCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteCode"); else _explicitNullProperties?.Remove("inviteCode"); } }
+        private string _explicitNullValueInviteCode = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf463"/> and sets the default values.
         /// </summary>
@@ -52,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf463Enabled>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnabled = default; _explicitNullProperties?.Remove("enabled"); AdditionalData["enabled"] = unknown; } else { Enabled = parsed; AdditionalData.Remove("enabled"); } } },
+                { "inviteCode", n => { InviteCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf463Enabled>("enabled", Enabled);
+            writer.WriteStringValue("inviteCode", InviteCode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -18,21 +18,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("remoteCaching") is null) { _explicitNullValueRemoteCaching = default!; _explicitNullProperties?.Remove("remoteCaching"); }
-            else if (parseNode.GetChildNode("remoteCaching") is { } nullNodeRemoteCaching && nullNodeRemoteCaching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteCaching = null;
+            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
+            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("trial") is null) { _explicitNullValueTrial = default!; _explicitNullProperties?.Remove("trial"); }
+            else if (parseNode.GetChildNode("trial") is { } nullNodeTrial && nullNodeTrial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trial = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents configuration for remote caching</summary>
+        /// <summary>The plan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Plan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Plan? _explicitNullValuePlan = default!;
+        /// <summary>The trial property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461RemoteCaching? RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; AdditionalData?.Remove("remoteCaching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461RemoteCaching? _explicitNullValueRemoteCaching = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Trial? Trial { get => _explicitNullValueTrial; set { _explicitNullValueTrial = value; AdditionalData?.Remove("trial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial"); else _explicitNullProperties?.Remove("trial"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Trial? _explicitNullValueTrial = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461RemoteCaching RemoteCaching { get => _explicitNullValueRemoteCaching; set { _explicitNullValueRemoteCaching = value; AdditionalData?.Remove("remoteCaching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remoteCaching"); else _explicitNullProperties?.Remove("remoteCaching"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461RemoteCaching _explicitNullValueRemoteCaching = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Trial Trial { get => _explicitNullValueTrial; set { _explicitNullValueTrial = value; AdditionalData?.Remove("trial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial"); else _explicitNullProperties?.Remove("trial"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Trial _explicitNullValueTrial = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461"/> and sets the default values.
@@ -59,7 +64,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461RemoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461RemoteCaching.CreateFromDiscriminatorValue); } },
+                { "plan", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Plan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlan = default; _explicitNullProperties?.Remove("plan"); AdditionalData["plan"] = unknown; } else { Plan = parsed; AdditionalData.Remove("plan"); } } },
+                { "trial", n => { Trial = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Trial>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Trial.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +75,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461RemoteCaching>("remoteCaching", RemoteCaching);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Plan>("plan", Plan);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Trial>("trial", Trial);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

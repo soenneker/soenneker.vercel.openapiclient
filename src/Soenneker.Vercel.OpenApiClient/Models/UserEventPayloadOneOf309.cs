@@ -18,53 +18,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildQueueConfiguration") is null) { _explicitNullValueBuildQueueConfiguration = default!; _explicitNullProperties?.Remove("buildQueueConfiguration"); }
-            else if (parseNode.GetChildNode("buildQueueConfiguration") is { } nullNodeBuildQueueConfiguration && nullNodeBuildQueueConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildQueueConfiguration = null;
-            if (parseNode.GetChildNode("elasticConcurrencyEnabled") is null) { _explicitNullValueElasticConcurrencyEnabled = default!; _explicitNullProperties?.Remove("elasticConcurrencyEnabled"); }
-            else if (parseNode.GetChildNode("elasticConcurrencyEnabled") is { } nullNodeElasticConcurrencyEnabled && nullNodeElasticConcurrencyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElasticConcurrencyEnabled = null;
-            if (parseNode.GetChildNode("oldBuildQueueConfiguration") is null) { _explicitNullValueOldBuildQueueConfiguration = default!; _explicitNullProperties?.Remove("oldBuildQueueConfiguration"); }
-            else if (parseNode.GetChildNode("oldBuildQueueConfiguration") is { } nullNodeOldBuildQueueConfiguration && nullNodeOldBuildQueueConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldBuildQueueConfiguration = null;
-            if (parseNode.GetChildNode("oldElasticConcurrencyEnabled") is null) { _explicitNullValueOldElasticConcurrencyEnabled = default!; _explicitNullProperties?.Remove("oldElasticConcurrencyEnabled"); }
-            else if (parseNode.GetChildNode("oldElasticConcurrencyEnabled") is { } nullNodeOldElasticConcurrencyEnabled && nullNodeOldElasticConcurrencyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldElasticConcurrencyEnabled = null;
-            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
-            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("project") is null) { _explicitNullValueProject = default!; _explicitNullProperties?.Remove("project"); }
+            else if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("team") is null) { _explicitNullValueTeam = default!; _explicitNullProperties?.Remove("team"); }
+            else if (parseNode.GetChildNode("team") is { } nullNodeTeam && nullNodeTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Team = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309BuildQueueConfiguration? BuildQueueConfiguration { get => _explicitNullValueBuildQueueConfiguration; set { _explicitNullValueBuildQueueConfiguration = value; AdditionalData?.Remove("buildQueueConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildQueueConfiguration"); else _explicitNullProperties?.Remove("buildQueueConfiguration"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309BuildQueueConfiguration? _explicitNullValueBuildQueueConfiguration = default!;
-        /// <summary>The elasticConcurrencyEnabled property</summary>
-        public bool? ElasticConcurrencyEnabled { get => _explicitNullValueElasticConcurrencyEnabled; set { _explicitNullValueElasticConcurrencyEnabled = value; AdditionalData?.Remove("elasticConcurrencyEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elasticConcurrencyEnabled"); else _explicitNullProperties?.Remove("elasticConcurrencyEnabled"); } }
-        private bool? _explicitNullValueElasticConcurrencyEnabled = default!;
-        /// <summary>The oldBuildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309OldBuildQueueConfiguration? OldBuildQueueConfiguration { get => _explicitNullValueOldBuildQueueConfiguration; set { _explicitNullValueOldBuildQueueConfiguration = value; AdditionalData?.Remove("oldBuildQueueConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldBuildQueueConfiguration"); else _explicitNullProperties?.Remove("oldBuildQueueConfiguration"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309OldBuildQueueConfiguration? _explicitNullValueOldBuildQueueConfiguration = default!;
-        /// <summary>The oldElasticConcurrencyEnabled property</summary>
-        public bool? OldElasticConcurrencyEnabled { get => _explicitNullValueOldElasticConcurrencyEnabled; set { _explicitNullValueOldElasticConcurrencyEnabled = value; AdditionalData?.Remove("oldElasticConcurrencyEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldElasticConcurrencyEnabled"); else _explicitNullProperties?.Remove("oldElasticConcurrencyEnabled"); } }
-        private bool? _explicitNullValueOldElasticConcurrencyEnabled = default!;
-        /// <summary>The projectId property</summary>
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string? _explicitNullValueProjectId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Project? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Project? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string _explicitNullValueProjectId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Project Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Project _explicitNullValueProject = default!;
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Team? Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Team? _explicitNullValueTeam = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Team Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Team _explicitNullValueTeam = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309"/> and sets the default values.
@@ -91,12 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildQueueConfiguration", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309BuildQueueConfiguration>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuildQueueConfiguration = default; _explicitNullProperties?.Remove("buildQueueConfiguration"); AdditionalData["buildQueueConfiguration"] = unknown; } else { BuildQueueConfiguration = parsed; AdditionalData.Remove("buildQueueConfiguration"); } } },
-                { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
-                { "oldBuildQueueConfiguration", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309OldBuildQueueConfiguration>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOldBuildQueueConfiguration = default; _explicitNullProperties?.Remove("oldBuildQueueConfiguration"); AdditionalData["oldBuildQueueConfiguration"] = unknown; } else { OldBuildQueueConfiguration = parsed; AdditionalData.Remove("oldBuildQueueConfiguration"); } } },
-                { "oldElasticConcurrencyEnabled", n => { OldElasticConcurrencyEnabled = n.GetBoolValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Project.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,12 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309BuildQueueConfiguration>("buildQueueConfiguration", BuildQueueConfiguration);
-            writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309OldBuildQueueConfiguration>("oldBuildQueueConfiguration", OldBuildQueueConfiguration);
-            writer.WriteBoolValue("oldElasticConcurrencyEnabled", OldElasticConcurrencyEnabled);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Project>("project", Project);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309Team>("team", Team);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

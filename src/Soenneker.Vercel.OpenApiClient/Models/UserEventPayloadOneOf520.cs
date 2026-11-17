@@ -18,33 +18,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("chatId") is null) { _explicitNullValueChatId = default!; _explicitNullProperties?.Remove("chatId"); }
-            else if (parseNode.GetChildNode("chatId") is { } nullNodeChatId && nullNodeChatId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatId = null;
-            if (parseNode.GetChildNode("chatTitle") is null) { _explicitNullValueChatTitle = default!; _explicitNullProperties?.Remove("chatTitle"); }
-            else if (parseNode.GetChildNode("chatTitle") is { } nullNodeChatTitle && nullNodeChatTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatTitle = null;
+            if (parseNode.GetChildNode("ciEnabled") is null) { _explicitNullValueCiEnabled = default!; _explicitNullProperties?.Remove("ciEnabled"); }
+            else if (parseNode.GetChildNode("ciEnabled") is { } nullNodeCiEnabled && nullNodeCiEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CiEnabled = null;
+            if (parseNode.GetChildNode("organizationId") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organizationId"); }
+            else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
+            if (parseNode.GetChildNode("repository") is null) { _explicitNullValueRepository = default!; _explicitNullProperties?.Remove("repository"); }
+            else if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The chatId property</summary>
+        /// <summary>The ciEnabled property</summary>
+        public bool? CiEnabled { get => _explicitNullValueCiEnabled; set { _explicitNullValueCiEnabled = value; AdditionalData?.Remove("ciEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciEnabled"); else _explicitNullProperties?.Remove("ciEnabled"); } }
+        private bool? _explicitNullValueCiEnabled = default!;
+        /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; AdditionalData?.Remove("chatId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
-        private string? _explicitNullValueChatId = default!;
+        public string? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
+        private string? _explicitNullValueOrganizationId = default!;
 #nullable restore
 #else
-        public string ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; AdditionalData?.Remove("chatId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
-        private string _explicitNullValueChatId = default!;
+        public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
+        private string _explicitNullValueOrganizationId = default!;
 #endif
-        /// <summary>The chatTitle property</summary>
+        /// <summary>The repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatTitle { get => _explicitNullValueChatTitle; set { _explicitNullValueChatTitle = value; AdditionalData?.Remove("chatTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatTitle"); else _explicitNullProperties?.Remove("chatTitle"); } }
-        private string? _explicitNullValueChatTitle = default!;
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public string ChatTitle { get => _explicitNullValueChatTitle; set { _explicitNullValueChatTitle = value; AdditionalData?.Remove("chatTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatTitle"); else _explicitNullProperties?.Remove("chatTitle"); } }
-        private string _explicitNullValueChatTitle = default!;
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string _explicitNullValueRepository = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf520"/> and sets the default values.
@@ -71,8 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chatId", n => { ChatId = n.GetStringValue(); } },
-                { "chatTitle", n => { ChatTitle = n.GetStringValue(); } },
+                { "ciEnabled", n => { CiEnabled = n.GetBoolValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "repository", n => { Repository = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +88,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("chatId", ChatId);
-            writer.WriteStringValue("chatTitle", ChatTitle);
+            writer.WriteBoolValue("ciEnabled", CiEnabled);
+            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("repository", Repository);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

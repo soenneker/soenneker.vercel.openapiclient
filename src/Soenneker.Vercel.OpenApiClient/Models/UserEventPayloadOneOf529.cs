@@ -18,33 +18,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appName") is null) { _explicitNullValueAppName = default!; _explicitNullProperties?.Remove("appName"); }
-            else if (parseNode.GetChildNode("appName") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
-            if (parseNode.GetChildNode("policy") is null) { _explicitNullValuePolicy = default!; _explicitNullProperties?.Remove("policy"); }
-            else if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
+            if (parseNode.GetChildNode("chatId") is null) { _explicitNullValueChatId = default!; _explicitNullProperties?.Remove("chatId"); }
+            else if (parseNode.GetChildNode("chatId") is { } nullNodeChatId && nullNodeChatId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatId = null;
+            if (parseNode.GetChildNode("chatTitle") is null) { _explicitNullValueChatTitle = default!; _explicitNullProperties?.Remove("chatTitle"); }
+            else if (parseNode.GetChildNode("chatTitle") is { } nullNodeChatTitle && nullNodeChatTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatTitle = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appName property</summary>
+        /// <summary>The chatId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("appName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
-        private string? _explicitNullValueAppName = default!;
+        public string? ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; AdditionalData?.Remove("chatId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
+        private string? _explicitNullValueChatId = default!;
 #nullable restore
 #else
-        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("appName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
-        private string _explicitNullValueAppName = default!;
+        public string ChatId { get => _explicitNullValueChatId; set { _explicitNullValueChatId = value; AdditionalData?.Remove("chatId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatId"); else _explicitNullProperties?.Remove("chatId"); } }
+        private string _explicitNullValueChatId = default!;
 #endif
-        /// <summary>A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints&apos; public response shape.</summary>
+        /// <summary>The chatTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529Policy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529Policy? _explicitNullValuePolicy = default!;
+        public string? ChatTitle { get => _explicitNullValueChatTitle; set { _explicitNullValueChatTitle = value; AdditionalData?.Remove("chatTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatTitle"); else _explicitNullProperties?.Remove("chatTitle"); } }
+        private string? _explicitNullValueChatTitle = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529Policy Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529Policy _explicitNullValuePolicy = default!;
+        public string ChatTitle { get => _explicitNullValueChatTitle; set { _explicitNullValueChatTitle = value; AdditionalData?.Remove("chatTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chatTitle"); else _explicitNullProperties?.Remove("chatTitle"); } }
+        private string _explicitNullValueChatTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529"/> and sets the default values.
@@ -71,8 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appName", n => { AppName = n.GetStringValue(); } },
-                { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529Policy>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529Policy.CreateFromDiscriminatorValue); } },
+                { "chatId", n => { ChatId = n.GetStringValue(); } },
+                { "chatTitle", n => { ChatTitle = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("appName", AppName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf529Policy>("policy", Policy);
+            writer.WriteStringValue("chatId", ChatId);
+            writer.WriteStringValue("chatTitle", ChatTitle);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

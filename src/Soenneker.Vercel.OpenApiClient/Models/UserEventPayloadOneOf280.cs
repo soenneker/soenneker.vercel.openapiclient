@@ -18,32 +18,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
-            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
-            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("price") is null) { _explicitNullValuePrice = default!; _explicitNullProperties?.Remove("price"); }
-            else if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("perimeter") is null) { _explicitNullValuePerimeter = default!; _explicitNullProperties?.Remove("perimeter"); }
+            else if (parseNode.GetChildNode("perimeter") is { } nullNodePerimeter && nullNodePerimeter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Perimeter = null;
+            if (parseNode.GetChildNode("sourceVersion") is null) { _explicitNullValueSourceVersion = default!; _explicitNullProperties?.Remove("sourceVersion"); }
+            else if (parseNode.GetChildNode("sourceVersion") is { } nullNodeSourceVersion && nullNodeSourceVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>The perimeter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
-        private string? _explicitNullValueCurrency = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter? Perimeter { get => _explicitNullValuePerimeter; set { _explicitNullValuePerimeter = value; AdditionalData?.Remove("perimeter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perimeter"); else _explicitNullProperties?.Remove("perimeter"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter? _explicitNullValuePerimeter = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
-        private string _explicitNullValueCurrency = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter Perimeter { get => _explicitNullValuePerimeter; set { _explicitNullValuePerimeter = value; AdditionalData?.Remove("perimeter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perimeter"); else _explicitNullProperties?.Remove("perimeter"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter _explicitNullValuePerimeter = default!;
 #endif
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
-        private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The price property</summary>
-        public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
-        private double? _explicitNullValuePrice = default!;
+        /// <summary>The sourceVersion property</summary>
+        public double? SourceVersion { get => _explicitNullValueSourceVersion; set { _explicitNullValueSourceVersion = value; AdditionalData?.Remove("sourceVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceVersion"); else _explicitNullProperties?.Remove("sourceVersion"); } }
+        private double? _explicitNullValueSourceVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280"/> and sets the default values.
         /// </summary>
@@ -69,9 +64,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency", n => { Currency = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "price", n => { Price = n.GetDoubleValue(); } },
+                { "perimeter", n => { Perimeter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter.CreateFromDiscriminatorValue); } },
+                { "sourceVersion", n => { SourceVersion = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -81,9 +75,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteDoubleValue("price", Price);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter>("perimeter", Perimeter);
+            writer.WriteDoubleValue("sourceVersion", SourceVersion);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

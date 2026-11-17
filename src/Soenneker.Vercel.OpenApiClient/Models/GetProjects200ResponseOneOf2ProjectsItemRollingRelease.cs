@@ -20,8 +20,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("canaryResponseHeader") is null) { _explicitNullValueCanaryResponseHeader = default!; _explicitNullProperties?.Remove("canaryResponseHeader"); }
             else if (parseNode.GetChildNode("canaryResponseHeader") is { } nullNodeCanaryResponseHeader && nullNodeCanaryResponseHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanaryResponseHeader = null;
-            if (parseNode.GetChildNode("gate") is null) { _explicitNullValueGate = default!; _explicitNullProperties?.Remove("gate"); }
-            else if (parseNode.GetChildNode("gate") is { } nullNodeGate && nullNodeGate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gate = null;
             if (parseNode.GetChildNode("stages") is null) { _explicitNullValueStages = default!; _explicitNullProperties?.Remove("stages"); }
             else if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
             if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
@@ -33,16 +31,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.</summary>
         public bool? CanaryResponseHeader { get => _explicitNullValueCanaryResponseHeader; set { _explicitNullValueCanaryResponseHeader = value; AdditionalData?.Remove("canaryResponseHeader"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canaryResponseHeader"); else _explicitNullProperties?.Remove("canaryResponseHeader"); } }
         private bool? _explicitNullValueCanaryResponseHeader = default!;
-        /// <summary>Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseGate? Gate { get => _explicitNullValueGate; set { _explicitNullValueGate = value; AdditionalData?.Remove("gate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gate"); else _explicitNullProperties?.Remove("gate"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseGate? _explicitNullValueGate = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseGate Gate { get => _explicitNullValueGate; set { _explicitNullValueGate = value; AdditionalData?.Remove("gate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gate"); else _explicitNullProperties?.Remove("gate"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseGate _explicitNullValueGate = default!;
-#endif
         /// <summary>An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +79,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "canaryResponseHeader", n => { CanaryResponseHeader = n.GetBoolValue(); } },
-                { "gate", n => { Gate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseGate>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseGate.CreateFromDiscriminatorValue); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseStagesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseStagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
             };
@@ -104,7 +91,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("canaryResponseHeader", CanaryResponseHeader);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseGate>("gate", Gate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemRollingReleaseStagesItem>("stages", Stages);
             writer.WriteStringValue("target", Target);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

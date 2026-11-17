@@ -392,6 +392,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("passwordProtectionInvoiceItem") is { } nullNodePasswordProtectionInvoiceItem && nullNodePasswordProtectionInvoiceItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtectionInvoiceItem = null;
             if (parseNode.GetChildNode("paymentMethod") is null) { _explicitNullValuePaymentMethod = default!; _explicitNullProperties?.Remove("paymentMethod"); }
             else if (parseNode.GetChildNode("paymentMethod") is { } nullNodePaymentMethod && nullNodePaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethod = null;
+            if (parseNode.GetChildNode("perimeter") is null) { _explicitNullValuePerimeter = default!; _explicitNullProperties?.Remove("perimeter"); }
+            else if (parseNode.GetChildNode("perimeter") is { } nullNodePerimeter && nullNodePerimeter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Perimeter = null;
+            if (parseNode.GetChildNode("perimeterLink") is null) { _explicitNullValuePerimeterLink = default!; _explicitNullProperties?.Remove("perimeterLink"); }
+            else if (parseNode.GetChildNode("perimeterLink") is { } nullNodePerimeterLink && nullNodePerimeterLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerimeterLink = null;
             if (parseNode.GetChildNode("permissions") is null) { _explicitNullValuePermissions = default!; _explicitNullProperties?.Remove("permissions"); }
             else if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
             if (parseNode.GetChildNode("postgres") is null) { _explicitNullValuePostgres = default!; _explicitNullProperties?.Remove("postgres"); }
@@ -2505,6 +2509,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Perimeter { get => _explicitNullValuePerimeter; set { _explicitNullValuePerimeter = value; AdditionalData?.Remove("perimeter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perimeter"); else _explicitNullProperties?.Remove("perimeter"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePerimeter = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Perimeter { get => _explicitNullValuePerimeter; set { _explicitNullValuePerimeter = value; AdditionalData?.Remove("perimeter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perimeter"); else _explicitNullProperties?.Remove("perimeter"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePerimeter = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? PerimeterLink { get => _explicitNullValuePerimeterLink; set { _explicitNullValuePerimeterLink = value; AdditionalData?.Remove("perimeterLink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perimeterLink"); else _explicitNullProperties?.Remove("perimeterLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePerimeterLink = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> PerimeterLink { get => _explicitNullValuePerimeterLink; set { _explicitNullValuePerimeterLink = value; AdditionalData?.Remove("perimeterLink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perimeterLink"); else _explicitNullProperties?.Remove("perimeterLink"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> _explicitNullValuePerimeterLink = default!;
+#endif
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; AdditionalData?.Remove("permissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
         private List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? _explicitNullValuePermissions = default!;
 #nullable restore
@@ -3894,6 +3918,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "passwordProtection", n => { PasswordProtection = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "passwordProtectionInvoiceItem", n => { PasswordProtectionInvoiceItem = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "perimeter", n => { Perimeter = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "perimeterLink", n => { PerimeterLink = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "postgres", n => { Postgres = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "postgresStoreTokenSet", n => { PostgresStoreTokenSet = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -4208,6 +4234,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("passwordProtection", PasswordProtection);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("passwordProtectionInvoiceItem", PasswordProtectionInvoiceItem);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("paymentMethod", PaymentMethod);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("perimeter", Perimeter);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("perimeterLink", PerimeterLink);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("permissions", Permissions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("postgres", Postgres);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("postgresStoreTokenSet", PostgresStoreTokenSet);

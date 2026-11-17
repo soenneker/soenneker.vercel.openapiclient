@@ -18,8 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("onPullRequest") is null) { _explicitNullValueOnPullRequest = default!; _explicitNullProperties?.Remove("onPullRequest"); }
-            else if (parseNode.GetChildNode("onPullRequest") is { } nullNodeOnPullRequest && nullNodeOnPullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnPullRequest = null;
+            if (parseNode.GetChildNode("previewDeploymentSuffix") is null) { _explicitNullValuePreviewDeploymentSuffix = default!; _explicitNullProperties?.Remove("previewDeploymentSuffix"); }
+            else if (parseNode.GetChildNode("previewDeploymentSuffix") is { } nullNodePreviewDeploymentSuffix && nullNodePreviewDeploymentSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewDeploymentSuffix = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
@@ -28,9 +28,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The onPullRequest property</summary>
-        public bool? OnPullRequest { get => _explicitNullValueOnPullRequest; set { _explicitNullValueOnPullRequest = value; AdditionalData?.Remove("onPullRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onPullRequest"); else _explicitNullProperties?.Remove("onPullRequest"); } }
-        private bool? _explicitNullValueOnPullRequest = default!;
+        /// <summary>The previewDeploymentSuffix property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; AdditionalData?.Remove("previewDeploymentSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private string? _explicitNullValuePreviewDeploymentSuffix = default!;
+#nullable restore
+#else
+        public string PreviewDeploymentSuffix { get => _explicitNullValuePreviewDeploymentSuffix; set { _explicitNullValuePreviewDeploymentSuffix = value; AdditionalData?.Remove("previewDeploymentSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentSuffix"); else _explicitNullProperties?.Remove("previewDeploymentSuffix"); } }
+        private string _explicitNullValuePreviewDeploymentSuffix = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "onPullRequest", n => { OnPullRequest = n.GetBoolValue(); } },
+                { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -88,7 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("onPullRequest", OnPullRequest);
+            writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

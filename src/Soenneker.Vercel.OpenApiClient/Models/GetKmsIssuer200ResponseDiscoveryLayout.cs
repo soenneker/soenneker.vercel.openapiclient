@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Connect,
         #pragma warning restore CS1591
+        [EnumMember(Value = "integrations")]
+        #pragma warning disable CS1591
+        Integrations,
+        #pragma warning restore CS1591
         [EnumMember(Value = "kms")]
         #pragma warning disable CS1591
         Kms,

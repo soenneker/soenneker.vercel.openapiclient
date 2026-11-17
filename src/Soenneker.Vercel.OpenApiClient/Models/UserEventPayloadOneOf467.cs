@@ -18,21 +18,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tokenTypes") is null) { _explicitNullValueTokenTypes = default!; _explicitNullProperties?.Remove("tokenTypes"); }
-            else if (parseNode.GetChildNode("tokenTypes") is { } nullNodeTokenTypes && nullNodeTokenTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenTypes = null;
+            if (parseNode.GetChildNode("acceptanceId") is null) { _explicitNullValueAcceptanceId = default!; _explicitNullProperties?.Remove("acceptanceId"); }
+            else if (parseNode.GetChildNode("acceptanceId") is { } nullNodeAcceptanceId && nullNodeAcceptanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptanceId = null;
+            if (parseNode.GetChildNode("termsVersion") is null) { _explicitNullValueTermsVersion = default!; _explicitNullProperties?.Remove("termsVersion"); }
+            else if (parseNode.GetChildNode("termsVersion") is { } nullNodeTermsVersion && nullNodeTermsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsVersion = null;
         }
 
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The tokenTypes property</summary>
+        /// <summary>The acceptanceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TokenTypes { get => _explicitNullValueTokenTypes; set { _explicitNullValueTokenTypes = value; AdditionalData?.Remove("tokenTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenTypes"); else _explicitNullProperties?.Remove("tokenTypes"); } }
-        private List<string>? _explicitNullValueTokenTypes = default!;
+        public string? AcceptanceId { get => _explicitNullValueAcceptanceId; set { _explicitNullValueAcceptanceId = value; AdditionalData?.Remove("acceptanceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptanceId"); else _explicitNullProperties?.Remove("acceptanceId"); } }
+        private string? _explicitNullValueAcceptanceId = default!;
 #nullable restore
 #else
-        public List<string> TokenTypes { get => _explicitNullValueTokenTypes; set { _explicitNullValueTokenTypes = value; AdditionalData?.Remove("tokenTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenTypes"); else _explicitNullProperties?.Remove("tokenTypes"); } }
-        private List<string> _explicitNullValueTokenTypes = default!;
+        public string AcceptanceId { get => _explicitNullValueAcceptanceId; set { _explicitNullValueAcceptanceId = value; AdditionalData?.Remove("acceptanceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptanceId"); else _explicitNullProperties?.Remove("acceptanceId"); } }
+        private string _explicitNullValueAcceptanceId = default!;
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The termsVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TermsVersion { get => _explicitNullValueTermsVersion; set { _explicitNullValueTermsVersion = value; AdditionalData?.Remove("termsVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsVersion"); else _explicitNullProperties?.Remove("termsVersion"); } }
+        private string? _explicitNullValueTermsVersion = default!;
+#nullable restore
+#else
+        public string TermsVersion { get => _explicitNullValueTermsVersion; set { _explicitNullValueTermsVersion = value; AdditionalData?.Remove("termsVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsVersion"); else _explicitNullProperties?.Remove("termsVersion"); } }
+        private string _explicitNullValueTermsVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf467"/> and sets the default values.
@@ -59,7 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tokenTypes", n => { TokenTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "acceptanceId", n => { AcceptanceId = n.GetStringValue(); } },
+                { "termsVersion", n => { TermsVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("tokenTypes", TokenTypes);
+            writer.WriteStringValue("acceptanceId", AcceptanceId);
+            writer.WriteStringValue("termsVersion", TermsVersion);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

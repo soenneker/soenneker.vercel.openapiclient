@@ -18,43 +18,57 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("decision") is null) { _explicitNullValueDecision = default!; _explicitNullProperties?.Remove("decision"); }
-            else if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
-            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
-            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
-            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
-            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
-            if (parseNode.GetChildNode("providerSubjectId") is null) { _explicitNullValueProviderSubjectId = default!; _explicitNullProperties?.Remove("providerSubjectId"); }
-            else if (parseNode.GetChildNode("providerSubjectId") is { } nullNodeProviderSubjectId && nullNodeProviderSubjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderSubjectId = null;
+            if (parseNode.GetChildNode("allowedMethods") is null) { _explicitNullValueAllowedMethods = default!; _explicitNullProperties?.Remove("allowedMethods"); }
+            else if (parseNode.GetChildNode("allowedMethods") is { } nullNodeAllowedMethods && nullNodeAllowedMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedMethods = null;
+            if (parseNode.GetChildNode("firstFactor") is null) { _explicitNullValueFirstFactor = default!; _explicitNullProperties?.Remove("firstFactor"); }
+            else if (parseNode.GetChildNode("firstFactor") is { } nullNodeFirstFactor && nullNodeFirstFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstFactor = null;
+            if (parseNode.GetChildNode("flowId") is null) { _explicitNullValueFlowId = default!; _explicitNullProperties?.Remove("flowId"); }
+            else if (parseNode.GetChildNode("flowId") is { } nullNodeFlowId && nullNodeFlowId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowId = null;
+            if (parseNode.GetChildNode("loginSessionId") is null) { _explicitNullValueLoginSessionId = default!; _explicitNullProperties?.Remove("loginSessionId"); }
+            else if (parseNode.GetChildNode("loginSessionId") is { } nullNodeLoginSessionId && nullNodeLoginSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginSessionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The decision property</summary>
+        /// <summary>The allowedMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Decision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; AdditionalData?.Remove("decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Decision? _explicitNullValueDecision = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497AllowedMethodsItem?>? AllowedMethods { get => _explicitNullValueAllowedMethods; set { _explicitNullValueAllowedMethods = value; AdditionalData?.Remove("allowedMethods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedMethods"); else _explicitNullProperties?.Remove("allowedMethods"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497AllowedMethodsItem?>? _explicitNullValueAllowedMethods = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Decision Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; AdditionalData?.Remove("decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Decision _explicitNullValueDecision = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497AllowedMethodsItem?> AllowedMethods { get => _explicitNullValueAllowedMethods; set { _explicitNullValueAllowedMethods = value; AdditionalData?.Remove("allowedMethods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedMethods"); else _explicitNullProperties?.Remove("allowedMethods"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497AllowedMethodsItem?> _explicitNullValueAllowedMethods = default!;
 #endif
-        /// <summary>The outcome property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Outcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Outcome? _explicitNullValueOutcome = default!;
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider? _explicitNullValueProvider = default!;
-        /// <summary>The providerSubjectId property</summary>
+        /// <summary>The firstFactor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderSubjectId { get => _explicitNullValueProviderSubjectId; set { _explicitNullValueProviderSubjectId = value; AdditionalData?.Remove("providerSubjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerSubjectId"); else _explicitNullProperties?.Remove("providerSubjectId"); } }
-        private string? _explicitNullValueProviderSubjectId = default!;
+        public string? FirstFactor { get => _explicitNullValueFirstFactor; set { _explicitNullValueFirstFactor = value; AdditionalData?.Remove("firstFactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstFactor"); else _explicitNullProperties?.Remove("firstFactor"); } }
+        private string? _explicitNullValueFirstFactor = default!;
 #nullable restore
 #else
-        public string ProviderSubjectId { get => _explicitNullValueProviderSubjectId; set { _explicitNullValueProviderSubjectId = value; AdditionalData?.Remove("providerSubjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerSubjectId"); else _explicitNullProperties?.Remove("providerSubjectId"); } }
-        private string _explicitNullValueProviderSubjectId = default!;
+        public string FirstFactor { get => _explicitNullValueFirstFactor; set { _explicitNullValueFirstFactor = value; AdditionalData?.Remove("firstFactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstFactor"); else _explicitNullProperties?.Remove("firstFactor"); } }
+        private string _explicitNullValueFirstFactor = default!;
+#endif
+        /// <summary>The flowId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FlowId { get => _explicitNullValueFlowId; set { _explicitNullValueFlowId = value; AdditionalData?.Remove("flowId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowId"); else _explicitNullProperties?.Remove("flowId"); } }
+        private string? _explicitNullValueFlowId = default!;
+#nullable restore
+#else
+        public string FlowId { get => _explicitNullValueFlowId; set { _explicitNullValueFlowId = value; AdditionalData?.Remove("flowId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowId"); else _explicitNullProperties?.Remove("flowId"); } }
+        private string _explicitNullValueFlowId = default!;
+#endif
+        /// <summary>The loginSessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LoginSessionId { get => _explicitNullValueLoginSessionId; set { _explicitNullValueLoginSessionId = value; AdditionalData?.Remove("loginSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginSessionId"); else _explicitNullProperties?.Remove("loginSessionId"); } }
+        private string? _explicitNullValueLoginSessionId = default!;
+#nullable restore
+#else
+        public string LoginSessionId { get => _explicitNullValueLoginSessionId; set { _explicitNullValueLoginSessionId = value; AdditionalData?.Remove("loginSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginSessionId"); else _explicitNullProperties?.Remove("loginSessionId"); } }
+        private string _explicitNullValueLoginSessionId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497"/> and sets the default values.
@@ -81,10 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Decision>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Decision.CreateFromDiscriminatorValue); } },
-                { "outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Outcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutcome = default; _explicitNullProperties?.Remove("outcome"); AdditionalData["outcome"] = unknown; } else { Outcome = parsed; AdditionalData.Remove("outcome"); } } },
-                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
-                { "providerSubjectId", n => { ProviderSubjectId = n.GetStringValue(); } },
+                { "allowedMethods", n => { AllowedMethods = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497AllowedMethodsItem>()?.AsList(); } },
+                { "firstFactor", n => { FirstFactor = n.GetStringValue(); } },
+                { "flowId", n => { FlowId = n.GetStringValue(); } },
+                { "loginSessionId", n => { LoginSessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,10 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Decision>("decision", Decision);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497Outcome>("outcome", Outcome);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>("provider", Provider);
-            writer.WriteStringValue("providerSubjectId", ProviderSubjectId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf497AllowedMethodsItem>("allowedMethods", AllowedMethods);
+            writer.WriteStringValue("firstFactor", FirstFactor);
+            writer.WriteStringValue("flowId", FlowId);
+            writer.WriteStringValue("loginSessionId", LoginSessionId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

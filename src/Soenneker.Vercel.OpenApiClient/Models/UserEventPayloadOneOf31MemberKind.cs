@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf31MemberKind
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "iam-access-group")]
+        #pragma warning disable CS1591
+        IamAccessGroup,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project")]
         #pragma warning disable CS1591
         Project,

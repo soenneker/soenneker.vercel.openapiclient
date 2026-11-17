@@ -215,6 +215,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayInferenceHooksSettingsUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-signing-secret-created")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksSigningSecretCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-signing-secret-rotated")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksSigningSecretRotated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-inference-hooks-toggled")]
         #pragma warning disable CS1591
         AiGatewayInferenceHooksToggled,
@@ -502,6 +510,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "cert-system-create")]
         #pragma warning disable CS1591
         CertSystemCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "code-owners-assume-owners")]
+        #pragma warning disable CS1591
+        CodeOwnersAssumeOwners,
         #pragma warning restore CS1591
         [EnumMember(Value = "code-owners-config-updated")]
         #pragma warning disable CS1591
@@ -1195,6 +1207,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FlatRateCdnAutoUpgradeConsent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "flat-rate-cdn-migration-opt-out")]
+        #pragma warning disable CS1591
+        FlatRateCdnMigrationOptOut,
+        #pragma warning restore CS1591
         [EnumMember(Value = "git-integration-repo-push")]
         #pragma warning disable CS1591
         GitIntegrationRepoPush,
@@ -1791,6 +1807,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         PaymentMethodRemoved,
         #pragma warning restore CS1591
+        [EnumMember(Value = "perimeter-created")]
+        #pragma warning disable CS1591
+        PerimeterCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "perimeter-deleted")]
+        #pragma warning disable CS1591
+        PerimeterDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "perimeter-renamed")]
+        #pragma warning disable CS1591
+        PerimeterRenamed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "perimeter-rolled-back")]
+        #pragma warning disable CS1591
+        PerimeterRolledBack,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "perimeter-updated")]
+        #pragma warning disable CS1591
+        PerimeterUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "plan")]
         #pragma warning disable CS1591
         Plan,
@@ -2207,6 +2243,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectProtectedSourcemapsUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-remove-vercel-request-headers-updated")]
+        #pragma warning disable CS1591
+        ProjectRemoveVercelRequestHeadersUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-rollback-description-updated")]
         #pragma warning disable CS1591
         ProjectRollbackDescriptionUpdated,
@@ -2362,6 +2402,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "saml-connection-deleted")]
         #pragma warning disable CS1591
         SamlConnectionDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "saml-idp-material-deleted")]
+        #pragma warning disable CS1591
+        SamlIdpMaterialDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "saml-idp-material-set")]
+        #pragma warning disable CS1591
+        SamlIdpMaterialSet,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "saml-idp-material-system-deleted")]
+        #pragma warning disable CS1591
+        SamlIdpMaterialSystemDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "saml-idp-material-system-set")]
+        #pragma warning disable CS1591
+        SamlIdpMaterialSystemSet,
         #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-alias-assigned")]
         #pragma warning disable CS1591
@@ -3103,6 +3159,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         VercelAgentElevatedPermissionsRequested,
         #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-agent-security-finding-closed")]
+        #pragma warning disable CS1591
+        VercelAgentSecurityFindingClosed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-security-finding-created")]
         #pragma warning disable CS1591
         VercelAgentSecurityFindingCreated,
@@ -3166,6 +3226,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vercel-ci-repository-settings-updated")]
         #pragma warning disable CS1591
         VercelCiRepositorySettingsUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-ci-run-approved")]
+        #pragma warning disable CS1591
+        VercelCiRunApproved,
         #pragma warning restore CS1591
         [EnumMember(Value = "vercel-toolbar")]
         #pragma warning disable CS1591

@@ -18,20 +18,46 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("nextConcurrentBuilds") is null) { _explicitNullValueNextConcurrentBuilds = default!; _explicitNullProperties?.Remove("nextConcurrentBuilds"); }
-            else if (parseNode.GetChildNode("nextConcurrentBuilds") is { } nullNodeNextConcurrentBuilds && nullNodeNextConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextConcurrentBuilds = null;
-            if (parseNode.GetChildNode("previousConcurrentBuilds") is null) { _explicitNullValuePreviousConcurrentBuilds = default!; _explicitNullProperties?.Remove("previousConcurrentBuilds"); }
-            else if (parseNode.GetChildNode("previousConcurrentBuilds") is { } nullNodePreviousConcurrentBuilds && nullNodePreviousConcurrentBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousConcurrentBuilds = null;
+            if (parseNode.GetChildNode("entitlement") is null) { _explicitNullValueEntitlement = default!; _explicitNullProperties?.Remove("entitlement"); }
+            else if (parseNode.GetChildNode("entitlement") is { } nullNodeEntitlement && nullNodeEntitlement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entitlement = null;
+            if (parseNode.GetChildNode("previousCanceledAt") is null) { _explicitNullValuePreviousCanceledAt = default!; _explicitNullProperties?.Remove("previousCanceledAt"); }
+            else if (parseNode.GetChildNode("previousCanceledAt") is { } nullNodePreviousCanceledAt && nullNodePreviousCanceledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousCanceledAt = null;
+            if (parseNode.GetChildNode("user") is null) { _explicitNullValueUser = default!; _explicitNullProperties?.Remove("user"); }
+            else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The nextConcurrentBuilds property</summary>
-        public double? NextConcurrentBuilds { get => _explicitNullValueNextConcurrentBuilds; set { _explicitNullValueNextConcurrentBuilds = value; AdditionalData?.Remove("nextConcurrentBuilds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextConcurrentBuilds"); else _explicitNullProperties?.Remove("nextConcurrentBuilds"); } }
-        private double? _explicitNullValueNextConcurrentBuilds = default!;
-        /// <summary>The previousConcurrentBuilds property</summary>
-        public double? PreviousConcurrentBuilds { get => _explicitNullValuePreviousConcurrentBuilds; set { _explicitNullValuePreviousConcurrentBuilds = value; AdditionalData?.Remove("previousConcurrentBuilds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousConcurrentBuilds"); else _explicitNullProperties?.Remove("previousConcurrentBuilds"); } }
-        private double? _explicitNullValuePreviousConcurrentBuilds = default!;
+        /// <summary>The entitlement property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Entitlement { get => _explicitNullValueEntitlement; set { _explicitNullValueEntitlement = value; AdditionalData?.Remove("entitlement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlement"); else _explicitNullProperties?.Remove("entitlement"); } }
+        private string? _explicitNullValueEntitlement = default!;
+#nullable restore
+#else
+        public string Entitlement { get => _explicitNullValueEntitlement; set { _explicitNullValueEntitlement = value; AdditionalData?.Remove("entitlement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entitlement"); else _explicitNullProperties?.Remove("entitlement"); } }
+        private string _explicitNullValueEntitlement = default!;
+#endif
+        /// <summary>The previousCanceledAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousCanceledAt { get => _explicitNullValuePreviousCanceledAt; set { _explicitNullValuePreviousCanceledAt = value; AdditionalData?.Remove("previousCanceledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCanceledAt"); else _explicitNullProperties?.Remove("previousCanceledAt"); } }
+        private string? _explicitNullValuePreviousCanceledAt = default!;
+#nullable restore
+#else
+        public string PreviousCanceledAt { get => _explicitNullValuePreviousCanceledAt; set { _explicitNullValuePreviousCanceledAt = value; AdditionalData?.Remove("previousCanceledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCanceledAt"); else _explicitNullProperties?.Remove("previousCanceledAt"); } }
+        private string _explicitNullValuePreviousCanceledAt = default!;
+#endif
+        /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452User? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452User? _explicitNullValueUser = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452User User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452User _explicitNullValueUser = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452"/> and sets the default values.
         /// </summary>
@@ -57,8 +83,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nextConcurrentBuilds", n => { NextConcurrentBuilds = n.GetDoubleValue(); } },
-                { "previousConcurrentBuilds", n => { PreviousConcurrentBuilds = n.GetDoubleValue(); } },
+                { "entitlement", n => { Entitlement = n.GetStringValue(); } },
+                { "previousCanceledAt", n => { PreviousCanceledAt = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452User>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452User.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,8 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("nextConcurrentBuilds", NextConcurrentBuilds);
-            writer.WriteDoubleValue("previousConcurrentBuilds", PreviousConcurrentBuilds);
+            writer.WriteStringValue("entitlement", Entitlement);
+            writer.WriteStringValue("previousCanceledAt", PreviousCanceledAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf452User>("user", User);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
