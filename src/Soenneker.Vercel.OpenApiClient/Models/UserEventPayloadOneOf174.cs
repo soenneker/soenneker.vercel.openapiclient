@@ -20,12 +20,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("edgeConfigId") is null) { _explicitNullValueEdgeConfigId = default!; _explicitNullProperties?.Remove("edgeConfigId"); }
             else if (parseNode.GetChildNode("edgeConfigId") is { } nullNodeEdgeConfigId && nullNodeEdgeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigId = null;
+            if (parseNode.GetChildNode("edgeConfigSchema") is null) { _explicitNullValueEdgeConfigSchema = default!; _explicitNullProperties?.Remove("edgeConfigSchema"); }
+            else if (parseNode.GetChildNode("edgeConfigSchema") is { } nullNodeEdgeConfigSchema && nullNodeEdgeConfigSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSchema = null;
             if (parseNode.GetChildNode("edgeConfigSlug") is null) { _explicitNullValueEdgeConfigSlug = default!; _explicitNullProperties?.Remove("edgeConfigSlug"); }
             else if (parseNode.GetChildNode("edgeConfigSlug") is { } nullNodeEdgeConfigSlug && nullNodeEdgeConfigSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigSlug = null;
-            if (parseNode.GetChildNode("edgeConfigTokenId") is null) { _explicitNullValueEdgeConfigTokenId = default!; _explicitNullProperties?.Remove("edgeConfigTokenId"); }
-            else if (parseNode.GetChildNode("edgeConfigTokenId") is { } nullNodeEdgeConfigTokenId && nullNodeEdgeConfigTokenId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeConfigTokenId = null;
-            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
-            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,6 +38,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string EdgeConfigId { get => _explicitNullValueEdgeConfigId; set { _explicitNullValueEdgeConfigId = value; AdditionalData?.Remove("edgeConfigId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigId"); else _explicitNullProperties?.Remove("edgeConfigId"); } }
         private string _explicitNullValueEdgeConfigId = default!;
 #endif
+        /// <summary>The edgeConfigSchema property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174EdgeConfigSchemaProperty? EdgeConfigSchema { get => _explicitNullValueEdgeConfigSchema; set { _explicitNullValueEdgeConfigSchema = value; AdditionalData?.Remove("edgeConfigSchema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSchema"); else _explicitNullProperties?.Remove("edgeConfigSchema"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174EdgeConfigSchemaProperty? _explicitNullValueEdgeConfigSchema = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174EdgeConfigSchemaProperty EdgeConfigSchema { get => _explicitNullValueEdgeConfigSchema; set { _explicitNullValueEdgeConfigSchema = value; AdditionalData?.Remove("edgeConfigSchema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSchema"); else _explicitNullProperties?.Remove("edgeConfigSchema"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174EdgeConfigSchemaProperty _explicitNullValueEdgeConfigSchema = default!;
+#endif
         /// <summary>The edgeConfigSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,26 +57,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EdgeConfigSlug { get => _explicitNullValueEdgeConfigSlug; set { _explicitNullValueEdgeConfigSlug = value; AdditionalData?.Remove("edgeConfigSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigSlug"); else _explicitNullProperties?.Remove("edgeConfigSlug"); } }
         private string _explicitNullValueEdgeConfigSlug = default!;
-#endif
-        /// <summary>The edgeConfigTokenId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EdgeConfigTokenId { get => _explicitNullValueEdgeConfigTokenId; set { _explicitNullValueEdgeConfigTokenId = value; AdditionalData?.Remove("edgeConfigTokenId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenId"); else _explicitNullProperties?.Remove("edgeConfigTokenId"); } }
-        private string? _explicitNullValueEdgeConfigTokenId = default!;
-#nullable restore
-#else
-        public string EdgeConfigTokenId { get => _explicitNullValueEdgeConfigTokenId; set { _explicitNullValueEdgeConfigTokenId = value; AdditionalData?.Remove("edgeConfigTokenId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeConfigTokenId"); else _explicitNullProperties?.Remove("edgeConfigTokenId"); } }
-        private string _explicitNullValueEdgeConfigTokenId = default!;
-#endif
-        /// <summary>The label property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
-        private string? _explicitNullValueLabel = default!;
-#nullable restore
-#else
-        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
-        private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174"/> and sets the default values.
@@ -96,9 +84,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigSchema", n => { EdgeConfigSchema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174EdgeConfigSchemaProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174EdgeConfigSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
-                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -109,9 +96,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174EdgeConfigSchemaProperty>("edgeConfigSchema", EdgeConfigSchema);
             writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
-            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
-            writer.WriteStringValue("label", Label);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

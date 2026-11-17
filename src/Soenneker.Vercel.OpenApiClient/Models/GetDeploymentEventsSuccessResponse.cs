@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200StreamJsonResponse"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200StreamJsonResponse"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDeploymentEventsSuccessResponse : IComposedTypeWrapper, IParsable
@@ -18,13 +18,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem&gt;</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem>? GetDeploymentEvents200ResponseItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem>? GetDeploymentEvents200ResponseSchemaItem { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem> GetDeploymentEvents200ResponseItem { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem> GetDeploymentEvents200ResponseSchemaItem { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200StreamJsonResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,22 +43,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEventsSuccessResponse();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema32220(item)) == true) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem> getDeploymentEvents200ResponseItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema32483(item)) == true) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem> getDeploymentEvents200ResponseSchemaItemValue)
             {
-                result.GetDeploymentEvents200ResponseItem = getDeploymentEvents200ResponseItemValue;
+                result.GetDeploymentEvents200ResponseSchemaItem = getDeploymentEvents200ResponseSchemaItemValue;
             }
             else {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema32477(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema32487(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.GetDeploymentEvents200ResponseItem == null && result.GetDeploymentEvents200StreamJsonResponse == null;
+            bool noSelectedUnionBranch = result.GetDeploymentEvents200ResponseSchemaItem == null && result.GetDeploymentEvents200StreamJsonResponse == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.GetDeploymentEvents200StreamJsonResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200StreamJsonResponse(), parseNode);
-            if (result.GetDeploymentEvents200ResponseItem == null && result.GetDeploymentEvents200StreamJsonResponse == null) result.UnrecognizedValue = unionPayload;
+            if (result.GetDeploymentEvents200ResponseSchemaItem == null && result.GetDeploymentEvents200StreamJsonResponse == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -82,16 +82,16 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (GetDeploymentEvents200ResponseItem == null && GetDeploymentEvents200StreamJsonResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GetDeploymentEvents200ResponseSchemaItem == null && GetDeploymentEvents200StreamJsonResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (GetDeploymentEvents200ResponseItem != null) selectedUnionBranches++;
+            if (GetDeploymentEvents200ResponseSchemaItem != null) selectedUnionBranches++;
             if (GetDeploymentEvents200StreamJsonResponse != null) selectedUnionBranches++;
             if (GetDeploymentEvents200StreamJsonResponse != null && selectedUnionBranches == 1) { if (GetDeploymentEvents200StreamJsonResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetDeploymentEvents200StreamJsonResponse); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetDeploymentEvents200ResponseItem != null)
+            if(GetDeploymentEvents200ResponseSchemaItem != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem>(null, GetDeploymentEvents200ResponseItem);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseSchemaItem>(null, GetDeploymentEvents200ResponseSchemaItem);
             }
             else {
                 if (GetDeploymentEvents200StreamJsonResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;

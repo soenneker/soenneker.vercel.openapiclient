@@ -24,6 +24,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Chatgpt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "claude")]
+        #pragma warning disable CS1591
+        Claude,
+        #pragma warning restore CS1591
         [EnumMember(Value = "email")]
         #pragma warning disable CS1591
         Email,

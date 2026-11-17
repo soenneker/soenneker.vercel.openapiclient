@@ -28,8 +28,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("scheduleId") is { } nullNodeScheduleId && nullNodeScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleId = null;
             if (parseNode.GetChildNode("scheduleName") is null) { _explicitNullValueScheduleName = default!; _explicitNullProperties?.Remove("scheduleName"); }
             else if (parseNode.GetChildNode("scheduleName") is { } nullNodeScheduleName && nullNodeScheduleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleName = null;
-            if (parseNode.GetChildNode("updatedFields") is null) { _explicitNullValueUpdatedFields = default!; _explicitNullProperties?.Remove("updatedFields"); }
-            else if (parseNode.GetChildNode("updatedFields") is { } nullNodeUpdatedFields && nullNodeUpdatedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedFields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -84,16 +82,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ScheduleName { get => _explicitNullValueScheduleName; set { _explicitNullValueScheduleName = value; AdditionalData?.Remove("scheduleName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleName"); else _explicitNullProperties?.Remove("scheduleName"); } }
         private string _explicitNullValueScheduleName = default!;
 #endif
-        /// <summary>The updatedFields property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10UpdatedFieldsItem?>? UpdatedFields { get => _explicitNullValueUpdatedFields; set { _explicitNullValueUpdatedFields = value; AdditionalData?.Remove("updatedFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedFields"); else _explicitNullProperties?.Remove("updatedFields"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10UpdatedFieldsItem?>? _explicitNullValueUpdatedFields = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10UpdatedFieldsItem?> UpdatedFields { get => _explicitNullValueUpdatedFields; set { _explicitNullValueUpdatedFields = value; AdditionalData?.Remove("updatedFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedFields"); else _explicitNullProperties?.Remove("updatedFields"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10UpdatedFieldsItem?> _explicitNullValueUpdatedFields = default!;
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10"/> and sets the default values.
         /// </summary>
@@ -124,7 +112,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "scheduleId", n => { ScheduleId = n.GetStringValue(); } },
                 { "scheduleName", n => { ScheduleName = n.GetStringValue(); } },
-                { "updatedFields", n => { UpdatedFields = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10UpdatedFieldsItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -139,7 +126,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("scheduleId", ScheduleId);
             writer.WriteStringValue("scheduleName", ScheduleName);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10UpdatedFieldsItem>("updatedFields", UpdatedFields);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

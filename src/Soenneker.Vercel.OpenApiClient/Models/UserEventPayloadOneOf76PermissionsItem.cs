@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf76PermissionsItem
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "*")]
+        #pragma warning disable CS1591
+        Asterisk,
+        #pragma warning restore CS1591
         [EnumMember(Value = "manage:speed-insights")]
         #pragma warning disable CS1591
         ManageColonSpeedInsights,
@@ -79,6 +83,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read-write:deployment")]
         #pragma warning disable CS1591
         ReadWriteColonDeployment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:desktop-device")]
+        #pragma warning disable CS1591
+        ReadWriteColonDesktopDevice,
         #pragma warning restore CS1591
         [EnumMember(Value = "read-write:domain")]
         #pragma warning disable CS1591
@@ -316,6 +324,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadColonTeam,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read:user")]
+        #pragma warning disable CS1591
+        ReadColonUser,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read:vcr")]
         #pragma warning disable CS1591
         ReadColonVcr,
@@ -331,6 +343,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "use:ai-gateway")]
         #pragma warning disable CS1591
         UseColonAiGateway,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "use:github")]
+        #pragma warning disable CS1591
+        UseColonGithub,
         #pragma warning restore CS1591
         [EnumMember(Value = "use:private-npm")]
         #pragma warning disable CS1591

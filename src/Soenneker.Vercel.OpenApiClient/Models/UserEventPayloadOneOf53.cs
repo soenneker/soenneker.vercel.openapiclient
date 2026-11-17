@@ -18,33 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("changedFields") is null) { _explicitNullValueChangedFields = default!; _explicitNullProperties?.Remove("changedFields"); }
-            else if (parseNode.GetChildNode("changedFields") is { } nullNodeChangedFields && nullNodeChangedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedFields = null;
-            if (parseNode.GetChildNode("virtualModelConfig") is null) { _explicitNullValueVirtualModelConfig = default!; _explicitNullProperties?.Remove("virtualModelConfig"); }
-            else if (parseNode.GetChildNode("virtualModelConfig") is { } nullNodeVirtualModelConfig && nullNodeVirtualModelConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualModelConfig = null;
+            if (parseNode.GetChildNode("retention") is null) { _explicitNullValueRetention = default!; _explicitNullProperties?.Remove("retention"); }
+            else if (parseNode.GetChildNode("retention") is { } nullNodeRetention && nullNodeRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retention = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The changedFields property</summary>
+        /// <summary>The retention property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53ChangedFieldsItem?>? ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; AdditionalData?.Remove("changedFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53ChangedFieldsItem?>? _explicitNullValueChangedFields = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Retention? Retention { get => _explicitNullValueRetention; set { _explicitNullValueRetention = value; AdditionalData?.Remove("retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention"); else _explicitNullProperties?.Remove("retention"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Retention? _explicitNullValueRetention = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53ChangedFieldsItem?> ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; AdditionalData?.Remove("changedFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
-        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53ChangedFieldsItem?> _explicitNullValueChangedFields = default!;
-#endif
-        /// <summary>The virtualModelConfig property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53VirtualModelConfig? VirtualModelConfig { get => _explicitNullValueVirtualModelConfig; set { _explicitNullValueVirtualModelConfig = value; AdditionalData?.Remove("virtualModelConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtualModelConfig"); else _explicitNullProperties?.Remove("virtualModelConfig"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53VirtualModelConfig? _explicitNullValueVirtualModelConfig = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53VirtualModelConfig VirtualModelConfig { get => _explicitNullValueVirtualModelConfig; set { _explicitNullValueVirtualModelConfig = value; AdditionalData?.Remove("virtualModelConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtualModelConfig"); else _explicitNullProperties?.Remove("virtualModelConfig"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53VirtualModelConfig _explicitNullValueVirtualModelConfig = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Retention Retention { get => _explicitNullValueRetention; set { _explicitNullValueRetention = value; AdditionalData?.Remove("retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention"); else _explicitNullProperties?.Remove("retention"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Retention _explicitNullValueRetention = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53"/> and sets the default values.
@@ -71,8 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "changedFields", n => { ChangedFields = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53ChangedFieldsItem>()?.AsList(); } },
-                { "virtualModelConfig", n => { VirtualModelConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53VirtualModelConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53VirtualModelConfig.CreateFromDiscriminatorValue); } },
+                { "retention", n => { Retention = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Retention>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Retention.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,8 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53ChangedFieldsItem>("changedFields", ChangedFields);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53VirtualModelConfig>("virtualModelConfig", VirtualModelConfig);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Retention>("retention", Retention);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

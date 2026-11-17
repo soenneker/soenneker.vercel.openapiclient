@@ -203,6 +203,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayHipaaComplianceToggled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-endpoint-updated")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksEndpointUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-removed")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-settings-updated")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksSettingsUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-toggled")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksToggled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-inference-regions-updated")]
         #pragma warning disable CS1591
         AiGatewayInferenceRegionsUpdated,
@@ -507,6 +523,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ConcurrentBuildsUpdate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect-approve-connector-request")]
+        #pragma warning disable CS1591
+        ConnectApproveConnectorRequest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connect-attach-project")]
         #pragma warning disable CS1591
         ConnectAttachProject,
@@ -563,6 +583,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ConnectDeleteConnector,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect-delete-connector-request")]
+        #pragma warning disable CS1591
+        ConnectDeleteConnectorRequest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connect-delete-installation")]
         #pragma warning disable CS1591
         ConnectDeleteInstallation,
@@ -595,13 +619,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ConnectImportTokens,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect-provision-connector-request")]
+        #pragma warning disable CS1591
+        ConnectProvisionConnectorRequest,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-reject-connector-request")]
+        #pragma warning disable CS1591
+        ConnectRejectConnectorRequest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connect-revoke-all-tokens")]
         #pragma warning disable CS1591
         ConnectRevokeAllTokens,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect-submit-connector-request")]
+        #pragma warning disable CS1591
+        ConnectSubmitConnectorRequest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connect-update-connector")]
         #pragma warning disable CS1591
         ConnectUpdateConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-update-connector-request")]
+        #pragma warning disable CS1591
+        ConnectUpdateConnectorRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "connect-update-trigger-destinations")]
         #pragma warning disable CS1591
@@ -610,6 +650,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "connect-upsert-installation")]
         #pragma warning disable CS1591
         ConnectUpsertInstallation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-withdraw-connector-request")]
+        #pragma warning disable CS1591
+        ConnectWithdrawConnectorRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom-alert-created")]
         #pragma warning disable CS1591
@@ -3075,6 +3119,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         VercelAgentSecurityFindingResolved,
         #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-agent-security-review-policy-deleted")]
+        #pragma warning disable CS1591
+        VercelAgentSecurityReviewPolicyDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-agent-security-review-policy-updated")]
+        #pragma warning disable CS1591
+        VercelAgentSecurityReviewPolicyUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-session-created")]
         #pragma warning disable CS1591
         VercelAgentSessionCreated,
@@ -3106,6 +3158,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vercel-app-uninstalled")]
         #pragma warning disable CS1591
         VercelAppUninstalled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-ci-repository-github-runners-updated")]
+        #pragma warning disable CS1591
+        VercelCiRepositoryGithubRunnersUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "vercel-ci-repository-settings-updated")]
         #pragma warning disable CS1591

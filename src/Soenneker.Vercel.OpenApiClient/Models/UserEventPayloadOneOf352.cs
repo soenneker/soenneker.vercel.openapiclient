@@ -18,33 +18,43 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("budgetId") is null) { _explicitNullValueBudgetId = default!; _explicitNullProperties?.Remove("budgetId"); }
-            else if (parseNode.GetChildNode("budgetId") is { } nullNodeBudgetId && nullNodeBudgetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BudgetId = null;
-            if (parseNode.GetChildNode("budgetScope") is null) { _explicitNullValueBudgetScope = default!; _explicitNullProperties?.Remove("budgetScope"); }
-            else if (parseNode.GetChildNode("budgetScope") is { } nullNodeBudgetScope && nullNodeBudgetScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BudgetScope = null;
+            if (parseNode.GetChildNode("oldPasswordProtection") is null) { _explicitNullValueOldPasswordProtection = default!; _explicitNullProperties?.Remove("oldPasswordProtection"); }
+            else if (parseNode.GetChildNode("oldPasswordProtection") is { } nullNodeOldPasswordProtection && nullNodeOldPasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPasswordProtection = null;
+            if (parseNode.GetChildNode("passwordChanged") is null) { _explicitNullValuePasswordChanged = default!; _explicitNullProperties?.Remove("passwordChanged"); }
+            else if (parseNode.GetChildNode("passwordChanged") is { } nullNodePasswordChanged && nullNodePasswordChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordChanged = null;
+            if (parseNode.GetChildNode("passwordProtection") is null) { _explicitNullValuePasswordProtection = default!; _explicitNullProperties?.Remove("passwordProtection"); }
+            else if (parseNode.GetChildNode("passwordProtection") is { } nullNodePasswordProtection && nullNodePasswordProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PasswordProtection = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("reasonCode") is null) { _explicitNullValueReasonCode = default!; _explicitNullProperties?.Remove("reasonCode"); }
-            else if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The budget that paused the project, for `BUDGET_REACHED`. Absent on older events.</summary>
+        /// <summary>The oldPasswordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BudgetId { get => _explicitNullValueBudgetId; set { _explicitNullValueBudgetId = value; AdditionalData?.Remove("budgetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetId"); else _explicitNullProperties?.Remove("budgetId"); } }
-        private string? _explicitNullValueBudgetId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352OldPasswordProtection? OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; AdditionalData?.Remove("oldPasswordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352OldPasswordProtection? _explicitNullValueOldPasswordProtection = default!;
 #nullable restore
 #else
-        public string BudgetId { get => _explicitNullValueBudgetId; set { _explicitNullValueBudgetId = value; AdditionalData?.Remove("budgetId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetId"); else _explicitNullProperties?.Remove("budgetId"); } }
-        private string _explicitNullValueBudgetId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352OldPasswordProtection OldPasswordProtection { get => _explicitNullValueOldPasswordProtection; set { _explicitNullValueOldPasswordProtection = value; AdditionalData?.Remove("oldPasswordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldPasswordProtection"); else _explicitNullProperties?.Remove("oldPasswordProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352OldPasswordProtection _explicitNullValueOldPasswordProtection = default!;
 #endif
-        /// <summary>The budgetScope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352BudgetScope? BudgetScope { get => _explicitNullValueBudgetScope; set { _explicitNullValueBudgetScope = value; AdditionalData?.Remove("budgetScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetScope"); else _explicitNullProperties?.Remove("budgetScope"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352BudgetScope? _explicitNullValueBudgetScope = default!;
+        /// <summary>The passwordChanged property</summary>
+        public bool? PasswordChanged { get => _explicitNullValuePasswordChanged; set { _explicitNullValuePasswordChanged = value; AdditionalData?.Remove("passwordChanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordChanged"); else _explicitNullProperties?.Remove("passwordChanged"); } }
+        private bool? _explicitNullValuePasswordChanged = default!;
+        /// <summary>The passwordProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352PasswordProtection? PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; AdditionalData?.Remove("passwordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352PasswordProtection? _explicitNullValuePasswordProtection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352PasswordProtection PasswordProtection { get => _explicitNullValuePasswordProtection; set { _explicitNullValuePasswordProtection = value; AdditionalData?.Remove("passwordProtection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passwordProtection"); else _explicitNullProperties?.Remove("passwordProtection"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352PasswordProtection _explicitNullValuePasswordProtection = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>Display name for Activity links. Optional for events stored before it was published.</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
@@ -65,9 +75,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
-        /// <summary>The reasonCode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352ReasonCode? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; AdditionalData?.Remove("reasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352ReasonCode? _explicitNullValueReasonCode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352"/> and sets the default values.
         /// </summary>
@@ -93,11 +100,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "budgetId", n => { BudgetId = n.GetStringValue(); } },
-                { "budgetScope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352BudgetScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBudgetScope = default; _explicitNullProperties?.Remove("budgetScope"); AdditionalData["budgetScope"] = unknown; } else { BudgetScope = parsed; AdditionalData.Remove("budgetScope"); } } },
+                { "oldPasswordProtection", n => { OldPasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352OldPasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352OldPasswordProtection.CreateFromDiscriminatorValue); } },
+                { "passwordChanged", n => { PasswordChanged = n.GetBoolValue(); } },
+                { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352PasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352PasswordProtection.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "reasonCode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352ReasonCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReasonCode = default; _explicitNullProperties?.Remove("reasonCode"); AdditionalData["reasonCode"] = unknown; } else { ReasonCode = parsed; AdditionalData.Remove("reasonCode"); } } },
             };
         }
         /// <summary>
@@ -107,11 +114,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("budgetId", BudgetId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352BudgetScope>("budgetScope", BudgetScope);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352OldPasswordProtection>("oldPasswordProtection", OldPasswordProtection);
+            writer.WriteBoolValue("passwordChanged", PasswordChanged);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352PasswordProtection>("passwordProtection", PasswordProtection);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352ReasonCode>("reasonCode", ReasonCode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

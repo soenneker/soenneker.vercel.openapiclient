@@ -18,44 +18,42 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
-            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("invoiceId") is null) { _explicitNullValueInvoiceId = default!; _explicitNullProperties?.Remove("invoiceId"); }
-            else if (parseNode.GetChildNode("invoiceId") is { } nullNodeInvoiceId && nullNodeInvoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvoiceId = null;
-            if (parseNode.GetChildNode("newInvoiceId") is null) { _explicitNullValueNewInvoiceId = default!; _explicitNullProperties?.Remove("newInvoiceId"); }
-            else if (parseNode.GetChildNode("newInvoiceId") is { } nullNodeNewInvoiceId && nullNodeNewInvoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewInvoiceId = null;
-            if (parseNode.GetChildNode("settlementMethod") is null) { _explicitNullValueSettlementMethod = default!; _explicitNullProperties?.Remove("settlementMethod"); }
-            else if (parseNode.GetChildNode("settlementMethod") is { } nullNodeSettlementMethod && nullNodeSettlementMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementMethod = null;
+            if (parseNode.GetChildNode("attackModeActiveUntil") is null) { _explicitNullValueAttackModeActiveUntil = default!; _explicitNullProperties?.Remove("attackModeActiveUntil"); }
+            else if (parseNode.GetChildNode("attackModeActiveUntil") is { } nullNodeAttackModeActiveUntil && nullNodeAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("attackModeEnabled") is null) { _explicitNullValueAttackModeEnabled = default!; _explicitNullProperties?.Remove("attackModeEnabled"); }
+            else if (parseNode.GetChildNode("attackModeEnabled") is { } nullNodeAttackModeEnabled && nullNodeAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackModeEnabled = null;
+            if (parseNode.GetChildNode("prevAttackModeActiveUntil") is null) { _explicitNullValuePrevAttackModeActiveUntil = default!; _explicitNullProperties?.Remove("prevAttackModeActiveUntil"); }
+            else if (parseNode.GetChildNode("prevAttackModeActiveUntil") is { } nullNodePrevAttackModeActiveUntil && nullNodePrevAttackModeActiveUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevAttackModeActiveUntil = null;
+            if (parseNode.GetChildNode("prevAttackModeEnabled") is null) { _explicitNullValuePrevAttackModeEnabled = default!; _explicitNullProperties?.Remove("prevAttackModeEnabled"); }
+            else if (parseNode.GetChildNode("prevAttackModeEnabled") is { } nullNodePrevAttackModeEnabled && nullNodePrevAttackModeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevAttackModeEnabled = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
-        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
-        private double? _explicitNullValueAmount = default!;
-        /// <summary>The invoiceId property</summary>
+        /// <summary>The attackModeActiveUntil property</summary>
+        public double? AttackModeActiveUntil { get => _explicitNullValueAttackModeActiveUntil; set { _explicitNullValueAttackModeActiveUntil = value; AdditionalData?.Remove("attackModeActiveUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeActiveUntil"); else _explicitNullProperties?.Remove("attackModeActiveUntil"); } }
+        private double? _explicitNullValueAttackModeActiveUntil = default!;
+        /// <summary>The attackModeEnabled property</summary>
+        public bool? AttackModeEnabled { get => _explicitNullValueAttackModeEnabled; set { _explicitNullValueAttackModeEnabled = value; AdditionalData?.Remove("attackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attackModeEnabled"); else _explicitNullProperties?.Remove("attackModeEnabled"); } }
+        private bool? _explicitNullValueAttackModeEnabled = default!;
+        /// <summary>The prevAttackModeActiveUntil property</summary>
+        public double? PrevAttackModeActiveUntil { get => _explicitNullValuePrevAttackModeActiveUntil; set { _explicitNullValuePrevAttackModeActiveUntil = value; AdditionalData?.Remove("prevAttackModeActiveUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevAttackModeActiveUntil"); else _explicitNullProperties?.Remove("prevAttackModeActiveUntil"); } }
+        private double? _explicitNullValuePrevAttackModeActiveUntil = default!;
+        /// <summary>The prevAttackModeEnabled property</summary>
+        public bool? PrevAttackModeEnabled { get => _explicitNullValuePrevAttackModeEnabled; set { _explicitNullValuePrevAttackModeEnabled = value; AdditionalData?.Remove("prevAttackModeEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevAttackModeEnabled"); else _explicitNullProperties?.Remove("prevAttackModeEnabled"); } }
+        private bool? _explicitNullValuePrevAttackModeEnabled = default!;
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; AdditionalData?.Remove("invoiceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoiceId"); else _explicitNullProperties?.Remove("invoiceId"); } }
-        private string? _explicitNullValueInvoiceId = default!;
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; AdditionalData?.Remove("invoiceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoiceId"); else _explicitNullProperties?.Remove("invoiceId"); } }
-        private string _explicitNullValueInvoiceId = default!;
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The newInvoiceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NewInvoiceId { get => _explicitNullValueNewInvoiceId; set { _explicitNullValueNewInvoiceId = value; AdditionalData?.Remove("newInvoiceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newInvoiceId"); else _explicitNullProperties?.Remove("newInvoiceId"); } }
-        private string? _explicitNullValueNewInvoiceId = default!;
-#nullable restore
-#else
-        public string NewInvoiceId { get => _explicitNullValueNewInvoiceId; set { _explicitNullValueNewInvoiceId = value; AdditionalData?.Remove("newInvoiceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newInvoiceId"); else _explicitNullProperties?.Remove("newInvoiceId"); } }
-        private string _explicitNullValueNewInvoiceId = default!;
-#endif
-        /// <summary>The settlementMethod property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84SettlementMethod? SettlementMethod { get => _explicitNullValueSettlementMethod; set { _explicitNullValueSettlementMethod = value; AdditionalData?.Remove("settlementMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementMethod"); else _explicitNullProperties?.Remove("settlementMethod"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84SettlementMethod? _explicitNullValueSettlementMethod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84"/> and sets the default values.
         /// </summary>
@@ -81,10 +79,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "newInvoiceId", n => { NewInvoiceId = n.GetStringValue(); } },
-                { "settlementMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84SettlementMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSettlementMethod = default; _explicitNullProperties?.Remove("settlementMethod"); AdditionalData["settlementMethod"] = unknown; } else { SettlementMethod = parsed; AdditionalData.Remove("settlementMethod"); } } },
+                { "attackModeActiveUntil", n => { AttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "attackModeEnabled", n => { AttackModeEnabled = n.GetBoolValue(); } },
+                { "prevAttackModeActiveUntil", n => { PrevAttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "prevAttackModeEnabled", n => { PrevAttackModeEnabled = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,10 +93,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("amount", Amount);
-            writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteStringValue("newInvoiceId", NewInvoiceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84SettlementMethod>("settlementMethod", SettlementMethod);
+            writer.WriteDoubleValue("attackModeActiveUntil", AttackModeActiveUntil);
+            writer.WriteBoolValue("attackModeEnabled", AttackModeEnabled);
+            writer.WriteDoubleValue("prevAttackModeActiveUntil", PrevAttackModeActiveUntil);
+            writer.WriteBoolValue("prevAttackModeEnabled", PrevAttackModeEnabled);
+            writer.WriteStringValue("projectId", ProjectId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

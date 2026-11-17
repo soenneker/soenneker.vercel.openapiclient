@@ -909,8 +909,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTargets _explicitNullValueTargets = default!;
 #endif
         /// <summary>The tier property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PriorityTier? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; AdditionalData?.Remove("tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.PriorityTier? _explicitNullValueTier = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTier? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; AdditionalData?.Remove("tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTier? _explicitNullValueTier = default!;
         /// <summary>The tracing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1116,7 +1116,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseSsoProtection.CreateFromDiscriminatorValue); } },
                 { "staticIps", n => { StaticIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseStaticIps>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseStaticIps.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTargets>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTargets.CreateFromDiscriminatorValue); } },
-                { "tier", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTier = default; _explicitNullProperties?.Remove("tier"); AdditionalData["tier"] = unknown; } else { Tier = parsed; AdditionalData.Remove("tier"); } } },
+                { "tier", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTier = default; _explicitNullProperties?.Remove("tier"); AdditionalData["tier"] = unknown; } else { Tier = parsed; AdditionalData.Remove("tier"); } } },
                 { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracing>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracing.CreateFromDiscriminatorValue); } },
                 { "transferCompletedAt", n => { TransferCompletedAt = n.GetDoubleValue(); } },
                 { "transferStartedAt", n => { TransferStartedAt = n.GetDoubleValue(); } },
@@ -1224,7 +1224,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseSsoProtection>("ssoProtection", SsoProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseStaticIps>("staticIps", StaticIps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTargets>("targets", Targets);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTier>("tier", Tier);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTier>("tier", Tier);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseTracing>("tracing", Tracing);
             writer.WriteDoubleValue("transferCompletedAt", TransferCompletedAt);
             writer.WriteStringValue("transferredFromAccountId", TransferredFromAccountId);

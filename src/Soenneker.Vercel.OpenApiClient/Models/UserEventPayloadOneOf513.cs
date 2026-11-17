@@ -18,15 +18,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tier") is null) { _explicitNullValueTier = default!; _explicitNullProperties?.Remove("tier"); }
-            else if (parseNode.GetChildNode("tier") is { } nullNodeTier && nullNodeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tier = null;
+            if (parseNode.GetChildNode("protectedProjectCount") is null) { _explicitNullValueProtectedProjectCount = default!; _explicitNullProperties?.Remove("protectedProjectCount"); }
+            else if (parseNode.GetChildNode("protectedProjectCount") is { } nullNodeProtectedProjectCount && nullNodeProtectedProjectCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectedProjectCount = null;
+            if (parseNode.GetChildNode("protectionEnabled") is null) { _explicitNullValueProtectionEnabled = default!; _explicitNullProperties?.Remove("protectionEnabled"); }
+            else if (parseNode.GetChildNode("protectionEnabled") is { } nullNodeProtectionEnabled && nullNodeProtectionEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectionEnabled = null;
+            if (parseNode.GetChildNode("vulnerabilities") is null) { _explicitNullValueVulnerabilities = default!; _explicitNullProperties?.Remove("vulnerabilities"); }
+            else if (parseNode.GetChildNode("vulnerabilities") is { } nullNodeVulnerabilities && nullNodeVulnerabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vulnerabilities = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The tier property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf513Tier? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; AdditionalData?.Remove("tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf513Tier? _explicitNullValueTier = default!;
+        /// <summary>The protectedProjectCount property</summary>
+        public double? ProtectedProjectCount { get => _explicitNullValueProtectedProjectCount; set { _explicitNullValueProtectedProjectCount = value; AdditionalData?.Remove("protectedProjectCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protectedProjectCount"); else _explicitNullProperties?.Remove("protectedProjectCount"); } }
+        private double? _explicitNullValueProtectedProjectCount = default!;
+        /// <summary>The protectionEnabled property</summary>
+        public bool? ProtectionEnabled { get => _explicitNullValueProtectionEnabled; set { _explicitNullValueProtectionEnabled = value; AdditionalData?.Remove("protectionEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protectionEnabled"); else _explicitNullProperties?.Remove("protectionEnabled"); } }
+        private bool? _explicitNullValueProtectionEnabled = default!;
+        /// <summary>The vulnerabilities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Vulnerabilities { get => _explicitNullValueVulnerabilities; set { _explicitNullValueVulnerabilities = value; AdditionalData?.Remove("vulnerabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vulnerabilities"); else _explicitNullProperties?.Remove("vulnerabilities"); } }
+        private List<string>? _explicitNullValueVulnerabilities = default!;
+#nullable restore
+#else
+        public List<string> Vulnerabilities { get => _explicitNullValueVulnerabilities; set { _explicitNullValueVulnerabilities = value; AdditionalData?.Remove("vulnerabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vulnerabilities"); else _explicitNullProperties?.Remove("vulnerabilities"); } }
+        private List<string> _explicitNullValueVulnerabilities = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf513"/> and sets the default values.
         /// </summary>
@@ -52,7 +69,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tier", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf513Tier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTier = default; _explicitNullProperties?.Remove("tier"); AdditionalData["tier"] = unknown; } else { Tier = parsed; AdditionalData.Remove("tier"); } } },
+                { "protectedProjectCount", n => { ProtectedProjectCount = n.GetDoubleValue(); } },
+                { "protectionEnabled", n => { ProtectionEnabled = n.GetBoolValue(); } },
+                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -62,7 +81,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf513Tier>("tier", Tier);
+            writer.WriteDoubleValue("protectedProjectCount", ProtectedProjectCount);
+            writer.WriteBoolValue("protectionEnabled", ProtectionEnabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("vulnerabilities", Vulnerabilities);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

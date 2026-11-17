@@ -18,38 +18,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("consumerProjectId") is null) { _explicitNullValueConsumerProjectId = default!; _explicitNullProperties?.Remove("consumerProjectId"); }
-            else if (parseNode.GetChildNode("consumerProjectId") is { } nullNodeConsumerProjectId && nullNodeConsumerProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerProjectId = null;
-            if (parseNode.GetChildNode("consumerProjectName") is null) { _explicitNullValueConsumerProjectName = default!; _explicitNullProperties?.Remove("consumerProjectName"); }
-            else if (parseNode.GetChildNode("consumerProjectName") is { } nullNodeConsumerProjectName && nullNodeConsumerProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerProjectName = null;
+            if (parseNode.GetChildNode("configChangeCount") is null) { _explicitNullValueConfigChangeCount = default!; _explicitNullProperties?.Remove("configChangeCount"); }
+            else if (parseNode.GetChildNode("configChangeCount") is { } nullNodeConfigChangeCount && nullNodeConfigChangeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChangeCount = null;
+            if (parseNode.GetChildNode("configChanges") is null) { _explicitNullValueConfigChanges = default!; _explicitNullProperties?.Remove("configChanges"); }
+            else if (parseNode.GetChildNode("configChanges") is { } nullNodeConfigChanges && nullNodeConfigChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChanges = null;
+            if (parseNode.GetChildNode("configVersion") is null) { _explicitNullValueConfigVersion = default!; _explicitNullProperties?.Remove("configVersion"); }
+            else if (parseNode.GetChildNode("configVersion") is { } nullNodeConfigVersion && nullNodeConfigVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigVersion = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("restore") is null) { _explicitNullValueRestore = default!; _explicitNullProperties?.Remove("restore"); }
+            else if (parseNode.GetChildNode("restore") is { } nullNodeRestore && nullNodeRestore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restore = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The consumerProjectId property</summary>
+        /// <summary>The configChangeCount property</summary>
+        public double? ConfigChangeCount { get => _explicitNullValueConfigChangeCount; set { _explicitNullValueConfigChangeCount = value; AdditionalData?.Remove("configChangeCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChangeCount"); else _explicitNullProperties?.Remove("configChangeCount"); } }
+        private double? _explicitNullValueConfigChangeCount = default!;
+        /// <summary>The configChanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerProjectId { get => _explicitNullValueConsumerProjectId; set { _explicitNullValueConsumerProjectId = value; AdditionalData?.Remove("consumerProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectId"); else _explicitNullProperties?.Remove("consumerProjectId"); } }
-        private string? _explicitNullValueConsumerProjectId = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195ConfigChangesItemProperty>? ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; AdditionalData?.Remove("configChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195ConfigChangesItemProperty>? _explicitNullValueConfigChanges = default!;
 #nullable restore
 #else
-        public string ConsumerProjectId { get => _explicitNullValueConsumerProjectId; set { _explicitNullValueConsumerProjectId = value; AdditionalData?.Remove("consumerProjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectId"); else _explicitNullProperties?.Remove("consumerProjectId"); } }
-        private string _explicitNullValueConsumerProjectId = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195ConfigChangesItemProperty> ConfigChanges { get => _explicitNullValueConfigChanges; set { _explicitNullValueConfigChanges = value; AdditionalData?.Remove("configChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configChanges"); else _explicitNullProperties?.Remove("configChanges"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195ConfigChangesItemProperty> _explicitNullValueConfigChanges = default!;
 #endif
-        /// <summary>The consumerProjectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConsumerProjectName { get => _explicitNullValueConsumerProjectName; set { _explicitNullValueConsumerProjectName = value; AdditionalData?.Remove("consumerProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectName"); else _explicitNullProperties?.Remove("consumerProjectName"); } }
-        private string? _explicitNullValueConsumerProjectName = default!;
-#nullable restore
-#else
-        public string ConsumerProjectName { get => _explicitNullValueConsumerProjectName; set { _explicitNullValueConsumerProjectName = value; AdditionalData?.Remove("consumerProjectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumerProjectName"); else _explicitNullProperties?.Remove("consumerProjectName"); } }
-        private string _explicitNullValueConsumerProjectName = default!;
-#endif
+        /// <summary>The configVersion property</summary>
+        public double? ConfigVersion { get => _explicitNullValueConfigVersion; set { _explicitNullValueConfigVersion = value; AdditionalData?.Remove("configVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configVersion"); else _explicitNullProperties?.Remove("configVersion"); } }
+        private double? _explicitNullValueConfigVersion = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
+        /// <summary>The restore property</summary>
+        public bool? Restore { get => _explicitNullValueRestore; set { _explicitNullValueRestore = value; AdditionalData?.Remove("restore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restore"); else _explicitNullProperties?.Remove("restore"); } }
+        private bool? _explicitNullValueRestore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195"/> and sets the default values.
         /// </summary>
@@ -95,10 +98,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consumerProjectId", n => { ConsumerProjectId = n.GetStringValue(); } },
-                { "consumerProjectName", n => { ConsumerProjectName = n.GetStringValue(); } },
+                { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
+                { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configVersion", n => { ConfigVersion = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "restore", n => { Restore = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -108,10 +113,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("consumerProjectId", ConsumerProjectId);
-            writer.WriteStringValue("consumerProjectName", ConsumerProjectName);
+            writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195ConfigChangesItemProperty>("configChanges", ConfigChanges);
+            writer.WriteDoubleValue("configVersion", ConfigVersion);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteBoolValue("restore", Restore);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
