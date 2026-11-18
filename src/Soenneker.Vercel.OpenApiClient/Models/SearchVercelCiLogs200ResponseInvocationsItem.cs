@@ -21,6 +21,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("attempt") is { } nullNodeAttempt && nullNodeAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attempt = null;
             if (parseNode.GetChildNode("invocationId") is null) { _explicitNullValueInvocationId = default!; _explicitNullProperties?.Remove("invocationId"); }
             else if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
+            if (parseNode.GetChildNode("setup") is null) { _explicitNullValueSetup = default!; _explicitNullProperties?.Remove("setup"); }
+            else if (parseNode.GetChildNode("setup") is { } nullNodeSetup && nullNodeSetup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Setup = null;
             if (parseNode.GetChildNode("tasks") is null) { _explicitNullValueTasks = default!; _explicitNullProperties?.Remove("tasks"); }
             else if (parseNode.GetChildNode("tasks") is { } nullNodeTasks && nullNodeTasks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tasks = null;
         }
@@ -39,6 +41,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; AdditionalData?.Remove("invocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
         private string _explicitNullValueInvocationId = default!;
+#endif
+        /// <summary>Matching lines from the setup logs. Present only when a setup line matches.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemSetup? Setup { get => _explicitNullValueSetup; set { _explicitNullValueSetup = value; AdditionalData?.Remove("setup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setup"); else _explicitNullProperties?.Remove("setup"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemSetup? _explicitNullValueSetup = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemSetup Setup { get => _explicitNullValueSetup; set { _explicitNullValueSetup = value; AdditionalData?.Remove("setup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("setup"); else _explicitNullProperties?.Remove("setup"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemSetup _explicitNullValueSetup = default!;
 #endif
         /// <summary>The tasks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,10 +85,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "attempt", n => { Attempt = n.GetDoubleValue(); } },
                 { "invocationId", n => { InvocationId = n.GetStringValue(); } },
+                { "setup", n => { Setup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemSetup>(global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemSetup.CreateFromDiscriminatorValue); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemTasksItem>(global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemTasksItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -89,6 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("attempt", Attempt);
             writer.WriteStringValue("invocationId", InvocationId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemSetup>("setup", Setup);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SearchVercelCiLogs200ResponseInvocationsItemTasksItem>("tasks", Tasks);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

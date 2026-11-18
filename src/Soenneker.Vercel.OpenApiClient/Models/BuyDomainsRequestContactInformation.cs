@@ -192,7 +192,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "additional", n => { Additional = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyDomainsRequestContactInformationAdditional>(global::Soenneker.Vercel.OpenApiClient.Models.BuyDomainsRequestContactInformationAdditional.CreateFromDiscriminatorValue); } },
                 { "address1", n => { Address1 = n.GetStringValue(); } },

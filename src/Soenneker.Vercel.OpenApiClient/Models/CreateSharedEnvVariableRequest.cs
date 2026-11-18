@@ -86,7 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "evs", n => { Evs = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateSharedEnvVariableRequestEvsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSharedEnvVariableRequestEvsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

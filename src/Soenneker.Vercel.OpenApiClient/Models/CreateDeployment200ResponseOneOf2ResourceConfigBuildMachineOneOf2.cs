@@ -74,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "cores", n => { Cores = n.GetDoubleValue(); } },
                 { "defaultPurchaseType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfigBuildMachineOneOf2DefaultPurchaseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDefaultPurchaseType = default; _explicitNullProperties?.Remove("defaultPurchaseType"); AdditionalData["defaultPurchaseType"] = unknown; } else { DefaultPurchaseType = parsed; AdditionalData.Remove("defaultPurchaseType"); } } },

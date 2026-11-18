@@ -93,7 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "favoritesViewPreference", n => { FavoritesViewPreference = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemFavoritesViewPreference>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemFavoritesViewPreference.CreateFromDiscriminatorValue); } },
                 { "recentsViewPreference", n => { RecentsViewPreference = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemRecentsViewPreference>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItemRecentsViewPreference.CreateFromDiscriminatorValue); } },

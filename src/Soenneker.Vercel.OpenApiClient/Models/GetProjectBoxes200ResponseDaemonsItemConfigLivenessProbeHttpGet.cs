@@ -90,7 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "httpHeaders", n => { HttpHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetHttpHeadersItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetHttpHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },

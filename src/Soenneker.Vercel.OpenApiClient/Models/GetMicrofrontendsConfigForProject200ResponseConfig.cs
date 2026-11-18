@@ -88,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "applications", n => { Applications = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfigForProject200ResponseConfigApplications>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfigForProject200ResponseConfigApplications.CreateFromDiscriminatorValue); } },
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfigForProject200ResponseConfigOptions>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfigForProject200ResponseConfigOptions.CreateFromDiscriminatorValue); } },

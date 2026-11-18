@@ -133,7 +133,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "deliveryFormat", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateLogDrainRequestDeliveryFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeliveryFormat = default; _explicitNullProperties?.Remove("deliveryFormat"); AdditionalData["deliveryFormat"] = unknown; } else { DeliveryFormat = parsed; AdditionalData.Remove("deliveryFormat"); } } },
                 { "environments", n => { Environments = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateLogDrainRequestEnvironmentsItem>()?.AsList(); } },

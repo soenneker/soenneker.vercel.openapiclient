@@ -76,7 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "consolidatedGitCommitStatus", n => { ConsolidatedGitCommitStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemGitProviderOptionsConsolidatedGitCommitStatus>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemGitProviderOptionsConsolidatedGitCommitStatus.CreateFromDiscriminatorValue); } },
                 { "createDeployments", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemGitProviderOptionsCreateDeployments>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreateDeployments = default; _explicitNullProperties?.Remove("createDeployments"); AdditionalData["createDeployments"] = unknown; } else { CreateDeployments = parsed; AdditionalData.Remove("createDeployments"); } } },

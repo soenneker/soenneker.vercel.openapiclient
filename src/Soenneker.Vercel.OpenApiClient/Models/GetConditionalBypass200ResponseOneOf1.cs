@@ -140,7 +140,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "condition", n => { Condition = n.GetStringValue(); } },
                 { "conditionGroup", n => { ConditionGroup = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1ConditionGroupItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseOneOf1ConditionGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },

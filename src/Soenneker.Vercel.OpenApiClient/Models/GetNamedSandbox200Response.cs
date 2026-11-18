@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "resumed", n => { Resumed = n.GetBoolValue(); } },
                 { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxPublicRoute>(global::Soenneker.Vercel.OpenApiClient.Models.SandboxPublicRoute.CreateFromDiscriminatorValue)?.AsList(); } },

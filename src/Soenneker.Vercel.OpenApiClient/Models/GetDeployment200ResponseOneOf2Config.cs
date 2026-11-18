@@ -106,7 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "functionMemoryType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ConfigFunctionMemoryType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFunctionMemoryType = default; _explicitNullProperties?.Remove("functionMemoryType"); AdditionalData["functionMemoryType"] = unknown; } else { FunctionMemoryType = parsed; AdditionalData.Remove("functionMemoryType"); } } },
                 { "functionTimeout", n => { FunctionTimeout = n.GetDoubleValue(); } },

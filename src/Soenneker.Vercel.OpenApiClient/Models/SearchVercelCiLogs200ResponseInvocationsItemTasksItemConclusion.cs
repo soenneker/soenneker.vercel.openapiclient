@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62805(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62808(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62811(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62815(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62937(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62940(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62943(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema62947(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             bool? matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![2] : (bool?)false;

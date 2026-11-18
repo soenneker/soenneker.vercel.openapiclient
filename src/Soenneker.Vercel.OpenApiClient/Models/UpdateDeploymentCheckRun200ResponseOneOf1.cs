@@ -263,7 +263,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(24)
             {
                 { "blocks", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseOneOf1Blocks>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBlocks = default; _explicitNullProperties?.Remove("blocks"); AdditionalData["blocks"] = unknown; } else { Blocks = parsed; AdditionalData.Remove("blocks"); } } },
                 { "checkId", n => { CheckId = n.GetStringValue(); } },

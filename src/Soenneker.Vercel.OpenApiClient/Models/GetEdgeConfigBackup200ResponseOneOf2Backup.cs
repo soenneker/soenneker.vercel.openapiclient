@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "digest", n => { Digest = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigBackup200ResponseOneOf2BackupItems>(global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigBackup200ResponseOneOf2BackupItems.CreateFromDiscriminatorValue); } },

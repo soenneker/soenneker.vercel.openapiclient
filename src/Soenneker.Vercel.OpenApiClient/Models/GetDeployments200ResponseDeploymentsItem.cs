@@ -415,7 +415,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(42)
             {
                 { "aliasAssigned", n => { AliasAssigned = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAliasAssignedAt>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAliasAssignedAt.CreateFromDiscriminatorValue); } },
                 { "aliasError", n => { AliasError = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemAliasError>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemAliasError.CreateFromDiscriminatorValue); } },

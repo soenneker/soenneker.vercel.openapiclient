@@ -355,9 +355,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiSecurityReview,
         #pragma warning restore CS1591
+        [EnumMember(Value = "alert-group-detected")]
+        #pragma warning disable CS1591
+        AlertGroupDetected,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alert-group-investigation-completed")]
+        #pragma warning disable CS1591
+        AlertGroupInvestigationCompleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alert-group-published")]
+        #pragma warning disable CS1591
+        AlertGroupPublished,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alert-investigation-project-allowlist-updated")]
         #pragma warning disable CS1591
         AlertInvestigationProjectAllowlistUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alert-resolved")]
+        #pragma warning disable CS1591
+        AlertResolved,
         #pragma warning restore CS1591
         [EnumMember(Value = "alert-rule-created")]
         #pragma warning disable CS1591

@@ -117,7 +117,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "botIdEnabled", n => { BotIdEnabled = n.GetBoolValue(); } },
                 { "crs", n => { Crs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestCrs.CreateFromDiscriminatorValue); } },

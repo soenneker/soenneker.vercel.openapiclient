@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync;
 using Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithOrganizationItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The dsync property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.DsyncRequestBuilder Dsync
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.DsyncRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The teams property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams.TeamsRequestBuilder Teams
         {

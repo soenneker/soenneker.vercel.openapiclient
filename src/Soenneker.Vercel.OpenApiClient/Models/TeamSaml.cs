@@ -91,7 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "connection", n => { Connection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection.CreateFromDiscriminatorValue); } },
                 { "defaultRedirectUri", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDefaultRedirectUri>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDefaultRedirectUri = default; _explicitNullProperties?.Remove("defaultRedirectUri"); AdditionalData["defaultRedirectUri"] = unknown; } else { DefaultRedirectUri = parsed; AdditionalData.Remove("defaultRedirectUri"); } } },

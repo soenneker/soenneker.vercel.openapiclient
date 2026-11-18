@@ -128,7 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "ai_gateway", n => { AiGateway = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemSchemasAiGateway>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemSchemasAiGateway.CreateFromDiscriminatorValue); } },
                 { "analytics", n => { Analytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemSchemasAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf2ItemSchemasAnalytics.CreateFromDiscriminatorValue); } },

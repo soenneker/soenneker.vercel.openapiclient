@@ -170,7 +170,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonBindingsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItemOneOf2BuilderConfigDaemonBindingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "buildTarget", n => { BuildTarget = n.GetStringValue(); } },

@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "blockedAt", n => { BlockedAt = n.GetDoubleValue(); } },
                 { "blockedDueToOverageType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBlockedDueToOverageType = default; _explicitNullProperties?.Remove("blockedDueToOverageType"); AdditionalData["blockedDueToOverageType"] = unknown; } else { BlockedDueToOverageType = parsed; AdditionalData.Remove("blockedDueToOverageType"); } } },

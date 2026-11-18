@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "cohort", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutCohort>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCohort = default; _explicitNullProperties?.Remove("cohort"); AdditionalData["cohort"] = unknown; } else { Cohort = parsed; AdditionalData.Remove("cohort"); } } },
                 { "meterReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRolloutMeterReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMeterReason = default; _explicitNullProperties?.Remove("meterReason"); AdditionalData["meterReason"] = unknown; } else { MeterReason = parsed; AdditionalData.Remove("meterReason"); } } },

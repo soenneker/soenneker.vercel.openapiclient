@@ -147,7 +147,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "buildMachineElasticLastUpdated", n => { BuildMachineElasticLastUpdated = n.GetDoubleValue(); } },
                 { "buildMachineElasticReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemResourceConfigBuildMachineElasticReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuildMachineElasticReason = default; _explicitNullProperties?.Remove("buildMachineElasticReason"); AdditionalData["buildMachineElasticReason"] = unknown; } else { BuildMachineElasticReason = parsed; AdditionalData.Remove("buildMachineElasticReason"); } } },

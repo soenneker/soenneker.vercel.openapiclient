@@ -76,7 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "purchasePrice", n => { PurchasePrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice.CreateFromDiscriminatorValue); } },
                 { "renewalPrice", n => { RenewalPrice = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice>(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkPrice200ResponseResultsItemPurchasePrice.CreateFromDiscriminatorValue); } },

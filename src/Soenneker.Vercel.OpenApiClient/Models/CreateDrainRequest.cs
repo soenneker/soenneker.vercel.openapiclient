@@ -136,7 +136,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "delivery", n => { Delivery = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestDelivery>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestDelivery.CreateFromDiscriminatorValue); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilter>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDrainRequestFilter.CreateFromDiscriminatorValue); } },

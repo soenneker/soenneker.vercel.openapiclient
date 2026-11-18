@@ -71,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "algo", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemMitigateErlAlgo>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlgo = default; _explicitNullProperties?.Remove("algo"); AdditionalData["algo"] = unknown; } else { Algo = parsed; AdditionalData.Remove("algo"); } } },
                 { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

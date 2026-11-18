@@ -121,7 +121,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "audience", n => { Audience = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "authorizationDetails", n => { AuthorizationDetails = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestAuthorizationDetailsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestAuthorizationDetailsItem.CreateFromDiscriminatorValue)?.AsList(); } },

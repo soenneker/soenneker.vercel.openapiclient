@@ -89,7 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "buildQueueConfiguration", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313BuildQueueConfiguration>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuildQueueConfiguration = default; _explicitNullProperties?.Remove("buildQueueConfiguration"); AdditionalData["buildQueueConfiguration"] = unknown; } else { BuildQueueConfiguration = parsed; AdditionalData.Remove("buildQueueConfiguration"); } } },
                 { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },

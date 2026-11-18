@@ -48,6 +48,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("edgeFunctionMaxSizeBytes") is { } nullNodeEdgeFunctionMaxSizeBytes && nullNodeEdgeFunctionMaxSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeFunctionMaxSizeBytes = null;
             if (parseNode.GetChildNode("elasticConcurrencyEnabled") is null) { _explicitNullValueElasticConcurrencyEnabled = default!; _explicitNullProperties?.Remove("elasticConcurrencyEnabled"); }
             else if (parseNode.GetChildNode("elasticConcurrencyEnabled") is { } nullNodeElasticConcurrencyEnabled && nullNodeElasticConcurrencyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElasticConcurrencyEnabled = null;
+            if (parseNode.GetChildNode("enableMessageboardPrivateBoards") is null) { _explicitNullValueEnableMessageboardPrivateBoards = default!; _explicitNullProperties?.Remove("enableMessageboardPrivateBoards"); }
+            else if (parseNode.GetChildNode("enableMessageboardPrivateBoards") is { } nullNodeEnableMessageboardPrivateBoards && nullNodeEnableMessageboardPrivateBoards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableMessageboardPrivateBoards = null;
             if (parseNode.GetChildNode("flagsExplorerOverridesThreshold") is null) { _explicitNullValueFlagsExplorerOverridesThreshold = default!; _explicitNullProperties?.Remove("flagsExplorerOverridesThreshold"); }
             else if (parseNode.GetChildNode("flagsExplorerOverridesThreshold") is { } nullNodeFlagsExplorerOverridesThreshold && nullNodeFlagsExplorerOverridesThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagsExplorerOverridesThreshold = null;
             if (parseNode.GetChildNode("flagsExplorerUnlimitedOverrides") is null) { _explicitNullValueFlagsExplorerUnlimitedOverrides = default!; _explicitNullProperties?.Remove("flagsExplorerUnlimitedOverrides"); }
@@ -58,6 +60,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("integrationStores") is { } nullNodeIntegrationStores && nullNodeIntegrationStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationStores = null;
             if (parseNode.GetChildNode("kvDatabases") is null) { _explicitNullValueKvDatabases = default!; _explicitNullProperties?.Remove("kvDatabases"); }
             else if (parseNode.GetChildNode("kvDatabases") is { } nullNodeKvDatabases && nullNodeKvDatabases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KvDatabases = null;
+            if (parseNode.GetChildNode("messageboardBoards") is null) { _explicitNullValueMessageboardBoards = default!; _explicitNullProperties?.Remove("messageboardBoards"); }
+            else if (parseNode.GetChildNode("messageboardBoards") is { } nullNodeMessageboardBoards && nullNodeMessageboardBoards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageboardBoards = null;
             if (parseNode.GetChildNode("microfrontendGroupsPerTeam") is null) { _explicitNullValueMicrofrontendGroupsPerTeam = default!; _explicitNullProperties?.Remove("microfrontendGroupsPerTeam"); }
             else if (parseNode.GetChildNode("microfrontendGroupsPerTeam") is { } nullNodeMicrofrontendGroupsPerTeam && nullNodeMicrofrontendGroupsPerTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MicrofrontendGroupsPerTeam = null;
             if (parseNode.GetChildNode("microfrontendProjectsPerGroup") is null) { _explicitNullValueMicrofrontendProjectsPerGroup = default!; _explicitNullProperties?.Remove("microfrontendProjectsPerGroup"); }
@@ -157,6 +161,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? ElasticConcurrencyEnabled { get => _explicitNullValueElasticConcurrencyEnabled; set { _explicitNullValueElasticConcurrencyEnabled = value; AdditionalData?.Remove("elasticConcurrencyEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elasticConcurrencyEnabled"); else _explicitNullProperties?.Remove("elasticConcurrencyEnabled"); } }
         private bool? _explicitNullValueElasticConcurrencyEnabled = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
+        public bool? EnableMessageboardPrivateBoards { get => _explicitNullValueEnableMessageboardPrivateBoards; set { _explicitNullValueEnableMessageboardPrivateBoards = value; AdditionalData?.Remove("enableMessageboardPrivateBoards"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableMessageboardPrivateBoards"); else _explicitNullProperties?.Remove("enableMessageboardPrivateBoards"); } }
+        private bool? _explicitNullValueEnableMessageboardPrivateBoards = default!;
+        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
         public double? FlagsExplorerOverridesThreshold { get => _explicitNullValueFlagsExplorerOverridesThreshold; set { _explicitNullValueFlagsExplorerOverridesThreshold = value; AdditionalData?.Remove("flagsExplorerOverridesThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsExplorerOverridesThreshold"); else _explicitNullProperties?.Remove("flagsExplorerOverridesThreshold"); } }
         private double? _explicitNullValueFlagsExplorerOverridesThreshold = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
@@ -178,6 +185,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
         public double? KvDatabases { get => _explicitNullValueKvDatabases; set { _explicitNullValueKvDatabases = value; AdditionalData?.Remove("kvDatabases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kvDatabases"); else _explicitNullProperties?.Remove("kvDatabases"); } }
         private double? _explicitNullValueKvDatabases = default!;
+        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
+        public double? MessageboardBoards { get => _explicitNullValueMessageboardBoards; set { _explicitNullValueMessageboardBoards = value; AdditionalData?.Remove("messageboardBoards"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageboardBoards"); else _explicitNullProperties?.Remove("messageboardBoards"); } }
+        private double? _explicitNullValueMessageboardBoards = default!;
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
         public double? MicrofrontendGroupsPerTeam { get => _explicitNullValueMicrofrontendGroupsPerTeam; set { _explicitNullValueMicrofrontendGroupsPerTeam = value; AdditionalData?.Remove("microfrontendGroupsPerTeam"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microfrontendGroupsPerTeam"); else _explicitNullProperties?.Remove("microfrontendGroupsPerTeam"); } }
         private double? _explicitNullValueMicrofrontendGroupsPerTeam = default!;
@@ -236,7 +246,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(29)
             {
                 { "awsAccountIds", n => { AwsAccountIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "awsAccountType", n => { AwsAccountType = n.GetStringValue(); } },
@@ -253,11 +263,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "edgeFunctionExecutionTimeoutMs", n => { EdgeFunctionExecutionTimeoutMs = n.GetDoubleValue(); } },
                 { "edgeFunctionMaxSizeBytes", n => { EdgeFunctionMaxSizeBytes = n.GetDoubleValue(); } },
                 { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
+                { "enableMessageboardPrivateBoards", n => { EnableMessageboardPrivateBoards = n.GetBoolValue(); } },
                 { "flagsExplorerOverridesThreshold", n => { FlagsExplorerOverridesThreshold = n.GetDoubleValue(); } },
                 { "flagsExplorerUnlimitedOverrides", n => { FlagsExplorerUnlimitedOverrides = n.GetBoolValue(); } },
                 { "imageOptimizationType", n => { ImageOptimizationType = n.GetStringValue(); } },
                 { "integrationStores", n => { IntegrationStores = n.GetDoubleValue(); } },
                 { "kvDatabases", n => { KvDatabases = n.GetDoubleValue(); } },
+                { "messageboardBoards", n => { MessageboardBoards = n.GetDoubleValue(); } },
                 { "microfrontendGroupsPerTeam", n => { MicrofrontendGroupsPerTeam = n.GetDoubleValue(); } },
                 { "microfrontendProjectsPerGroup", n => { MicrofrontendProjectsPerGroup = n.GetDoubleValue(); } },
                 { "nodeType", n => { NodeType = n.GetStringValue(); } },
@@ -289,11 +301,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("edgeFunctionExecutionTimeoutMs", EdgeFunctionExecutionTimeoutMs);
             writer.WriteDoubleValue("edgeFunctionMaxSizeBytes", EdgeFunctionMaxSizeBytes);
             writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
+            writer.WriteBoolValue("enableMessageboardPrivateBoards", EnableMessageboardPrivateBoards);
             writer.WriteDoubleValue("flagsExplorerOverridesThreshold", FlagsExplorerOverridesThreshold);
             writer.WriteBoolValue("flagsExplorerUnlimitedOverrides", FlagsExplorerUnlimitedOverrides);
             writer.WriteStringValue("imageOptimizationType", ImageOptimizationType);
             writer.WriteDoubleValue("integrationStores", IntegrationStores);
             writer.WriteDoubleValue("kvDatabases", KvDatabases);
+            writer.WriteDoubleValue("messageboardBoards", MessageboardBoards);
             writer.WriteDoubleValue("microfrontendGroupsPerTeam", MicrofrontendGroupsPerTeam);
             writer.WriteDoubleValue("microfrontendProjectsPerGroup", MicrofrontendProjectsPerGroup);
             writer.WriteStringValue("nodeType", NodeType);

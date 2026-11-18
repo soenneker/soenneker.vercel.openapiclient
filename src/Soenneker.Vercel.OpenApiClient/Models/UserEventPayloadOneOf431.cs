@@ -238,7 +238,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(19)
             {
                 { "branchRef", n => { BranchRef = n.GetStringValue(); } },
                 { "closeReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf431CloseReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCloseReason = default; _explicitNullProperties?.Remove("closeReason"); AdditionalData["closeReason"] = unknown; } else { CloseReason = parsed; AdditionalData.Remove("closeReason"); } } },

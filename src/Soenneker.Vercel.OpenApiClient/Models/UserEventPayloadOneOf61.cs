@@ -153,7 +153,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61AccessGroup.CreateFromDiscriminatorValue); } },
                 { "entitlementsAdded", n => { EntitlementsAdded = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

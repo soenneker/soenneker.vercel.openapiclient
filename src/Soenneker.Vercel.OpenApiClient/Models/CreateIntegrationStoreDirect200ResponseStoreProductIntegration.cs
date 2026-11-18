@@ -121,7 +121,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilities>(global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilities.CreateFromDiscriminatorValue); } },
                 { "flags", n => { Flags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

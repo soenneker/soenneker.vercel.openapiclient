@@ -93,7 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324Next.CreateFromDiscriminatorValue); } },
                 { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324Previous.CreateFromDiscriminatorValue); } },

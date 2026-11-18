@@ -124,7 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "computedProjectRole", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2MembersItemComputedProjectRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueComputedProjectRole = default; _explicitNullProperties?.Remove("computedProjectRole"); AdditionalData["computedProjectRole"] = unknown; } else { ComputedProjectRole = parsed; AdditionalData.Remove("computedProjectRole"); } } },

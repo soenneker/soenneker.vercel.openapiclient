@@ -155,7 +155,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "dest", n => { Dest = n.GetStringValue(); } },
                 { "handle", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf1ItemSecurityFirewallRoutesItemHandle>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHandle = default; _explicitNullProperties?.Remove("handle"); AdditionalData["handle"] = unknown; } else { Handle = parsed; AdditionalData.Remove("handle"); } } },

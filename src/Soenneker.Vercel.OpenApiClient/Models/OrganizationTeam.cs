@@ -107,7 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "billingPlan", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationTeamBillingPlan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBillingPlan = default; _explicitNullProperties?.Remove("billingPlan"); AdditionalData["billingPlan"] = unknown; } else { BillingPlan = parsed; AdditionalData.Remove("billingPlan"); } } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },

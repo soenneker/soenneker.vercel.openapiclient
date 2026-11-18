@@ -107,7 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "affectedHostMap", n => { AffectedHostMap = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItemAffectedHostMap>(global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200ResponseOneOf2AnomaliesItemAffectedHostMap.CreateFromDiscriminatorValue); } },
                 { "atMinute", n => { AtMinute = n.GetDoubleValue(); } },
