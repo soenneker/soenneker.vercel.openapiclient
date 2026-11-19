@@ -20,16 +20,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("alertType") is null) { _explicitNullValueAlertType = default!; _explicitNullProperties?.Remove("alertType"); }
             else if (parseNode.GetChildNode("alertType") is { } nullNodeAlertType && nullNodeAlertType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertType = null;
-            if (parseNode.GetChildNode("destinations") is null) { _explicitNullValueDestinations = default!; _explicitNullProperties?.Remove("destinations"); }
-            else if (parseNode.GetChildNode("destinations") is { } nullNodeDestinations && nullNodeDestinations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destinations = null;
+            if (parseNode.GetChildNode("detectionCount") is null) { _explicitNullValueDetectionCount = default!; _explicitNullProperties?.Remove("detectionCount"); }
+            else if (parseNode.GetChildNode("detectionCount") is { } nullNodeDetectionCount && nullNodeDetectionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetectionCount = null;
+            if (parseNode.GetChildNode("detections") is null) { _explicitNullValueDetections = default!; _explicitNullProperties?.Remove("detections"); }
+            else if (parseNode.GetChildNode("detections") is { } nullNodeDetections && nullNodeDetections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detections = null;
             if (parseNode.GetChildNode("groupId") is null) { _explicitNullValueGroupId = default!; _explicitNullProperties?.Remove("groupId"); }
             else if (parseNode.GetChildNode("groupId") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("severity") is null) { _explicitNullValueSeverity = default!; _explicitNullProperties?.Remove("severity"); }
             else if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
-            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
-            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,15 +44,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string AlertType { get => _explicitNullValueAlertType; set { _explicitNullValueAlertType = value; AdditionalData?.Remove("alertType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertType"); else _explicitNullProperties?.Remove("alertType"); } }
         private string _explicitNullValueAlertType = default!;
 #endif
-        /// <summary>The destinations property</summary>
+        /// <summary>The detectionCount property</summary>
+        public double? DetectionCount { get => _explicitNullValueDetectionCount; set { _explicitNullValueDetectionCount = value; AdditionalData?.Remove("detectionCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detectionCount"); else _explicitNullProperties?.Remove("detectionCount"); } }
+        private double? _explicitNullValueDetectionCount = default!;
+        /// <summary>The detections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521Destinations? Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; AdditionalData?.Remove("destinations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521Destinations? _explicitNullValueDestinations = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521DetectionsItem>? Detections { get => _explicitNullValueDetections; set { _explicitNullValueDetections = value; AdditionalData?.Remove("detections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detections"); else _explicitNullProperties?.Remove("detections"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521DetectionsItem>? _explicitNullValueDetections = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521Destinations Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; AdditionalData?.Remove("destinations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521Destinations _explicitNullValueDestinations = default!;
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521DetectionsItem> Detections { get => _explicitNullValueDetections; set { _explicitNullValueDetections = value; AdditionalData?.Remove("detections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detections"); else _explicitNullProperties?.Remove("detections"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521DetectionsItem> _explicitNullValueDetections = default!;
 #endif
         /// <summary>The groupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,16 +87,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; AdditionalData?.Remove("severity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
         private string _explicitNullValueSeverity = default!;
 #endif
-        /// <summary>The title property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
-        private string? _explicitNullValueTitle = default!;
-#nullable restore
-#else
-        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
-        private string _explicitNullValueTitle = default!;
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521"/> and sets the default values.
         /// </summary>
@@ -120,11 +113,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "alertType", n => { AlertType = n.GetStringValue(); } },
-                { "destinations", n => { Destinations = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521Destinations>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521Destinations.CreateFromDiscriminatorValue); } },
+                { "detectionCount", n => { DetectionCount = n.GetDoubleValue(); } },
+                { "detections", n => { Detections = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521DetectionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521DetectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "groupId", n => { GroupId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "severity", n => { Severity = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -135,11 +128,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alertType", AlertType);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521Destinations>("destinations", Destinations);
+            writer.WriteDoubleValue("detectionCount", DetectionCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf521DetectionsItem>("detections", Detections);
             writer.WriteStringValue("groupId", GroupId);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("severity", Severity);
-            writer.WriteStringValue("title", Title);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

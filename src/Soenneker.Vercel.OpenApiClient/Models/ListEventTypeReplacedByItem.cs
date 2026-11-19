@@ -123,6 +123,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiAgentUsageBilling,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-agent-usage-billing-consent")]
+        #pragma warning disable CS1591
+        AiAgentUsageBillingConsent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-alert-investigation")]
         #pragma warning disable CS1591
         AiAlertInvestigation,
@@ -206,6 +210,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "ai-gateway-inference-hooks-endpoint-updated")]
         #pragma warning disable CS1591
         AiGatewayInferenceHooksEndpointUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-headers-cleared")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksHeadersCleared,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-headers-updated")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksHeadersUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-inference-hooks-removed")]
         #pragma warning disable CS1591
@@ -354,6 +366,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "ai-security-review")]
         #pragma warning disable CS1591
         AiSecurityReview,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-verification")]
+        #pragma warning disable CS1591
+        AiVerification,
         #pragma warning restore CS1591
         [EnumMember(Value = "alert-group-detected")]
         #pragma warning disable CS1591
@@ -2302,10 +2318,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-rolling-release-started")]
         #pragma warning disable CS1591
         ProjectRollingReleaseStarted,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "project-rolling-release-suggested-actions-generated")]
-        #pragma warning disable CS1591
-        ProjectRollingReleaseSuggestedActionsGenerated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-rolling-release-timer")]
         #pragma warning disable CS1591

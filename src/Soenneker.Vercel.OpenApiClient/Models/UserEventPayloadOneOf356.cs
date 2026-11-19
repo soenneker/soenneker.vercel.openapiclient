@@ -18,16 +18,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("oldOptionsAllowlist") is null) { _explicitNullValueOldOptionsAllowlist = default!; _explicitNullProperties?.Remove("oldOptionsAllowlist"); }
+            else if (parseNode.GetChildNode("oldOptionsAllowlist") is { } nullNodeOldOptionsAllowlist && nullNodeOldOptionsAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldOptionsAllowlist = null;
+            if (parseNode.GetChildNode("optionsAllowlist") is null) { _explicitNullValueOptionsAllowlist = default!; _explicitNullProperties?.Remove("optionsAllowlist"); }
+            else if (parseNode.GetChildNode("optionsAllowlist") is { } nullNodeOptionsAllowlist && nullNodeOptionsAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsAllowlist = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("removeVercelRequestHeaders") is null) { _explicitNullValueRemoveVercelRequestHeaders = default!; _explicitNullProperties?.Remove("removeVercelRequestHeaders"); }
-            else if (parseNode.GetChildNode("removeVercelRequestHeaders") is { } nullNodeRemoveVercelRequestHeaders && nullNodeRemoveVercelRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveVercelRequestHeaders = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The oldOptionsAllowlist property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OldOptionsAllowlist? OldOptionsAllowlist { get => _explicitNullValueOldOptionsAllowlist; set { _explicitNullValueOldOptionsAllowlist = value; AdditionalData?.Remove("oldOptionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldOptionsAllowlist"); else _explicitNullProperties?.Remove("oldOptionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OldOptionsAllowlist? _explicitNullValueOldOptionsAllowlist = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OldOptionsAllowlist OldOptionsAllowlist { get => _explicitNullValueOldOptionsAllowlist; set { _explicitNullValueOldOptionsAllowlist = value; AdditionalData?.Remove("oldOptionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldOptionsAllowlist"); else _explicitNullProperties?.Remove("oldOptionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OldOptionsAllowlist _explicitNullValueOldOptionsAllowlist = default!;
+#endif
+        /// <summary>The optionsAllowlist property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OptionsAllowlist? OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; AdditionalData?.Remove("optionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OptionsAllowlist? _explicitNullValueOptionsAllowlist = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OptionsAllowlist OptionsAllowlist { get => _explicitNullValueOptionsAllowlist; set { _explicitNullValueOptionsAllowlist = value; AdditionalData?.Remove("optionsAllowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsAllowlist"); else _explicitNullProperties?.Remove("optionsAllowlist"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OptionsAllowlist _explicitNullValueOptionsAllowlist = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,9 +70,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
         private string _explicitNullValueProjectName = default!;
 #endif
-        /// <summary>The removeVercelRequestHeaders property</summary>
-        public bool? RemoveVercelRequestHeaders { get => _explicitNullValueRemoveVercelRequestHeaders; set { _explicitNullValueRemoveVercelRequestHeaders = value; AdditionalData?.Remove("removeVercelRequestHeaders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeVercelRequestHeaders"); else _explicitNullProperties?.Remove("removeVercelRequestHeaders"); } }
-        private bool? _explicitNullValueRemoveVercelRequestHeaders = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356"/> and sets the default values.
         /// </summary>
@@ -74,11 +93,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
+                { "oldOptionsAllowlist", n => { OldOptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OldOptionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OldOptionsAllowlist.CreateFromDiscriminatorValue); } },
+                { "optionsAllowlist", n => { OptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OptionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OptionsAllowlist.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "removeVercelRequestHeaders", n => { RemoveVercelRequestHeaders = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -88,9 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OldOptionsAllowlist>("oldOptionsAllowlist", OldOptionsAllowlist);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356OptionsAllowlist>("optionsAllowlist", OptionsAllowlist);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("removeVercelRequestHeaders", RemoveVercelRequestHeaders);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

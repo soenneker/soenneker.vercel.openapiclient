@@ -18,8 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("previewDeploymentsEnabled") is null) { _explicitNullValuePreviewDeploymentsEnabled = default!; _explicitNullProperties?.Remove("previewDeploymentsEnabled"); }
-            else if (parseNode.GetChildNode("previewDeploymentsEnabled") is { } nullNodePreviewDeploymentsEnabled && nullNodePreviewDeploymentsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewDeploymentsEnabled = null;
+            if (parseNode.GetChildNode("autoAssignCustomDomains") is null) { _explicitNullValueAutoAssignCustomDomains = default!; _explicitNullProperties?.Remove("autoAssignCustomDomains"); }
+            else if (parseNode.GetChildNode("autoAssignCustomDomains") is { } nullNodeAutoAssignCustomDomains && nullNodeAutoAssignCustomDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAssignCustomDomains = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
             if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
@@ -28,9 +28,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previewDeploymentsEnabled property</summary>
-        public bool? PreviewDeploymentsEnabled { get => _explicitNullValuePreviewDeploymentsEnabled; set { _explicitNullValuePreviewDeploymentsEnabled = value; AdditionalData?.Remove("previewDeploymentsEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewDeploymentsEnabled"); else _explicitNullProperties?.Remove("previewDeploymentsEnabled"); } }
-        private bool? _explicitNullValuePreviewDeploymentsEnabled = default!;
+        /// <summary>The autoAssignCustomDomains property</summary>
+        public bool? AutoAssignCustomDomains { get => _explicitNullValueAutoAssignCustomDomains; set { _explicitNullValueAutoAssignCustomDomains = value; AdditionalData?.Remove("autoAssignCustomDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignCustomDomains"); else _explicitNullProperties?.Remove("autoAssignCustomDomains"); } }
+        private bool? _explicitNullValueAutoAssignCustomDomains = default!;
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "previewDeploymentsEnabled", n => { PreviewDeploymentsEnabled = n.GetBoolValue(); } },
+                { "autoAssignCustomDomains", n => { AutoAssignCustomDomains = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -88,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("previewDeploymentsEnabled", PreviewDeploymentsEnabled);
+            writer.WriteBoolValue("autoAssignCustomDomains", AutoAssignCustomDomains);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

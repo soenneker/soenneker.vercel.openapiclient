@@ -348,6 +348,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayBudgetUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity.script.detected")]
+        #pragma warning disable CS1591
+        PageIntegrityScriptDetected,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity.script.changed")]
+        #pragma warning disable CS1591
+        PageIntegrityScriptChanged,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity.connect-src.detected")]
+        #pragma warning disable CS1591
+        PageIntegrityConnectSrcDetected,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity.header.changed")]
+        #pragma warning disable CS1591
+        PageIntegrityHeaderChanged,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity.runtime-warning.detected")]
+        #pragma warning disable CS1591
+        PageIntegrityRuntimeWarningDetected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "observability.anomaly")]
         #pragma warning disable CS1591
         ObservabilityAnomaly,

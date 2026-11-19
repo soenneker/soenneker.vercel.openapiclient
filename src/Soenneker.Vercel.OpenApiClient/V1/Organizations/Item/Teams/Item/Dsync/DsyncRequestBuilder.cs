@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams.Item.Dsync
         {
         }
         /// <summary>
-        /// Select whether one Organization team&apos;s memberships are governed by the Organization&apos;s Directory Sync or by the team&apos;s own directory. The team&apos;s own directory connection is kept either way.
+        /// Select whether one Organization team&apos;s memberships are governed by the Organization&apos;s Directory Sync or by the team&apos;s own directory. The team&apos;s own directory connection is kept either way. The root team can follow the Organization&apos;s Directory Sync only when no group grants OrgAdmin or at least one OrgAdmin group also grants the Owner role on it.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsync200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams.Item.Dsync
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsync200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsync200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Select whether one Organization team&apos;s memberships are governed by the Organization&apos;s Directory Sync or by the team&apos;s own directory. The team&apos;s own directory connection is kept either way.
+        /// Select whether one Organization team&apos;s memberships are governed by the Organization&apos;s Directory Sync or by the team&apos;s own directory. The team&apos;s own directory connection is kept either way. The root team can follow the Organization&apos;s Directory Sync only when no group grants OrgAdmin or at least one OrgAdmin group also grants the Owner role on it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams.Item.Dsync
             return new global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Teams.Item.Dsync.DsyncRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Select whether one Organization team&apos;s memberships are governed by the Organization&apos;s Directory Sync or by the team&apos;s own directory. The team&apos;s own directory connection is kept either way.
+        /// Select whether one Organization team&apos;s memberships are governed by the Organization&apos;s Directory Sync or by the team&apos;s own directory. The team&apos;s own directory connection is kept either way. The root team can follow the Organization&apos;s Directory Sync only when no group grants OrgAdmin or at least one OrgAdmin group also grants the Owner role on it.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DsyncRequestBuilderPutQueryParameters 

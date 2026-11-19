@@ -20,8 +20,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("perimeter") is null) { _explicitNullValuePerimeter = default!; _explicitNullProperties?.Remove("perimeter"); }
             else if (parseNode.GetChildNode("perimeter") is { } nullNodePerimeter && nullNodePerimeter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Perimeter = null;
-            if (parseNode.GetChildNode("sourceVersion") is null) { _explicitNullValueSourceVersion = default!; _explicitNullProperties?.Remove("sourceVersion"); }
-            else if (parseNode.GetChildNode("sourceVersion") is { } nullNodeSourceVersion && nullNodeSourceVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,9 +34,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter Perimeter { get => _explicitNullValuePerimeter; set { _explicitNullValuePerimeter = value; AdditionalData?.Remove("perimeter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perimeter"); else _explicitNullProperties?.Remove("perimeter"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter _explicitNullValuePerimeter = default!;
 #endif
-        /// <summary>The sourceVersion property</summary>
-        public double? SourceVersion { get => _explicitNullValueSourceVersion; set { _explicitNullValueSourceVersion = value; AdditionalData?.Remove("sourceVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceVersion"); else _explicitNullProperties?.Remove("sourceVersion"); } }
-        private double? _explicitNullValueSourceVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280"/> and sets the default values.
         /// </summary>
@@ -65,7 +60,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "perimeter", n => { Perimeter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter.CreateFromDiscriminatorValue); } },
-                { "sourceVersion", n => { SourceVersion = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -76,7 +70,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280Perimeter>("perimeter", Perimeter);
-            writer.WriteDoubleValue("sourceVersion", SourceVersion);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

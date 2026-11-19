@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -211,7 +211,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
 #endif
         }
         /// <summary>
-        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithGroupItemRequestBuilderPutQueryParameters 

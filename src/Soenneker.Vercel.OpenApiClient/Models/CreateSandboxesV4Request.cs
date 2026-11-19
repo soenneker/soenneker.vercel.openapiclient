@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
         }
 
-        /// <summary>CPU architecture. Inherits a snapshot or single image manifest when omitted. Image indexes default to amd64. Must match the source. ARM64 creation requires API v3 or v4 without runtime and team access.</summary>
+        /// <summary>The architecture property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestArchitecture? Architecture { get => _explicitNullValueArchitecture; set { _explicitNullValueArchitecture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("architecture"); else _explicitNullProperties?.Remove("architecture"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestArchitecture? _explicitNullValueArchitecture = default!;
         /// <summary>Default environment variables for the sandbox. These are inherited by all commands unless overridden.</summary>
