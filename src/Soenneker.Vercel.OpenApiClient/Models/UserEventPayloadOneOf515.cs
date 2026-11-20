@@ -24,8 +24,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
             if (parseNode.GetChildNode("repositoryName") is null) { _explicitNullValueRepositoryName = default!; _explicitNullProperties?.Remove("repositoryName"); }
             else if (parseNode.GetChildNode("repositoryName") is { } nullNodeRepositoryName && nullNodeRepositoryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryName = null;
-            if (parseNode.GetChildNode("sharedWithTeamId") is null) { _explicitNullValueSharedWithTeamId = default!; _explicitNullProperties?.Remove("sharedWithTeamId"); }
-            else if (parseNode.GetChildNode("sharedWithTeamId") is { } nullNodeSharedWithTeamId && nullNodeSharedWithTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedWithTeamId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -60,16 +58,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string RepositoryName { get => _explicitNullValueRepositoryName; set { _explicitNullValueRepositoryName = value; AdditionalData?.Remove("repositoryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryName"); else _explicitNullProperties?.Remove("repositoryName"); } }
         private string _explicitNullValueRepositoryName = default!;
 #endif
-        /// <summary>The sharedWithTeamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SharedWithTeamId { get => _explicitNullValueSharedWithTeamId; set { _explicitNullValueSharedWithTeamId = value; AdditionalData?.Remove("sharedWithTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedWithTeamId"); else _explicitNullProperties?.Remove("sharedWithTeamId"); } }
-        private string? _explicitNullValueSharedWithTeamId = default!;
-#nullable restore
-#else
-        public string SharedWithTeamId { get => _explicitNullValueSharedWithTeamId; set { _explicitNullValueSharedWithTeamId = value; AdditionalData?.Remove("sharedWithTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedWithTeamId"); else _explicitNullProperties?.Remove("sharedWithTeamId"); } }
-        private string _explicitNullValueSharedWithTeamId = default!;
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf515"/> and sets the default values.
         /// </summary>
@@ -93,12 +81,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(4)
+            return new Dictionary<string, Action<IParseNode>>
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
-                { "sharedWithTeamId", n => { SharedWithTeamId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,7 +98,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("repositoryName", RepositoryName);
-            writer.WriteStringValue("sharedWithTeamId", SharedWithTeamId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

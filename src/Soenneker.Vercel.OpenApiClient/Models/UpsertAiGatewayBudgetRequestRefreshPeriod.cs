@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum UpsertAiGatewayBudgetRequestRefreshPeriod
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "daily")]
         #pragma warning disable CS1591

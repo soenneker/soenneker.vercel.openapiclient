@@ -467,6 +467,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectRollingReleaseStarted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox.session.expiring")]
+        #pragma warning disable CS1591
+        SandboxSessionExpiring,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox.session.started")]
+        #pragma warning disable CS1591
+        SandboxSessionStarted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox.session.stopped")]
+        #pragma warning disable CS1591
+        SandboxSessionStopped,
+        #pragma warning restore CS1591
         [EnumMember(Value = "test-webhook")]
         #pragma warning disable CS1591
         TestWebhook,

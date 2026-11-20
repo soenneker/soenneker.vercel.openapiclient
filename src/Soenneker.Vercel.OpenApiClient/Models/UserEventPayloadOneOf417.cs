@@ -18,45 +18,93 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destinationTeamId") is null) { _explicitNullValueDestinationTeamId = default!; _explicitNullProperties?.Remove("destinationTeamId"); }
-            else if (parseNode.GetChildNode("destinationTeamId") is { } nullNodeDestinationTeamId && nullNodeDestinationTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationTeamId = null;
-            if (parseNode.GetChildNode("destinationTeamName") is null) { _explicitNullValueDestinationTeamName = default!; _explicitNullProperties?.Remove("destinationTeamName"); }
-            else if (parseNode.GetChildNode("destinationTeamName") is { } nullNodeDestinationTeamName && nullNodeDestinationTeamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationTeamName = null;
-            if (parseNode.GetChildNode("store") is null) { _explicitNullValueStore = default!; _explicitNullProperties?.Remove("store"); }
-            else if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
+            if (parseNode.GetChildNode("budget") is null) { _explicitNullValueBudget = default!; _explicitNullProperties?.Remove("budget"); }
+            else if (parseNode.GetChildNode("budget") is { } nullNodeBudget && nullNodeBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budget = null;
+            if (parseNode.GetChildNode("prevBudget") is null) { _explicitNullValuePrevBudget = default!; _explicitNullProperties?.Remove("prevBudget"); }
+            else if (parseNode.GetChildNode("prevBudget") is { } nullNodePrevBudget && nullNodePrevBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevBudget = null;
+            if (parseNode.GetChildNode("prevWebhookUrl") is null) { _explicitNullValuePrevWebhookUrl = default!; _explicitNullProperties?.Remove("prevWebhookUrl"); }
+            else if (parseNode.GetChildNode("prevWebhookUrl") is { } nullNodePrevWebhookUrl && nullNodePrevWebhookUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevWebhookUrl = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
+            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("scopeName") is null) { _explicitNullValueScopeName = default!; _explicitNullProperties?.Remove("scopeName"); }
+            else if (parseNode.GetChildNode("scopeName") is { } nullNodeScopeName && nullNodeScopeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeName = null;
+            if (parseNode.GetChildNode("webhookUrl") is null) { _explicitNullValueWebhookUrl = default!; _explicitNullProperties?.Remove("webhookUrl"); }
+            else if (parseNode.GetChildNode("webhookUrl") is { } nullNodeWebhookUrl && nullNodeWebhookUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destinationTeamId property</summary>
+        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationTeamId { get => _explicitNullValueDestinationTeamId; set { _explicitNullValueDestinationTeamId = value; AdditionalData?.Remove("destinationTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamId"); else _explicitNullProperties?.Remove("destinationTeamId"); } }
-        private string? _explicitNullValueDestinationTeamId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Budget? Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; AdditionalData?.Remove("budget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Budget? _explicitNullValueBudget = default!;
 #nullable restore
 #else
-        public string DestinationTeamId { get => _explicitNullValueDestinationTeamId; set { _explicitNullValueDestinationTeamId = value; AdditionalData?.Remove("destinationTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamId"); else _explicitNullProperties?.Remove("destinationTeamId"); } }
-        private string _explicitNullValueDestinationTeamId = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Budget Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; AdditionalData?.Remove("budget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Budget _explicitNullValueBudget = default!;
 #endif
-        /// <summary>The destinationTeamName property</summary>
+        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationTeamName { get => _explicitNullValueDestinationTeamName; set { _explicitNullValueDestinationTeamName = value; AdditionalData?.Remove("destinationTeamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamName"); else _explicitNullProperties?.Remove("destinationTeamName"); } }
-        private string? _explicitNullValueDestinationTeamName = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417PrevBudget? PrevBudget { get => _explicitNullValuePrevBudget; set { _explicitNullValuePrevBudget = value; AdditionalData?.Remove("prevBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevBudget"); else _explicitNullProperties?.Remove("prevBudget"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417PrevBudget? _explicitNullValuePrevBudget = default!;
 #nullable restore
 #else
-        public string DestinationTeamName { get => _explicitNullValueDestinationTeamName; set { _explicitNullValueDestinationTeamName = value; AdditionalData?.Remove("destinationTeamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationTeamName"); else _explicitNullProperties?.Remove("destinationTeamName"); } }
-        private string _explicitNullValueDestinationTeamName = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417PrevBudget PrevBudget { get => _explicitNullValuePrevBudget; set { _explicitNullValuePrevBudget = value; AdditionalData?.Remove("prevBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevBudget"); else _explicitNullProperties?.Remove("prevBudget"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417PrevBudget _explicitNullValuePrevBudget = default!;
 #endif
-        /// <summary>The store property</summary>
+        /// <summary>The prevWebhookUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Store? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Store? _explicitNullValueStore = default!;
+        public string? PrevWebhookUrl { get => _explicitNullValuePrevWebhookUrl; set { _explicitNullValuePrevWebhookUrl = value; AdditionalData?.Remove("prevWebhookUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevWebhookUrl"); else _explicitNullProperties?.Remove("prevWebhookUrl"); } }
+        private string? _explicitNullValuePrevWebhookUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Store Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Store _explicitNullValueStore = default!;
+        public string PrevWebhookUrl { get => _explicitNullValuePrevWebhookUrl; set { _explicitNullValuePrevWebhookUrl = value; AdditionalData?.Remove("prevWebhookUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevWebhookUrl"); else _explicitNullProperties?.Remove("prevWebhookUrl"); } }
+        private string _explicitNullValuePrevWebhookUrl = default!;
+#endif
+        /// <summary>Stored for project budgets. Same value as `budget.scopeId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
+#nullable restore
+#else
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
+#endif
+        /// <summary>Injected at read time from `payload.projectId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string? _explicitNullValueProjectName = default!;
+#nullable restore
+#else
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string _explicitNullValueProjectName = default!;
+#endif
+        /// <summary>Stored when activity clients can&apos;t resolve the name, as for products.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScopeName { get => _explicitNullValueScopeName; set { _explicitNullValueScopeName = value; AdditionalData?.Remove("scopeName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeName"); else _explicitNullProperties?.Remove("scopeName"); } }
+        private string? _explicitNullValueScopeName = default!;
+#nullable restore
+#else
+        public string ScopeName { get => _explicitNullValueScopeName; set { _explicitNullValueScopeName = value; AdditionalData?.Remove("scopeName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeName"); else _explicitNullProperties?.Remove("scopeName"); } }
+        private string _explicitNullValueScopeName = default!;
+#endif
+        /// <summary>The webhookUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebhookUrl { get => _explicitNullValueWebhookUrl; set { _explicitNullValueWebhookUrl = value; AdditionalData?.Remove("webhookUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookUrl"); else _explicitNullProperties?.Remove("webhookUrl"); } }
+        private string? _explicitNullValueWebhookUrl = default!;
+#nullable restore
+#else
+        public string WebhookUrl { get => _explicitNullValueWebhookUrl; set { _explicitNullValueWebhookUrl = value; AdditionalData?.Remove("webhookUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookUrl"); else _explicitNullProperties?.Remove("webhookUrl"); } }
+        private string _explicitNullValueWebhookUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417"/> and sets the default values.
@@ -81,11 +129,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
-                { "destinationTeamId", n => { DestinationTeamId = n.GetStringValue(); } },
-                { "destinationTeamName", n => { DestinationTeamName = n.GetStringValue(); } },
-                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Store.CreateFromDiscriminatorValue); } },
+                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Budget.CreateFromDiscriminatorValue); } },
+                { "prevBudget", n => { PrevBudget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417PrevBudget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417PrevBudget.CreateFromDiscriminatorValue); } },
+                { "prevWebhookUrl", n => { PrevWebhookUrl = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "scopeName", n => { ScopeName = n.GetStringValue(); } },
+                { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -95,9 +147,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destinationTeamId", DestinationTeamId);
-            writer.WriteStringValue("destinationTeamName", DestinationTeamName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Store>("store", Store);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Budget>("budget", Budget);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417PrevBudget>("prevBudget", PrevBudget);
+            writer.WriteStringValue("prevWebhookUrl", PrevWebhookUrl);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("scopeName", ScopeName);
+            writer.WriteStringValue("webhookUrl", WebhookUrl);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

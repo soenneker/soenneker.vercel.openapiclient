@@ -21,6 +21,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
             if (parseNode.GetChildNode("includeByokInQuota") is null) { _explicitNullValueIncludeByokInQuota = default!; _explicitNullProperties?.Remove("includeByokInQuota"); }
             else if (parseNode.GetChildNode("includeByokInQuota") is { } nullNodeIncludeByokInQuota && nullNodeIncludeByokInQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeByokInQuota = null;
+            if (parseNode.GetChildNode("increaseBy") is null) { _explicitNullValueIncreaseBy = default!; _explicitNullProperties?.Remove("increaseBy"); }
+            else if (parseNode.GetChildNode("increaseBy") is { } nullNodeIncreaseBy && nullNodeIncreaseBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncreaseBy = null;
             if (parseNode.GetChildNode("justification") is null) { _explicitNullValueJustification = default!; _explicitNullProperties?.Remove("justification"); }
             else if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
             if (parseNode.GetChildNode("limitAmount") is null) { _explicitNullValueLimitAmount = default!; _explicitNullProperties?.Remove("limitAmount"); }
@@ -48,6 +50,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether BYOK usage counts toward this budget.</summary>
         public bool? IncludeByokInQuota { get => _explicitNullValueIncludeByokInQuota; set { _explicitNullValueIncludeByokInQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeByokInQuota"); else _explicitNullProperties?.Remove("includeByokInQuota"); } }
         private bool? _explicitNullValueIncludeByokInQuota = default!;
+        /// <summary>Dollars to add to the current budget, or to the scope&apos;s default when it has no budget of its own. Provide this or `limitAmount`, not both. Keeps the current refresh period and BYOK setting unless they are given.</summary>
+        public double? IncreaseBy { get => _explicitNullValueIncreaseBy; set { _explicitNullValueIncreaseBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("increaseBy"); else _explicitNullProperties?.Remove("increaseBy"); } }
+        private double? _explicitNullValueIncreaseBy = default!;
         /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
         private string _explicitNullValueJustification = default!;
 #endif
-        /// <summary>Budget limit in dollars.</summary>
+        /// <summary>Budget limit in dollars. Provide this or `increaseBy`, not both.</summary>
         public double? LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
         private double? _explicitNullValueLimitAmount = default!;
         /// <summary>Required when scopeType is \&quot;project\&quot;.</summary>
@@ -71,7 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The refreshPeriod property</summary>
+        /// <summary>Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetRequestRefreshPeriod? RefreshPeriod { get => _explicitNullValueRefreshPeriod; set { _explicitNullValueRefreshPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshPeriod"); else _explicitNullProperties?.Remove("refreshPeriod"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetRequestRefreshPeriod? _explicitNullValueRefreshPeriod = default!;
         /// <summary>The scopeType property</summary>
@@ -103,10 +108,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(8)
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "includeByokInQuota", n => { IncludeByokInQuota = n.GetBoolValue(); } },
+                { "increaseBy", n => { IncreaseBy = n.GetDoubleValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -124,6 +130,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("alertThresholds", AlertThresholds);
             writer.WriteBoolValue("includeByokInQuota", IncludeByokInQuota);
+            writer.WriteDoubleValue("increaseBy", IncreaseBy);
             writer.WriteStringValue("justification", Justification);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteStringValue("projectId", ProjectId);

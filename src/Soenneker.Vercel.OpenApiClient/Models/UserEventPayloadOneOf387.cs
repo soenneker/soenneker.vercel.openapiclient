@@ -18,55 +18,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attributeMappingChanged") is null) { _explicitNullValueAttributeMappingChanged = default!; _explicitNullProperties?.Remove("attributeMappingChanged"); }
-            else if (parseNode.GetChildNode("attributeMappingChanged") is { } nullNodeAttributeMappingChanged && nullNodeAttributeMappingChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeMappingChanged = null;
-            if (parseNode.GetChildNode("certificateFingerprints") is null) { _explicitNullValueCertificateFingerprints = default!; _explicitNullProperties?.Remove("certificateFingerprints"); }
-            else if (parseNode.GetChildNode("certificateFingerprints") is { } nullNodeCertificateFingerprints && nullNodeCertificateFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateFingerprints = null;
-            if (parseNode.GetChildNode("connectionId") is null) { _explicitNullValueConnectionId = default!; _explicitNullProperties?.Remove("connectionId"); }
-            else if (parseNode.GetChildNode("connectionId") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
-            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
-            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
-            if (parseNode.GetChildNode("previousCertificateFingerprints") is null) { _explicitNullValuePreviousCertificateFingerprints = default!; _explicitNullProperties?.Remove("previousCertificateFingerprints"); }
-            else if (parseNode.GetChildNode("previousCertificateFingerprints") is { } nullNodePreviousCertificateFingerprints && nullNodePreviousCertificateFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousCertificateFingerprints = null;
+            if (parseNode.GetChildNode("gitProvider") is null) { _explicitNullValueGitProvider = default!; _explicitNullProperties?.Remove("gitProvider"); }
+            else if (parseNode.GetChildNode("gitProvider") is { } nullNodeGitProvider && nullNodeGitProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitProvider = null;
+            if (parseNode.GetChildNode("gitProviderGroupDescriptor") is null) { _explicitNullValueGitProviderGroupDescriptor = default!; _explicitNullProperties?.Remove("gitProviderGroupDescriptor"); }
+            else if (parseNode.GetChildNode("gitProviderGroupDescriptor") is { } nullNodeGitProviderGroupDescriptor && nullNodeGitProviderGroupDescriptor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitProviderGroupDescriptor = null;
+            if (parseNode.GetChildNode("gitScope") is null) { _explicitNullValueGitScope = default!; _explicitNullProperties?.Remove("gitScope"); }
+            else if (parseNode.GetChildNode("gitScope") is { } nullNodeGitScope && nullNodeGitScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitScope = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attributeMappingChanged property</summary>
-        public bool? AttributeMappingChanged { get => _explicitNullValueAttributeMappingChanged; set { _explicitNullValueAttributeMappingChanged = value; AdditionalData?.Remove("attributeMappingChanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeMappingChanged"); else _explicitNullProperties?.Remove("attributeMappingChanged"); } }
-        private bool? _explicitNullValueAttributeMappingChanged = default!;
-        /// <summary>The certificateFingerprints property</summary>
+        /// <summary>The gitProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CertificateFingerprints { get => _explicitNullValueCertificateFingerprints; set { _explicitNullValueCertificateFingerprints = value; AdditionalData?.Remove("certificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateFingerprints"); else _explicitNullProperties?.Remove("certificateFingerprints"); } }
-        private List<string>? _explicitNullValueCertificateFingerprints = default!;
+        public string? GitProvider { get => _explicitNullValueGitProvider; set { _explicitNullValueGitProvider = value; AdditionalData?.Remove("gitProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProvider"); else _explicitNullProperties?.Remove("gitProvider"); } }
+        private string? _explicitNullValueGitProvider = default!;
 #nullable restore
 #else
-        public List<string> CertificateFingerprints { get => _explicitNullValueCertificateFingerprints; set { _explicitNullValueCertificateFingerprints = value; AdditionalData?.Remove("certificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateFingerprints"); else _explicitNullProperties?.Remove("certificateFingerprints"); } }
-        private List<string> _explicitNullValueCertificateFingerprints = default!;
+        public string GitProvider { get => _explicitNullValueGitProvider; set { _explicitNullValueGitProvider = value; AdditionalData?.Remove("gitProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProvider"); else _explicitNullProperties?.Remove("gitProvider"); } }
+        private string _explicitNullValueGitProvider = default!;
 #endif
-        /// <summary>The connectionId property</summary>
+        /// <summary>The gitProviderGroupDescriptor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connectionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionId"); else _explicitNullProperties?.Remove("connectionId"); } }
-        private string? _explicitNullValueConnectionId = default!;
+        public string? GitProviderGroupDescriptor { get => _explicitNullValueGitProviderGroupDescriptor; set { _explicitNullValueGitProviderGroupDescriptor = value; AdditionalData?.Remove("gitProviderGroupDescriptor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProviderGroupDescriptor"); else _explicitNullProperties?.Remove("gitProviderGroupDescriptor"); } }
+        private string? _explicitNullValueGitProviderGroupDescriptor = default!;
 #nullable restore
 #else
-        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connectionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionId"); else _explicitNullProperties?.Remove("connectionId"); } }
-        private string _explicitNullValueConnectionId = default!;
+        public string GitProviderGroupDescriptor { get => _explicitNullValueGitProviderGroupDescriptor; set { _explicitNullValueGitProviderGroupDescriptor = value; AdditionalData?.Remove("gitProviderGroupDescriptor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitProviderGroupDescriptor"); else _explicitNullProperties?.Remove("gitProviderGroupDescriptor"); } }
+        private string _explicitNullValueGitProviderGroupDescriptor = default!;
 #endif
-        /// <summary>The created property</summary>
-        public bool? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
-        private bool? _explicitNullValueCreated = default!;
-        /// <summary>The previousCertificateFingerprints property</summary>
+        /// <summary>The gitScope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreviousCertificateFingerprints { get => _explicitNullValuePreviousCertificateFingerprints; set { _explicitNullValuePreviousCertificateFingerprints = value; AdditionalData?.Remove("previousCertificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCertificateFingerprints"); else _explicitNullProperties?.Remove("previousCertificateFingerprints"); } }
-        private List<string>? _explicitNullValuePreviousCertificateFingerprints = default!;
+        public string? GitScope { get => _explicitNullValueGitScope; set { _explicitNullValueGitScope = value; AdditionalData?.Remove("gitScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitScope"); else _explicitNullProperties?.Remove("gitScope"); } }
+        private string? _explicitNullValueGitScope = default!;
 #nullable restore
 #else
-        public List<string> PreviousCertificateFingerprints { get => _explicitNullValuePreviousCertificateFingerprints; set { _explicitNullValuePreviousCertificateFingerprints = value; AdditionalData?.Remove("previousCertificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCertificateFingerprints"); else _explicitNullProperties?.Remove("previousCertificateFingerprints"); } }
-        private List<string> _explicitNullValuePreviousCertificateFingerprints = default!;
+        public string GitScope { get => _explicitNullValueGitScope; set { _explicitNullValueGitScope = value; AdditionalData?.Remove("gitScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitScope"); else _explicitNullProperties?.Remove("gitScope"); } }
+        private string _explicitNullValueGitScope = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf387"/> and sets the default values.
@@ -91,13 +81,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributeMappingChanged", n => { AttributeMappingChanged = n.GetBoolValue(); } },
-                { "certificateFingerprints", n => { CertificateFingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetBoolValue(); } },
-                { "previousCertificateFingerprints", n => { PreviousCertificateFingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "gitProvider", n => { GitProvider = n.GetStringValue(); } },
+                { "gitProviderGroupDescriptor", n => { GitProviderGroupDescriptor = n.GetStringValue(); } },
+                { "gitScope", n => { GitScope = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,11 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("attributeMappingChanged", AttributeMappingChanged);
-            writer.WriteCollectionOfPrimitiveValues<string>("certificateFingerprints", CertificateFingerprints);
-            writer.WriteStringValue("connectionId", ConnectionId);
-            writer.WriteBoolValue("created", Created);
-            writer.WriteCollectionOfPrimitiveValues<string>("previousCertificateFingerprints", PreviousCertificateFingerprints);
+            writer.WriteStringValue("gitProvider", GitProvider);
+            writer.WriteStringValue("gitProviderGroupDescriptor", GitProviderGroupDescriptor);
+            writer.WriteStringValue("gitScope", GitScope);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

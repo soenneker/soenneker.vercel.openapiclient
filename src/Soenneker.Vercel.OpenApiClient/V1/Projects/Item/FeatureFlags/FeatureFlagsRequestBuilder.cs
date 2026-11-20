@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Connections;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Labels;
+using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Overrides;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Settings;
@@ -34,6 +35,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Labels.LabelsRequestBuilder Labels
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The overrides property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Overrides.OverridesRequestBuilder Overrides
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Overrides.OverridesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sdkKeys property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder SdkKeys

@@ -38,6 +38,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("repoPath") is { } nullNodeRepoPath && nullNodeRepoPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoPath = null;
             if (parseNode.GetChildNode("ssoConnectedAt") is null) { _explicitNullValueSsoConnectedAt = default!; _explicitNullProperties?.Remove("ssoConnectedAt"); }
             else if (parseNode.GetChildNode("ssoConnectedAt") is { } nullNodeSsoConnectedAt && nullNodeSsoConnectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoConnectedAt = null;
+            if (parseNode.GetChildNode("ssoIdFingerprint") is null) { _explicitNullValueSsoIdFingerprint = default!; _explicitNullProperties?.Remove("ssoIdFingerprint"); }
+            else if (parseNode.GetChildNode("ssoIdFingerprint") is { } nullNodeSsoIdFingerprint && nullNodeSsoIdFingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoIdFingerprint = null;
             if (parseNode.GetChildNode("ssoUserId") is null) { _explicitNullValueSsoUserId = default!; _explicitNullProperties?.Remove("ssoUserId"); }
             else if (parseNode.GetChildNode("ssoUserId") is { } nullNodeSsoUserId && nullNodeSsoUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoUserId = null;
         }
@@ -123,6 +125,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The ssoConnectedAt property</summary>
         public double? SsoConnectedAt { get => _explicitNullValueSsoConnectedAt; set { _explicitNullValueSsoConnectedAt = value; AdditionalData?.Remove("ssoConnectedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoConnectedAt"); else _explicitNullProperties?.Remove("ssoConnectedAt"); } }
         private double? _explicitNullValueSsoConnectedAt = default!;
+        /// <summary>How `ssoUserId` and `idpUserId` were made; absent when unknown.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SsoIdFingerprint { get => _explicitNullValueSsoIdFingerprint; set { _explicitNullValueSsoIdFingerprint = value; AdditionalData?.Remove("ssoIdFingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoIdFingerprint"); else _explicitNullProperties?.Remove("ssoIdFingerprint"); } }
+        private string? _explicitNullValueSsoIdFingerprint = default!;
+#nullable restore
+#else
+        public string SsoIdFingerprint { get => _explicitNullValueSsoIdFingerprint; set { _explicitNullValueSsoIdFingerprint = value; AdditionalData?.Remove("ssoIdFingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoIdFingerprint"); else _explicitNullProperties?.Remove("ssoIdFingerprint"); } }
+        private string _explicitNullValueSsoIdFingerprint = default!;
+#endif
         /// <summary>The ssoUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,7 +168,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(11)
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "commitId", n => { CommitId = n.GetStringValue(); } },
                 { "dsyncConnectedAt", n => { DsyncConnectedAt = n.GetDoubleValue(); } },
@@ -168,6 +180,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "repoId", n => { RepoId = n.GetStringValue(); } },
                 { "repoPath", n => { RepoPath = n.GetStringValue(); } },
                 { "ssoConnectedAt", n => { SsoConnectedAt = n.GetDoubleValue(); } },
+                { "ssoIdFingerprint", n => { SsoIdFingerprint = n.GetStringValue(); } },
                 { "ssoUserId", n => { SsoUserId = n.GetStringValue(); } },
             };
         }
@@ -188,6 +201,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("repoId", RepoId);
             writer.WriteStringValue("repoPath", RepoPath);
             writer.WriteDoubleValue("ssoConnectedAt", SsoConnectedAt);
+            writer.WriteStringValue("ssoIdFingerprint", SsoIdFingerprint);
             writer.WriteStringValue("ssoUserId", SsoUserId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

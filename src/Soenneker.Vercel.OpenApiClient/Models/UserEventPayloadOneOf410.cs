@@ -18,45 +18,81 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("budget") is null) { _explicitNullValueBudget = default!; _explicitNullProperties?.Remove("budget"); }
-            else if (parseNode.GetChildNode("budget") is { } nullNodeBudget && nullNodeBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budget = null;
-            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
-            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("bitbucketEmail") is null) { _explicitNullValueBitbucketEmail = default!; _explicitNullProperties?.Remove("bitbucketEmail"); }
+            else if (parseNode.GetChildNode("bitbucketEmail") is { } nullNodeBitbucketEmail && nullNodeBitbucketEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketEmail = null;
+            if (parseNode.GetChildNode("bitbucketLogin") is null) { _explicitNullValueBitbucketLogin = default!; _explicitNullProperties?.Remove("bitbucketLogin"); }
+            else if (parseNode.GetChildNode("bitbucketLogin") is { } nullNodeBitbucketLogin && nullNodeBitbucketLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketLogin = null;
+            if (parseNode.GetChildNode("bitbucketName") is null) { _explicitNullValueBitbucketName = default!; _explicitNullProperties?.Remove("bitbucketName"); }
+            else if (parseNode.GetChildNode("bitbucketName") is { } nullNodeBitbucketName && nullNodeBitbucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketName = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("zeitAccount") is null) { _explicitNullValueZeitAccount = default!; _explicitNullProperties?.Remove("zeitAccount"); }
+            else if (parseNode.GetChildNode("zeitAccount") is { } nullNodeZeitAccount && nullNodeZeitAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeitAccount = null;
+            if (parseNode.GetChildNode("zeitAccountType") is null) { _explicitNullValueZeitAccountType = default!; _explicitNullProperties?.Remove("zeitAccountType"); }
+            else if (parseNode.GetChildNode("zeitAccountType") is { } nullNodeZeitAccountType && nullNodeZeitAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeitAccountType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The budget property</summary>
+        /// <summary>The bitbucketEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Budget? Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; AdditionalData?.Remove("budget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Budget? _explicitNullValueBudget = default!;
+        public string? BitbucketEmail { get => _explicitNullValueBitbucketEmail; set { _explicitNullValueBitbucketEmail = value; AdditionalData?.Remove("bitbucketEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketEmail"); else _explicitNullProperties?.Remove("bitbucketEmail"); } }
+        private string? _explicitNullValueBitbucketEmail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Budget Budget { get => _explicitNullValueBudget; set { _explicitNullValueBudget = value; AdditionalData?.Remove("budget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budget"); else _explicitNullProperties?.Remove("budget"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Budget _explicitNullValueBudget = default!;
+        public string BitbucketEmail { get => _explicitNullValueBitbucketEmail; set { _explicitNullValueBitbucketEmail = value; AdditionalData?.Remove("bitbucketEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketEmail"); else _explicitNullProperties?.Remove("bitbucketEmail"); } }
+        private string _explicitNullValueBitbucketEmail = default!;
 #endif
-        /// <summary>Stored for project budgets. Same value as `budget.scopeId`.</summary>
+        /// <summary>The bitbucketLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string? _explicitNullValueProjectId = default!;
+        public string? BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
+        private string? _explicitNullValueBitbucketLogin = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
-        private string _explicitNullValueProjectId = default!;
+        public string BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
+        private string _explicitNullValueBitbucketLogin = default!;
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The bitbucketName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
+        public string? BitbucketName { get => _explicitNullValueBitbucketName; set { _explicitNullValueBitbucketName = value; AdditionalData?.Remove("bitbucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketName"); else _explicitNullProperties?.Remove("bitbucketName"); } }
+        private string? _explicitNullValueBitbucketName = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
+        public string BitbucketName { get => _explicitNullValueBitbucketName; set { _explicitNullValueBitbucketName = value; AdditionalData?.Remove("bitbucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketName"); else _explicitNullProperties?.Remove("bitbucketName"); } }
+        private string _explicitNullValueBitbucketName = default!;
+#endif
+        /// <summary>The email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
+#nullable restore
+#else
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
+#endif
+        /// <summary>The zeitAccount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZeitAccount { get => _explicitNullValueZeitAccount; set { _explicitNullValueZeitAccount = value; AdditionalData?.Remove("zeitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccount"); else _explicitNullProperties?.Remove("zeitAccount"); } }
+        private string? _explicitNullValueZeitAccount = default!;
+#nullable restore
+#else
+        public string ZeitAccount { get => _explicitNullValueZeitAccount; set { _explicitNullValueZeitAccount = value; AdditionalData?.Remove("zeitAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccount"); else _explicitNullProperties?.Remove("zeitAccount"); } }
+        private string _explicitNullValueZeitAccount = default!;
+#endif
+        /// <summary>The zeitAccountType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZeitAccountType { get => _explicitNullValueZeitAccountType; set { _explicitNullValueZeitAccountType = value; AdditionalData?.Remove("zeitAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccountType"); else _explicitNullProperties?.Remove("zeitAccountType"); } }
+        private string? _explicitNullValueZeitAccountType = default!;
+#nullable restore
+#else
+        public string ZeitAccountType { get => _explicitNullValueZeitAccountType; set { _explicitNullValueZeitAccountType = value; AdditionalData?.Remove("zeitAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeitAccountType"); else _explicitNullProperties?.Remove("zeitAccountType"); } }
+        private string _explicitNullValueZeitAccountType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410"/> and sets the default values.
@@ -81,11 +117,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
-                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Budget.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
+                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
+                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
+                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -95,9 +134,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Budget>("budget", Budget);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
+            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
+            writer.WriteStringValue("bitbucketName", BitbucketName);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("zeitAccount", ZeitAccount);
+            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

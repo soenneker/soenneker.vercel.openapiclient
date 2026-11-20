@@ -64,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update a team-, project-, or user-scope AI Gateway budget.
+        /// Create or update a team-, project-, or user-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
             return requestInfo;
         }
         /// <summary>
-        /// Create or update a team-, project-, or user-scope AI Gateway budget.
+        /// Create or update a team-, project-, or user-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -194,7 +194,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
 #endif
         }
         /// <summary>
-        /// Create or update a team-, project-, or user-scope AI Gateway budget.
+        /// Create or update a team-, project-, or user-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BudgetsRequestBuilderPutQueryParameters 

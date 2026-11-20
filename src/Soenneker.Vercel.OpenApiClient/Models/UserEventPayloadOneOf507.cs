@@ -18,44 +18,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("decision") is null) { _explicitNullValueDecision = default!; _explicitNullProperties?.Remove("decision"); }
-            else if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
-            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
-            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
-            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
-            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
-            if (parseNode.GetChildNode("providerSubjectId") is null) { _explicitNullValueProviderSubjectId = default!; _explicitNullProperties?.Remove("providerSubjectId"); }
-            else if (parseNode.GetChildNode("providerSubjectId") is { } nullNodeProviderSubjectId && nullNodeProviderSubjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderSubjectId = null;
+            if (parseNode.GetChildNode("mfaEnabled") is null) { _explicitNullValueMfaEnabled = default!; _explicitNullProperties?.Remove("mfaEnabled"); }
+            else if (parseNode.GetChildNode("mfaEnabled") is { } nullNodeMfaEnabled && nullNodeMfaEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The decision property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Decision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; AdditionalData?.Remove("decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Decision? _explicitNullValueDecision = default!;
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Decision Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; AdditionalData?.Remove("decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Decision _explicitNullValueDecision = default!;
-#endif
-        /// <summary>The outcome property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Outcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Outcome? _explicitNullValueOutcome = default!;
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider? _explicitNullValueProvider = default!;
-        /// <summary>The providerSubjectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderSubjectId { get => _explicitNullValueProviderSubjectId; set { _explicitNullValueProviderSubjectId = value; AdditionalData?.Remove("providerSubjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerSubjectId"); else _explicitNullProperties?.Remove("providerSubjectId"); } }
-        private string? _explicitNullValueProviderSubjectId = default!;
-#nullable restore
-#else
-        public string ProviderSubjectId { get => _explicitNullValueProviderSubjectId; set { _explicitNullValueProviderSubjectId = value; AdditionalData?.Remove("providerSubjectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providerSubjectId"); else _explicitNullProperties?.Remove("providerSubjectId"); } }
-        private string _explicitNullValueProviderSubjectId = default!;
-#endif
+        /// <summary>The mfaEnabled property</summary>
+        public bool? MfaEnabled { get => _explicitNullValueMfaEnabled; set { _explicitNullValueMfaEnabled = value; AdditionalData?.Remove("mfaEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfaEnabled"); else _explicitNullProperties?.Remove("mfaEnabled"); } }
+        private bool? _explicitNullValueMfaEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507"/> and sets the default values.
         /// </summary>
@@ -79,12 +50,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(4)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Decision>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Decision.CreateFromDiscriminatorValue); } },
-                { "outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Outcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutcome = default; _explicitNullProperties?.Remove("outcome"); AdditionalData["outcome"] = unknown; } else { Outcome = parsed; AdditionalData.Remove("outcome"); } } },
-                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
-                { "providerSubjectId", n => { ProviderSubjectId = n.GetStringValue(); } },
+                { "mfaEnabled", n => { MfaEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -94,10 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Decision>("decision", Decision);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Outcome>("outcome", Outcome);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>("provider", Provider);
-            writer.WriteStringValue("providerSubjectId", ProviderSubjectId);
+            writer.WriteBoolValue("mfaEnabled", MfaEnabled);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

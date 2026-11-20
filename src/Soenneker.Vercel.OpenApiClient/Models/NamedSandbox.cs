@@ -30,6 +30,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("cwd") is { } nullNodeCwd && nullNodeCwd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cwd = null;
             if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
             else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("expiryNotificationLeadTime") is null) { _explicitNullValueExpiryNotificationLeadTime = default!; _explicitNullProperties?.Remove("expiryNotificationLeadTime"); }
+            else if (parseNode.GetChildNode("expiryNotificationLeadTime") is { } nullNodeExpiryNotificationLeadTime && nullNodeExpiryNotificationLeadTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryNotificationLeadTime = null;
             if (parseNode.GetChildNode("failoverRegions") is null) { _explicitNullValueFailoverRegions = default!; _explicitNullProperties?.Remove("failoverRegions"); }
             else if (parseNode.GetChildNode("failoverRegions") is { } nullNodeFailoverRegions && nullNodeFailoverRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailoverRegions = null;
             if (parseNode.GetChildNode("image") is null) { _explicitNullValueImage = default!; _explicitNullProperties?.Remove("image"); }
@@ -119,6 +121,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.</summary>
         public double? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private double? _explicitNullValueExpiresAt = default!;
+        /// <summary>How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time.</summary>
+        public double? ExpiryNotificationLeadTime { get => _explicitNullValueExpiryNotificationLeadTime; set { _explicitNullValueExpiryNotificationLeadTime = value; AdditionalData?.Remove("expiryNotificationLeadTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryNotificationLeadTime"); else _explicitNullProperties?.Remove("expiryNotificationLeadTime"); } }
+        private double? _explicitNullValueExpiryNotificationLeadTime = default!;
         /// <summary>The regions the sandbox fails over to. Empty when it does not fail over.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -281,7 +286,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(29)
+            return new Dictionary<string, Action<IParseNode>>(30)
             {
                 { "architecture", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxArchitecture>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueArchitecture = default; _explicitNullProperties?.Remove("architecture"); AdditionalData["architecture"] = unknown; } else { Architecture = parsed; AdditionalData.Remove("architecture"); } } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
@@ -289,6 +294,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "currentSnapshotId", n => { CurrentSnapshotId = n.GetStringValue(); } },
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
+                { "expiryNotificationLeadTime", n => { ExpiryNotificationLeadTime = n.GetDoubleValue(); } },
                 { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxFailoverRegionsItem>()?.AsList(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots.CreateFromDiscriminatorValue); } },
@@ -327,6 +333,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("currentSnapshotId", CurrentSnapshotId);
             writer.WriteStringValue("cwd", Cwd);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
+            writer.WriteDoubleValue("expiryNotificationLeadTime", ExpiryNotificationLeadTime);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxFailoverRegionsItem>("failoverRegions", FailoverRegions);
             writer.WriteStringValue("image", Image);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);

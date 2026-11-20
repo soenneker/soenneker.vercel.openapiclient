@@ -18,72 +18,57 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actorName") is null) { _explicitNullValueActorName = default!; _explicitNullProperties?.Remove("actorName"); }
-            else if (parseNode.GetChildNode("actorName") is { } nullNodeActorName && nullNodeActorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorName = null;
-            if (parseNode.GetChildNode("actorType") is null) { _explicitNullValueActorType = default!; _explicitNullProperties?.Remove("actorType"); }
-            else if (parseNode.GetChildNode("actorType") is { } nullNodeActorType && nullNodeActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorType = null;
-            if (parseNode.GetChildNode("attributeMappingChanged") is null) { _explicitNullValueAttributeMappingChanged = default!; _explicitNullProperties?.Remove("attributeMappingChanged"); }
-            else if (parseNode.GetChildNode("attributeMappingChanged") is { } nullNodeAttributeMappingChanged && nullNodeAttributeMappingChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeMappingChanged = null;
-            if (parseNode.GetChildNode("certificateFingerprints") is null) { _explicitNullValueCertificateFingerprints = default!; _explicitNullProperties?.Remove("certificateFingerprints"); }
-            else if (parseNode.GetChildNode("certificateFingerprints") is { } nullNodeCertificateFingerprints && nullNodeCertificateFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateFingerprints = null;
-            if (parseNode.GetChildNode("connectionId") is null) { _explicitNullValueConnectionId = default!; _explicitNullProperties?.Remove("connectionId"); }
-            else if (parseNode.GetChildNode("connectionId") is { } nullNodeConnectionId && nullNodeConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionId = null;
-            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
-            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
-            if (parseNode.GetChildNode("previousCertificateFingerprints") is null) { _explicitNullValuePreviousCertificateFingerprints = default!; _explicitNullProperties?.Remove("previousCertificateFingerprints"); }
-            else if (parseNode.GetChildNode("previousCertificateFingerprints") is { } nullNodePreviousCertificateFingerprints && nullNodePreviousCertificateFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousCertificateFingerprints = null;
+            if (parseNode.GetChildNode("prevProjectWebAnalytics") is null) { _explicitNullValuePrevProjectWebAnalytics = default!; _explicitNullProperties?.Remove("prevProjectWebAnalytics"); }
+            else if (parseNode.GetChildNode("prevProjectWebAnalytics") is { } nullNodePrevProjectWebAnalytics && nullNodePrevProjectWebAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevProjectWebAnalytics = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
+            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("projectWebAnalytics") is null) { _explicitNullValueProjectWebAnalytics = default!; _explicitNullProperties?.Remove("projectWebAnalytics"); }
+            else if (parseNode.GetChildNode("projectWebAnalytics") is { } nullNodeProjectWebAnalytics && nullNodeProjectWebAnalytics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectWebAnalytics = null;
         }
 
-        /// <summary>The actorName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorName { get => _explicitNullValueActorName; set { _explicitNullValueActorName = value; AdditionalData?.Remove("actorName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorName"); else _explicitNullProperties?.Remove("actorName"); } }
-        private string? _explicitNullValueActorName = default!;
-#nullable restore
-#else
-        public string ActorName { get => _explicitNullValueActorName; set { _explicitNullValueActorName = value; AdditionalData?.Remove("actorName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorName"); else _explicitNullProperties?.Remove("actorName"); } }
-        private string _explicitNullValueActorName = default!;
-#endif
-        /// <summary>The actorType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get => _explicitNullValueActorType; set { _explicitNullValueActorType = value; AdditionalData?.Remove("actorType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actorType"); else _explicitNullProperties?.Remove("actorType"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? _explicitNullValueActorType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attributeMappingChanged property</summary>
-        public bool? AttributeMappingChanged { get => _explicitNullValueAttributeMappingChanged; set { _explicitNullValueAttributeMappingChanged = value; AdditionalData?.Remove("attributeMappingChanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeMappingChanged"); else _explicitNullProperties?.Remove("attributeMappingChanged"); } }
-        private bool? _explicitNullValueAttributeMappingChanged = default!;
-        /// <summary>The certificateFingerprints property</summary>
+        /// <summary>The prevProjectWebAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CertificateFingerprints { get => _explicitNullValueCertificateFingerprints; set { _explicitNullValueCertificateFingerprints = value; AdditionalData?.Remove("certificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateFingerprints"); else _explicitNullProperties?.Remove("certificateFingerprints"); } }
-        private List<string>? _explicitNullValueCertificateFingerprints = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386PrevProjectWebAnalytics? PrevProjectWebAnalytics { get => _explicitNullValuePrevProjectWebAnalytics; set { _explicitNullValuePrevProjectWebAnalytics = value; AdditionalData?.Remove("prevProjectWebAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectWebAnalytics"); else _explicitNullProperties?.Remove("prevProjectWebAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386PrevProjectWebAnalytics? _explicitNullValuePrevProjectWebAnalytics = default!;
 #nullable restore
 #else
-        public List<string> CertificateFingerprints { get => _explicitNullValueCertificateFingerprints; set { _explicitNullValueCertificateFingerprints = value; AdditionalData?.Remove("certificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificateFingerprints"); else _explicitNullProperties?.Remove("certificateFingerprints"); } }
-        private List<string> _explicitNullValueCertificateFingerprints = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386PrevProjectWebAnalytics PrevProjectWebAnalytics { get => _explicitNullValuePrevProjectWebAnalytics; set { _explicitNullValuePrevProjectWebAnalytics = value; AdditionalData?.Remove("prevProjectWebAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectWebAnalytics"); else _explicitNullProperties?.Remove("prevProjectWebAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386PrevProjectWebAnalytics _explicitNullValuePrevProjectWebAnalytics = default!;
 #endif
-        /// <summary>The connectionId property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connectionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionId"); else _explicitNullProperties?.Remove("connectionId"); } }
-        private string? _explicitNullValueConnectionId = default!;
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ConnectionId { get => _explicitNullValueConnectionId; set { _explicitNullValueConnectionId = value; AdditionalData?.Remove("connectionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionId"); else _explicitNullProperties?.Remove("connectionId"); } }
-        private string _explicitNullValueConnectionId = default!;
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The created property</summary>
-        public bool? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
-        private bool? _explicitNullValueCreated = default!;
-        /// <summary>The previousCertificateFingerprints property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreviousCertificateFingerprints { get => _explicitNullValuePreviousCertificateFingerprints; set { _explicitNullValuePreviousCertificateFingerprints = value; AdditionalData?.Remove("previousCertificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCertificateFingerprints"); else _explicitNullProperties?.Remove("previousCertificateFingerprints"); } }
-        private List<string>? _explicitNullValuePreviousCertificateFingerprints = default!;
+        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string? _explicitNullValueProjectName = default!;
 #nullable restore
 #else
-        public List<string> PreviousCertificateFingerprints { get => _explicitNullValuePreviousCertificateFingerprints; set { _explicitNullValuePreviousCertificateFingerprints = value; AdditionalData?.Remove("previousCertificateFingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCertificateFingerprints"); else _explicitNullProperties?.Remove("previousCertificateFingerprints"); } }
-        private List<string> _explicitNullValuePreviousCertificateFingerprints = default!;
+        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
+        private string _explicitNullValueProjectName = default!;
+#endif
+        /// <summary>The projectWebAnalytics property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386ProjectWebAnalytics? ProjectWebAnalytics { get => _explicitNullValueProjectWebAnalytics; set { _explicitNullValueProjectWebAnalytics = value; AdditionalData?.Remove("projectWebAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectWebAnalytics"); else _explicitNullProperties?.Remove("projectWebAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386ProjectWebAnalytics? _explicitNullValueProjectWebAnalytics = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386ProjectWebAnalytics ProjectWebAnalytics { get => _explicitNullValueProjectWebAnalytics; set { _explicitNullValueProjectWebAnalytics = value; AdditionalData?.Remove("projectWebAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectWebAnalytics"); else _explicitNullProperties?.Remove("projectWebAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386ProjectWebAnalytics _explicitNullValueProjectWebAnalytics = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386"/> and sets the default values.
@@ -108,15 +93,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
-                { "actorName", n => { ActorName = n.GetStringValue(); } },
-                { "actorType", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActorType = default; _explicitNullProperties?.Remove("actorType"); AdditionalData["actorType"] = unknown; } else { ActorType = parsed; AdditionalData.Remove("actorType"); } } },
-                { "attributeMappingChanged", n => { AttributeMappingChanged = n.GetBoolValue(); } },
-                { "certificateFingerprints", n => { CertificateFingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetBoolValue(); } },
-                { "previousCertificateFingerprints", n => { PreviousCertificateFingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "prevProjectWebAnalytics", n => { PrevProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386PrevProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386PrevProjectWebAnalytics.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "projectWebAnalytics", n => { ProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386ProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386ProjectWebAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -126,13 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorName", ActorName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
-            writer.WriteBoolValue("attributeMappingChanged", AttributeMappingChanged);
-            writer.WriteCollectionOfPrimitiveValues<string>("certificateFingerprints", CertificateFingerprints);
-            writer.WriteStringValue("connectionId", ConnectionId);
-            writer.WriteBoolValue("created", Created);
-            writer.WriteCollectionOfPrimitiveValues<string>("previousCertificateFingerprints", PreviousCertificateFingerprints);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386PrevProjectWebAnalytics>("prevProjectWebAnalytics", PrevProjectWebAnalytics);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf386ProjectWebAnalytics>("projectWebAnalytics", ProjectWebAnalytics);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

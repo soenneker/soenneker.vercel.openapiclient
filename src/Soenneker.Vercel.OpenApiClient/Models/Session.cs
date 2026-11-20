@@ -60,6 +60,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
             if (parseNode.GetChildNode("stoppedAt") is null) { _explicitNullValueStoppedAt = default!; _explicitNullProperties?.Remove("stoppedAt"); }
             else if (parseNode.GetChildNode("stoppedAt") is { } nullNodeStoppedAt && nullNodeStoppedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppedAt = null;
+            if (parseNode.GetChildNode("stopReason") is null) { _explicitNullValueStopReason = default!; _explicitNullProperties?.Remove("stopReason"); }
+            else if (parseNode.GetChildNode("stopReason") is { } nullNodeStopReason && nullNodeStopReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopReason = null;
             if (parseNode.GetChildNode("timeout") is null) { _explicitNullValueTimeout = default!; _explicitNullProperties?.Remove("timeout"); }
             else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
             if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
@@ -198,6 +200,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The time when the sandbox was stopped, in milliseconds since the epoch.</summary>
         public double? StoppedAt { get => _explicitNullValueStoppedAt; set { _explicitNullValueStoppedAt = value; AdditionalData?.Remove("stoppedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stoppedAt"); else _explicitNullProperties?.Remove("stoppedAt"); } }
         private double? _explicitNullValueStoppedAt = default!;
+        /// <summary>Why the sandbox stopped: `requested` for a stop requested through the API, `snapshot` for a stop to take a snapshot, `timeout` when the sandbox reached its timeout, `exited` when its main process exited on its own, and `error` when it failed or was stopped by the platform.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.SessionStopReason? StopReason { get => _explicitNullValueStopReason; set { _explicitNullValueStopReason = value; AdditionalData?.Remove("stopReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopReason"); else _explicitNullProperties?.Remove("stopReason"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.SessionStopReason? _explicitNullValueStopReason = default!;
         /// <summary>The maximum amount of time the sandbox will run for in milliseconds.</summary>
         public double? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private double? _explicitNullValueTimeout = default!;
@@ -233,7 +238,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(25)
+            return new Dictionary<string, Action<IParseNode>>(26)
             {
                 { "abortedAt", n => { AbortedAt = n.GetDoubleValue(); } },
                 { "activeCpuDurationMs", n => { ActiveCpuDurationMs = n.GetDoubleValue(); } },
@@ -255,6 +260,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sourceSnapshotId", n => { SourceSnapshotId = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "stopReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionStopReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStopReason = default; _explicitNullProperties?.Remove("stopReason"); AdditionalData["stopReason"] = unknown; } else { StopReason = parsed; AdditionalData.Remove("stopReason"); } } },
                 { "stoppedAt", n => { StoppedAt = n.GetDoubleValue(); } },
                 { "timeout", n => { Timeout = n.GetDoubleValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
@@ -290,6 +296,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionStatus>("status", Status);
             writer.WriteDoubleValue("stoppedAt", StoppedAt);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionStopReason>("stopReason", StopReason);
             writer.WriteDoubleValue("timeout", Timeout);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteDoubleValue("vcpus", Vcpus);

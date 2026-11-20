@@ -18,33 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
-            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("prevEmail") is null) { _explicitNullValuePrevEmail = default!; _explicitNullProperties?.Remove("prevEmail"); }
-            else if (parseNode.GetChildNode("prevEmail") is { } nullNodePrevEmail && nullNodePrevEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevEmail = null;
+            if (parseNode.GetChildNode("mfa") is null) { _explicitNullValueMfa = default!; _explicitNullProperties?.Remove("mfa"); }
+            else if (parseNode.GetChildNode("mfa") is { } nullNodeMfa && nullNodeMfa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mfa = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The mfa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
-        private string? _explicitNullValueEmail = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508Mfa? Mfa { get => _explicitNullValueMfa; set { _explicitNullValueMfa = value; AdditionalData?.Remove("mfa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa"); else _explicitNullProperties?.Remove("mfa"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508Mfa? _explicitNullValueMfa = default!;
 #nullable restore
 #else
-        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
-        private string _explicitNullValueEmail = default!;
-#endif
-        /// <summary>The prevEmail property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrevEmail { get => _explicitNullValuePrevEmail; set { _explicitNullValuePrevEmail = value; AdditionalData?.Remove("prevEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevEmail"); else _explicitNullProperties?.Remove("prevEmail"); } }
-        private string? _explicitNullValuePrevEmail = default!;
-#nullable restore
-#else
-        public string PrevEmail { get => _explicitNullValuePrevEmail; set { _explicitNullValuePrevEmail = value; AdditionalData?.Remove("prevEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevEmail"); else _explicitNullProperties?.Remove("prevEmail"); } }
-        private string _explicitNullValuePrevEmail = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508Mfa Mfa { get => _explicitNullValueMfa; set { _explicitNullValueMfa = value; AdditionalData?.Remove("mfa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa"); else _explicitNullProperties?.Remove("mfa"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508Mfa _explicitNullValueMfa = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508"/> and sets the default values.
@@ -71,8 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "prevEmail", n => { PrevEmail = n.GetStringValue(); } },
+                { "mfa", n => { Mfa = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508Mfa>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508Mfa.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,8 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("prevEmail", PrevEmail);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf508Mfa>("mfa", Mfa);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

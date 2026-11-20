@@ -219,6 +219,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayInferenceHooksHeadersUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-inference-hooks-previous-signing-secret-retired")]
+        #pragma warning disable CS1591
+        AiGatewayInferenceHooksPreviousSigningSecretRetired,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-inference-hooks-removed")]
         #pragma warning disable CS1591
         AiGatewayInferenceHooksRemoved,
@@ -1651,6 +1655,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OidcPolicyUsedToObtainAppToken,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-admin-invite-revoked")]
+        #pragma warning disable CS1591
+        OrganizationAdminInviteRevoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-admin-removed")]
+        #pragma warning disable CS1591
+        OrganizationAdminRemoved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-avatar-update")]
         #pragma warning disable CS1591
         OrganizationAvatarUpdate,
@@ -2470,6 +2482,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "sandbox-drive-snapshot-deleted")]
         #pragma warning disable CS1591
         SandboxDriveSnapshotDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-expiry-notification-lead-time-updated")]
+        #pragma warning disable CS1591
+        SandboxExpiryNotificationLeadTimeUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-npm-credentials-configured")]
         #pragma warning disable CS1591
