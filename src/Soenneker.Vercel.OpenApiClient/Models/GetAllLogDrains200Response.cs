@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Response();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema25980(item)) == true) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item> getAllLogDrains200ResponseOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema25985(item)) == true) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf1Item> getAllLogDrains200ResponseOneOf1ItemValue)
             {
                 result.GetAllLogDrains200ResponseOneOf1Item = getAllLogDrains200ResponseOneOf1ItemValue;
             }
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema26074(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema26079(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;

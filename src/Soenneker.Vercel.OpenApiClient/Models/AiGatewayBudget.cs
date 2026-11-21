@@ -105,7 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The refreshPeriod property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetRefreshPeriod? RefreshPeriod { get => _explicitNullValueRefreshPeriod; set { _explicitNullValueRefreshPeriod = value; AdditionalData?.Remove("refreshPeriod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshPeriod"); else _explicitNullProperties?.Remove("refreshPeriod"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetRefreshPeriod? _explicitNullValueRefreshPeriod = default!;
-        /// <summary>The native Vercel id of the scoped entity. Team/project ids already carry their prefix, so this equals `quotaEntityId` (`team_…` / `prj_…`); for the api-key scope it is the api key id (the `api_key_id_` prefix stripped).</summary>
+        /// <summary>The native Vercel id of the scoped entity. Team/project ids already carry their prefix, so this equals `quotaEntityId` (`team_…` / `prj_…`); user and app scopes also use the quota entity id (`usr_&lt;userId&gt;` / `app_&lt;appId&gt;`); for the api-key scope it is the api key id (the `api_key_id_` prefix stripped).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; AdditionalData?.Remove("scopeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }

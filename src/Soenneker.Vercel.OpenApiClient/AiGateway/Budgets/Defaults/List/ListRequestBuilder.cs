@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults.List
         {
         }
         /// <summary>
-        /// List the team&apos;s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
+        /// List the team&apos;s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user/app scope with a default set). An empty list is a normal state for the dashboard.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults.List
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultList>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultList.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the team&apos;s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
+        /// List the team&apos;s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user/app scope with a default set). An empty list is a normal state for the dashboard.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults.List
             return new global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.Defaults.List.ListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the team&apos;s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
+        /// List the team&apos;s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user/app scope with a default set). An empty list is a normal state for the dashboard.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 

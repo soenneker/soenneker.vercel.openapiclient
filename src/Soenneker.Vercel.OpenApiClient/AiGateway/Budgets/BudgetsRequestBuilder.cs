@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BudgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?justification*,projectId*,slug*,teamId*,userId*}", pathParameters)
+        public BudgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?appId*,justification*,projectId*,slug*,teamId*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BudgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?justification*,projectId*,slug*,teamId*,userId*}", rawUrl)
+        public BudgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets{?appId*,justification*,projectId*,slug*,teamId*,userId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Archive a team-, project-, or user-scope AI Gateway budget.
+        /// Archive a team-, project-, user-, or app-scope AI Gateway budget.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update a team-, project-, or user-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
+        /// Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudget.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a team-, project-, or user-scope AI Gateway budget.
+        /// Archive a team-, project-, user-, or app-scope AI Gateway budget.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,13 +97,13 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.BudgetsRequestBuilder.BudgetsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/budgets?scopeType={scopeType}{&justification*,projectId*,slug*,teamId*,userId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ai-gateway/budgets?scopeType={scopeType}{&appId*,justification*,projectId*,slug*,teamId*,userId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Create or update a team-, project-, or user-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
+        /// Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -134,11 +134,21 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
             return new global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.BudgetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Archive a team-, project-, or user-scope AI Gateway budget.
+        /// Archive a team-, project-, user-, or app-scope AI Gateway budget.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BudgetsRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>Required when scopeType is \&quot;app\&quot;. The id of a Vercel App (`cl_…`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("appId")]
+            public string? AppId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("appId")]
+            public string AppId { get; set; }
+#endif
             /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,7 +204,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets
 #endif
         }
         /// <summary>
-        /// Create or update a team-, project-, or user-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
+        /// Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BudgetsRequestBuilderPutQueryParameters 

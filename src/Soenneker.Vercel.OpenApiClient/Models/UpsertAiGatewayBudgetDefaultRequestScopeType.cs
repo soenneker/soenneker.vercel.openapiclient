@@ -24,5 +24,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         User,
         #pragma warning restore CS1591
+        [EnumMember(Value = "app")]
+        #pragma warning disable CS1591
+        App,
+        #pragma warning restore CS1591
     }
 }

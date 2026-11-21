@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("api-key") is null) { _explicitNullValueApiKey = default!; _explicitNullProperties?.Remove("api-key"); }
             else if (parseNode.GetChildNode("api-key") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("app") is null) { _explicitNullValueApp = default!; _explicitNullProperties?.Remove("app"); }
+            else if (parseNode.GetChildNode("app") is { } nullNodeApp && nullNodeApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) App = null;
             if (parseNode.GetChildNode("project") is null) { _explicitNullValueProject = default!; _explicitNullProperties?.Remove("project"); }
             else if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
             if (parseNode.GetChildNode("team") is null) { _explicitNullValueTeam = default!; _explicitNullProperties?.Remove("team"); }
@@ -33,6 +35,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The apiKey property</summary>
         public double? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("api-key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-key"); else _explicitNullProperties?.Remove("api-key"); } }
         private double? _explicitNullValueApiKey = default!;
+        /// <summary>Omitted when no app row is default-covered.</summary>
+        public double? App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; AdditionalData?.Remove("app"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
+        private double? _explicitNullValueApp = default!;
         /// <summary>The project property</summary>
         public double? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
         private double? _explicitNullValueProject = default!;
@@ -65,9 +70,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(4)
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "api-key", n => { ApiKey = n.GetDoubleValue(); } },
+                { "app", n => { App = n.GetDoubleValue(); } },
                 { "project", n => { Project = n.GetDoubleValue(); } },
                 { "team", n => { Team = n.GetDoubleValue(); } },
                 { "user", n => { User = n.GetDoubleValue(); } },
@@ -81,6 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("api-key", ApiKey);
+            writer.WriteDoubleValue("app", App);
             writer.WriteDoubleValue("project", Project);
             writer.WriteDoubleValue("team", Team);
             writer.WriteDoubleValue("user", User);

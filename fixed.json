@@ -2616,7 +2616,7 @@
           "ai-gateway"
         ],
         "summary": "List AI Gateway budgets",
-        "description": "List the team\u0027s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without \u0060limit\u0060 or \u0060cursor\u0060, returns every budget. With either, returns one page ordered by \u0060quotaEntityId\u0060 plus \u0060nextCursor\u0060 (null on the last page) and \u0060defaultCoveredCounts\u0060. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.",
+        "description": "List the team\u0027s AI Gateway budgets (team/project/user/app scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without \u0060limit\u0060 or \u0060cursor\u0060, returns every budget. With either, returns one page ordered by \u0060quotaEntityId\u0060 plus \u0060nextCursor\u0060 (null on the last page) and \u0060defaultCoveredCounts\u0060. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.",
         "operationId": "ListAiGatewayBudgets",
         "parameters": [
           {
@@ -2716,7 +2716,7 @@
           "ai-gateway"
         ],
         "summary": "Upsert AI Gateway budget",
-        "description": "Create or update a team-, project-, or user-scope AI Gateway budget. Set a total with \u0060limitAmount\u0060, or raise the current budget with \u0060increaseBy\u0060.",
+        "description": "Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with \u0060limitAmount\u0060, or raise the current budget with \u0060increaseBy\u0060.",
         "operationId": "UpsertAiGatewayBudget",
         "parameters": [
           {
@@ -2788,7 +2788,7 @@
           "ai-gateway"
         ],
         "summary": "Archive AI Gateway budget",
-        "description": "Archive a team-, project-, or user-scope AI Gateway budget.",
+        "description": "Archive a team-, project-, user-, or app-scope AI Gateway budget.",
         "operationId": "ArchiveAiGatewayBudget",
         "parameters": [
           {
@@ -2816,6 +2816,15 @@
             "schema": {
               "type": "string",
               "description": "Required when scopeType is \\\u0022user\\\u0022."
+            }
+          },
+          {
+            "name": "appId",
+            "in": "query",
+            "description": "Required when scopeType is \\\u0022app\\\u0022. The id of a Vercel App (\u0060cl_\u2026\u0060).",
+            "schema": {
+              "type": "string",
+              "description": "Required when scopeType is \\\u0022app\\\u0022. The id of a Vercel App (\u0060cl_\u2026\u0060)."
             }
           },
           {
@@ -2889,7 +2898,7 @@
           "ai-gateway"
         ],
         "summary": "List AI Gateway budget defaults",
-        "description": "List the team\u0027s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.",
+        "description": "List the team\u0027s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user/app scope with a default set). An empty list is a normal state for the dashboard.",
         "operationId": "ListAiGatewayBudgetDefaults",
         "parameters": [
           {
@@ -45349,7 +45358,7 @@
           },
           "scopeId": {
             "type": "string",
-            "description": "The native Vercel id of the scoped entity. Team/project ids already carry their prefix, so this equals \u0060quotaEntityId\u0060 (\u0060team_\u2026\u0060 / \u0060prj_\u2026\u0060); for the api-key scope it is the api key id (the \u0060api_key_id_\u0060 prefix stripped)."
+            "description": "The native Vercel id of the scoped entity. Team/project ids already carry their prefix, so this equals \u0060quotaEntityId\u0060 (\u0060team_\u2026\u0060 / \u0060prj_\u2026\u0060); user and app scopes also use the quota entity id (\u0060usr_\u003CuserId\u003E\u0060 / \u0060app_\u003CappId\u003E\u0060); for the api-key scope it is the api key id (the \u0060api_key_id_\u0060 prefix stripped)."
           },
           "scopeType": {
             "$ref": "#/components/schemas/AiGatewayBudgetScopeType"
@@ -66967,6 +66976,10 @@
           "api-key": {
             "type": "number"
           },
+          "app": {
+            "type": "number",
+            "description": "Omitted when no app row is default-covered."
+          },
           "project": {
             "type": "number"
           },
@@ -77825,6 +77838,10 @@
           "userId": {
             "type": "string",
             "description": "Required when scopeType is \\\u0022user\\\u0022."
+          },
+          "appId": {
+            "type": "string",
+            "description": "Required when scopeType is \\\u0022app\\\u0022. The id of a Vercel App (\u0060cl_\u2026\u0060)."
           },
           "limitAmount": {
             "minimum": 1,
@@ -245836,6 +245853,7 @@
       "AiGatewayBudgetScopeType": {
         "enum": [
           "api-key",
+          "app",
           "project",
           "team",
           "user"
@@ -245848,6 +245866,10 @@
             {
               "value": "api-key",
               "name": "ApiKey"
+            },
+            {
+              "value": "app",
+              "name": "App"
             },
             {
               "value": "project",
@@ -245922,6 +245944,7 @@
       "AiGatewayBudgetDefaultScopeType": {
         "enum": [
           "api-key",
+          "app",
           "project",
           "team",
           "user"
@@ -245934,6 +245957,10 @@
             {
               "value": "api-key",
               "name": "ApiKey"
+            },
+            {
+              "value": "app",
+              "name": "App"
             },
             {
               "value": "project",
@@ -280912,7 +280939,8 @@
         "enum": [
           "team",
           "project",
-          "user"
+          "user",
+          "app"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -280930,6 +280958,10 @@
             {
               "value": "user",
               "name": "User"
+            },
+            {
+              "value": "app",
+              "name": "App"
             }
           ]
         }
@@ -280979,7 +281011,8 @@
           "team",
           "project",
           "api-key",
-          "user"
+          "user",
+          "app"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -281001,6 +281034,10 @@
             {
               "value": "user",
               "name": "User"
+            },
+            {
+              "value": "app",
+              "name": "App"
             }
           ]
         }
@@ -389810,6 +389847,7 @@
           "team",
           "project",
           "user",
+          "app",
           "api-key"
         ],
         "type": "string",
@@ -389829,6 +389867,10 @@
             {
               "value": "user",
               "name": "User"
+            },
+            {
+              "value": "app",
+              "name": "App"
             },
             {
               "value": "api-key",
@@ -389863,7 +389905,8 @@
         "enum": [
           "team",
           "project",
-          "user"
+          "user",
+          "app"
         ],
         "type": "string",
         "description": "The budget scope to archive.",
@@ -389882,6 +389925,10 @@
             {
               "value": "user",
               "name": "User"
+            },
+            {
+              "value": "app",
+              "name": "App"
             }
           ]
         }
@@ -389891,7 +389938,8 @@
           "team",
           "project",
           "api-key",
-          "user"
+          "user",
+          "app"
         ],
         "type": "string",
         "description": "The budget default scope to delete.",
@@ -389914,6 +389962,10 @@
             {
               "value": "user",
               "name": "User"
+            },
+            {
+              "value": "app",
+              "name": "App"
             }
           ]
         }

@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("alertThresholds") is null) { _explicitNullValueAlertThresholds = default!; _explicitNullProperties?.Remove("alertThresholds"); }
             else if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
+            if (parseNode.GetChildNode("appId") is null) { _explicitNullValueAppId = default!; _explicitNullProperties?.Remove("appId"); }
+            else if (parseNode.GetChildNode("appId") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
             if (parseNode.GetChildNode("includeByokInQuota") is null) { _explicitNullValueIncludeByokInQuota = default!; _explicitNullProperties?.Remove("includeByokInQuota"); }
             else if (parseNode.GetChildNode("includeByokInQuota") is { } nullNodeIncludeByokInQuota && nullNodeIncludeByokInQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeByokInQuota = null;
             if (parseNode.GetChildNode("increaseBy") is null) { _explicitNullValueIncreaseBy = default!; _explicitNullProperties?.Remove("increaseBy"); }
@@ -46,6 +48,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<double?> AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
         private List<double?> _explicitNullValueAlertThresholds = default!;
+#endif
+        /// <summary>Required when scopeType is \&quot;app\&quot;. The id of a Vercel App (`cl_…`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
+        private string? _explicitNullValueAppId = default!;
+#nullable restore
+#else
+        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
+        private string _explicitNullValueAppId = default!;
 #endif
         /// <summary>Whether BYOK usage counts toward this budget.</summary>
         public bool? IncludeByokInQuota { get => _explicitNullValueIncludeByokInQuota; set { _explicitNullValueIncludeByokInQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeByokInQuota"); else _explicitNullProperties?.Remove("includeByokInQuota"); } }
@@ -108,9 +120,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(9)
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
                 { "includeByokInQuota", n => { IncludeByokInQuota = n.GetBoolValue(); } },
                 { "increaseBy", n => { IncreaseBy = n.GetDoubleValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
@@ -129,6 +142,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("alertThresholds", AlertThresholds);
+            writer.WriteStringValue("appId", AppId);
             writer.WriteBoolValue("includeByokInQuota", IncludeByokInQuota);
             writer.WriteDoubleValue("increaseBy", IncreaseBy);
             writer.WriteStringValue("justification", Justification);
