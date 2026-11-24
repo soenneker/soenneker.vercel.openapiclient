@@ -487,6 +487,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AuditLogExportRequested,
         #pragma warning restore CS1591
+        [EnumMember(Value = "authorization-session-created")]
+        #pragma warning disable CS1591
+        AuthorizationSessionCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "authorization-session-revoked")]
+        #pragma warning disable CS1591
+        AuthorizationSessionRevoked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "authorize-git-deployment")]
         #pragma warning disable CS1591
         AuthorizeGitDeployment,
@@ -2458,6 +2466,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "saml-idp-material-system-set")]
         #pragma warning disable CS1591
         SamlIdpMaterialSystemSet,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "saml-login-provider-changed")]
+        #pragma warning disable CS1591
+        SamlLoginProviderChanged,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-ai-gateway-credentials-configured")]
+        #pragma warning disable CS1591
+        SandboxAiGatewayCredentialsConfigured,
         #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-alias-assigned")]
         #pragma warning disable CS1591

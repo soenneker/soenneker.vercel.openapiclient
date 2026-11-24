@@ -26,6 +26,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
             if (parseNode.GetChildNode("leakedAt") is null) { _explicitNullValueLeakedAt = default!; _explicitNullProperties?.Remove("leakedAt"); }
             else if (parseNode.GetChildNode("leakedAt") is { } nullNodeLeakedAt && nullNodeLeakedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeakedAt = null;
             if (parseNode.GetChildNode("leakedUrl") is null) { _explicitNullValueLeakedUrl = default!; _explicitNullProperties?.Remove("leakedUrl"); }
@@ -67,6 +69,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
+        /// <summary>The user-facing kind of the token.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenKind? _explicitNullValueKind = default!;
         /// <summary>Timestamp (in milliseconds) of when the token was marked as leaked.</summary>
         public double? LeakedAt { get => _explicitNullValueLeakedAt; set { _explicitNullValueLeakedAt = value; AdditionalData?.Remove("leakedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leakedAt"); else _explicitNullProperties?.Remove("leakedAt"); } }
         private double? _explicitNullValueLeakedAt = default!;
@@ -166,12 +171,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(13)
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "activeAt", n => { ActiveAt = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "leakedAt", n => { LeakedAt = n.GetDoubleValue(); } },
                 { "leakedUrl", n => { LeakedUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -194,6 +200,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenKind>("kind", Kind);
             writer.WriteDoubleValue("leakedAt", LeakedAt);
             writer.WriteStringValue("leakedUrl", LeakedUrl);
             writer.WriteStringValue("name", Name);

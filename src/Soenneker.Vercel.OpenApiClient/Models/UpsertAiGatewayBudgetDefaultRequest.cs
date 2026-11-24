@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("alertThresholds") is null) { _explicitNullValueAlertThresholds = default!; _explicitNullProperties?.Remove("alertThresholds"); }
             else if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
+            if (parseNode.GetChildNode("appliesTo") is null) { _explicitNullValueAppliesTo = default!; _explicitNullProperties?.Remove("appliesTo"); }
+            else if (parseNode.GetChildNode("appliesTo") is { } nullNodeAppliesTo && nullNodeAppliesTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppliesTo = null;
             if (parseNode.GetChildNode("justification") is null) { _explicitNullValueJustification = default!; _explicitNullProperties?.Remove("justification"); }
             else if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
             if (parseNode.GetChildNode("limitAmount") is null) { _explicitNullValueLimitAmount = default!; _explicitNullProperties?.Remove("limitAmount"); }
@@ -38,6 +40,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<double?> AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
         private List<double?> _explicitNullValueAlertThresholds = default!;
+#endif
+        /// <summary>Key spend attributions the api-key default covers. Only valid when scopeType is api-key. Omit to keep the stored value; unset means both.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestAppliesToItem?>? AppliesTo { get => _explicitNullValueAppliesTo; set { _explicitNullValueAppliesTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliesTo"); else _explicitNullProperties?.Remove("appliesTo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestAppliesToItem?>? _explicitNullValueAppliesTo = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestAppliesToItem?> AppliesTo { get => _explicitNullValueAppliesTo; set { _explicitNullValueAppliesTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliesTo"); else _explicitNullProperties?.Remove("appliesTo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestAppliesToItem?> _explicitNullValueAppliesTo = default!;
 #endif
         /// <summary>Why the budget is being changed, up to 500 characters. Recorded in the activity log and audit log drains, and sent in the ai-gateway.budget.updated webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,9 +86,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "appliesTo", n => { AppliesTo = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestAppliesToItem>()?.AsList(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "refreshPeriod", n => { RefreshPeriod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestRefreshPeriod>(); } },
@@ -91,6 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("alertThresholds", AlertThresholds);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestAppliesToItem>("appliesTo", AppliesTo);
             writer.WriteStringValue("justification", Justification);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetDefaultRequestRefreshPeriod>("refreshPeriod", RefreshPeriod);

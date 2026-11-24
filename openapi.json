@@ -4919,7 +4919,7 @@
                       "monthly",
                       "none"
                     ],
-                    "description": "Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period."
+                    "description": "Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period. Ignored for a member's own change that lapses (`expiresAt`): it takes the user default's period."
                   },
                   "includeByokInQuota": {
                     "type": "boolean",
@@ -5239,6 +5239,19 @@
                         100
                       ]
                     }
+                  },
+                  "appliesTo": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "team",
+                        "user"
+                      ]
+                    },
+                    "description": "Key spend attributions the api-key default covers. Only valid when scopeType is api-key. Omit to keep the stored value; unset means both."
                   },
                   "justification": {
                     "type": "string",
@@ -6425,7 +6438,7 @@
     },
     "/v1/billing/buy": {
       "post": {
-        "description": "Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.",
+        "description": "Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team. Pro subscription purchases additionally require permission to update the team's plan, and AI Gateway credit purchases require permission to create AI Gateway credits.",
         "operationId": "buyCredits",
         "security": [
           {
@@ -17865,12 +17878,12 @@
         "parameters": [
           {
             "name": "connector",
-            "description": "Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.",
+            "description": "Stable connector ID or URL-encoded team- or organization-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`."
+              "description": "Stable connector ID or URL-encoded team- or organization-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`."
             }
           },
           {
@@ -19274,7 +19287,8 @@
                     }
                   },
                   "validityBufferMs": {
-                    "type": "number"
+                    "type": "number",
+                    "minimum": 0
                   }
                 }
               }
@@ -20122,7 +20136,7 @@
             }
           },
           "400": {
-            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid.\nBoth `target` and `customEnvironmentId` were given."
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid.\nBoth `target` and `customEnvironmentId` were given.\nThe daemon cannot run outside its environment's Secure Compute regions."
           },
           "401": {
             "description": "The request is not authorized."
@@ -20132,6 +20146,9 @@
           },
           "404": {
             "description": "The project has no custom environment with this ID.\nThe daemon does not exist for this target or custom environment."
+          },
+          "409": {
+            "description": "The environment is linked to a Secure Compute network that is not ready yet, so daemon instances cannot start until it is."
           },
           "410": {
             "description": ""
@@ -54348,6 +54365,9 @@
             "description": "You do not have permission to access this resource."
           },
           "404": {
+            "description": ""
+          },
+          "409": {
             "description": ""
           },
           "410": {
@@ -190104,9 +190124,9 @@
                     "example": 604800000
                   },
                   "expiryNotificationLeadTime": {
-                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.",
+                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.",
                     "type": "integer",
-                    "minimum": 120000,
+                    "minimum": 60000,
                     "maximum": 3600000,
                     "example": 300000
                   },
@@ -191797,9 +191817,9 @@
                     "example": 604800000
                   },
                   "expiryNotificationLeadTime": {
-                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.",
+                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.",
                     "type": "integer",
-                    "minimum": 120000,
+                    "minimum": 60000,
                     "maximum": 3600000,
                     "example": 300000
                   },
@@ -193661,6 +193681,12 @@
               "schema": {
                 "oneOf": [
                   {
+                    "description": "Network access policy for the sandbox.\\n    Controls which external hosts the sandbox can communicate with.\\n    Use \\\"allow-all\\\" mode to allow all traffic, \\\"deny-all\\\" to block all traffic or \\\"custom\\\" to provide specific rules.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "mode"
+                    ],
                     "properties": {
                       "mode": {
                         "description": "The network access policy mode. Use \\\"allow-all\\\" to permit all outbound traffic. Use \\\"deny-all\\\" to block all outbound traffic. Use \\\"custom\\\" to specify explicit allow/deny rules.",
@@ -193843,15 +193869,11 @@
                           }
                         }
                       }
-                    },
-                    "description": "Network access policy for the sandbox.\\n    Controls which external hosts the sandbox can communicate with.\\n    Use \\\"allow-all\\\" mode to allow all traffic, \\\"deny-all\\\" to block all traffic or \\\"custom\\\" to provide specific rules.",
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "mode"
-                    ]
+                    }
                   },
                   {
+                    "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                       "allow": {
                         "oneOf": [
@@ -194053,9 +194075,7 @@
                           }
                         }
                       }
-                    },
-                    "type": "object",
-                    "additionalProperties": false
+                    }
                   }
                 ]
               }
@@ -195221,7 +195241,7 @@
                   "expiryNotificationLeadTime": {
                     "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. Defaults to the source sandbox setting.",
                     "type": "integer",
-                    "minimum": 120000,
+                    "minimum": 60000,
                     "maximum": 3600000,
                     "example": 300000
                   },
@@ -196079,9 +196099,9 @@
                     "example": 604800000
                   },
                   "expiryNotificationLeadTime": {
-                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.",
+                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.",
                     "type": "integer",
-                    "minimum": 120000,
+                    "minimum": 60000,
                     "maximum": 3600000,
                     "example": 300000
                   },
@@ -196988,7 +197008,7 @@
                   "expiryNotificationLeadTime": {
                     "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. Defaults to the source sandbox setting.",
                     "type": "integer",
-                    "minimum": 120000,
+                    "minimum": 60000,
                     "maximum": 3600000,
                     "example": 300000
                   },
@@ -197853,9 +197873,9 @@
                     "example": 604800000
                   },
                   "expiryNotificationLeadTime": {
-                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.",
+                    "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.",
                     "type": "integer",
-                    "minimum": 120000,
+                    "minimum": 60000,
                     "maximum": 3600000,
                     "example": 300000
                   },
@@ -222153,7 +222173,7 @@
             }
           },
           "400": {
-            "description": ""
+            "description": "One of the provided values in the request query is invalid."
           },
           "401": {
             "description": "The request is not authorized."
@@ -222172,7 +222192,38 @@
             "list"
           ]
         },
-        "parameters": []
+        "parameters": [
+          {
+            "name": "kind",
+            "description": "Filter by token kind. Omit or use `all` to include every kind.",
+            "in": "query",
+            "schema": {
+              "description": "Filter by token kind. Omit or use `all` to include every kind.",
+              "enum": [
+                "access-token",
+                "all",
+                "app",
+                "sign-in-session"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "description": "Filter by token status. Omit or use `all` to include every status.",
+            "in": "query",
+            "schema": {
+              "description": "Filter by token status. Omit or use `all` to include every status.",
+              "enum": [
+                "active",
+                "all",
+                "expired",
+                "revoked"
+              ],
+              "type": "string"
+            }
+          }
+        ]
       }
     },
     "/v3/user/tokens": {
@@ -240804,6 +240855,10 @@
           "currentSpend": {
             "type": "number"
           },
+          "expiresAt": {
+            "type": "number",
+            "description": "When a member's own budget change lapses and the user default applies again, in ms since the epoch. Absent means the budget is permanent."
+          },
           "includeByokInQuota": {
             "type": "boolean",
             "enum": [
@@ -240931,6 +240986,18 @@
               "type": "number"
             },
             "type": "array"
+          },
+          "appliesTo": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "team",
+                "user"
+              ],
+              "description": "`api-key` scope only: key spend attributions covered. Absent means both."
+            },
+            "type": "array",
+            "description": "`api-key` scope only: key spend attributions covered. Absent means both."
           },
           "createdAt": {
             "type": "number"
@@ -244986,7 +245053,7 @@
           },
           "uid": {
             "type": "string",
-            "description": "Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change."
+            "description": "Full team- or organization-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change."
           },
           "name": {
             "type": "string",
@@ -247870,6 +247937,10 @@
                         },
                         "type": "array"
                       },
+                      "expiresAt": {
+                        "type": "number",
+                        "description": "When the budget lapses to the scope's default, in ms since the epoch."
+                      },
                       "limitAmount": {
                         "type": "number",
                         "description": "Spend cap, in dollars."
@@ -247964,6 +248035,10 @@
                         },
                         "type": "array"
                       },
+                      "expiresAt": {
+                        "type": "number",
+                        "description": "When the budget lapses to the scope's default, in ms since the epoch."
+                      },
                       "limitAmount": {
                         "type": "number",
                         "description": "Spend cap, in dollars."
@@ -248005,6 +248080,10 @@
                           "type": "number"
                         },
                         "type": "array"
+                      },
+                      "expiresAt": {
+                        "type": "number",
+                        "description": "When the budget lapses to the scope's default, in ms since the epoch."
                       },
                       "limitAmount": {
                         "type": "number",
@@ -248121,6 +248200,10 @@
                         },
                         "type": "array"
                       },
+                      "expiresAt": {
+                        "type": "number",
+                        "description": "When the budget lapses to the scope's default, in ms since the epoch."
+                      },
                       "limitAmount": {
                         "type": "number",
                         "description": "Spend cap, in dollars."
@@ -248133,6 +248216,16 @@
                           "none",
                           "weekly"
                         ]
+                      },
+                      "appliesTo": {
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "team",
+                            "user"
+                          ]
+                        },
+                        "type": "array"
                       }
                     },
                     "required": [
@@ -248140,7 +248233,7 @@
                       "refreshPeriod"
                     ],
                     "type": "object",
-                    "description": "Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`."
+                    "description": "`api-key` defaults may cover only some key spend attributions."
                   },
                   "change": {
                     "type": "string",
@@ -248163,6 +248256,10 @@
                         },
                         "type": "array"
                       },
+                      "expiresAt": {
+                        "type": "number",
+                        "description": "When the budget lapses to the scope's default, in ms since the epoch."
+                      },
                       "limitAmount": {
                         "type": "number",
                         "description": "Spend cap, in dollars."
@@ -248175,6 +248272,16 @@
                           "none",
                           "weekly"
                         ]
+                      },
+                      "appliesTo": {
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "team",
+                            "user"
+                          ]
+                        },
+                        "type": "array"
                       }
                     },
                     "required": [
@@ -248182,7 +248289,7 @@
                       "refreshPeriod"
                     ],
                     "type": "object",
-                    "description": "Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`."
+                    "description": "`api-key` defaults may cover only some key spend attributions."
                   },
                   "scopeType": {
                     "type": "string",
@@ -248220,6 +248327,10 @@
                         },
                         "type": "array"
                       },
+                      "expiresAt": {
+                        "type": "number",
+                        "description": "When the budget lapses to the scope's default, in ms since the epoch."
+                      },
                       "limitAmount": {
                         "type": "number",
                         "description": "Spend cap, in dollars."
@@ -248261,6 +248372,10 @@
                           "type": "number"
                         },
                         "type": "array"
+                      },
+                      "expiresAt": {
+                        "type": "number",
+                        "description": "When the budget lapses to the scope's default, in ms since the epoch."
                       },
                       "limitAmount": {
                         "type": "number",
@@ -250366,6 +250481,46 @@
                 "required": [
                   "attackModeEnabled",
                   "projectId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "expiresAt": {
+                    "type": "number",
+                    "description": "UNIX timestamp in milliseconds."
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "originSessionId": {
+                    "type": "string",
+                    "description": "The session it was started from."
+                  },
+                  "sessionId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "expiresAt",
+                  "originSessionId",
+                  "sessionId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "sessionId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sessionId"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -265051,6 +265206,37 @@
                   "connectionId": {
                     "type": "string"
                   },
+                  "to": {
+                    "type": "string",
+                    "enum": [
+                      "vercel",
+                      "workos"
+                    ]
+                  },
+                  "certificateFingerprints": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "actorName": {
+                    "type": "string"
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  }
+                },
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "connectionId": {
+                    "type": "string"
+                  },
                   "actorName": {
                     "type": "string"
                   },
@@ -265065,8 +265251,6 @@
                   }
                 },
                 "required": [
-                  "actorType",
-                  "connectionId",
                   "keyId"
                 ],
                 "type": "object",
@@ -265102,11 +265286,25 @@
                   }
                 },
                 "required": [
-                  "actorType",
-                  "connectionId",
                   "keyId",
                   "signingEnabled",
                   "signingKeyId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "sandboxId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "sandboxId"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -265153,22 +265351,6 @@
                   "projectId",
                   "projectName",
                   "sandboxName"
-                ],
-                "type": "object",
-                "description": "The payload of the event, if requested."
-              },
-              {
-                "properties": {
-                  "projectId": {
-                    "type": "string"
-                  },
-                  "sandboxId": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "projectId",
-                  "sandboxId"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -272510,6 +272692,8 @@
               "attack-mode-enabled",
               "audit-log-export-downloaded",
               "audit-log-export-requested",
+              "authorization-session-created",
+              "authorization-session-revoked",
               "authorize-git-deployment",
               "auto-expose-system-envs",
               "avatar",
@@ -273003,6 +273187,8 @@
               "saml-idp-material-set",
               "saml-idp-material-system-deleted",
               "saml-idp-material-system-set",
+              "saml-login-provider-changed",
+              "sandbox-ai-gateway-credentials-configured",
               "sandbox-alias-assigned",
               "sandbox-alias-delete",
               "sandbox-drive-created",
@@ -273590,6 +273776,8 @@
               "attack-mode-enabled",
               "audit-log-export-downloaded",
               "audit-log-export-requested",
+              "authorization-session-created",
+              "authorization-session-revoked",
               "authorize-git-deployment",
               "auto-expose-system-envs",
               "avatar",
@@ -274083,6 +274271,8 @@
               "saml-idp-material-set",
               "saml-idp-material-system-deleted",
               "saml-idp-material-system-set",
+              "saml-login-provider-changed",
+              "sandbox-ai-gateway-credentials-configured",
               "sandbox-alias-assigned",
               "sandbox-alias-delete",
               "sandbox-drive-created",
@@ -274428,6 +274618,8 @@
                 "attack-mode-enabled",
                 "audit-log-export-downloaded",
                 "audit-log-export-requested",
+                "authorization-session-created",
+                "authorization-session-revoked",
                 "authorize-git-deployment",
                 "auto-expose-system-envs",
                 "avatar",
@@ -274921,6 +275113,8 @@
                 "saml-idp-material-set",
                 "saml-idp-material-system-deleted",
                 "saml-idp-material-system-set",
+                "saml-login-provider-changed",
+                "sandbox-ai-gateway-credentials-configured",
                 "sandbox-alias-assigned",
                 "sandbox-alias-delete",
                 "sandbox-drive-created",
@@ -277016,7 +277210,7 @@
           "expiryNotificationLeadTime": {
             "type": "number",
             "description": "How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time.",
-            "example": 120000
+            "example": 60000
           },
           "failoverRegions": {
             "items": {
@@ -279667,6 +279861,17 @@
             "description": "The unique identifier of the token.",
             "example": "5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391"
           },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "access-token",
+              "app",
+              "other",
+              "sign-in-session"
+            ],
+            "description": "The user-facing kind of the token.",
+            "example": "access-token"
+          },
           "leakedAt": {
             "type": "number",
             "description": "Timestamp (in milliseconds) of when the token was marked as leaked.",
@@ -279838,6 +280043,7 @@
           "activeAt",
           "createdAt",
           "id",
+          "kind",
           "name",
           "type"
         ],

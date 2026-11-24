@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period.</summary>
+    /// <summary>Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period. Ignored for a member&apos;s own change that lapses (`expiresAt`): it takes the user default&apos;s period.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpsertAiGatewayBudgetRequestRefreshPeriod
     {

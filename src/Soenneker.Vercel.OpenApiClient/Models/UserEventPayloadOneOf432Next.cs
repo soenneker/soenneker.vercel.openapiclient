@@ -19,8 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
             else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("repositoryScope") is null) { _explicitNullValueRepositoryScope = default!; _explicitNullProperties?.Remove("repositoryScope"); }
-            else if (parseNode.GetChildNode("repositoryScope") is { } nullNodeRepositoryScope && nullNodeRepositoryScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryScope = null;
+            if (parseNode.GetChildNode("maximumOverdraft") is null) { _explicitNullValueMaximumOverdraft = default!; _explicitNullProperties?.Remove("maximumOverdraft"); }
+            else if (parseNode.GetChildNode("maximumOverdraft") is { } nullNodeMaximumOverdraft && nullNodeMaximumOverdraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumOverdraft = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,9 +28,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The enabled property</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The repositoryScope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432NextRepositoryScope? RepositoryScope { get => _explicitNullValueRepositoryScope; set { _explicitNullValueRepositoryScope = value; AdditionalData?.Remove("repositoryScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryScope"); else _explicitNullProperties?.Remove("repositoryScope"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432NextRepositoryScope? _explicitNullValueRepositoryScope = default!;
+        /// <summary>The maximumOverdraft property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaximumOverdraft { get => _explicitNullValueMaximumOverdraft; set { _explicitNullValueMaximumOverdraft = value; AdditionalData?.Remove("maximumOverdraft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumOverdraft"); else _explicitNullProperties?.Remove("maximumOverdraft"); } }
+        private string? _explicitNullValueMaximumOverdraft = default!;
+#nullable restore
+#else
+        public string MaximumOverdraft { get => _explicitNullValueMaximumOverdraft; set { _explicitNullValueMaximumOverdraft = value; AdditionalData?.Remove("maximumOverdraft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumOverdraft"); else _explicitNullProperties?.Remove("maximumOverdraft"); } }
+        private string _explicitNullValueMaximumOverdraft = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432Next"/> and sets the default values.
         /// </summary>
@@ -57,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "repositoryScope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432NextRepositoryScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRepositoryScope = default; _explicitNullProperties?.Remove("repositoryScope"); AdditionalData["repositoryScope"] = unknown; } else { RepositoryScope = parsed; AdditionalData.Remove("repositoryScope"); } } },
+                { "maximumOverdraft", n => { MaximumOverdraft = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432NextRepositoryScope>("repositoryScope", RepositoryScope);
+            writer.WriteStringValue("maximumOverdraft", MaximumOverdraft);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

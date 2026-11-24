@@ -21,6 +21,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
             if (parseNode.GetChildNode("alertThresholds") is null) { _explicitNullValueAlertThresholds = default!; _explicitNullProperties?.Remove("alertThresholds"); }
             else if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
+            if (parseNode.GetChildNode("appliesTo") is null) { _explicitNullValueAppliesTo = default!; _explicitNullProperties?.Remove("appliesTo"); }
+            else if (parseNode.GetChildNode("appliesTo") is { } nullNodeAppliesTo && nullNodeAppliesTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppliesTo = null;
             if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
             else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("limitAmount") is null) { _explicitNullValueLimitAmount = default!; _explicitNullProperties?.Remove("limitAmount"); }
@@ -47,6 +49,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<double?> AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; AdditionalData?.Remove("alertThresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
         private List<double?> _explicitNullValueAlertThresholds = default!;
+#endif
+        /// <summary>`api-key` scope only: key spend attributions covered. Absent means both.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultAppliesToItem?>? AppliesTo { get => _explicitNullValueAppliesTo; set { _explicitNullValueAppliesTo = value; AdditionalData?.Remove("appliesTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliesTo"); else _explicitNullProperties?.Remove("appliesTo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultAppliesToItem?>? _explicitNullValueAppliesTo = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultAppliesToItem?> AppliesTo { get => _explicitNullValueAppliesTo; set { _explicitNullValueAppliesTo = value; AdditionalData?.Remove("appliesTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliesTo"); else _explicitNullProperties?.Remove("appliesTo"); } }
+        private List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultAppliesToItem?> _explicitNullValueAppliesTo = default!;
 #endif
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
@@ -86,10 +98,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "appliesTo", n => { AppliesTo = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultAppliesToItem>()?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "refreshPeriod", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultRefreshPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRefreshPeriod = default; _explicitNullProperties?.Remove("refreshPeriod"); AdditionalData["refreshPeriod"] = unknown; } else { RefreshPeriod = parsed; AdditionalData.Remove("refreshPeriod"); } } },
@@ -106,6 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteCollectionOfPrimitiveValues<double?>("alertThresholds", AlertThresholds);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultAppliesToItem>("appliesTo", AppliesTo);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetDefaultRefreshPeriod>("refreshPeriod", RefreshPeriod);

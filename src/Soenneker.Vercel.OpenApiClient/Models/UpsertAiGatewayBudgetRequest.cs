@@ -88,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period.</summary>
+        /// <summary>Defaults to monthly with `limitAmount`; `increaseBy` keeps the current period. Ignored for a member&apos;s own change that lapses (`expiresAt`): it takes the user default&apos;s period.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetRequestRefreshPeriod? RefreshPeriod { get => _explicitNullValueRefreshPeriod; set { _explicitNullValueRefreshPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refreshPeriod"); else _explicitNullProperties?.Remove("refreshPeriod"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpsertAiGatewayBudgetRequestRefreshPeriod? _explicitNullValueRefreshPeriod = default!;
         /// <summary>The scopeType property</summary>

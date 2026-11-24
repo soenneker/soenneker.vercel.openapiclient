@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("alertThresholds") is null) { _explicitNullValueAlertThresholds = default!; _explicitNullProperties?.Remove("alertThresholds"); }
             else if (parseNode.GetChildNode("alertThresholds") is { } nullNodeAlertThresholds && nullNodeAlertThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertThresholds = null;
+            if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
+            else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
             if (parseNode.GetChildNode("limitAmount") is null) { _explicitNullValueLimitAmount = default!; _explicitNullProperties?.Remove("limitAmount"); }
             else if (parseNode.GetChildNode("limitAmount") is { } nullNodeLimitAmount && nullNodeLimitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitAmount = null;
             if (parseNode.GetChildNode("refreshPeriod") is null) { _explicitNullValueRefreshPeriod = default!; _explicitNullProperties?.Remove("refreshPeriod"); }
@@ -38,6 +40,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<double?> AlertThresholds { get => _explicitNullValueAlertThresholds; set { _explicitNullValueAlertThresholds = value; AdditionalData?.Remove("alertThresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertThresholds"); else _explicitNullProperties?.Remove("alertThresholds"); } }
         private List<double?> _explicitNullValueAlertThresholds = default!;
 #endif
+        /// <summary>When the budget lapses to the scope&apos;s default, in ms since the epoch.</summary>
+        public double? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private double? _explicitNullValueExpiresAt = default!;
         /// <summary>Spend cap, in dollars.</summary>
         public double? LimitAmount { get => _explicitNullValueLimitAmount; set { _explicitNullValueLimitAmount = value; AdditionalData?.Remove("limitAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limitAmount"); else _explicitNullProperties?.Remove("limitAmount"); } }
         private double? _explicitNullValueLimitAmount = default!;
@@ -69,9 +74,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "refreshPeriod", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34BudgetRefreshPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRefreshPeriod = default; _explicitNullProperties?.Remove("refreshPeriod"); AdditionalData["refreshPeriod"] = unknown; } else { RefreshPeriod = parsed; AdditionalData.Remove("refreshPeriod"); } } },
             };
@@ -84,6 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("alertThresholds", AlertThresholds);
+            writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34BudgetRefreshPeriod>("refreshPeriod", RefreshPeriod);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

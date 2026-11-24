@@ -18,32 +18,46 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("prevPurchasedAmount") is null) { _explicitNullValuePrevPurchasedAmount = default!; _explicitNullProperties?.Remove("prevPurchasedAmount"); }
-            else if (parseNode.GetChildNode("prevPurchasedAmount") is { } nullNodePrevPurchasedAmount && nullNodePrevPurchasedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevPurchasedAmount = null;
-            if (parseNode.GetChildNode("project") is null) { _explicitNullValueProject = default!; _explicitNullProperties?.Remove("project"); }
-            else if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
-            if (parseNode.GetChildNode("purchasedAmount") is null) { _explicitNullValuePurchasedAmount = default!; _explicitNullProperties?.Remove("purchasedAmount"); }
-            else if (parseNode.GetChildNode("purchasedAmount") is { } nullNodePurchasedAmount && nullNodePurchasedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchasedAmount = null;
+            if (parseNode.GetChildNode("bitbucketEmail") is null) { _explicitNullValueBitbucketEmail = default!; _explicitNullProperties?.Remove("bitbucketEmail"); }
+            else if (parseNode.GetChildNode("bitbucketEmail") is { } nullNodeBitbucketEmail && nullNodeBitbucketEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketEmail = null;
+            if (parseNode.GetChildNode("bitbucketLogin") is null) { _explicitNullValueBitbucketLogin = default!; _explicitNullProperties?.Remove("bitbucketLogin"); }
+            else if (parseNode.GetChildNode("bitbucketLogin") is { } nullNodeBitbucketLogin && nullNodeBitbucketLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketLogin = null;
+            if (parseNode.GetChildNode("bitbucketName") is null) { _explicitNullValueBitbucketName = default!; _explicitNullProperties?.Remove("bitbucketName"); }
+            else if (parseNode.GetChildNode("bitbucketName") is { } nullNodeBitbucketName && nullNodeBitbucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BitbucketName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The prevPurchasedAmount property</summary>
-        public double? PrevPurchasedAmount { get => _explicitNullValuePrevPurchasedAmount; set { _explicitNullValuePrevPurchasedAmount = value; AdditionalData?.Remove("prevPurchasedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevPurchasedAmount"); else _explicitNullProperties?.Remove("prevPurchasedAmount"); } }
-        private double? _explicitNullValuePrevPurchasedAmount = default!;
-        /// <summary>The project property</summary>
+        /// <summary>The bitbucketEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Project? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Project? _explicitNullValueProject = default!;
+        public string? BitbucketEmail { get => _explicitNullValueBitbucketEmail; set { _explicitNullValueBitbucketEmail = value; AdditionalData?.Remove("bitbucketEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketEmail"); else _explicitNullProperties?.Remove("bitbucketEmail"); } }
+        private string? _explicitNullValueBitbucketEmail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Project Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Project _explicitNullValueProject = default!;
+        public string BitbucketEmail { get => _explicitNullValueBitbucketEmail; set { _explicitNullValueBitbucketEmail = value; AdditionalData?.Remove("bitbucketEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketEmail"); else _explicitNullProperties?.Remove("bitbucketEmail"); } }
+        private string _explicitNullValueBitbucketEmail = default!;
 #endif
-        /// <summary>The purchasedAmount property</summary>
-        public double? PurchasedAmount { get => _explicitNullValuePurchasedAmount; set { _explicitNullValuePurchasedAmount = value; AdditionalData?.Remove("purchasedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchasedAmount"); else _explicitNullProperties?.Remove("purchasedAmount"); } }
-        private double? _explicitNullValuePurchasedAmount = default!;
+        /// <summary>The bitbucketLogin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
+        private string? _explicitNullValueBitbucketLogin = default!;
+#nullable restore
+#else
+        public string BitbucketLogin { get => _explicitNullValueBitbucketLogin; set { _explicitNullValueBitbucketLogin = value; AdditionalData?.Remove("bitbucketLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketLogin"); else _explicitNullProperties?.Remove("bitbucketLogin"); } }
+        private string _explicitNullValueBitbucketLogin = default!;
+#endif
+        /// <summary>The bitbucketName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BitbucketName { get => _explicitNullValueBitbucketName; set { _explicitNullValueBitbucketName = value; AdditionalData?.Remove("bitbucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketName"); else _explicitNullProperties?.Remove("bitbucketName"); } }
+        private string? _explicitNullValueBitbucketName = default!;
+#nullable restore
+#else
+        public string BitbucketName { get => _explicitNullValueBitbucketName; set { _explicitNullValueBitbucketName = value; AdditionalData?.Remove("bitbucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bitbucketName"); else _explicitNullProperties?.Remove("bitbucketName"); } }
+        private string _explicitNullValueBitbucketName = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125"/> and sets the default values.
         /// </summary>
@@ -69,9 +83,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prevPurchasedAmount", n => { PrevPurchasedAmount = n.GetDoubleValue(); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Project.CreateFromDiscriminatorValue); } },
-                { "purchasedAmount", n => { PurchasedAmount = n.GetDoubleValue(); } },
+                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
+                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
+                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,9 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("prevPurchasedAmount", PrevPurchasedAmount);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125Project>("project", Project);
-            writer.WriteDoubleValue("purchasedAmount", PurchasedAmount);
+            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
+            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
+            writer.WriteStringValue("bitbucketName", BitbucketName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

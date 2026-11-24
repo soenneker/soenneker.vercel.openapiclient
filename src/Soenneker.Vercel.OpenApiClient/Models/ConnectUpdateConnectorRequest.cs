@@ -128,7 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty TriggerVerificationInput { get => _explicitNullValueTriggerVerificationInput; set { _explicitNullValueTriggerVerificationInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerVerificationInput"); else _explicitNullProperties?.Remove("triggerVerificationInput"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty _explicitNullValueTriggerVerificationInput = default!;
 #endif
-        /// <summary>Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.</summary>
+        /// <summary>Full team- or organization-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uid { get => _explicitNullValueUid; set { _explicitNullValueUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uid"); else _explicitNullProperties?.Remove("uid"); } }

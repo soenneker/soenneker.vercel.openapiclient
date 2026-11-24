@@ -29,6 +29,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("currentByokSpend") is { } nullNodeCurrentByokSpend && nullNodeCurrentByokSpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentByokSpend = null;
             if (parseNode.GetChildNode("currentSpend") is null) { _explicitNullValueCurrentSpend = default!; _explicitNullProperties?.Remove("currentSpend"); }
             else if (parseNode.GetChildNode("currentSpend") is { } nullNodeCurrentSpend && nullNodeCurrentSpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentSpend = null;
+            if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
+            else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
             if (parseNode.GetChildNode("includeByokInQuota") is null) { _explicitNullValueIncludeByokInQuota = default!; _explicitNullProperties?.Remove("includeByokInQuota"); }
             else if (parseNode.GetChildNode("includeByokInQuota") is { } nullNodeIncludeByokInQuota && nullNodeIncludeByokInQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeByokInQuota = null;
             if (parseNode.GetChildNode("limitAmount") is null) { _explicitNullValueLimitAmount = default!; _explicitNullProperties?.Remove("limitAmount"); }
@@ -76,6 +78,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The currentSpend property</summary>
         public double? CurrentSpend { get => _explicitNullValueCurrentSpend; set { _explicitNullValueCurrentSpend = value; AdditionalData?.Remove("currentSpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentSpend"); else _explicitNullProperties?.Remove("currentSpend"); } }
         private double? _explicitNullValueCurrentSpend = default!;
+        /// <summary>When a member&apos;s own budget change lapses and the user default applies again, in ms since the epoch. Absent means the budget is permanent.</summary>
+        public double? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private double? _explicitNullValueExpiresAt = default!;
         /// <summary>The includeByokInQuota property</summary>
         public bool? IncludeByokInQuota { get => _explicitNullValueIncludeByokInQuota; set { _explicitNullValueIncludeByokInQuota = value; AdditionalData?.Remove("includeByokInQuota"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeByokInQuota"); else _explicitNullProperties?.Remove("includeByokInQuota"); } }
         private bool? _explicitNullValueIncludeByokInQuota = default!;
@@ -147,7 +152,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(15)
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
@@ -155,6 +160,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "currentByokSpend", n => { CurrentByokSpend = n.GetDoubleValue(); } },
                 { "currentSpend", n => { CurrentSpend = n.GetDoubleValue(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "includeByokInQuota", n => { IncludeByokInQuota = n.GetBoolValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -179,6 +185,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("currentByokSpend", CurrentByokSpend);
             writer.WriteDoubleValue("currentSpend", CurrentSpend);
+            writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteBoolValue("includeByokInQuota", IncludeByokInQuota);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteStringValue("name", Name);
