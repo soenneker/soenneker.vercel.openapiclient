@@ -47,6 +47,24 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token
         {
         }
         /// <summary>
+        /// Return metadata about a Global Config token, identified by the token itself. The token is sent in a header so it stays out of URLs.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigTokenMetadata"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigTokenMetadata?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.TokenRequestBuilder.TokenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigTokenMetadata> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.TokenRequestBuilder.TokenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigTokenMetadata>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigTokenMetadata.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Adds a token to an existing Global Config.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfigToken201Response"/></returns>
@@ -65,6 +83,25 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfigToken201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfigToken201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Return metadata about a Global Config token, identified by the token itself. The token is sent in a header so it stays out of URLs.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.TokenRequestBuilder.TokenRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.TokenRequestBuilder.TokenRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Adds a token to an existing Global Config.
@@ -96,6 +133,33 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token
         public global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.TokenRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.TokenRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Return metadata about a Global Config token, identified by the token itself. The token is sent in a header so it stays out of URLs.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class TokenRequestBuilderGetQueryParameters 
+        {
+            /// <summary>The Team slug to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("slug")]
+            public string? Slug { get; set; }
+#nullable restore
+#else
+            [QueryParameter("slug")]
+            public string Slug { get; set; }
+#endif
+            /// <summary>The Team identifier to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("teamId")]
+            public string? TeamId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("teamId")]
+            public string TeamId { get; set; }
+#endif
         }
         /// <summary>
         /// Adds a token to an existing Global Config.

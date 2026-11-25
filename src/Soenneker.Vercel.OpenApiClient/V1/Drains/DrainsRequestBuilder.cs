@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
         {
         }
         /// <summary>
-        /// Allows to retrieve the list of Drains of the authenticated team.
+        /// Allows to retrieve the list of Drains of the authenticated team. Endpoint and header values of a drain connected to a Marketplace store are masked for every caller.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new Drain with the provided configuration.
+        /// Create a new Drain with the provided configuration. Endpoint and header values of a drain connected to a Marketplace store are masked for every caller.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Allows to retrieve the list of Drains of the authenticated team.
+        /// Allows to retrieve the list of Drains of the authenticated team. Endpoint and header values of a drain connected to a Marketplace store are masked for every caller.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
             return requestInfo;
         }
         /// <summary>
-        /// Create a new Drain with the provided configuration.
+        /// Create a new Drain with the provided configuration. Endpoint and header values of a drain connected to a Marketplace store are masked for every caller.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +141,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
             return new global::Soenneker.Vercel.OpenApiClient.V1.Drains.DrainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Allows to retrieve the list of Drains of the authenticated team.
+        /// Allows to retrieve the list of Drains of the authenticated team. Endpoint and header values of a drain connected to a Marketplace store are masked for every caller.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DrainsRequestBuilderGetQueryParameters 
@@ -188,7 +188,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
 #endif
         }
         /// <summary>
-        /// Create a new Drain with the provided configuration.
+        /// Create a new Drain with the provided configuration. Endpoint and header values of a drain connected to a Marketplace store are masked for every caller.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DrainsRequestBuilderPostQueryParameters 

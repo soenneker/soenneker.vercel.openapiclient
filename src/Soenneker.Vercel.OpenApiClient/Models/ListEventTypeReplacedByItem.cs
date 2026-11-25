@@ -1731,6 +1731,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationSlugUpdate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-sso-adopted")]
+        #pragma warning disable CS1591
+        OrganizationSsoAdopted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-sso-deleted")]
         #pragma warning disable CS1591
         OrganizationSsoDeleted,
@@ -2506,6 +2510,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "sandbox-npm-credentials-configured")]
         #pragma warning disable CS1591
         SandboxNpmCredentialsConfigured,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-processes-updated")]
+        #pragma warning disable CS1591
+        SandboxProcessesUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-signed-commit-identity-configured")]
         #pragma warning disable CS1591

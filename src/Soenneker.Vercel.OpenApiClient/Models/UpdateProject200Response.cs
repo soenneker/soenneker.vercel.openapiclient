@@ -395,7 +395,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseDataCache DataCache { get => _explicitNullValueDataCache; set { _explicitNullValueDataCache = value; AdditionalData?.Remove("dataCache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataCache"); else _explicitNullProperties?.Remove("dataCache"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseDataCache _explicitNullValueDataCache = default!;
 #endif
-        /// <summary>The defaultResourceConfig property</summary>
+        /// <summary>Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseDefaultResourceConfig? DefaultResourceConfig { get => _explicitNullValueDefaultResourceConfig; set { _explicitNullValueDefaultResourceConfig = value; AdditionalData?.Remove("defaultResourceConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultResourceConfig"); else _explicitNullProperties?.Remove("defaultResourceConfig"); } }
@@ -761,7 +761,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseProtectionConfig ProtectionConfig { get => _explicitNullValueProtectionConfig; set { _explicitNullValueProtectionConfig = value; AdditionalData?.Remove("protectionConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protectionConfig"); else _explicitNullProperties?.Remove("protectionConfig"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseProtectionConfig _explicitNullValueProtectionConfig = default!;
 #endif
-        /// <summary>The resourceConfig property</summary>
+        /// <summary>Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseResourceConfig? ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; AdditionalData?.Remove("resourceConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }

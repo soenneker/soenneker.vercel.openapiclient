@@ -19,11 +19,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("dsyncMode") is null) { _explicitNullValueDsyncMode = default!; _explicitNullProperties?.Remove("dsyncMode"); }
             else if (parseNode.GetChildNode("dsyncMode") is { } nullNodeDsyncMode && nullNodeDsyncMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsyncMode = null;
+            if (parseNode.GetChildNode("overrideLockout") is null) { _explicitNullValueOverrideLockout = default!; _explicitNullProperties?.Remove("overrideLockout"); }
+            else if (parseNode.GetChildNode("overrideLockout") is { } nullNodeOverrideLockout && nullNodeOverrideLockout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideLockout = null;
         }
 
         /// <summary>Whether the Organization&apos;s Directory Sync or the team&apos;s own directory governs the team&apos;s memberships.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsyncRequestDsyncMode? DsyncMode { get => _explicitNullValueDsyncMode; set { _explicitNullValueDsyncMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsyncMode"); else _explicitNullProperties?.Remove("dsyncMode"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsyncRequestDsyncMode? _explicitNullValueDsyncMode = default!;
+        /// <summary>Change the root team&apos;s mode even if it would leave it without an owner or the acting admin without the Owner role on it.</summary>
+        public bool? OverrideLockout { get => _explicitNullValueOverrideLockout; set { _explicitNullValueOverrideLockout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrideLockout"); else _explicitNullProperties?.Remove("overrideLockout"); } }
+        private bool? _explicitNullValueOverrideLockout = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dsyncMode", n => { DsyncMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsyncRequestDsyncMode>(); } },
+                { "overrideLockout", n => { OverrideLockout = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +58,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsyncRequestDsyncMode>("dsyncMode", DsyncMode);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationTeamDsyncRequestDsyncMode>("dsyncMode", DsyncMode);
+            writer.WriteBoolValue("overrideLockout", OverrideLockout);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

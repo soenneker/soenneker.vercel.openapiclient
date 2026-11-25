@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithGroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/organizations/{organizationId}/dsync/groups/{groupId}{?slug*,teamId*}", pathParameters)
+        public WithGroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/organizations/{organizationId}/dsync/groups/{groupId}{?overrideLockout*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/organizations/{organizationId}/dsync/groups/{groupId}{?slug*,teamId*}", rawUrl)
+        public WithGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/organizations/{organizationId}/dsync/groups/{groupId}{?overrideLockout*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete one organization&apos;s Directory Sync group configuration. The last group granting OrgAdmin cannot be removed.
+        /// Delete one organization&apos;s Directory Sync group configuration. The last group granting OrgAdmin cannot be removed. A deletion that would leave the root team without an owner, or take the Owner role on it from the acting admin, is refused with `organization_lockout` unless `overrideLockout` is set.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team.
+        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team. A save that would leave the root team without an owner, or take the Owner role on it from the acting admin, is refused with `organization_lockout` unless `overrideLockout` is set.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.OrganizationDirectorySyncGroup.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete one organization&apos;s Directory Sync group configuration. The last group granting OrgAdmin cannot be removed.
+        /// Delete one organization&apos;s Directory Sync group configuration. The last group granting OrgAdmin cannot be removed. A deletion that would leave the root team without an owner, or take the Owner role on it from the acting admin, is refused with `organization_lockout` unless `overrideLockout` is set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team.
+        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team. A save that would leave the root team without an owner, or take the Owner role on it from the acting admin, is refused with `organization_lockout` unless `overrideLockout` is set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,11 +157,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
             return new global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item.WithGroupItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete one organization&apos;s Directory Sync group configuration. The last group granting OrgAdmin cannot be removed.
+        /// Delete one organization&apos;s Directory Sync group configuration. The last group granting OrgAdmin cannot be removed. A deletion that would leave the root team without an owner, or take the Owner role on it from the acting admin, is refused with `organization_lockout` unless `overrideLockout` is set.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithGroupItemRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>Delete even if it would leave the root team without an owner or the acting admin without the Owner role on it.</summary>
+            [QueryParameter("overrideLockout")]
+            public bool? OverrideLockout { get; set; }
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -211,7 +214,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.Dsync.Groups.Item
 #endif
         }
         /// <summary>
-        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team.
+        /// Create or replace one organization&apos;s Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization&apos;s root team, as its default role or for that team. A save that would leave the root team without an owner, or take the Owner role on it from the acting admin, is refused with `organization_lockout` unless `overrideLockout` is set.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithGroupItemRequestBuilderPutQueryParameters 

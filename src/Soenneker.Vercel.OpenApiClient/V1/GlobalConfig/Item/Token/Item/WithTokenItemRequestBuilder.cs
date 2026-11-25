@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item
         {
         }
         /// <summary>
-        /// Return meta data about a Global Config token.
+        /// Return metadata about a Global Config token.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return meta data about a Global Config token.
+        /// Return metadata about a Global Config token.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item
             return new global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Return meta data about a Global Config token.
+        /// Return metadata about a Global Config token.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithTokenItemRequestBuilderGetQueryParameters 

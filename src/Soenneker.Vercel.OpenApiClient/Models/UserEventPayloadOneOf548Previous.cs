@@ -17,27 +17,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
-            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("issuerUrls") is null) { _explicitNullValueIssuerUrls = default!; _explicitNullProperties?.Remove("issuerUrls"); }
-            else if (parseNode.GetChildNode("issuerUrls") is { } nullNodeIssuerUrls && nullNodeIssuerUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerUrls = null;
+            if (parseNode.GetChildNode("access") is null) { _explicitNullValueAccess = default!; _explicitNullProperties?.Remove("access"); }
+            else if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
         }
 
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
-        private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The issuerUrls property</summary>
+        /// <summary>The access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IssuerUrls { get => _explicitNullValueIssuerUrls; set { _explicitNullValueIssuerUrls = value; AdditionalData?.Remove("issuerUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerUrls"); else _explicitNullProperties?.Remove("issuerUrls"); } }
-        private List<string>? _explicitNullValueIssuerUrls = default!;
+        public string? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private string? _explicitNullValueAccess = default!;
 #nullable restore
 #else
-        public List<string> IssuerUrls { get => _explicitNullValueIssuerUrls; set { _explicitNullValueIssuerUrls = value; AdditionalData?.Remove("issuerUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerUrls"); else _explicitNullProperties?.Remove("issuerUrls"); } }
-        private List<string> _explicitNullValueIssuerUrls = default!;
+        public string Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private string _explicitNullValueAccess = default!;
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548Previous"/> and sets the default values.
         /// </summary>
@@ -53,7 +48,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548Previous CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548Previous(), parseNode);
+            var mappingValue = parseNode.GetChildNode("access")?.GetStringValue();
+            return mappingValue switch
+            {
+                "default" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548PreviousOneOf1Variant(),
+                "limited" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548PreviousOneOf2Variant(),
+                "none" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548PreviousOneOf1Variant(),
+                "unlimited" => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548PreviousOneOf1Variant(),
+                _ => new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf548Previous(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,8 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "issuerUrls", n => { IssuerUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "access", n => { Access = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,8 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfPrimitiveValues<string>("issuerUrls", IssuerUrls);
+            writer.WriteStringValue("access", Access);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

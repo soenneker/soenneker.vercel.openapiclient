@@ -46,8 +46,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>The sdkKeyType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKeyRequestSdkKeyType? SdkKeyType { get => _explicitNullValueSdkKeyType; set { _explicitNullValueSdkKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkKeyType"); else _explicitNullProperties?.Remove("sdkKeyType"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKeyRequestSdkKeyType? _explicitNullValueSdkKeyType = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.ServerSdkKeyType? SdkKeyType { get => _explicitNullValueSdkKeyType; set { _explicitNullValueSdkKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkKeyType"); else _explicitNullProperties?.Remove("sdkKeyType"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.ServerSdkKeyType? _explicitNullValueSdkKeyType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "sdkKeyType", n => { SdkKeyType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKeyRequestSdkKeyType>(); } },
+                { "sdkKeyType", n => { SdkKeyType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ServerSdkKeyType>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("label", Label);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKeyRequestSdkKeyType>("sdkKeyType", SdkKeyType);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ServerSdkKeyType>("sdkKeyType", SdkKeyType);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

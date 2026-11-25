@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountPlanDowngrade,
         #pragma warning restore CS1591
+        [EnumMember(Value = "auto-paused-delivery-errors")]
+        #pragma warning disable CS1591
+        AutoPausedDeliveryErrors,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled-by-admin")]
         #pragma warning disable CS1591
         DisabledByAdmin,

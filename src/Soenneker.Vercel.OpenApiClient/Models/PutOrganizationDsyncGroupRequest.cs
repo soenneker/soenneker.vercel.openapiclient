@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("assignments") is null) { _explicitNullValueAssignments = default!; _explicitNullProperties?.Remove("assignments"); }
             else if (parseNode.GetChildNode("assignments") is { } nullNodeAssignments && nullNodeAssignments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Assignments = null;
+            if (parseNode.GetChildNode("overrideLockout") is null) { _explicitNullValueOverrideLockout = default!; _explicitNullProperties?.Remove("overrideLockout"); }
+            else if (parseNode.GetChildNode("overrideLockout") is { } nullNodeOverrideLockout && nullNodeOverrideLockout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideLockout = null;
         }
 
         /// <summary>The assignments property</summary>
@@ -31,6 +33,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationDsyncGroupRequestAssignments Assignments { get => _explicitNullValueAssignments; set { _explicitNullValueAssignments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignments"); else _explicitNullProperties?.Remove("assignments"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationDsyncGroupRequestAssignments _explicitNullValueAssignments = default!;
 #endif
+        /// <summary>Save even if the change would leave the root team without an owner or the acting admin without the Owner role on it.</summary>
+        public bool? OverrideLockout { get => _explicitNullValueOverrideLockout; set { _explicitNullValueOverrideLockout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrideLockout"); else _explicitNullProperties?.Remove("overrideLockout"); } }
+        private bool? _explicitNullValueOverrideLockout = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assignments", n => { Assignments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationDsyncGroupRequestAssignments>(global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationDsyncGroupRequestAssignments.CreateFromDiscriminatorValue); } },
+                { "overrideLockout", n => { OverrideLockout = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -59,7 +65,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationDsyncGroupRequestAssignments>("assignments", Assignments);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutOrganizationDsyncGroupRequestAssignments>("assignments", Assignments);
+            writer.WriteBoolValue("overrideLockout", OverrideLockout);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

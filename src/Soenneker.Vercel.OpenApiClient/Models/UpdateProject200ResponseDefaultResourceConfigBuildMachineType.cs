@@ -8,13 +8,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UpdateProject200ResponseDefaultResourceConfigBuildMachineType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "14cpu-28gb")]
-        #pragma warning disable CS1591
-        Value14Cpu28Gb,
-        #pragma warning restore CS1591
         [EnumMember(Value = "basic")]
         #pragma warning disable CS1591
         Basic,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "elastic")]
+        #pragma warning disable CS1591
+        Elastic,
         #pragma warning restore CS1591
         [EnumMember(Value = "enhanced")]
         #pragma warning disable CS1591

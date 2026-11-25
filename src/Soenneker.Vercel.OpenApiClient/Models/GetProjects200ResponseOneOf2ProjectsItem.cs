@@ -414,7 +414,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The paused property</summary>
         public bool? Paused { get => _explicitNullValuePaused; set { _explicitNullValuePaused = value; AdditionalData?.Remove("paused"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paused"); else _explicitNullProperties?.Remove("paused"); } }
         private bool? _explicitNullValuePaused = default!;
-        /// <summary>The resourceConfig property</summary>
+        /// <summary>Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemResourceConfig? ResourceConfig { get => _explicitNullValueResourceConfig; set { _explicitNullValueResourceConfig = value; AdditionalData?.Remove("resourceConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceConfig"); else _explicitNullProperties?.Remove("resourceConfig"); } }
