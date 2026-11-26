@@ -18,40 +18,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("commitSha") is null) { _explicitNullValueCommitSha = default!; _explicitNullProperties?.Remove("commitSha"); }
-            else if (parseNode.GetChildNode("commitSha") is { } nullNodeCommitSha && nullNodeCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitSha = null;
-            if (parseNode.GetChildNode("invocationId") is null) { _explicitNullValueInvocationId = default!; _explicitNullProperties?.Remove("invocationId"); }
-            else if (parseNode.GetChildNode("invocationId") is { } nullNodeInvocationId && nullNodeInvocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvocationId = null;
+            if (parseNode.GetChildNode("ciEnabled") is null) { _explicitNullValueCiEnabled = default!; _explicitNullProperties?.Remove("ciEnabled"); }
+            else if (parseNode.GetChildNode("ciEnabled") is { } nullNodeCiEnabled && nullNodeCiEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CiEnabled = null;
             if (parseNode.GetChildNode("organizationId") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organizationId"); }
             else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
-            if (parseNode.GetChildNode("pullRequestNumber") is null) { _explicitNullValuePullRequestNumber = default!; _explicitNullProperties?.Remove("pullRequestNumber"); }
-            else if (parseNode.GetChildNode("pullRequestNumber") is { } nullNodePullRequestNumber && nullNodePullRequestNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestNumber = null;
             if (parseNode.GetChildNode("repository") is null) { _explicitNullValueRepository = default!; _explicitNullProperties?.Remove("repository"); }
             else if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The commitSha property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; AdditionalData?.Remove("commitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
-        private string? _explicitNullValueCommitSha = default!;
-#nullable restore
-#else
-        public string CommitSha { get => _explicitNullValueCommitSha; set { _explicitNullValueCommitSha = value; AdditionalData?.Remove("commitSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitSha"); else _explicitNullProperties?.Remove("commitSha"); } }
-        private string _explicitNullValueCommitSha = default!;
-#endif
-        /// <summary>The invocationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; AdditionalData?.Remove("invocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
-        private string? _explicitNullValueInvocationId = default!;
-#nullable restore
-#else
-        public string InvocationId { get => _explicitNullValueInvocationId; set { _explicitNullValueInvocationId = value; AdditionalData?.Remove("invocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invocationId"); else _explicitNullProperties?.Remove("invocationId"); } }
-        private string _explicitNullValueInvocationId = default!;
-#endif
+        /// <summary>The ciEnabled property</summary>
+        public bool? CiEnabled { get => _explicitNullValueCiEnabled; set { _explicitNullValueCiEnabled = value; AdditionalData?.Remove("ciEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciEnabled"); else _explicitNullProperties?.Remove("ciEnabled"); } }
+        private bool? _explicitNullValueCiEnabled = default!;
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,9 +41,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
         private string _explicitNullValueOrganizationId = default!;
 #endif
-        /// <summary>The pullRequestNumber property</summary>
-        public double? PullRequestNumber { get => _explicitNullValuePullRequestNumber; set { _explicitNullValuePullRequestNumber = value; AdditionalData?.Remove("pullRequestNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequestNumber"); else _explicitNullProperties?.Remove("pullRequestNumber"); } }
-        private double? _explicitNullValuePullRequestNumber = default!;
         /// <summary>The repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,12 +74,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                { "commitSha", n => { CommitSha = n.GetStringValue(); } },
-                { "invocationId", n => { InvocationId = n.GetStringValue(); } },
+                { "ciEnabled", n => { CiEnabled = n.GetBoolValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "pullRequestNumber", n => { PullRequestNumber = n.GetDoubleValue(); } },
                 { "repository", n => { Repository = n.GetStringValue(); } },
             };
         }
@@ -114,10 +88,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("commitSha", CommitSha);
-            writer.WriteStringValue("invocationId", InvocationId);
+            writer.WriteBoolValue("ciEnabled", CiEnabled);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteDoubleValue("pullRequestNumber", PullRequestNumber);
             writer.WriteStringValue("repository", Repository);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

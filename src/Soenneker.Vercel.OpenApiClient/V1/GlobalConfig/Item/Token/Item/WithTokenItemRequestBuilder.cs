@@ -39,6 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -75,6 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder(rawUrl, RequestAdapter);

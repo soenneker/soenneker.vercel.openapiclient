@@ -18,15 +18,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("previousSecretGracePeriodHours") is null) { _explicitNullValuePreviousSecretGracePeriodHours = default!; _explicitNullProperties?.Remove("previousSecretGracePeriodHours"); }
-            else if (parseNode.GetChildNode("previousSecretGracePeriodHours") is { } nullNodePreviousSecretGracePeriodHours && nullNodePreviousSecretGracePeriodHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousSecretGracePeriodHours = null;
+            if (parseNode.GetChildNode("failureMode") is null) { _explicitNullValueFailureMode = default!; _explicitNullProperties?.Remove("failureMode"); }
+            else if (parseNode.GetChildNode("failureMode") is { } nullNodeFailureMode && nullNodeFailureMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureMode = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("rolloutPercent") is null) { _explicitNullValueRolloutPercent = default!; _explicitNullProperties?.Remove("rolloutPercent"); }
+            else if (parseNode.GetChildNode("rolloutPercent") is { } nullNodeRolloutPercent && nullNodeRolloutPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutPercent = null;
+            if (parseNode.GetChildNode("timeoutMs") is null) { _explicitNullValueTimeoutMs = default!; _explicitNullProperties?.Remove("timeoutMs"); }
+            else if (parseNode.GetChildNode("timeoutMs") is { } nullNodeTimeoutMs && nullNodeTimeoutMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoutMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previousSecretGracePeriodHours property</summary>
-        public double? PreviousSecretGracePeriodHours { get => _explicitNullValuePreviousSecretGracePeriodHours; set { _explicitNullValuePreviousSecretGracePeriodHours = value; AdditionalData?.Remove("previousSecretGracePeriodHours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousSecretGracePeriodHours"); else _explicitNullProperties?.Remove("previousSecretGracePeriodHours"); } }
-        private double? _explicitNullValuePreviousSecretGracePeriodHours = default!;
+        /// <summary>The failureMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53FailureMode? FailureMode { get => _explicitNullValueFailureMode; set { _explicitNullValueFailureMode = value; AdditionalData?.Remove("failureMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureMode"); else _explicitNullProperties?.Remove("failureMode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53FailureMode? _explicitNullValueFailureMode = default!;
+        /// <summary>The mode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Mode? _explicitNullValueMode = default!;
+        /// <summary>The rolloutPercent property</summary>
+        public double? RolloutPercent { get => _explicitNullValueRolloutPercent; set { _explicitNullValueRolloutPercent = value; AdditionalData?.Remove("rolloutPercent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutPercent"); else _explicitNullProperties?.Remove("rolloutPercent"); } }
+        private double? _explicitNullValueRolloutPercent = default!;
+        /// <summary>The timeoutMs property</summary>
+        public double? TimeoutMs { get => _explicitNullValueTimeoutMs; set { _explicitNullValueTimeoutMs = value; AdditionalData?.Remove("timeoutMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoutMs"); else _explicitNullProperties?.Remove("timeoutMs"); } }
+        private double? _explicitNullValueTimeoutMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53"/> and sets the default values.
         /// </summary>
@@ -50,9 +65,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
-                { "previousSecretGracePeriodHours", n => { PreviousSecretGracePeriodHours = n.GetDoubleValue(); } },
+                { "failureMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53FailureMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFailureMode = default; _explicitNullProperties?.Remove("failureMode"); AdditionalData["failureMode"] = unknown; } else { FailureMode = parsed; AdditionalData.Remove("failureMode"); } } },
+                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Mode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
+                { "rolloutPercent", n => { RolloutPercent = n.GetDoubleValue(); } },
+                { "timeoutMs", n => { TimeoutMs = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +80,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("previousSecretGracePeriodHours", PreviousSecretGracePeriodHours);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53FailureMode>("failureMode", FailureMode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53Mode>("mode", Mode);
+            writer.WriteDoubleValue("rolloutPercent", RolloutPercent);
+            writer.WriteDoubleValue("timeoutMs", TimeoutMs);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("cost") is null) { _explicitNullValueCost = default!; _explicitNullProperties?.Remove("cost"); }
             else if (parseNode.GetChildNode("cost") is { } nullNodeCost && nullNodeCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cost = null;
+            if (parseNode.GetChildNode("intelligence") is null) { _explicitNullValueIntelligence = default!; _explicitNullProperties?.Remove("intelligence"); }
+            else if (parseNode.GetChildNode("intelligence") is { } nullNodeIntelligence && nullNodeIntelligence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intelligence = null;
             if (parseNode.GetChildNode("tps") is null) { _explicitNullValueTps = default!; _explicitNullProperties?.Remove("tps"); }
             else if (parseNode.GetChildNode("tps") is { } nullNodeTps && nullNodeTps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tps = null;
             if (parseNode.GetChildNode("ttft") is null) { _explicitNullValueTtft = default!; _explicitNullProperties?.Remove("ttft"); }
@@ -37,6 +39,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsCost Cost { get => _explicitNullValueCost; set { _explicitNullValueCost = value; AdditionalData?.Remove("cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost"); else _explicitNullProperties?.Remove("cost"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsCost _explicitNullValueCost = default!;
+#endif
+        /// <summary>For kind=router: option slices keyed by selector name; each selector owns its slice&apos;s shape.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsIntelligence? Intelligence { get => _explicitNullValueIntelligence; set { _explicitNullValueIntelligence = value; AdditionalData?.Remove("intelligence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intelligence"); else _explicitNullProperties?.Remove("intelligence"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsIntelligence? _explicitNullValueIntelligence = default!;
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsIntelligence Intelligence { get => _explicitNullValueIntelligence; set { _explicitNullValueIntelligence = value; AdditionalData?.Remove("intelligence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intelligence"); else _explicitNullProperties?.Remove("intelligence"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsIntelligence _explicitNullValueIntelligence = default!;
 #endif
         /// <summary>For kind=router: option slices keyed by selector name; each selector owns its slice&apos;s shape.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,9 +93,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "cost", n => { Cost = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsCost>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsCost.CreateFromDiscriminatorValue); } },
+                { "intelligence", n => { Intelligence = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsIntelligence>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsIntelligence.CreateFromDiscriminatorValue); } },
                 { "tps", n => { Tps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsTps>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsTps.CreateFromDiscriminatorValue); } },
                 { "ttft", n => { Ttft = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsTtft>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsTtft.CreateFromDiscriminatorValue); } },
             };
@@ -96,6 +109,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsCost>("cost", Cost);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsIntelligence>("intelligence", Intelligence);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsTps>("tps", Tps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptionsTtft>("ttft", Ttft);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

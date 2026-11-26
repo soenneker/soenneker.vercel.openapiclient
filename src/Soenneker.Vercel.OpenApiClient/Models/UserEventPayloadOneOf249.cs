@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
             if (parseNode.GetChildNode("organizationSlug") is null) { _explicitNullValueOrganizationSlug = default!; _explicitNullProperties?.Remove("organizationSlug"); }
             else if (parseNode.GetChildNode("organizationSlug") is { } nullNodeOrganizationSlug && nullNodeOrganizationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationSlug = null;
+            if (parseNode.GetChildNode("targetUser") is null) { _explicitNullValueTargetUser = default!; _explicitNullProperties?.Remove("targetUser"); }
+            else if (parseNode.GetChildNode("targetUser") is { } nullNodeTargetUser && nullNodeTargetUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUser = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,6 +47,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; AdditionalData?.Remove("organizationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
         private string _explicitNullValueOrganizationSlug = default!;
+#endif
+        /// <summary>The targetUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetUser { get => _explicitNullValueTargetUser; set { _explicitNullValueTargetUser = value; AdditionalData?.Remove("targetUser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetUser"); else _explicitNullProperties?.Remove("targetUser"); } }
+        private string? _explicitNullValueTargetUser = default!;
+#nullable restore
+#else
+        public string TargetUser { get => _explicitNullValueTargetUser; set { _explicitNullValueTargetUser = value; AdditionalData?.Remove("targetUser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetUser"); else _explicitNullProperties?.Remove("targetUser"); } }
+        private string _explicitNullValueTargetUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf249"/> and sets the default values.
@@ -73,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "organizationSlug", n => { OrganizationSlug = n.GetStringValue(); } },
+                { "targetUser", n => { TargetUser = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("organizationSlug", OrganizationSlug);
+            writer.WriteStringValue("targetUser", TargetUser);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

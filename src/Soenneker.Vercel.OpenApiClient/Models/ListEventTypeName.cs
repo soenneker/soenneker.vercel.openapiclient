@@ -1215,6 +1215,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FlagsExplorerSubscription,
         #pragma warning restore CS1591
+        [EnumMember(Value = "flags-layer-created")]
+        #pragma warning disable CS1591
+        FlagsLayerCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flags-layer-deleted")]
+        #pragma warning disable CS1591
+        FlagsLayerDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flags-layer-updated")]
+        #pragma warning disable CS1591
+        FlagsLayerUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "flags-overrides-signed")]
         #pragma warning disable CS1591
         FlagsOverridesSigned,

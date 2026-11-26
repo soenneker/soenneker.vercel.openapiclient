@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf37ScopeType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "api-key")]
+        #pragma warning disable CS1591
+        ApiKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "app")]
         #pragma warning disable CS1591
         App,

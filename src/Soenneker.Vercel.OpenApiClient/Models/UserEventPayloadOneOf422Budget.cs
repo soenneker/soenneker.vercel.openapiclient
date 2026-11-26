@@ -32,8 +32,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("pauseProjects") is { } nullNodePauseProjects && nullNodePauseProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PauseProjects = null;
             if (parseNode.GetChildNode("previousSpend") is null) { _explicitNullValuePreviousSpend = default!; _explicitNullProperties?.Remove("previousSpend"); }
             else if (parseNode.GetChildNode("previousSpend") is { } nullNodePreviousSpend && nullNodePreviousSpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousSpend = null;
-            if (parseNode.GetChildNode("pricingPlan") is null) { _explicitNullValuePricingPlan = default!; _explicitNullProperties?.Remove("pricingPlan"); }
-            else if (parseNode.GetChildNode("pricingPlan") is { } nullNodePricingPlan && nullNodePricingPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricingPlan = null;
             if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
             else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
             if (parseNode.GetChildNode("scopeId") is null) { _explicitNullValueScopeId = default!; _explicitNullProperties?.Remove("scopeId"); }
@@ -46,8 +44,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
             if (parseNode.GetChildNode("webhookId") is null) { _explicitNullValueWebhookId = default!; _explicitNullProperties?.Remove("webhookId"); }
             else if (parseNode.GetChildNode("webhookId") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
-            if (parseNode.GetChildNode("webhookNotified") is null) { _explicitNullValueWebhookNotified = default!; _explicitNullProperties?.Remove("webhookNotified"); }
-            else if (parseNode.GetChildNode("webhookNotified") is { } nullNodeWebhookNotified && nullNodeWebhookNotified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookNotified = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -71,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Is the budget currently active for a customer</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("isActive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isActive"); else _explicitNullProperties?.Remove("isActive"); } }
         private bool? _explicitNullValueIsActive = default!;
-        /// <summary>Array of 50, 75, 100 to keep track of notifications sent out</summary>
+        /// <summary>The notifiedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<double?>? NotifiedAt { get => _explicitNullValueNotifiedAt; set { _explicitNullValueNotifiedAt = value; AdditionalData?.Remove("notifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiedAt"); else _explicitNullProperties?.Remove("notifiedAt"); } }
@@ -84,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Should all projects be paused if budget is exceeded</summary>
         public bool? PauseProjects { get => _explicitNullValuePauseProjects; set { _explicitNullValuePauseProjects = value; AdditionalData?.Remove("pauseProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pauseProjects"); else _explicitNullProperties?.Remove("pauseProjects"); } }
         private bool? _explicitNullValuePauseProjects = default!;
-        /// <summary>Array of the last 3 months of spend data</summary>
+        /// <summary>The previousSpend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<double?>? PreviousSpend { get => _explicitNullValuePreviousSpend; set { _explicitNullValuePreviousSpend = value; AdditionalData?.Remove("previousSpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousSpend"); else _explicitNullProperties?.Remove("previousSpend"); } }
@@ -94,9 +90,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<double?> PreviousSpend { get => _explicitNullValuePreviousSpend; set { _explicitNullValuePreviousSpend = value; AdditionalData?.Remove("previousSpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousSpend"); else _explicitNullProperties?.Remove("previousSpend"); } }
         private List<double?> _explicitNullValuePreviousSpend = default!;
 #endif
-        /// <summary>The acive pricing plan the team is billed with</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetPricingPlan? PricingPlan { get => _explicitNullValuePricingPlan; set { _explicitNullValuePricingPlan = value; AdditionalData?.Remove("pricingPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricingPlan"); else _explicitNullProperties?.Remove("pricingPlan"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetPricingPlan? _explicitNullValuePricingPlan = default!;
         /// <summary>Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetScope? _explicitNullValueScope = default!;
@@ -120,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; AdditionalData?.Remove("teamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamId"); else _explicitNullProperties?.Remove("teamId"); } }
         private string _explicitNullValueTeamId = default!;
 #endif
-        /// <summary>The budget type</summary>
+        /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType? _explicitNullValueType = default!;
         /// <summary>Date time when budget is updated last</summary>
@@ -136,9 +129,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; AdditionalData?.Remove("webhookId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookId"); else _explicitNullProperties?.Remove("webhookId"); } }
         private string _explicitNullValueWebhookId = default!;
 #endif
-        /// <summary>Keep track if the webhook has been called for the month</summary>
-        public bool? WebhookNotified { get => _explicitNullValueWebhookNotified; set { _explicitNullValueWebhookNotified = value; AdditionalData?.Remove("webhookNotified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookNotified"); else _explicitNullProperties?.Remove("webhookNotified"); } }
-        private bool? _explicitNullValueWebhookNotified = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Budget"/> and sets the default values.
         /// </summary>
@@ -162,7 +152,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(15)
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "fixedBudget", n => { FixedBudget = n.GetDoubleValue(); } },
@@ -171,14 +161,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "notifiedAt", n => { NotifiedAt = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "pauseProjects", n => { PauseProjects = n.GetBoolValue(); } },
                 { "previousSpend", n => { PreviousSpend = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
-                { "pricingPlan", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetPricingPlan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePricingPlan = default; _explicitNullProperties?.Remove("pricingPlan"); AdditionalData["pricingPlan"] = unknown; } else { PricingPlan = parsed; AdditionalData.Remove("pricingPlan"); } } },
                 { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
                 { "scopeId", n => { ScopeId = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "webhookId", n => { WebhookId = n.GetStringValue(); } },
-                { "webhookNotified", n => { WebhookNotified = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -195,14 +183,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("notifiedAt", NotifiedAt);
             writer.WriteBoolValue("pauseProjects", PauseProjects);
             writer.WriteCollectionOfPrimitiveValues<double?>("previousSpend", PreviousSpend);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetPricingPlan>("pricingPlan", PricingPlan);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422BudgetScope>("scope", Scope);
             writer.WriteStringValue("scopeId", ScopeId);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("webhookId", WebhookId);
-            writer.WriteBoolValue("webhookNotified", WebhookNotified);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

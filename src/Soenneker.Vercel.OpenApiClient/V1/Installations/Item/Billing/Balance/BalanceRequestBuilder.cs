@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Balance
         {
         }
         /// <summary>
-        /// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. &lt;br/&gt; Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+        /// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Balance
             await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. &lt;br/&gt; Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+        /// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

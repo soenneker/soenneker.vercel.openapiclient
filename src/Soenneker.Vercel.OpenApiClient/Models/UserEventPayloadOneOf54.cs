@@ -18,22 +18,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("headerNames") is null) { _explicitNullValueHeaderNames = default!; _explicitNullProperties?.Remove("headerNames"); }
-            else if (parseNode.GetChildNode("headerNames") is { } nullNodeHeaderNames && nullNodeHeaderNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderNames = null;
+            if (parseNode.GetChildNode("previousSecretGracePeriodHours") is null) { _explicitNullValuePreviousSecretGracePeriodHours = default!; _explicitNullProperties?.Remove("previousSecretGracePeriodHours"); }
+            else if (parseNode.GetChildNode("previousSecretGracePeriodHours") is { } nullNodePreviousSecretGracePeriodHours && nullNodePreviousSecretGracePeriodHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousSecretGracePeriodHours = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The headerNames property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? HeaderNames { get => _explicitNullValueHeaderNames; set { _explicitNullValueHeaderNames = value; AdditionalData?.Remove("headerNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerNames"); else _explicitNullProperties?.Remove("headerNames"); } }
-        private List<string>? _explicitNullValueHeaderNames = default!;
-#nullable restore
-#else
-        public List<string> HeaderNames { get => _explicitNullValueHeaderNames; set { _explicitNullValueHeaderNames = value; AdditionalData?.Remove("headerNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerNames"); else _explicitNullProperties?.Remove("headerNames"); } }
-        private List<string> _explicitNullValueHeaderNames = default!;
-#endif
+        /// <summary>The previousSecretGracePeriodHours property</summary>
+        public double? PreviousSecretGracePeriodHours { get => _explicitNullValuePreviousSecretGracePeriodHours; set { _explicitNullValuePreviousSecretGracePeriodHours = value; AdditionalData?.Remove("previousSecretGracePeriodHours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousSecretGracePeriodHours"); else _explicitNullProperties?.Remove("previousSecretGracePeriodHours"); } }
+        private double? _explicitNullValuePreviousSecretGracePeriodHours = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf54"/> and sets the default values.
         /// </summary>
@@ -59,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "headerNames", n => { HeaderNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "previousSecretGracePeriodHours", n => { PreviousSecretGracePeriodHours = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("headerNames", HeaderNames);
+            writer.WriteDoubleValue("previousSecretGracePeriodHours", PreviousSecretGracePeriodHours);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

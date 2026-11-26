@@ -20,10 +20,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("connectionType") is null) { _explicitNullValueConnectionType = default!; _explicitNullProperties?.Remove("connectionType"); }
             else if (parseNode.GetChildNode("connectionType") is { } nullNodeConnectionType && nullNodeConnectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionType = null;
+            if (parseNode.GetChildNode("enforced") is null) { _explicitNullValueEnforced = default!; _explicitNullProperties?.Remove("enforced"); }
+            else if (parseNode.GetChildNode("enforced") is { } nullNodeEnforced && nullNodeEnforced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enforced = null;
             if (parseNode.GetChildNode("organizationId") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organizationId"); }
             else if (parseNode.GetChildNode("organizationId") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
             if (parseNode.GetChildNode("organizationSlug") is null) { _explicitNullValueOrganizationSlug = default!; _explicitNullProperties?.Remove("organizationSlug"); }
             else if (parseNode.GetChildNode("organizationSlug") is { } nullNodeOrganizationSlug && nullNodeOrganizationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationSlug = null;
+            if (parseNode.GetChildNode("sourceTeamId") is null) { _explicitNullValueSourceTeamId = default!; _explicitNullProperties?.Remove("sourceTeamId"); }
+            else if (parseNode.GetChildNode("sourceTeamId") is { } nullNodeSourceTeamId && nullNodeSourceTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceTeamId = null;
+            if (parseNode.GetChildNode("sourceTeamName") is null) { _explicitNullValueSourceTeamName = default!; _explicitNullProperties?.Remove("sourceTeamName"); }
+            else if (parseNode.GetChildNode("sourceTeamName") is { } nullNodeSourceTeamName && nullNodeSourceTeamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceTeamName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,6 +44,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ConnectionType { get => _explicitNullValueConnectionType; set { _explicitNullValueConnectionType = value; AdditionalData?.Remove("connectionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectionType"); else _explicitNullProperties?.Remove("connectionType"); } }
         private string _explicitNullValueConnectionType = default!;
 #endif
+        /// <summary>The enforced property</summary>
+        public bool? Enforced { get => _explicitNullValueEnforced; set { _explicitNullValueEnforced = value; AdditionalData?.Remove("enforced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforced"); else _explicitNullProperties?.Remove("enforced"); } }
+        private bool? _explicitNullValueEnforced = default!;
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +66,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; AdditionalData?.Remove("organizationSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
         private string _explicitNullValueOrganizationSlug = default!;
+#endif
+        /// <summary>The sourceTeamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceTeamId { get => _explicitNullValueSourceTeamId; set { _explicitNullValueSourceTeamId = value; AdditionalData?.Remove("sourceTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceTeamId"); else _explicitNullProperties?.Remove("sourceTeamId"); } }
+        private string? _explicitNullValueSourceTeamId = default!;
+#nullable restore
+#else
+        public string SourceTeamId { get => _explicitNullValueSourceTeamId; set { _explicitNullValueSourceTeamId = value; AdditionalData?.Remove("sourceTeamId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceTeamId"); else _explicitNullProperties?.Remove("sourceTeamId"); } }
+        private string _explicitNullValueSourceTeamId = default!;
+#endif
+        /// <summary>The sourceTeamName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceTeamName { get => _explicitNullValueSourceTeamName; set { _explicitNullValueSourceTeamName = value; AdditionalData?.Remove("sourceTeamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceTeamName"); else _explicitNullProperties?.Remove("sourceTeamName"); } }
+        private string? _explicitNullValueSourceTeamName = default!;
+#nullable restore
+#else
+        public string SourceTeamName { get => _explicitNullValueSourceTeamName; set { _explicitNullValueSourceTeamName = value; AdditionalData?.Remove("sourceTeamName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceTeamName"); else _explicitNullProperties?.Remove("sourceTeamName"); } }
+        private string _explicitNullValueSourceTeamName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf264"/> and sets the default values.
@@ -81,11 +110,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "connectionType", n => { ConnectionType = n.GetStringValue(); } },
+                { "enforced", n => { Enforced = n.GetBoolValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "organizationSlug", n => { OrganizationSlug = n.GetStringValue(); } },
+                { "sourceTeamId", n => { SourceTeamId = n.GetStringValue(); } },
+                { "sourceTeamName", n => { SourceTeamName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -96,8 +128,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connectionType", ConnectionType);
+            writer.WriteBoolValue("enforced", Enforced);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("organizationSlug", OrganizationSlug);
+            writer.WriteStringValue("sourceTeamId", SourceTeamId);
+            writer.WriteStringValue("sourceTeamName", SourceTeamName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

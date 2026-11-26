@@ -20,8 +20,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("branchRef") is null) { _explicitNullValueBranchRef = default!; _explicitNullProperties?.Remove("branchRef"); }
             else if (parseNode.GetChildNode("branchRef") is { } nullNodeBranchRef && nullNodeBranchRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchRef = null;
-            if (parseNode.GetChildNode("closeReason") is null) { _explicitNullValueCloseReason = default!; _explicitNullProperties?.Remove("closeReason"); }
-            else if (parseNode.GetChildNode("closeReason") is { } nullNodeCloseReason && nullNodeCloseReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloseReason = null;
             if (parseNode.GetChildNode("commitSha") is null) { _explicitNullValueCommitSha = default!; _explicitNullProperties?.Remove("commitSha"); }
             else if (parseNode.GetChildNode("commitSha") is { } nullNodeCommitSha && nullNodeCommitSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitSha = null;
             if (parseNode.GetChildNode("deploymentId") is null) { _explicitNullValueDeploymentId = default!; _explicitNullProperties?.Remove("deploymentId"); }
@@ -70,9 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string BranchRef { get => _explicitNullValueBranchRef; set { _explicitNullValueBranchRef = value; AdditionalData?.Remove("branchRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchRef"); else _explicitNullProperties?.Remove("branchRef"); } }
         private string _explicitNullValueBranchRef = default!;
 #endif
-        /// <summary>The closeReason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442CloseReason? CloseReason { get => _explicitNullValueCloseReason; set { _explicitNullValueCloseReason = value; AdditionalData?.Remove("closeReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closeReason"); else _explicitNullProperties?.Remove("closeReason"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442CloseReason? _explicitNullValueCloseReason = default!;
         /// <summary>The commitSha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -238,10 +233,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(19)
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "branchRef", n => { BranchRef = n.GetStringValue(); } },
-                { "closeReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442CloseReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCloseReason = default; _explicitNullProperties?.Remove("closeReason"); AdditionalData["closeReason"] = unknown; } else { CloseReason = parsed; AdditionalData.Remove("closeReason"); } } },
                 { "commitSha", n => { CommitSha = n.GetStringValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
@@ -269,7 +263,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("branchRef", BranchRef);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf442CloseReason>("closeReason", CloseReason);
             writer.WriteStringValue("commitSha", CommitSha);
             writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteStringValue("environment", Environment);

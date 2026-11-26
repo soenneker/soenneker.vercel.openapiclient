@@ -33,22 +33,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The prevProjectAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalyticsProperty? PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalyticsProperty? _explicitNullValuePrevProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalytics? PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalytics? _explicitNullValuePrevProjectAnalytics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalyticsProperty PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalyticsProperty _explicitNullValuePrevProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalytics PrevProjectAnalytics { get => _explicitNullValuePrevProjectAnalytics; set { _explicitNullValuePrevProjectAnalytics = value; AdditionalData?.Remove("prevProjectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevProjectAnalytics"); else _explicitNullProperties?.Remove("prevProjectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalytics _explicitNullValuePrevProjectAnalytics = default!;
 #endif
         /// <summary>The projectAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalyticsProperty? ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalyticsProperty? _explicitNullValueProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalytics? ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalytics? _explicitNullValueProjectAnalytics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalyticsProperty ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalyticsProperty _explicitNullValueProjectAnalytics = default!;
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalytics ProjectAnalytics { get => _explicitNullValueProjectAnalytics; set { _explicitNullValueProjectAnalytics = value; AdditionalData?.Remove("projectAnalytics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectAnalytics"); else _explicitNullProperties?.Remove("projectAnalytics"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalytics _explicitNullValueProjectAnalytics = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,8 +95,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(4)
             {
-                { "prevProjectAnalytics", n => { PrevProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalyticsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalyticsProperty.CreateFromDiscriminatorValue); } },
-                { "projectAnalytics", n => { ProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalyticsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalyticsProperty.CreateFromDiscriminatorValue); } },
+                { "prevProjectAnalytics", n => { PrevProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalytics.CreateFromDiscriminatorValue); } },
+                { "projectAnalytics", n => { ProjectAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalytics.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -108,8 +108,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalyticsProperty>("prevProjectAnalytics", PrevProjectAnalytics);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalyticsProperty>("projectAnalytics", ProjectAnalytics);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303PrevProjectAnalytics>("prevProjectAnalytics", PrevProjectAnalytics);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303ProjectAnalytics>("projectAnalytics", ProjectAnalytics);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

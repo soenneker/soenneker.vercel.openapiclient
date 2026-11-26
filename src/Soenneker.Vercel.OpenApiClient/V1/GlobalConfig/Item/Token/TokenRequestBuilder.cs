@@ -21,6 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.globalConfig.item.token.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Token.Item.WithTokenItemRequestBuilder this[string position]
         {
             get

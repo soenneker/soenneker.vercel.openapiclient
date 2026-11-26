@@ -18,21 +18,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expiryNotificationLeadTime") is null) { _explicitNullValueExpiryNotificationLeadTime = default!; _explicitNullProperties?.Remove("expiryNotificationLeadTime"); }
-            else if (parseNode.GetChildNode("expiryNotificationLeadTime") is { } nullNodeExpiryNotificationLeadTime && nullNodeExpiryNotificationLeadTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryNotificationLeadTime = null;
+            if (parseNode.GetChildNode("alias") is null) { _explicitNullValueAlias = default!; _explicitNullProperties?.Remove("alias"); }
+            else if (parseNode.GetChildNode("alias") is { } nullNodeAlias && nullNodeAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alias = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
+            if (parseNode.GetChildNode("sandboxId") is null) { _explicitNullValueSandboxId = default!; _explicitNullProperties?.Remove("sandboxId"); }
+            else if (parseNode.GetChildNode("sandboxId") is { } nullNodeSandboxId && nullNodeSandboxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxId = null;
             if (parseNode.GetChildNode("sandboxName") is null) { _explicitNullValueSandboxName = default!; _explicitNullProperties?.Remove("sandboxName"); }
             else if (parseNode.GetChildNode("sandboxName") is { } nullNodeSandboxName && nullNodeSandboxName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expiryNotificationLeadTime property</summary>
-        public double? ExpiryNotificationLeadTime { get => _explicitNullValueExpiryNotificationLeadTime; set { _explicitNullValueExpiryNotificationLeadTime = value; AdditionalData?.Remove("expiryNotificationLeadTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryNotificationLeadTime"); else _explicitNullProperties?.Remove("expiryNotificationLeadTime"); } }
-        private double? _explicitNullValueExpiryNotificationLeadTime = default!;
+        /// <summary>The alias property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        private string? _explicitNullValueAlias = default!;
+#nullable restore
+#else
+        public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        private string _explicitNullValueAlias = default!;
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,15 +50,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The sandboxId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
+        public string? SandboxId { get => _explicitNullValueSandboxId; set { _explicitNullValueSandboxId = value; AdditionalData?.Remove("sandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxId"); else _explicitNullProperties?.Remove("sandboxId"); } }
+        private string? _explicitNullValueSandboxId = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
+        public string SandboxId { get => _explicitNullValueSandboxId; set { _explicitNullValueSandboxId = value; AdditionalData?.Remove("sandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxId"); else _explicitNullProperties?.Remove("sandboxId"); } }
+        private string _explicitNullValueSandboxId = default!;
 #endif
         /// <summary>The sandboxName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,9 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(4)
             {
-                { "expiryNotificationLeadTime", n => { ExpiryNotificationLeadTime = n.GetDoubleValue(); } },
+                { "alias", n => { Alias = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "sandboxId", n => { SandboxId = n.GetStringValue(); } },
                 { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
             };
         }
@@ -101,9 +108,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("expiryNotificationLeadTime", ExpiryNotificationLeadTime);
+            writer.WriteStringValue("alias", Alias);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("sandboxId", SandboxId);
             writer.WriteStringValue("sandboxName", SandboxName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

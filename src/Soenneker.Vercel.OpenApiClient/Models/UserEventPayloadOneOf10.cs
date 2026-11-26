@@ -18,29 +18,63 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("namespace") is null) { _explicitNullValueNamespace = default!; _explicitNullProperties?.Remove("namespace"); }
-            else if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
+            if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
+            else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("grantId") is null) { _explicitNullValueGrantId = default!; _explicitNullProperties?.Remove("grantId"); }
+            else if (parseNode.GetChildNode("grantId") is { } nullNodeGrantId && nullNodeGrantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantId = null;
+            if (parseNode.GetChildNode("namedSandboxId") is null) { _explicitNullValueNamedSandboxId = default!; _explicitNullProperties?.Remove("namedSandboxId"); }
+            else if (parseNode.GetChildNode("namedSandboxId") is { } nullNodeNamedSandboxId && nullNodeNamedSandboxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NamedSandboxId = null;
+            if (parseNode.GetChildNode("permission") is null) { _explicitNullValuePermission = default!; _explicitNullProperties?.Remove("permission"); }
+            else if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
             if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
             else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("projectName") is null) { _explicitNullValueProjectName = default!; _explicitNullProperties?.Remove("projectName"); }
-            else if (parseNode.GetChildNode("projectName") is { } nullNodeProjectName && nullNodeProjectName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectName = null;
-            if (parseNode.GetChildNode("scheduleId") is null) { _explicitNullValueScheduleId = default!; _explicitNullProperties?.Remove("scheduleId"); }
-            else if (parseNode.GetChildNode("scheduleId") is { } nullNodeScheduleId && nullNodeScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleId = null;
-            if (parseNode.GetChildNode("scheduleName") is null) { _explicitNullValueScheduleName = default!; _explicitNullProperties?.Remove("scheduleName"); }
-            else if (parseNode.GetChildNode("scheduleName") is { } nullNodeScheduleName && nullNodeScheduleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleName = null;
+            if (parseNode.GetChildNode("repositoryId") is null) { _explicitNullValueRepositoryId = default!; _explicitNullProperties?.Remove("repositoryId"); }
+            else if (parseNode.GetChildNode("repositoryId") is { } nullNodeRepositoryId && nullNodeRepositoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryId = null;
+            if (parseNode.GetChildNode("sandboxId") is null) { _explicitNullValueSandboxId = default!; _explicitNullProperties?.Remove("sandboxId"); }
+            else if (parseNode.GetChildNode("sandboxId") is { } nullNodeSandboxId && nullNodeSandboxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The namespace property</summary>
+        /// <summary>The expiresAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; AdditionalData?.Remove("namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
-        private string? _explicitNullValueNamespace = default!;
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; AdditionalData?.Remove("namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
-        private string _explicitNullValueNamespace = default!;
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private string _explicitNullValueExpiresAt = default!;
+#endif
+        /// <summary>The grantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GrantId { get => _explicitNullValueGrantId; set { _explicitNullValueGrantId = value; AdditionalData?.Remove("grantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantId"); else _explicitNullProperties?.Remove("grantId"); } }
+        private string? _explicitNullValueGrantId = default!;
+#nullable restore
+#else
+        public string GrantId { get => _explicitNullValueGrantId; set { _explicitNullValueGrantId = value; AdditionalData?.Remove("grantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantId"); else _explicitNullProperties?.Remove("grantId"); } }
+        private string _explicitNullValueGrantId = default!;
+#endif
+        /// <summary>The namedSandboxId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NamedSandboxId { get => _explicitNullValueNamedSandboxId; set { _explicitNullValueNamedSandboxId = value; AdditionalData?.Remove("namedSandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namedSandboxId"); else _explicitNullProperties?.Remove("namedSandboxId"); } }
+        private string? _explicitNullValueNamedSandboxId = default!;
+#nullable restore
+#else
+        public string NamedSandboxId { get => _explicitNullValueNamedSandboxId; set { _explicitNullValueNamedSandboxId = value; AdditionalData?.Remove("namedSandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namedSandboxId"); else _explicitNullProperties?.Remove("namedSandboxId"); } }
+        private string _explicitNullValueNamedSandboxId = default!;
+#endif
+        /// <summary>The permission property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; AdditionalData?.Remove("permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        private string? _explicitNullValuePermission = default!;
+#nullable restore
+#else
+        public string Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; AdditionalData?.Remove("permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        private string _explicitNullValuePermission = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,35 +86,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The repositoryId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string? _explicitNullValueProjectName = default!;
+        public string? RepositoryId { get => _explicitNullValueRepositoryId; set { _explicitNullValueRepositoryId = value; AdditionalData?.Remove("repositoryId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryId"); else _explicitNullProperties?.Remove("repositoryId"); } }
+        private string? _explicitNullValueRepositoryId = default!;
 #nullable restore
 #else
-        public string ProjectName { get => _explicitNullValueProjectName; set { _explicitNullValueProjectName = value; AdditionalData?.Remove("projectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectName"); else _explicitNullProperties?.Remove("projectName"); } }
-        private string _explicitNullValueProjectName = default!;
+        public string RepositoryId { get => _explicitNullValueRepositoryId; set { _explicitNullValueRepositoryId = value; AdditionalData?.Remove("repositoryId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryId"); else _explicitNullProperties?.Remove("repositoryId"); } }
+        private string _explicitNullValueRepositoryId = default!;
 #endif
-        /// <summary>The scheduleId property</summary>
+        /// <summary>The sandboxId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("scheduleId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleId"); else _explicitNullProperties?.Remove("scheduleId"); } }
-        private string? _explicitNullValueScheduleId = default!;
+        public string? SandboxId { get => _explicitNullValueSandboxId; set { _explicitNullValueSandboxId = value; AdditionalData?.Remove("sandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxId"); else _explicitNullProperties?.Remove("sandboxId"); } }
+        private string? _explicitNullValueSandboxId = default!;
 #nullable restore
 #else
-        public string ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("scheduleId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleId"); else _explicitNullProperties?.Remove("scheduleId"); } }
-        private string _explicitNullValueScheduleId = default!;
-#endif
-        /// <summary>The scheduleName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScheduleName { get => _explicitNullValueScheduleName; set { _explicitNullValueScheduleName = value; AdditionalData?.Remove("scheduleName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleName"); else _explicitNullProperties?.Remove("scheduleName"); } }
-        private string? _explicitNullValueScheduleName = default!;
-#nullable restore
-#else
-        public string ScheduleName { get => _explicitNullValueScheduleName; set { _explicitNullValueScheduleName = value; AdditionalData?.Remove("scheduleName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleName"); else _explicitNullProperties?.Remove("scheduleName"); } }
-        private string _explicitNullValueScheduleName = default!;
+        public string SandboxId { get => _explicitNullValueSandboxId; set { _explicitNullValueSandboxId = value; AdditionalData?.Remove("sandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxId"); else _explicitNullProperties?.Remove("sandboxId"); } }
+        private string _explicitNullValueSandboxId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10"/> and sets the default values.
@@ -105,13 +129,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
-                { "namespace", n => { Namespace = n.GetStringValue(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
+                { "grantId", n => { GrantId = n.GetStringValue(); } },
+                { "namedSandboxId", n => { NamedSandboxId = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "scheduleId", n => { ScheduleId = n.GetStringValue(); } },
-                { "scheduleName", n => { ScheduleName = n.GetStringValue(); } },
+                { "repositoryId", n => { RepositoryId = n.GetStringValue(); } },
+                { "sandboxId", n => { SandboxId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -121,11 +147,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("namespace", Namespace);
+            writer.WriteStringValue("expiresAt", ExpiresAt);
+            writer.WriteStringValue("grantId", GrantId);
+            writer.WriteStringValue("namedSandboxId", NamedSandboxId);
+            writer.WriteStringValue("permission", Permission);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("scheduleId", ScheduleId);
-            writer.WriteStringValue("scheduleName", ScheduleName);
+            writer.WriteStringValue("repositoryId", RepositoryId);
+            writer.WriteStringValue("sandboxId", SandboxId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

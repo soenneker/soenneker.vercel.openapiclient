@@ -18,21 +18,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("retention") is null) { _explicitNullValueRetention = default!; _explicitNullProperties?.Remove("retention"); }
-            else if (parseNode.GetChildNode("retention") is { } nullNodeRetention && nullNodeRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retention = null;
+            if (parseNode.GetChildNode("headerNames") is null) { _explicitNullValueHeaderNames = default!; _explicitNullProperties?.Remove("headerNames"); }
+            else if (parseNode.GetChildNode("headerNames") is { } nullNodeHeaderNames && nullNodeHeaderNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderNames = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The retention property</summary>
+        /// <summary>The headerNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55Retention? Retention { get => _explicitNullValueRetention; set { _explicitNullValueRetention = value; AdditionalData?.Remove("retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention"); else _explicitNullProperties?.Remove("retention"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55Retention? _explicitNullValueRetention = default!;
+        public List<string>? HeaderNames { get => _explicitNullValueHeaderNames; set { _explicitNullValueHeaderNames = value; AdditionalData?.Remove("headerNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerNames"); else _explicitNullProperties?.Remove("headerNames"); } }
+        private List<string>? _explicitNullValueHeaderNames = default!;
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55Retention Retention { get => _explicitNullValueRetention; set { _explicitNullValueRetention = value; AdditionalData?.Remove("retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention"); else _explicitNullProperties?.Remove("retention"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55Retention _explicitNullValueRetention = default!;
+        public List<string> HeaderNames { get => _explicitNullValueHeaderNames; set { _explicitNullValueHeaderNames = value; AdditionalData?.Remove("headerNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerNames"); else _explicitNullProperties?.Remove("headerNames"); } }
+        private List<string> _explicitNullValueHeaderNames = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "retention", n => { Retention = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55Retention>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55Retention.CreateFromDiscriminatorValue); } },
+                { "headerNames", n => { HeaderNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55Retention>("retention", Retention);
+            writer.WriteCollectionOfPrimitiveValues<string>("headerNames", HeaderNames);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

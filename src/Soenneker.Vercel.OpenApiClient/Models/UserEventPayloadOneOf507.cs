@@ -18,50 +18,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("flowId") is null) { _explicitNullValueFlowId = default!; _explicitNullProperties?.Remove("flowId"); }
-            else if (parseNode.GetChildNode("flowId") is { } nullNodeFlowId && nullNodeFlowId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowId = null;
-            if (parseNode.GetChildNode("loginSessionId") is null) { _explicitNullValueLoginSessionId = default!; _explicitNullProperties?.Remove("loginSessionId"); }
-            else if (parseNode.GetChildNode("loginSessionId") is { } nullNodeLoginSessionId && nullNodeLoginSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginSessionId = null;
-            if (parseNode.GetChildNode("method") is null) { _explicitNullValueMethod = default!; _explicitNullProperties?.Remove("method"); }
-            else if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
-            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
-            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("scopeId") is null) { _explicitNullValueScopeId = default!; _explicitNullProperties?.Remove("scopeId"); }
+            else if (parseNode.GetChildNode("scopeId") is { } nullNodeScopeId && nullNodeScopeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The flowId property</summary>
+        /// <summary>The scope property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Scope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Scope? _explicitNullValueScope = default!;
+        /// <summary>The scopeId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FlowId { get => _explicitNullValueFlowId; set { _explicitNullValueFlowId = value; AdditionalData?.Remove("flowId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowId"); else _explicitNullProperties?.Remove("flowId"); } }
-        private string? _explicitNullValueFlowId = default!;
+        public string? ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; AdditionalData?.Remove("scopeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }
+        private string? _explicitNullValueScopeId = default!;
 #nullable restore
 #else
-        public string FlowId { get => _explicitNullValueFlowId; set { _explicitNullValueFlowId = value; AdditionalData?.Remove("flowId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowId"); else _explicitNullProperties?.Remove("flowId"); } }
-        private string _explicitNullValueFlowId = default!;
-#endif
-        /// <summary>The loginSessionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LoginSessionId { get => _explicitNullValueLoginSessionId; set { _explicitNullValueLoginSessionId = value; AdditionalData?.Remove("loginSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginSessionId"); else _explicitNullProperties?.Remove("loginSessionId"); } }
-        private string? _explicitNullValueLoginSessionId = default!;
-#nullable restore
-#else
-        public string LoginSessionId { get => _explicitNullValueLoginSessionId; set { _explicitNullValueLoginSessionId = value; AdditionalData?.Remove("loginSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loginSessionId"); else _explicitNullProperties?.Remove("loginSessionId"); } }
-        private string _explicitNullValueLoginSessionId = default!;
-#endif
-        /// <summary>The method property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Method? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
-        private global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Method? _explicitNullValueMethod = default!;
-        /// <summary>The reason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string? _explicitNullValueReason = default!;
-#nullable restore
-#else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string _explicitNullValueReason = default!;
+        public string ScopeId { get => _explicitNullValueScopeId; set { _explicitNullValueScopeId = value; AdditionalData?.Remove("scopeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopeId"); else _explicitNullProperties?.Remove("scopeId"); } }
+        private string _explicitNullValueScopeId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507"/> and sets the default values.
@@ -86,12 +62,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(4)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                { "flowId", n => { FlowId = n.GetStringValue(); } },
-                { "loginSessionId", n => { LoginSessionId = n.GetStringValue(); } },
-                { "method", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Method>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMethod = default; _explicitNullProperties?.Remove("method"); AdditionalData["method"] = unknown; } else { Method = parsed; AdditionalData.Remove("method"); } } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Scope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
+                { "scopeId", n => { ScopeId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -101,10 +75,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("flowId", FlowId);
-            writer.WriteStringValue("loginSessionId", LoginSessionId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Method>("method", Method);
-            writer.WriteStringValue("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf507Scope>("scope", Scope);
+            writer.WriteStringValue("scopeId", ScopeId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

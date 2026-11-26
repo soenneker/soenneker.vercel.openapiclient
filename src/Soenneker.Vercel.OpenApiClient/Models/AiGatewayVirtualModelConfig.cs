@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("allowFallbackFromFast") is null) { _explicitNullValueAllowFallbackFromFast = default!; _explicitNullProperties?.Remove("allowFallbackFromFast"); }
             else if (parseNode.GetChildNode("allowFallbackFromFast") is { } nullNodeAllowFallbackFromFast && nullNodeAllowFallbackFromFast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowFallbackFromFast = null;
+            if (parseNode.GetChildNode("autoRouterDefaultVersion") is null) { _explicitNullValueAutoRouterDefaultVersion = default!; _explicitNullProperties?.Remove("autoRouterDefaultVersion"); }
+            else if (parseNode.GetChildNode("autoRouterDefaultVersion") is { } nullNodeAutoRouterDefaultVersion && nullNodeAutoRouterDefaultVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRouterDefaultVersion = null;
             if (parseNode.GetChildNode("baseUrl") is null) { _explicitNullValueBaseUrl = default!; _explicitNullProperties?.Remove("baseUrl"); }
             else if (parseNode.GetChildNode("baseUrl") is { } nullNodeBaseUrl && nullNodeBaseUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseUrl = null;
             if (parseNode.GetChildNode("byokCredentialIds") is null) { _explicitNullValueByokCredentialIds = default!; _explicitNullProperties?.Remove("byokCredentialIds"); }
@@ -93,6 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Allow fallback from fast to standard providers on failure.</summary>
         public bool? AllowFallbackFromFast { get => _explicitNullValueAllowFallbackFromFast; set { _explicitNullValueAllowFallbackFromFast = value; AdditionalData?.Remove("allowFallbackFromFast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowFallbackFromFast"); else _explicitNullProperties?.Remove("allowFallbackFromFast"); } }
         private bool? _explicitNullValueAllowFallbackFromFast = default!;
+        /// <summary>For the team&apos;s `auto` router: the Vercel default version the team last saved against.</summary>
+        public double? AutoRouterDefaultVersion { get => _explicitNullValueAutoRouterDefaultVersion; set { _explicitNullValueAutoRouterDefaultVersion = value; AdditionalData?.Remove("autoRouterDefaultVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoRouterDefaultVersion"); else _explicitNullProperties?.Remove("autoRouterDefaultVersion"); } }
+        private double? _explicitNullValueAutoRouterDefaultVersion = default!;
         /// <summary>For kind=relay: URL the gateway forwards requests to as a transparent proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -369,9 +374,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(34)
+            return new Dictionary<string, Action<IParseNode>>(35)
             {
                 { "allowFallbackFromFast", n => { AllowFallbackFromFast = n.GetBoolValue(); } },
+                { "autoRouterDefaultVersion", n => { AutoRouterDefaultVersion = n.GetDoubleValue(); } },
                 { "baseUrl", n => { BaseUrl = n.GetStringValue(); } },
                 { "byokCredentialIds", n => { ByokCredentialIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "caching", n => { var parsed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCaching = default; _explicitNullProperties?.Remove("caching"); AdditionalData["caching"] = unknown; } else { Caching = parsed; AdditionalData.Remove("caching"); } } },
@@ -415,6 +421,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowFallbackFromFast", AllowFallbackFromFast);
+            writer.WriteDoubleValue("autoRouterDefaultVersion", AutoRouterDefaultVersion);
             writer.WriteStringValue("baseUrl", BaseUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("byokCredentialIds", ByokCredentialIds);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching>("caching", Caching);

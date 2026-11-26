@@ -11,6 +11,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Cost,
         #pragma warning restore CS1591
+        [EnumMember(Value = "intelligence")]
+        #pragma warning disable CS1591
+        Intelligence,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tps")]
         #pragma warning disable CS1591
         Tps,
