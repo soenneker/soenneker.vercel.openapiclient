@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private double? _explicitNullValueCreatedAt = default!;
-        /// <summary>The ID of the user who created the Global Config, optional because it is not always set.</summary>
+        /// <summary>The ID of the principal who created the Global Config, optional because it is not always set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("createdBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdBy"); else _explicitNullProperties?.Remove("createdBy"); } }

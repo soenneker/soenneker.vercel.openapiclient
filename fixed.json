@@ -31134,6 +31134,9 @@
           },
           "429": {
             "description": "429 response"
+          },
+          "503": {
+            "description": "503 response"
           }
         },
         "security": [
@@ -52080,8 +52083,7 @@
           "mapping": {
             "variant": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf1Variant",
             "split": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf2Variant",
-            "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3Variant",
-            "experiment": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4Variant"
+            "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -52094,9 +52096,6 @@
             },
             {
               "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4"
             }
           ],
           "discriminator": {
@@ -52104,8 +52103,7 @@
             "mapping": {
               "variant": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf1",
               "split": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf2",
-              "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3",
-              "experiment": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4"
+              "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3"
             }
           }
         },
@@ -52183,8 +52181,7 @@
           "mapping": {
             "variant": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf1Variant",
             "split": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2Variant",
-            "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3Variant",
-            "experiment": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4Variant"
+            "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -52197,9 +52194,6 @@
             },
             {
               "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
             }
           ],
           "discriminator": {
@@ -52207,8 +52201,7 @@
             "mapping": {
               "variant": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf1",
               "split": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2",
-              "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3",
-              "experiment": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
+              "rollout": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
             }
           }
         },
@@ -66831,6 +66824,9 @@
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
           },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf245PrevProjectMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
+          },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf245PrevProjectMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
           },
@@ -66932,6 +66928,9 @@
           "defaultRoute": {
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
+          },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf245ProjectMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
           },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf245ProjectMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
@@ -82008,7 +82007,7 @@
           },
           "createdBy": {
             "type": "string",
-            "description": "The ID of the user who created the Global Config, optional because it is not always set."
+            "description": "The ID of the principal who created the Global Config, optional because it is not always set."
           },
           "digest": {
             "type": "string"
@@ -82053,7 +82052,7 @@
           },
           "createdBy": {
             "type": "string",
-            "description": "The ID of the user who created the Global Config, optional because it is not always set."
+            "description": "The ID of the principal who created the Global Config, optional because it is not always set."
           },
           "digest": {
             "type": "string"
@@ -82111,7 +82110,7 @@
           },
           "createdBy": {
             "type": "string",
-            "description": "The ID of the user who created the Global Config, optional because it is not always set."
+            "description": "The ID of the principal who created the Global Config, optional because it is not always set."
           },
           "digest": {
             "type": "string"
@@ -89364,6 +89363,10 @@
           "doNotRouteWithMicrofrontendsRouting": {
             "type": "boolean",
             "description": "Whether domains in this project should route as a microfrontend. Can only be set for child applications."
+          },
+          "doNotInheritDefaultAppManagedRules": {
+            "type": "boolean",
+            "description": "Whether requests routed to this project skip the default application\u0027s managed rulesets, so only this project\u0027s own managed rulesets apply. Can only be set for child applications."
           }
         }
       },
@@ -91515,10 +91518,14 @@
       },
       "CreateSpeedInsightsToggle200Response": {
         "required": [
+          "changed",
           "value"
         ],
         "type": "object",
         "properties": {
+          "changed": {
+            "$ref": "#/components/schemas/CreateSpeedInsightsToggle200ResponseChanged"
+          },
           "value": {
             "$ref": "#/components/schemas/CreateSpeedInsightsToggle200ResponseValue"
           }
@@ -99280,8 +99287,7 @@
           "mapping": {
             "variant": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf1Variant",
             "split": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf2Variant",
-            "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3Variant",
-            "experiment": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4Variant"
+            "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -99294,9 +99300,6 @@
             },
             {
               "$ref": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4"
             }
           ],
           "discriminator": {
@@ -99304,8 +99307,7 @@
             "mapping": {
               "variant": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf1",
               "split": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf2",
-              "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3",
-              "experiment": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4"
+              "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3"
             }
           }
         },
@@ -99383,8 +99385,7 @@
           "mapping": {
             "variant": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf1Variant",
             "split": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2Variant",
-            "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3Variant",
-            "experiment": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4Variant"
+            "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -99397,9 +99398,6 @@
             },
             {
               "$ref": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
             }
           ],
           "discriminator": {
@@ -99407,8 +99405,7 @@
             "mapping": {
               "variant": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf1",
               "split": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2",
-              "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3",
-              "experiment": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
+              "rollout": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
             }
           }
         },
@@ -99508,8 +99505,7 @@
           "mapping": {
             "variant": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf1Variant",
             "split": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf2Variant",
-            "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3Variant",
-            "experiment": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4Variant"
+            "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -99522,9 +99518,6 @@
             },
             {
               "$ref": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4"
             }
           ],
           "discriminator": {
@@ -99532,8 +99525,7 @@
             "mapping": {
               "variant": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf1",
               "split": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf2",
-              "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3",
-              "experiment": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4"
+              "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf3"
             }
           }
         },
@@ -99611,8 +99603,7 @@
           "mapping": {
             "variant": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf1Variant",
             "split": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2Variant",
-            "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3Variant",
-            "experiment": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4Variant"
+            "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -99625,9 +99616,6 @@
             },
             {
               "$ref": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
             }
           ],
           "discriminator": {
@@ -99635,8 +99623,7 @@
             "mapping": {
               "variant": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf1",
               "split": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2",
-              "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3",
-              "experiment": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
+              "rollout": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
             }
           }
         },
@@ -99656,8 +99643,7 @@
           "mapping": {
             "variant": "#/components/schemas/TaggedVariantVariantECCF99EA8C7B1755",
             "split": "#/components/schemas/TaggedSplitVariant827AC4192C50F300",
-            "rollout": "#/components/schemas/TaggedRolloutVariantA68B7AB0E3586F5A",
-            "experiment": "#/components/schemas/TaggedExperimentVariant3768103655726159"
+            "rollout": "#/components/schemas/TaggedRolloutVariantA68B7AB0E3586F5A"
           }
         },
         "x-client-original-tagged-union": {
@@ -99670,9 +99656,6 @@
             },
             {
               "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf4"
             }
           ],
           "discriminator": {
@@ -99680,8 +99663,7 @@
             "mapping": {
               "variant": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf1",
               "split": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf2",
-              "rollout": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf3",
-              "experiment": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf4"
+              "rollout": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf3"
             }
           }
         },
@@ -99759,8 +99741,7 @@
           "mapping": {
             "variant": "#/components/schemas/TaggedVariantVariantC04DA491FB6DEF79",
             "split": "#/components/schemas/TaggedSplitVariant5240ACE5BEBDE7D4",
-            "rollout": "#/components/schemas/TaggedRolloutVariantAC6E4347160BD13B",
-            "experiment": "#/components/schemas/TaggedExperimentVariant17DBCB2F234B3980"
+            "rollout": "#/components/schemas/TaggedRolloutVariantAC6E4347160BD13B"
           }
         },
         "x-client-original-tagged-union": {
@@ -99773,9 +99754,6 @@
             },
             {
               "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
-            },
-            {
-              "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
             }
           ],
           "discriminator": {
@@ -99783,8 +99761,7 @@
             "mapping": {
               "variant": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf1",
               "split": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2",
-              "rollout": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3",
-              "experiment": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
+              "rollout": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
             }
           }
         },
@@ -116112,6 +116089,9 @@
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
           },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
+          },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
           },
@@ -118720,6 +118700,9 @@
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
           },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/CreateProject200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
+          },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/CreateProject200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
           },
@@ -119318,6 +119301,9 @@
           "defaultRoute": {
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
+          },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/GetProject200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
           },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/GetProject200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
@@ -119967,6 +119953,9 @@
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
           },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
+          },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/UpdateProject200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
           },
@@ -120566,6 +120555,9 @@
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
           },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
+          },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
           },
@@ -121164,6 +121156,9 @@
           "defaultRoute": {
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
+          },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
           },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/DeleteProjectAvatar200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
@@ -123208,6 +123203,9 @@
           "defaultRoute": {
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
+          },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
           },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
@@ -134281,6 +134279,9 @@
           "defaultRoute": {
             "type": "string",
             "description": "A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. \u0060/docs\u0060"
+          },
+          "doNotInheritDefaultAppManagedRules": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules"
           },
           "doNotRouteWithMicrofrontendsRouting": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting"
@@ -184585,7 +184586,7 @@
           },
           "createdBy": {
             "type": "string",
-            "description": "The ID of the user who created the Global Config, optional because it is not always set."
+            "description": "The ID of the principal who created the Global Config, optional because it is not always set."
           },
           "digest": {
             "type": "string"
@@ -271505,22 +271506,6 @@
           ]
         }
       },
-      "ExperimentType": {
-        "enum": [
-          "experiment"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "ExperimentType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "experiment",
-              "name": "Experiment"
-            }
-          ]
-        }
-      },
       "SegmentType": {
         "enum": [
           "segment"
@@ -273874,6 +273859,14 @@
         ],
         "type": "boolean"
       },
+      "UserEventPayloadOneOf245PrevProjectMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
+      },
       "UserEventPayloadOneOf245PrevProjectMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
           false,
@@ -273944,6 +273937,14 @@
           true
         ],
         "type": "boolean"
+      },
+      "UserEventPayloadOneOf245ProjectMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
       },
       "UserEventPayloadOneOf245ProjectMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
@@ -293783,6 +293784,13 @@
         ],
         "type": "boolean"
       },
+      "CreateSpeedInsightsToggle200ResponseChanged": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean"
+      },
       "CreateStorageStoresBlobRequestRegion": {
         "enum": [
           "arn1",
@@ -307024,6 +307032,14 @@
         ],
         "type": "boolean"
       },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
+      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
           false,
@@ -307965,6 +307981,14 @@
         ],
         "type": "boolean"
       },
+      "CreateProject200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
+      },
       "CreateProject200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
           false,
@@ -308351,6 +308375,14 @@
           true
         ],
         "type": "boolean"
+      },
+      "GetProject200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
       },
       "GetProject200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
@@ -308739,6 +308771,14 @@
         ],
         "type": "boolean"
       },
+      "UpdateProject200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
+      },
       "UpdateProject200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
           false,
@@ -309126,6 +309166,14 @@
         ],
         "type": "boolean"
       },
+      "UploadProjectAvatar200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
+      },
       "UploadProjectAvatar200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
           false,
@@ -309512,6 +309560,14 @@
           true
         ],
         "type": "boolean"
+      },
+      "DeleteProjectAvatar200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
       },
       "DeleteProjectAvatar200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
@@ -310278,6 +310334,14 @@
           true
         ],
         "type": "boolean"
+      },
+      "UpdateMicrofrontends200ResponseMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
       },
       "UpdateMicrofrontends200ResponseMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
@@ -315860,6 +315924,14 @@
           true
         ],
         "type": "boolean"
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemMicrofrontendsOneOf2DoNotInheritDefaultAppManagedRules": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "description": "Whether requests routed to this microfrontend skip the default app\u0027s managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project\u0027s own managed rulesets apply to its routes. The default app\u0027s custom firewall rules apply either way."
       },
       "GetProjects200ResponseOneOf3ProjectsItemMicrofrontendsOneOf2DoNotRouteWithMicrofrontendsRouting": {
         "enum": [
@@ -397895,24 +397967,6 @@
           }
         ]
       },
-      "FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthrough"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
-              }
-            }
-          }
-        ]
-      },
       "FlagEnvironmentsAdditionalPropertiesRulesItemConditionsItemLhsOneOf1Variant": {
         "allOf": [
           {
@@ -398052,24 +398106,6 @@
               },
               "type": {
                 "$ref": "#/components/schemas/RolloutType"
-              }
-            }
-          }
-        ]
-      },
-      "FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcome"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
               }
             }
           }
@@ -402686,24 +402722,6 @@
           }
         ]
       },
-      "CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthrough"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
-              }
-            }
-          }
-        ]
-      },
       "CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemConditionsItemLhsOneOf1Variant": {
         "allOf": [
           {
@@ -402848,24 +402866,6 @@
           }
         ]
       },
-      "CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcome"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
-              }
-            }
-          }
-        ]
-      },
       "UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf1Variant": {
         "allOf": [
           {
@@ -402961,24 +402961,6 @@
               },
               "type": {
                 "$ref": "#/components/schemas/RolloutType"
-              }
-            }
-          }
-        ]
-      },
-      "UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthrough"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
               }
             }
           }
@@ -403128,24 +403110,6 @@
           }
         ]
       },
-      "UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcome"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
-              }
-            }
-          }
-        ]
-      },
       "TaggedVariantVariantECCF99EA8C7B1755": {
         "allOf": [
           {
@@ -403241,24 +403205,6 @@
               },
               "type": {
                 "$ref": "#/components/schemas/RolloutType"
-              }
-            }
-          }
-        ]
-      },
-      "TaggedExperimentVariant3768103655726159": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthrough"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
               }
             }
           }
@@ -403403,24 +403349,6 @@
               },
               "type": {
                 "$ref": "#/components/schemas/RolloutType"
-              }
-            }
-          }
-        ]
-      },
-      "TaggedExperimentVariant17DBCB2F234B3980": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcome"
-          },
-          {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExperimentType"
               }
             }
           }
@@ -425944,17 +425872,6 @@
         }
       }
     },
-    "FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
-        }
-      }
-    },
     "FlagEnvironmentsAdditionalPropertiesRulesItemConditionsItemLhsOneOf1": {
       "required": [
         "type"
@@ -426061,17 +425978,6 @@
         },
         "type": {
           "$ref": "#/components/schemas/RolloutType"
-        }
-      }
-    },
-    "FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
         }
       }
     },
@@ -433004,17 +432910,6 @@
         }
       }
     },
-    "CreateFlag201ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
-        }
-      }
-    },
     "CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemConditionsItemLhsOneOf1": {
       "required": [
         "type"
@@ -433124,17 +433019,6 @@
         }
       }
     },
-    "CreateFlag201ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
-        }
-      }
-    },
     "UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf1": {
       "required": [
         "type",
@@ -433211,17 +433095,6 @@
         },
         "type": {
           "$ref": "#/components/schemas/RolloutType"
-        }
-      }
-    },
-    "UpdateFlag200ResponseEnvironmentsAdditionalPropertiesFallthroughOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
         }
       }
     },
@@ -433334,17 +433207,6 @@
         }
       }
     },
-    "UpdateFlag200ResponseEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
-        }
-      }
-    },
     "ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf1": {
       "required": [
         "type",
@@ -433421,17 +433283,6 @@
         },
         "type": {
           "$ref": "#/components/schemas/RolloutType"
-        }
-      }
-    },
-    "ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesFallthroughOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
         }
       }
     },
@@ -433541,17 +433392,6 @@
         },
         "type": {
           "$ref": "#/components/schemas/RolloutType"
-        }
-      }
-    },
-    "ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4": {
-      "required": [
-        "type"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/ExperimentType"
         }
       }
     },
@@ -451125,7 +450965,7 @@
         },
         "createdBy": {
           "type": "string",
-          "description": "The ID of the user who created the Global Config, optional because it is not always set."
+          "description": "The ID of the principal who created the Global Config, optional because it is not always set."
         },
         "digest": {
           "type": "string"

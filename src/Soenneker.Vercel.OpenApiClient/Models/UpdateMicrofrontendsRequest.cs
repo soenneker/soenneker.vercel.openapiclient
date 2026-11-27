@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("defaultRoute") is null) { _explicitNullValueDefaultRoute = default!; _explicitNullProperties?.Remove("defaultRoute"); }
             else if (parseNode.GetChildNode("defaultRoute") is { } nullNodeDefaultRoute && nullNodeDefaultRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRoute = null;
+            if (parseNode.GetChildNode("doNotInheritDefaultAppManagedRules") is null) { _explicitNullValueDoNotInheritDefaultAppManagedRules = default!; _explicitNullProperties?.Remove("doNotInheritDefaultAppManagedRules"); }
+            else if (parseNode.GetChildNode("doNotInheritDefaultAppManagedRules") is { } nullNodeDoNotInheritDefaultAppManagedRules && nullNodeDoNotInheritDefaultAppManagedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoNotInheritDefaultAppManagedRules = null;
             if (parseNode.GetChildNode("doNotRouteWithMicrofrontendsRouting") is null) { _explicitNullValueDoNotRouteWithMicrofrontendsRouting = default!; _explicitNullProperties?.Remove("doNotRouteWithMicrofrontendsRouting"); }
             else if (parseNode.GetChildNode("doNotRouteWithMicrofrontendsRouting") is { } nullNodeDoNotRouteWithMicrofrontendsRouting && nullNodeDoNotRouteWithMicrofrontendsRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoNotRouteWithMicrofrontendsRouting = null;
             if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
@@ -43,6 +45,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string DefaultRoute { get => _explicitNullValueDefaultRoute; set { _explicitNullValueDefaultRoute = value; AdditionalData?.Remove("defaultRoute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRoute"); else _explicitNullProperties?.Remove("defaultRoute"); } }
         private string _explicitNullValueDefaultRoute = default!;
 #endif
+        /// <summary>Whether requests routed to this project skip the default application&apos;s managed rulesets, so only this project&apos;s own managed rulesets apply. Can only be set for child applications.</summary>
+        public bool? DoNotInheritDefaultAppManagedRules { get => _explicitNullValueDoNotInheritDefaultAppManagedRules; set { _explicitNullValueDoNotInheritDefaultAppManagedRules = value; AdditionalData?.Remove("doNotInheritDefaultAppManagedRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doNotInheritDefaultAppManagedRules"); else _explicitNullProperties?.Remove("doNotInheritDefaultAppManagedRules"); } }
+        private bool? _explicitNullValueDoNotInheritDefaultAppManagedRules = default!;
         /// <summary>Whether domains in this project should route as a microfrontend. Can only be set for child applications.</summary>
         public bool? DoNotRouteWithMicrofrontendsRouting { get => _explicitNullValueDoNotRouteWithMicrofrontendsRouting; set { _explicitNullValueDoNotRouteWithMicrofrontendsRouting = value; AdditionalData?.Remove("doNotRouteWithMicrofrontendsRouting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doNotRouteWithMicrofrontendsRouting"); else _explicitNullProperties?.Remove("doNotRouteWithMicrofrontendsRouting"); } }
         private bool? _explicitNullValueDoNotRouteWithMicrofrontendsRouting = default!;
@@ -88,9 +93,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(6)
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "defaultRoute", n => { DefaultRoute = n.GetStringValue(); } },
+                { "doNotInheritDefaultAppManagedRules", n => { DoNotInheritDefaultAppManagedRules = n.GetBoolValue(); } },
                 { "doNotRouteWithMicrofrontendsRouting", n => { DoNotRouteWithMicrofrontendsRouting = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "isDefaultApp", n => { IsDefaultApp = n.GetBoolValue(); } },
@@ -106,6 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("defaultRoute", DefaultRoute);
+            writer.WriteBoolValue("doNotInheritDefaultAppManagedRules", DoNotInheritDefaultAppManagedRules);
             writer.WriteBoolValue("doNotRouteWithMicrofrontendsRouting", DoNotRouteWithMicrofrontendsRouting);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("isDefaultApp", IsDefaultApp);
